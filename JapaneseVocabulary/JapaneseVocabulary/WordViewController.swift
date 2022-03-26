@@ -28,7 +28,7 @@ class WordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(menu)
+        //print(menu)
         if menu == "즐겨찾기" {
             let defaults = UserDefaults.standard
             for i in 1...5 {
@@ -117,7 +117,7 @@ class WordViewController: UIViewController {
                 }
             }
         }
-        print(String(page))
+        //print(String(page))
 //        print(word)
         if word.count == 0 {
             return
@@ -141,7 +141,28 @@ class WordViewController: UIViewController {
 
     @IBAction func back(_ sender: Any) {
         if menu == "즐겨찾기" {
-            
+            let defaults = UserDefaults.standard
+            var count: Int = 0
+            for i in 1...5 {
+                do {
+                    var temp: String? = defaults.string(forKey: "JLPT\(i)favorites")
+                    if temp != nil {
+                        for j in 0..<temp!.count {
+                            if temp![temp!.index(temp!.startIndex, offsetBy: j)] == "1" {
+                                if !favorites[count] {
+                                    temp!.remove(at: temp!.index(temp!.startIndex, offsetBy: j))
+                                    temp!.insert("0", at: temp!.index(temp!.startIndex, offsetBy: j))
+                                    
+                                    defaults.set(String(temp!), forKey: "JLPT\(i)favorites")
+//                                    print(i)
+//                                    print(String(temp!))
+                                }
+                                count = count + 1
+                            }
+                        }
+                    }
+                }
+            }
         } else {
             let defaults = UserDefaults.standard
             defaults.set(String(page), forKey: "\(menu)page")
@@ -186,32 +207,32 @@ class WordViewController: UIViewController {
         }
         favorites[page] = !favorites[page]
         if menu == "즐겨찾기" {
-            let defaults = UserDefaults.standard
-            var tempPage = page
-            for i in 1...5 {
-                do {
-                    var temp: String? = defaults.string(forKey: "JLPT\(i)favorites")
-                    if temp != nil {
-                        for j in 0..<temp!.count {
-                            if temp![temp!.index(temp!.startIndex, offsetBy: j)] == "1" {
-                                if tempPage == 0 {
-                                    temp!.remove(at: temp!.index(temp!.startIndex, offsetBy: j))
-                                    if favorites[page] {
-                                        temp!.insert("1", at: temp!.index(temp!.startIndex, offsetBy: j))
-                                    } else {
-                                        temp!.insert("0", at: temp!.index(temp!.startIndex, offsetBy: j))
-                                    }
-                                    defaults.set(String(temp!), forKey: "JLPT\(i)favorites")
-                                    print(i)
-                                    print(String(temp!))
-                                    return
-                                }
-                                tempPage = tempPage - 1
-                            }
-                        }
-                    }
-                }
-            }
+//            let defaults = UserDefaults.standard
+//            var tempPage = page
+//            for i in 1...5 {
+//                do {
+//                    var temp: String? = defaults.string(forKey: "JLPT\(i)favorites")
+//                    if temp != nil {
+//                        for j in 0..<temp!.count {
+//                            if temp![temp!.index(temp!.startIndex, offsetBy: j)] == "1" {
+//                                if tempPage == 0 {
+//                                    temp!.remove(at: temp!.index(temp!.startIndex, offsetBy: j))
+//                                    if favorites[page] {
+//                                        temp!.insert("1", at: temp!.index(temp!.startIndex, offsetBy: j))
+//                                    } else {
+//                                        temp!.insert("0", at: temp!.index(temp!.startIndex, offsetBy: j))
+//                                    }
+//                                    defaults.set(String(temp!), forKey: "JLPT\(i)favorites")
+//                                    print(i)
+//                                    print(String(temp!))
+//                                    return
+//                                }
+//                                tempPage = tempPage - 1
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         } else {
             var temp = ""
             for i in favorites {
