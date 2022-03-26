@@ -1,8 +1,8 @@
 # Vocabulary
 
-##JapaneseVocabulary
+> ## JapaneseVocabulary
+> iOS 본 앱
 
-
-##WebCrawling
-
-< pip install selenium
+> ## WebCrawling
+> 정보 수집을 위한 웹크롤링 파이썬 툴
+> > pip install selenium
