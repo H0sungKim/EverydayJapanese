@@ -1,10 +1,7 @@
 '''
-Copyright (c) 2022 by Hosung.Kim <hyongak516@mail.hongik.ac.kr>
+2022 Hosung.Kim <hyongak516@mail.hongik.ac.kr>
 =====================
-2022.03.23
-Hosung.Kim
----------------------
-Web Crawling Test Version
+Web Crawling
 ---------------------
 Issues
 * page 하나하나 지정하는거 귀찮음
