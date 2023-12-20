@@ -56,7 +56,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-class CustomCell: UITableViewCell {
-    @IBOutlet weak var labelTitle: UILabel!
-    
-}
