@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Kanji Study View Controller-->
+        <scene sceneID="A78-NW-ywd">
+            <objects>
+                <viewController storyboardIdentifier="KanjiStudyViewController" id="Q8N-TI-tLi" customClass="KanjiStudyViewController" customModule="JapaneseBenkyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S3M-5w-GmV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrg-Ti-Vfk">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本語の勉強 Japanese Benkyo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChX-Ys-mLj">
+                                <rect key="frame" x="16" y="58.999999999999993" width="315.66666666666669" height="28.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Hosung.Kim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ2-GE-Qm0">
+                                <rect key="frame" x="16.000000000000007" y="87.666666666666671" width="115.66666666666669" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mpW-kP-8h6">
+                                <rect key="frame" x="0.0" y="124.66666666666669" width="393" height="693.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omm-m7-NZv">
+                                <rect key="frame" x="285" y="89.666666666666671" width="108" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="shuffle" catalog="system" title="Shuffle"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NcD-Zr-5Zc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mrg-Ti-Vfk" firstAttribute="leading" secondItem="NcD-Zr-5Zc" secondAttribute="leading" id="0B4-r3-VPX"/>
+                            <constraint firstItem="NcD-Zr-5Zc" firstAttribute="bottom" secondItem="mrg-Ti-Vfk" secondAttribute="bottom" id="2VF-nl-LCE"/>
+                            <constraint firstItem="mpW-kP-8h6" firstAttribute="top" secondItem="Omm-m7-NZv" secondAttribute="bottom" id="CuD-vz-ixx"/>
+                            <constraint firstItem="NcD-Zr-5Zc" firstAttribute="trailing" secondItem="Omm-m7-NZv" secondAttribute="trailing" id="IN0-JX-9uG"/>
+                            <constraint firstItem="ChX-Ys-mLj" firstAttribute="top" secondItem="NcD-Zr-5Zc" secondAttribute="top" id="Vsb-Wq-2Dj"/>
+                            <constraint firstItem="mrg-Ti-Vfk" firstAttribute="top" secondItem="S3M-5w-GmV" secondAttribute="top" id="Xkg-CP-4Mv"/>
+                            <constraint firstItem="ChX-Ys-mLj" firstAttribute="leading" secondItem="NcD-Zr-5Zc" secondAttribute="leading" constant="16" id="aEO-Xk-byc"/>
+                            <constraint firstItem="mpW-kP-8h6" firstAttribute="leading" secondItem="NcD-Zr-5Zc" secondAttribute="leading" id="atD-D0-Zdk"/>
+                            <constraint firstItem="NcD-Zr-5Zc" firstAttribute="trailing" secondItem="mrg-Ti-Vfk" secondAttribute="trailing" id="cWa-OG-rQH"/>
+                            <constraint firstItem="NcD-Zr-5Zc" firstAttribute="bottom" secondItem="mpW-kP-8h6" secondAttribute="bottom" id="dVb-bD-gav"/>
+                            <constraint firstItem="NcD-Zr-5Zc" firstAttribute="trailing" secondItem="mpW-kP-8h6" secondAttribute="trailing" id="dcy-1E-SzU"/>
+                            <constraint firstItem="mpW-kP-8h6" firstAttribute="top" secondItem="QJ2-GE-Qm0" secondAttribute="bottom" constant="16" id="t2S-QI-QGE"/>
+                            <constraint firstItem="QJ2-GE-Qm0" firstAttribute="leading" secondItem="NcD-Zr-5Zc" secondAttribute="leading" constant="16" id="vRa-NQ-puC"/>
+                            <constraint firstItem="QJ2-GE-Qm0" firstAttribute="top" secondItem="ChX-Ys-mLj" secondAttribute="bottom" id="wq8-gL-BIi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vu9-nm-KId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="-101"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shuffle" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
