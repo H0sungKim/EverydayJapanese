@@ -9,7 +9,7 @@ import UIKit
 
 class KanjiViewController: UIViewController {
     
-    enum DifficultyEnum: String, CaseIterable {
+    private enum DifficultyEnum: String, CaseIterable {
         case kanjiBookmark = "漢字 かんじ 즐겨찾기"
         case kanji0 = "漢字 かんじ 소학교 1학년"
         case kanji1 = "漢字 かんじ 소학교 2학년"
@@ -20,7 +20,7 @@ class KanjiViewController: UIViewController {
         case kanji6 = "漢字 かんじ 중학교"
     }
 
-    let titles: [DifficultyEnum] = DifficultyEnum.allCases
+    private let titles: [DifficultyEnum] = DifficultyEnum.allCases
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -57,14 +57,17 @@ extension KanjiViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = UIViewController.getViewController(viewControllerEnum: .kanjistudy) as! KanjiStudyViewController
-        
+        vc.difficulty = titles[indexPath.row].rawValue
         switch titles[indexPath.row] {
         case .kanjiBookmark :
-            vc.kanjis = UserDefaultManager.shared.kanjiBookmark ?? []
+            if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
+                vc.kanjisForCell = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData).map { KanjiForCell(kanji: $0) }
+            }
         case .kanji0, .kanji1, .kanji2, .kanji3, .kanji4, .kanji5, .kanji6 :
-            vc.kanjis = JSONReader.shared.readKanjiJSON(difficulty: indexPath.row)
+            if let jsonData = JSONManager.shared.openJSON(path: "kanji\(indexPath.row)") {
+                vc.kanjisForCell = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData).map { KanjiForCell(kanji: $0) }
+            }
         }
-        
         navigationController?.pushViewController(vc, animated: true)
     }
 }

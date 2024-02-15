@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="KanjiTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="KanjiTableViewCell" rowHeight="94" id="KGk-i7-Jjw" customClass="KanjiTableViewCell" customModule="JapaneseBenkyo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="517" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFQ-7a-nt0">
+                        <rect key="frame" x="337" y="0.0" width="107" height="35"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="韓 훈음 보기"/>
+                        <connections>
+                            <action selector="onClickEumhun:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JfT-hL-2lw"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJk-Il-WO4">
+                        <rect key="frame" x="352" y="29.5" width="92" height="35"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="日 음 보기"/>
+                        <connections>
+                            <action selector="onClickJpSound:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Jee-eO-9N8"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
+                        <rect key="frame" x="352" y="59" width="92" height="35"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="日 훈 보기"/>
+                        <connections>
+                            <action selector="onClickJpMeaning:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HXw-rD-OzN"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-hn-ffu">
+                        <rect key="frame" x="16" y="9" width="148.5" height="76.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvr-7m-88R">
+                        <rect key="frame" x="337" y="47" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Pt-6a3">
+                        <rect key="frame" x="249.5" y="0.0" width="87.5" height="34.5"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="한자 보기">
+                            <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="onClickHanja:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9JE-Q7-nPU"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4G-Bc-oRq">
+                        <rect key="frame" x="460" y="47" width="57" height="47"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctL-4x-JzU">
+                                <rect key="frame" x="0.0" y="6.5" width="57" height="34"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickViewAll:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PBa-NU-ZJf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ctL-4x-JzU" secondAttribute="width" id="CX2-s8-yBw"/>
+                            <constraint firstItem="ctL-4x-JzU" firstAttribute="centerX" secondItem="y4G-Bc-oRq" secondAttribute="centerX" id="DIQ-By-qKM"/>
+                            <constraint firstItem="ctL-4x-JzU" firstAttribute="centerY" secondItem="y4G-Bc-oRq" secondAttribute="centerY" id="bsO-Zu-iYo"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-ds-lRU">
+                        <rect key="frame" x="465" y="0.0" width="52" height="47"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwK-zb-5GK">
+                                <rect key="frame" x="0.0" y="6.5" width="52" height="34"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickBookmark:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MjM-RU-Ri9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="uwK-zb-5GK" secondAttribute="width" id="SXl-K5-z9K"/>
+                            <constraint firstItem="uwK-zb-5GK" firstAttribute="centerY" secondItem="Ghi-ds-lRU" secondAttribute="centerY" id="SYq-QU-rlx"/>
+                            <constraint firstItem="uwK-zb-5GK" firstAttribute="centerX" secondItem="Ghi-ds-lRU" secondAttribute="centerX" id="eq0-73-aWE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ghi-ds-lRU" secondAttribute="trailing" id="2iI-4x-WuL"/>
+                    <constraint firstItem="frs-Pt-6a3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="65n-ZA-LKH"/>
+                    <constraint firstItem="Ghi-ds-lRU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7Lq-EN-0BT"/>
+                    <constraint firstItem="Gvr-7m-88R" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AiI-HL-UV6"/>
+                    <constraint firstItem="cYs-hn-ffu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IsI-YQ-A00"/>
+                    <constraint firstItem="y4G-Bc-oRq" firstAttribute="leading" secondItem="MFQ-7a-nt0" secondAttribute="trailing" constant="16" id="Qld-KA-BhU"/>
+                    <constraint firstItem="cYs-hn-ffu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U71-Zo-CCT"/>
+                    <constraint firstItem="MFQ-7a-nt0" firstAttribute="leading" secondItem="Gvr-7m-88R" secondAttribute="trailing" id="Wmc-QZ-B2t"/>
+                    <constraint firstItem="y4G-Bc-oRq" firstAttribute="leading" secondItem="6pA-2S-yml" secondAttribute="trailing" constant="16" id="Wzw-UP-C19"/>
+                    <constraint firstItem="y4G-Bc-oRq" firstAttribute="top" secondItem="Ghi-ds-lRU" secondAttribute="bottom" id="aN1-OE-70Y"/>
+                    <constraint firstItem="MFQ-7a-nt0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cq3-q6-Tyd"/>
+                    <constraint firstItem="Ghi-ds-lRU" firstAttribute="height" secondItem="y4G-Bc-oRq" secondAttribute="height" id="fIH-yd-8Ma"/>
+                    <constraint firstItem="eJk-Il-WO4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j0r-6H-tiv"/>
+                    <constraint firstAttribute="bottom" secondItem="y4G-Bc-oRq" secondAttribute="bottom" id="k8y-IM-6A7"/>
+                    <constraint firstItem="y4G-Bc-oRq" firstAttribute="leading" secondItem="eJk-Il-WO4" secondAttribute="trailing" constant="16" id="rrD-ql-Ww2"/>
+                    <constraint firstItem="MFQ-7a-nt0" firstAttribute="leading" secondItem="frs-Pt-6a3" secondAttribute="trailing" id="tlM-5l-avx"/>
+                    <constraint firstAttribute="bottom" secondItem="6pA-2S-yml" secondAttribute="bottom" id="uDI-YB-UPX"/>
+                    <constraint firstAttribute="trailing" secondItem="y4G-Bc-oRq" secondAttribute="trailing" id="znN-3u-skV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnBookmark" destination="uwK-zb-5GK" id="ege-JZ-Pzf"/>
+                <outlet property="btnEumhun" destination="MFQ-7a-nt0" id="e3F-5F-VWK"/>
+                <outlet property="btnHanja" destination="frs-Pt-6a3" id="Fwb-LW-9wS"/>
+                <outlet property="btnJpMeaning" destination="6pA-2S-yml" id="UGa-Ik-wAd"/>
+                <outlet property="btnJpSound" destination="eJk-Il-WO4" id="JSJ-YV-knu"/>
+                <outlet property="lbHanja" destination="Gvr-7m-88R" id="A3C-j2-tPN"/>
+                <outlet property="lbKanji" destination="cYs-hn-ffu" id="p5B-W2-zqM"/>
+            </connections>
+            <point key="canvasLocation" x="533" y="137"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

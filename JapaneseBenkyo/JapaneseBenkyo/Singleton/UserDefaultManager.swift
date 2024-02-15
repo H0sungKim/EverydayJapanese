@@ -19,18 +19,18 @@ class UserDefaultManager {
     private init() {
     }
     
-    var vocabularyBookmark: [Vocabulary]? {
+    var vocabularyBookmark: String {
         get {
-            return UserDefaults.standard.value(forKey: UserDefaultEnum.vocabularyBookmark.rawValue) as? [Vocabulary]
+            return UserDefaults.standard.value(forKey: UserDefaultEnum.vocabularyBookmark.rawValue) as? String ?? ""
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: UserDefaultEnum.vocabularyBookmark.rawValue)
         }
     }
     
-    var kanjiBookmark: [Kanji]? {
+    var kanjiBookmark: String {
         get {
-            return UserDefaults.standard.value(forKey: UserDefaultEnum.kanjiBookmark.rawValue) as? [Kanji]
+            return UserDefaults.standard.value(forKey: UserDefaultEnum.kanjiBookmark.rawValue) as? String ?? ""
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: UserDefaultEnum.kanjiBookmark.rawValue)
