@@ -44,7 +44,6 @@ class KanjiTableViewCell: UITableViewCell {
         onClickJpSound?(btnJpSound)
         onClickJpMeaning?(btnJpMeaning)
     }
-    
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
     }

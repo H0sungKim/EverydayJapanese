@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct Vocabulary: Codable, Hashable {
-    let word: String
-    let sound: String
-    let meaning: String
-}
-
 class JSONManager: NSObject {
     
     public static let shared = JSONManager()
@@ -20,13 +14,26 @@ class JSONManager: NSObject {
     private override init() {
         super.init()
     }
+
+    func encodeVocabularyJSON(vocabularies: Set<Vocabulary>) -> String {
+        let encoded = try? JSONEncoder().encode(vocabularies)
+        return String(decoding: encoded!, as: UTF8.self)
+    }
     
-    func decodeVocabularyJSON(jsonData: Data) -> [Vocabulary] {
+    func decodeJSONtoVocabularyArray(jsonData: Data) -> [Vocabulary] {
         if let vocabularies = try? JSONDecoder().decode([Vocabulary].self, from: jsonData) {
             return vocabularies
         }
         return []
     }
+    
+    func decodeJSONtoVocabularySet(jsonData: Data) -> Set<Vocabulary> {
+        if let vocabularies = try? JSONDecoder().decode(Set<Vocabulary>.self, from: jsonData) {
+            return vocabularies
+        }
+        return []
+    }
+    
     
     func encodeKanjiJSON(kanjis: Set<Kanji>) -> String {
         let encoded = try? JSONEncoder().encode(kanjis)

@@ -10,14 +10,14 @@ import UIKit
 class KanjiViewController: UIViewController {
     
     private enum DifficultyEnum: String, CaseIterable {
-        case kanjiBookmark = "漢字 かんじ 즐겨찾기"
-        case kanji0 = "漢字 かんじ 소학교 1학년"
-        case kanji1 = "漢字 かんじ 소학교 2학년"
-        case kanji2 = "漢字 かんじ 소학교 3학년"
-        case kanji3 = "漢字 かんじ 소학교 4학년"
-        case kanji4 = "漢字 かんじ 소학교 5학년"
-        case kanji5 = "漢字 かんじ 소학교 6학년"
-        case kanji6 = "漢字 かんじ 중학교"
+        case kanjiBookmark = "漢字 かんじ 한자 즐겨찾기"
+        case kanji0 = "漢字 かんじ 한자 소학교 1학년"
+        case kanji1 = "漢字 かんじ 한자 소학교 2학년"
+        case kanji2 = "漢字 かんじ 한자 소학교 3학년"
+        case kanji3 = "漢字 かんじ 한자 소학교 4학년"
+        case kanji4 = "漢字 かんじ 한자 소학교 5학년"
+        case kanji5 = "漢字 かんじ 한자 소학교 6학년"
+        case kanji6 = "漢字 かんじ 한자 중학교"
     }
 
     private let titles: [DifficultyEnum] = DifficultyEnum.allCases
@@ -31,9 +31,7 @@ class KanjiViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 70
         tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
-        
     }
-
 }
 
 extension KanjiViewController: UITableViewDataSource, UITableViewDelegate {

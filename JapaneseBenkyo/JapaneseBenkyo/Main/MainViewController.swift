@@ -8,8 +8,8 @@
 import UIKit
 
 enum SubjectEnum: String, CaseIterable {
-    case vocabulary = "단어장"
-    case kanji = "한자"
+    case vocabulary = "日本語の単語帳 일본어단어장"
+    case kanji = "漢字 かんじ 한자"
 }
 
 class MainViewController: UIViewController {
@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSLog("Build : 2024.02.15 18:16")
         
         tableView.delegate = self
         tableView.dataSource = self

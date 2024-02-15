@@ -25,6 +25,5 @@ class KanjiForCell {
     
     init(kanji: Kanji) {
         self.kanji = kanji
-        
     }
 }

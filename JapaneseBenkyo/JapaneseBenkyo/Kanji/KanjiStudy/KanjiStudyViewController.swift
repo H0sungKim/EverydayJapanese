@@ -10,8 +10,10 @@ import UIKit
 class KanjiStudyViewController: UIViewController {
     
     var kanjisForCell: [KanjiForCell] = []
-    var bookmark: Set<Kanji> = []
     var difficulty: String = ""
+    
+    private var bookmark: Set<Kanji> = []
+    
     @IBOutlet weak var lbDifficulty: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,6 +34,7 @@ class KanjiStudyViewController: UIViewController {
             kanjiForCell.isBookmark = bookmark.contains(kanjiForCell.kanji)
         }
     }
+    
     @IBAction func onClickShuffle(_ sender: Any) {
         kanjisForCell.shuffle()
         tableView.reloadData()
@@ -113,7 +116,6 @@ extension KanjiStudyViewController: UITableViewDataSource, UITableViewDelegate {
         if kanjiForCell.kanji.hanja == "" {
             cell.lbHanja.text = ""
             cell.btnHanja.setTitle("", for: .normal)
-            cell.btnHanja.isEnabled = false
         } else {
             if kanjiForCell.isVisibleHanja {
                 cell.lbHanja.text = kanjiForCell.kanji.hanja
@@ -121,7 +123,6 @@ extension KanjiStudyViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 cell.lbHanja.text = ""
                 cell.btnHanja.setTitle("한자 보기", for: .normal)
-                cell.btnHanja.isEnabled = true
             }
         }
         if kanjiForCell.isVisibleEumhun {
@@ -132,14 +133,14 @@ extension KanjiStudyViewController: UITableViewDataSource, UITableViewDelegate {
             cell.btnEumhun.setTitleColor(.lightGray, for: .normal)
         }
         if kanjiForCell.isVisibleJpSound {
-            cell.btnJpSound.setTitle(kanjiForCell.kanji.jpSound, for: .normal)
+            cell.btnJpSound.setTitle("音 ⇒ " + kanjiForCell.kanji.jpSound, for: .normal)
             cell.btnJpSound.setTitleColor(.label, for: .normal)
         } else {
             cell.btnJpSound.setTitle("日 음 보기", for: .normal)
             cell.btnJpSound.setTitleColor(.lightGray, for: .normal)
         }
         if kanjiForCell.isVisibleJpMeaning {
-            cell.btnJpMeaning.setTitle(kanjiForCell.kanji.jpMeaning, for: .normal)
+            cell.btnJpMeaning.setTitle("訓 ⇒ " + kanjiForCell.kanji.jpMeaning, for: .normal)
             cell.btnJpMeaning.setTitleColor(.label, for: .normal)
         } else {
             cell.btnJpMeaning.setTitle("日 훈 보기", for: .normal)
@@ -151,6 +152,4 @@ extension KanjiStudyViewController: UITableViewDataSource, UITableViewDelegate {
             cell.btnBookmark.setImage(UIImage(systemName: "star"), for: .normal)
         }
     }
-    
-    
 }
