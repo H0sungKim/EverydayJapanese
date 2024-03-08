@@ -88,7 +88,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="SKI-zv-d18"/>
                                 </constraints>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
                                 <connections>
@@ -122,6 +122,7 @@
                 <outlet property="btnBookmark" destination="uwK-zb-5GK" id="Tn8-hM-YdB"/>
                 <outlet property="btnMeaning" destination="6pA-2S-yml" id="uVY-wz-XAt"/>
                 <outlet property="btnSound" destination="frs-Pt-6a3" id="Cbz-TZ-A6t"/>
+                <outlet property="btnViewAll" destination="O8V-kM-01k" id="FSv-0p-8MO"/>
                 <outlet property="lbWord" destination="cYs-hn-ffu" id="4de-pH-M6P"/>
             </connections>
             <point key="canvasLocation" x="552.89855072463774" y="167.41071428571428"/>

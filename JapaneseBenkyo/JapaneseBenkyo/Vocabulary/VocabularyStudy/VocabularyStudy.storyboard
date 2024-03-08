@@ -36,6 +36,11 @@
                                 <rect key="frame" x="0.0" y="124.66666666666669" width="393" height="693.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAL-hD-Scj">
+                                <rect key="frame" x="227.33333333333334" y="89.666666666666671" width="57.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKr-vv-0CS">
                                 <rect key="frame" x="285" y="89.666666666666671" width="108" height="35"/>
                                 <state key="normal" title="Button"/>
@@ -50,12 +55,14 @@
                         <constraints>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="OKr-vv-0CS" secondAttribute="trailing" id="1wv-Fw-F2R"/>
                             <constraint firstItem="DR2-Yk-3OP" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" id="3FI-AK-Yox"/>
+                            <constraint firstItem="OKr-vv-0CS" firstAttribute="leading" secondItem="kAL-hD-Scj" secondAttribute="trailing" id="72u-s1-4uN"/>
                             <constraint firstItem="vOh-Kc-v4t" firstAttribute="top" secondItem="pBz-xA-OEi" secondAttribute="top" id="9jc-az-2e7"/>
                             <constraint firstItem="eZB-6V-72t" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" id="LMU-LX-UjB"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="DR2-Yk-3OP" secondAttribute="trailing" id="Osr-Ev-jUO"/>
                             <constraint firstItem="Rb3-g5-M4H" firstAttribute="top" secondItem="vOh-Kc-v4t" secondAttribute="bottom" id="Qir-vY-LsL"/>
                             <constraint firstItem="Rb3-g5-M4H" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" constant="16" id="U0U-fy-sAl"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="eZB-6V-72t" secondAttribute="trailing" id="VtQ-36-JXV"/>
+                            <constraint firstItem="eZB-6V-72t" firstAttribute="top" secondItem="kAL-hD-Scj" secondAttribute="bottom" id="Y8G-jC-9Lm"/>
                             <constraint firstItem="vOh-Kc-v4t" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" constant="16" id="aTh-Du-rpg"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="bottom" secondItem="DR2-Yk-3OP" secondAttribute="bottom" id="aoX-Uj-CSk"/>
                             <constraint firstItem="DR2-Yk-3OP" firstAttribute="top" secondItem="ioZ-eC-BvL" secondAttribute="top" id="bnx-FV-0L1"/>
@@ -75,6 +82,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="shuffle" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

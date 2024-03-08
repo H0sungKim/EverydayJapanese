@@ -57,10 +57,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Pt-6a3">
-                        <rect key="frame" x="164.5" y="30" width="87.5" height="34.5"/>
+                        <rect key="frame" x="164.5" y="30" width="106.5" height="34.5"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="한자 보기">
+                        <buttonConfiguration key="configuration" style="plain" title="韓 한자 보기">
                             <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                         </buttonConfiguration>
                         <connections>

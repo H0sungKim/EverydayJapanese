@@ -8,8 +8,8 @@
 import UIKit
 
 enum SubjectEnum: String, CaseIterable {
-    case vocabulary = "日本語の単語帳 일본어단어장"
-    case kanji = "漢字 かんじ 한자"
+    case vocabulary = "일본어 단어장"
+    case kanji = "일본어 한자"
 }
 
 class MainViewController: UIViewController {
@@ -21,13 +21,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // BUILD LOG ====================
         NSLog("Build : 2024.02.15 18:16")
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 70
-        tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))        
-        
+        tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
     }
     
 }
@@ -47,7 +47,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             cell = objectArray![0] as! CustomTableViewCell
         }
 
-        cell.labelTitle.text = titles[indexPath.row].rawValue
+        cell.lbTitle.text = titles[indexPath.row].rawValue
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -10,6 +10,7 @@ import UIKit
 // MARK: - Public Outter Class, Struct, Enum, Protocol
 enum ViewControllerEnum: String, CaseIterable {
     case vocabulary
+    case vocabularyday
     case vocabularystudy
     case kanji
     case kanjistudy
@@ -22,6 +23,8 @@ extension UIViewController {
         switch viewControllerEnum {
         case .vocabulary:
             return getViewController(storyboard: "Vocabulary", identifier: String(describing: VocabularyViewController.self), modalPresentationStyle: .fullScreen)
+        case .vocabularyday:
+            return getViewController(storyboard: "VocabularyDay", identifier: String(describing: VocabularyDayViewController.self), modalPresentationStyle: .fullScreen)
         case .vocabularystudy:
             return getViewController(storyboard: "VocabularyStudy", identifier: String(describing: VocabularyStudyViewController.self), modalPresentationStyle: .fullScreen)
         case .kanji:

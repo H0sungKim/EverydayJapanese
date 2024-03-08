@@ -30,6 +30,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piB-kd-nZL">
+                        <rect key="frame" x="64" y="56.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nem-qA-RuA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="55D-hp-x3Z"/>
@@ -38,13 +44,16 @@
                     <constraint firstAttribute="trailing" secondItem="QPQ-Ih-DI7" secondAttribute="trailing" constant="16" id="Hb8-wV-zzc"/>
                     <constraint firstAttribute="bottom" secondItem="nem-qA-RuA" secondAttribute="bottom" id="QIO-TR-Jcc"/>
                     <constraint firstItem="QPQ-Ih-DI7" firstAttribute="leading" secondItem="nem-qA-RuA" secondAttribute="trailing" constant="16" id="bUO-Ta-P7r"/>
+                    <constraint firstItem="piB-kd-nZL" firstAttribute="top" secondItem="QPQ-Ih-DI7" secondAttribute="bottom" constant="4" id="mEo-Gq-mmp"/>
                     <constraint firstItem="nem-qA-RuA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="r8I-kw-0yQ"/>
+                    <constraint firstItem="piB-kd-nZL" firstAttribute="leading" secondItem="nem-qA-RuA" secondAttribute="trailing" constant="16" id="uvD-IC-tfn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="icon" destination="nem-qA-RuA" id="vfu-12-hie"/>
-                <outlet property="labelTitle" destination="QPQ-Ih-DI7" id="jnt-6k-aPB"/>
+                <outlet property="ivIcon" destination="nem-qA-RuA" id="vfu-12-hie"/>
+                <outlet property="lbSubtitle" destination="piB-kd-nZL" id="rzS-Ju-MUj"/>
+                <outlet property="lbTitle" destination="QPQ-Ih-DI7" id="jnt-6k-aPB"/>
             </connections>
             <point key="canvasLocation" x="243" y="105"/>
         </tableViewCell>

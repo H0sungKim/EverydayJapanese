@@ -10,12 +10,12 @@ import UIKit
 class VocabularyViewController: UIViewController {
     
     private enum DifficultyEnum: String, CaseIterable {
-        case vocabularyBookmark = "日本語の単語帳 즐겨찾기"
-        case vocabulary0 = "日本語の単語帳 JLPT5"
-        case vocabulary1 = "日本語の単語帳 JLPT4"
-        case vocabulary2 = "日本語の単語帳 JLPT3"
-        case vocabulary3 = "日本語の単語帳 JLPT2"
-        case vocabulary4 = "日本語の単語帳 JLPT1"
+        case vocabularyBookmark = "일본어 단어장 즐겨찾기"
+        case vocabulary0 = "일본어 단어장 JLPT N5"
+        case vocabulary1 = "일본어 단어장 JLPT N4"
+        case vocabulary2 = "일본어 단어장 JLPT N3"
+        case vocabulary3 = "일본어 단어장 JLPT N2"
+        case vocabulary4 = "일본어 단어장 JLPT N1"
     }
     
     private let titles: [DifficultyEnum] = DifficultyEnum.allCases
@@ -48,23 +48,28 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
             cell = objectArray![0] as! CustomTableViewCell
         }
 
-        cell.labelTitle.text = titles[indexPath.row].rawValue
+        cell.lbTitle.text = titles[indexPath.row].rawValue
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
-        vc.difficulty = titles[indexPath.row].rawValue
         switch titles[indexPath.row] {
+            
         case .vocabularyBookmark :
+            let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
+            vc.difficulty = titles[indexPath.row].rawValue
             if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.vocabularyBookmark) {
                 vc.vocabulariesForCell = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData).map { VocabularyForCell(vocabulary: $0) }
             }
+            navigationController?.pushViewController(vc, animated: true)
+            
         case .vocabulary0, .vocabulary1, .vocabulary2, .vocabulary3, .vocabulary4 :
+            let vc = UIViewController.getViewController(viewControllerEnum: .vocabularyday) as! VocabularyDayViewController
+            vc.difficulty = titles[indexPath.row].rawValue
             if let jsonData = JSONManager.shared.openJSON(path: "JLPT\(6-indexPath.row)") {
-                vc.vocabulariesForCell = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData).map { VocabularyForCell(vocabulary: $0) }
+                vc.vocabularies = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
             }
+            navigationController?.pushViewController(vc, animated: true)
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

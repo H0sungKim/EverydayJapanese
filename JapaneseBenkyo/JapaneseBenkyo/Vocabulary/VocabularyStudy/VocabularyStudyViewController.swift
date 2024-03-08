@@ -66,33 +66,70 @@ extension VocabularyStudyViewController: UITableViewDataSource, UITableViewDeleg
         cell.onClickBookmark = { [weak self] sender in
             self?.onClickBookmark(cell, sender, vocabularyForCell: vocabularyForCell)
         }
+        cell.onClickViewAll = { [weak self] sender in
+            self?.onClickViewAll(cell, sender, vocabularyForCell: vocabularyForCell)
+        }
         
         initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
         
         return cell
     }
     
-    private func onClickSound(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell?) {
-        sender.setTitle(vocabularyForCell?.vocabulary.sound, for: .normal)
-        sender.setTitleColor(.label, for: .normal)
-        vocabularyForCell?.isVisibleSound = true
+    private func onClickSound(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
+        if vocabularyForCell.isVisibleSound {
+            sender.setTitle("발음 보기", for: .normal)
+            sender.setTitleColor(.lightGray, for: .normal)
+            vocabularyForCell.isVisibleSound = false
+        } else {
+            sender.setTitle(vocabularyForCell.vocabulary.sound, for: .normal)
+            sender.setTitleColor(.label, for: .normal)
+            vocabularyForCell.isVisibleSound = true
+        }
     }
-    private func onClickMeaning(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell?) {
-        sender.setTitle(vocabularyForCell?.vocabulary.meaning, for: .normal)
-        sender.setTitleColor(.label, for: .normal)
-        vocabularyForCell?.isVisibleMeaning = true
+    private func onClickMeaning(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
+        if vocabularyForCell.isVisibleMeaning {
+            sender.setTitle("뜻 보기", for: .normal)
+            sender.setTitleColor(.lightGray, for: .normal)
+            vocabularyForCell.isVisibleMeaning = false
+        } else {
+            sender.setTitle(vocabularyForCell.vocabulary.meaning, for: .normal)
+            sender.setTitleColor(.label, for: .normal)
+            vocabularyForCell.isVisibleMeaning = true
+        }
     }
-    private func onClickBookmark(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell?) {
-        if vocabularyForCell!.isBookmark {
+    private func onClickBookmark(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
+        if vocabularyForCell.isBookmark {
             sender.setImage(UIImage(systemName: "star"), for: .normal)
-            vocabularyForCell?.isBookmark = false
-            bookmark.remove(vocabularyForCell!.vocabulary)
+            vocabularyForCell.isBookmark = false
+            bookmark.remove(vocabularyForCell.vocabulary)
         } else {
             sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            vocabularyForCell?.isBookmark = true
-            bookmark.insert(vocabularyForCell!.vocabulary)
+            vocabularyForCell.isBookmark = true
+            bookmark.insert(vocabularyForCell.vocabulary)
         }
         UserDefaultManager.shared.vocabularyBookmark = JSONManager.shared.encodeVocabularyJSON(vocabularies: bookmark)
+    }
+    
+    private func onClickViewAll(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
+        if vocabularyForCell.isVisibleAll {
+            sender.setImage(UIImage(systemName: "eye"), for: .normal)
+            if vocabularyForCell.vocabulary.sound != "" {
+                cell.btnSound.setTitle("발음 보기", for: .normal)
+                cell.btnSound.setTitleColor(.lightGray, for: .normal)
+            }
+            cell.btnMeaning.setTitle("뜻 보기", for: .normal)
+            cell.btnMeaning.setTitleColor(.lightGray, for: .normal)
+            vocabularyForCell.isVisibleAll = false
+        } else {
+            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            if vocabularyForCell.vocabulary.sound != "" {
+                cell.btnSound.setTitle(vocabularyForCell.vocabulary.sound, for: .normal)
+                cell.btnSound.setTitleColor(.label, for: .normal)
+            }
+            cell.btnMeaning.setTitle(vocabularyForCell.vocabulary.meaning, for: .normal)
+            cell.btnMeaning.setTitleColor(.label, for: .normal)
+            vocabularyForCell.isVisibleAll = true
+        }
     }
     
     private func initializeCell(cell: VocabularyTableViewCell, vocabularyForCell: VocabularyForCell) {
@@ -119,6 +156,11 @@ extension VocabularyStudyViewController: UITableViewDataSource, UITableViewDeleg
             cell.btnBookmark.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
             cell.btnBookmark.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        if vocabularyForCell.isVisibleAll {
+            cell.btnViewAll.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            cell.btnViewAll.setImage(UIImage(systemName: "eye"), for: .normal)
         }
     }
 }

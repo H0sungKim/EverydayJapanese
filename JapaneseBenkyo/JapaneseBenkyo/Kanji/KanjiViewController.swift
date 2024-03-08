@@ -49,7 +49,7 @@ extension KanjiViewController: UITableViewDataSource, UITableViewDelegate {
             cell = objectArray![0] as! CustomTableViewCell
         }
 
-        cell.labelTitle.text = titles[indexPath.row].rawValue
+        cell.lbTitle.text = titles[indexPath.row].rawValue
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
