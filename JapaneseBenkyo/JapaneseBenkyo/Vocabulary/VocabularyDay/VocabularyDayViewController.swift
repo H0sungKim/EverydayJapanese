@@ -11,7 +11,7 @@ import Foundation
 class VocabularyDayViewController: UIViewController {
 
     var vocabularies: [Vocabulary] = []
-    var difficulty: String = ""
+    var level: String = ""
     
     private var vocabulariesDayDistributed: [Array<Vocabulary>] = []
     
@@ -24,7 +24,7 @@ class VocabularyDayViewController: UIViewController {
         vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: daySize).map {
             Array(vocabularies[$0..<min($0 + daySize, vocabularies.count)])
         }
-        lbTitle.text = difficulty
+        lbTitle.text = level
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -60,10 +60,10 @@ extension VocabularyDayViewController: UITableViewDataSource, UITableViewDelegat
         let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
         
         if indexPath.row == 0 {
-            vc.difficulty = "\(difficulty) 전체보기"
+            vc.level = "\(level) 전체보기"
             vc.vocabulariesForCell = vocabularies.map { VocabularyForCell(vocabulary: $0) }
         } else {
-            vc.difficulty = "\(difficulty) Day\(indexPath.row)"
+            vc.level = "\(level) Day\(indexPath.row)"
             vc.vocabulariesForCell = vocabulariesDayDistributed[indexPath.row-1].map { VocabularyForCell(vocabulary: $0) }
         }
         navigationController?.pushViewController(vc, animated: true)

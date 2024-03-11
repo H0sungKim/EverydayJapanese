@@ -9,7 +9,7 @@ import UIKit
 
 class VocabularyViewController: UIViewController {
     
-    private enum DifficultyEnum: String, CaseIterable {
+    private enum LevelEnum: String, CaseIterable {
         case vocabularyBookmark = "일본어 단어장 즐겨찾기"
         case vocabulary0 = "일본어 단어장 JLPT N5"
         case vocabulary1 = "일본어 단어장 JLPT N4"
@@ -18,7 +18,7 @@ class VocabularyViewController: UIViewController {
         case vocabulary4 = "일본어 단어장 JLPT N1"
     }
     
-    private let titles: [DifficultyEnum] = DifficultyEnum.allCases
+    private let catalogues: [LevelEnum] = LevelEnum.allCases
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,7 +35,7 @@ class VocabularyViewController: UIViewController {
 
 extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return catalogues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,16 +48,16 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
             cell = objectArray![0] as! CustomTableViewCell
         }
 
-        cell.lbTitle.text = titles[indexPath.row].rawValue
+        cell.lbTitle.text = catalogues[indexPath.row].rawValue
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch titles[indexPath.row] {
+        switch catalogues[indexPath.row] {
             
         case .vocabularyBookmark :
             let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
-            vc.difficulty = titles[indexPath.row].rawValue
+            vc.level = catalogues[indexPath.row].rawValue
             if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.vocabularyBookmark) {
                 vc.vocabulariesForCell = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData).map { VocabularyForCell(vocabulary: $0) }
             }
@@ -65,7 +65,7 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
             
         case .vocabulary0, .vocabulary1, .vocabulary2, .vocabulary3, .vocabulary4 :
             let vc = UIViewController.getViewController(viewControllerEnum: .vocabularyday) as! VocabularyDayViewController
-            vc.difficulty = titles[indexPath.row].rawValue
+            vc.level = catalogues[indexPath.row].rawValue
             if let jsonData = JSONManager.shared.openJSON(path: "JLPT\(6-indexPath.row)") {
                 vc.vocabularies = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
             }

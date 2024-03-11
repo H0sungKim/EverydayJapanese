@@ -13,12 +13,10 @@ class VocabularyTableViewCell: UITableViewCell {
     @IBOutlet weak var btnSound: UIButton!
     @IBOutlet weak var btnMeaning: UIButton!
     @IBOutlet weak var btnBookmark: UIButton!
-    @IBOutlet weak var btnViewAll: UIButton!
     
     var onClickSound: ((_ sender: UIButton) -> Void)?
     var onClickMeaning: ((_ sender: UIButton) -> Void)?
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
-    var onClickViewAll: ((_ sender: UIButton) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +32,8 @@ class VocabularyTableViewCell: UITableViewCell {
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
     }
-    @IBAction func onClickViewAll(_ sender: UIButton) {
-        onClickViewAll?(sender)
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 }

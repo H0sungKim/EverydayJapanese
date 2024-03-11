@@ -33,7 +33,7 @@ extension UIViewController {
             return getViewController(storyboard: "KanjiStudy", identifier: String(describing: KanjiStudyViewController.self), modalPresentationStyle: .fullScreen)
         }
     }
-    class func getViewController(subjectEnum: SubjectEnum) -> UIViewController {
+    class func getViewController(subjectEnum: CatalogueEnum) -> UIViewController {
         switch subjectEnum {
         case .vocabulary:
             return getViewController(viewControllerEnum: .vocabulary)

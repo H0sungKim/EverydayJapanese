@@ -18,7 +18,6 @@ class VocabularyForCell {
     var isVisibleSound: Bool = false
     var isVisibleMeaning: Bool = false
     var isBookmark: Bool = false
-    var isVisibleAll: Bool = false
     
     init(vocabulary: Vocabulary) {
         self.vocabulary = vocabulary

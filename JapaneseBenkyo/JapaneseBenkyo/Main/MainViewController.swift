@@ -10,7 +10,7 @@
 
 import UIKit
 
-enum SubjectEnum: String, CaseIterable {
+enum CatalogueEnum: String, CaseIterable {
     case vocabulary = "일본어 단어장"
     case kanji = "일본어 한자"
 }
@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let titles: [SubjectEnum] = SubjectEnum.allCases
+    private let catalogues: [CatalogueEnum] = CatalogueEnum.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return catalogues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,12 +50,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             cell = objectArray![0] as! CustomTableViewCell
         }
 
-        cell.lbTitle.text = titles[indexPath.row].rawValue
+        cell.lbTitle.text = catalogues[indexPath.row].rawValue
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UIViewController.getViewController(subjectEnum: titles[indexPath.row])
+        let vc = UIViewController.getViewController(subjectEnum: catalogues[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
