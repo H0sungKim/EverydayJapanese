@@ -27,6 +27,20 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
         vocabulariesForCell.shuffle()
     }
     
+    func setVisibleAll() {
+        for i in vocabulariesForCell {
+            i.isVisibleSound = true
+            i.isVisibleMeaning = true
+        }
+    }
+    
+    func setInvisibleAll() {
+        for i in vocabulariesForCell {
+            i.isVisibleSound = false
+            i.isVisibleMeaning = false
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vocabulariesForCell.count
     }

@@ -14,6 +14,8 @@ class VocabularyStudyViewController: UIViewController {
     
     private var vocabularyTableDataSource: VocabularyTableDataSource?
     
+    private var isVisibleAll: Bool = false
+    
     @IBOutlet weak var lbDifficulty: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,8 +33,23 @@ class VocabularyStudyViewController: UIViewController {
 
     }
     
+    @IBAction func onClickVisibleAll(_ sender: UIButton) {
+        if isVisibleAll {
+            vocabularyTableDataSource?.setInvisibleAll()
+        } else {
+            vocabularyTableDataSource?.setVisibleAll()
+        }
+        isVisibleAll = !isVisibleAll
+        tableView.reloadData()
+    }
+    
     @IBAction func onClickShuffle(_ sender: Any) {
         vocabularyTableDataSource?.shuffleVocabularies()
         tableView.reloadData()
+    }
+    
+    @IBAction func onClickTest(_ sender: Any) {
+        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

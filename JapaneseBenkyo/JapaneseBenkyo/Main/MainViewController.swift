@@ -55,7 +55,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UIViewController.getViewController(subjectEnum: catalogues[indexPath.row])
+        let vc = UIViewController.getViewController(catalogueEnum: catalogues[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -40,6 +40,9 @@
                                 <rect key="frame" x="227.33333333333334" y="89.666666666666671" width="57.666666666666657" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickVisibleAll:" destination="Plg-Na-MTU" eventType="touchUpInside" id="cZa-sK-hQ3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKr-vv-0CS">
                                 <rect key="frame" x="285" y="89.666666666666671" width="108" height="35"/>
@@ -53,6 +56,9 @@
                                 <rect key="frame" x="313" y="54.666666666666657" width="80" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="pencil.and.list.clipboard" catalog="system" title="Test"/>
+                                <connections>
+                                    <action selector="onClickTest:" destination="Plg-Na-MTU" eventType="touchUpInside" id="gah-8r-sHZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pBz-xA-OEi"/>
