@@ -18,7 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwK-zb-5GK">
-                        <rect key="frame" x="493" y="0.0" width="52" height="34"/>
+                        <rect key="frame" x="493" y="9.5" width="52" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="52" id="an2-HF-p3r"/>
+                        </constraints>
                         <color key="tintColor" systemColor="labelColor"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
@@ -50,7 +53,7 @@
                                 <rect key="frame" x="0.0" y="87.5" width="493" height="98.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
-                                        <rect key="frame" x="209" y="31.5" width="75.5" height="36"/>
+                                        <rect key="frame" x="64" y="31.5" width="365" height="36"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="뜻 보기" titleAlignment="center">
@@ -63,6 +66,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="6pA-2S-yml" firstAttribute="centerY" secondItem="FeP-4m-J9p" secondAttribute="centerY" id="aQl-ha-R3s"/>
+                                    <constraint firstItem="6pA-2S-yml" firstAttribute="leading" secondItem="FeP-4m-J9p" secondAttribute="leading" constant="64" id="hRa-Fb-DFR"/>
+                                    <constraint firstAttribute="trailing" secondItem="6pA-2S-yml" secondAttribute="trailing" constant="64" id="oYZ-8h-OZg"/>
                                     <constraint firstItem="6pA-2S-yml" firstAttribute="centerX" secondItem="FeP-4m-J9p" secondAttribute="centerX" id="wmy-j9-34v"/>
                                 </constraints>
                             </view>
@@ -84,8 +89,8 @@
                     <constraint firstItem="wZV-am-fW4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HOb-6P-lOA"/>
                     <constraint firstItem="wZV-am-fW4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KGk-L3-u5C"/>
                     <constraint firstAttribute="bottom" secondItem="wZV-am-fW4" secondAttribute="bottom" id="Oe2-mR-BV3"/>
+                    <constraint firstItem="uwK-zb-5GK" firstAttribute="centerY" secondItem="cYs-hn-ffu" secondAttribute="centerY" id="Qrh-YM-Ykg"/>
                     <constraint firstAttribute="trailing" secondItem="uwK-zb-5GK" secondAttribute="trailing" id="dm9-ty-EkI"/>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wJk-cn-jEm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

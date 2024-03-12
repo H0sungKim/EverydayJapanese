@@ -33,6 +33,10 @@ class VocabularyStudyViewController: UIViewController {
 
     }
     
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func onClickVisibleAll(_ sender: UIButton) {
         if isVisibleAll {
             vocabularyTableDataSource?.setInvisibleAll()

@@ -10,12 +10,12 @@ import UIKit
 class VocabularyViewController: UIViewController {
     
     private enum LevelEnum: String, CaseIterable {
-        case vocabularyBookmark = "일본어 단어장 즐겨찾기"
-        case vocabulary0 = "일본어 단어장 JLPT N5"
-        case vocabulary1 = "일본어 단어장 JLPT N4"
-        case vocabulary2 = "일본어 단어장 JLPT N3"
-        case vocabulary3 = "일본어 단어장 JLPT N2"
-        case vocabulary4 = "일본어 단어장 JLPT N1"
+        case vocabularyBookmark = "★ 즐겨찾기"
+        case vocabulary0 = "JLPT N5"
+        case vocabulary1 = "JLPT N4"
+        case vocabulary2 = "JLPT N3"
+        case vocabulary3 = "JLPT N2"
+        case vocabulary4 = "JLPT N1"
     }
     
     private let catalogues: [LevelEnum] = LevelEnum.allCases
@@ -30,7 +30,10 @@ class VocabularyViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
     }
-
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {

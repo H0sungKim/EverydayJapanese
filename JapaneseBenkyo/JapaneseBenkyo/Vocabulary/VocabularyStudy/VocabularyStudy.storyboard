@@ -20,72 +20,93 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本語の単語帳 일본어단어장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOh-Kc-v4t">
-                                <rect key="frame" x="16" y="58.999999999999993" width="279" height="28.666666666666664"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Hosung.Kim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb3-g5-M4H">
-                                <rect key="frame" x="16.000000000000007" y="87.666666666666671" width="115.66666666666669" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgp-bH-0xQ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-59-I5J">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GYP-Pu-kfE"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickBack:" destination="Plg-Na-MTU" eventType="touchUpInside" id="rjw-qI-d08"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dE-AZ-cKZ">
+                                        <rect key="frame" x="40" y="10.666666666666673" width="56.666666666666657" height="28.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAL-hD-Scj">
+                                        <rect key="frame" x="287.66666666666669" y="7.6666666666666714" width="57.666666666666686" height="35"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickVisibleAll:" destination="Plg-Na-MTU" eventType="touchUpInside" id="cZa-sK-hQ3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKr-vv-0CS">
+                                        <rect key="frame" x="233.99999999999997" y="7.6666666666666714" width="53.666666666666657" height="35"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="shuffle" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickShuffle:" destination="Plg-Na-MTU" eventType="touchUpInside" id="3xB-Qv-tir"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-aD-Gw9">
+                                        <rect key="frame" x="345.33333333333331" y="7.6666666666666714" width="47.666666666666686" height="35"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="pencil.and.list.clipboard" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickTest:" destination="Plg-Na-MTU" eventType="touchUpInside" id="gah-8r-sHZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="4dE-AZ-cKZ" firstAttribute="centerY" secondItem="cgp-bH-0xQ" secondAttribute="centerY" id="0hy-IA-8S7"/>
+                                    <constraint firstItem="kAL-hD-Scj" firstAttribute="leading" secondItem="OKr-vv-0CS" secondAttribute="trailing" id="0yp-j6-W1b"/>
+                                    <constraint firstItem="gi9-aD-Gw9" firstAttribute="leading" secondItem="kAL-hD-Scj" secondAttribute="trailing" id="4cd-bY-1n7"/>
+                                    <constraint firstItem="7f2-59-I5J" firstAttribute="leading" secondItem="cgp-bH-0xQ" secondAttribute="leading" id="61G-q9-NU5"/>
+                                    <constraint firstAttribute="trailing" secondItem="gi9-aD-Gw9" secondAttribute="trailing" id="6DT-85-gRL"/>
+                                    <constraint firstItem="4dE-AZ-cKZ" firstAttribute="leading" secondItem="7f2-59-I5J" secondAttribute="trailing" id="Abs-EJ-6xf"/>
+                                    <constraint firstItem="kAL-hD-Scj" firstAttribute="centerY" secondItem="cgp-bH-0xQ" secondAttribute="centerY" id="I2k-js-61e"/>
+                                    <constraint firstItem="7f2-59-I5J" firstAttribute="centerY" secondItem="cgp-bH-0xQ" secondAttribute="centerY" id="PKX-hQ-jWd"/>
+                                    <constraint firstItem="OKr-vv-0CS" firstAttribute="centerY" secondItem="cgp-bH-0xQ" secondAttribute="centerY" id="c0R-sh-biU"/>
+                                    <constraint firstItem="gi9-aD-Gw9" firstAttribute="centerY" secondItem="cgp-bH-0xQ" secondAttribute="centerY" id="hop-bz-b9D"/>
+                                    <constraint firstAttribute="height" secondItem="7f2-59-I5J" secondAttribute="height" id="sjg-MR-iXp"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eZB-6V-72t">
-                                <rect key="frame" x="0.0" y="124.66666666666669" width="393" height="693.33333333333326"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAL-hD-Scj">
-                                <rect key="frame" x="227.33333333333334" y="89.666666666666671" width="57.666666666666657" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
-                                <connections>
-                                    <action selector="onClickVisibleAll:" destination="Plg-Na-MTU" eventType="touchUpInside" id="cZa-sK-hQ3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKr-vv-0CS">
-                                <rect key="frame" x="285" y="89.666666666666671" width="108" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="shuffle" catalog="system" title="Shuffle"/>
-                                <connections>
-                                    <action selector="onClickShuffle:" destination="Plg-Na-MTU" eventType="touchUpInside" id="3xB-Qv-tir"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-aD-Gw9">
-                                <rect key="frame" x="313" y="54.666666666666657" width="80" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil.and.list.clipboard" catalog="system" title="Test"/>
-                                <connections>
-                                    <action selector="onClickTest:" destination="Plg-Na-MTU" eventType="touchUpInside" id="gah-8r-sHZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pBz-xA-OEi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="OKr-vv-0CS" secondAttribute="trailing" id="1wv-Fw-F2R"/>
                             <constraint firstItem="DR2-Yk-3OP" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" id="3FI-AK-Yox"/>
-                            <constraint firstItem="OKr-vv-0CS" firstAttribute="leading" secondItem="kAL-hD-Scj" secondAttribute="trailing" id="72u-s1-4uN"/>
-                            <constraint firstItem="vOh-Kc-v4t" firstAttribute="top" secondItem="pBz-xA-OEi" secondAttribute="top" id="9jc-az-2e7"/>
+                            <constraint firstItem="cgp-bH-0xQ" firstAttribute="top" secondItem="pBz-xA-OEi" secondAttribute="top" id="5Mf-wG-eVf"/>
+                            <constraint firstItem="cgp-bH-0xQ" firstAttribute="trailing" secondItem="pBz-xA-OEi" secondAttribute="trailing" id="AdQ-2c-AkR"/>
                             <constraint firstItem="eZB-6V-72t" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" id="LMU-LX-UjB"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="DR2-Yk-3OP" secondAttribute="trailing" id="Osr-Ev-jUO"/>
-                            <constraint firstItem="Rb3-g5-M4H" firstAttribute="top" secondItem="vOh-Kc-v4t" secondAttribute="bottom" id="Qir-vY-LsL"/>
-                            <constraint firstItem="Rb3-g5-M4H" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" constant="16" id="U0U-fy-sAl"/>
+                            <constraint firstItem="eZB-6V-72t" firstAttribute="top" secondItem="cgp-bH-0xQ" secondAttribute="bottom" id="PZ6-8R-ngh"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="eZB-6V-72t" secondAttribute="trailing" id="VtQ-36-JXV"/>
-                            <constraint firstItem="eZB-6V-72t" firstAttribute="top" secondItem="kAL-hD-Scj" secondAttribute="bottom" id="Y8G-jC-9Lm"/>
-                            <constraint firstItem="vOh-Kc-v4t" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" constant="16" id="aTh-Du-rpg"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="bottom" secondItem="DR2-Yk-3OP" secondAttribute="bottom" id="aoX-Uj-CSk"/>
                             <constraint firstItem="DR2-Yk-3OP" firstAttribute="top" secondItem="ioZ-eC-BvL" secondAttribute="top" id="bnx-FV-0L1"/>
-                            <constraint firstItem="eZB-6V-72t" firstAttribute="top" secondItem="Rb3-g5-M4H" secondAttribute="bottom" constant="16" id="dAK-4h-4mT"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="bottom" secondItem="eZB-6V-72t" secondAttribute="bottom" id="giT-Lt-gKb"/>
-                            <constraint firstItem="eZB-6V-72t" firstAttribute="top" secondItem="OKr-vv-0CS" secondAttribute="bottom" id="ntf-hx-Nqc"/>
-                            <constraint firstItem="OKr-vv-0CS" firstAttribute="top" secondItem="gi9-aD-Gw9" secondAttribute="bottom" id="rug-wt-IRr"/>
-                            <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="gi9-aD-Gw9" secondAttribute="trailing" id="ugE-i7-FPS"/>
+                            <constraint firstItem="cgp-bH-0xQ" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" id="oiN-uQ-RuN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbLevel" destination="Rb3-g5-M4H" id="JTa-OL-jRw"/>
+                        <outlet property="lbLevel" destination="4dE-AZ-cKZ" id="cup-cR-eEw"/>
                         <outlet property="tableView" destination="eZB-6V-72t" id="bx3-kb-k3c"/>
                     </connections>
                 </viewController>
@@ -95,9 +116,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="pencil.and.list.clipboard" catalog="system" width="114" height="128"/>
         <image name="shuffle" catalog="system" width="128" height="95"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

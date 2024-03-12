@@ -31,6 +31,9 @@ class VocabularyDayViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
     }
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
 }
 

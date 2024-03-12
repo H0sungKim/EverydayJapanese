@@ -20,38 +20,56 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일본어 단어장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qui-ne-s58">
-                                <rect key="frame" x="16" y="58.999999999999993" width="130" height="28.666666666666664"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本語の勉強 일본어 공부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90X-tA-8Cc">
-                                <rect key="frame" x="16" y="87.666666666666671" width="173.33333333333334" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lax-AZ-2Hu">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p93-mW-wI2">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="oGV-nf-20M"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickBack:" destination="dFt-wZ-lbf" eventType="touchUpInside" id="yTj-f9-8dx"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일본어 단어장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNP-Yk-qNT">
+                                        <rect key="frame" x="40" y="10.666666666666673" width="130" height="28.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="cNP-Yk-qNT" firstAttribute="leading" secondItem="p93-mW-wI2" secondAttribute="trailing" id="0Zs-lL-Gny"/>
+                                    <constraint firstItem="cNP-Yk-qNT" firstAttribute="centerY" secondItem="lax-AZ-2Hu" secondAttribute="centerY" id="DOU-hu-c9z"/>
+                                    <constraint firstItem="p93-mW-wI2" firstAttribute="centerY" secondItem="lax-AZ-2Hu" secondAttribute="centerY" id="McZ-x3-ekM"/>
+                                    <constraint firstItem="p93-mW-wI2" firstAttribute="leading" secondItem="lax-AZ-2Hu" secondAttribute="leading" id="pnK-OB-JLL"/>
+                                    <constraint firstAttribute="height" secondItem="p93-mW-wI2" secondAttribute="height" id="zKf-oM-c6S"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QXb-8m-e2G">
-                                <rect key="frame" x="0.0" y="124.66666666666669" width="393" height="693.33333333333326"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nah-1o-5rN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lax-AZ-2Hu" firstAttribute="top" secondItem="Nah-1o-5rN" secondAttribute="top" id="2NS-KL-gRV"/>
                             <constraint firstItem="qd3-8b-o3a" firstAttribute="top" secondItem="qO2-9l-y82" secondAttribute="top" id="7M2-HQ-rkD"/>
                             <constraint firstItem="Nah-1o-5rN" firstAttribute="trailing" secondItem="QXb-8m-e2G" secondAttribute="trailing" id="Kjy-oW-unc"/>
-                            <constraint firstItem="90X-tA-8Cc" firstAttribute="leading" secondItem="Nah-1o-5rN" secondAttribute="leading" constant="16" id="OZg-3b-j4W"/>
+                            <constraint firstAttribute="trailing" secondItem="lax-AZ-2Hu" secondAttribute="trailing" id="P91-qE-l04"/>
+                            <constraint firstItem="QXb-8m-e2G" firstAttribute="top" secondItem="lax-AZ-2Hu" secondAttribute="bottom" id="Q8d-Pm-w3B"/>
+                            <constraint firstItem="lax-AZ-2Hu" firstAttribute="leading" secondItem="qO2-9l-y82" secondAttribute="leading" id="bId-WY-zDa"/>
                             <constraint firstItem="QXb-8m-e2G" firstAttribute="leading" secondItem="Nah-1o-5rN" secondAttribute="leading" id="fte-VA-2BU"/>
                             <constraint firstItem="Nah-1o-5rN" firstAttribute="trailing" secondItem="qd3-8b-o3a" secondAttribute="trailing" id="hkp-uM-IlW"/>
-                            <constraint firstItem="90X-tA-8Cc" firstAttribute="top" secondItem="qui-ne-s58" secondAttribute="bottom" id="irT-3n-aGC"/>
                             <constraint firstItem="Nah-1o-5rN" firstAttribute="bottom" secondItem="qd3-8b-o3a" secondAttribute="bottom" id="kGs-AX-1Wu"/>
                             <constraint firstItem="qd3-8b-o3a" firstAttribute="leading" secondItem="Nah-1o-5rN" secondAttribute="leading" id="krm-FG-iTk"/>
-                            <constraint firstItem="QXb-8m-e2G" firstAttribute="top" secondItem="90X-tA-8Cc" secondAttribute="bottom" constant="16" id="lrQ-Pe-RnI"/>
                             <constraint firstItem="Nah-1o-5rN" firstAttribute="bottom" secondItem="QXb-8m-e2G" secondAttribute="bottom" id="mot-PF-rrW"/>
-                            <constraint firstItem="qui-ne-s58" firstAttribute="top" secondItem="Nah-1o-5rN" secondAttribute="top" id="wZ3-Lg-HoE"/>
-                            <constraint firstItem="qui-ne-s58" firstAttribute="leading" secondItem="Nah-1o-5rN" secondAttribute="leading" constant="16" id="yLy-Qk-VSH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -64,11 +82,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

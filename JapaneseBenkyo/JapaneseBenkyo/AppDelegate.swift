@@ -8,7 +8,7 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
 
     var window: UIWindow?
 
@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
             let navigationController =  UINavigationController.init(rootViewController:viewController)
+            navigationController.setNavigationBarHidden(true, animated: false)
+            navigationController.interactivePopGestureRecognizer?.isEnabled = true
+            navigationController.interactivePopGestureRecognizer?.delegate = self
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }

@@ -24,10 +24,15 @@ class VocabularyTestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        vocabularies.shuffle()
         lbLevel.text = level
         updateVocabulary()
-        
     }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func onClickVocabulary(_ sender: Any) {
         isVocabularyVisible = !isVocabularyVisible
         updateVocabulary()
