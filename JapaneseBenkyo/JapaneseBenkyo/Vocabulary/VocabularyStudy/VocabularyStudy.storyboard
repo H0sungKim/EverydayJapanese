@@ -85,7 +85,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbDifficulty" destination="Rb3-g5-M4H" id="JTa-OL-jRw"/>
+                        <outlet property="lbLevel" destination="Rb3-g5-M4H" id="JTa-OL-jRw"/>
                         <outlet property="tableView" destination="eZB-6V-72t" id="bx3-kb-k3c"/>
                     </connections>
                 </viewController>

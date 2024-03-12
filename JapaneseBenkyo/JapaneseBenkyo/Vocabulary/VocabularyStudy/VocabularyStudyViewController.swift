@@ -16,13 +16,13 @@ class VocabularyStudyViewController: UIViewController {
     
     private var isVisibleAll: Bool = false
     
-    @IBOutlet weak var lbDifficulty: UILabel!
+    @IBOutlet weak var lbLevel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbDifficulty.text = level
+        lbLevel.text = level
         
         vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
         
@@ -49,7 +49,9 @@ class VocabularyStudyViewController: UIViewController {
     }
     
     @IBAction func onClickTest(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest)
+        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest) as! VocabularyTestViewController
+        vc.vocabularies = vocabulariesForCell.map { $0.vocabulary }
+        vc.level = "\(level) 테스트"
         navigationController?.pushViewController(vc, animated: true)
     }
 }

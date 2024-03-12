@@ -165,9 +165,8 @@
 				9658D1FC2B9EABEA001A6A7E /* VocabularyTableDataSource.swift */,
 				96269D7C2B9AA9E30063AF33 /* VocabularyDay */,
 				969493532B7DE6600064312F /* VocabularyStudy */,
+				96BA5AA62BA019C400E3373C /* VocabularyTest */,
 				969493542B7DE6700064312F /* VocabularyTableViewCell */,
-				9658D2002B9EC497001A6A7E /* VocabularyTestViewController.swift */,
-				9658D1FE2B9EC488001A6A7E /* VocabularyTest.storyboard */,
 			);
 			path = Vocabulary;
 			sourceTree = "<group>";
@@ -340,6 +339,15 @@
 				96AD6B742B79FDDF00F895DE /* KanjiStudy.storyboard */,
 			);
 			path = KanjiStudy;
+			sourceTree = "<group>";
+		};
+		96BA5AA62BA019C400E3373C /* VocabularyTest */ = {
+			isa = PBXGroup;
+			children = (
+				9658D2002B9EC497001A6A7E /* VocabularyTestViewController.swift */,
+				9658D1FE2B9EC488001A6A7E /* VocabularyTest.storyboard */,
+			);
+			path = VocabularyTest;
 			sourceTree = "<group>";
 		};
 		96D9A84A2B7CDA0E0042E2DA /* KanjiTableViewCell */ = {

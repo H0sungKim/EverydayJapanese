@@ -46,22 +46,33 @@
                                     <action selector="onClickSound:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="o0f-gU-8Tf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
-                                <rect key="frame" x="209" y="150" width="75.5" height="36"/>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="뜻 보기" titleAlignment="center">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onClickMeaning:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8cq-df-7x8"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-4m-J9p">
+                                <rect key="frame" x="0.0" y="87.5" width="493" height="98.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
+                                        <rect key="frame" x="209" y="31.5" width="75.5" height="36"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="뜻 보기" titleAlignment="center">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onClickMeaning:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8cq-df-7x8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6pA-2S-yml" firstAttribute="centerY" secondItem="FeP-4m-J9p" secondAttribute="centerY" id="aQl-ha-R3s"/>
+                                    <constraint firstItem="6pA-2S-yml" firstAttribute="centerX" secondItem="FeP-4m-J9p" secondAttribute="centerX" id="wmy-j9-34v"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6pA-2S-yml" firstAttribute="centerX" secondItem="wZV-am-fW4" secondAttribute="centerX" id="5rS-F4-jVI"/>
-                            <constraint firstAttribute="bottom" secondItem="6pA-2S-yml" secondAttribute="bottom" id="ENR-PK-2bK"/>
+                            <constraint firstItem="FeP-4m-J9p" firstAttribute="top" secondItem="frs-Pt-6a3" secondAttribute="bottom" id="EwR-NV-6GU"/>
                             <constraint firstItem="frs-Pt-6a3" firstAttribute="centerX" secondItem="wZV-am-fW4" secondAttribute="centerX" id="F96-qH-Iem"/>
+                            <constraint firstAttribute="trailing" secondItem="FeP-4m-J9p" secondAttribute="trailing" id="FHw-FQ-ge5"/>
+                            <constraint firstItem="FeP-4m-J9p" firstAttribute="leading" secondItem="wZV-am-fW4" secondAttribute="leading" id="HSm-LW-j3M"/>
+                            <constraint firstAttribute="bottom" secondItem="FeP-4m-J9p" secondAttribute="bottom" id="WYK-vt-ekK"/>
                             <constraint firstItem="cYs-hn-ffu" firstAttribute="top" secondItem="wZV-am-fW4" secondAttribute="top" id="YRq-m3-jfQ"/>
                             <constraint firstItem="frs-Pt-6a3" firstAttribute="top" secondItem="cYs-hn-ffu" secondAttribute="bottom" id="x0g-ss-F6s"/>
                             <constraint firstItem="cYs-hn-ffu" firstAttribute="centerX" secondItem="wZV-am-fW4" secondAttribute="centerX" id="zhw-M7-Lus"/>
