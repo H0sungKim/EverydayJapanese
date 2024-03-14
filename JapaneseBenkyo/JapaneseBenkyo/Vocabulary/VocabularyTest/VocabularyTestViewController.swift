@@ -25,7 +25,7 @@ class VocabularyTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vocabularies.shuffle()
-        lbLevel.text = level
+        lbLevel.text = "\(level) 테스트"
         updateVocabulary()
     }
     
@@ -60,7 +60,12 @@ class VocabularyTestViewController: UIViewController {
     private func moveOnToNextVocabulary() {
         index += 1
         if index == vocabularies.count {
-            // 결과창 띄우기
+            let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytestresult) as! VocabularyTestResultViewController
+            vc.level = level
+            vc.vocaCount = vocabularies.count
+            vc.wrongVocaCount = wrongVocabularies.count
+            vc.vocabulariesForCell = wrongVocabularies.map { VocabularyForCell(vocabulary: $0) }
+            navigationController?.replaceViewController(viewController: vc, animated: true)
         } else {
             isVocabularyVisible = false
             updateVocabulary()

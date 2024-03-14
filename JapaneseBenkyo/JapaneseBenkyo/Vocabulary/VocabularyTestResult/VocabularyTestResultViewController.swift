@@ -9,10 +9,52 @@ import UIKit
 
 class VocabularyTestResultViewController: UIViewController {
 
+    var vocabulariesForCell: [VocabularyForCell] = []
+    var level: String = ""
+    var vocaCount: Int?
+    var wrongVocaCount: Int?
+    
+    private var vocabularyTableDataSource: VocabularyTableDataSource?
+    
+    @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var btnBookmark: UIButton!
+    @IBOutlet weak var lbScore: UILabel!
+    @IBOutlet weak var lbSubScore: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
+        
+        tableView.delegate = vocabularyTableDataSource
+        tableView.dataSource = vocabularyTableDataSource
+        tableView.rowHeight = 150
+        tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
+        
+        lbLevel.text = "\(level) 테스트 결과"
+        lbScore.text = "\(Int((vocaCount! - wrongVocaCount!) * 100 / vocaCount!))점"
+        lbSubScore.text = "\(vocaCount! - wrongVocaCount!)/\(vocaCount!)"
     }
-    
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func onClickBookmark(_ sender: UIButton) {
+        sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        vocabularyTableDataSource?.addBookmarkAll()
+        sender.isEnabled = false
+        tableView.reloadData()
+    }
+    @IBAction func onClickReTest(_ sender: UIButton) {
+        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest) as! VocabularyTestViewController
+        vc.vocabularies = vocabulariesForCell.map { $0.vocabulary }
+        vc.level = level
+        if vc.vocabularies.count > 0 {
+            navigationController?.replaceViewController(viewController: vc, animated: true)
+        } else {
+            sender.isEnabled = false
+        }
+    }
+    @IBAction func onClickFinishTest(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }

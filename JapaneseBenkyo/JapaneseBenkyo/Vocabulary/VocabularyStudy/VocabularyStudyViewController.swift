@@ -25,12 +25,18 @@ class VocabularyStudyViewController: UIViewController {
         lbLevel.text = level
         
         vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
-        
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
+        
         tableView.rowHeight = 150
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
+        tableView.delegate = vocabularyTableDataSource
+        tableView.dataSource = vocabularyTableDataSource
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -52,10 +58,14 @@ class VocabularyStudyViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func onClickTest(_ sender: Any) {
+    @IBAction func onClickTest(_ sender: UIButton) {
         let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest) as! VocabularyTestViewController
         vc.vocabularies = vocabulariesForCell.map { $0.vocabulary }
-        vc.level = "\(level) 테스트"
-        navigationController?.pushViewController(vc, animated: true)
+        vc.level = level
+        if vc.vocabularies.count > 0 {
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            sender.isEnabled = false
+        }
     }
 }

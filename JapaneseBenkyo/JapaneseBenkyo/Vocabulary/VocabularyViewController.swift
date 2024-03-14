@@ -50,7 +50,7 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
             let objectArray = Bundle.main.loadNibNamed(String(describing: CustomTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! CustomTableViewCell
         }
-
+//        cell.ivIcon.image = UIImage(named: "hiragana.png")
         cell.lbTitle.text = catalogues[indexPath.row].rawValue
         return cell
     }
@@ -69,7 +69,7 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
         case .vocabulary0, .vocabulary1, .vocabulary2, .vocabulary3, .vocabulary4 :
             let vc = UIViewController.getViewController(viewControllerEnum: .vocabularyday) as! VocabularyDayViewController
             vc.level = catalogues[indexPath.row].rawValue
-            if let jsonData = JSONManager.shared.openJSON(path: "JLPT\(6-indexPath.row)") {
+            if let jsonData = JSONManager.shared.openJSON(path: "n\(6-indexPath.row)") {
                 vc.vocabularies = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
             }
             navigationController?.pushViewController(vc, animated: true)

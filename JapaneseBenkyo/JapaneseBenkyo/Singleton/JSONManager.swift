@@ -5,6 +5,20 @@
 //  Created by 김호성 on 2/13/24.
 //
 
+// Process=======================
+//{
+//    "JLPT N5": {
+//        "Day1": true,
+//        "Day2": true
+//    },
+//    "JLPT N4": {
+//        "Day1": true,
+//        "Day2": true
+//    }
+//}
+
+
+
 import Foundation
 
 class JSONManager: NSObject {

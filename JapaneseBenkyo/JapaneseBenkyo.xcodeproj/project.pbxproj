@@ -56,6 +56,13 @@
 		96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5ABA2BA0A14F00E3373C /* appicon.png */; };
 		96BA5ABE2BA0A65800E3373C /* VocabularyTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5ABD2BA0A65800E3373C /* VocabularyTestResultViewController.swift */; };
 		96BA5AC02BA0A66B00E3373C /* VocabularyTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5ABF2BA0A66B00E3373C /* VocabularyTestResult.storyboard */; };
+		96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */; };
+		96BA5B042BA2CF3700E3373C /* n3.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5AFF2BA2CF3700E3373C /* n3.json */; };
+		96BA5B052BA2CF3700E3373C /* n4.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B002BA2CF3700E3373C /* n4.json */; };
+		96BA5B062BA2CF3700E3373C /* n1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B012BA2CF3700E3373C /* n1.json */; };
+		96BA5B072BA2CF3700E3373C /* n5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B022BA2CF3700E3373C /* n5.json */; };
+		96BA5B082BA2CF3700E3373C /* n2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B032BA2CF3700E3373C /* n2.json */; };
+		96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B092BA2CFBA00E3373C /* launchscreen.png */; };
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
 		96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */; };
@@ -132,6 +139,13 @@
 		96BA5ABA2BA0A14F00E3373C /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		96BA5ABD2BA0A65800E3373C /* VocabularyTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyTestResultViewController.swift; sourceTree = "<group>"; };
 		96BA5ABF2BA0A66B00E3373C /* VocabularyTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyTestResult.storyboard; sourceTree = "<group>"; };
+		96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		96BA5AFF2BA2CF3700E3373C /* n3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n3.json; sourceTree = "<group>"; };
+		96BA5B002BA2CF3700E3373C /* n4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n4.json; sourceTree = "<group>"; };
+		96BA5B012BA2CF3700E3373C /* n1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n1.json; sourceTree = "<group>"; };
+		96BA5B022BA2CF3700E3373C /* n5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n5.json; sourceTree = "<group>"; };
+		96BA5B032BA2CF3700E3373C /* n2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n2.json; sourceTree = "<group>"; };
+		96BA5B092BA2CFBA00E3373C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
@@ -285,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */,
+				96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -319,11 +334,17 @@
 				960C6B7F2B7B49FB00D91407 /* kanji5.json */,
 				960C6B812B7B49FB00D91407 /* kanji6.json */,
 				960C6B7B2B7B49FB00D91407 /* kanji7.json */,
+				96BA5B012BA2CF3700E3373C /* n1.json */,
+				96BA5B032BA2CF3700E3373C /* n2.json */,
+				96BA5AFF2BA2CF3700E3373C /* n3.json */,
+				96BA5B002BA2CF3700E3373C /* n4.json */,
+				96BA5B022BA2CF3700E3373C /* n5.json */,
 				962F1BD42B79DCF20051C4DA /* JLPT1.json */,
 				962F1BCE2B79DCF20051C4DA /* JLPT2.json */,
 				962F1BD32B79DCF20051C4DA /* JLPT3.json */,
 				962F1BD22B79DCF20051C4DA /* JLPT4.json */,
 				962F1BCF2B79DCF20051C4DA /* JLPT5.json */,
+				96BA5B092BA2CFBA00E3373C /* launchscreen.png */,
 				960C6B532B7B36D000D91407 /* study_gogaku_man6_japanese.png */,
 				960C6B522B7B36D000D91407 /* study_nihongo.png */,
 				964AA5EE2B79E612007DE504 /* study_gogaku_woman6_japanese.png */,
@@ -484,28 +505,34 @@
 				960C6B822B7B49FB00D91407 /* kanji7.json in Resources */,
 				969493582B7DE7310064312F /* VocabularyStudy.storyboard in Resources */,
 				960C6B872B7B49FB00D91407 /* kanji4.json in Resources */,
+				96BA5B082BA2CF3700E3373C /* n2.json in Resources */,
 				960C6B832B7B49FB00D91407 /* kanji2.json in Resources */,
 				96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */,
 				96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */,
 				960C6B882B7B49FB00D91407 /* kanji6.json in Resources */,
 				962F1BDF2B79DCF20051C4DA /* JLPT3.json in Resources */,
 				960C6B512B7B369E00D91407 /* Kanji.storyboard in Resources */,
+				96BA5B072BA2CF3700E3373C /* n5.json in Resources */,
 				962F1BE02B79DCF20051C4DA /* JLPT1.json in Resources */,
 				962F1BDB2B79DCF20051C4DA /* JLPT5.json in Resources */,
+				96BA5B062BA2CF3700E3373C /* n1.json in Resources */,
 				962F1BE32B79DFB60051C4DA /* Main.storyboard in Resources */,
 				96AD6B752B79FDDF00F895DE /* KanjiStudy.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
 				962F1BDA2B79DCF20051C4DA /* JLPT2.json in Resources */,
+				96BA5B052BA2CF3700E3373C /* n4.json in Resources */,
 				96BA5AC02BA0A66B00E3373C /* VocabularyTestResult.storyboard in Resources */,
 				9658D1FF2B9EC488001A6A7E /* VocabularyTest.storyboard in Resources */,
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
 				960C6B852B7B49FB00D91407 /* kanji3.json in Resources */,
 				96269D982B9AD7860063AF33 /* KanjiDay.storyboard in Resources */,
+				96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */,
 				964AA5EF2B79E612007DE504 /* study_gogaku_woman6_japanese.png in Resources */,
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
 				962F1BDE2B79DCF20051C4DA /* JLPT4.json in Resources */,
 				960C6B842B7B49FB00D91407 /* kanji1.json in Resources */,
+				96BA5B042BA2CF3700E3373C /* n3.json in Resources */,
 				960C6B862B7B49FB00D91407 /* kanji5.json in Resources */,
 				964AA5F52B79E7D1007DE504 /* CustomTableViewCell.xib in Resources */,
 				960C6B4B2B7B35E400D91407 /* Vocabulary.storyboard in Resources */,
@@ -540,6 +567,7 @@
 				964AA5F62B79E7D1007DE504 /* CustomTableViewCell.swift in Sources */,
 				960C6B4D2B7B35F500D91407 /* VocabularyViewController.swift in Sources */,
 				962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */,
+				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
 				969493562B7DE7210064312F /* VocabularyStudyViewController.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,

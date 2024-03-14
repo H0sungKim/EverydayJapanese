@@ -41,6 +41,14 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
         }
     }
     
+    func addBookmarkAll() {
+        bookmark.formUnion(Set(vocabulariesForCell.map { $0.vocabulary }))
+        UserDefaultManager.shared.vocabularyBookmark = JSONManager.shared.encodeVocabularyJSON(vocabularies: bookmark)
+        for i in vocabulariesForCell {
+            i.isBookmark = true
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vocabulariesForCell.count
     }
