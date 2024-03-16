@@ -106,7 +106,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbLevel" destination="4dE-AZ-cKZ" id="cup-cR-eEw"/>
+                        <outlet property="lbTitle" destination="4dE-AZ-cKZ" id="cup-cR-eEw"/>
                         <outlet property="tableView" destination="eZB-6V-72t" id="bx3-kb-k3c"/>
                     </connections>
                 </viewController>

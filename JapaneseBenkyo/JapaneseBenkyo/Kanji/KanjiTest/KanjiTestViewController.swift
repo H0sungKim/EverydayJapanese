@@ -1,0 +1,84 @@
+//
+//  KanjiTestViewController.swift
+//  JapaneseBenkyo
+//
+//  Created by 김호성 on 3/16/24.
+//
+
+import UIKit
+
+class KanjiTestViewController: UIViewController {
+    var kanjis: [Kanji] = []
+    var level: String = ""
+    var day: String = ""
+    
+    private var wrongKanjis: [Kanji] = []
+    private var index: Int = 0
+    private var isKanjiVisible: Bool = false
+    
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbIndex: UILabel!
+    @IBOutlet weak var lbKanji: UILabel!
+    @IBOutlet weak var lbHanja: UILabel!
+    @IBOutlet weak var lbEumhun: UILabel!
+    @IBOutlet weak var lbJpSound: UILabel!
+    @IBOutlet weak var lbJpMeaning: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        kanjis.shuffle()
+        lbTitle.text = "\(level) \(day) 테스트"
+        lbEumhun.adjustsFontSizeToFitWidth = true
+        lbJpSound.adjustsFontSizeToFitWidth = true
+        lbJpMeaning.adjustsFontSizeToFitWidth = true
+        updateKanji()
+    }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickKanji(_ sender: Any) {
+        isKanjiVisible = !isKanjiVisible
+        updateKanji()
+    }
+    
+    @IBAction func onClickV(_ sender: Any) {
+        moveOnToNextKanji()
+    }
+    @IBAction func onClickX(_ sender: Any) {
+        wrongKanjis.append(kanjis[index])
+        moveOnToNextKanji()
+    }
+    
+    private func updateKanji() {
+        lbIndex.text = "\(index+1)/\(kanjis.count)"
+        lbKanji.text = kanjis[index].kanji
+        if isKanjiVisible {
+            lbHanja.text = kanjis[index].hanja
+            lbEumhun.text = kanjis[index].eumhun
+            lbJpSound.text = "音 ⇒ " + kanjis[index].jpSound
+            lbJpMeaning.text = "訓 ⇒ " + kanjis[index].jpMeaning
+        } else {
+            lbHanja.text = ""
+            lbEumhun.text = ""
+            lbJpSound.text = ""
+            lbJpMeaning.text = ""
+        }
+    }
+    private func moveOnToNextKanji() {
+        index += 1
+        if index == kanjis.count {
+            let vc = UIViewController.getViewController(viewControllerEnum: .kanjitestresult) as! KanjiTestResultViewController
+            vc.level = level
+            vc.day = day
+            vc.kanjiCount = kanjis.count
+            vc.wrongKanjiCount = wrongKanjis.count
+            vc.kanjisForCell = wrongKanjis.map { KanjiForCell(kanji: $0) }
+            navigationController?.replaceViewController(viewController: vc, animated: true)
+        } else {
+            isKanjiVisible = false
+            updateKanji()
+        }
+    }
+}

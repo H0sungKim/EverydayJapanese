@@ -16,7 +16,10 @@ enum ViewControllerEnum: String, CaseIterable {
     case vocabularytestresult
     
     case kanji
+    case kanjiday
     case kanjistudy
+    case kanjitest
+    case kanjitestresult
 }
 
 extension UIViewController {
@@ -34,10 +37,17 @@ extension UIViewController {
             return getViewController(storyboard: "VocabularyTest", identifier: String(describing: VocabularyTestViewController.self), modalPresentationStyle: .fullScreen)
         case .vocabularytestresult:
             return getViewController(storyboard: "VocabularyTestResult", identifier: String(describing: VocabularyTestResultViewController.self), modalPresentationStyle: .fullScreen)
+            
         case .kanji:
             return getViewController(storyboard: "Kanji", identifier: String(describing: KanjiViewController.self), modalPresentationStyle: .fullScreen)
+        case .kanjiday:
+            return getViewController(storyboard: "KanjiDay", identifier: String(describing: KanjiDayViewController.self), modalPresentationStyle: .fullScreen)
         case .kanjistudy:
             return getViewController(storyboard: "KanjiStudy", identifier: String(describing: KanjiStudyViewController.self), modalPresentationStyle: .fullScreen)
+        case .kanjitest:
+            return getViewController(storyboard: "KanjiTest", identifier: String(describing: KanjiTestViewController.self), modalPresentationStyle: .fullScreen)
+        case .kanjitestresult:
+            return getViewController(storyboard: "KanjiTestResult", identifier: String(describing: KanjiTestResultViewController.self), modalPresentationStyle: .fullScreen)
         }
     }
     class func getViewController(catalogueEnum: CatalogueEnum) -> UIViewController {

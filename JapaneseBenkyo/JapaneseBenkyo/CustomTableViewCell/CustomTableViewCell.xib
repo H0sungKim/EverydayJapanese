@@ -25,14 +25,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPQ-Ih-DI7">
-                        <rect key="frame" x="64" y="25.5" width="262" height="27"/>
+                        <rect key="frame" x="64" y="25.5" width="41" height="27"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piB-kd-nZL">
-                        <rect key="frame" x="64" y="56.5" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="109" y="39" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -49,14 +49,13 @@
                     <constraint firstItem="nem-qA-RuA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="55D-hp-x3Z"/>
                     <constraint firstItem="QPQ-Ih-DI7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Cei-Ym-EmK"/>
                     <constraint firstItem="nem-qA-RuA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HNn-k7-MZB"/>
-                    <constraint firstAttribute="trailing" secondItem="QPQ-Ih-DI7" secondAttribute="trailing" constant="16" id="Hb8-wV-zzc"/>
                     <constraint firstAttribute="bottom" secondItem="nem-qA-RuA" secondAttribute="bottom" id="QIO-TR-Jcc"/>
                     <constraint firstItem="zB5-UV-aFq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="XcE-ph-lLe"/>
                     <constraint firstItem="QPQ-Ih-DI7" firstAttribute="leading" secondItem="nem-qA-RuA" secondAttribute="trailing" constant="16" id="bUO-Ta-P7r"/>
                     <constraint firstAttribute="trailing" secondItem="zB5-UV-aFq" secondAttribute="trailing" constant="16" id="hC0-3c-97x"/>
-                    <constraint firstItem="piB-kd-nZL" firstAttribute="top" secondItem="QPQ-Ih-DI7" secondAttribute="bottom" constant="4" id="mEo-Gq-mmp"/>
+                    <constraint firstItem="piB-kd-nZL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kXM-e0-68E"/>
                     <constraint firstItem="nem-qA-RuA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="r8I-kw-0yQ"/>
-                    <constraint firstItem="piB-kd-nZL" firstAttribute="leading" secondItem="nem-qA-RuA" secondAttribute="trailing" constant="16" id="uvD-IC-tfn"/>
+                    <constraint firstItem="piB-kd-nZL" firstAttribute="leading" secondItem="QPQ-Ih-DI7" secondAttribute="trailing" constant="4" id="uvD-IC-tfn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

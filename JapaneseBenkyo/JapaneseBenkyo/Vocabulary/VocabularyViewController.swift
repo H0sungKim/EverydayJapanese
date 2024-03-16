@@ -35,9 +35,6 @@ class VocabularyViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
     }
-    @IBAction func onClickBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     override func viewDidAppear(_ animated: Bool) {
         if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
             process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
@@ -45,6 +42,9 @@ class VocabularyViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {

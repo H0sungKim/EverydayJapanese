@@ -21,6 +21,8 @@ class VocabularyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         btnMeaning.titleLabel?.textAlignment = .center
+        lbWord.adjustsFontSizeToFitWidth = true
+        btnSound.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func onClickSound(_ sender: UIButton) {

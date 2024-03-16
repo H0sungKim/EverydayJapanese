@@ -21,9 +21,8 @@ class VocabularyDayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let daySize = 20
-        vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: daySize).map {
-            Array(vocabularies[$0..<min($0 + daySize, vocabularies.count)])
+        vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: CommonConstant.shared.daySize).map {
+            Array(vocabularies[$0..<min($0 + CommonConstant.shared.daySize, vocabularies.count)])
         }
         lbTitle.text = level
         
@@ -50,7 +49,7 @@ class VocabularyDayViewController: UIViewController {
 
 extension VocabularyDayViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vocabulariesDayDistributed.count
+        return vocabulariesDayDistributed.count+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -5,9 +5,6 @@
 //  Created by 김호성 on 2/12/24.
 //
 
-// TODO
-// * test
-
 import UIKit
 
 enum CatalogueEnum: String, CaseIterable {

@@ -1,21 +1,21 @@
 //
-//  VocabularyTestResultViewController.swift
+//  KanjiTestResultViewController.swift
 //  JapaneseBenkyo
 //
-//  Created by 김호성 on 3/13/24.
+//  Created by 김호성 on 3/16/24.
 //
 
 import UIKit
 
-class VocabularyTestResultViewController: UIViewController {
+class KanjiTestResultViewController: UIViewController {
 
-    var vocabulariesForCell: [VocabularyForCell] = []
+    var kanjisForCell: [KanjiForCell] = []
     var level: String = ""
     var day: String = ""
-    var vocaCount: Int?
-    var wrongVocaCount: Int?
+    var kanjiCount: Int?
+    var wrongKanjiCount: Int?
     
-    private var vocabularyTableDataSource: VocabularyTableDataSource?
+    private var kanjiTableDataSource: KanjiTableDataSource?
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
@@ -25,18 +25,18 @@ class VocabularyTestResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
+        kanjiTableDataSource = KanjiTableDataSource(kanjisForCell: kanjisForCell)
         
-        tableView.delegate = vocabularyTableDataSource
-        tableView.dataSource = vocabularyTableDataSource
-        tableView.rowHeight = 150
-        tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
+        tableView.delegate = kanjiTableDataSource
+        tableView.dataSource = kanjiTableDataSource
+        tableView.rowHeight = 100
+        tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
         
         lbTitle.text = "\(level) \(day) 테스트 결과"
-        lbScore.text = "\(Int((vocaCount! - wrongVocaCount!) * 100 / vocaCount!))점"
-        lbSubScore.text = "\(vocaCount! - wrongVocaCount!)/\(vocaCount!)"
+        lbScore.text = "\(Int((kanjiCount! - wrongKanjiCount!) * 100 / kanjiCount!))점"
+        lbSubScore.text = "\(kanjiCount! - wrongKanjiCount!)/\(kanjiCount!)"
         
-        if wrongVocaCount == 0 {
+        if wrongKanjiCount == 0 {
             saveProcess()
         }
     }
@@ -45,16 +45,16 @@ class VocabularyTestResultViewController: UIViewController {
     }
     @IBAction func onClickBookmark(_ sender: UIButton) {
         sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        vocabularyTableDataSource?.addBookmarkAll()
+        kanjiTableDataSource?.addBookmarkAll()
         sender.isEnabled = false
         tableView.reloadData()
     }
     @IBAction func onClickReTest(_ sender: UIButton) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest) as! VocabularyTestViewController
-        vc.vocabularies = vocabulariesForCell.map { $0.vocabulary }
+        let vc = UIViewController.getViewController(viewControllerEnum: .kanjitest) as! KanjiTestViewController
+        vc.kanjis = kanjisForCell.map { $0.kanji }
         vc.level = level
         vc.day = day
-        if vc.vocabularies.count > 0 {
+        if vc.kanjis.count > 0 {
             navigationController?.replaceViewController(viewController: vc, animated: true)
         } else {
             sender.isEnabled = false
@@ -74,4 +74,6 @@ class VocabularyTestResultViewController: UIViewController {
             UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)
         }
     }
+
+
 }

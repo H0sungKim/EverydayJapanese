@@ -39,11 +39,6 @@ class KanjiTableViewCell: UITableViewCell {
     @IBAction func onClickJpMeaning(_ sender: UIButton) {
         onClickJpMeaning?(sender)
     }
-    @IBAction func onClickViewAll(_ sender: UIButton) {
-        onClickEumhun?(btnEumhun)
-        onClickJpSound?(btnJpSound)
-        onClickJpMeaning?(btnJpMeaning)
-    }
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
     }

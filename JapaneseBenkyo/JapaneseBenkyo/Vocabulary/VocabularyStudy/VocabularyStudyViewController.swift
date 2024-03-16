@@ -17,21 +17,19 @@ class VocabularyStudyViewController: UIViewController {
     
     private var isVisibleAll: Bool = false
     
-    @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbLevel.text = "\(level) \(day)"
+        lbTitle.text = "\(level) \(day)"
         
         vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
-        
         tableView.rowHeight = 150
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

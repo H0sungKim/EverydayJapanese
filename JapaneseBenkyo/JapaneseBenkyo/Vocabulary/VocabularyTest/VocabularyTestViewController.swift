@@ -16,7 +16,7 @@ class VocabularyTestViewController: UIViewController {
     private var index: Int = 0
     private var isVocabularyVisible: Bool = false
     
-    @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbIndex: UILabel!
     @IBOutlet weak var lbWord: UILabel!
     @IBOutlet weak var lbSound: UILabel!
@@ -26,7 +26,9 @@ class VocabularyTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vocabularies.shuffle()
-        lbLevel.text = "\(level) \(day) 테스트"
+        lbTitle.text = "\(level) \(day) 테스트"
+        lbWord.adjustsFontSizeToFitWidth = true
+        lbSound.adjustsFontSizeToFitWidth = true
         updateVocabulary()
     }
     

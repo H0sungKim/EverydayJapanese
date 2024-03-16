@@ -200,9 +200,9 @@
                     </view>
                     <connections>
                         <outlet property="btnBookmark" destination="S3C-lX-R5K" id="ycd-X2-a0R"/>
-                        <outlet property="lbLevel" destination="yjj-TR-OGl" id="Z0V-Sz-yb7"/>
                         <outlet property="lbScore" destination="jG4-Tk-IgX" id="0Jd-Cz-aHy"/>
                         <outlet property="lbSubScore" destination="nMn-M7-ev1" id="5jO-oG-YvM"/>
+                        <outlet property="lbTitle" destination="yjj-TR-OGl" id="Z0V-Sz-yb7"/>
                         <outlet property="tableView" destination="5SX-i9-O6v" id="lDY-Ce-33g"/>
                     </connections>
                 </viewController>

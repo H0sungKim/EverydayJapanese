@@ -80,24 +80,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfR-3E-ulL">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="284"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-vX-xLx">
-                                                <rect key="frame" x="86" y="115.66666666666669" width="103" height="53"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-vX-xLx">
+                                                <rect key="frame" x="0.0" y="115.66666666666669" width="275" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvL-Nz-imT">
-                                                <rect key="frame" x="116.66666666666666" y="184.66666666666669" width="42" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvL-Nz-imT">
+                                                <rect key="frame" x="0.0" y="184.66666666666669" width="275" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bvL-Nz-imT" secondAttribute="trailing" id="1XJ-rg-uqD"/>
                                             <constraint firstItem="bvL-Nz-imT" firstAttribute="top" secondItem="OMh-vX-xLx" secondAttribute="bottom" constant="16" id="63w-KB-fgT"/>
                                             <constraint firstItem="OMh-vX-xLx" firstAttribute="centerY" secondItem="QfR-3E-ulL" secondAttribute="centerY" id="ALD-SV-4tU"/>
+                                            <constraint firstItem="bvL-Nz-imT" firstAttribute="leading" secondItem="QfR-3E-ulL" secondAttribute="leading" id="JCw-8z-Ydc"/>
                                             <constraint firstItem="bvL-Nz-imT" firstAttribute="centerX" secondItem="QfR-3E-ulL" secondAttribute="centerX" id="KZn-cT-mbf"/>
                                             <constraint firstItem="OMh-vX-xLx" firstAttribute="centerX" secondItem="QfR-3E-ulL" secondAttribute="centerX" id="VX7-yN-hpy"/>
+                                            <constraint firstItem="OMh-vX-xLx" firstAttribute="leading" secondItem="QfR-3E-ulL" secondAttribute="leading" id="iY8-WP-Edr"/>
+                                            <constraint firstAttribute="trailing" secondItem="OMh-vX-xLx" secondAttribute="trailing" id="unI-yh-SAJ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHE-wS-v3n">
@@ -170,9 +174,9 @@
                     </view>
                     <connections>
                         <outlet property="lbIndex" destination="MkW-Qr-AwQ" id="QyJ-7F-dRt"/>
-                        <outlet property="lbLevel" destination="McO-hF-9n9" id="lta-iN-o0N"/>
                         <outlet property="lbMeaning" destination="2pV-mk-ZZM" id="nq7-1s-uEs"/>
                         <outlet property="lbSound" destination="bvL-Nz-imT" id="igQ-1i-YhI"/>
+                        <outlet property="lbTitle" destination="McO-hF-9n9" id="lta-iN-o0N"/>
                         <outlet property="lbWord" destination="OMh-vX-xLx" id="98N-5t-eBh"/>
                     </connections>
                 </viewController>

@@ -28,24 +28,24 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
     }
     
     func setVisibleAll() {
-        for i in vocabulariesForCell {
-            i.isVisibleSound = true
-            i.isVisibleMeaning = true
+        for vocabularyForCell in vocabulariesForCell {
+            vocabularyForCell.isVisibleSound = true
+            vocabularyForCell.isVisibleMeaning = true
         }
     }
     
     func setInvisibleAll() {
-        for i in vocabulariesForCell {
-            i.isVisibleSound = false
-            i.isVisibleMeaning = false
+        for vocabularyForCell in vocabulariesForCell {
+            vocabularyForCell.isVisibleSound = false
+            vocabularyForCell.isVisibleMeaning = false
         }
     }
     
     func addBookmarkAll() {
         bookmark.formUnion(Set(vocabulariesForCell.map { $0.vocabulary }))
         UserDefaultManager.shared.vocabularyBookmark = JSONManager.shared.encodeVocabularyJSON(vocabularies: bookmark)
-        for i in vocabulariesForCell {
-            i.isBookmark = true
+        for vocabularyForCell in vocabulariesForCell {
+            vocabularyForCell.isBookmark = true
         }
     }
     
@@ -84,57 +84,30 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
             if (vocabulariesForCell[indexPath.row].isVisibleSound || vocabulariesForCell[indexPath.row].vocabulary.sound == "") && vocabulariesForCell[indexPath.row].isVisibleMeaning {
                 vocabulariesForCell[indexPath.row].isVisibleSound = false
                 vocabulariesForCell[indexPath.row].isVisibleMeaning = false
-                if vocabulariesForCell[indexPath.row].vocabulary.sound != "" {
-                    cell.btnSound.setTitle("발음 보기", for: .normal)
-                    cell.btnSound.setTitleColor(.lightGray, for: .normal)
-                }
-                cell.btnMeaning.setTitle("뜻 보기", for: .normal)
-                cell.btnMeaning.setTitleColor(.lightGray, for: .normal)
             } else {
                 vocabulariesForCell[indexPath.row].isVisibleSound = true
                 vocabulariesForCell[indexPath.row].isVisibleMeaning = true
-                if vocabulariesForCell[indexPath.row].vocabulary.sound != "" {
-                    cell.btnSound.setTitle(vocabulariesForCell[indexPath.row].vocabulary.sound, for: .normal)
-                    cell.btnSound.setTitleColor(.label, for: .normal)
-                }
-                cell.btnMeaning.setTitle(vocabulariesForCell[indexPath.row].vocabulary.meaning, for: .normal)
-                cell.btnMeaning.setTitleColor(.label, for: .normal)
             }
+            initializeCell(cell: cell, vocabularyForCell: vocabulariesForCell[indexPath.row])
         }
     }
     
     private func onClickSound(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
-        if vocabularyForCell.isVisibleSound {
-            sender.setTitle("발음 보기", for: .normal)
-            sender.setTitleColor(.lightGray, for: .normal)
-            vocabularyForCell.isVisibleSound = false
-        } else {
-            sender.setTitle(vocabularyForCell.vocabulary.sound, for: .normal)
-            sender.setTitleColor(.label, for: .normal)
-            vocabularyForCell.isVisibleSound = true
-        }
+        vocabularyForCell.isVisibleSound = !vocabularyForCell.isVisibleSound
+        initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
     }
     private func onClickMeaning(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
-        if vocabularyForCell.isVisibleMeaning {
-            sender.setTitle("뜻 보기", for: .normal)
-            sender.setTitleColor(.lightGray, for: .normal)
-            vocabularyForCell.isVisibleMeaning = false
-        } else {
-            sender.setTitle(vocabularyForCell.vocabulary.meaning, for: .normal)
-            sender.setTitleColor(.label, for: .normal)
-            vocabularyForCell.isVisibleMeaning = true
-        }
+        vocabularyForCell.isVisibleMeaning = !vocabularyForCell.isVisibleMeaning
+        initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
     }
     private func onClickBookmark(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
         if vocabularyForCell.isBookmark {
-            sender.setImage(UIImage(systemName: "star"), for: .normal)
-            vocabularyForCell.isBookmark = false
             bookmark.remove(vocabularyForCell.vocabulary)
         } else {
-            sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            vocabularyForCell.isBookmark = true
             bookmark.insert(vocabularyForCell.vocabulary)
         }
+        vocabularyForCell.isBookmark = !vocabularyForCell.isBookmark
+        initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
         UserDefaultManager.shared.vocabularyBookmark = JSONManager.shared.encodeVocabularyJSON(vocabularies: bookmark)
     }
     
