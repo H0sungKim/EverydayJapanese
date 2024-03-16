@@ -63,6 +63,8 @@
 		96BA5B072BA2CF3700E3373C /* n5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B022BA2CF3700E3373C /* n5.json */; };
 		96BA5B082BA2CF3700E3373C /* n2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B032BA2CF3700E3373C /* n2.json */; };
 		96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B092BA2CFBA00E3373C /* launchscreen.png */; };
+		96CD34EE2BA3D1CA006F6523 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CD34ED2BA3D1CA006F6523 /* kanji.png */; };
+		96CD34F02BA3D1D7006F6523 /* hiragana.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CD34EF2BA3D1D7006F6523 /* hiragana.png */; };
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
 		96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */; };
@@ -146,6 +148,8 @@
 		96BA5B022BA2CF3700E3373C /* n5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n5.json; sourceTree = "<group>"; };
 		96BA5B032BA2CF3700E3373C /* n2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n2.json; sourceTree = "<group>"; };
 		96BA5B092BA2CFBA00E3373C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
+		96CD34ED2BA3D1CA006F6523 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
+		96CD34EF2BA3D1D7006F6523 /* hiragana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiragana.png; sourceTree = "<group>"; };
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				96BA5ABA2BA0A14F00E3373C /* appicon.png */,
+				96CD34ED2BA3D1CA006F6523 /* kanji.png */,
+				96CD34EF2BA3D1D7006F6523 /* hiragana.png */,
 				960C6B7D2B7B49FB00D91407 /* kanji1.json */,
 				960C6B7C2B7B49FB00D91407 /* kanji2.json */,
 				960C6B7E2B7B49FB00D91407 /* kanji3.json */,
@@ -509,6 +515,7 @@
 				960C6B832B7B49FB00D91407 /* kanji2.json in Resources */,
 				96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */,
 				96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */,
+				96CD34EE2BA3D1CA006F6523 /* kanji.png in Resources */,
 				960C6B882B7B49FB00D91407 /* kanji6.json in Resources */,
 				962F1BDF2B79DCF20051C4DA /* JLPT3.json in Resources */,
 				960C6B512B7B369E00D91407 /* Kanji.storyboard in Resources */,
@@ -516,6 +523,7 @@
 				962F1BE02B79DCF20051C4DA /* JLPT1.json in Resources */,
 				962F1BDB2B79DCF20051C4DA /* JLPT5.json in Resources */,
 				96BA5B062BA2CF3700E3373C /* n1.json in Resources */,
+				96CD34F02BA3D1D7006F6523 /* hiragana.png in Resources */,
 				962F1BE32B79DFB60051C4DA /* Main.storyboard in Resources */,
 				96AD6B752B79FDDF00F895DE /* KanjiStudy.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
@@ -759,10 +767,10 @@
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "매일 일본어";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -786,10 +794,10 @@
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "매일 일본어";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

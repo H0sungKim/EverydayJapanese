@@ -10,6 +10,7 @@ import Foundation
 private enum UserDefaultEnum: String {
     case vocabularyBookmark
     case kanjiBookmark
+    case process
 }
 
 class UserDefaultManager {
@@ -17,6 +18,15 @@ class UserDefaultManager {
     public static let shared = UserDefaultManager()
     
     private init() {
+    }
+    
+    var process: String {
+        get {
+            return UserDefaults.standard.value(forKey: UserDefaultEnum.process.rawValue) as? String ?? ""
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: UserDefaultEnum.process.rawValue)
+        }
     }
     
     var vocabularyBookmark: String {

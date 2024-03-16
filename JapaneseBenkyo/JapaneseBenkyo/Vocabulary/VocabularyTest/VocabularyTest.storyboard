@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXq-Wn-cTV">
-                                <rect key="frame" x="194.33333333333337" y="783" width="198.66666666666663" height="35"/>
+                                <rect key="frame" x="194.33333333333337" y="639" width="198.66666666666663" height="179"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system"/>
                                 <connections>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAe-Ma-4Qt">
-                                <rect key="frame" x="0.0" y="783" width="194.33333333333334" height="35"/>
+                                <rect key="frame" x="0.0" y="639" width="194.33333333333334" height="179"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
@@ -156,9 +156,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UXq-Wn-cTV" secondAttribute="bottom" id="RHO-rs-Yfn"/>
                             <constraint firstItem="CSm-m2-9K2" firstAttribute="bottom" secondItem="a28-1S-IMY" secondAttribute="bottom" id="SwT-wU-c3q"/>
                             <constraint firstItem="11E-kc-vxU" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="Uyv-RD-b1f"/>
+                            <constraint firstItem="UXq-Wn-cTV" firstAttribute="top" secondItem="11E-kc-vxU" secondAttribute="bottom" id="W72-Ab-Vjk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nAe-Ma-4Qt" secondAttribute="bottom" id="Xi0-Lh-1pQ"/>
                             <constraint firstItem="a28-1S-IMY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZIG-Ii-yQb"/>
                             <constraint firstItem="11E-kc-vxU" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="fpR-ZX-GTX"/>
+                            <constraint firstItem="nAe-Ma-4Qt" firstAttribute="top" secondItem="11E-kc-vxU" secondAttribute="bottom" id="hBT-2X-gwP"/>
                             <constraint firstItem="11E-kc-vxU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="khr-T3-HgY"/>
                             <constraint firstItem="UXq-Wn-cTV" firstAttribute="width" secondItem="nAe-Ma-4Qt" secondAttribute="width" multiplier="1.02128" id="oIQ-z6-R3h"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UXq-Wn-cTV" secondAttribute="trailing" id="r5b-rP-PfH"/>

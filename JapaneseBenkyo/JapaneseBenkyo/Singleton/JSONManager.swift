@@ -5,20 +5,6 @@
 //  Created by 김호성 on 2/13/24.
 //
 
-// Process=======================
-//{
-//    "JLPT N5": {
-//        "Day1": true,
-//        "Day2": true
-//    },
-//    "JLPT N4": {
-//        "Day1": true,
-//        "Day2": true
-//    }
-//}
-
-
-
 import Foundation
 
 class JSONManager: NSObject {
@@ -27,6 +13,18 @@ class JSONManager: NSObject {
     
     private override init() {
         super.init()
+    }
+    
+    func encodeProcessJSON(process: [String: [String: Bool]]) -> String {
+        let encoded = try? JSONEncoder().encode(process)
+        return String(decoding: encoded!, as: UTF8.self)
+    }
+    
+    func decodeProcessJSON(jsonData: Data) -> [String: [String: Bool]] {
+        if let process = try? JSONDecoder().decode([String: [String: Bool]].self, from: jsonData) {
+            return process
+        }
+        return [:]
     }
 
     func encodeVocabularyJSON(vocabularies: Set<Vocabulary>) -> String {

@@ -10,6 +10,7 @@ import UIKit
 class VocabularyTestViewController: UIViewController {
     var vocabularies: [Vocabulary] = []
     var level: String = ""
+    var day: String = ""
     
     private var wrongVocabularies: [Vocabulary] = []
     private var index: Int = 0
@@ -25,7 +26,7 @@ class VocabularyTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vocabularies.shuffle()
-        lbLevel.text = "\(level) 테스트"
+        lbLevel.text = "\(level) \(day) 테스트"
         updateVocabulary()
     }
     
@@ -62,6 +63,7 @@ class VocabularyTestViewController: UIViewController {
         if index == vocabularies.count {
             let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytestresult) as! VocabularyTestResultViewController
             vc.level = level
+            vc.day = day
             vc.vocaCount = vocabularies.count
             vc.wrongVocaCount = wrongVocabularies.count
             vc.vocabulariesForCell = wrongVocabularies.map { VocabularyForCell(vocabulary: $0) }

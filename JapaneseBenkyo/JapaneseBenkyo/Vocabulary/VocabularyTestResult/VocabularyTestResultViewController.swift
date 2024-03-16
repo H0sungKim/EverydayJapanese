@@ -11,6 +11,7 @@ class VocabularyTestResultViewController: UIViewController {
 
     var vocabulariesForCell: [VocabularyForCell] = []
     var level: String = ""
+    var day: String = ""
     var vocaCount: Int?
     var wrongVocaCount: Int?
     
@@ -31,9 +32,13 @@ class VocabularyTestResultViewController: UIViewController {
         tableView.rowHeight = 150
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
         
-        lbLevel.text = "\(level) 테스트 결과"
+        lbLevel.text = "\(level) \(day) 테스트 결과"
         lbScore.text = "\(Int((vocaCount! - wrongVocaCount!) * 100 / vocaCount!))점"
         lbSubScore.text = "\(vocaCount! - wrongVocaCount!)/\(vocaCount!)"
+        
+        if wrongVocaCount == 0 {
+            saveProcess()
+        }
     }
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -56,5 +61,17 @@ class VocabularyTestResultViewController: UIViewController {
     }
     @IBAction func onClickFinishTest(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    private func saveProcess() {
+        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
+            var process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+            if process[level] == nil {
+                process[level] = [:]
+            }
+            process[level]?[day] = true
+            
+            UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)
+        }
+        
     }
 }

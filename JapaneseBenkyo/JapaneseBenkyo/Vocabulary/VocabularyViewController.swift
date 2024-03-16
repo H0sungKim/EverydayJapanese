@@ -19,11 +19,16 @@ class VocabularyViewController: UIViewController {
     }
     
     private let catalogues: [LevelEnum] = LevelEnum.allCases
+    private var process: [String: [String: Bool]] = [:]
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
+            process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -32,6 +37,12 @@ class VocabularyViewController: UIViewController {
     }
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
+            process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+        }
+        tableView.reloadData()
     }
     
 }
@@ -50,8 +61,21 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
             let objectArray = Bundle.main.loadNibNamed(String(describing: CustomTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! CustomTableViewCell
         }
-//        cell.ivIcon.image = UIImage(named: "hiragana.png")
+        cell.ivIcon.image = UIImage(named: "hiragana.png")
         cell.lbTitle.text = catalogues[indexPath.row].rawValue
+        
+        switch catalogues[indexPath.row] {
+        case .vocabularyBookmark :
+            cell.ivProcess.image = nil
+        case .vocabulary0, .vocabulary1, .vocabulary2, .vocabulary3, .vocabulary4 :
+            if process[catalogues[indexPath.row].rawValue]?["전체보기"] ?? false {
+                cell.ivProcess.image = UIImage(systemName: "checkmark.circle")
+                cell.ivProcess.tintColor = .systemBlue
+            } else {
+                cell.ivProcess.image = UIImage(systemName: "circle")
+                cell.ivProcess.tintColor = .systemGray
+            }
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

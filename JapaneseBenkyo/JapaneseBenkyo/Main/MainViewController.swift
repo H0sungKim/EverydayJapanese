@@ -51,6 +51,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         cell.lbTitle.text = catalogues[indexPath.row].rawValue
+        
+        switch catalogues[indexPath.row] {
+        case .vocabulary:
+            cell.ivIcon.image = UIImage(named: "hiragana.png")
+        case .kanji:
+            cell.ivIcon.image = UIImage(named: "kanji.png")
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

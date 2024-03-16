@@ -14,6 +14,7 @@ class VocabularyDayViewController: UIViewController {
     var level: String = ""
     
     private var vocabulariesDayDistributed: [Array<Vocabulary>] = []
+    private var process: [String: [String: Bool]] = [:]
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -26,15 +27,25 @@ class VocabularyDayViewController: UIViewController {
         }
         lbTitle.text = level
         
+        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
+            process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 70
         tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
     }
+    override func viewDidAppear(_ animated: Bool) {
+        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
+            process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+        }
+        tableView.reloadData()
+    }
+    
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension VocabularyDayViewController: UITableViewDataSource, UITableViewDelegate {
@@ -51,10 +62,18 @@ extension VocabularyDayViewController: UITableViewDataSource, UITableViewDelegat
             let objectArray = Bundle.main.loadNibNamed(String(describing: CustomTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! CustomTableViewCell
         }
+        cell.ivIcon.image = UIImage(named: "hiragana.png")
         if indexPath.row == 0 {
             cell.lbTitle.text = "전체보기"
         } else {
             cell.lbTitle.text = "Day\(indexPath.row)"
+        }
+        if process[level]?[cell.lbTitle.text ?? ""] ?? false {
+            cell.ivProcess.image = UIImage(systemName: "checkmark.circle")
+            cell.ivProcess.tintColor = .systemBlue
+        } else {
+            cell.ivProcess.image = UIImage(systemName: "circle")
+            cell.ivProcess.tintColor = .systemGray
         }
         return cell
     }
@@ -63,10 +82,12 @@ extension VocabularyDayViewController: UITableViewDataSource, UITableViewDelegat
         let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
         
         if indexPath.row == 0 {
-            vc.level = "\(level) 전체보기"
+            vc.level = level
+            vc.day = "전체보기"
             vc.vocabulariesForCell = vocabularies.map { VocabularyForCell(vocabulary: $0) }
         } else {
-            vc.level = "\(level) Day\(indexPath.row)"
+            vc.level = level
+            vc.day = "Day\(indexPath.row)"
             vc.vocabulariesForCell = vocabulariesDayDistributed[indexPath.row-1].map { VocabularyForCell(vocabulary: $0) }
         }
         navigationController?.pushViewController(vc, animated: true)

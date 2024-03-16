@@ -11,6 +11,7 @@ class VocabularyStudyViewController: UIViewController {
 
     var vocabulariesForCell: [VocabularyForCell] = []
     var level: String = ""
+    var day: String = ""
     
     private var vocabularyTableDataSource: VocabularyTableDataSource?
     
@@ -22,7 +23,7 @@ class VocabularyStudyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbLevel.text = level
+        lbLevel.text = "\(level) \(day)"
         
         vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
         tableView.delegate = vocabularyTableDataSource
@@ -62,6 +63,7 @@ class VocabularyStudyViewController: UIViewController {
         let vc = UIViewController.getViewController(viewControllerEnum: .vocabularytest) as! VocabularyTestViewController
         vc.vocabularies = vocabulariesForCell.map { $0.vocabulary }
         vc.level = level
+        vc.day = day
         if vc.vocabularies.count > 0 {
             navigationController?.pushViewController(vc, animated: true)
         } else {
