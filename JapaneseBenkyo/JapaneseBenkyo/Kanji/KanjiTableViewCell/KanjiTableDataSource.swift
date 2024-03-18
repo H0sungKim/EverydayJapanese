@@ -28,7 +28,6 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func setVisibleAll() {
         for kanjiForCell in kanjisForCell {
-            kanjiForCell.isVisibleHanja = true
             kanjiForCell.isVisibleEumhun = true
             kanjiForCell.isVisibleJpSound = true
             kanjiForCell.isVisibleJpMeaning = true
@@ -37,7 +36,6 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func setInvisibleAll() {
         for kanjiForCell in kanjisForCell {
-            kanjiForCell.isVisibleHanja = false
             kanjiForCell.isVisibleEumhun = false
             kanjiForCell.isVisibleJpSound = false
             kanjiForCell.isVisibleJpMeaning = false
@@ -133,39 +131,40 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
-        cell.lbKanji.text = kanjiForCell.kanji.kanji
         if kanjiForCell.kanji.hanja == "" {
-            cell.lbHanja.text = ""
-            cell.btnHanja.setTitle("", for: .normal)
+            cell.lbKanji.text = kanjiForCell.kanji.kanji
+            cell.btnHanja.tintColor = .clear
         } else {
             if kanjiForCell.isVisibleHanja {
-                cell.lbHanja.text = kanjiForCell.kanji.hanja
-                cell.btnHanja.setTitle("", for: .normal)
+                cell.lbKanji.text = kanjiForCell.kanji.hanja
+                cell.btnHanja.setTitle("日 한자 보기", for: .normal)
+                cell.btnHanja.tintColor = .lightGray
             } else {
-                cell.lbHanja.text = ""
+                cell.lbKanji.text = kanjiForCell.kanji.kanji
                 cell.btnHanja.setTitle("韓 한자 보기", for: .normal)
+                cell.btnHanja.tintColor = .lightGray
             }
         }
         if kanjiForCell.isVisibleEumhun {
-            cell.btnEumhun.setTitle(kanjiForCell.kanji.eumhun, for: .normal)
-            cell.btnEumhun.setTitleColor(.label, for: .normal)
+            cell.lbEumhun.text = kanjiForCell.kanji.eumhun
+            cell.btnEumhun.tintColor = .clear
         } else {
-            cell.btnEumhun.setTitle("韓 훈음 보기", for: .normal)
-            cell.btnEumhun.setTitleColor(.lightGray, for: .normal)
+            cell.lbEumhun.text = ""
+            cell.btnEumhun.tintColor = .lightGray
         }
         if kanjiForCell.isVisibleJpSound {
-            cell.btnJpSound.setTitle("音 ⇒ " + kanjiForCell.kanji.jpSound, for: .normal)
-            cell.btnJpSound.setTitleColor(.label, for: .normal)
+            cell.lbJpSound.text = kanjiForCell.kanji.jpSound
+            cell.btnJpSound.tintColor = .clear
         } else {
-            cell.btnJpSound.setTitle("日 음 보기", for: .normal)
-            cell.btnJpSound.setTitleColor(.lightGray, for: .normal)
+            cell.lbJpSound.text = ""
+            cell.btnJpSound.tintColor = .lightGray
         }
         if kanjiForCell.isVisibleJpMeaning {
-            cell.btnJpMeaning.setTitle("訓 ⇒ " + kanjiForCell.kanji.jpMeaning, for: .normal)
-            cell.btnJpMeaning.setTitleColor(.label, for: .normal)
+            cell.lbJpMeaning.text = kanjiForCell.kanji.jpMeaning
+            cell.btnJpMeaning.tintColor = .clear
         } else {
-            cell.btnJpMeaning.setTitle("日 훈 보기", for: .normal)
-            cell.btnJpMeaning.setTitleColor(.lightGray, for: .normal)
+            cell.lbJpMeaning.text = ""
+            cell.btnJpMeaning.tintColor = .lightGray
         }
         if kanjiForCell.isBookmark {
             cell.btnBookmark.setImage(UIImage(systemName: "star.fill"), for: .normal)

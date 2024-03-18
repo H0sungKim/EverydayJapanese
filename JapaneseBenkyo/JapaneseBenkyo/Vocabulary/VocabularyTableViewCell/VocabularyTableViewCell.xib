@@ -38,8 +38,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqR-Kz-qFK">
+                                <rect key="frame" x="246.5" y="86.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Pt-6a3">
-                                <rect key="frame" x="0.0" y="69" width="493" height="34.5"/>
+                                <rect key="frame" x="203" y="69" width="87.5" height="34.5"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="발음 보기">
@@ -52,8 +58,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-4m-J9p">
                                 <rect key="frame" x="0.0" y="103.5" width="493" height="82.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1W-QB-DgR">
+                                        <rect key="frame" x="0.0" y="41.5" width="493" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
-                                        <rect key="frame" x="64" y="23.5" width="365" height="36"/>
+                                        <rect key="frame" x="209" y="23.5" width="75.5" height="36"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="뜻 보기" titleAlignment="center">
@@ -65,9 +77,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="S1W-QB-DgR" firstAttribute="leading" secondItem="FeP-4m-J9p" secondAttribute="leading" id="4kJ-1z-bsB"/>
+                                    <constraint firstAttribute="trailing" secondItem="S1W-QB-DgR" secondAttribute="trailing" id="LkH-4e-cHG"/>
                                     <constraint firstItem="6pA-2S-yml" firstAttribute="centerY" secondItem="FeP-4m-J9p" secondAttribute="centerY" id="aQl-ha-R3s"/>
-                                    <constraint firstItem="6pA-2S-yml" firstAttribute="leading" secondItem="FeP-4m-J9p" secondAttribute="leading" constant="64" id="hRa-Fb-DFR"/>
-                                    <constraint firstAttribute="trailing" secondItem="6pA-2S-yml" secondAttribute="trailing" constant="64" id="oYZ-8h-OZg"/>
+                                    <constraint firstItem="S1W-QB-DgR" firstAttribute="centerY" secondItem="FeP-4m-J9p" secondAttribute="centerY" id="ctJ-Ce-zef"/>
                                     <constraint firstItem="6pA-2S-yml" firstAttribute="centerX" secondItem="FeP-4m-J9p" secondAttribute="centerX" id="wmy-j9-34v"/>
                                 </constraints>
                             </view>
@@ -78,11 +91,11 @@
                             <constraint firstItem="frs-Pt-6a3" firstAttribute="centerX" secondItem="wZV-am-fW4" secondAttribute="centerX" id="F96-qH-Iem"/>
                             <constraint firstAttribute="trailing" secondItem="FeP-4m-J9p" secondAttribute="trailing" id="FHw-FQ-ge5"/>
                             <constraint firstItem="FeP-4m-J9p" firstAttribute="leading" secondItem="wZV-am-fW4" secondAttribute="leading" id="HSm-LW-j3M"/>
-                            <constraint firstAttribute="trailing" secondItem="frs-Pt-6a3" secondAttribute="trailing" id="NMs-Er-G6m"/>
                             <constraint firstAttribute="bottom" secondItem="FeP-4m-J9p" secondAttribute="bottom" id="WYK-vt-ekK"/>
                             <constraint firstItem="cYs-hn-ffu" firstAttribute="top" secondItem="wZV-am-fW4" secondAttribute="top" constant="16" id="YRq-m3-jfQ"/>
+                            <constraint firstItem="aqR-Kz-qFK" firstAttribute="centerX" secondItem="wZV-am-fW4" secondAttribute="centerX" id="ZDZ-Ox-a9q"/>
+                            <constraint firstItem="aqR-Kz-qFK" firstAttribute="centerY" secondItem="frs-Pt-6a3" secondAttribute="centerY" id="eiG-ds-FkJ"/>
                             <constraint firstAttribute="trailing" secondItem="cYs-hn-ffu" secondAttribute="trailing" id="jfg-aj-hRL"/>
-                            <constraint firstItem="frs-Pt-6a3" firstAttribute="leading" secondItem="wZV-am-fW4" secondAttribute="leading" id="maA-PQ-fzH"/>
                             <constraint firstItem="frs-Pt-6a3" firstAttribute="top" secondItem="cYs-hn-ffu" secondAttribute="bottom" id="x0g-ss-F6s"/>
                             <constraint firstItem="cYs-hn-ffu" firstAttribute="centerX" secondItem="wZV-am-fW4" secondAttribute="centerX" id="zhw-M7-Lus"/>
                         </constraints>
@@ -102,6 +115,8 @@
                 <outlet property="btnBookmark" destination="uwK-zb-5GK" id="Tn8-hM-YdB"/>
                 <outlet property="btnMeaning" destination="6pA-2S-yml" id="uVY-wz-XAt"/>
                 <outlet property="btnSound" destination="frs-Pt-6a3" id="Cbz-TZ-A6t"/>
+                <outlet property="lbMeaning" destination="S1W-QB-DgR" id="4gr-Eu-wOh"/>
+                <outlet property="lbSound" destination="aqR-Kz-qFK" id="mVh-2e-eIH"/>
                 <outlet property="lbWord" destination="cYs-hn-ffu" id="4de-pH-M6P"/>
             </connections>
             <point key="canvasLocation" x="552.89855072463774" y="167.41071428571428"/>

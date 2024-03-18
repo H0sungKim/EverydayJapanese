@@ -114,22 +114,23 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
     private func initializeCell(cell: VocabularyTableViewCell, vocabularyForCell: VocabularyForCell) {
         cell.lbWord.text = vocabularyForCell.vocabulary.word
         if vocabularyForCell.vocabulary.sound == "" {
-            cell.btnSound.setTitle("", for: .normal)
+            cell.lbSound.text = ""
+            cell.btnSound.tintColor = .clear
         } else {
             if vocabularyForCell.isVisibleSound {
-                cell.btnSound.setTitle(vocabularyForCell.vocabulary.sound, for: .normal)
-                cell.btnSound.setTitleColor(.label, for: .normal)
+                cell.lbSound.text = vocabularyForCell.vocabulary.sound
+                cell.btnSound.tintColor = .clear
             } else {
-                cell.btnSound.setTitle("발음 보기", for: .normal)
-                cell.btnSound.setTitleColor(.lightGray, for: .normal)
+                cell.lbSound.text = ""
+                cell.btnSound.tintColor = .lightGray
             }
         }
         if vocabularyForCell.isVisibleMeaning {
-            cell.btnMeaning.setTitle(vocabularyForCell.vocabulary.meaning, for: .normal)
-            cell.btnMeaning.setTitleColor(.label, for: .normal)
+            cell.lbMeaning.text = vocabularyForCell.vocabulary.meaning
+            cell.btnMeaning.tintColor = .clear
         } else {
-            cell.btnMeaning.setTitle("뜻 보기", for: .normal)
-            cell.btnMeaning.setTitleColor(.lightGray, for: .normal)
+            cell.lbMeaning.text = ""
+            cell.btnMeaning.tintColor = .lightGray
         }
         if vocabularyForCell.isBookmark {
             cell.btnBookmark.setImage(UIImage(systemName: "star.fill"), for: .normal)

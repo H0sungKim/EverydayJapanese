@@ -10,10 +10,12 @@ import UIKit
 class KanjiTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbKanji: UILabel!
-    @IBOutlet weak var lbHanja: UILabel!
     @IBOutlet weak var btnHanja: UIButton!
+    @IBOutlet weak var lbEumhun: UILabel!
     @IBOutlet weak var btnEumhun: UIButton!
+    @IBOutlet weak var lbJpSound: UILabel!
     @IBOutlet weak var btnJpSound: UIButton!
+    @IBOutlet weak var lbJpMeaning: UILabel!
     @IBOutlet weak var btnJpMeaning: UIButton!
     @IBOutlet weak var btnBookmark: UIButton!
     
@@ -25,6 +27,9 @@ class KanjiTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        lbJpSound.adjustsFontSizeToFitWidth = true
+        lbJpMeaning.adjustsFontSizeToFitWidth = true
+        lbEumhun.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func onClickHanja(_ sender: UIButton) {

@@ -10,65 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="KanjiTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="KanjiTableViewCell" rowHeight="94" id="KGk-i7-Jjw" customClass="KanjiTableViewCell" customModule="JapaneseBenkyo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="517" height="94"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="KanjiTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="KanjiTableViewCell" rowHeight="160" id="KGk-i7-Jjw" customClass="KanjiTableViewCell" customModule="JapaneseBenkyo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="517" height="94"/>
+                <rect key="frame" x="0.0" y="0.0" width="517" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFQ-7a-nt0">
-                        <rect key="frame" x="342" y="0.0" width="107" height="35"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="韓 훈음 보기"/>
-                        <connections>
-                            <action selector="onClickEumhun:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JfT-hL-2lw"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJk-Il-WO4">
-                        <rect key="frame" x="357" y="29.5" width="92" height="35"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="日 음 보기"/>
-                        <connections>
-                            <action selector="onClickJpSound:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Jee-eO-9N8"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
-                        <rect key="frame" x="357" y="59" width="92" height="35"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="日 훈 보기"/>
-                        <connections>
-                            <action selector="onClickJpMeaning:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HXw-rD-OzN"/>
-                        </connections>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-hn-ffu">
-                        <rect key="frame" x="16" y="9" width="148.5" height="76.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvr-7m-88R">
-                        <rect key="frame" x="180.5" y="47" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Pt-6a3">
-                        <rect key="frame" x="164.5" y="30" width="106.5" height="34.5"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="韓 한자 보기">
-                            <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="onClickHanja:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9JE-Q7-nPU"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwK-zb-5GK">
-                        <rect key="frame" x="465" y="0.0" width="52" height="34"/>
+                        <rect key="frame" x="465" y="10" width="52" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="52" id="8oP-Ph-vLv"/>
+                        </constraints>
                         <color key="tintColor" systemColor="labelColor"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
@@ -76,22 +29,140 @@
                             <action selector="onClickBookmark:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MjM-RU-Ri9"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4f-Nn-xml" userLabel="Viewe">
+                        <rect key="frame" x="138.5" y="106.5" width="326.5" height="53.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-xO-G7j">
+                                <rect key="frame" x="0.0" y="16.5" width="326.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFQ-7a-nt0">
+                                <rect key="frame" x="110" y="9.5" width="107" height="35"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="韓 훈음 보기"/>
+                                <connections>
+                                    <action selector="onClickEumhun:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JfT-hL-2lw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fRS-xO-G7j" firstAttribute="centerY" secondItem="n4f-Nn-xml" secondAttribute="centerY" id="CqI-5W-mCk"/>
+                            <constraint firstAttribute="trailing" secondItem="fRS-xO-G7j" secondAttribute="trailing" id="Elv-0j-mlI"/>
+                            <constraint firstItem="MFQ-7a-nt0" firstAttribute="centerX" secondItem="n4f-Nn-xml" secondAttribute="centerX" id="W4h-mx-XJh"/>
+                            <constraint firstItem="fRS-xO-G7j" firstAttribute="leading" secondItem="n4f-Nn-xml" secondAttribute="leading" id="iWN-6i-8h2"/>
+                            <constraint firstItem="MFQ-7a-nt0" firstAttribute="centerY" secondItem="n4f-Nn-xml" secondAttribute="centerY" id="jwr-a6-MVu"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFW-PP-UqN" userLabel="Views">
+                        <rect key="frame" x="138.5" y="0.0" width="326.5" height="53.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq4-hj-acw">
+                                <rect key="frame" x="0.0" y="16.5" width="326.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJk-Il-WO4">
+                                <rect key="frame" x="117.5" y="9.5" width="92" height="35"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="日 음 보기"/>
+                                <connections>
+                                    <action selector="onClickJpSound:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Jee-eO-9N8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uq4-hj-acw" firstAttribute="leading" secondItem="fFW-PP-UqN" secondAttribute="leading" id="1uX-0z-pwg"/>
+                            <constraint firstItem="eJk-Il-WO4" firstAttribute="centerY" secondItem="fFW-PP-UqN" secondAttribute="centerY" id="cX0-QR-GVP"/>
+                            <constraint firstItem="eJk-Il-WO4" firstAttribute="centerX" secondItem="fFW-PP-UqN" secondAttribute="centerX" id="jnN-jQ-xN9"/>
+                            <constraint firstItem="uq4-hj-acw" firstAttribute="centerY" secondItem="fFW-PP-UqN" secondAttribute="centerY" id="nhF-KY-lWq"/>
+                            <constraint firstAttribute="trailing" secondItem="uq4-hj-acw" secondAttribute="trailing" id="rMA-kx-aWm"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvC-k7-eYv" userLabel="Viewm">
+                        <rect key="frame" x="138.5" y="53.5" width="326.5" height="53"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIP-s2-vh4">
+                                <rect key="frame" x="0.0" y="16" width="326.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
+                                <rect key="frame" x="117.5" y="9" width="92" height="35"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="日 훈 보기"/>
+                                <connections>
+                                    <action selector="onClickJpMeaning:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HXw-rD-OzN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="TIP-s2-vh4" firstAttribute="centerY" secondItem="zvC-k7-eYv" secondAttribute="centerY" id="8kO-eq-U2H"/>
+                            <constraint firstAttribute="trailing" secondItem="TIP-s2-vh4" secondAttribute="trailing" id="DfL-4X-uMu"/>
+                            <constraint firstItem="6pA-2S-yml" firstAttribute="centerY" secondItem="zvC-k7-eYv" secondAttribute="centerY" id="ERS-gT-hkN"/>
+                            <constraint firstItem="6pA-2S-yml" firstAttribute="centerX" secondItem="zvC-k7-eYv" secondAttribute="centerX" id="GC8-G9-Xn7"/>
+                            <constraint firstItem="TIP-s2-vh4" firstAttribute="leading" secondItem="zvC-k7-eYv" secondAttribute="leading" id="W35-NU-LEr"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-69-oUT">
+                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="160"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="韓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-hn-ffu">
+                                <rect key="frame" x="41.5" y="41.5" width="56" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Pt-6a3">
+                                <rect key="frame" x="16" y="118.5" width="106.5" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106.5" id="MSC-7o-A1O"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="韓 한자 보기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onClickHanja:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9JE-Q7-nPU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="frs-Pt-6a3" firstAttribute="top" secondItem="cYs-hn-ffu" secondAttribute="bottom" id="Sd0-bM-kSO"/>
+                            <constraint firstItem="cYs-hn-ffu" firstAttribute="centerY" secondItem="MWv-69-oUT" secondAttribute="centerY" id="cNS-fE-D9y"/>
+                            <constraint firstItem="cYs-hn-ffu" firstAttribute="centerX" secondItem="frs-Pt-6a3" secondAttribute="centerX" id="mob-v5-wFk"/>
+                            <constraint firstAttribute="trailing" secondItem="frs-Pt-6a3" secondAttribute="trailing" constant="16" id="p4H-HD-IPS"/>
+                            <constraint firstItem="frs-Pt-6a3" firstAttribute="leading" secondItem="MWv-69-oUT" secondAttribute="leading" constant="16" id="ySc-iL-54H"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Gvr-7m-88R" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AiI-HL-UV6"/>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="eJk-Il-WO4" secondAttribute="trailing" constant="16" id="DUP-pI-awV"/>
-                    <constraint firstItem="cYs-hn-ffu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IsI-YQ-A00"/>
-                    <constraint firstItem="cYs-hn-ffu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U71-Zo-CCT"/>
-                    <constraint firstItem="frs-Pt-6a3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UEj-vd-BSA"/>
-                    <constraint firstAttribute="trailing" secondItem="uwK-zb-5GK" secondAttribute="trailing" id="W38-r8-UFo"/>
-                    <constraint firstItem="frs-Pt-6a3" firstAttribute="leading" secondItem="cYs-hn-ffu" secondAttribute="trailing" id="Xqc-KP-AAB"/>
-                    <constraint firstItem="MFQ-7a-nt0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cq3-q6-Tyd"/>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="MFQ-7a-nt0" secondAttribute="trailing" constant="16" id="dgC-PP-7zp"/>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="6pA-2S-yml" secondAttribute="trailing" constant="16" id="gUw-db-TWO"/>
-                    <constraint firstItem="Gvr-7m-88R" firstAttribute="leading" secondItem="cYs-hn-ffu" secondAttribute="trailing" constant="16" id="i1S-Mu-X7i"/>
-                    <constraint firstItem="eJk-Il-WO4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j0r-6H-tiv"/>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nIs-cf-LeW"/>
-                    <constraint firstAttribute="bottom" secondItem="6pA-2S-yml" secondAttribute="bottom" id="uDI-YB-UPX"/>
+                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="zvC-k7-eYv" secondAttribute="trailing" id="5zX-5s-PhH"/>
+                    <constraint firstItem="zvC-k7-eYv" firstAttribute="top" secondItem="fFW-PP-UqN" secondAttribute="bottom" id="6tE-Rc-hnF"/>
+                    <constraint firstAttribute="trailing" secondItem="uwK-zb-5GK" secondAttribute="trailing" id="7Wy-q7-rte"/>
+                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="fFW-PP-UqN" secondAttribute="trailing" id="8hD-ks-Xgg"/>
+                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="n4f-Nn-xml" secondAttribute="trailing" id="ACX-xX-aAk"/>
+                    <constraint firstItem="n4f-Nn-xml" firstAttribute="height" secondItem="fFW-PP-UqN" secondAttribute="height" id="IUT-rO-FoM"/>
+                    <constraint firstItem="MWv-69-oUT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MeZ-d7-7HD"/>
+                    <constraint firstItem="MWv-69-oUT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QDF-nf-gNi"/>
+                    <constraint firstItem="n4f-Nn-xml" firstAttribute="top" secondItem="zvC-k7-eYv" secondAttribute="bottom" id="RLg-ym-EUc"/>
+                    <constraint firstAttribute="bottom" secondItem="n4f-Nn-xml" secondAttribute="bottom" id="Wsl-bb-NSZ"/>
+                    <constraint firstItem="n4f-Nn-xml" firstAttribute="top" secondItem="zvC-k7-eYv" secondAttribute="bottom" id="Xbx-Jx-sOK"/>
+                    <constraint firstItem="zvC-k7-eYv" firstAttribute="top" secondItem="fFW-PP-UqN" secondAttribute="bottom" id="Xdh-dT-M6J"/>
+                    <constraint firstItem="zvC-k7-eYv" firstAttribute="leading" secondItem="MWv-69-oUT" secondAttribute="trailing" id="bGe-n1-Ttd"/>
+                    <constraint firstItem="uwK-zb-5GK" firstAttribute="centerY" secondItem="eJk-Il-WO4" secondAttribute="centerY" id="cVy-uY-hVE"/>
+                    <constraint firstAttribute="bottom" secondItem="MWv-69-oUT" secondAttribute="bottom" id="jv2-bM-Lv8"/>
+                    <constraint firstItem="n4f-Nn-xml" firstAttribute="height" secondItem="zvC-k7-eYv" secondAttribute="height" multiplier="1.00943" id="kEa-me-Obz"/>
+                    <constraint firstItem="n4f-Nn-xml" firstAttribute="leading" secondItem="MWv-69-oUT" secondAttribute="trailing" id="kep-6k-NWa"/>
+                    <constraint firstItem="fFW-PP-UqN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rOw-cJ-RXJ"/>
+                    <constraint firstItem="fFW-PP-UqN" firstAttribute="leading" secondItem="MWv-69-oUT" secondAttribute="trailing" id="u54-t9-DbJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -101,10 +172,12 @@
                 <outlet property="btnHanja" destination="frs-Pt-6a3" id="Fwb-LW-9wS"/>
                 <outlet property="btnJpMeaning" destination="6pA-2S-yml" id="UGa-Ik-wAd"/>
                 <outlet property="btnJpSound" destination="eJk-Il-WO4" id="JSJ-YV-knu"/>
-                <outlet property="lbHanja" destination="Gvr-7m-88R" id="A3C-j2-tPN"/>
+                <outlet property="lbEumhun" destination="fRS-xO-G7j" id="QmZ-DV-aK1"/>
+                <outlet property="lbJpMeaning" destination="TIP-s2-vh4" id="FIi-PN-QTq"/>
+                <outlet property="lbJpSound" destination="uq4-hj-acw" id="mPt-2O-yFy"/>
                 <outlet property="lbKanji" destination="cYs-hn-ffu" id="p5B-W2-zqM"/>
             </connections>
-            <point key="canvasLocation" x="533" y="137"/>
+            <point key="canvasLocation" x="532.60869565217399" y="114.50892857142857"/>
         </tableViewCell>
     </objects>
     <resources>

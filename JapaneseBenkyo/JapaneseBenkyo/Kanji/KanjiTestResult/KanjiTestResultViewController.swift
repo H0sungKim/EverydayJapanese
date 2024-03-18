@@ -29,7 +29,7 @@ class KanjiTestResultViewController: UIViewController {
         
         tableView.delegate = kanjiTableDataSource
         tableView.dataSource = kanjiTableDataSource
-        tableView.rowHeight = 100
+        tableView.rowHeight = 150
         tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
         
         lbTitle.text = "\(level) \(day) 테스트 결과"
