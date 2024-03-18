@@ -88,7 +88,7 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) as? KanjiTableViewCell {
-            if (kanjisForCell[indexPath.row].isVisibleHanja || kanjisForCell[indexPath.row].kanji.hanja == "") && kanjisForCell[indexPath.row].isVisibleEumhun && kanjisForCell[indexPath.row].isVisibleJpSound && kanjisForCell[indexPath.row].isVisibleJpMeaning {
+            if kanjisForCell[indexPath.row].isVisibleEumhun && kanjisForCell[indexPath.row].isVisibleJpSound && kanjisForCell[indexPath.row].isVisibleJpMeaning {
                 kanjisForCell[indexPath.row].isVisibleEumhun = false
                 kanjisForCell[indexPath.row].isVisibleJpSound = false
                 kanjisForCell[indexPath.row].isVisibleJpMeaning = false

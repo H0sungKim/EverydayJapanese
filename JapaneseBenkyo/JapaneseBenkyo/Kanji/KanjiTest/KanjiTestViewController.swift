@@ -57,8 +57,8 @@ class KanjiTestViewController: UIViewController {
         if isKanjiVisible {
             lbHanja.text = kanjis[index].hanja
             lbEumhun.text = kanjis[index].eumhun
-            lbJpSound.text = "音 ⇒ " + kanjis[index].jpSound
-            lbJpMeaning.text = "訓 ⇒ " + kanjis[index].jpMeaning
+            lbJpSound.text = kanjis[index].jpSound
+            lbJpMeaning.text = kanjis[index].jpMeaning
         } else {
             lbHanja.text = ""
             lbEumhun.text = ""
