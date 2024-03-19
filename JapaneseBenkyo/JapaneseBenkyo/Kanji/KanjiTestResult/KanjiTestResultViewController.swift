@@ -19,6 +19,7 @@ class KanjiTestResultViewController: UIViewController {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
+    @IBOutlet weak var btnReTest: UIButton!
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var lbSubScore: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -37,6 +38,8 @@ class KanjiTestResultViewController: UIViewController {
         lbSubScore.text = "\(kanjiCount! - wrongKanjiCount!)/\(kanjiCount!)"
         
         if wrongKanjiCount == 0 {
+            btnBookmark.isEnabled = false
+            btnReTest.isEnabled = false
             saveProcess()
         }
     }
@@ -54,11 +57,7 @@ class KanjiTestResultViewController: UIViewController {
         vc.kanjis = kanjisForCell.map { $0.kanji }
         vc.level = level
         vc.day = day
-        if vc.kanjis.count > 0 {
-            navigationController?.replaceViewController(viewController: vc, animated: true)
-        } else {
-            sender.isEnabled = false
-        }
+        navigationController?.replaceViewController(viewController: vc, animated: true)
     }
     @IBAction func onClickFinishTest(_ sender: Any) {
         navigationController?.popViewController(animated: true)

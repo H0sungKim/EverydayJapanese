@@ -19,6 +19,7 @@ class KanjiStudyViewController: UIViewController {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnTest: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,11 @@ class KanjiStudyViewController: UIViewController {
         tableView.dataSource = kanjiTableDataSource
         tableView.rowHeight = 150
         tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
+        
+        if kanjisForCell.count == 0 {
+            btnTest.isEnabled = false
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,10 +68,6 @@ class KanjiStudyViewController: UIViewController {
         vc.kanjis = kanjisForCell.map { $0.kanji }
         vc.level = level
         vc.day = day
-        if vc.kanjis.count > 0 {
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            sender.isEnabled = false
-        }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

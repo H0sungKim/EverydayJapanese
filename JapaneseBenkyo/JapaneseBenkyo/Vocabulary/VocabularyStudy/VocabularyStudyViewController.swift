@@ -19,6 +19,7 @@ class VocabularyStudyViewController: UIViewController {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnTest: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,10 @@ class VocabularyStudyViewController: UIViewController {
         tableView.dataSource = vocabularyTableDataSource
         tableView.rowHeight = 150
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
+        
+        if vocabulariesForCell.count == 0 {
+            btnTest.isEnabled = false
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,10 +67,6 @@ class VocabularyStudyViewController: UIViewController {
         vc.vocabularies = vocabulariesForCell.map { $0.vocabulary }
         vc.level = level
         vc.day = day
-        if vc.vocabularies.count > 0 {
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            sender.isEnabled = false
-        }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
