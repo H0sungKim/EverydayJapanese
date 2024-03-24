@@ -70,7 +70,7 @@ extension KanjiDayViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if process[level]?[cell.lbTitle.text ?? ""] ?? false {
             cell.ivProcess.image = UIImage(systemName: "checkmark.circle")
-            cell.ivProcess.tintColor = .systemBlue
+            cell.ivProcess.tintColor = .systemGreen
         } else {
             cell.ivProcess.image = UIImage(systemName: "circle")
             cell.ivProcess.tintColor = .systemGray

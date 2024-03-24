@@ -72,6 +72,9 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
         cell.onClickBookmark = { [weak self] sender in
             self?.onClickBookmark(cell, sender, vocabularyForCell: vocabularyForCell)
         }
+        cell.onClickPronounce = { [weak self] sender in
+            self?.onClickPronounce(cell, sender, vocabularyForCell: vocabularyForCell)
+        }
         
         initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
         
@@ -109,6 +112,9 @@ class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDel
         vocabularyForCell.isBookmark = !vocabularyForCell.isBookmark
         initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
         UserDefaultManager.shared.vocabularyBookmark = JSONManager.shared.encodeVocabularyJSON(vocabularies: bookmark)
+    }
+    private func onClickPronounce(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
+        TTSManager.shared.play(vocabulary: vocabularyForCell.vocabulary)
     }
     
     private func initializeCell(cell: VocabularyTableViewCell, vocabularyForCell: VocabularyForCell) {

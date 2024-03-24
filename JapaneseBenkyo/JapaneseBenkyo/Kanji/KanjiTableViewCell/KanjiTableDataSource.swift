@@ -79,7 +79,9 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         cell.onClickBookmark = { [weak self] sender in
             self?.onClickBookmark(cell, sender, kanjiForCell: kanjiForCell)
         }
-        
+        cell.onClickPronounce = { [weak self] sender in
+            self?.onClickPronounce(cell, sender, kanjiForCell: kanjiForCell)
+        }
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
         
         return cell
@@ -126,6 +128,9 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         kanjiForCell.isBookmark = !kanjiForCell.isBookmark
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
         UserDefaultManager.shared.kanjiBookmark = JSONManager.shared.encodeKanjiJSON(kanjis: bookmark)
+    }
+    private func onClickPronounce(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
+        TTSManager.shared.play(kanji: kanjiForCell.kanji)
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {

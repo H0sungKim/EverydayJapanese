@@ -19,6 +19,7 @@ class VocabularyTableViewCell: UITableViewCell {
     var onClickSound: ((_ sender: UIButton) -> Void)?
     var onClickMeaning: ((_ sender: UIButton) -> Void)?
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
+    var onClickPronounce: ((_ sender: UIButton) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +37,10 @@ class VocabularyTableViewCell: UITableViewCell {
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
     }
+    @IBAction func onClickPronounce(_ sender: UIButton) {
+        onClickPronounce?(sender)
+    }
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

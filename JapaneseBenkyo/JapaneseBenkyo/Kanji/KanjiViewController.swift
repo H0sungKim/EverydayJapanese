@@ -72,7 +72,7 @@ extension KanjiViewController: UITableViewDataSource, UITableViewDelegate {
         case .kanji0, .kanji1, .kanji2, .kanji3, .kanji4, .kanji5, .kanji6 :
             if process[catalogues[indexPath.row].rawValue]?["전체보기"] ?? false {
                 cell.ivProcess.image = UIImage(systemName: "checkmark.circle")
-                cell.ivProcess.tintColor = .systemBlue
+                cell.ivProcess.tintColor = .systemGreen
             } else {
                 cell.ivProcess.image = UIImage(systemName: "circle")
                 cell.ivProcess.tintColor = .systemGray

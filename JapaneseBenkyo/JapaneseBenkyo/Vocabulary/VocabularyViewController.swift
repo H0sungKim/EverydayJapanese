@@ -70,7 +70,7 @@ extension VocabularyViewController: UITableViewDataSource, UITableViewDelegate {
         case .vocabulary0, .vocabulary1, .vocabulary2, .vocabulary3, .vocabulary4 :
             if process[catalogues[indexPath.row].rawValue]?["전체보기"] ?? false {
                 cell.ivProcess.image = UIImage(systemName: "checkmark.circle")
-                cell.ivProcess.tintColor = .systemBlue
+                cell.ivProcess.tintColor = .systemGreen
             } else {
                 cell.ivProcess.image = UIImage(systemName: "circle")
                 cell.ivProcess.tintColor = .systemGray

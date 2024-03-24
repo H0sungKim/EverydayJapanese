@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,35 +17,78 @@
                 <rect key="frame" x="0.0" y="0.0" width="545" height="186"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwK-zb-5GK">
-                        <rect key="frame" x="493" y="25.5" width="52" height="34"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckh-UI-LmB">
+                        <rect key="frame" x="491" y="0.0" width="54" height="186"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1M-tc-iQR">
+                                <rect key="frame" x="0.0" y="93" width="54" height="93"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-u0-6Ru">
+                                        <rect key="frame" x="0.0" y="29.5" width="54" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="oIy-ZF-jEq"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="volume.2" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickPronounce:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pca-C1-9NM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bWg-u0-6Ru" firstAttribute="centerY" secondItem="g1M-tc-iQR" secondAttribute="centerY" id="1K3-BI-slF"/>
+                                    <constraint firstItem="bWg-u0-6Ru" firstAttribute="centerX" secondItem="g1M-tc-iQR" secondAttribute="centerX" id="sdU-X5-9JJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="242-ua-z6B">
+                                <rect key="frame" x="0.0" y="0.0" width="54" height="93"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwK-zb-5GK">
+                                        <rect key="frame" x="1" y="29.5" width="52" height="34"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickBookmark:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c5G-H3-LRS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uwK-zb-5GK" firstAttribute="centerY" secondItem="242-ua-z6B" secondAttribute="centerY" id="8JN-9U-Ozr"/>
+                                    <constraint firstItem="uwK-zb-5GK" firstAttribute="centerX" secondItem="242-ua-z6B" secondAttribute="centerX" id="gN9-qL-kDm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" constant="52" id="an2-HF-p3r"/>
+                            <constraint firstItem="g1M-tc-iQR" firstAttribute="top" secondItem="242-ua-z6B" secondAttribute="bottom" id="BPU-54-4Y3"/>
+                            <constraint firstItem="242-ua-z6B" firstAttribute="top" secondItem="ckh-UI-LmB" secondAttribute="top" id="GDL-An-c55"/>
+                            <constraint firstItem="g1M-tc-iQR" firstAttribute="height" secondItem="242-ua-z6B" secondAttribute="height" id="KXh-Nd-hNq"/>
+                            <constraint firstAttribute="trailing" secondItem="g1M-tc-iQR" secondAttribute="trailing" id="L7l-tE-Je9"/>
+                            <constraint firstItem="bWg-u0-6Ru" firstAttribute="width" secondItem="ckh-UI-LmB" secondAttribute="width" id="SA6-3H-pw1"/>
+                            <constraint firstAttribute="bottom" secondItem="g1M-tc-iQR" secondAttribute="bottom" id="b0j-KJ-W7C"/>
+                            <constraint firstAttribute="trailing" secondItem="242-ua-z6B" secondAttribute="trailing" id="nSY-mB-v2X"/>
+                            <constraint firstItem="242-ua-z6B" firstAttribute="leading" secondItem="ckh-UI-LmB" secondAttribute="leading" id="vVR-MF-YYv"/>
+                            <constraint firstItem="g1M-tc-iQR" firstAttribute="leading" secondItem="ckh-UI-LmB" secondAttribute="leading" id="xgR-fj-GmG"/>
                         </constraints>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                        <connections>
-                            <action selector="onClickBookmark:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c5G-H3-LRS"/>
-                        </connections>
-                    </button>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZV-am-fW4">
-                        <rect key="frame" x="0.0" y="0.0" width="493" height="186"/>
+                        <rect key="frame" x="0.0" y="0.0" width="491" height="186"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-hn-ffu">
-                                <rect key="frame" x="0.0" y="16" width="493" height="53"/>
+                                <rect key="frame" x="0.0" y="16" width="491" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqR-Kz-qFK">
-                                <rect key="frame" x="246.5" y="86.5" width="0.0" height="0.0"/>
+                                <rect key="frame" x="245.5" y="86.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Pt-6a3">
-                                <rect key="frame" x="203" y="69" width="87.5" height="34.5"/>
+                                <rect key="frame" x="202" y="69" width="87.5" height="34.5"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="발음 보기">
@@ -56,16 +99,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-4m-J9p">
-                                <rect key="frame" x="0.0" y="103.5" width="493" height="82.5"/>
+                                <rect key="frame" x="0.0" y="103.5" width="491" height="82.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1W-QB-DgR">
-                                        <rect key="frame" x="0.0" y="41.5" width="493" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="491" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-2S-yml">
-                                        <rect key="frame" x="209" y="23.5" width="75.5" height="36"/>
+                                        <rect key="frame" x="208" y="23.5" width="75.5" height="36"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="뜻 보기" titleAlignment="center">
@@ -102,12 +145,13 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="leading" secondItem="wZV-am-fW4" secondAttribute="trailing" id="DTf-9s-3cG"/>
                     <constraint firstItem="wZV-am-fW4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HOb-6P-lOA"/>
                     <constraint firstItem="wZV-am-fW4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KGk-L3-u5C"/>
                     <constraint firstAttribute="bottom" secondItem="wZV-am-fW4" secondAttribute="bottom" id="Oe2-mR-BV3"/>
-                    <constraint firstItem="uwK-zb-5GK" firstAttribute="centerY" secondItem="cYs-hn-ffu" secondAttribute="centerY" id="Qrh-YM-Ykg"/>
-                    <constraint firstAttribute="trailing" secondItem="uwK-zb-5GK" secondAttribute="trailing" id="dm9-ty-EkI"/>
+                    <constraint firstAttribute="trailing" secondItem="ckh-UI-LmB" secondAttribute="trailing" id="YAG-0W-Fqx"/>
+                    <constraint firstItem="ckh-UI-LmB" firstAttribute="leading" secondItem="wZV-am-fW4" secondAttribute="trailing" id="fpq-Kw-tfG"/>
+                    <constraint firstAttribute="bottom" secondItem="ckh-UI-LmB" secondAttribute="bottom" id="h5v-Sh-kIL"/>
+                    <constraint firstItem="ckh-UI-LmB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jhn-FM-3zm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -124,6 +168,7 @@
     </objects>
     <resources>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="volume.2" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

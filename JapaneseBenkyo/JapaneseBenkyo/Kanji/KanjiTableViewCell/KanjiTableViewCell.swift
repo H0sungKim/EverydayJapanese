@@ -24,6 +24,7 @@ class KanjiTableViewCell: UITableViewCell {
     var onClickJpSound: ((_ sender: UIButton) -> Void)?
     var onClickJpMeaning: ((_ sender: UIButton) -> Void)?
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
+    var onClickPronounce: ((_ sender: UIButton) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,9 @@ class KanjiTableViewCell: UITableViewCell {
     }
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
+    }
+    @IBAction func onClickPronounce(_ sender: UIButton) {
+        onClickPronounce?(sender)
     }
     
 }
