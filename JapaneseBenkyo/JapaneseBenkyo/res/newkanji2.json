@@ -1,0 +1,2634 @@
+[
+    {
+        "kanji": "感",
+        "hanja": "",
+        "eumhun": "느낄 감",
+        "jpSound": "かん",
+        "jpMeaning": "無し",
+        "examples": [
+            "感心",
+            "感覚",
+            "直感"
+        ]
+    },
+    {
+        "kanji": "開",
+        "hanja": "",
+        "eumhun": "열 개",
+        "jpSound": "かい",
+        "jpMeaning": "ひらく、あける",
+        "examples": [
+            "開始",
+            "開拓",
+            "展開開く",
+            "川開き開ける開く開ける",
+            "開けたて"
+        ]
+    },
+    {
+        "kanji": "客",
+        "hanja": "",
+        "eumhun": "손 객",
+        "jpSound": "きゃく、かく",
+        "jpMeaning": "無し",
+        "examples": [
+            "客間",
+            "客車",
+            "乗客客死",
+            "主客",
+            "旅客"
+        ]
+    },
+    {
+        "kanji": "去",
+        "hanja": "",
+        "eumhun": "갈 거",
+        "jpSound": "きょ、こ",
+        "jpMeaning": "さる",
+        "examples": [
+            "去年",
+            "去就",
+            "除去過去去る",
+            "去る○日"
+        ]
+    },
+    {
+        "kanji": "決",
+        "hanja": "",
+        "eumhun": "결단할 결",
+        "jpSound": "けつ",
+        "jpMeaning": "きめる、きまる",
+        "examples": [
+            "決裂",
+            "決意",
+            "解決決める",
+            "取り決め決まる",
+            "決まり"
+        ]
+    },
+    {
+        "kanji": "軽",
+        "hanja": "輕",
+        "eumhun": "가벼울 경",
+        "jpSound": "けい",
+        "jpMeaning": "かるい、かろやか",
+        "examples": [
+            "軽快",
+            "軽薄",
+            "軽率軽い",
+            "軽々と",
+            "手軽だ軽やかだ"
+        ]
+    },
+    {
+        "kanji": "界",
+        "hanja": "",
+        "eumhun": "지경 계",
+        "jpSound": "かい",
+        "jpMeaning": "無し",
+        "examples": [
+            "境界",
+            "限界",
+            "世界"
+        ]
+    },
+    {
+        "kanji": "係",
+        "hanja": "",
+        "eumhun": "맬 계",
+        "jpSound": "けい",
+        "jpMeaning": "かかり、かかる",
+        "examples": [
+            "係累",
+            "係争",
+            "関係係る係",
+            "係員",
+            "庶務係"
+        ]
+    },
+    {
+        "kanji": "階",
+        "hanja": "",
+        "eumhun": "섬돌 계",
+        "jpSound": "かい",
+        "jpMeaning": "無し",
+        "examples": [
+            "階段",
+            "階級",
+            "地階"
+        ]
+    },
+    {
+        "kanji": "苦",
+        "hanja": "苦",
+        "eumhun": "쓸[味覺] 고",
+        "jpSound": "く",
+        "jpMeaning": "くるしい、にがい、にがる",
+        "examples": [
+            "苦心",
+            "苦労",
+            "辛苦苦しい",
+            "苦しがる",
+            "見苦しい苦しむ",
+            "苦しみ苦しめる苦い",
+            "苦虫",
+            "苦々しい苦り切る"
+        ]
+    },
+    {
+        "kanji": "庫",
+        "hanja": "",
+        "eumhun": "곳집 고",
+        "jpSound": "こ、く",
+        "jpMeaning": "無し",
+        "examples": [
+            "倉庫",
+            "文庫",
+            "車庫庫裏"
+        ]
+    },
+    {
+        "kanji": "曲",
+        "hanja": "",
+        "eumhun": "굽을 곡",
+        "jpSound": "きょく",
+        "jpMeaning": "まがる、まげる",
+        "examples": [
+            "曲線",
+            "曲面",
+            "名曲曲がる曲げる"
+        ]
+    },
+    {
+        "kanji": "館",
+        "hanja": "館",
+        "eumhun": "집 관",
+        "jpSound": "かん",
+        "jpMeaning": "やかた",
+        "examples": [
+            "館内",
+            "旅館",
+            "図書館館"
+        ]
+    },
+    {
+        "kanji": "橋",
+        "hanja": "",
+        "eumhun": "다리 교",
+        "jpSound": "きょう",
+        "jpMeaning": "はし",
+        "examples": [
+            "橋脚",
+            "鉄橋",
+            "歩道橋橋",
+            "丸木橋"
+        ]
+    },
+    {
+        "kanji": "区",
+        "hanja": "區",
+        "eumhun": "구분할/지경 구",
+        "jpSound": "く",
+        "jpMeaning": "無し",
+        "examples": [
+            "区別",
+            "区々",
+            "地区"
+        ]
+    },
+    {
+        "kanji": "究",
+        "hanja": "",
+        "eumhun": "연구할 구",
+        "jpSound": "きゅう",
+        "jpMeaning": "きわめる",
+        "examples": [
+            "究明",
+            "研究",
+            "学究究める"
+        ]
+    },
+    {
+        "kanji": "具",
+        "hanja": "具",
+        "eumhun": "갖출 구",
+        "jpSound": "ぐ",
+        "jpMeaning": "無し",
+        "examples": [
+            "具体的",
+            "具備",
+            "道具"
+        ]
+    },
+    {
+        "kanji": "球",
+        "hanja": "",
+        "eumhun": "공 구",
+        "jpSound": "きゅう",
+        "jpMeaning": "たま",
+        "examples": [
+            "球形",
+            "球技",
+            "地球球"
+        ]
+    },
+    {
+        "kanji": "局",
+        "hanja": "",
+        "eumhun": "판[形局] 국",
+        "jpSound": "きょく",
+        "jpMeaning": "無し",
+        "examples": [
+            "局部",
+            "時局",
+            "結局"
+        ]
+    },
+    {
+        "kanji": "君",
+        "hanja": "",
+        "eumhun": "임금 군",
+        "jpSound": "くん",
+        "jpMeaning": "きみ",
+        "examples": [
+            "君主",
+            "君臨",
+            "諸君君",
+            "母君"
+        ]
+    },
+    {
+        "kanji": "宮",
+        "hanja": "",
+        "eumhun": "집 궁",
+        "jpSound": "きゅう、ぐう、く",
+        "jpMeaning": "みや",
+        "examples": [
+            "宮殿",
+            "宮廷",
+            "離宮宮司",
+            "神宮",
+            "東宮　宮",
+            "宮様"
+        ]
+    },
+    {
+        "kanji": "根",
+        "hanja": "",
+        "eumhun": "뿌리 근",
+        "jpSound": "こん",
+        "jpMeaning": "ね",
+        "examples": [
+            "根拠",
+            "根気",
+            "平方根根",
+            "根強い",
+            "屋根"
+        ]
+    },
+    {
+        "kanji": "急",
+        "hanja": "急",
+        "eumhun": "급할 급",
+        "jpSound": "きゅう",
+        "jpMeaning": "いそぐ",
+        "examples": [
+            "急速",
+            "急務",
+            "緊急急ぐ",
+            "急ぎ"
+        ]
+    },
+    {
+        "kanji": "級",
+        "hanja": "",
+        "eumhun": "등급 급",
+        "jpSound": "きゅう",
+        "jpMeaning": "無し",
+        "examples": [
+            "等級",
+            "上級",
+            "階級"
+        ]
+    },
+    {
+        "kanji": "起",
+        "hanja": "",
+        "eumhun": "일어날 기",
+        "jpSound": "き",
+        "jpMeaning": "おきる、おこる、おこす",
+        "examples": [
+            "起立",
+            "起源",
+            "奮起起きる",
+            "早起き起こる起こす"
+        ]
+    },
+    {
+        "kanji": "期",
+        "hanja": "",
+        "eumhun": "기약할 기",
+        "jpSound": "き、ご",
+        "jpMeaning": "無し",
+        "examples": [
+            "期間",
+            "期待",
+            "予期最期",
+            "この期に及んで"
+        ]
+    },
+    {
+        "kanji": "農",
+        "hanja": "",
+        "eumhun": "농사 농",
+        "jpSound": "のう",
+        "jpMeaning": "無し",
+        "examples": [
+            "農業",
+            "農具",
+            "酪農"
+        ]
+    },
+    {
+        "kanji": "短",
+        "hanja": "",
+        "eumhun": "짧을 단",
+        "jpSound": "たん",
+        "jpMeaning": "みじかい",
+        "examples": [
+            "短歌",
+            "短所",
+            "長短短い"
+        ]
+    },
+    {
+        "kanji": "談",
+        "hanja": "",
+        "eumhun": "말씀 담",
+        "jpSound": "だん",
+        "jpMeaning": "無し",
+        "examples": [
+            "談話",
+            "談判",
+            "相談"
+        ]
+    },
+    {
+        "kanji": "代",
+        "hanja": "",
+        "eumhun": "대신할 대",
+        "jpSound": "だい、たい",
+        "jpMeaning": "よ、しろ、かわる、かえる",
+        "examples": [
+            "代理",
+            "世代",
+            "現代代謝",
+            "交代代わる",
+            "代わり代える代",
+            "神代代物",
+            "苗代"
+        ]
+    },
+    {
+        "kanji": "対",
+        "hanja": "對",
+        "eumhun": "대할 대",
+        "jpSound": "たい、つい",
+        "jpMeaning": "無し",
+        "examples": [
+            "対立",
+            "絶対",
+            "反対対句",
+            "一対"
+        ]
+    },
+    {
+        "kanji": "待",
+        "hanja": "",
+        "eumhun": "기다릴 대",
+        "jpSound": "たい",
+        "jpMeaning": "まつ",
+        "examples": [
+            "待機",
+            "待遇",
+            "期待待つ",
+            "待ち遠しい"
+        ]
+    },
+    {
+        "kanji": "度",
+        "hanja": "",
+        "eumhun": "법도 도 | 헤아릴 탁",
+        "jpSound": "ど、と、たく",
+        "jpMeaning": "たび",
+        "examples": [
+            "度胸",
+            "制度",
+            "限度法度支度度",
+            "度重なる",
+            "この度"
+        ]
+    },
+    {
+        "kanji": "島",
+        "hanja": "",
+        "eumhun": "섬 도",
+        "jpSound": "とう",
+        "jpMeaning": "しま",
+        "examples": [
+            "島民",
+            "半島",
+            "列島島",
+            "島国",
+            "離れ島"
+        ]
+    },
+    {
+        "kanji": "都",
+        "hanja": "都",
+        "eumhun": "도읍 도",
+        "jpSound": "と、つ",
+        "jpMeaning": "みやこ",
+        "examples": [
+            "都会",
+            "都心",
+            "首都都合",
+            "都度都",
+            "都落ち"
+        ]
+    },
+    {
+        "kanji": "動",
+        "hanja": "",
+        "eumhun": "움직일 동",
+        "jpSound": "どう",
+        "jpMeaning": "うごく",
+        "examples": [
+            "動物",
+            "活動",
+            "騒動動く",
+            "動き動かす"
+        ]
+    },
+    {
+        "kanji": "童",
+        "hanja": "",
+        "eumhun": "아이 동",
+        "jpSound": "どう",
+        "jpMeaning": "わらべ",
+        "examples": [
+            "童話",
+            "童心",
+            "児童童",
+            "童歌"
+        ]
+    },
+    {
+        "kanji": "豆",
+        "hanja": "",
+        "eumhun": "콩 두",
+        "jpSound": "とう、ず",
+        "jpMeaning": "まめ",
+        "examples": [
+            "豆腐",
+            "納豆大豆豆",
+            "豆粒",
+            "煮豆"
+        ]
+    },
+    {
+        "kanji": "登",
+        "hanja": "",
+        "eumhun": "오를 등",
+        "jpSound": "とう、と",
+        "jpMeaning": "のぼる",
+        "examples": [
+            "登壇",
+            "登校",
+            "登記登山",
+            "登城登る",
+            "山登り"
+        ]
+    },
+    {
+        "kanji": "等",
+        "hanja": "",
+        "eumhun": "무리 등",
+        "jpSound": "とう",
+        "jpMeaning": "ひとしい",
+        "examples": [
+            "等分",
+            "等級",
+            "平等等しい"
+        ]
+    },
+    {
+        "kanji": "落",
+        "hanja": "落",
+        "eumhun": "떨어질 락",
+        "jpSound": "らく",
+        "jpMeaning": "おちる、おとす",
+        "examples": [
+            "落語",
+            "落涙",
+            "集落落ちる",
+            "落ち着く落とす",
+            "力落とし"
+        ]
+    },
+    {
+        "kanji": "両",
+        "hanja": "兩",
+        "eumhun": "두 량",
+        "jpSound": "りょう",
+        "jpMeaning": "無し",
+        "examples": [
+            "両親",
+            "両立",
+            "千両"
+        ]
+    },
+    {
+        "kanji": "旅",
+        "hanja": "旅",
+        "eumhun": "나그네 려",
+        "jpSound": "りょ",
+        "jpMeaning": "たび",
+        "examples": [
+            "旅行",
+            "旅情",
+            "旅券旅",
+            "旅先",
+            "船旅"
+        ]
+    },
+    {
+        "kanji": "練",
+        "hanja": "練",
+        "eumhun": "익힐 련",
+        "jpSound": "れん",
+        "jpMeaning": "ねる",
+        "examples": [
+            "練習",
+            "試練",
+            "熟練練る",
+            "練り直す"
+        ]
+    },
+    {
+        "kanji": "列",
+        "hanja": "",
+        "eumhun": "벌릴 렬",
+        "jpSound": "れつ",
+        "jpMeaning": "無し",
+        "examples": [
+            "列外",
+            "列車",
+            "陳列"
+        ]
+    },
+    {
+        "kanji": "礼",
+        "hanja": "禮",
+        "eumhun": "예도 례",
+        "jpSound": "れい、らい",
+        "jpMeaning": "無し",
+        "examples": [
+            "礼儀",
+            "謝礼",
+            "無礼礼賛",
+            "礼拝"
+        ]
+    },
+    {
+        "kanji": "路",
+        "hanja": "",
+        "eumhun": "길 로",
+        "jpSound": "ろ",
+        "jpMeaning": "じ",
+        "examples": [
+            "路上",
+            "道路家路",
+            "旅路",
+            "山路"
+        ]
+    },
+    {
+        "kanji": "緑",
+        "hanja": "綠",
+        "eumhun": "푸를 록",
+        "jpSound": "りょく、ろく",
+        "jpMeaning": "みどり",
+        "examples": [
+            "緑茶",
+            "緑陰",
+            "新緑緑青緑",
+            "薄緑"
+        ]
+    },
+    {
+        "kanji": "流",
+        "hanja": "",
+        "eumhun": "흐를 류",
+        "jpSound": "りゅう、る",
+        "jpMeaning": "ながす",
+        "examples": [
+            "流行",
+            "流動",
+            "電流流布",
+            "流転",
+            "流罪流れる",
+            "流れ流す",
+            "流し"
+        ]
+    },
+    {
+        "kanji": "面",
+        "hanja": "",
+        "eumhun": "낯 면",
+        "jpSound": "めん",
+        "jpMeaning": "おも、おもて、つら",
+        "examples": [
+            "面会",
+            "顔面",
+            "方面川の面",
+            "面影",
+            "面長面",
+            "細面面",
+            "面魂",
+            "鼻面"
+        ]
+    },
+    {
+        "kanji": "勉",
+        "hanja": "勉",
+        "eumhun": "힘쓸 면",
+        "jpSound": "べん",
+        "jpMeaning": "無し",
+        "examples": [
+            "勉強",
+            "勉学",
+            "勤勉"
+        ]
+    },
+    {
+        "kanji": "皿",
+        "hanja": "",
+        "eumhun": "그릇 명",
+        "jpSound": "無し",
+        "jpMeaning": "さら",
+        "examples": [
+            "皿",
+            "灰皿"
+        ]
+    },
+    {
+        "kanji": "命",
+        "hanja": "",
+        "eumhun": "목숨 명",
+        "jpSound": "めい、みょう",
+        "jpMeaning": "いのち",
+        "examples": [
+            "命令",
+            "運命",
+            "生命寿命命",
+            "命拾い"
+        ]
+    },
+    {
+        "kanji": "問",
+        "hanja": "",
+        "eumhun": "물을 문",
+        "jpSound": "もん",
+        "jpMeaning": "とい、とう、とん",
+        "examples": [
+            "問題",
+            "問答",
+            "訪問問う",
+            "問いただす問い問屋"
+        ]
+    },
+    {
+        "kanji": "物",
+        "hanja": "",
+        "eumhun": "물건 물",
+        "jpSound": "ぶつ、もつ",
+        "jpMeaning": "もの",
+        "examples": [
+            "物質",
+            "人物",
+            "動物食物",
+            "進物",
+            "禁物物",
+            "物語",
+            "品物"
+        ]
+    },
+    {
+        "kanji": "味",
+        "hanja": "",
+        "eumhun": "맛 미",
+        "jpSound": "み",
+        "jpMeaning": "あじ、あじわう",
+        "examples": [
+            "味覚",
+            "意味",
+            "興味味",
+            "味見",
+            "塩味味わう",
+            "味わい"
+        ]
+    },
+    {
+        "kanji": "美",
+        "hanja": "",
+        "eumhun": "아름다울 미",
+        "jpSound": "び",
+        "jpMeaning": "うつくしい",
+        "examples": [
+            "美醜",
+            "美術",
+            "賛美美しい",
+            "美しさ"
+        ]
+    },
+    {
+        "kanji": "反",
+        "hanja": "",
+        "eumhun": "돌이킬/돌아올 반",
+        "jpSound": "はん、ほん、たん",
+        "jpMeaning": "そる、そらす",
+        "examples": [
+            "反映",
+            "反対",
+            "違反謀反反物反る",
+            "反り反らす"
+        ]
+    },
+    {
+        "kanji": "返",
+        "hanja": "",
+        "eumhun": "돌이킬 반",
+        "jpSound": "へん",
+        "jpMeaning": "かえす、かえる",
+        "examples": [
+            "返却",
+            "返事",
+            "返礼返す",
+            "仕返し返る",
+            "寝返り"
+        ]
+    },
+    {
+        "kanji": "発",
+        "hanja": "發",
+        "eumhun": "필 발",
+        "jpSound": "はつ、ほつ",
+        "jpMeaning": "無し",
+        "examples": [
+            "発明",
+            "発射",
+            "突発発作",
+            "発端",
+            "発起"
+        ]
+    },
+    {
+        "kanji": "放",
+        "hanja": "",
+        "eumhun": "놓을 방",
+        "jpSound": "ほう",
+        "jpMeaning": "はなす、はなつ、はなれる、ほうる",
+        "examples": [
+            "放送",
+            "放棄",
+            "追放放す",
+            "手放す放つ放れる放る"
+        ]
+    },
+    {
+        "kanji": "倍",
+        "hanja": "",
+        "eumhun": "곱 배",
+        "jpSound": "ばい",
+        "jpMeaning": "無し",
+        "examples": [
+            "倍率",
+            "倍加",
+            "二倍"
+        ]
+    },
+    {
+        "kanji": "配",
+        "hanja": "",
+        "eumhun": "나눌/짝 배",
+        "jpSound": "はい",
+        "jpMeaning": "くばる",
+        "examples": [
+            "配分",
+            "交配",
+            "心配配る"
+        ]
+    },
+    {
+        "kanji": "病",
+        "hanja": "",
+        "eumhun": "병 병",
+        "jpSound": "びょう、へい",
+        "jpMeaning": "やまい、やむ",
+        "examples": [
+            "病気",
+            "病根",
+            "看病疾病病む",
+            "病み付き病"
+        ]
+    },
+    {
+        "kanji": "服",
+        "hanja": "",
+        "eumhun": "옷 복",
+        "jpSound": "ふく",
+        "jpMeaning": "無し",
+        "examples": [
+            "服装",
+            "服従",
+            "洋服"
+        ]
+    },
+    {
+        "kanji": "福",
+        "hanja": "福",
+        "eumhun": "복 복",
+        "jpSound": "ふく",
+        "jpMeaning": "無し",
+        "examples": [
+            "福祉",
+            "福徳",
+            "幸福"
+        ]
+    },
+    {
+        "kanji": "負",
+        "hanja": "",
+        "eumhun": "질[荷] 부",
+        "jpSound": "ふ",
+        "jpMeaning": "まける、まかす、おう",
+        "examples": [
+            "負担",
+            "負傷",
+            "勝負負ける",
+            "負け負かす負う",
+            "負い目",
+            "背負う"
+        ]
+    },
+    {
+        "kanji": "部",
+        "hanja": "",
+        "eumhun": "떼 부",
+        "jpSound": "ぶ",
+        "jpMeaning": "無し",
+        "examples": [
+            "部分",
+            "全部",
+            "本部"
+        ]
+    },
+    {
+        "kanji": "悲",
+        "hanja": "",
+        "eumhun": "슬플 비",
+        "jpSound": "ひ",
+        "jpMeaning": "かなしい、かなしむ",
+        "examples": [
+            "悲喜",
+            "悲劇",
+            "慈悲悲しい",
+            "悲しがる悲しむ",
+            "悲しみ"
+        ]
+    },
+    {
+        "kanji": "鼻",
+        "hanja": "",
+        "eumhun": "코 비",
+        "jpSound": "び",
+        "jpMeaning": "はな",
+        "examples": [
+            "鼻音",
+            "鼻孔",
+            "耳鼻科鼻",
+            "鼻血",
+            "小鼻"
+        ]
+    },
+    {
+        "kanji": "氷",
+        "hanja": "",
+        "eumhun": "얼음 빙",
+        "jpSound": "ひょう",
+        "jpMeaning": "こおり、ひ",
+        "examples": [
+            "氷点",
+            "氷山",
+            "結氷氷氷雨"
+        ]
+    },
+    {
+        "kanji": "写",
+        "hanja": "寫",
+        "eumhun": "베낄 사",
+        "jpSound": "しゃ",
+        "jpMeaning": "うつす、うつる",
+        "examples": [
+            "写真",
+            "描写",
+            "映写写す",
+            "写し写る",
+            "写り"
+        ]
+    },
+    {
+        "kanji": "仕",
+        "hanja": "",
+        "eumhun": "섬길 사",
+        "jpSound": "し、じ",
+        "jpMeaning": "つかえる",
+        "examples": [
+            "仕事",
+            "出仕給仕仕える"
+        ]
+    },
+    {
+        "kanji": "死",
+        "hanja": "",
+        "eumhun": "죽을 사",
+        "jpSound": "し",
+        "jpMeaning": "しぬ",
+        "examples": [
+            "死亡",
+            "死角",
+            "必死死ぬ",
+            "死に絶える"
+        ]
+    },
+    {
+        "kanji": "事",
+        "hanja": "",
+        "eumhun": "일 사",
+        "jpSound": "じ、ず",
+        "jpMeaning": "こと",
+        "examples": [
+            "事物",
+            "無事",
+            "師事好事家事",
+            "仕事",
+            "出来事"
+        ]
+    },
+    {
+        "kanji": "使",
+        "hanja": "",
+        "eumhun": "하여금/부릴 사",
+        "jpSound": "し",
+        "jpMeaning": "つかう",
+        "examples": [
+            "使役",
+            "使者",
+            "駆使使う",
+            "使い"
+        ]
+    },
+    {
+        "kanji": "相",
+        "hanja": "",
+        "eumhun": "서로 상",
+        "jpSound": "そう、しょう",
+        "jpMeaning": "あい",
+        "examples": [
+            "相当",
+            "相談",
+            "真相首相",
+            "宰相相手",
+            "相宿"
+        ]
+    },
+    {
+        "kanji": "商",
+        "hanja": "",
+        "eumhun": "장사 상",
+        "jpSound": "しょう",
+        "jpMeaning": "あきなう",
+        "examples": [
+            "商売",
+            "商業",
+            "貿易商商う",
+            "商い"
+        ]
+    },
+    {
+        "kanji": "想",
+        "hanja": "",
+        "eumhun": "생각 상",
+        "jpSound": "そう、そ",
+        "jpMeaning": "無し",
+        "examples": [
+            "想像",
+            "感想",
+            "予想愛想"
+        ]
+    },
+    {
+        "kanji": "箱",
+        "hanja": "",
+        "eumhun": "상자 상",
+        "jpSound": "無し",
+        "jpMeaning": "はこ",
+        "examples": [
+            "箱",
+            "箱庭",
+            "小箱"
+        ]
+    },
+    {
+        "kanji": "暑",
+        "hanja": "暑",
+        "eumhun": "더울 서",
+        "jpSound": "しょ",
+        "jpMeaning": "あつい",
+        "examples": [
+            "暑気",
+            "残暑",
+            "避暑暑い",
+            "暑さ"
+        ]
+    },
+    {
+        "kanji": "昔",
+        "hanja": "",
+        "eumhun": "예[古] 석",
+        "jpSound": "せき、しゃく",
+        "jpMeaning": "むかし",
+        "examples": [
+            "昔日",
+            "昔年",
+            "昔時今昔昔",
+            "昔話"
+        ]
+    },
+    {
+        "kanji": "世",
+        "hanja": "",
+        "eumhun": "인간 세",
+        "jpSound": "せい、せ",
+        "jpMeaning": "よ",
+        "examples": [
+            "世紀",
+            "時世",
+            "処世世界",
+            "世間",
+            "出世世",
+            "世の中"
+        ]
+    },
+    {
+        "kanji": "所",
+        "hanja": "所",
+        "eumhun": "바 소",
+        "jpSound": "しょ",
+        "jpMeaning": "ところ",
+        "examples": [
+            "所得",
+            "住所",
+            "近所所",
+            "台所"
+        ]
+    },
+    {
+        "kanji": "昭",
+        "hanja": "",
+        "eumhun": "밝을 소",
+        "jpSound": "しょう",
+        "jpMeaning": "無し",
+        "examples": [
+            "昭和"
+        ]
+    },
+    {
+        "kanji": "消",
+        "hanja": "消",
+        "eumhun": "사라질 소",
+        "jpSound": "しょう",
+        "jpMeaning": "けす、きえる",
+        "examples": [
+            "消滅",
+            "消極的",
+            "費消消える",
+            "立ち消え消す",
+            "消しゴム"
+        ]
+    },
+    {
+        "kanji": "速",
+        "hanja": "",
+        "eumhun": "빠를 속",
+        "jpSound": "そく",
+        "jpMeaning": "はやい、はやめる、はやまる、すみやか",
+        "examples": [
+            "速度",
+            "敏速",
+            "時速速い",
+            "速さ速める速まる速やかだ"
+        ]
+    },
+    {
+        "kanji": "送",
+        "hanja": "送",
+        "eumhun": "보낼 송",
+        "jpSound": "そう",
+        "jpMeaning": "おくる",
+        "examples": [
+            "送別",
+            "放送",
+            "運送送る",
+            "見送り"
+        ]
+    },
+    {
+        "kanji": "守",
+        "hanja": "",
+        "eumhun": "지킬 수",
+        "jpSound": "しゅ、す",
+        "jpMeaning": "まもる、もり",
+        "examples": [
+            "守備",
+            "保守",
+            "攻守留守守る",
+            "守りお守り",
+            "子守",
+            "灯台守"
+        ]
+    },
+    {
+        "kanji": "受",
+        "hanja": "",
+        "eumhun": "받을 수",
+        "jpSound": "じゅ",
+        "jpMeaning": "うける、うかる",
+        "examples": [
+            "受諾",
+            "受験",
+            "甘受受ける",
+            "受付受かる"
+        ]
+    },
+    {
+        "kanji": "宿",
+        "hanja": "",
+        "eumhun": "잘 숙 | 별자리 수",
+        "jpSound": "しゅく",
+        "jpMeaning": "やど、やどる、やどす",
+        "examples": [
+            "宿泊",
+            "宿題",
+            "合宿宿",
+            "宿屋宿る",
+            "雨宿り宿す"
+        ]
+    },
+    {
+        "kanji": "拾",
+        "hanja": "",
+        "eumhun": "주울 습 | 열 십",
+        "jpSound": "しゅう、じゅう",
+        "jpMeaning": "ひろう",
+        "examples": [
+            "拾得",
+            "収拾拾万円拾う",
+            "拾い物"
+        ]
+    },
+    {
+        "kanji": "習",
+        "hanja": "習",
+        "eumhun": "익힐 습",
+        "jpSound": "しゅう",
+        "jpMeaning": "ならう",
+        "examples": [
+            "習得",
+            "習慣",
+            "練習習う",
+            "手習い"
+        ]
+    },
+    {
+        "kanji": "乗",
+        "hanja": "乘",
+        "eumhun": "탈 승",
+        "jpSound": "じょう",
+        "jpMeaning": "のる、のせる",
+        "examples": [
+            "乗数",
+            "乗車",
+            "大乗的乗る",
+            "乗り物乗せる"
+        ]
+    },
+    {
+        "kanji": "勝",
+        "hanja": "勝",
+        "eumhun": "이길 승",
+        "jpSound": "しょう",
+        "jpMeaning": "かつ、まさる",
+        "examples": [
+            "勝敗",
+            "優勝",
+            "名勝勝つ",
+            "勝ち",
+            "勝手勝る",
+            "男勝り"
+        ]
+    },
+    {
+        "kanji": "始",
+        "hanja": "",
+        "eumhun": "비로소 시",
+        "jpSound": "し",
+        "jpMeaning": "はじめる、はじまる",
+        "examples": [
+            "始終",
+            "年始",
+            "開始始める",
+            "始め始まる",
+            "始まり"
+        ]
+    },
+    {
+        "kanji": "詩",
+        "hanja": "",
+        "eumhun": "시 시",
+        "jpSound": "し",
+        "jpMeaning": "無し",
+        "examples": [
+            "詩情",
+            "詩人",
+            "詩歌"
+        ]
+    },
+    {
+        "kanji": "式",
+        "hanja": "",
+        "eumhun": "법 식",
+        "jpSound": "しき",
+        "jpMeaning": "無し",
+        "examples": [
+            "式典",
+            "形式",
+            "数式"
+        ]
+    },
+    {
+        "kanji": "息",
+        "hanja": "",
+        "eumhun": "쉴 식",
+        "jpSound": "そく",
+        "jpMeaning": "いき",
+        "examples": [
+            "休息",
+            "消息",
+            "子息息",
+            "息巻く",
+            "吐息"
+        ]
+    },
+    {
+        "kanji": "植",
+        "hanja": "",
+        "eumhun": "심을 식",
+        "jpSound": "しょく",
+        "jpMeaning": "うえる",
+        "examples": [
+            "植樹",
+            "植物",
+            "誤植植える",
+            "植木植わる"
+        ]
+    },
+    {
+        "kanji": "申",
+        "hanja": "",
+        "eumhun": "납[猿] 신",
+        "jpSound": "しん",
+        "jpMeaning": "もうす",
+        "examples": [
+            "申告",
+            "申請",
+            "内申書申す",
+            "申し上げる"
+        ]
+    },
+    {
+        "kanji": "身",
+        "hanja": "",
+        "eumhun": "몸 신",
+        "jpSound": "しん",
+        "jpMeaning": "み",
+        "examples": [
+            "身体",
+            "単身",
+            "等身大身",
+            "身内",
+            "親身"
+        ]
+    },
+    {
+        "kanji": "神",
+        "hanja": "神",
+        "eumhun": "귀신 신",
+        "jpSound": "しん、じん",
+        "jpMeaning": "かみ、かん、こう",
+        "examples": [
+            "神聖",
+            "神経",
+            "精神神社",
+            "神宮",
+            "神通力神",
+            "神様",
+            "貧乏神神主神々しい"
+        ]
+    },
+    {
+        "kanji": "実",
+        "hanja": "實",
+        "eumhun": "열매 실",
+        "jpSound": "じつ",
+        "jpMeaning": "み、みのる",
+        "examples": [
+            "実力",
+            "充実",
+            "実に実",
+            "実入り実る",
+            "実り"
+        ]
+    },
+    {
+        "kanji": "深",
+        "hanja": "",
+        "eumhun": "깊을 심",
+        "jpSound": "しん",
+        "jpMeaning": "ふかい",
+        "examples": [
+            "深山",
+            "深夜",
+            "水深深い",
+            "深入り",
+            "深み深まる深める"
+        ]
+    },
+    {
+        "kanji": "悪",
+        "hanja": "惡",
+        "eumhun": "악할 악 | 미워할 오",
+        "jpSound": "あく、お",
+        "jpMeaning": "わるい",
+        "examples": [
+            "悪事",
+            "悪意",
+            "醜悪悪寒",
+            "好悪",
+            "憎悪悪い",
+            "悪さ",
+            "悪者"
+        ]
+    },
+    {
+        "kanji": "安",
+        "hanja": "",
+        "eumhun": "편안 안",
+        "jpSound": "あん",
+        "jpMeaning": "やすい",
+        "examples": [
+            "安全",
+            "安価",
+            "不安安い",
+            "安らかだ"
+        ]
+    },
+    {
+        "kanji": "岸",
+        "hanja": "",
+        "eumhun": "언덕 안",
+        "jpSound": "がん",
+        "jpMeaning": "きし",
+        "examples": [
+            "岸壁",
+            "対岸",
+            "彼岸岸",
+            "向こう岸"
+        ]
+    },
+    {
+        "kanji": "暗",
+        "hanja": "",
+        "eumhun": "어두울 암",
+        "jpSound": "あん",
+        "jpMeaning": "くらい",
+        "examples": [
+            "暗示",
+            "暗愚",
+            "明暗暗い",
+            "暗がり"
+        ]
+    },
+    {
+        "kanji": "央",
+        "hanja": "",
+        "eumhun": "가운데 앙",
+        "jpSound": "おう",
+        "jpMeaning": "無し",
+        "examples": [
+            "中央"
+        ]
+    },
+    {
+        "kanji": "薬",
+        "hanja": "藥",
+        "eumhun": "약 약",
+        "jpSound": "やく",
+        "jpMeaning": "くすり",
+        "examples": [
+            "薬剤",
+            "薬局",
+            "火薬薬",
+            "飲み薬"
+        ]
+    },
+    {
+        "kanji": "羊",
+        "hanja": "",
+        "eumhun": "양 양",
+        "jpSound": "よう",
+        "jpMeaning": "ひつじ",
+        "examples": [
+            "羊毛",
+            "綿羊",
+            "牧羊羊"
+        ]
+    },
+    {
+        "kanji": "洋",
+        "hanja": "",
+        "eumhun": "큰바다 양",
+        "jpSound": "よう",
+        "jpMeaning": "無し",
+        "examples": [
+            "洋楽",
+            "洋風",
+            "海洋"
+        ]
+    },
+    {
+        "kanji": "陽",
+        "hanja": "",
+        "eumhun": "볕 양",
+        "jpSound": "よう",
+        "jpMeaning": "無し",
+        "examples": [
+            "陽光",
+            "陰陽",
+            "太陽"
+        ]
+    },
+    {
+        "kanji": "様",
+        "hanja": "樣",
+        "eumhun": "모양 양",
+        "jpSound": "よう",
+        "jpMeaning": "さま",
+        "examples": [
+            "様式",
+            "様子",
+            "模様様",
+            "○○様"
+        ]
+    },
+    {
+        "kanji": "業",
+        "hanja": "",
+        "eumhun": "업 업",
+        "jpSound": "ぎょう、ごう",
+        "jpMeaning": "わざ",
+        "examples": [
+            "業績",
+            "職業",
+            "卒業業病",
+            "罪業",
+            "自業自得業",
+            "仕業",
+            "早業"
+        ]
+    },
+    {
+        "kanji": "役",
+        "hanja": "",
+        "eumhun": "부릴 역",
+        "jpSound": "やく、えき",
+        "jpMeaning": "無し",
+        "examples": [
+            "役所",
+            "役目",
+            "荷役役務",
+            "使役",
+            "兵役"
+        ]
+    },
+    {
+        "kanji": "駅",
+        "hanja": "驛",
+        "eumhun": "역 역",
+        "jpSound": "えき",
+        "jpMeaning": "無し",
+        "examples": [
+            "駅長",
+            "駅伝",
+            "貨物駅"
+        ]
+    },
+    {
+        "kanji": "研",
+        "hanja": "硏",
+        "eumhun": "갈 연",
+        "jpSound": "けん",
+        "jpMeaning": "とぐ",
+        "examples": [
+            "研究",
+            "研修研ぐ"
+        ]
+    },
+    {
+        "kanji": "葉",
+        "hanja": "葉",
+        "eumhun": "잎 엽",
+        "jpSound": "よう",
+        "jpMeaning": "は",
+        "examples": [
+            "葉緑素",
+            "落葉",
+            "紅葉葉",
+            "枯れ葉",
+            "落ち葉"
+        ]
+    },
+    {
+        "kanji": "泳",
+        "hanja": "",
+        "eumhun": "헤엄칠 영",
+        "jpSound": "えい",
+        "jpMeaning": "およぐ",
+        "examples": [
+            "泳法",
+            "水泳",
+            "背泳泳ぐ",
+            "泳ぎ"
+        ]
+    },
+    {
+        "kanji": "予",
+        "hanja": "豫",
+        "eumhun": "미리 예",
+        "jpSound": "よ",
+        "jpMeaning": "無し",
+        "examples": [
+            "予定",
+            "予備",
+            "猶予"
+        ]
+    },
+    {
+        "kanji": "屋",
+        "hanja": "",
+        "eumhun": "집 옥",
+        "jpSound": "おく",
+        "jpMeaning": "や",
+        "examples": [
+            "屋上",
+            "屋外",
+            "家屋屋根",
+            "花屋",
+            "楽屋"
+        ]
+    },
+    {
+        "kanji": "温",
+        "hanja": "溫",
+        "eumhun": "따뜻할 온",
+        "jpSound": "おん",
+        "jpMeaning": "あたたかい、あたたまる、あたためる",
+        "examples": [
+            "温暖",
+            "温厚",
+            "気温温かだ温かい温まる温める"
+        ]
+    },
+    {
+        "kanji": "運",
+        "hanja": "",
+        "eumhun": "옮길 운",
+        "jpSound": "うん",
+        "jpMeaning": "はこぶ",
+        "examples": [
+            "運動",
+            "運命",
+            "海運運ぶ"
+        ]
+    },
+    {
+        "kanji": "院",
+        "hanja": "",
+        "eumhun": "집 원",
+        "jpSound": "いん",
+        "jpMeaning": "無し",
+        "examples": [
+            "院内",
+            "議院",
+            "病院"
+        ]
+    },
+    {
+        "kanji": "員",
+        "hanja": "",
+        "eumhun": "인원 원",
+        "jpSound": "いん",
+        "jpMeaning": "無し",
+        "examples": [
+            "満員",
+            "定員",
+            "社員"
+        ]
+    },
+    {
+        "kanji": "委",
+        "hanja": "",
+        "eumhun": "맡길 위",
+        "jpSound": "い",
+        "jpMeaning": "ゆだねる",
+        "examples": [
+            "委任",
+            "委員",
+            "委細委ねる"
+        ]
+    },
+    {
+        "kanji": "由",
+        "hanja": "",
+        "eumhun": "말미암을 유",
+        "jpSound": "ゆ、ゆう、ゆい",
+        "jpMeaning": "よし",
+        "examples": [
+            "由来",
+            "経由自由",
+            "理由",
+            "事由由緒……の由"
+        ]
+    },
+    {
+        "kanji": "有",
+        "hanja": "",
+        "eumhun": "있을 유",
+        "jpSound": "ゆう、う",
+        "jpMeaning": "ある",
+        "examples": [
+            "有益",
+            "所有",
+            "特有有無",
+            "有象無象有る",
+            "有り金"
+        ]
+    },
+    {
+        "kanji": "油",
+        "hanja": "",
+        "eumhun": "기름 유",
+        "jpSound": "ゆ",
+        "jpMeaning": "あぶら",
+        "examples": [
+            "油脂",
+            "油田",
+            "石油油",
+            "油絵",
+            "水油"
+        ]
+    },
+    {
+        "kanji": "遊",
+        "hanja": "",
+        "eumhun": "놀 유",
+        "jpSound": "ゆう、ゆ",
+        "jpMeaning": "あそぶ",
+        "examples": [
+            "遊戯",
+            "遊離",
+            "交遊遊山遊ぶ",
+            "遊び"
+        ]
+    },
+    {
+        "kanji": "育",
+        "hanja": "",
+        "eumhun": "기를 육",
+        "jpSound": "いく",
+        "jpMeaning": "そだつ、そだてる、はぐくむ",
+        "examples": [
+            "育児",
+            "教育",
+            "発育育つ",
+            "育ち育てる",
+            "育て親育む"
+        ]
+    },
+    {
+        "kanji": "銀",
+        "hanja": "",
+        "eumhun": "은 은",
+        "jpSound": "ぎん",
+        "jpMeaning": "無し",
+        "examples": [
+            "銀貨",
+            "銀行",
+            "水銀"
+        ]
+    },
+    {
+        "kanji": "飲",
+        "hanja": "飮",
+        "eumhun": "마실 음",
+        "jpSound": "いん",
+        "jpMeaning": "のむ",
+        "examples": [
+            "飲料",
+            "飲食",
+            "痛飲飲む",
+            "飲み水"
+        ]
+    },
+    {
+        "kanji": "医",
+        "hanja": "醫",
+        "eumhun": "의원 의",
+        "jpSound": "い",
+        "jpMeaning": "無し",
+        "examples": [
+            "医学",
+            "医療",
+            "名医"
+        ]
+    },
+    {
+        "kanji": "意",
+        "hanja": "",
+        "eumhun": "뜻 의",
+        "jpSound": "い",
+        "jpMeaning": "無し",
+        "examples": [
+            "意見",
+            "意味",
+            "決意"
+        ]
+    },
+    {
+        "kanji": "者",
+        "hanja": "者",
+        "eumhun": "놈 자",
+        "jpSound": "しゃ",
+        "jpMeaning": "もの",
+        "examples": [
+            "医者",
+            "前者",
+            "第三者者",
+            "若者"
+        ]
+    },
+    {
+        "kanji": "章",
+        "hanja": "",
+        "eumhun": "글 장",
+        "jpSound": "しょう",
+        "jpMeaning": "無し",
+        "examples": [
+            "憲章",
+            "勲章",
+            "文章"
+        ]
+    },
+    {
+        "kanji": "帳",
+        "hanja": "",
+        "eumhun": "장막 장",
+        "jpSound": "ちょう",
+        "jpMeaning": "無し",
+        "examples": [
+            "帳面",
+            "帳簿",
+            "通帳"
+        ]
+    },
+    {
+        "kanji": "笛",
+        "hanja": "",
+        "eumhun": "피리 적",
+        "jpSound": "てき",
+        "jpMeaning": "ふえ",
+        "examples": [
+            "汽笛",
+            "警笛",
+            "牧笛笛",
+            "口笛"
+        ]
+    },
+    {
+        "kanji": "全",
+        "hanja": "全",
+        "eumhun": "온전 전",
+        "jpSound": "ぜん",
+        "jpMeaning": "まったく、すべて",
+        "examples": [
+            "全部",
+            "全国",
+            "完全全く",
+            "全うする全て"
+        ]
+    },
+    {
+        "kanji": "畑",
+        "hanja": "",
+        "eumhun": "화전 전",
+        "jpSound": "無し",
+        "jpMeaning": "はた、はたけ",
+        "examples": [
+            "畑",
+            "畑作畑",
+            "畑違い",
+            "麦畑"
+        ]
+    },
+    {
+        "kanji": "転",
+        "hanja": "轉",
+        "eumhun": "구를 전",
+        "jpSound": "てん",
+        "jpMeaning": "ころがる",
+        "examples": [
+            "転出",
+            "回転",
+            "運転転がる転げる転がす転ぶ"
+        ]
+    },
+    {
+        "kanji": "丁",
+        "hanja": "",
+        "eumhun": "고무래/장정 정",
+        "jpSound": "ちょう、てい",
+        "jpMeaning": "無し",
+        "examples": [
+            "丁数",
+            "落丁",
+            "二丁目丁字路",
+            "甲乙丙丁"
+        ]
+    },
+    {
+        "kanji": "定",
+        "hanja": "",
+        "eumhun": "정할 정",
+        "jpSound": "てい、じょう",
+        "jpMeaning": "さだめる、さだまる、さだか",
+        "examples": [
+            "定価",
+            "安定",
+            "決定定石",
+            "定紋",
+            "必定定める",
+            "定め定まる定かだ"
+        ]
+    },
+    {
+        "kanji": "庭",
+        "hanja": "",
+        "eumhun": "뜰 정",
+        "jpSound": "てい",
+        "jpMeaning": "にわ",
+        "examples": [
+            "庭園",
+            "校庭",
+            "家庭庭",
+            "庭先"
+        ]
+    },
+    {
+        "kanji": "整",
+        "hanja": "",
+        "eumhun": "가지런할 정",
+        "jpSound": "せい",
+        "jpMeaning": "ととのえる、ととのう",
+        "examples": [
+            "整理",
+            "整列",
+            "調整整える整う"
+        ]
+    },
+    {
+        "kanji": "第",
+        "hanja": "",
+        "eumhun": "차례 제",
+        "jpSound": "だい",
+        "jpMeaning": "無し",
+        "examples": [
+            "第一",
+            " 第三者",
+            "及第"
+        ]
+    },
+    {
+        "kanji": "祭",
+        "hanja": "",
+        "eumhun": "제사 제",
+        "jpSound": "さい",
+        "jpMeaning": "まつり、まつる",
+        "examples": [
+            "祭礼",
+            "文化祭祭る",
+            "祭り上げる祭り",
+            "秋祭り"
+        ]
+    },
+    {
+        "kanji": "題",
+        "hanja": "",
+        "eumhun": "제목 제",
+        "jpSound": "だい",
+        "jpMeaning": "無し",
+        "examples": [
+            "題名",
+            "問題",
+            "出題"
+        ]
+    },
+    {
+        "kanji": "助",
+        "hanja": "",
+        "eumhun": "도울 조",
+        "jpSound": "じょ",
+        "jpMeaning": "すけ、たすける、たすかる",
+        "examples": [
+            "助力",
+            "助監督",
+            "救助助ける",
+            "助け助かる",
+            "大助かり助太刀"
+        ]
+    },
+    {
+        "kanji": "調",
+        "hanja": "",
+        "eumhun": "고를 조",
+        "jpSound": "ちょう",
+        "jpMeaning": "しらべる、ととのう、ととのえる",
+        "examples": [
+            "調和",
+            "調査",
+            "好調調べる",
+            "調べ調う調える"
+        ]
+    },
+    {
+        "kanji": "族",
+        "hanja": "",
+        "eumhun": "겨레 족",
+        "jpSound": "ぞく",
+        "jpMeaning": "無し",
+        "examples": [
+            "一族",
+            "家族",
+            "民族"
+        ]
+    },
+    {
+        "kanji": "終",
+        "hanja": "",
+        "eumhun": "마칠 종",
+        "jpSound": "しゅう",
+        "jpMeaning": "おわる、おえる",
+        "examples": [
+            "終了",
+            "終日",
+            "最終終わる",
+            "終わり終える"
+        ]
+    },
+    {
+        "kanji": "主",
+        "hanja": "",
+        "eumhun": "임금/주인 주",
+        "jpSound": "しゅ、す",
+        "jpMeaning": "ぬし、おも",
+        "examples": [
+            "主人",
+            "主権",
+            "施主法主",
+            "坊主主",
+            "地主主な人々",
+            "主義"
+        ]
+    },
+    {
+        "kanji": "州",
+        "hanja": "",
+        "eumhun": "고을 주",
+        "jpSound": "しゅう",
+        "jpMeaning": "す",
+        "examples": [
+            "州議会",
+            "六大州州",
+            "中州",
+            "三角州"
+        ]
+    },
+    {
+        "kanji": "住",
+        "hanja": "",
+        "eumhun": "살 주",
+        "jpSound": "じゅう",
+        "jpMeaning": "すむ、すまう",
+        "examples": [
+            "住所",
+            "安住",
+            "衣食住住む住まう",
+            "住まい"
+        ]
+    },
+    {
+        "kanji": "注",
+        "hanja": "",
+        "eumhun": "부을 주",
+        "jpSound": "ちゅう",
+        "jpMeaning": "そそぐ",
+        "examples": [
+            "注入",
+            "注意",
+            "発注注ぐ"
+        ]
+    },
+    {
+        "kanji": "柱",
+        "hanja": "",
+        "eumhun": "기둥 주",
+        "jpSound": "ちゅう",
+        "jpMeaning": "はしら",
+        "examples": [
+            "支柱",
+            "円柱",
+            "電柱柱",
+            "帆柱",
+            "大黒柱"
+        ]
+    },
+    {
+        "kanji": "酒",
+        "hanja": "",
+        "eumhun": "술 주",
+        "jpSound": "しゅ",
+        "jpMeaning": "さけ、さか",
+        "examples": [
+            "酒宴",
+            "飲酒",
+            "洋酒酒",
+            "酒好き",
+            "甘酒酒屋",
+            "酒場",
+            "酒盛り"
+        ]
+    },
+    {
+        "kanji": "重",
+        "hanja": "",
+        "eumhun": "무거울 중",
+        "jpSound": "じゅう、ちょう",
+        "jpMeaning": "え、おもい、かさねる、かさなる",
+        "examples": [
+            "重量",
+            "重大",
+            "二重重畳",
+            "慎重",
+            "貴重一重",
+            "八重桜重い",
+            "重たい重ねる",
+            "重ね着重なる"
+        ]
+    },
+    {
+        "kanji": "指",
+        "hanja": "",
+        "eumhun": "가리킬 지",
+        "jpSound": "し",
+        "jpMeaning": "ゆび、さす",
+        "examples": [
+            "指示",
+            "指導",
+            "屈指指",
+            "指先指す",
+            "指図",
+            "名指し"
+        ]
+    },
+    {
+        "kanji": "持",
+        "hanja": "",
+        "eumhun": "가질 지",
+        "jpSound": "じ",
+        "jpMeaning": "もつ",
+        "examples": [
+            "持参",
+            "持続",
+            "支持持つ"
+        ]
+    },
+    {
+        "kanji": "真",
+        "hanja": "眞",
+        "eumhun": "참 진",
+        "jpSound": "しん",
+        "jpMeaning": "ま",
+        "examples": [
+            "真偽",
+            "写真",
+            "純真真南",
+            "真新しい",
+            "真っ先",
+            "真ん中"
+        ]
+    },
+    {
+        "kanji": "進",
+        "hanja": "",
+        "eumhun": "나아갈 진",
+        "jpSound": "しん",
+        "jpMeaning": "すすむ、すすめる",
+        "examples": [
+            "進級",
+            "進言",
+            "前進進む",
+            "進み進める"
+        ]
+    },
+    {
+        "kanji": "集",
+        "hanja": "",
+        "eumhun": "모을 집",
+        "jpSound": "しゅう",
+        "jpMeaning": "あつまる、あつめる、つどう",
+        "examples": [
+            "集合",
+            "集結",
+            "全集集まる",
+            "集まり集める",
+            "人集め集う",
+            "集い"
+        ]
+    },
+    {
+        "kanji": "次",
+        "hanja": "",
+        "eumhun": "버금 차",
+        "jpSound": "じ、し",
+        "jpMeaning": "つぎ、つぐ",
+        "examples": [
+            "次回",
+            "次元",
+            "目次次第次ぐ",
+            "次いで[副]次",
+            "次に",
+            "次々と"
+        ]
+    },
+    {
+        "kanji": "着",
+        "hanja": "",
+        "eumhun": "붙을 착",
+        "jpSound": "ちゃく、じゃく",
+        "jpMeaning": "きる、つく",
+        "examples": [
+            "着用",
+            "着手",
+            "土着愛着",
+            "執着着る",
+            "着物",
+            "晴れ着着せる",
+            "お仕着せ着く",
+            "船着き場着ける"
+        ]
+    },
+    {
+        "kanji": "鉄",
+        "hanja": "鐵",
+        "eumhun": "쇠 철",
+        "jpSound": "てつ",
+        "jpMeaning": "無し",
+        "examples": [
+            "鉄道",
+            "鉄筋",
+            "鋼鉄"
+        ]
+    },
+    {
+        "kanji": "秒",
+        "hanja": "",
+        "eumhun": "분초 초",
+        "jpSound": "びょう",
+        "jpMeaning": "無し",
+        "examples": [
+            "秒針",
+            "秒速",
+            "寸秒"
+        ]
+    },
+    {
+        "kanji": "追",
+        "hanja": "",
+        "eumhun": "쫓을/따를 추",
+        "jpSound": "つい",
+        "jpMeaning": "おう",
+        "examples": [
+            "追跡",
+            "追放",
+            "訴追追う"
+        ]
+    },
+    {
+        "kanji": "取",
+        "hanja": "",
+        "eumhun": "가질 취",
+        "jpSound": "しゅ",
+        "jpMeaning": "とる",
+        "examples": [
+            "取捨",
+            "取材",
+            "聴取取る"
+        ]
+    },
+    {
+        "kanji": "歯",
+        "hanja": "齒",
+        "eumhun": "이 치",
+        "jpSound": "し",
+        "jpMeaning": "は",
+        "examples": [
+            "歯科",
+            "乳歯",
+            "義歯歯",
+            "入れ歯"
+        ]
+    },
+    {
+        "kanji": "他",
+        "hanja": "",
+        "eumhun": "다를 타",
+        "jpSound": "た",
+        "jpMeaning": "ほか",
+        "examples": [
+            "他国",
+            "自他",
+            "排他的他",
+            "○○の他"
+        ]
+    },
+    {
+        "kanji": "打",
+        "hanja": "",
+        "eumhun": "칠 타",
+        "jpSound": "だ",
+        "jpMeaning": "うつ",
+        "examples": [
+            "打撃",
+            "打破",
+            "乱打打つ"
+        ]
+    },
+    {
+        "kanji": "炭",
+        "hanja": "",
+        "eumhun": "숯 탄",
+        "jpSound": "たん",
+        "jpMeaning": "すみ",
+        "examples": [
+            "炭鉱，木炭，石炭炭",
+            "炭火",
+            "消し炭"
+        ]
+    },
+    {
+        "kanji": "湯",
+        "hanja": "",
+        "eumhun": "끓을 탕",
+        "jpSound": "とう",
+        "jpMeaning": "ゆ",
+        "examples": [
+            "湯治",
+            "熱湯",
+            "微温湯湯",
+            "湯水",
+            "煮え湯"
+        ]
+    },
+    {
+        "kanji": "投",
+        "hanja": "",
+        "eumhun": "던질 투",
+        "jpSound": "とう",
+        "jpMeaning": "なげる",
+        "examples": [
+            "投資",
+            "投下",
+            "暴投投げる",
+            "身投げ"
+        ]
+    },
+    {
+        "kanji": "波",
+        "hanja": "",
+        "eumhun": "물결 파",
+        "jpSound": "は",
+        "jpMeaning": "なみ",
+        "examples": [
+            "波浪",
+            "波及",
+            "電波波",
+            "波立つ",
+            "荒波"
+        ]
+    },
+    {
+        "kanji": "坂",
+        "hanja": "",
+        "eumhun": "언덕 판",
+        "jpSound": "はん",
+        "jpMeaning": "さか",
+        "examples": [
+            "急坂坂",
+            "坂道",
+            "下り坂"
+        ]
+    },
+    {
+        "kanji": "板",
+        "hanja": "",
+        "eumhun": "널 판",
+        "jpSound": "はん、ばん",
+        "jpMeaning": "いた",
+        "examples": [
+            "乾板",
+            "鉄板黒板",
+            "掲示板板",
+            "板前"
+        ]
+    },
+    {
+        "kanji": "平",
+        "hanja": "平",
+        "eumhun": "평평할 평",
+        "jpSound": "へい、ひょう",
+        "jpMeaning": "たいら、ひら",
+        "examples": [
+            "平面",
+            "平和",
+            "公平平等平らな土地",
+            "平らげる平手",
+            "平謝り",
+            "平たい"
+        ]
+    },
+    {
+        "kanji": "表",
+        "hanja": "",
+        "eumhun": "겉 표",
+        "jpSound": "ひょう",
+        "jpMeaning": "おもて、あらわす、あらわれる",
+        "examples": [
+            "表面",
+            "代表",
+            "発表表",
+            "表門",
+            "裏表表す表れる"
+        ]
+    },
+    {
+        "kanji": "品",
+        "hanja": "",
+        "eumhun": "물건 품",
+        "jpSound": "ひん",
+        "jpMeaning": "しな",
+        "examples": [
+            "品評",
+            "作品",
+            "上品品",
+            "品物",
+            "手品"
+        ]
+    },
+    {
+        "kanji": "皮",
+        "hanja": "",
+        "eumhun": "가죽 피",
+        "jpSound": "ひ",
+        "jpMeaning": "かわ",
+        "examples": [
+            "皮膚",
+            "皮相",
+            "樹皮皮",
+            "毛皮"
+        ]
+    },
+    {
+        "kanji": "筆",
+        "hanja": "",
+        "eumhun": "붓 필",
+        "jpSound": "ひつ",
+        "jpMeaning": "ふで",
+        "examples": [
+            "筆力",
+            "筆記",
+            "毛筆筆",
+            "筆先"
+        ]
+    },
+    {
+        "kanji": "荷",
+        "hanja": "荷",
+        "eumhun": "멜 하",
+        "jpSound": "か",
+        "jpMeaning": "に",
+        "examples": [
+            "出荷",
+            "入荷荷",
+            "荷物",
+            "初荷"
+        ]
+    },
+    {
+        "kanji": "寒",
+        "hanja": "",
+        "eumhun": "찰 한",
+        "jpSound": "かん",
+        "jpMeaning": "さむい",
+        "examples": [
+            "寒暑",
+            "寒村",
+            "厳寒寒い",
+            "寒がる",
+            "寒空"
+        ]
+    },
+    {
+        "kanji": "漢",
+        "hanja": "漢",
+        "eumhun": "한수/한나라 한",
+        "jpSound": "かん",
+        "jpMeaning": "無し",
+        "examples": [
+            "漢字",
+            "漢語",
+            "門外漢"
+        ]
+    },
+    {
+        "kanji": "港",
+        "hanja": "",
+        "eumhun": "항구 항",
+        "jpSound": "こう",
+        "jpMeaning": "みなと",
+        "examples": [
+            "港湾",
+            "漁港",
+            "出港港"
+        ]
+    },
+    {
+        "kanji": "幸",
+        "hanja": "",
+        "eumhun": "다행 행",
+        "jpSound": "こう",
+        "jpMeaning": "さち、さいわい、しあわせ",
+        "examples": [
+            "幸福",
+            "不幸",
+            "行幸幸い",
+            "幸いな事幸幸せ",
+            "幸せな人"
+        ]
+    },
+    {
+        "kanji": "向",
+        "hanja": "",
+        "eumhun": "향할 향",
+        "jpSound": "こう",
+        "jpMeaning": "むく",
+        "examples": [
+            "向上",
+            "傾向",
+            "趣向向く",
+            "向き向ける",
+            "顔向け向かう",
+            "向かい向こう",
+            "向こう側"
+        ]
+    },
+    {
+        "kanji": "県",
+        "hanja": "縣",
+        "eumhun": "고을 현",
+        "jpSound": "けん",
+        "jpMeaning": "無し",
+        "examples": [
+            "県庁",
+            "県立",
+            "○○県"
+        ]
+    },
+    {
+        "kanji": "血",
+        "hanja": "",
+        "eumhun": "피 혈",
+        "jpSound": "けつ",
+        "jpMeaning": "ち",
+        "examples": [
+            "血液",
+            "血統",
+            "鮮血血",
+            "鼻血"
+        ]
+    },
+    {
+        "kanji": "号",
+        "hanja": "號",
+        "eumhun": "이름 호",
+        "jpSound": "ごう",
+        "jpMeaning": "無し",
+        "examples": [
+            "号令",
+            "号外",
+            "番号"
+        ]
+    },
+    {
+        "kanji": "湖",
+        "hanja": "",
+        "eumhun": "호수 호",
+        "jpSound": "こ",
+        "jpMeaning": "みずうみ",
+        "examples": [
+            "湖水",
+            "湖沼",
+            "湖畔湖"
+        ]
+    },
+    {
+        "kanji": "化",
+        "hanja": "",
+        "eumhun": "될 화",
+        "jpSound": "か、け",
+        "jpMeaning": "ばける",
+        "examples": [
+            "化石",
+            "化学",
+            "文化化粧",
+            "化身",
+            "権化化ける",
+            "お化け化かす"
+        ]
+    },
+    {
+        "kanji": "和",
+        "hanja": "",
+        "eumhun": "화할 화",
+        "jpSound": "わ、お",
+        "jpMeaning": "やわらぐ、なごむ、なごやか",
+        "examples": [
+            "和解",
+            "和服",
+            "柔和和尚和らぐ和らげる和む和やかだ"
+        ]
+    },
+    {
+        "kanji": "横",
+        "hanja": "橫",
+        "eumhun": "가로 횡",
+        "jpSound": "おう",
+        "jpMeaning": "よこ",
+        "examples": [
+            "横断",
+            "横領",
+            "専横横",
+            "横顔",
+            "横たわる"
+        ]
+    }
+]
