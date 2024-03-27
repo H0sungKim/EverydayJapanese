@@ -29,7 +29,7 @@ class VocabularyStudyViewController: UIViewController {
         vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
-        tableView.rowHeight = 150
+        tableView.rowHeight = CGFloat(CommonConstant.shared.cellSize)
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
         
         if vocabulariesForCell.count == 0 {

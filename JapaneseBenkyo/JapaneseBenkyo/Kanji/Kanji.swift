@@ -22,6 +22,7 @@ class KanjiForCell {
     var isVisibleJpSound: Bool = false
     var isVisibleJpMeaning: Bool = false
     var isBookmark: Bool = false
+    var isExpanded: Bool = false
     
     init(kanji: Kanji) {
         self.kanji = kanji

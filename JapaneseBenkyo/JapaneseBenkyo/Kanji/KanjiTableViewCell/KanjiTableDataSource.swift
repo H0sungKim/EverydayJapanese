@@ -10,8 +10,9 @@ import UIKit
 class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var kanjisForCell: [KanjiForCell]
     private var bookmark: Set<Kanji> = []
+    private var tableView: UITableView
     
-    init(kanjisForCell: [KanjiForCell]) {
+    init(kanjisForCell: [KanjiForCell], tableView: UITableView) {
         self.kanjisForCell = kanjisForCell
         if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
             bookmark = JSONManager.shared.decodeJSONtoKanjiSet(jsonData: jsonData)
@@ -19,6 +20,7 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         for kanjiForCell in kanjisForCell {
             kanjiForCell.isBookmark = bookmark.contains(kanjiForCell.kanji)
         }
+        self.tableView = tableView
         super.init()
     }
     
@@ -63,7 +65,7 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             let objectArray = Bundle.main.loadNibNamed(String(describing: KanjiTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! KanjiTableViewCell
         }
-        
+        cell.indexPath = indexPath
         cell.onClickHanja = { [weak self] sender in
             self?.onClickHanja(cell, sender, kanjiForCell: kanjiForCell)
         }
@@ -82,6 +84,10 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         cell.onClickPronounce = { [weak self] sender in
             self?.onClickPronounce(cell, sender, kanjiForCell: kanjiForCell)
         }
+        cell.onClickExpand = { [weak self] sender in
+            self?.onClickExpand(cell, sender, kanjiForCell: kanjiForCell)
+        }
+    
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
         
         return cell
@@ -101,6 +107,15 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             }
             initializeCell(cell: cell, kanjiForCell: kanjisForCell[indexPath.row])
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if kanjisForCell[indexPath.row].isExpanded {
+//            return CGFloat(CommonConstant.shared.expandedCellSize)
+//        } else {
+//            return CGFloat(CommonConstant.shared.cellSize)
+//        }
+        return UITableView.automaticDimension
     }
     
     private func onClickHanja(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
@@ -131,6 +146,11 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     private func onClickPronounce(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
         TTSManager.shared.play(kanji: kanjiForCell.kanji)
+    }
+    private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
+        kanjiForCell.isExpanded = !kanjiForCell.isExpanded
+        initializeCell(cell: cell, kanjiForCell: kanjiForCell)
+        tableView.reloadData()
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
@@ -173,6 +193,13 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.btnBookmark.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
             cell.btnBookmark.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        if kanjiForCell.isExpanded {
+            cell.btnExpand.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+            cell.lcExampleHeight.constant = 50
+        } else {
+            cell.btnExpand.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            cell.lcExampleHeight.constant = 0
         }
     }
 }

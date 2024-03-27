@@ -18,6 +18,8 @@ class KanjiTableViewCell: UITableViewCell {
     @IBOutlet weak var lbJpMeaning: UILabel!
     @IBOutlet weak var btnJpMeaning: UIButton!
     @IBOutlet weak var btnBookmark: UIButton!
+    @IBOutlet weak var lcExampleHeight: NSLayoutConstraint!
+    @IBOutlet weak var btnExpand: UIButton!
     
     var onClickHanja: ((_ sender: UIButton) -> Void)?
     var onClickEumhun: ((_ sender: UIButton) -> Void)?
@@ -25,6 +27,7 @@ class KanjiTableViewCell: UITableViewCell {
     var onClickJpMeaning: ((_ sender: UIButton) -> Void)?
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
     var onClickPronounce: ((_ sender: UIButton) -> Void)?
+    var onClickExpand: ((_ sender: UIButton) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,5 +54,7 @@ class KanjiTableViewCell: UITableViewCell {
     @IBAction func onClickPronounce(_ sender: UIButton) {
         onClickPronounce?(sender)
     }
-    
+    @IBAction func onClickExpand(_ sender: UIButton) {
+        onClickExpand?(sender)
+    }
 }
