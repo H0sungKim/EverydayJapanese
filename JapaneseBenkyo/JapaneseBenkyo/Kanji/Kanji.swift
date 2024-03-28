@@ -13,6 +13,7 @@ struct Kanji: Codable, Equatable, Hashable {
     let eumhun: String
     let jpSound: String
     let jpMeaning: String
+    let examples: [String]
 }
 
 class KanjiForCell {

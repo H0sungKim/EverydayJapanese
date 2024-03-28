@@ -20,6 +20,7 @@ class KanjiTableViewCell: UITableViewCell {
     @IBOutlet weak var btnBookmark: UIButton!
     @IBOutlet weak var lcExampleHeight: NSLayoutConstraint!
     @IBOutlet weak var btnExpand: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
     var onClickHanja: ((_ sender: UIButton) -> Void)?
     var onClickEumhun: ((_ sender: UIButton) -> Void)?

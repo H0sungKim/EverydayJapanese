@@ -65,7 +65,6 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             let objectArray = Bundle.main.loadNibNamed(String(describing: KanjiTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! KanjiTableViewCell
         }
-        cell.indexPath = indexPath
         cell.onClickHanja = { [weak self] sender in
             self?.onClickHanja(cell, sender, kanjiForCell: kanjiForCell)
         }
@@ -87,7 +86,7 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         cell.onClickExpand = { [weak self] sender in
             self?.onClickExpand(cell, sender, kanjiForCell: kanjiForCell)
         }
-    
+        
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
         
         return cell
@@ -110,11 +109,6 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if kanjisForCell[indexPath.row].isExpanded {
-//            return CGFloat(CommonConstant.shared.expandedCellSize)
-//        } else {
-//            return CGFloat(CommonConstant.shared.cellSize)
-//        }
         return UITableView.automaticDimension
     }
     
@@ -148,9 +142,11 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         TTSManager.shared.play(kanji: kanjiForCell.kanji)
     }
     private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
+        tableView.beginUpdates()
         kanjiForCell.isExpanded = !kanjiForCell.isExpanded
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
         tableView.reloadData()
+        tableView.endUpdates()
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
@@ -196,10 +192,16 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         }
         if kanjiForCell.isExpanded {
             cell.btnExpand.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-            cell.lcExampleHeight.constant = 50
+            cell.stackView.clearSubViews()
+            for example in kanjiForCell.kanji.examples {
+                if let expandableAreaView = Bundle.main.loadNibNamed("ExpandableAreaView", owner: nil, options: nil)?.first as? ExpandableAreaView {
+                    expandableAreaView.lbTitle.text = example
+                    cell.stackView.addArrangedSubview(expandableAreaView)
+                }
+            }
         } else {
             cell.btnExpand.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-            cell.lcExampleHeight.constant = 0
+            cell.stackView.clearSubViews()
         }
     }
 }

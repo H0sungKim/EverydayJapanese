@@ -12,7 +12,6 @@ class CommonConstant {
     
     let daySize: Int = 20
     let cellSize: Int = 150
-    let expandedCellSize: Int = 200
     
     private init() {
     }

@@ -62,6 +62,9 @@
 		96BA5B072BA2CF3700E3373C /* n5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B022BA2CF3700E3373C /* n5.json */; };
 		96BA5B082BA2CF3700E3373C /* n2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B032BA2CF3700E3373C /* n2.json */; };
 		96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B092BA2CFBA00E3373C /* launchscreen.png */; };
+		96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExpandableAreaView.swift */; };
+		96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExpandableAreaView.xib */; };
+		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
 		96CD34EE2BA3D1CA006F6523 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CD34ED2BA3D1CA006F6523 /* kanji.png */; };
 		96CD34F02BA3D1D7006F6523 /* hiragana.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CD34EF2BA3D1D7006F6523 /* hiragana.png */; };
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
@@ -146,6 +149,9 @@
 		96BA5B022BA2CF3700E3373C /* n5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n5.json; sourceTree = "<group>"; };
 		96BA5B032BA2CF3700E3373C /* n2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n2.json; sourceTree = "<group>"; };
 		96BA5B092BA2CFBA00E3373C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
+		96C174172BB590EF006775E5 /* ExpandableAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAreaView.swift; sourceTree = "<group>"; };
+		96C174182BB590EF006775E5 /* ExpandableAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAreaView.xib; sourceTree = "<group>"; };
+		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		96CD34ED2BA3D1CA006F6523 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
 		96CD34EF2BA3D1D7006F6523 /* hiragana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiragana.png; sourceTree = "<group>"; };
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
@@ -306,6 +312,7 @@
 			children = (
 				964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */,
 				96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */,
+				96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -412,6 +419,8 @@
 				96A35C792BA5BEDF00D7B4F9 /* KanjiTableDataSource.swift */,
 				96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */,
 				96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */,
+				96C174172BB590EF006775E5 /* ExpandableAreaView.swift */,
+				96C174182BB590EF006775E5 /* ExpandableAreaView.xib */,
 			);
 			path = KanjiTableViewCell;
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 				960C6B862B7B49FB00D91407 /* kanji5.json in Resources */,
 				964AA5F52B79E7D1007DE504 /* CustomTableViewCell.xib in Resources */,
 				96A35C7E2BA5D66500D7B4F9 /* KanjiTestResult.storyboard in Resources */,
+				96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */,
 				960C6B4B2B7B35E400D91407 /* Vocabulary.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,10 +596,12 @@
 				962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */,
 				96A35C762BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift in Sources */,
 				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
+				96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
 				969493562B7DE7210064312F /* VocabularyStudyViewController.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,
 				960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */,
+				96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */,
 				96269D802B9AAA180063AF33 /* VocabularyDayViewController.swift in Sources */,
 				96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */,
 				962F1BE52B79DFD00051C4DA /* MainViewController.swift in Sources */,
