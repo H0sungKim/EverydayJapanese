@@ -84,7 +84,7 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             self?.onClickPronounce(cell, sender, kanjiForCell: kanjiForCell)
         }
         cell.onClickExpand = { [weak self] sender in
-            self?.onClickExpand(cell, sender, kanjiForCell: kanjiForCell)
+            self?.onClickExpand(cell, sender, kanjiForCell: kanjiForCell, indexPath: indexPath)
         }
         
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
@@ -141,12 +141,10 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     private func onClickPronounce(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
         TTSManager.shared.play(kanji: kanjiForCell.kanji)
     }
-    private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
-        tableView.beginUpdates()
+    private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell, indexPath: IndexPath) {
         kanjiForCell.isExpanded = !kanjiForCell.isExpanded
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
-        tableView.reloadData()
-        tableView.endUpdates()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
@@ -195,8 +193,8 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.stackView.clearSubViews()
             for example in kanjiForCell.kanji.examples {
                 if let expandableAreaView = Bundle.main.loadNibNamed("ExpandableAreaView", owner: nil, options: nil)?.first as? ExpandableAreaView {
-                    expandableAreaView.lbTitle.text = example
                     cell.stackView.addArrangedSubview(expandableAreaView)
+                    expandableAreaView.lbTitle.text = example
                 }
             }
         } else {

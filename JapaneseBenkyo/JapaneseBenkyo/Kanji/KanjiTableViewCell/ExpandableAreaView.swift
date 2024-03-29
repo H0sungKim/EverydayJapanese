@@ -15,6 +15,7 @@ class ExpandableAreaView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         lbTitle.adjustsFontSizeToFitWidth = true
+        lbTitle.clipsToBounds = true
     }
 
     required init?(coder aDecoder: NSCoder) {
