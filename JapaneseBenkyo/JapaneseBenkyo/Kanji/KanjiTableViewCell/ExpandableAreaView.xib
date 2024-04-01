@@ -23,9 +23,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjJ-Pc-2rw">
+                            <rect key="frame" x="0.0" y="0.0" width="284" height="40"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="TjJ-Pc-2rw" secondAttribute="trailing" id="2mp-1i-s2e"/>
+                        <constraint firstItem="TjJ-Pc-2rw" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" id="6V9-Dd-LhO"/>
+                        <constraint firstItem="TjJ-Pc-2rw" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" id="Co0-MN-LJg"/>
+                        <constraint firstAttribute="bottom" secondItem="TjJ-Pc-2rw" secondAttribute="bottom" id="LdO-Gm-ECa"/>
                         <constraint firstItem="yq1-5K-GNt" firstAttribute="centerY" secondItem="EvY-fk-Yil" secondAttribute="centerY" id="Txq-Sa-ASG"/>
                         <constraint firstAttribute="trailing" secondItem="yq1-5K-GNt" secondAttribute="trailing" id="mDI-yw-YUr"/>
                         <constraint firstItem="yq1-5K-GNt" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="oCx-kO-ecO"/>
@@ -51,7 +60,7 @@
     </objects>
     <resources>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

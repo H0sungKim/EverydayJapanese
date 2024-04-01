@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
@@ -33,8 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
             navigationController.interactivePopGestureRecognizer?.delegate = self
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
+            
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch let error as NSError {
+                print("Error : \(error), \(error.userInfo)")
+            }
         }
-        
         
         return true
     }
