@@ -8,11 +8,10 @@
 import Foundation
 
 class CommonConstant {
-    public static let shared = CommonConstant()
     
-    let daySize: Int = 20
-    let cellSize: Int = 150
-    let expandAreaSize: Int = 40
+    static let daySize: Int = 20
+    static let cellSize: Int = 150
+    static let expandAreaSize: Int = 40
     
     private init() {
     }

@@ -30,7 +30,7 @@ class VocabularyTestResultViewController: UIViewController {
         
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
-        tableView.rowHeight = CGFloat(CommonConstant.shared.cellSize)
+        tableView.rowHeight = CGFloat(CommonConstant.cellSize)
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
         
         lbTitle.text = "\(level) \(day) 테스트 결과"

@@ -152,14 +152,13 @@ class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.lbKanji.text = kanjiForCell.kanji.kanji
             cell.btnHanja.tintColor = .clear
         } else {
+            cell.btnHanja.tintColor = .lightGray
             if kanjiForCell.isVisibleHanja {
                 cell.lbKanji.text = kanjiForCell.kanji.hanja
                 cell.btnHanja.setTitle("日 한자 보기", for: .normal)
-                cell.btnHanja.tintColor = .lightGray
             } else {
                 cell.lbKanji.text = kanjiForCell.kanji.kanji
                 cell.btnHanja.setTitle("韓 한자 보기", for: .normal)
-                cell.btnHanja.tintColor = .lightGray
             }
         }
         if kanjiForCell.isVisibleEumhun {

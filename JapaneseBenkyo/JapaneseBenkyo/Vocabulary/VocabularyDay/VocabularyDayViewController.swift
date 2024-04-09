@@ -21,8 +21,8 @@ class VocabularyDayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: CommonConstant.shared.daySize).map {
-            Array(vocabularies[$0..<min($0 + CommonConstant.shared.daySize, vocabularies.count)])
+        vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: CommonConstant.daySize).map {
+            Array(vocabularies[$0..<min($0 + CommonConstant.daySize, vocabularies.count)])
         }
         lbTitle.text = level
         

@@ -20,8 +20,8 @@ class KanjiDayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        kanjisDayDistributed = stride(from: 0, to: kanjis.count, by: CommonConstant.shared.daySize).map {
-            Array(kanjis[$0..<min($0 + CommonConstant.shared.daySize, kanjis.count)])
+        kanjisDayDistributed = stride(from: 0, to: kanjis.count, by: CommonConstant.daySize).map {
+            Array(kanjis[$0..<min($0 + CommonConstant.daySize, kanjis.count)])
         }
         lbTitle.text = level
         
