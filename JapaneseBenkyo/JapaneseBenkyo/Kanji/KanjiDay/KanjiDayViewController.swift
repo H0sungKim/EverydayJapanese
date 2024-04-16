@@ -25,16 +25,12 @@ class KanjiDayViewController: UIViewController {
         }
         lbTitle.text = level
         
-        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
-            process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
-        }
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 70
         tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
             process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
         }

@@ -26,9 +26,6 @@ class KanjiStudyViewController: UIViewController {
 
         lbTitle.text = "\(level) \(day)"
         
-        kanjiTableDataSource = KanjiTableDataSource(kanjisForCell: kanjisForCell, tableView: tableView)
-        tableView.delegate = kanjiTableDataSource
-        tableView.dataSource = kanjiTableDataSource
         tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
         
         if kanjisForCell.count == 0 {
@@ -37,7 +34,7 @@ class KanjiStudyViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         kanjiTableDataSource = KanjiTableDataSource(kanjisForCell: kanjisForCell, tableView: tableView)
         tableView.delegate = kanjiTableDataSource
         tableView.dataSource = kanjiTableDataSource

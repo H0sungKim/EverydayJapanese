@@ -26,9 +26,6 @@ class VocabularyStudyViewController: UIViewController {
         
         lbTitle.text = "\(level) \(day)"
         
-        vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
-        tableView.delegate = vocabularyTableDataSource
-        tableView.dataSource = vocabularyTableDataSource
         tableView.rowHeight = CGFloat(CommonConstant.cellSize)
         tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
         
@@ -37,7 +34,7 @@ class VocabularyStudyViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
