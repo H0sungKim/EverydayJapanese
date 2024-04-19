@@ -12,6 +12,7 @@ import AVFoundation
 class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
 
     var window: UIWindow?
+    var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,10 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
             // 3. 윈도우의 뷰 컨트롤러 지정
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-            let navigationController =  UINavigationController.init(rootViewController:viewController)
-            navigationController.setNavigationBarHidden(true, animated: false)
-            navigationController.interactivePopGestureRecognizer?.isEnabled = true
-            navigationController.interactivePopGestureRecognizer?.delegate = self
+            
+            navigationController = UINavigationController.init(rootViewController:viewController)
+            navigationController?.setNavigationBarHidden(true, animated: false)
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+            navigationController?.interactivePopGestureRecognizer?.delegate = self
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
             
@@ -49,5 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return .portrait
     }
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return navigationController?.viewControllers.count ?? 0 > 1
+    }
 }
-
