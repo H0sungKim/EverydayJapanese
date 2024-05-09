@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT8-3Y-eDa">
-                                <rect key="frame" x="194.33333333333337" y="639" width="198.66666666666663" height="179"/>
+                                <rect key="frame" x="194.33333333333337" y="639" width="198.66666666666663" height="213"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system"/>
                                 <connections>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcS-lK-E4v">
-                                <rect key="frame" x="0.0" y="639" width="194.33333333333334" height="179"/>
+                                <rect key="frame" x="0.0" y="639" width="194.33333333333334" height="213"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
@@ -188,11 +188,11 @@
                         <constraints>
                             <constraint firstItem="3Rj-aq-7ou" firstAttribute="leading" secondItem="Vrz-Zu-bBu" secondAttribute="leading" id="AuR-Wp-wLE"/>
                             <constraint firstItem="UT8-3Y-eDa" firstAttribute="width" secondItem="vcS-lK-E4v" secondAttribute="width" multiplier="1.02128" id="ECj-8h-hX7"/>
-                            <constraint firstItem="Vrz-Zu-bBu" firstAttribute="bottom" secondItem="UT8-3Y-eDa" secondAttribute="bottom" id="KFD-0V-y6e"/>
+                            <constraint firstAttribute="bottom" secondItem="UT8-3Y-eDa" secondAttribute="bottom" id="KFD-0V-y6e"/>
                             <constraint firstItem="vcS-lK-E4v" firstAttribute="leading" secondItem="Vrz-Zu-bBu" secondAttribute="leading" id="O7g-ne-bfh"/>
                             <constraint firstItem="UT8-3Y-eDa" firstAttribute="top" secondItem="Ctn-3W-lO7" secondAttribute="bottom" id="UQW-UP-zHn"/>
                             <constraint firstItem="Ctn-3W-lO7" firstAttribute="height" secondItem="gi5-4G-rw6" secondAttribute="height" multiplier="0.5" id="UVl-Sf-4Kp"/>
-                            <constraint firstItem="Vrz-Zu-bBu" firstAttribute="bottom" secondItem="vcS-lK-E4v" secondAttribute="bottom" id="Ue4-Xh-Fq9"/>
+                            <constraint firstAttribute="bottom" secondItem="vcS-lK-E4v" secondAttribute="bottom" id="Ue4-Xh-Fq9"/>
                             <constraint firstItem="LOg-G3-OH3" firstAttribute="top" secondItem="Vrz-Zu-bBu" secondAttribute="top" id="Y2u-cu-KC6"/>
                             <constraint firstItem="LOg-G3-OH3" firstAttribute="leading" secondItem="Vrz-Zu-bBu" secondAttribute="leading" id="Yv0-X8-7k7"/>
                             <constraint firstItem="vcS-lK-E4v" firstAttribute="top" secondItem="Ctn-3W-lO7" secondAttribute="bottom" id="aBV-s2-y9Q"/>

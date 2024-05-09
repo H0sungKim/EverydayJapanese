@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXq-Wn-cTV">
-                                <rect key="frame" x="194.33333333333337" y="639" width="198.66666666666663" height="179"/>
+                                <rect key="frame" x="194.33333333333337" y="639" width="198.66666666666663" height="213"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system"/>
                                 <connections>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAe-Ma-4Qt">
-                                <rect key="frame" x="0.0" y="639" width="194.33333333333334" height="179"/>
+                                <rect key="frame" x="0.0" y="639" width="194.33333333333334" height="213"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
@@ -157,11 +157,11 @@
                             <constraint firstItem="CSm-m2-9K2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="DRX-zX-u8T"/>
                             <constraint firstItem="11E-kc-vxU" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.7" id="FDg-YC-2FP"/>
                             <constraint firstItem="UXq-Wn-cTV" firstAttribute="leading" secondItem="nAe-Ma-4Qt" secondAttribute="trailing" id="J2F-H7-Mxm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UXq-Wn-cTV" secondAttribute="bottom" id="RHO-rs-Yfn"/>
+                            <constraint firstAttribute="bottom" secondItem="UXq-Wn-cTV" secondAttribute="bottom" id="RHO-rs-Yfn"/>
                             <constraint firstItem="CSm-m2-9K2" firstAttribute="bottom" secondItem="a28-1S-IMY" secondAttribute="bottom" id="SwT-wU-c3q"/>
                             <constraint firstItem="11E-kc-vxU" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="Uyv-RD-b1f"/>
                             <constraint firstItem="UXq-Wn-cTV" firstAttribute="top" secondItem="11E-kc-vxU" secondAttribute="bottom" id="W72-Ab-Vjk"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nAe-Ma-4Qt" secondAttribute="bottom" id="Xi0-Lh-1pQ"/>
+                            <constraint firstAttribute="bottom" secondItem="nAe-Ma-4Qt" secondAttribute="bottom" id="Xi0-Lh-1pQ"/>
                             <constraint firstItem="a28-1S-IMY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZIG-Ii-yQb"/>
                             <constraint firstItem="11E-kc-vxU" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="fpR-ZX-GTX"/>
                             <constraint firstItem="nAe-Ma-4Qt" firstAttribute="top" secondItem="11E-kc-vxU" secondAttribute="bottom" id="hBT-2X-gwP"/>

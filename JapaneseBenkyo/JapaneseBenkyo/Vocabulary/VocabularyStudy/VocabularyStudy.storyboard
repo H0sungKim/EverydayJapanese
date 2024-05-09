@@ -85,7 +85,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eZB-6V-72t">
-                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="743"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -101,7 +101,7 @@
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="trailing" secondItem="eZB-6V-72t" secondAttribute="trailing" id="VtQ-36-JXV"/>
                             <constraint firstItem="pBz-xA-OEi" firstAttribute="bottom" secondItem="DR2-Yk-3OP" secondAttribute="bottom" id="aoX-Uj-CSk"/>
                             <constraint firstItem="DR2-Yk-3OP" firstAttribute="top" secondItem="ioZ-eC-BvL" secondAttribute="top" id="bnx-FV-0L1"/>
-                            <constraint firstItem="pBz-xA-OEi" firstAttribute="bottom" secondItem="eZB-6V-72t" secondAttribute="bottom" id="giT-Lt-gKb"/>
+                            <constraint firstAttribute="bottom" secondItem="eZB-6V-72t" secondAttribute="bottom" id="giT-Lt-gKb"/>
                             <constraint firstItem="cgp-bH-0xQ" firstAttribute="leading" secondItem="pBz-xA-OEi" secondAttribute="leading" id="oiN-uQ-RuN"/>
                         </constraints>
                     </view>

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s12-TT-6zr">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="401"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="415"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLm-fB-6ir">
@@ -52,10 +52,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mff-AB-3pM" userLabel="Viewtable">
-                                <rect key="frame" x="0.0" y="401" width="393" height="417"/>
+                                <rect key="frame" x="0.0" y="415" width="393" height="437"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xke-Ka-Elm">
-                                        <rect key="frame" x="0.0" y="53.333333333333314" width="393" height="363.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="53.333333333333314" width="393" height="383.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="틀린 단어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se8-3Y-fml">
@@ -86,13 +86,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5V-mf-vn9" userLabel="Viewscore">
-                                <rect key="frame" x="0.0" y="109" width="393" height="292"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="306"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0o-SC-EXs">
-                                        <rect key="frame" x="0.0" y="144.33333333333337" width="393" height="144.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="151.33333333333331" width="393" height="151.66666666666669"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww8-Wa-rPu">
-                                                <rect key="frame" x="81" y="54.999999999999972" width="231" height="35"/>
+                                                <rect key="frame" x="81" y="58.333333333333371" width="231" height="35"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.counterclockwise" catalog="system" title="  틀린 단어 다시 테스트하기"/>
@@ -101,7 +101,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ov9-at-Gjd">
-                                                <rect key="frame" x="71" y="3.9999999999999716" width="251" height="35"/>
+                                                <rect key="frame" x="71" y="7.3333333333333712" width="251" height="35"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title="  틀린 단어 즐겨찾기 추가하기"/>
@@ -110,7 +110,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlL-m0-osv">
-                                                <rect key="frame" x="118.66666666666669" y="105.99999999999997" width="156" height="35"/>
+                                                <rect key="frame" x="118.66666666666669" y="109.33333333333337" width="156" height="35"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.forward" catalog="system" title="  테스트 끝내기"/>
@@ -130,23 +130,23 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06L-1M-OfQ">
-                                        <rect key="frame" x="0.0" y="289" width="393" height="3"/>
+                                        <rect key="frame" x="0.0" y="303" width="393" height="3"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="wZy-we-mZX"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C92-kK-zB6">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="144.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="151.33333333333334"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qK-pL-jA1">
-                                                <rect key="frame" x="145" y="45.666666666666657" width="103" height="53"/>
+                                                <rect key="frame" x="145" y="49.333333333333343" width="103" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-Rz-5LV">
-                                                <rect key="frame" x="175.66666666666666" y="114.66666666666666" width="42" height="21"/>
+                                                <rect key="frame" x="175.66666666666666" y="118.33333333333334" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -184,7 +184,7 @@
                             <constraint firstItem="s12-TT-6zr" firstAttribute="leading" secondItem="JIl-PJ-FfN" secondAttribute="leading" id="6x9-cO-8nK"/>
                             <constraint firstItem="pLm-fB-6ir" firstAttribute="trailing" secondItem="JIl-PJ-FfN" secondAttribute="trailing" id="9mF-sj-qVj"/>
                             <constraint firstItem="a5V-mf-vn9" firstAttribute="leading" secondItem="JIl-PJ-FfN" secondAttribute="leading" id="HTF-yW-McC"/>
-                            <constraint firstItem="JIl-PJ-FfN" firstAttribute="bottom" secondItem="mff-AB-3pM" secondAttribute="bottom" id="Rf2-nu-Zt2"/>
+                            <constraint firstAttribute="bottom" secondItem="mff-AB-3pM" secondAttribute="bottom" id="Rf2-nu-Zt2"/>
                             <constraint firstItem="pLm-fB-6ir" firstAttribute="leading" secondItem="JIl-PJ-FfN" secondAttribute="leading" id="SYB-5b-fuL"/>
                             <constraint firstItem="pLm-fB-6ir" firstAttribute="top" secondItem="JIl-PJ-FfN" secondAttribute="top" id="U30-sK-qPL"/>
                             <constraint firstItem="mff-AB-3pM" firstAttribute="top" secondItem="a5V-mf-vn9" secondAttribute="bottom" id="WVC-G6-EQb"/>
