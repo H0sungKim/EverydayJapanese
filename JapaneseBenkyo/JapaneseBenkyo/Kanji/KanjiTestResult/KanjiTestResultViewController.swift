@@ -15,7 +15,7 @@ class KanjiTestResultViewController: UIViewController {
     var kanjiCount: Int?
     var wrongKanjiCount: Int?
     
-    private var kanjiTableDataSource: KanjiTableDataSource?
+    private var kanjiTableDataSource: KanjiTableViewHandler?
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
@@ -26,7 +26,7 @@ class KanjiTestResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        kanjiTableDataSource = KanjiTableDataSource(kanjisForCell: kanjisForCell, tableView: tableView)
+        kanjiTableDataSource = KanjiTableViewHandler(kanjisForCell: kanjisForCell, tableView: tableView)
         
         tableView.delegate = kanjiTableDataSource
         tableView.dataSource = kanjiTableDataSource

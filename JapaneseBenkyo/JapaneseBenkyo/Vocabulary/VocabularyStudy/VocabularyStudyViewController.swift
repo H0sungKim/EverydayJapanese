@@ -13,7 +13,7 @@ class VocabularyStudyViewController: UIViewController {
     var level: String = ""
     var day: String = ""
     
-    private var vocabularyTableDataSource: VocabularyTableDataSource?
+    private var vocabularyTableDataSource: VocabularyTableViewHandler?
     
     private var isVisibleAll: Bool = false
     
@@ -35,7 +35,7 @@ class VocabularyStudyViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
+        vocabularyTableDataSource = VocabularyTableViewHandler(vocabulariesForCell: vocabulariesForCell)
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
     }

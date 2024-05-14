@@ -18,7 +18,6 @@ class KanjiTableViewCell: UITableViewCell {
     @IBOutlet weak var lbJpMeaning: UILabel!
     @IBOutlet weak var btnJpMeaning: UIButton!
     @IBOutlet weak var btnBookmark: UIButton!
-    @IBOutlet weak var lcExampleHeight: NSLayoutConstraint!
     @IBOutlet weak var btnExpand: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     

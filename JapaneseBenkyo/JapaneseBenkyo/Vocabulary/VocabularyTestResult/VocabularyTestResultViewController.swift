@@ -15,7 +15,7 @@ class VocabularyTestResultViewController: UIViewController {
     var vocaCount: Int?
     var wrongVocaCount: Int?
     
-    private var vocabularyTableDataSource: VocabularyTableDataSource?
+    private var vocabularyTableDataSource: VocabularyTableViewHandler?
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
@@ -23,10 +23,11 @@ class VocabularyTestResultViewController: UIViewController {
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var lbSubScore: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vocabularyTableDataSource = VocabularyTableDataSource(vocabulariesForCell: vocabulariesForCell)
+        vocabularyTableDataSource = VocabularyTableViewHandler(vocabulariesForCell: vocabulariesForCell)
         
         tableView.delegate = vocabularyTableDataSource
         tableView.dataSource = vocabularyTableDataSource
@@ -43,6 +44,7 @@ class VocabularyTestResultViewController: UIViewController {
             saveProcess()
         }
     }
+    
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }

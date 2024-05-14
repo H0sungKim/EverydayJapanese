@@ -13,7 +13,7 @@ class KanjiStudyViewController: UIViewController {
     var level: String = ""
     var day: String = ""
     
-    private var kanjiTableDataSource: KanjiTableDataSource?
+    private var kanjiTableDataSource: KanjiTableViewHandler?
     
     private var isVisibleAll: Bool = false
     
@@ -35,7 +35,7 @@ class KanjiStudyViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        kanjiTableDataSource = KanjiTableDataSource(kanjisForCell: kanjisForCell, tableView: tableView)
+        kanjiTableDataSource = KanjiTableViewHandler(kanjisForCell: kanjisForCell, tableView: tableView)
         tableView.delegate = kanjiTableDataSource
         tableView.dataSource = kanjiTableDataSource
     }

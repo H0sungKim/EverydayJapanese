@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KanjiTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var kanjisForCell: [KanjiForCell]
     private var bookmark: Set<Kanji> = []
     private var tableView: UITableView

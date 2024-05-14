@@ -1,6 +1,6 @@
 //
 //  UIViewController+Util.swift
-//  IOSSample
+//  JapaneseBenkyo
 //
 //  Created by Hosung.Kim on 2021/11/22.
 //

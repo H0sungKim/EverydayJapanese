@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VocabularyTableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     private var vocabulariesForCell: [VocabularyForCell]
     private var bookmark: Set<Vocabulary> = []

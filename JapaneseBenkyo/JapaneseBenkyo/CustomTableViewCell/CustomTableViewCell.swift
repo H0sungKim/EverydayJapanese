@@ -1,6 +1,6 @@
 //
 //  CustomTableViewCell.swift
-//  IOSSample
+//  JapaneseBenkyo
 //
 //  Created by Hosung.Kim on 2022/03/24.
 //

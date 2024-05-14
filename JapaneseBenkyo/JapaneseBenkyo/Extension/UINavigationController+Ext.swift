@@ -8,6 +8,7 @@
 import UIKit
 
 extension UINavigationController {
+    
     func replaceViewController(viewController: UIViewController, animated:Bool) {
         viewControllers.removeLast()
         viewControllers.append(viewController)
