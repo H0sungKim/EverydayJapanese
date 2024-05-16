@@ -29,7 +29,7 @@ class VocabularyDayViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 70
-        tableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CustomTableViewCell.self))
+        tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
     }
     override func viewWillAppear(_ animated: Bool) {
         if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
@@ -49,13 +49,13 @@ extension VocabularyDayViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CustomTableViewCell
+        let cell: IndexTableViewCell
 
-        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: CustomTableViewCell.self), for: indexPath) as? CustomTableViewCell {
+        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
             cell = reusableCell
         } else {
-            let objectArray = Bundle.main.loadNibNamed(String(describing: CustomTableViewCell.self), owner: nil, options: nil)
-            cell = objectArray![0] as! CustomTableViewCell
+            let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
+            cell = objectArray![0] as! IndexTableViewCell
         }
         cell.ivIcon.image = UIImage(named: "hiragana.png")
         if indexPath.row == 0 {

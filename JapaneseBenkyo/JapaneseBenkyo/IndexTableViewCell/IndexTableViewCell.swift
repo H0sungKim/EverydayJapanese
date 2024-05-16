@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class IndexTableViewCell: UITableViewCell {
 
     @IBOutlet weak var ivIcon: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!

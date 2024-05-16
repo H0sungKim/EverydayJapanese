@@ -2,6 +2,58 @@
 
 [Download Link (AppStore)](https://apps.apple.com/kr/app/id6479572744)
 
+## Files
+
+* [JapaneseBenkyo](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo)
+  * [JapaneseBenkyo](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo)
+    * [Main]()
+      * [MainViewController.swift]()<br>
+      일본어 단어장, 일본어 한자 메뉴 화면 ViewController
+      * [Main.storyboard]()<br>
+      일본어 단어장, 일본어 한자 메뉴 화면 StoryBoard
+    * [IndexTableViewCell]()
+      * [IndexTableViewCell.swift]()
+      * [IndexTableViewCell.storyboard]()
+    * [Vocabulary]()
+      * [Vocabulary.swift]()
+      * [VocabularyViewController.swift]()
+      * [Vocabulary.storyboard]()
+      * [VocabularyDay]()
+        * [VocabularyDayViewController.swift]()
+        * [VocabularyDay.storyboard]()
+      * [VocabularyStudy]()
+        * [VocabularyStudyViewController.swift]()
+        * [VocabularyStudy.storyboard]()
+      * [VocabularyTest]()
+        * []()
+        * []()
+      * [VocabularyTestResult]()
+        * []()
+        * []()
+      * [VocabularyTableViewCell]()
+    * [Kanji]()
+      * [Kanji.swift]()
+      * [KanjiViewController.swift]()
+      * [Kanji.storyboard]()
+      * [KanjiDay]()
+      * [KanjiStudy]()
+      * [KanjiTest]()
+      * [KanjiTestResult]()
+      * [KanjiTableViewCell]()
+    * [Extension]()
+    * [Singleton]()
+    * [res]()
+    * [AppDelegate.swift]()
+    * [Assets.xcassets]()
+    * [Base.lproj]()
+      * [LaunchScreen.storyboard]()
+    * [Info.plist]()
+  * [JapaneseBenkyoTests]()
+  * [JapaneseBenkyoUITests]()
+  * [JapaneseBenkyo.xcodeproj]()
+* [Image](https://github.com/H0sungKim/Vocabulary/tree/main/Image)<br>
+AppStore에 올린 미리보기 이미지
+
 ## Ideas
 
 앱의 대부분의 화면은 UITableView를 활용하여 구성하고 있다.<br>
