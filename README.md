@@ -6,43 +6,89 @@
 
 * [JapaneseBenkyo](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo)
   * [JapaneseBenkyo](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo)
-    * [Main]()
-      * [MainViewController.swift]()<br>
-      일본어 단어장, 일본어 한자 메뉴 화면 ViewController
-      * [Main.storyboard]()<br>
-      일본어 단어장, 일본어 한자 메뉴 화면 StoryBoard
-    * [IndexTableViewCell]()
-      * [IndexTableViewCell.swift]()
-      * [IndexTableViewCell.storyboard]()
-    * [Vocabulary]()
-      * [Vocabulary.swift]()
-      * [VocabularyViewController.swift]()
-      * [Vocabulary.storyboard]()
-      * [VocabularyDay]()
+    * [Main](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Main)<br>일본어 단어장, 일본어 한자 메뉴 화면입니다.
+      * [MainViewController.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Main/MainViewController.swift)
+      * [Main.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Main/Main.storyboard)
+    * [IndexTableViewCell](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/IndexTableViewCell)<br>거의 모든 화면에서 사용되는 목차 TableView의 Cell입니다.
+      * [IndexTableViewCell.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/IndexTableViewCell/IndexTableViewCell.swift)
+      * [IndexTableViewCell.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/IndexTableViewCell/IndexTableViewCell.storyboard)
+    * [Vocabulary](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary)
+      * [Vocabulary.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/Vocabulary.swift)<br>Vocabulary와 VocabularyForCell을 정의해놓은 파일입니다.<br>struct Vocabulary는 단어, 발음, 뜻을 가지고 있습니다.<br>VocabularyForCell은 Vocabulary와 음 보기, 뜻 보기, 즐겨찾기가 되어있는지를 저장해놓은 변수를 갖고 있습니다.
+      * [Vocabulary]()<br>
+      단어 난이도를 고를 수 있는 화면입니다.
+        * [VocabularyViewController.swift]()
+        * [Vocabulary.storyboard]()
+      * [VocabularyDay]()<br>
+      Day 몇의 단어를 공부할지 고를 수 있는 화면입니다.
         * [VocabularyDayViewController.swift]()
         * [VocabularyDay.storyboard]()
-      * [VocabularyStudy]()
+      * [VocabularyStudy]()<br>
+      단어 공부를 할 수 있는 화면입니다.
         * [VocabularyStudyViewController.swift]()
         * [VocabularyStudy.storyboard]()
-      * [VocabularyTest]()
-        * []()
-        * []()
-      * [VocabularyTestResult]()
-        * []()
-        * []()
-      * [VocabularyTableViewCell]()
+      * [VocabularyTest]()<br>
+      암기한 단어들을 테스트할 수 있는 화면입니다.
+        * [VocabularyTestViewController.swift]()
+        * [VocabularyTest.storyboard]()
+      * [VocabularyTestResult]()<br>
+      테스트의 결과를 보여주는 화면입니다. 틀린 단어를 다시 테스트할 수도 있습니다.
+        * [VocabularyTestResultViewController.swift]()
+        * [VocabularyTestResult.storyboard]()
+      * [VocabularyTableViewCell]()<br>
+        단어 암기 TableView에 사용되는 Cell에 관련된 폴더입니다.
+        * [VocabularyTableViewHandler.swift]()<br>
+        단어 암기 TableView의 Delegate와 DataSource를 구현한 파일입니다.
+        * [VocabularyTableViewCell.swift]()
+        * [VocabularyTableViewCell.xib]()
     * [Kanji]()
       * [Kanji.swift]()
-      * [KanjiViewController.swift]()
-      * [Kanji.storyboard]()
-      * [KanjiDay]()
-      * [KanjiStudy]()
-      * [KanjiTest]()
-      * [KanjiTestResult]()
-      * [KanjiTableViewCell]()
+      * [Kanji]()<br>
+      한자 난이도를 고를 수 있는 화면입니다.
+        * [KanjiViewController.swift]()
+        * [Kanji.storyboard]()
+      * [KanjiDay]()<br>
+      Day 몇의 한자를 공부할지 고를 수 있는 화면입니다.
+        * [KanjiDayViewController.swift]()
+        * [KanjiDay.storyboard]()
+      * [KanjiStudy]()<br>
+      한자 공부를 할 수 있는 화면입니다.
+        * [KanjiStudyViewController.swift]()
+        * [KanjiStudy.storyboard]()
+      * [KanjiTest]()<br>
+      암기한 한자들을 테스트할 수 있는 화면입니다.
+        * [KanjiTestViewController.swift]()
+        * [KanjiTest.storyboard]()
+      * [KanjiTestResult]()<br>
+      테스트의 결과를 보여주는 화면입니다. 틀린 한자를 다시 테스트할 수도 있습니다.
+        * [KanjiTestResultViewController.swift]()
+        * [KanjiTestResult.storyboard]()
+      * [KanjiTableViewCell]()<br>
+      한자 암기 TableView에 사용되는 Cell에 관련된 폴더입니다.
+        * [KanjiTableViewHandler.swift]()<br>
+        단어 암기 TableView의 Delegate와 DataSource를 구현한 파일입니다.
+        * [KanjiTableViewCell.swift]()
+        * [KanjiTableViewCell.xib]()<br>
+        Expandable한 Cell입니다.
+        * [ExpandableAreaView.swift]()
+        * [ExpandableAreaView.xib]()<br>
+        한자 활용 예시 단어를 표시할 label을 담고 있는 view입니다. KanjiTableViewCell의 StackView에 예시 단어 개수만큼 들어갑니다.
     * [Extension]()
+      * [UIViewController+Ext.swift]()
+      * [UINavigationController+Ext.swift]()
+      * [UIStackView+Ext.swift]()
     * [Singleton]()
+      * [JSONManager.swift]()<br>
+      JSON 데이터를 Kanji, KanjiForCell, Vocabulary, VocabularyForCell로 변환하거나<br>
+      Kanji, KanjiForCell, Vocabulary, VocabularyForCell를 JSON 데이터로 변환합니다.
+      * [TTSManager.swift]()<br>
+      일본어 발음을 들려주는 TTS를 실행합니다.
+      * [UserDefaultManager.swift]()<br>
+      즐겨찾기한 단어들, 학습 진행도를 UserDefault에 저장합니다.
+      * [CommonConstant.swift]()
+      프로젝트에서 공통적으로 사용하는 상수 값을 관리합니다.
     * [res]()
+      * []()
+      * []()
     * [AppDelegate.swift]()
     * [Assets.xcassets]()
     * [Base.lproj]()
