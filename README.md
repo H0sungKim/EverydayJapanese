@@ -14,32 +14,32 @@
       * [IndexTableViewCell.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/IndexTableViewCell/IndexTableViewCell.storyboard)
     * [Vocabulary](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary)
       * [Vocabulary.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/Vocabulary.swift)<br>Vocabulary와 VocabularyForCell을 정의해놓은 파일입니다.<br>struct Vocabulary는 단어, 발음, 뜻을 가지고 있습니다.<br>VocabularyForCell은 Vocabulary와 음 보기, 뜻 보기, 즐겨찾기가 되어있는지를 저장해놓은 변수를 갖고 있습니다.
-      * [Vocabulary]()<br>
+      * [Vocabulary](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/Vocabulary)<br>
       단어 난이도를 고를 수 있는 화면입니다.
-        * [VocabularyViewController.swift]()
-        * [Vocabulary.storyboard]()
-      * [VocabularyDay]()<br>
+        * [VocabularyViewController.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/Vocabulary/VocabularyViewController.swift)
+        * [Vocabulary.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/Vocabulary/Vocabulary.storyboard)
+      * [VocabularyDay](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyDay)<br>
       Day 몇의 단어를 공부할지 고를 수 있는 화면입니다.
-        * [VocabularyDayViewController.swift]()
-        * [VocabularyDay.storyboard]()
-      * [VocabularyStudy]()<br>
+        * [VocabularyDayViewController.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyDay/VocabularyDayViewController.swift)
+        * [VocabularyDay.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyDay/VocabularyDay.storyboard)
+      * [VocabularyStudy](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyStudy)<br>
       단어 공부를 할 수 있는 화면입니다.
-        * [VocabularyStudyViewController.swift]()
-        * [VocabularyStudy.storyboard]()
-      * [VocabularyTest]()<br>
+        * [VocabularyStudyViewController.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyStudy/VocabularyStudyViewController.swift)
+        * [VocabularyStudy.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyStudy/VocabularyStudy.storyboard)
+      * [VocabularyTest](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTest)<br>
       암기한 단어들을 테스트할 수 있는 화면입니다.
-        * [VocabularyTestViewController.swift]()
-        * [VocabularyTest.storyboard]()
-      * [VocabularyTestResult]()<br>
+        * [VocabularyTestViewController.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTest/VocabularyTestViewController.swift)
+        * [VocabularyTest.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTest/VocabularyTest.storyboard)
+      * [VocabularyTestResult](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTestResult)<br>
       테스트의 결과를 보여주는 화면입니다. 틀린 단어를 다시 테스트할 수도 있습니다.
-        * [VocabularyTestResultViewController.swift]()
-        * [VocabularyTestResult.storyboard]()
-      * [VocabularyTableViewCell]()<br>
+        * [VocabularyTestResultViewController.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTestResult/VocabularyTestResultViewController.swift)
+        * [VocabularyTestResult.storyboard](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTestResult/VocabularyTestResult.storyboard)
+      * [VocabularyTableViewCell](https://github.com/H0sungKim/Vocabulary/tree/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTableViewCell)<br>
         단어 암기 TableView에 사용되는 Cell에 관련된 폴더입니다.
-        * [VocabularyTableViewHandler.swift]()<br>
+        * [VocabularyTableViewHandler.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTableViewCell/VocabularyTableViewHandler.swift)<br>
         단어 암기 TableView의 Delegate와 DataSource를 구현한 파일입니다.
-        * [VocabularyTableViewCell.swift]()
-        * [VocabularyTableViewCell.xib]()
+        * [VocabularyTableViewCell.swift](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTableViewCell/VocabularyTableViewCell.swift)
+        * [VocabularyTableViewCell.xib](https://github.com/H0sungKim/Vocabulary/blob/main/JapaneseBenkyo/JapaneseBenkyo/Vocabulary/VocabularyTableViewCell/VocabularyTableViewCell.xib)
     * [Kanji]()
       * [Kanji.swift]()
       * [Kanji]()<br>
