@@ -144,6 +144,13 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell, indexPath: IndexPath) {
         kanjiForCell.isExpanded = !kanjiForCell.isExpanded
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
+        // When the top cell expands, it causes a problem with the reusable cell, causing the animation to operate abnormally.
+        guard let visibleRows = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        if visibleRows.firstIndex(of: indexPath) == 0 {
+            tableView.reloadSections(IndexSet(visibleRows.map { $0.section }), with: .automatic)
+        }
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
