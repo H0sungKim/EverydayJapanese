@@ -21,6 +21,16 @@
 		960C6B882B7B49FB00D91407 /* kanji6.json in Resources */ = {isa = PBXBuildFile; fileRef = 960C6B812B7B49FB00D91407 /* kanji6.json */; };
 		960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */; };
 		9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9611091A2BAFE3F800AF4C45 /* TTSManager.swift */; };
+		961536802C82E87C00563983 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615367F2C82E87C00563983 /* Main2.storyboard */; };
+		961536822C82E9AC00563983 /* Main2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536812C82E9AC00563983 /* Main2ViewController.swift */; };
+		961536852C8355F200563983 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961536842C8355F200563983 /* HeaderTableViewCell.xib */; };
+		961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536862C83560D00563983 /* HeaderTableViewCell.swift */; };
+		961536892C84315900563983 /* Index2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536882C84315900563983 /* Index2TableViewCell.swift */; };
+		9615368B2C84319F00563983 /* Index2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9615368A2C84319F00563983 /* Index2TableViewCell.xib */; };
+		9615368F2C8433EB00563983 /* jlpt.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368C2C8433EB00563983 /* jlpt.png */; };
+		961536902C8433EB00563983 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368D2C8433EB00563983 /* kanji.png */; };
+		961536912C8433EB00563983 /* hiraganakatakana.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368E2C8433EB00563983 /* hiraganakatakana.png */; };
+		961536932C84868200563983 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 961536922C84868200563983 /* star.png */; };
 		96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */; };
 		96269D802B9AAA180063AF33 /* VocabularyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */; };
 		96269D962B9AD77B0063AF33 /* KanjiDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */; };
@@ -65,8 +75,6 @@
 		96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExpandableAreaView.swift */; };
 		96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExpandableAreaView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
-		96CD34EE2BA3D1CA006F6523 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CD34ED2BA3D1CA006F6523 /* kanji.png */; };
-		96CD34F02BA3D1D7006F6523 /* hiragana.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CD34EF2BA3D1D7006F6523 /* hiragana.png */; };
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
 		96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */; };
@@ -104,6 +112,16 @@
 		960C6B812B7B49FB00D91407 /* kanji6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji6.json; sourceTree = "<group>"; };
 		960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		9611091A2BAFE3F800AF4C45 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
+		9615367F2C82E87C00563983 /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
+		961536812C82E9AC00563983 /* Main2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2ViewController.swift; sourceTree = "<group>"; };
+		961536842C8355F200563983 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		961536862C83560D00563983 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		961536882C84315900563983 /* Index2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index2TableViewCell.swift; sourceTree = "<group>"; };
+		9615368A2C84319F00563983 /* Index2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Index2TableViewCell.xib; sourceTree = "<group>"; };
+		9615368C2C8433EB00563983 /* jlpt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jlpt.png; sourceTree = "<group>"; };
+		9615368D2C8433EB00563983 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
+		9615368E2C8433EB00563983 /* hiraganakatakana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiraganakatakana.png; sourceTree = "<group>"; };
+		961536922C84868200563983 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyDay.storyboard; sourceTree = "<group>"; };
 		96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyDayViewController.swift; sourceTree = "<group>"; };
 		96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDayViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +170,6 @@
 		96C174172BB590EF006775E5 /* ExpandableAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAreaView.swift; sourceTree = "<group>"; };
 		96C174182BB590EF006775E5 /* ExpandableAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAreaView.xib; sourceTree = "<group>"; };
 		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
-		96CD34ED2BA3D1CA006F6523 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
-		96CD34EF2BA3D1D7006F6523 /* hiragana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiragana.png; sourceTree = "<group>"; };
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
@@ -223,6 +239,15 @@
 			path = Singleton;
 			sourceTree = "<group>";
 		};
+		961536832C8355C600563983 /* HeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				961536862C83560D00563983 /* HeaderTableViewCell.swift */,
+				961536842C8355F200563983 /* HeaderTableViewCell.xib */,
+			);
+			path = HeaderTableViewCell;
+			sourceTree = "<group>";
+		};
 		96269D7C2B9AA9E30063AF33 /* VocabularyDay */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +294,7 @@
 				960C6B482B7B35C600D91407 /* Vocabulary */,
 				960C6B492B7B35D100D91407 /* Kanji */,
 				96AD6B6E2B79FD0400F895DE /* Main */,
+				961536832C8355C600563983 /* HeaderTableViewCell */,
 				964AA5F22B79E78D007DE504 /* IndexTableViewCell */,
 				96AD6B6D2B79FCEB00F895DE /* res */,
 				962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */,
@@ -301,6 +327,8 @@
 			children = (
 				964AA5F42B79E7D1007DE504 /* IndexTableViewCell.swift */,
 				964AA5F32B79E7D1007DE504 /* IndexTableViewCell.xib */,
+				961536882C84315900563983 /* Index2TableViewCell.swift */,
+				9615368A2C84319F00563983 /* Index2TableViewCell.xib */,
 			);
 			path = IndexTableViewCell;
 			sourceTree = "<group>";
@@ -355,9 +383,11 @@
 		96AD6B6D2B79FCEB00F895DE /* res */ = {
 			isa = PBXGroup;
 			children = (
+				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
+				9615368C2C8433EB00563983 /* jlpt.png */,
+				9615368D2C8433EB00563983 /* kanji.png */,
 				96BA5ABA2BA0A14F00E3373C /* appicon.png */,
-				96CD34ED2BA3D1CA006F6523 /* kanji.png */,
-				96CD34EF2BA3D1D7006F6523 /* hiragana.png */,
+				961536922C84868200563983 /* star.png */,
 				960C6B7D2B7B49FB00D91407 /* kanji1.json */,
 				960C6B7C2B7B49FB00D91407 /* kanji2.json */,
 				960C6B7E2B7B49FB00D91407 /* kanji3.json */,
@@ -380,6 +410,8 @@
 			children = (
 				962F1BE42B79DFD00051C4DA /* MainViewController.swift */,
 				962F1BE22B79DFB60051C4DA /* Main.storyboard */,
+				961536812C82E9AC00563983 /* Main2ViewController.swift */,
+				9615367F2C82E87C00563983 /* Main2.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -549,16 +581,20 @@
 				96A35C7C2BA5D29A00D7B4F9 /* KanjiTest.storyboard in Resources */,
 				969493582B7DE7310064312F /* VocabularyStudy.storyboard in Resources */,
 				960C6B872B7B49FB00D91407 /* kanji4.json in Resources */,
+				961536802C82E87C00563983 /* Main2.storyboard in Resources */,
+				9615368B2C84319F00563983 /* Index2TableViewCell.xib in Resources */,
 				96BA5B082BA2CF3700E3373C /* n2.json in Resources */,
 				960C6B832B7B49FB00D91407 /* kanji2.json in Resources */,
+				961536912C8433EB00563983 /* hiraganakatakana.png in Resources */,
 				96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */,
+				961536852C8355F200563983 /* HeaderTableViewCell.xib in Resources */,
 				96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */,
-				96CD34EE2BA3D1CA006F6523 /* kanji.png in Resources */,
+				961536902C8433EB00563983 /* kanji.png in Resources */,
 				960C6B882B7B49FB00D91407 /* kanji6.json in Resources */,
 				960C6B512B7B369E00D91407 /* Kanji.storyboard in Resources */,
 				96BA5B072BA2CF3700E3373C /* n5.json in Resources */,
+				9615368F2C8433EB00563983 /* jlpt.png in Resources */,
 				96BA5B062BA2CF3700E3373C /* n1.json in Resources */,
-				96CD34F02BA3D1D7006F6523 /* hiragana.png in Resources */,
 				962F1BE32B79DFB60051C4DA /* Main.storyboard in Resources */,
 				96AD6B752B79FDDF00F895DE /* KanjiStudy.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
@@ -572,6 +608,7 @@
 				96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */,
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
 				960C6B842B7B49FB00D91407 /* kanji1.json in Resources */,
+				961536932C84868200563983 /* star.png in Resources */,
 				96BA5B042BA2CF3700E3373C /* n3.json in Resources */,
 				960C6B862B7B49FB00D91407 /* kanji5.json in Resources */,
 				964AA5F52B79E7D1007DE504 /* IndexTableViewCell.xib in Resources */,
@@ -624,10 +661,13 @@
 				9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				960C6B4F2B7B369600D91407 /* KanjiViewController.swift in Sources */,
+				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
 				96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */,
 				9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */,
 				9658D2012B9EC497001A6A7E /* VocabularyTestViewController.swift in Sources */,
 				96BA5ABE2BA0A65800E3373C /* VocabularyTestResultViewController.swift in Sources */,
+				961536892C84315900563983 /* Index2TableViewCell.swift in Sources */,
+				961536822C82E9AC00563983 /* Main2ViewController.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

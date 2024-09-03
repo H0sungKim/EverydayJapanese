@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
         if let window = window {
             window.backgroundColor = UIColor.white
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+            let storyboard = UIStoryboard(name: "Main2", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "Main2ViewController")
             
             navigationController = UINavigationController.init(rootViewController:viewController)
             navigationController?.setNavigationBarHidden(true, animated: false)
