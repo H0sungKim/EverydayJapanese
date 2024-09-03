@@ -21,8 +21,8 @@
 		960C6B882B7B49FB00D91407 /* kanji6.json in Resources */ = {isa = PBXBuildFile; fileRef = 960C6B812B7B49FB00D91407 /* kanji6.json */; };
 		960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */; };
 		9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9611091A2BAFE3F800AF4C45 /* TTSManager.swift */; };
-		961536802C82E87C00563983 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615367F2C82E87C00563983 /* Main2.storyboard */; };
-		961536822C82E9AC00563983 /* Main2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536812C82E9AC00563983 /* Main2ViewController.swift */; };
+		961536802C82E87C00563983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615367F2C82E87C00563983 /* Main.storyboard */; };
+		961536822C82E9AC00563983 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536812C82E9AC00563983 /* MainViewController.swift */; };
 		961536852C8355F200563983 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961536842C8355F200563983 /* HeaderTableViewCell.xib */; };
 		961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536862C83560D00563983 /* HeaderTableViewCell.swift */; };
 		961536892C84315900563983 /* Index2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536882C84315900563983 /* Index2TableViewCell.swift */; };
@@ -41,8 +41,6 @@
 		962F1BB22B79DCD30051C4DA /* JapaneseBenkyoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1BB12B79DCD30051C4DA /* JapaneseBenkyoTests.swift */; };
 		962F1BBC2B79DCD30051C4DA /* JapaneseBenkyoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1BBB2B79DCD30051C4DA /* JapaneseBenkyoUITests.swift */; };
 		962F1BBE2B79DCD30051C4DA /* JapaneseBenkyoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1BBD2B79DCD30051C4DA /* JapaneseBenkyoUITestsLaunchTests.swift */; };
-		962F1BE32B79DFB60051C4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BE22B79DFB60051C4DA /* Main.storyboard */; };
-		962F1BE52B79DFD00051C4DA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1BE42B79DFD00051C4DA /* MainViewController.swift */; };
 		964AA5F52B79E7D1007DE504 /* IndexTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964AA5F32B79E7D1007DE504 /* IndexTableViewCell.xib */; };
 		964AA5F62B79E7D1007DE504 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964AA5F42B79E7D1007DE504 /* IndexTableViewCell.swift */; };
 		964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */; };
@@ -112,8 +110,8 @@
 		960C6B812B7B49FB00D91407 /* kanji6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji6.json; sourceTree = "<group>"; };
 		960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		9611091A2BAFE3F800AF4C45 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
-		9615367F2C82E87C00563983 /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
-		961536812C82E9AC00563983 /* Main2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2ViewController.swift; sourceTree = "<group>"; };
+		9615367F2C82E87C00563983 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		961536812C82E9AC00563983 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		961536842C8355F200563983 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		961536862C83560D00563983 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		961536882C84315900563983 /* Index2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index2TableViewCell.swift; sourceTree = "<group>"; };
@@ -136,8 +134,6 @@
 		962F1BB72B79DCD30051C4DA /* JapaneseBenkyoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JapaneseBenkyoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		962F1BBB2B79DCD30051C4DA /* JapaneseBenkyoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseBenkyoUITests.swift; sourceTree = "<group>"; };
 		962F1BBD2B79DCD30051C4DA /* JapaneseBenkyoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseBenkyoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		962F1BE22B79DFB60051C4DA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		962F1BE42B79DFD00051C4DA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		964AA5F32B79E7D1007DE504 /* IndexTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexTableViewCell.xib; sourceTree = "<group>"; };
 		964AA5F42B79E7D1007DE504 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
 		964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -408,10 +404,8 @@
 		96AD6B6E2B79FD0400F895DE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				962F1BE42B79DFD00051C4DA /* MainViewController.swift */,
-				962F1BE22B79DFB60051C4DA /* Main.storyboard */,
-				961536812C82E9AC00563983 /* Main2ViewController.swift */,
-				9615367F2C82E87C00563983 /* Main2.storyboard */,
+				961536812C82E9AC00563983 /* MainViewController.swift */,
+				9615367F2C82E87C00563983 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -581,7 +575,7 @@
 				96A35C7C2BA5D29A00D7B4F9 /* KanjiTest.storyboard in Resources */,
 				969493582B7DE7310064312F /* VocabularyStudy.storyboard in Resources */,
 				960C6B872B7B49FB00D91407 /* kanji4.json in Resources */,
-				961536802C82E87C00563983 /* Main2.storyboard in Resources */,
+				961536802C82E87C00563983 /* Main.storyboard in Resources */,
 				9615368B2C84319F00563983 /* Index2TableViewCell.xib in Resources */,
 				96BA5B082BA2CF3700E3373C /* n2.json in Resources */,
 				960C6B832B7B49FB00D91407 /* kanji2.json in Resources */,
@@ -595,7 +589,6 @@
 				96BA5B072BA2CF3700E3373C /* n5.json in Resources */,
 				9615368F2C8433EB00563983 /* jlpt.png in Resources */,
 				96BA5B062BA2CF3700E3373C /* n1.json in Resources */,
-				962F1BE32B79DFB60051C4DA /* Main.storyboard in Resources */,
 				96AD6B752B79FDDF00F895DE /* KanjiStudy.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
@@ -657,7 +650,6 @@
 				96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */,
 				96269D802B9AAA180063AF33 /* VocabularyDayViewController.swift in Sources */,
 				96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */,
-				962F1BE52B79DFD00051C4DA /* MainViewController.swift in Sources */,
 				9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				960C6B4F2B7B369600D91407 /* KanjiViewController.swift in Sources */,
@@ -667,7 +659,7 @@
 				9658D2012B9EC497001A6A7E /* VocabularyTestViewController.swift in Sources */,
 				96BA5ABE2BA0A65800E3373C /* VocabularyTestResultViewController.swift in Sources */,
 				961536892C84315900563983 /* Index2TableViewCell.swift in Sources */,
-				961536822C82E9AC00563983 /* Main2ViewController.swift in Sources */,
+				961536822C82E9AC00563983 /* MainViewController.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

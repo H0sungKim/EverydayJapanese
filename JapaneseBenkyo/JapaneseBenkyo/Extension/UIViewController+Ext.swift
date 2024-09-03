@@ -50,14 +50,6 @@ extension UIViewController {
             return getViewController(storyboard: "KanjiTestResult", identifier: String(describing: KanjiTestResultViewController.self), modalPresentationStyle: .fullScreen)
         }
     }
-    class func getViewController(catalogueEnum: CatalogueEnum) -> UIViewController {
-        switch catalogueEnum {
-        case .vocabulary:
-            return getViewController(viewControllerEnum: .vocabulary)
-        case .kanji:
-            return getViewController(viewControllerEnum: .kanji)
-        }
-    }
     
     // MARK: - Private Method
     private class func getViewController(storyboard: String, identifier: String, modalPresentationStyle: UIModalPresentationStyle) -> UIViewController {

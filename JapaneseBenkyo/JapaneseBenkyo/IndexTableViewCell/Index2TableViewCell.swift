@@ -22,12 +22,12 @@ class Index2TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func initializeView(index: IndexEnum, process: Bool = false) {
+    func initializeView(index: IndexEnum, process: Bool?) {
         switch index {
         case .bookmark:
             ivProcess.image = UIImage(named: "star.png")!
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle, .n5, .n4, .n3, .n2, .n1:
-            if process {
+            if let process = process, process {
                 ivProcess.image = UIImage(systemName: "checkmark.circle")
                 ivProcess.tintColor = .systemGreen
             } else {

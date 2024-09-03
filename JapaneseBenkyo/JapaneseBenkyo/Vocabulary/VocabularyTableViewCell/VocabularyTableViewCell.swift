@@ -10,9 +10,7 @@ import UIKit
 class VocabularyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbWord: UILabel!
-    @IBOutlet weak var btnSound: UIButton!
     @IBOutlet weak var lbSound: UILabel!
-    @IBOutlet weak var btnMeaning: UIButton!
     @IBOutlet weak var lbMeaning: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
     
@@ -23,17 +21,9 @@ class VocabularyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        btnMeaning.titleLabel?.textAlignment = .center
         lbWord.adjustsFontSizeToFitWidth = true
-        btnSound.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
-    @IBAction func onClickSound(_ sender: UIButton) {
-        onClickSound?(sender)
-    }
-    @IBAction func onClickMeaning(_ sender: UIButton) {
-        onClickMeaning?(sender)
-    }
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
     }

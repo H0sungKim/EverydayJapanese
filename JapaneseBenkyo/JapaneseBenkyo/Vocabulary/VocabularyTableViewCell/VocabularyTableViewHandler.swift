@@ -121,22 +121,17 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         cell.lbWord.text = vocabularyForCell.vocabulary.word
         if vocabularyForCell.vocabulary.sound == "" {
             cell.lbSound.text = ""
-            cell.btnSound.tintColor = .clear
         } else {
             if vocabularyForCell.isVisibleSound {
                 cell.lbSound.text = vocabularyForCell.vocabulary.sound
-                cell.btnSound.tintColor = .clear
             } else {
                 cell.lbSound.text = ""
-                cell.btnSound.tintColor = .lightGray
             }
         }
         if vocabularyForCell.isVisibleMeaning {
             cell.lbMeaning.text = vocabularyForCell.vocabulary.meaning
-            cell.btnMeaning.tintColor = .clear
         } else {
             cell.lbMeaning.text = ""
-            cell.btnMeaning.tintColor = .lightGray
         }
         if vocabularyForCell.isBookmark {
             cell.btnBookmark.setImage(UIImage(systemName: "star.fill"), for: .normal)

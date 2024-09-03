@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
         if let window = window {
             window.backgroundColor = UIColor.white
             
-            let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "Main2ViewController")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
             
             navigationController = UINavigationController.init(rootViewController:viewController)
             navigationController?.setNavigationBarHidden(true, animated: false)
@@ -41,6 +41,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch let error as NSError {
                 print("Error : \(error), \(error.userInfo)")
+            }
+        }
+        
+        print(UserDefaultManager.shared.process)
+        print(UserDefaultManager.shared.vocabularyBookmark)
+        print(UserDefaultManager.shared.kanjiBookmark)
+        
+        
+        
+        // Temp
+        let processKeyDiff: [(String, String)] = [
+            ("JLPT N5", "N5"),
+            ("JLPT N4", "N4"),
+            ("JLPT N3", "N3"),
+            ("JLPT N2", "N2"),
+            ("JLPT N1", "N1"),
+        ]
+        
+        for i in processKeyDiff {
+            if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
+                var process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+                if let temp = process[i.0] {
+                    process.removeValue(forKey: i.0)
+                    // 새로운 "e" 키-값 쌍을 추가
+                    process[i.1] = temp
+                }
+                UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)
             }
         }
         
