@@ -72,6 +72,4 @@ class KanjiTestResultViewController: UIViewController {
             UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)
         }
     }
-
-
 }

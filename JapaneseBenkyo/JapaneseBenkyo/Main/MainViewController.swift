@@ -11,9 +11,21 @@ protocol Section {
     var title: String { get }
     var image: UIImage { get }
     var indexs: [IndexEnum] { get }
+    var tableViewCell: UITableViewCell.Type { get }
 }
 
 enum SectionEnum: Section, CaseIterable {
+    var tableViewCell: UITableViewCell.Type {
+        switch self {
+        case .hiraganakatagana:
+            return UITableViewCell.self
+        case .kanji:
+            return KanjiTableViewCell.self
+        case .vocabulary:
+            return VocabularyTableViewCell.self
+        }
+    }
+    
     
     case hiraganakatagana
     case kanji
@@ -96,17 +108,17 @@ enum IndexEnum: String, CaseIterable {
         case .elementary1:
             return "kanji1"
         case .elementary2:
-            return "kanji1"
+            return "kanji2"
         case .elementary3:
-            return "kanji1"
+            return "kanji3"
         case .elementary4:
-            return "kanji1"
+            return "kanji4"
         case .elementary5:
-            return "kanji1"
+            return "kanji5"
         case .elementary6:
-            return "kanji1"
+            return "kanji6"
         case .middle:
-            return "kanji1"
+            return "kanji7"
         case .n5:
             return "n5"
         case .n4:
@@ -117,6 +129,19 @@ enum IndexEnum: String, CaseIterable {
             return "n2"
         case .n1:
             return "n1"
+        }
+    }
+    
+    func getSection() -> SectionEnum? {
+        switch self {
+        case .bookmark:
+            return nil
+        case .hiragana, .katakana:
+            return .hiraganakatagana
+        case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle:
+            return .kanji
+        case .n5, .n4, .n3, .n2, .n1:
+            return .vocabulary
         }
     }
 }
@@ -217,19 +242,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             break
         case .katakana:
             break
-        case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle:
-            let vc = UIViewController.getViewController(viewControllerEnum: .kanjiday) as! KanjiDayViewController
-            vc.level = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue
-            if let jsonData = JSONManager.shared.openJSON(path: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].getFileName()) {
-                vc.kanjis = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData)
-            }
-            navigationController?.pushViewController(vc, animated: true)
-        case .n5, .n4, .n3, .n2, .n1:
-            let vc = UIViewController.getViewController(viewControllerEnum: .vocabularyday) as! VocabularyDayViewController
-            vc.level = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue
-            if let jsonData = JSONManager.shared.openJSON(path: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].getFileName()) {
-                vc.vocabularies = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
-            }
+        case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle, .n5, .n4, .n3, .n2, .n1:
+            let vc = UIViewController.getViewController(viewControllerEnum: .day) as! DayViewController
+            vc.initializeView(index: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1])
             navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)

@@ -11,6 +11,7 @@ class Index2TableViewCell: UITableViewCell {
     
     @IBOutlet weak var ivProcess: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbSubtitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,5 +39,16 @@ class Index2TableViewCell: UITableViewCell {
             ivProcess.image = nil
         }
         lbTitle.text = index.rawValue
+    }
+    
+    func initializeView(title: String, process: Bool?) {
+        if let process = process, process {
+            ivProcess.image = UIImage(systemName: "checkmark.circle")
+            ivProcess.tintColor = .systemGreen
+        } else {
+            ivProcess.image = UIImage(systemName: "circle")
+            ivProcess.tintColor = .systemGray
+        }
+        lbTitle.text = title
     }
 }

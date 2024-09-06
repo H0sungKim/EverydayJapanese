@@ -20,6 +20,8 @@ enum ViewControllerEnum: String, CaseIterable {
     case kanjistudy
     case kanjitest
     case kanjitestresult
+    
+    case day
 }
 
 extension UIViewController {
@@ -48,6 +50,8 @@ extension UIViewController {
             return getViewController(storyboard: "KanjiTest", identifier: String(describing: KanjiTestViewController.self), modalPresentationStyle: .fullScreen)
         case .kanjitestresult:
             return getViewController(storyboard: "KanjiTestResult", identifier: String(describing: KanjiTestResultViewController.self), modalPresentationStyle: .fullScreen)
+        case .day:
+            return getViewController(storyboard: "Day", identifier: String(describing: DayViewController.self), modalPresentationStyle: .fullScreen)
         }
     }
     

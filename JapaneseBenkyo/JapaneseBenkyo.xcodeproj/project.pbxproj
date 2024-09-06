@@ -31,6 +31,8 @@
 		961536902C8433EB00563983 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368D2C8433EB00563983 /* kanji.png */; };
 		961536912C8433EB00563983 /* hiraganakatakana.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368E2C8433EB00563983 /* hiraganakatakana.png */; };
 		961536932C84868200563983 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 961536922C84868200563983 /* star.png */; };
+		961536962C8AA6A200563983 /* Day.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961536952C8AA6A200563983 /* Day.storyboard */; };
+		961536982C8AA6BA00563983 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536972C8AA6BA00563983 /* DayViewController.swift */; };
 		96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */; };
 		96269D802B9AAA180063AF33 /* VocabularyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */; };
 		96269D962B9AD77B0063AF33 /* KanjiDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */; };
@@ -120,6 +122,8 @@
 		9615368D2C8433EB00563983 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
 		9615368E2C8433EB00563983 /* hiraganakatakana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiraganakatakana.png; sourceTree = "<group>"; };
 		961536922C84868200563983 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		961536952C8AA6A200563983 /* Day.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day.storyboard; sourceTree = "<group>"; };
+		961536972C8AA6BA00563983 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyDay.storyboard; sourceTree = "<group>"; };
 		96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyDayViewController.swift; sourceTree = "<group>"; };
 		96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDayViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,15 @@
 			path = HeaderTableViewCell;
 			sourceTree = "<group>";
 		};
+		961536942C8AA68000563983 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				961536972C8AA6BA00563983 /* DayViewController.swift */,
+				961536952C8AA6A200563983 /* Day.storyboard */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
 		96269D7C2B9AA9E30063AF33 /* VocabularyDay */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 				960C6B482B7B35C600D91407 /* Vocabulary */,
 				960C6B492B7B35D100D91407 /* Kanji */,
 				96AD6B6E2B79FD0400F895DE /* Main */,
+				961536942C8AA68000563983 /* Day */,
 				961536832C8355C600563983 /* HeaderTableViewCell */,
 				964AA5F22B79E78D007DE504 /* IndexTableViewCell */,
 				96AD6B6D2B79FCEB00F895DE /* res */,
@@ -598,6 +612,7 @@
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
 				960C6B852B7B49FB00D91407 /* kanji3.json in Resources */,
 				96269D982B9AD7860063AF33 /* KanjiDay.storyboard in Resources */,
+				961536962C8AA6A200563983 /* Day.storyboard in Resources */,
 				96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */,
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
 				960C6B842B7B49FB00D91407 /* kanji1.json in Resources */,
@@ -643,6 +658,7 @@
 				96A35C762BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift in Sources */,
 				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
 				96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */,
+				961536982C8AA6BA00563983 /* DayViewController.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
 				969493562B7DE7210064312F /* VocabularyStudyViewController.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,
