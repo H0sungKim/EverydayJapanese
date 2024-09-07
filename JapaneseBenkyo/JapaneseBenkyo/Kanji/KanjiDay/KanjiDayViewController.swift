@@ -56,7 +56,7 @@ extension KanjiDayViewController: UITableViewDataSource, UITableViewDelegate {
             let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! IndexTableViewCell
         }
-        cell.ivIcon.image = UIImage(named: "kanji.png")
+//        cell.ivIcon.image = UIImage(named: "kanji.png")
         if indexPath.row == 0 {
             cell.lbTitle.text = "전체보기"
             cell.lbSubtitle.text = ""

@@ -14,8 +14,6 @@ class VocabularyTableViewCell: UITableViewCell {
     @IBOutlet weak var lbMeaning: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
     
-    var onClickSound: ((_ sender: UIButton) -> Void)?
-    var onClickMeaning: ((_ sender: UIButton) -> Void)?
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
     var onClickPronounce: ((_ sender: UIButton) -> Void)?
     

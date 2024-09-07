@@ -28,16 +28,15 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func setVisibleAll() {
-        for vocabularyForCell in vocabulariesForCell {
-            vocabularyForCell.isVisibleSound = true
-            vocabularyForCell.isVisibleMeaning = true
-        }
-    }
-    
-    func setInvisibleAll() {
-        for vocabularyForCell in vocabulariesForCell {
-            vocabularyForCell.isVisibleSound = false
-            vocabularyForCell.isVisibleMeaning = false
+        // all vocabulariesForCell is visible
+        if !vocabulariesForCell.contains(where: { !$0.isVisible }) {
+            for vocabularyForCell in vocabulariesForCell {
+                vocabularyForCell.isVisible = false
+            }
+        } else {
+            for vocabularyForCell in vocabulariesForCell {
+                vocabularyForCell.isVisible = true
+            }
         }
     }
     
@@ -63,12 +62,6 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
             cell = objectArray![0] as! VocabularyTableViewCell
         }
         
-        cell.onClickSound = { [weak self] sender in
-            self?.onClickSound(cell, sender, vocabularyForCell: vocabularyForCell)
-        }
-        cell.onClickMeaning = { [weak self] sender in
-            self?.onClickMeaning(cell, sender, vocabularyForCell: vocabularyForCell)
-        }
         cell.onClickBookmark = { [weak self] sender in
             self?.onClickBookmark(cell, sender, vocabularyForCell: vocabularyForCell)
         }
@@ -84,25 +77,11 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) as? VocabularyTableViewCell {
-            if (vocabulariesForCell[indexPath.row].isVisibleSound || vocabulariesForCell[indexPath.row].vocabulary.sound == "") && vocabulariesForCell[indexPath.row].isVisibleMeaning {
-                vocabulariesForCell[indexPath.row].isVisibleSound = false
-                vocabulariesForCell[indexPath.row].isVisibleMeaning = false
-            } else {
-                vocabulariesForCell[indexPath.row].isVisibleSound = true
-                vocabulariesForCell[indexPath.row].isVisibleMeaning = true
-            }
+            vocabulariesForCell[indexPath.row].isVisible = !vocabulariesForCell[indexPath.row].isVisible
             initializeCell(cell: cell, vocabularyForCell: vocabulariesForCell[indexPath.row])
         }
     }
     
-    private func onClickSound(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
-        vocabularyForCell.isVisibleSound = !vocabularyForCell.isVisibleSound
-        initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
-    }
-    private func onClickMeaning(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
-        vocabularyForCell.isVisibleMeaning = !vocabularyForCell.isVisibleMeaning
-        initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
-    }
     private func onClickBookmark(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
         if vocabularyForCell.isBookmark {
             bookmark.remove(vocabularyForCell.vocabulary)
@@ -119,18 +98,11 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     
     private func initializeCell(cell: VocabularyTableViewCell, vocabularyForCell: VocabularyForCell) {
         cell.lbWord.text = vocabularyForCell.vocabulary.word
-        if vocabularyForCell.vocabulary.sound == "" {
-            cell.lbSound.text = ""
-        } else {
-            if vocabularyForCell.isVisibleSound {
-                cell.lbSound.text = vocabularyForCell.vocabulary.sound
-            } else {
-                cell.lbSound.text = ""
-            }
-        }
-        if vocabularyForCell.isVisibleMeaning {
+        if vocabularyForCell.isVisible {
+            cell.lbSound.text = vocabularyForCell.vocabulary.sound
             cell.lbMeaning.text = vocabularyForCell.vocabulary.meaning
         } else {
+            cell.lbSound.text = ""
             cell.lbMeaning.text = ""
         }
         if vocabularyForCell.isBookmark {
@@ -138,6 +110,5 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         } else {
             cell.btnBookmark.setImage(UIImage(systemName: "star"), for: .normal)
         }
-        
     }
 }

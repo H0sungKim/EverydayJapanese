@@ -9,7 +9,6 @@ import UIKit
 
 // MARK: - Public Outter Class, Struct, Enum, Protocol
 enum ViewControllerEnum: String, CaseIterable {
-    case vocabulary
     case vocabularyday
     case vocabularystudy
     case vocabularytest
@@ -22,6 +21,8 @@ enum ViewControllerEnum: String, CaseIterable {
     case kanjitestresult
     
     case day
+    case study
+    case test
 }
 
 extension UIViewController {
@@ -29,8 +30,6 @@ extension UIViewController {
     // MARK: - Public Method
     class func getViewController(viewControllerEnum: ViewControllerEnum) -> UIViewController {
         switch viewControllerEnum {
-        case .vocabulary:
-            return getViewController(storyboard: "Vocabulary", identifier: String(describing: VocabularyViewController.self), modalPresentationStyle: .fullScreen)
         case .vocabularyday:
             return getViewController(storyboard: "VocabularyDay", identifier: String(describing: VocabularyDayViewController.self), modalPresentationStyle: .fullScreen)
         case .vocabularystudy:
@@ -50,8 +49,13 @@ extension UIViewController {
             return getViewController(storyboard: "KanjiTest", identifier: String(describing: KanjiTestViewController.self), modalPresentationStyle: .fullScreen)
         case .kanjitestresult:
             return getViewController(storyboard: "KanjiTestResult", identifier: String(describing: KanjiTestResultViewController.self), modalPresentationStyle: .fullScreen)
+            
         case .day:
             return getViewController(storyboard: "Day", identifier: String(describing: DayViewController.self), modalPresentationStyle: .fullScreen)
+        case .study:
+            return getViewController(storyboard: "Study", identifier: String(describing: StudyViewController.self), modalPresentationStyle: .fullScreen)
+        case .test:
+            return getViewController(storyboard: "Test", identifier: String(describing: TestViewController.self), modalPresentationStyle: .fullScreen)
         }
     }
     

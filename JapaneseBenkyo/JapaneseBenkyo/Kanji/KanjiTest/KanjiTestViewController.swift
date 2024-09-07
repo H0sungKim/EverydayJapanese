@@ -12,10 +12,11 @@ class KanjiTestViewController: UIViewController {
     var level: String = ""
     var day: String = ""
     
-    private var wrongKanjis: [Kanji] = []
+    private var testResult: [Bool] = []
     private var index: Int = 0
     private var isKanjiVisible: Bool = false
     
+    @IBOutlet weak var btnBefore: UIButton!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbIndex: UILabel!
     @IBOutlet weak var lbKanji: UILabel!
@@ -44,14 +45,22 @@ class KanjiTestViewController: UIViewController {
     }
     
     @IBAction func onClickV(_ sender: Any) {
+        testResult.append(true)
         moveOnToNextKanji()
     }
     @IBAction func onClickX(_ sender: Any) {
-        wrongKanjis.append(kanjis[index])
+        testResult.append(false)
         moveOnToNextKanji()
     }
     
     private func updateKanji() {
+        if index == 0 {
+            btnBefore.isEnabled = false
+            btnBefore.isHidden = true
+        } else {
+            btnBefore.isEnabled = false
+            btnBefore.isHidden = true
+        }
         lbIndex.text = "\(index+1)/\(kanjis.count)"
         lbKanji.text = kanjis[index].kanji
         if isKanjiVisible {
@@ -73,12 +82,20 @@ class KanjiTestViewController: UIViewController {
             vc.level = level
             vc.day = day
             vc.kanjiCount = kanjis.count
-            vc.wrongKanjiCount = wrongKanjis.count
-            vc.kanjisForCell = wrongKanjis.map { KanjiForCell(kanji: $0) }
+//            vc.wrongKanjiCount = wrongKanjis.count
+//            vc.kanjisForCell = wrongKanjis.map { KanjiForCell(kanji: $0) }
             navigationController?.replaceViewController(viewController: vc, animated: true)
         } else {
             isKanjiVisible = false
             updateKanji()
         }
+    }
+    @IBAction func onClickBefore(_ sender: Any) {
+        if index == 0 {
+            return
+        }
+        index -= 1
+        isKanjiVisible = false
+        updateKanji()
     }
 }

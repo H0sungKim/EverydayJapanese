@@ -10,21 +10,15 @@ import UIKit
 class KanjiTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbKanji: UILabel!
-    @IBOutlet weak var btnHanja: UIButton!
     @IBOutlet weak var lbEumhun: UILabel!
-    @IBOutlet weak var btnEumhun: UIButton!
     @IBOutlet weak var lbJpSound: UILabel!
-    @IBOutlet weak var btnJpSound: UIButton!
     @IBOutlet weak var lbJpMeaning: UILabel!
-    @IBOutlet weak var btnJpMeaning: UIButton!
     @IBOutlet weak var btnBookmark: UIButton!
     @IBOutlet weak var btnExpand: UIButton!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var scHanja: UISegmentedControl!
     
-    var onClickHanja: ((_ sender: UIButton) -> Void)?
-    var onClickEumhun: ((_ sender: UIButton) -> Void)?
-    var onClickJpSound: ((_ sender: UIButton) -> Void)?
-    var onClickJpMeaning: ((_ sender: UIButton) -> Void)?
+    var valueChangedHanja: ((_ sender: UISegmentedControl) -> Void)?
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
     var onClickPronounce: ((_ sender: UIButton) -> Void)?
     var onClickExpand: ((_ sender: UIButton) -> Void)?
@@ -35,19 +29,10 @@ class KanjiTableViewCell: UITableViewCell {
         lbJpMeaning.adjustsFontSizeToFitWidth = true
         lbEumhun.adjustsFontSizeToFitWidth = true
     }
+    @IBAction func valueChangedHanja(_ sender: UISegmentedControl) {
+        valueChangedHanja?(sender)
+    }
     
-    @IBAction func onClickHanja(_ sender: UIButton) {
-        onClickHanja?(sender)
-    }
-    @IBAction func onClickEumhun(_ sender: UIButton) {
-        onClickEumhun?(sender)
-    }
-    @IBAction func onClickJpSound(_ sender: UIButton) {
-        onClickJpSound?(sender)
-    }
-    @IBAction func onClickJpMeaning(_ sender: UIButton) {
-        onClickJpMeaning?(sender)
-    }
     @IBAction func onClickBookmark(_ sender: UIButton) {
         onClickBookmark?(sender)
     }

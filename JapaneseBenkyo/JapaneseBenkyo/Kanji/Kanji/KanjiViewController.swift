@@ -59,7 +59,7 @@ extension KanjiViewController: UITableViewDataSource, UITableViewDelegate {
             let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
             cell = objectArray![0] as! IndexTableViewCell
         }
-        cell.ivIcon.image = UIImage(named: "kanji.png")
+//        cell.ivIcon.image = UIImage(named: "kanji.png")
         cell.lbTitle.text = catalogues[indexPath.row].rawValue
         
         switch catalogues[indexPath.row] {

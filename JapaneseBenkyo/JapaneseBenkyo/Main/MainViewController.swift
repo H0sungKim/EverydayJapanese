@@ -161,7 +161,7 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
-        tableView.register(UINib(nibName: String(describing: Index2TableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: Index2TableViewCell.self))
+        tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
         
     }
     
@@ -201,12 +201,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.initializeView(section: SectionEnum.allCases[indexPath.section])
             return cell
         } else {
-            let cell: Index2TableViewCell
-            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: Index2TableViewCell.self), for: indexPath) as? Index2TableViewCell {
+            let cell: IndexTableViewCell
+            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
                 cell = reusableCell
             } else {
-                let objectArray = Bundle.main.loadNibNamed(String(describing: Index2TableViewCell.self), owner: nil, options: nil)
-                cell = objectArray![0] as! Index2TableViewCell
+                let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
+                cell = objectArray![0] as! IndexTableViewCell
             }
             cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1], process: process[SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue]?["전체보기"])
             return cell
@@ -220,19 +220,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
         switch SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1] {
         case .bookmark:
+            let vc = UIViewController.getViewController(viewControllerEnum: .study) as! StudyViewController
+            vc.indexEnum = .bookmark
+            vc.sectionEnum = SectionEnum.allCases[indexPath.section]
+            
             switch SectionEnum.allCases[indexPath.section] {
             case .hiraganakatagana:
                 break
             case .kanji:
-                let vc = UIViewController.getViewController(viewControllerEnum: .kanjistudy) as! KanjiStudyViewController
-                vc.level = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue
                 if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
                     vc.kanjisForCell = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData).map { KanjiForCell(kanji: $0) }
                 }
                 navigationController?.pushViewController(vc, animated: true)
             case .vocabulary:
-                let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
-                vc.level = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue
                 if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.vocabularyBookmark) {
                     vc.vocabulariesForCell = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData).map { VocabularyForCell(vocabulary: $0) }
                 }
@@ -244,7 +244,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             break
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle, .n5, .n4, .n3, .n2, .n1:
             let vc = UIViewController.getViewController(viewControllerEnum: .day) as! DayViewController
-            vc.initializeView(index: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1])
+            vc.indexEnum = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1]
             navigationController?.pushViewController(vc, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)

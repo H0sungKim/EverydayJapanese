@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -182,12 +182,23 @@
                                     <constraint firstItem="GYd-zw-8L2" firstAttribute="top" secondItem="Ctn-3W-lO7" secondAttribute="top" id="zt9-uK-0dO"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXb-ff-mtC">
+                                <rect key="frame" x="8" y="408.66666666666669" width="40" height="35"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickBefore:" destination="4yW-Yi-Vpd" eventType="touchUpInside" id="fmJ-35-nlh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vrz-Zu-bBu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iXb-ff-mtC" firstAttribute="leading" secondItem="Vrz-Zu-bBu" secondAttribute="leading" constant="8" id="AS6-rp-Eyg"/>
                             <constraint firstItem="3Rj-aq-7ou" firstAttribute="leading" secondItem="Vrz-Zu-bBu" secondAttribute="leading" id="AuR-Wp-wLE"/>
                             <constraint firstItem="UT8-3Y-eDa" firstAttribute="width" secondItem="vcS-lK-E4v" secondAttribute="width" multiplier="1.02128" id="ECj-8h-hX7"/>
+                            <constraint firstItem="iXb-ff-mtC" firstAttribute="centerY" secondItem="gi5-4G-rw6" secondAttribute="centerY" id="HaB-RR-I2P"/>
                             <constraint firstAttribute="bottom" secondItem="UT8-3Y-eDa" secondAttribute="bottom" id="KFD-0V-y6e"/>
                             <constraint firstItem="vcS-lK-E4v" firstAttribute="leading" secondItem="Vrz-Zu-bBu" secondAttribute="leading" id="O7g-ne-bfh"/>
                             <constraint firstItem="UT8-3Y-eDa" firstAttribute="top" secondItem="Ctn-3W-lO7" secondAttribute="bottom" id="UQW-UP-zHn"/>
@@ -208,6 +219,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBefore" destination="iXb-ff-mtC" id="paN-U0-jxG"/>
                         <outlet property="lbEumhun" destination="H7j-QZ-KDh" id="Zgd-h4-TKZ"/>
                         <outlet property="lbHanja" destination="2gg-Z4-KcA" id="0Rz-eD-egv"/>
                         <outlet property="lbIndex" destination="YZb-AW-pd6" id="UmA-aR-goO"/>
@@ -225,6 +237,7 @@
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

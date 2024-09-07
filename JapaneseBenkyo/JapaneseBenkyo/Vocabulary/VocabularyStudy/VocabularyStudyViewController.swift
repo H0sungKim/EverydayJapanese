@@ -15,8 +15,6 @@ class VocabularyStudyViewController: UIViewController {
     
     private var vocabularyTableDataSource: VocabularyTableViewHandler?
     
-    private var isVisibleAll: Bool = false
-    
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnTest: UIButton!
@@ -45,12 +43,8 @@ class VocabularyStudyViewController: UIViewController {
     }
     
     @IBAction func onClickVisibleAll(_ sender: UIButton) {
-        if isVisibleAll {
-            vocabularyTableDataSource?.setInvisibleAll()
-        } else {
-            vocabularyTableDataSource?.setVisibleAll()
-        }
-        isVisibleAll = !isVisibleAll
+        vocabularyTableDataSource?.setVisibleAll()
+        
         tableView.reloadData()
     }
     

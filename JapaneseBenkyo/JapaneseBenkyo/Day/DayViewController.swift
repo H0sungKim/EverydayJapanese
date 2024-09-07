@@ -9,7 +9,7 @@ import UIKit
 
 class DayViewController: UIViewController {
     
-    var index: IndexEnum?
+    var indexEnum: IndexEnum?
     
     private var process: [String: [String: Bool]] = [:]
     
@@ -26,14 +26,12 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ivSection.image = index?.getSection()?.image
-        lbTitle.text = index?.getSection()?.title
-        lbSubtitle.text = index?.rawValue
+        initializeView()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 64
-        tableView.register(UINib(nibName: String(describing: Index2TableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: Index2TableViewCell.self))
+        tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,26 +41,34 @@ class DayViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func initializeView(index: IndexEnum) {
+    func initializeView() {
         
-        self.index = index
+        guard let indexEnum = indexEnum else {
+            return
+        }
         
-        switch index.getSection() {
+        ivSection.image = indexEnum.getSection()?.image
+        lbTitle.text = indexEnum.getSection()?.title
+        lbSubtitle.text = indexEnum.rawValue
+        
+        switch indexEnum.getSection() {
         case .hiraganakatagana:
             break
         case .kanji:
-            if let jsonData = JSONManager.shared.openJSON(path: index.getFileName()) {
-                let kanjis: [Kanji] = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData)
-                kanjisDayDistributed = stride(from: 0, to: kanjis.count, by: CommonConstant.daySize).map {
-                    Array(kanjis[$0..<min($0 + CommonConstant.daySize, kanjis.count)])
-                }
+            guard let jsonData = JSONManager.shared.openJSON(path: indexEnum.getFileName()) else {
+                return
+            }
+            let kanjis: [Kanji] = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData)
+            kanjisDayDistributed = stride(from: 0, to: kanjis.count, by: CommonConstant.daySize).map {
+                Array(kanjis[$0..<min($0 + CommonConstant.daySize, kanjis.count)])
             }
         case .vocabulary:
-            if let jsonData = JSONManager.shared.openJSON(path: index.getFileName()) {
-                let vocabularies: [Vocabulary] = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
-                vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: CommonConstant.daySize).map {
-                    Array(vocabularies[$0..<min($0 + CommonConstant.daySize, vocabularies.count)])
-                }
+            guard let jsonData = JSONManager.shared.openJSON(path: indexEnum.getFileName()) else {
+                return
+            }
+            let vocabularies: [Vocabulary] = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
+            vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: CommonConstant.daySize).map {
+                Array(vocabularies[$0..<min($0 + CommonConstant.daySize, vocabularies.count)])
             }
         case .none:
             break
@@ -80,13 +86,13 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: Index2TableViewCell
+        let cell: IndexTableViewCell
 
-        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: Index2TableViewCell.self), for: indexPath) as? Index2TableViewCell {
+        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
             cell = reusableCell
         } else {
-            let objectArray = Bundle.main.loadNibNamed(String(describing: Index2TableViewCell.self), owner: nil, options: nil)
-            cell = objectArray![0] as! Index2TableViewCell
+            let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
+            cell = objectArray![0] as! IndexTableViewCell
         }
         let title: String = indexPath.row == 0 ? "전체보기" : "Day\(indexPath.row)"
         cell.initializeView(title: title, process: process[lbSubtitle.text ?? ""]?[title])
@@ -94,8 +100,40 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        let vc = UIViewController.getViewController(viewControllerEnum: .vocabularystudy) as! VocabularyStudyViewController
+        let vc = UIViewController.getViewController(viewControllerEnum: .study) as! StudyViewController
+        vc.indexEnum = indexEnum
+        vc.sectionEnum = indexEnum?.getSection()
+        vc.day = indexPath.row == 0 ? "전체보기" : "Day\(indexPath.row)"
         
-//        navigationController?.pushViewController(vc, animated: true)
+        guard let indexEnum = indexEnum else {
+            return
+        }
+        
+        switch indexEnum.getSection() {
+        case .kanji:
+            if indexPath.row == 0 {
+                guard let jsonData = JSONManager.shared.openJSON(path: indexEnum.getFileName()) else {
+                    return
+                }
+                let kanjis: [Kanji] = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData)
+                vc.kanjisForCell = kanjis.map { KanjiForCell(kanji: $0) }
+            } else {
+                vc.kanjisForCell = kanjisDayDistributed?[indexPath.row-1].map { KanjiForCell(kanji: $0) }
+            }
+        case .vocabulary:
+            if indexPath.row == 0 {
+                guard let jsonData = JSONManager.shared.openJSON(path: indexEnum.getFileName()) else {
+                    return
+                }
+                let vocabularies: [Vocabulary] = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
+                vc.vocabulariesForCell = vocabularies.map { VocabularyForCell(vocabulary: $0) }
+            } else {
+                vc.vocabulariesForCell = vocabulariesDayDistributed?[indexPath.row-1].map { VocabularyForCell(vocabulary: $0) }
+            }
+        case .hiraganakatagana, nil:
+            break
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -15,8 +15,6 @@ class KanjiStudyViewController: UIViewController {
     
     private var kanjiTableDataSource: KanjiTableViewHandler?
     
-    private var isVisibleAll: Bool = false
-    
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnTest: UIButton!
@@ -45,12 +43,8 @@ class KanjiStudyViewController: UIViewController {
     }
     
     @IBAction func onClickVisibleAll(_ sender: UIButton) {
-        if isVisibleAll {
-            kanjiTableDataSource?.setInvisibleAll()
-        } else {
-            kanjiTableDataSource?.setVisibleAll()
-        }
-        isVisibleAll = !isVisibleAll
+        kanjiTableDataSource?.setVisibleAll()
+        
         tableView.reloadData()
     }
     

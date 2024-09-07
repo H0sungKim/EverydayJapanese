@@ -18,10 +18,8 @@ struct Kanji: Codable, Equatable, Hashable {
 
 class KanjiForCell {
     let kanji: Kanji
+    var isVisible: Bool = false
     var isVisibleHanja: Bool = false
-    var isVisibleEumhun: Bool = false
-    var isVisibleJpSound: Bool = false
-    var isVisibleJpMeaning: Bool = false
     var isBookmark: Bool = false
     var isExpanded: Bool = false
     
