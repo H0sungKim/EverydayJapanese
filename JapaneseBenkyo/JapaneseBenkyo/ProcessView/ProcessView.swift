@@ -43,6 +43,11 @@ class ProcessView: UIView {
             return
         }
         
+        let backgroundRect = CGRect(x: 0, y: 0, width: width, height: height)
+        let backgroundPath = UIBezierPath(rect: backgroundRect)
+        backGroundColor.setFill()
+        backgroundPath.fill()
+        
         let processRect = CGRect(x: 0, y: 0, width: process*width, height: height)
         let processPath = UIBezierPath(rect: processRect)
         labelColor.setFill()
