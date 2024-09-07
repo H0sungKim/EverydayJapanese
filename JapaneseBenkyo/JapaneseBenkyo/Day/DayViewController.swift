@@ -20,6 +20,7 @@ class DayViewController: UIViewController {
     @IBOutlet weak var lbSubtitle: UILabel!
     @IBOutlet weak var ivSection: UIImageView!
     
+    @IBOutlet weak var processView: ProcessView!
     @IBOutlet weak var lbProcess: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,6 +40,11 @@ class DayViewController: UIViewController {
             process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
         }
         tableView.reloadData()
+        guard let indexEnum = indexEnum else {
+            return
+        }
+        processView.drawProcess(process: CGFloat(process[indexEnum.rawValue]?.count ?? 0)/CGFloat(tableView.numberOfRows(inSection: 0)))
+        lbProcess.text = "\((process[indexEnum.rawValue] ?? [:]).count)/\(tableView.numberOfRows(inSection: 0))"
     }
     
     func initializeView() {
@@ -52,8 +58,6 @@ class DayViewController: UIViewController {
         lbSubtitle.text = indexEnum.rawValue
         
         switch indexEnum.getSection() {
-        case .hiraganakatagana:
-            break
         case .kanji:
             guard let jsonData = JSONManager.shared.openJSON(path: indexEnum.getFileName()) else {
                 return
@@ -70,7 +74,7 @@ class DayViewController: UIViewController {
             vocabulariesDayDistributed = stride(from: 0, to: vocabularies.count, by: CommonConstant.daySize).map {
                 Array(vocabularies[$0..<min($0 + CommonConstant.daySize, vocabularies.count)])
             }
-        case .none:
+        default:
             break
         }
     }

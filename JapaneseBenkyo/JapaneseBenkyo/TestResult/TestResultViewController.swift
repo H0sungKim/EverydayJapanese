@@ -74,6 +74,9 @@ class TestResultViewController: UIViewController {
         if wrongCount == 0 {
             btnBookmark.isEnabled = false
             btnReTest.isEnabled = false
+            if indexEnum == .bookmark {
+                return
+            }
             saveProcess()
         }
     }

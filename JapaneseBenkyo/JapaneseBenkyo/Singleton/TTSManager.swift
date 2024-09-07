@@ -39,4 +39,12 @@ class TTSManager: NSObject {
         synthesizer.stopSpeaking(at: .immediate)
         synthesizer.speak(utterance)
     }
+    
+    func play(line: String) {
+        let utterance = AVSpeechUtterance(string: line)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+        utterance.rate = 0.2
+        synthesizer.stopSpeaking(at: .immediate)
+        synthesizer.speak(utterance)
+    }
 }

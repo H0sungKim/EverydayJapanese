@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - Public Outter Class, Struct, Enum, Protocol
 enum ViewControllerEnum: String, CaseIterable {
-    
+    case hiraganakatakana
     case day
     case study
     case test
@@ -21,7 +21,8 @@ extension UIViewController {
     // MARK: - Public Method
     class func getViewController(viewControllerEnum: ViewControllerEnum) -> UIViewController {
         switch viewControllerEnum {
-            
+        case .hiraganakatakana:
+            return getViewController(storyboard: "HiraganaKatakana", identifier: String(describing: HiraganaKatakanaViewController.self), modalPresentationStyle: .fullScreen)
         case .day:
             return getViewController(storyboard: "Day", identifier: String(describing: DayViewController.self), modalPresentationStyle: .fullScreen)
         case .study:

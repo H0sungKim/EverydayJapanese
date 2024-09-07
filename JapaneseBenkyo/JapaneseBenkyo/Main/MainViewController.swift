@@ -239,9 +239,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 navigationController?.pushViewController(vc, animated: true)
             }
         case .hiragana:
-            break
+            let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakana) as! HiraganaKatakanaViewController
+            vc.indexEnum = .hiragana
+            navigationController?.pushViewController(vc, animated: true)
         case .katakana:
-            break
+            let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakana) as! HiraganaKatakanaViewController
+            vc.indexEnum = .katakana
+            navigationController?.pushViewController(vc, animated: true)
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle, .n5, .n4, .n3, .n2, .n1:
             let vc = UIViewController.getViewController(viewControllerEnum: .day) as! DayViewController
             vc.indexEnum = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1]
