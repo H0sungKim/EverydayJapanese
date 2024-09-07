@@ -46,7 +46,7 @@ class TestViewController: UIViewController {
         }
         
         lbTitle.text = sectionEnum?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") \(day)"
+        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") \(day) 테스트"
         ivSection.image = sectionEnum?.image
         
         lbMain.adjustsFontSizeToFitWidth = true
@@ -111,13 +111,41 @@ class TestViewController: UIViewController {
         index += 1
         if (sectionEnum == .kanji && index == kanjis?.count) ||
             (sectionEnum == .vocabulary && index == vocabularies?.count){
-//            let vc = UIViewController.getViewController(viewControllerEnum: .kanjitestresult) as! KanjiTestResultViewController
-//            vc.level = level
-//            vc.day = day
-//            vc.kanjiCount = kanjis.count
-//            vc.wrongKanjiCount = wrongKanjis.count
-//            vc.kanjisForCell = wrongKanjis.map { KanjiForCell(kanji: $0) }
-//            navigationController?.replaceViewController(viewController: vc, animated: true)
+            let vc = UIViewController.getViewController(viewControllerEnum: .testresult) as! TestResultViewController
+            vc.indexEnum = indexEnum
+            vc.sectionEnum = sectionEnum
+            vc.day = day
+            
+            switch sectionEnum {
+            case .kanji:
+                guard let kanjis = kanjis else {
+                    break
+                }
+                vc.allCount = kanjis.count
+                var wrongKanjis: [KanjiForCell] = []
+                for i in 0..<testResult.count {
+                    if !testResult[i] {
+                        wrongKanjis.append(KanjiForCell(kanji: kanjis[i]))
+                    }
+                }
+                vc.kanjisForCell = wrongKanjis
+            case .vocabulary:
+                guard let vocabularies = vocabularies else {
+                    break
+                }
+                vc.allCount = vocabularies.count
+                var wrongVacabularies: [VocabularyForCell] = []
+                for i in 0..<testResult.count {
+                    if !testResult[i] {
+                        wrongVacabularies.append(VocabularyForCell(vocabulary: vocabularies[i]))
+                    }
+                }
+                vc.vocabulariesForCell = wrongVacabularies
+            case .hiraganakatagana, nil:
+                return
+            }
+            
+            navigationController?.replaceViewController(viewController: vc, animated: true)
             return
         }
         isVisible = false

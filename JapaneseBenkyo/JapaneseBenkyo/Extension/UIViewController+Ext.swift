@@ -9,20 +9,11 @@ import UIKit
 
 // MARK: - Public Outter Class, Struct, Enum, Protocol
 enum ViewControllerEnum: String, CaseIterable {
-    case vocabularyday
-    case vocabularystudy
-    case vocabularytest
-    case vocabularytestresult
-    
-    case kanji
-    case kanjiday
-    case kanjistudy
-    case kanjitest
-    case kanjitestresult
     
     case day
     case study
     case test
+    case testresult
 }
 
 extension UIViewController {
@@ -30,25 +21,6 @@ extension UIViewController {
     // MARK: - Public Method
     class func getViewController(viewControllerEnum: ViewControllerEnum) -> UIViewController {
         switch viewControllerEnum {
-        case .vocabularyday:
-            return getViewController(storyboard: "VocabularyDay", identifier: String(describing: VocabularyDayViewController.self), modalPresentationStyle: .fullScreen)
-        case .vocabularystudy:
-            return getViewController(storyboard: "VocabularyStudy", identifier: String(describing: VocabularyStudyViewController.self), modalPresentationStyle: .fullScreen)
-        case .vocabularytest:
-            return getViewController(storyboard: "VocabularyTest", identifier: String(describing: VocabularyTestViewController.self), modalPresentationStyle: .fullScreen)
-        case .vocabularytestresult:
-            return getViewController(storyboard: "VocabularyTestResult", identifier: String(describing: VocabularyTestResultViewController.self), modalPresentationStyle: .fullScreen)
-            
-        case .kanji:
-            return getViewController(storyboard: "Kanji", identifier: String(describing: KanjiViewController.self), modalPresentationStyle: .fullScreen)
-        case .kanjiday:
-            return getViewController(storyboard: "KanjiDay", identifier: String(describing: KanjiDayViewController.self), modalPresentationStyle: .fullScreen)
-        case .kanjistudy:
-            return getViewController(storyboard: "KanjiStudy", identifier: String(describing: KanjiStudyViewController.self), modalPresentationStyle: .fullScreen)
-        case .kanjitest:
-            return getViewController(storyboard: "KanjiTest", identifier: String(describing: KanjiTestViewController.self), modalPresentationStyle: .fullScreen)
-        case .kanjitestresult:
-            return getViewController(storyboard: "KanjiTestResult", identifier: String(describing: KanjiTestResultViewController.self), modalPresentationStyle: .fullScreen)
             
         case .day:
             return getViewController(storyboard: "Day", identifier: String(describing: DayViewController.self), modalPresentationStyle: .fullScreen)
@@ -56,6 +28,8 @@ extension UIViewController {
             return getViewController(storyboard: "Study", identifier: String(describing: StudyViewController.self), modalPresentationStyle: .fullScreen)
         case .test:
             return getViewController(storyboard: "Test", identifier: String(describing: TestViewController.self), modalPresentationStyle: .fullScreen)
+        case .testresult:
+            return getViewController(storyboard: "TestResult", identifier: String(describing: TestResultViewController.self), modalPresentationStyle: .fullScreen)
         }
     }
     

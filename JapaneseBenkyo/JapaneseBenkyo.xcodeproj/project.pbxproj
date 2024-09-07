@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		960C6B4F2B7B369600D91407 /* KanjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B4E2B7B369600D91407 /* KanjiViewController.swift */; };
-		960C6B512B7B369E00D91407 /* Kanji.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960C6B502B7B369E00D91407 /* Kanji.storyboard */; };
 		960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B562B7B3FE900D91407 /* JSONManager.swift */; };
 		960C6B822B7B49FB00D91407 /* kanji7.json in Resources */ = {isa = PBXBuildFile; fileRef = 960C6B7B2B7B49FB00D91407 /* kanji7.json */; };
 		960C6B832B7B49FB00D91407 /* kanji2.json in Resources */ = {isa = PBXBuildFile; fileRef = 960C6B7C2B7B49FB00D91407 /* kanji2.json */; };
@@ -35,10 +33,6 @@
 		9615369D2C8AB91400563983 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615369C2C8AB91400563983 /* Study.storyboard */; };
 		961536A02C8C2C7400563983 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615369F2C8C2C7400563983 /* Test.storyboard */; };
 		961536A22C8C2C7E00563983 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536A12C8C2C7E00563983 /* TestViewController.swift */; };
-		96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */; };
-		96269D802B9AAA180063AF33 /* VocabularyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */; };
-		96269D962B9AD77B0063AF33 /* KanjiDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */; };
-		96269D982B9AD7860063AF33 /* KanjiDay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96269D972B9AD7860063AF33 /* KanjiDay.storyboard */; };
 		962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */; };
 		962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA32B79DCD20051C4DA /* Assets.xcassets */; };
 		962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA52B79DCD20051C4DA /* LaunchScreen.storyboard */; };
@@ -47,25 +41,14 @@
 		962F1BBE2B79DCD30051C4DA /* JapaneseBenkyoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1BBD2B79DCD30051C4DA /* JapaneseBenkyoUITestsLaunchTests.swift */; };
 		964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */; };
 		9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */; };
-		9658D1FF2B9EC488001A6A7E /* VocabularyTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9658D1FE2B9EC488001A6A7E /* VocabularyTest.storyboard */; };
-		9658D2012B9EC497001A6A7E /* VocabularyTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658D2002B9EC497001A6A7E /* VocabularyTestViewController.swift */; };
 		965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */; };
+		965C1CF02C8C6A3C00355DDF /* TestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CEF2C8C6A3C00355DDF /* TestResult.storyboard */; };
 		969493522B7DDE140064312F /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969493512B7DDE140064312F /* Vocabulary.swift */; };
-		969493562B7DE7210064312F /* VocabularyStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969493552B7DE7210064312F /* VocabularyStudyViewController.swift */; };
-		969493582B7DE7310064312F /* VocabularyStudy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969493572B7DE7310064312F /* VocabularyStudy.storyboard */; };
 		9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969493592B7DE78B0064312F /* VocabularyTableViewCell.xib */; };
 		9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */; };
-		96A35C742BA5B97D00D7B4F9 /* KanjiTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A35C732BA5B97D00D7B4F9 /* KanjiTestViewController.swift */; };
-		96A35C762BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A35C752BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift */; };
 		96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A35C772BA5BB4F00D7B4F9 /* CommonConstant.swift */; };
 		96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A35C792BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift */; };
-		96A35C7C2BA5D29A00D7B4F9 /* KanjiTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A35C7B2BA5D29A00D7B4F9 /* KanjiTest.storyboard */; };
-		96A35C7E2BA5D66500D7B4F9 /* KanjiTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A35C7D2BA5D66500D7B4F9 /* KanjiTestResult.storyboard */; };
-		96AD6B732B79FDD700F895DE /* KanjiStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD6B722B79FDD700F895DE /* KanjiStudyViewController.swift */; };
-		96AD6B752B79FDDF00F895DE /* KanjiStudy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AD6B742B79FDDF00F895DE /* KanjiStudy.storyboard */; };
 		96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5ABA2BA0A14F00E3373C /* appicon.png */; };
-		96BA5ABE2BA0A65800E3373C /* VocabularyTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5ABD2BA0A65800E3373C /* VocabularyTestResultViewController.swift */; };
-		96BA5AC02BA0A66B00E3373C /* VocabularyTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5ABF2BA0A66B00E3373C /* VocabularyTestResult.storyboard */; };
 		96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */; };
 		96BA5B042BA2CF3700E3373C /* n3.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5AFF2BA2CF3700E3373C /* n3.json */; };
 		96BA5B052BA2CF3700E3373C /* n4.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B002BA2CF3700E3373C /* n4.json */; };
@@ -99,8 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		960C6B4E2B7B369600D91407 /* KanjiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiViewController.swift; sourceTree = "<group>"; };
-		960C6B502B7B369E00D91407 /* Kanji.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Kanji.storyboard; sourceTree = "<group>"; };
 		960C6B562B7B3FE900D91407 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		960C6B7B2B7B49FB00D91407 /* kanji7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji7.json; sourceTree = "<group>"; };
 		960C6B7C2B7B49FB00D91407 /* kanji2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanji2.json; sourceTree = "<group>"; };
@@ -127,10 +108,6 @@
 		9615369C2C8AB91400563983 /* Study.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Study.storyboard; sourceTree = "<group>"; };
 		9615369F2C8C2C7400563983 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		961536A12C8C2C7E00563983 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyDay.storyboard; sourceTree = "<group>"; };
-		96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyDayViewController.swift; sourceTree = "<group>"; };
-		96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDayViewController.swift; sourceTree = "<group>"; };
-		96269D972B9AD7860063AF33 /* KanjiDay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KanjiDay.storyboard; sourceTree = "<group>"; };
 		962F1B972B79DCD10051C4DA /* JapaneseBenkyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JapaneseBenkyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		962F1BA32B79DCD20051C4DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,25 +120,14 @@
 		962F1BBD2B79DCD30051C4DA /* JapaneseBenkyoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseBenkyoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewHandler.swift; sourceTree = "<group>"; };
-		9658D1FE2B9EC488001A6A7E /* VocabularyTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyTest.storyboard; sourceTree = "<group>"; };
-		9658D2002B9EC497001A6A7E /* VocabularyTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyTestViewController.swift; sourceTree = "<group>"; };
 		965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
+		965C1CEF2C8C6A3C00355DDF /* TestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestResult.storyboard; sourceTree = "<group>"; };
 		969493512B7DDE140064312F /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
-		969493552B7DE7210064312F /* VocabularyStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyStudyViewController.swift; sourceTree = "<group>"; };
-		969493572B7DE7310064312F /* VocabularyStudy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyStudy.storyboard; sourceTree = "<group>"; };
 		969493592B7DE78B0064312F /* VocabularyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VocabularyTableViewCell.xib; sourceTree = "<group>"; };
 		9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewCell.swift; sourceTree = "<group>"; };
-		96A35C732BA5B97D00D7B4F9 /* KanjiTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTestViewController.swift; sourceTree = "<group>"; };
-		96A35C752BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTestResultViewController.swift; sourceTree = "<group>"; };
 		96A35C772BA5BB4F00D7B4F9 /* CommonConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstant.swift; sourceTree = "<group>"; };
 		96A35C792BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewHandler.swift; sourceTree = "<group>"; };
-		96A35C7B2BA5D29A00D7B4F9 /* KanjiTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KanjiTest.storyboard; sourceTree = "<group>"; };
-		96A35C7D2BA5D66500D7B4F9 /* KanjiTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KanjiTestResult.storyboard; sourceTree = "<group>"; };
-		96AD6B722B79FDD700F895DE /* KanjiStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStudyViewController.swift; sourceTree = "<group>"; };
-		96AD6B742B79FDDF00F895DE /* KanjiStudy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KanjiStudy.storyboard; sourceTree = "<group>"; };
 		96BA5ABA2BA0A14F00E3373C /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
-		96BA5ABD2BA0A65800E3373C /* VocabularyTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyTestResultViewController.swift; sourceTree = "<group>"; };
-		96BA5ABF2BA0A66B00E3373C /* VocabularyTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyTestResult.storyboard; sourceTree = "<group>"; };
 		96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		96BA5AFF2BA2CF3700E3373C /* n3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n3.json; sourceTree = "<group>"; };
 		96BA5B002BA2CF3700E3373C /* n4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n4.json; sourceTree = "<group>"; };
@@ -202,33 +168,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		960C6B482B7B35C600D91407 /* Vocabulary */ = {
-			isa = PBXGroup;
-			children = (
-				969493512B7DDE140064312F /* Vocabulary.swift */,
-				96269D7C2B9AA9E30063AF33 /* VocabularyDay */,
-				969493532B7DE6600064312F /* VocabularyStudy */,
-				96BA5AA62BA019C400E3373C /* VocabularyTest */,
-				96BA5ABC2BA0A61000E3373C /* VocabularyTestResult */,
-				969493542B7DE6700064312F /* VocabularyTableViewCell */,
-			);
-			path = Vocabulary;
-			sourceTree = "<group>";
-		};
-		960C6B492B7B35D100D91407 /* Kanji */ = {
-			isa = PBXGroup;
-			children = (
-				96D9A8482B7CD9160042E2DA /* Kanji.swift */,
-				96EECA192BF5E48500B1C57A /* Kanji */,
-				96269D942B9AD7630063AF33 /* KanjiDay */,
-				96AD6B712B79FDC800F895DE /* KanjiStudy */,
-				96A35C712BA5B95100D7B4F9 /* KanjiTest */,
-				96A35C722BA5B96600D7B4F9 /* KanjiTestResult */,
-				96D9A84A2B7CDA0E0042E2DA /* KanjiTableViewCell */,
-			);
-			path = Kanji;
-			sourceTree = "<group>";
-		};
 		960C6B892B7B863C00D91407 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,24 +215,6 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		96269D7C2B9AA9E30063AF33 /* VocabularyDay */ = {
-			isa = PBXGroup;
-			children = (
-				96269D7F2B9AAA180063AF33 /* VocabularyDayViewController.swift */,
-				96269D7D2B9AAA060063AF33 /* VocabularyDay.storyboard */,
-			);
-			path = VocabularyDay;
-			sourceTree = "<group>";
-		};
-		96269D942B9AD7630063AF33 /* KanjiDay */ = {
-			isa = PBXGroup;
-			children = (
-				96269D952B9AD77B0063AF33 /* KanjiDayViewController.swift */,
-				96269D972B9AD7860063AF33 /* KanjiDay.storyboard */,
-			);
-			path = KanjiDay;
-			sourceTree = "<group>";
-		};
 		962F1B8E2B79DCD10051C4DA = {
 			isa = PBXGroup;
 			children = (
@@ -317,10 +238,9 @@
 		962F1B992B79DCD10051C4DA /* JapaneseBenkyo */ = {
 			isa = PBXGroup;
 			children = (
+				965C1CF12C8C751600355DDF /* Model */,
 				964AA5F72B79E7FD007DE504 /* Extension */,
 				960C6B892B7B863C00D91407 /* Singleton */,
-				960C6B482B7B35C600D91407 /* Vocabulary */,
-				960C6B492B7B35D100D91407 /* Kanji */,
 				96AD6B6E2B79FD0400F895DE /* Main */,
 				961536942C8AA68000563983 /* Day */,
 				961536992C8AB8F800563983 /* Study */,
@@ -328,6 +248,8 @@
 				965C1CEC2C8C69C200355DDF /* TestResult */,
 				961536832C8355C600563983 /* HeaderTableViewCell */,
 				964AA5F22B79E78D007DE504 /* IndexTableViewCell */,
+				96D9A84A2B7CDA0E0042E2DA /* KanjiTableViewCell */,
+				969493542B7DE6700064312F /* VocabularyTableViewCell */,
 				96AD6B6D2B79FCEB00F895DE /* res */,
 				962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */,
 				962F1BA32B79DCD20051C4DA /* Assets.xcassets */,
@@ -377,17 +299,18 @@
 			isa = PBXGroup;
 			children = (
 				965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */,
+				965C1CEF2C8C6A3C00355DDF /* TestResult.storyboard */,
 			);
 			path = TestResult;
 			sourceTree = "<group>";
 		};
-		969493532B7DE6600064312F /* VocabularyStudy */ = {
+		965C1CF12C8C751600355DDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				969493552B7DE7210064312F /* VocabularyStudyViewController.swift */,
-				969493572B7DE7310064312F /* VocabularyStudy.storyboard */,
+				969493512B7DDE140064312F /* Vocabulary.swift */,
+				96D9A8482B7CD9160042E2DA /* Kanji.swift */,
 			);
-			path = VocabularyStudy;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		969493542B7DE6700064312F /* VocabularyTableViewCell */ = {
@@ -398,24 +321,6 @@
 				969493592B7DE78B0064312F /* VocabularyTableViewCell.xib */,
 			);
 			path = VocabularyTableViewCell;
-			sourceTree = "<group>";
-		};
-		96A35C712BA5B95100D7B4F9 /* KanjiTest */ = {
-			isa = PBXGroup;
-			children = (
-				96A35C732BA5B97D00D7B4F9 /* KanjiTestViewController.swift */,
-				96A35C7B2BA5D29A00D7B4F9 /* KanjiTest.storyboard */,
-			);
-			path = KanjiTest;
-			sourceTree = "<group>";
-		};
-		96A35C722BA5B96600D7B4F9 /* KanjiTestResult */ = {
-			isa = PBXGroup;
-			children = (
-				96A35C752BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift */,
-				96A35C7D2BA5D66500D7B4F9 /* KanjiTestResult.storyboard */,
-			);
-			path = KanjiTestResult;
 			sourceTree = "<group>";
 		};
 		96AD6B6D2B79FCEB00F895DE /* res */ = {
@@ -452,33 +357,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		96AD6B712B79FDC800F895DE /* KanjiStudy */ = {
-			isa = PBXGroup;
-			children = (
-				96AD6B722B79FDD700F895DE /* KanjiStudyViewController.swift */,
-				96AD6B742B79FDDF00F895DE /* KanjiStudy.storyboard */,
-			);
-			path = KanjiStudy;
-			sourceTree = "<group>";
-		};
-		96BA5AA62BA019C400E3373C /* VocabularyTest */ = {
-			isa = PBXGroup;
-			children = (
-				9658D2002B9EC497001A6A7E /* VocabularyTestViewController.swift */,
-				9658D1FE2B9EC488001A6A7E /* VocabularyTest.storyboard */,
-			);
-			path = VocabularyTest;
-			sourceTree = "<group>";
-		};
-		96BA5ABC2BA0A61000E3373C /* VocabularyTestResult */ = {
-			isa = PBXGroup;
-			children = (
-				96BA5ABD2BA0A65800E3373C /* VocabularyTestResultViewController.swift */,
-				96BA5ABF2BA0A66B00E3373C /* VocabularyTestResult.storyboard */,
-			);
-			path = VocabularyTestResult;
-			sourceTree = "<group>";
-		};
 		96D9A84A2B7CDA0E0042E2DA /* KanjiTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,15 +367,6 @@
 				96C174182BB590EF006775E5 /* ExpandableAreaView.xib */,
 			);
 			path = KanjiTableViewCell;
-			sourceTree = "<group>";
-		};
-		96EECA192BF5E48500B1C57A /* Kanji */ = {
-			isa = PBXGroup;
-			children = (
-				960C6B4E2B7B369600D91407 /* KanjiViewController.swift */,
-				960C6B502B7B369E00D91407 /* Kanji.storyboard */,
-			);
-			path = Kanji;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,8 +474,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				960C6B822B7B49FB00D91407 /* kanji7.json in Resources */,
-				96A35C7C2BA5D29A00D7B4F9 /* KanjiTest.storyboard in Resources */,
-				969493582B7DE7310064312F /* VocabularyStudy.storyboard in Resources */,
 				960C6B872B7B49FB00D91407 /* kanji4.json in Resources */,
 				961536802C82E87C00563983 /* Main.storyboard in Resources */,
 				9615368B2C84319F00563983 /* IndexTableViewCell.xib in Resources */,
@@ -615,24 +482,19 @@
 				961536912C8433EB00563983 /* hiraganakatakana.png in Resources */,
 				96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */,
 				961536852C8355F200563983 /* HeaderTableViewCell.xib in Resources */,
-				96269D7E2B9AAA060063AF33 /* VocabularyDay.storyboard in Resources */,
 				961536902C8433EB00563983 /* kanji.png in Resources */,
 				960C6B882B7B49FB00D91407 /* kanji6.json in Resources */,
 				961536A02C8C2C7400563983 /* Test.storyboard in Resources */,
-				960C6B512B7B369E00D91407 /* Kanji.storyboard in Resources */,
 				96BA5B072BA2CF3700E3373C /* n5.json in Resources */,
 				9615368F2C8433EB00563983 /* jlpt.png in Resources */,
 				96BA5B062BA2CF3700E3373C /* n1.json in Resources */,
-				96AD6B752B79FDDF00F895DE /* KanjiStudy.storyboard in Resources */,
+				965C1CF02C8C6A3C00355DDF /* TestResult.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
 				96BA5B052BA2CF3700E3373C /* n4.json in Resources */,
 				9615369D2C8AB91400563983 /* Study.storyboard in Resources */,
-				96BA5AC02BA0A66B00E3373C /* VocabularyTestResult.storyboard in Resources */,
-				9658D1FF2B9EC488001A6A7E /* VocabularyTest.storyboard in Resources */,
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
 				960C6B852B7B49FB00D91407 /* kanji3.json in Resources */,
-				96269D982B9AD7860063AF33 /* KanjiDay.storyboard in Resources */,
 				961536962C8AA6A200563983 /* Day.storyboard in Resources */,
 				96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */,
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
@@ -640,7 +502,6 @@
 				961536932C84868200563983 /* star.png in Resources */,
 				96BA5B042BA2CF3700E3373C /* n3.json in Resources */,
 				960C6B862B7B49FB00D91407 /* kanji5.json in Resources */,
-				96A35C7E2BA5D66500D7B4F9 /* KanjiTestResult.storyboard in Resources */,
 				96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,33 +528,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */,
-				96269D962B9AD77B0063AF33 /* KanjiDayViewController.swift in Sources */,
-				96A35C742BA5B97D00D7B4F9 /* KanjiTestViewController.swift in Sources */,
 				965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */,
-				96AD6B732B79FDD700F895DE /* KanjiStudyViewController.swift in Sources */,
 				96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */,
 				9615369B2C8AB90A00563983 /* StudyViewController.swift in Sources */,
 				962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */,
-				96A35C762BA5B98D00D7B4F9 /* KanjiTestResultViewController.swift in Sources */,
 				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
 				96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */,
 				961536A22C8C2C7E00563983 /* TestViewController.swift in Sources */,
 				961536982C8AA6BA00563983 /* DayViewController.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
-				969493562B7DE7210064312F /* VocabularyStudyViewController.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,
 				960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */,
 				96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */,
-				96269D802B9AAA180063AF33 /* VocabularyDayViewController.swift in Sources */,
 				96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */,
 				9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
-				960C6B4F2B7B369600D91407 /* KanjiViewController.swift in Sources */,
 				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
 				96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */,
 				9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */,
-				9658D2012B9EC497001A6A7E /* VocabularyTestViewController.swift in Sources */,
-				96BA5ABE2BA0A65800E3373C /* VocabularyTestResultViewController.swift in Sources */,
 				961536892C84315900563983 /* IndexTableViewCell.swift in Sources */,
 				961536822C82E9AC00563983 /* MainViewController.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,

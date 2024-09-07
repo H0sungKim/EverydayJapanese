@@ -8,22 +8,128 @@
 import UIKit
 
 class TestResultViewController: UIViewController {
-
+    
+    var indexEnum: IndexEnum?
+    var sectionEnum: SectionEnum?
+    var day: String = ""
+    
+    var allCount: Int?
+    var vocabulariesForCell: [VocabularyForCell]?
+    var kanjisForCell: [KanjiForCell]?
+    
+    private var vocabularyTableViewHandler: VocabularyTableViewHandler?
+    private var kanjiTableViewHandler: KanjiTableViewHandler?
+    
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbSubtitle: UILabel!
+    @IBOutlet weak var ivSection: UIImageView!
+    
+    @IBOutlet weak var lbScore: UILabel!
+    @IBOutlet weak var lbSubScore: UILabel!
+    @IBOutlet weak var btnBookmark: UIButton!
+    @IBOutlet weak var btnReTest: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        lbTitle.text = sectionEnum?.title
+        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") \(day) 테스트 결과"
+        ivSection.image = sectionEnum?.image
+        
+        tableView.rowHeight = CGFloat(CommonConstant.cellSize)
+        
+        switch sectionEnum {
+        case .kanji:
+            guard let kanjisForCell = kanjisForCell else {
+                return
+            }
+            kanjiTableViewHandler = KanjiTableViewHandler(kanjisForCell: kanjisForCell, tableView: tableView)
+            tableView.delegate = kanjiTableViewHandler
+            tableView.dataSource = kanjiTableViewHandler
+            tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
+            initializeScoreView(wrongCount: kanjisForCell.count)
+        case .vocabulary:
+            guard let vocabulariesForCell = vocabulariesForCell else {
+                return
+            }
+            vocabularyTableViewHandler = VocabularyTableViewHandler(vocabulariesForCell: vocabulariesForCell)
+            tableView.delegate = vocabularyTableViewHandler
+            tableView.dataSource = vocabularyTableViewHandler
+            tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
+            initializeScoreView(wrongCount: vocabulariesForCell.count)
+        case .hiraganakatagana, nil:
+            return
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func initializeScoreView(wrongCount: Int) {
+        guard let allCount = allCount else {
+            return
+        }
+        lbScore.text = "\(Int((allCount - wrongCount) * 100 / allCount))점"
+        lbSubScore.text = "\(allCount - wrongCount)/\(allCount)"
+        if wrongCount == 0 {
+            btnBookmark.isEnabled = false
+            btnReTest.isEnabled = false
+            saveProcess()
+        }
     }
-    */
-
+    @IBAction func onClickBookmark(_ sender: UIButton) {
+        sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        switch sectionEnum {
+        case .kanji:
+            kanjiTableViewHandler?.addBookmarkAll()
+        case .vocabulary:
+            vocabularyTableViewHandler?.addBookmarkAll()
+        case .hiraganakatagana, nil:
+            return
+        }
+        sender.isEnabled = false
+        tableView.reloadData()
+    }
+    
+    @IBAction func onClickReTest(_ sender: Any) {
+        let vc = UIViewController.getViewController(viewControllerEnum: .test) as! TestViewController
+        vc.indexEnum = indexEnum
+        vc.sectionEnum = sectionEnum
+        vc.day = day
+        
+        switch sectionEnum {
+        case .kanji:
+            vc.kanjis = kanjisForCell?.map { $0.kanji }
+        case .vocabulary:
+            vc.vocabularies = vocabulariesForCell?.map { $0.vocabulary }
+        case .hiraganakatagana, nil:
+            return
+        }
+        navigationController?.replaceViewController(viewController: vc, animated: true)
+    }
+    
+    @IBAction func onClickFinishTest(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func saveProcess() {
+        guard let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) else {
+            return
+        }
+        guard let indexEnum = indexEnum else {
+            return
+        }
+        var process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
+        if process[indexEnum.rawValue] == nil {
+            process[indexEnum.rawValue] = [:]
+        }
+        process[indexEnum.rawValue]?[day] = true
+        
+        UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)
+    }
+    
+    
 }

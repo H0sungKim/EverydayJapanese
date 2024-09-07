@@ -16,8 +16,8 @@ class StudyViewController: UIViewController {
     var vocabulariesForCell: [VocabularyForCell]?
     var kanjisForCell: [KanjiForCell]?
     
-    var vocabularyTableViewHandler: VocabularyTableViewHandler?
-    var kanjiTableViewHandler: KanjiTableViewHandler?
+    private var vocabularyTableViewHandler: VocabularyTableViewHandler?
+    private var kanjiTableViewHandler: KanjiTableViewHandler?
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbSubtitle: UILabel!
