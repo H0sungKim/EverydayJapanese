@@ -44,9 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
             }
         }
         
-        print(UserDefaultManager.shared.process)
-        print(UserDefaultManager.shared.vocabularyBookmark)
-        print(UserDefaultManager.shared.kanjiBookmark)
+//        print(UserDefaultManager.shared.process)
+//        print(UserDefaultManager.shared.vocabularyBookmark)
+//        print(UserDefaultManager.shared.kanjiBookmark)
         
         
         
@@ -64,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
                 var process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
                 if let temp = process[i.0] {
                     process.removeValue(forKey: i.0)
-                    // 새로운 "e" 키-값 쌍을 추가
                     process[i.1] = temp
                 }
                 UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)

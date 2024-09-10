@@ -15,6 +15,7 @@ class TTSManager: NSObject {
     
     private override init() {
         super.init()
+        synthesizer.usesApplicationAudioSession = true
     }
     
     func play(vocabulary: Vocabulary) {

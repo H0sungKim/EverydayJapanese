@@ -117,6 +117,5 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
             return
         }
         TTSManager.shared.play(line: collectionData[indexPath.row].0)
-        print(collectionData[indexPath.row].0)
     }
 }
