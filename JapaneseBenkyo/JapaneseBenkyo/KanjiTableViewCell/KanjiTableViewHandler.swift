@@ -125,15 +125,21 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
         if kanjiForCell.kanji.hanja == "" {
-            cell.lbKanji.text = kanjiForCell.kanji.kanji
+            let temp = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
+            temp.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
+            cell.lbKanji.attributedText = temp
             cell.scHanja.isHidden = true
         } else {
             cell.scHanja.isHidden = false
             if kanjiForCell.isVisibleHanja {
-                cell.lbKanji.text = kanjiForCell.kanji.hanja
+                let temp = NSMutableAttributedString(string: kanjiForCell.kanji.hanja)
+                temp.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
+                cell.lbKanji.attributedText = temp
                 cell.scHanja.selectedSegmentIndex = 1
             } else {
-                cell.lbKanji.text = kanjiForCell.kanji.kanji
+                let temp = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
+                temp.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
+                cell.lbKanji.attributedText = temp
                 cell.scHanja.selectedSegmentIndex = 0
             }
         }
