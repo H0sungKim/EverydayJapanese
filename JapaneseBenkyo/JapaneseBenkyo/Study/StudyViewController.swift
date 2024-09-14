@@ -47,7 +47,10 @@ class StudyViewController: UIViewController {
             guard let kanjisForCell = kanjisForCell else {
                 return
             }
-            kanjiTableViewHandler = KanjiTableViewHandler(kanjisForCell: kanjisForCell, tableView: tableView)
+            kanjiTableViewHandler = KanjiTableViewHandler(kanjisForCell: kanjisForCell)
+            kanjiTableViewHandler?.onReload = { [weak self] indexPath in
+                self?.onReload(indexPath: indexPath)
+            }
             tableView.delegate = kanjiTableViewHandler
             tableView.dataSource = kanjiTableViewHandler
             tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
@@ -108,5 +111,16 @@ class StudyViewController: UIViewController {
             return
         }
         tableView.reloadData()
+    }
+    
+    private func onReload(indexPath: IndexPath) {
+        // When the top cell expands, it causes a problem with the reusable cell, causing the animation to operate abnormally.
+        guard let visibleRows = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        if visibleRows.firstIndex(of: indexPath) == 0 {
+            tableView.reloadSections(IndexSet(visibleRows.map { $0.section }), with: .automatic)
+        }
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

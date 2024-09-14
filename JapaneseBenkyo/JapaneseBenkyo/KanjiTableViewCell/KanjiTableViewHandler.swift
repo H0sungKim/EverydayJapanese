@@ -10,9 +10,9 @@ import UIKit
 class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var kanjisForCell: [KanjiForCell]
     private var bookmark: Set<Kanji> = []
-    private var tableView: UITableView
+    var onReload: ((_ indexPath: IndexPath)->Void)?
     
-    init(kanjisForCell: [KanjiForCell], tableView: UITableView) {
+    init(kanjisForCell: [KanjiForCell]) {
         self.kanjisForCell = kanjisForCell
         if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
             bookmark = JSONManager.shared.decodeJSONtoKanjiSet(jsonData: jsonData)
@@ -20,7 +20,6 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
         for kanjiForCell in kanjisForCell {
             kanjiForCell.isBookmark = bookmark.contains(kanjiForCell.kanji)
         }
-        self.tableView = tableView
         super.init()
     }
     
@@ -113,14 +112,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell, indexPath: IndexPath) {
         kanjiForCell.isExpanded = !kanjiForCell.isExpanded
         initializeCell(cell: cell, kanjiForCell: kanjiForCell)
-        // When the top cell expands, it causes a problem with the reusable cell, causing the animation to operate abnormally.
-        guard let visibleRows = tableView.indexPathsForVisibleRows else {
-            return
-        }
-        if visibleRows.firstIndex(of: indexPath) == 0 {
-            tableView.reloadSections(IndexSet(visibleRows.map { $0.section }), with: .automatic)
-        }
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        onReload?(indexPath)
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
