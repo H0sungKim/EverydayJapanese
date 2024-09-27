@@ -73,11 +73,15 @@ class TestViewController: UIViewController {
                 break
             }
             lbIndex.text = "\(index+1)/\(kanjis.count)"
-            lbMain.text = kanjis[index].kanji
+            let kanjiString = NSMutableAttributedString(string: kanjis[index].kanji)
+            kanjiString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjis[index].kanji.count))
+            lbMain.attributedText = kanjiString
             if isVisible {
                 lbUpperSub1.text = kanjis[index].jpSound
                 lbUpperSub2.text = kanjis[index].jpMeaning
-                lbLowerSub.text = kanjis[index].hanja
+                let hanjaString = NSMutableAttributedString(string: kanjis[index].hanja)
+                hanjaString.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanjis[index].hanja.count))
+                lbLowerSub.attributedText = hanjaString
                 lbSub.text = kanjis[index].eumhun
             } else {
                 lbUpperSub1.text = ""

@@ -117,21 +117,21 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
         if kanjiForCell.kanji.hanja == "" {
-            let temp = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
-            temp.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
-            cell.lbKanji.attributedText = temp
+            let kanjiString = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
+            kanjiString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
+            cell.lbKanji.attributedText = kanjiString
             cell.scHanja.isHidden = true
         } else {
             cell.scHanja.isHidden = false
             if kanjiForCell.isVisibleHanja {
-                let temp = NSMutableAttributedString(string: kanjiForCell.kanji.hanja)
-                temp.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
-                cell.lbKanji.attributedText = temp
+                let hanjaString = NSMutableAttributedString(string: kanjiForCell.kanji.hanja)
+                hanjaString.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
+                cell.lbKanji.attributedText = hanjaString
                 cell.scHanja.selectedSegmentIndex = 1
             } else {
-                let temp = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
-                temp.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
-                cell.lbKanji.attributedText = temp
+                let kanjiString = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
+                kanjiString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
+                cell.lbKanji.attributedText = kanjiString
                 cell.scHanja.selectedSegmentIndex = 0
             }
         }
