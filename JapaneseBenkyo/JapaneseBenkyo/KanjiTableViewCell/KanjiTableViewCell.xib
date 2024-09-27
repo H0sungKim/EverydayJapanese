@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -118,24 +118,28 @@
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIP-s2-vh4">
-                                                <rect key="frame" x="137.5" y="19.5" width="36" height="17"/>
+                                                <rect key="frame" x="8" y="19.5" width="295" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq4-hj-acw">
-                                                <rect key="frame" x="137.5" y="2.5" width="36" height="17"/>
+                                                <rect key="frame" x="8" y="2.5" width="295" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="TIP-s2-vh4" firstAttribute="leading" secondItem="wR9-BN-2ts" secondAttribute="leading" constant="8" id="0b0-TJ-PYK"/>
+                                            <constraint firstAttribute="trailing" secondItem="TIP-s2-vh4" secondAttribute="trailing" constant="8" id="2ar-YO-su5"/>
                                             <constraint firstItem="cID-4G-SXP" firstAttribute="centerX" secondItem="wR9-BN-2ts" secondAttribute="centerX" id="38M-H1-0sL"/>
+                                            <constraint firstAttribute="trailing" secondItem="uq4-hj-acw" secondAttribute="trailing" constant="8" id="B5E-t0-0Hh"/>
                                             <constraint firstItem="cYs-hn-ffu" firstAttribute="top" secondItem="TIP-s2-vh4" secondAttribute="bottom" id="Gaw-Ei-Vh6"/>
                                             <constraint firstItem="cYs-hn-ffu" firstAttribute="centerX" secondItem="wR9-BN-2ts" secondAttribute="centerX" id="KMw-Fr-m4K"/>
                                             <constraint firstItem="TIP-s2-vh4" firstAttribute="centerX" secondItem="wR9-BN-2ts" secondAttribute="centerX" id="X5A-rp-oQX"/>
                                             <constraint firstItem="cYs-hn-ffu" firstAttribute="centerY" secondItem="wR9-BN-2ts" secondAttribute="centerY" id="bbq-8E-nqp"/>
+                                            <constraint firstItem="uq4-hj-acw" firstAttribute="leading" secondItem="wR9-BN-2ts" secondAttribute="leading" constant="8" id="o7S-ov-Q4E"/>
                                             <constraint firstItem="TIP-s2-vh4" firstAttribute="top" secondItem="uq4-hj-acw" secondAttribute="bottom" id="shO-e2-ebl"/>
                                             <constraint firstItem="uq4-hj-acw" firstAttribute="centerX" secondItem="wR9-BN-2ts" secondAttribute="centerX" id="uVJ-Vz-qAa"/>
                                             <constraint firstItem="cID-4G-SXP" firstAttribute="top" secondItem="cYs-hn-ffu" secondAttribute="bottom" id="vvk-qc-cDv"/>
@@ -230,7 +234,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
