@@ -34,7 +34,7 @@ enum SectionEnum: Section, CaseIterable {
     var title: String {
         switch self {
         case .hiraganakatagana:
-            return "히라가나 가타가나 표"
+            return "히라가나 가타카나 표"
         case .kanji:
             return "일본 상용한자"
         case .vocabulary:
