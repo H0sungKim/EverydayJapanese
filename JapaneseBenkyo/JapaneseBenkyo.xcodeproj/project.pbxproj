@@ -272,23 +272,11 @@
 		962F1B992B79DCD10051C4DA /* JapaneseBenkyo */ = {
 			isa = PBXGroup;
 			children = (
+				967AD8DC2CEC9175001A3397 /* Scene */,
+				967AD8DD2CEC918F001A3397 /* Cell */,
 				965C1CF12C8C751600355DDF /* Model */,
 				964AA5F72B79E7FD007DE504 /* Extension */,
 				960C6B892B7B863C00D91407 /* Singleton */,
-				96AD6B6E2B79FD0400F895DE /* Main */,
-				965C1CFB2C8C885C00355DDF /* ProcessView */,
-				965C1CF22C8C766D00355DDF /* HiraganaKatakana */,
-				96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */,
-				967AD8D12CEC6D61001A3397 /* HiraganaKatakanaTestResult */,
-				961536942C8AA68000563983 /* Day */,
-				961536992C8AB8F800563983 /* Study */,
-				9615369E2C8C2C6300563983 /* Test */,
-				965C1CEC2C8C69C200355DDF /* TestResult */,
-				961536832C8355C600563983 /* HeaderTableViewCell */,
-				964AA5F22B79E78D007DE504 /* IndexTableViewCell */,
-				96D9A84A2B7CDA0E0042E2DA /* KanjiTableViewCell */,
-				969493542B7DE6700064312F /* VocabularyTableViewCell */,
-				967AD8D62CEC74ED001A3397 /* TestResultTableViewCell */,
 				96AD6B6D2B79FCEB00F895DE /* res */,
 				962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */,
 				962F1BA32B79DCD20051C4DA /* Assets.xcassets */,
@@ -357,8 +345,6 @@
 			children = (
 				965C1CF32C8C768600355DDF /* HiraganaKatakanaViewController.swift */,
 				965C1CF52C8C769C00355DDF /* HiraganaKatakana.storyboard */,
-				965C1CF72C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift */,
-				965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */,
 			);
 			path = HiraganaKatakana;
 			sourceTree = "<group>";
@@ -387,6 +373,44 @@
 				967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */,
 			);
 			path = TestResultTableViewCell;
+			sourceTree = "<group>";
+		};
+		967AD8DB2CEC913F001A3397 /* HiraganaKatakanaCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				965C1CF72C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift */,
+				965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */,
+			);
+			path = HiraganaKatakanaCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		967AD8DC2CEC9175001A3397 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				96AD6B6E2B79FD0400F895DE /* Main */,
+				965C1CFB2C8C885C00355DDF /* ProcessView */,
+				965C1CF22C8C766D00355DDF /* HiraganaKatakana */,
+				96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */,
+				967AD8D12CEC6D61001A3397 /* HiraganaKatakanaTestResult */,
+				961536942C8AA68000563983 /* Day */,
+				961536992C8AB8F800563983 /* Study */,
+				9615369E2C8C2C6300563983 /* Test */,
+				965C1CEC2C8C69C200355DDF /* TestResult */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		967AD8DD2CEC918F001A3397 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				967AD8DB2CEC913F001A3397 /* HiraganaKatakanaCollectionViewCell */,
+				961536832C8355C600563983 /* HeaderTableViewCell */,
+				964AA5F22B79E78D007DE504 /* IndexTableViewCell */,
+				96D9A84A2B7CDA0E0042E2DA /* KanjiTableViewCell */,
+				969493542B7DE6700064312F /* VocabularyTableViewCell */,
+				967AD8D62CEC74ED001A3397 /* TestResultTableViewCell */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		969493542B7DE6700064312F /* VocabularyTableViewCell */ = {
@@ -827,7 +851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
@@ -840,7 +864,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.00.03;
+				MARKETING_VERSION = 2.01.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -855,7 +879,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
@@ -868,7 +892,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.00.03;
+				MARKETING_VERSION = 2.01.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
