@@ -10,6 +10,8 @@ import UIKit
 // MARK: - Public Outter Class, Struct, Enum, Protocol
 enum ViewControllerEnum: String, CaseIterable {
     case hiraganakatakana
+    case hiraganakatakanatest
+    case hiraganakatakanatestresult
     case day
     case study
     case test
@@ -23,6 +25,10 @@ extension UIViewController {
         switch viewControllerEnum {
         case .hiraganakatakana:
             return getViewController(storyboard: "HiraganaKatakana", identifier: String(describing: HiraganaKatakanaViewController.self), modalPresentationStyle: .fullScreen)
+        case .hiraganakatakanatest:
+            return getViewController(storyboard: "HiraganaKatakanaTest", identifier: String(describing: HiraganaKatakanaTestViewController.self), modalPresentationStyle: .fullScreen)
+        case .hiraganakatakanatestresult:
+            return getViewController(storyboard: "HiraganaKatakanaTestResult", identifier: String(describing: HiraganaKatakanaTestResultViewController.self), modalPresentationStyle: .fullScreen)
         case .day:
             return getViewController(storyboard: "Day", identifier: String(describing: DayViewController.self), modalPresentationStyle: .fullScreen)
         case .study:

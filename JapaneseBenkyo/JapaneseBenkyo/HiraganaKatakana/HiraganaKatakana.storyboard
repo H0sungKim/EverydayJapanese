@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -63,8 +63,28 @@
                                     <constraint firstItem="oTf-Ce-ETn" firstAttribute="top" secondItem="S12-Fm-Gd2" secondAttribute="top" id="y03-Ex-vRS"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eD-1m-Bnf">
+                                <rect key="frame" x="0.0" y="116" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-sE-qTi">
+                                        <rect key="frame" x="337.33333333333331" y="7.6666666666666714" width="47.666666666666686" height="35"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="pencil.and.list.clipboard" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickTest:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vpz-ID-5nz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gmq-rK-On6"/>
+                                    <constraint firstItem="bCr-sE-qTi" firstAttribute="centerY" secondItem="3eD-1m-Bnf" secondAttribute="centerY" id="SzR-qI-w3Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="bCr-sE-qTi" secondAttribute="trailing" constant="8" id="jdb-Kp-1rR"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fvy-QD-Gsh">
-                                <rect key="frame" x="0.0" y="116" width="393" height="736"/>
+                                <rect key="frame" x="0.0" y="166" width="393" height="686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Da5-m8-oK2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -82,16 +102,19 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3eD-1m-Bnf" secondAttribute="trailing" id="1t3-XQ-ZuA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yor-Ci-LRp" secondAttribute="trailing" id="3CB-hN-lut"/>
                             <constraint firstItem="yor-Ci-LRp" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="GbY-Nn-cHV"/>
+                            <constraint firstItem="3eD-1m-Bnf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LBi-sh-8aA"/>
                             <constraint firstItem="Fvy-QD-Gsh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SLx-D3-ejz"/>
                             <constraint firstItem="S12-Fm-Gd2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Sdc-nD-aYB"/>
-                            <constraint firstItem="Fvy-QD-Gsh" firstAttribute="top" secondItem="S12-Fm-Gd2" secondAttribute="bottom" id="U6d-7i-DVV"/>
                             <constraint firstItem="S12-Fm-Gd2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="V1X-Se-sG8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Fvy-QD-Gsh" secondAttribute="trailing" id="Wdr-3R-oo4"/>
                             <constraint firstItem="S12-Fm-Gd2" firstAttribute="top" secondItem="yor-Ci-LRp" secondAttribute="bottom" id="dwg-BF-mGD"/>
                             <constraint firstAttribute="bottom" secondItem="Fvy-QD-Gsh" secondAttribute="bottom" id="fMY-ch-yrp"/>
                             <constraint firstItem="S12-Fm-Gd2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lUg-y0-IgJ"/>
+                            <constraint firstItem="3eD-1m-Bnf" firstAttribute="top" secondItem="S12-Fm-Gd2" secondAttribute="bottom" id="nIz-Lk-Vv5"/>
+                            <constraint firstItem="Fvy-QD-Gsh" firstAttribute="top" secondItem="3eD-1m-Bnf" secondAttribute="bottom" id="tVa-pD-YLB"/>
                             <constraint firstItem="yor-Ci-LRp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xBC-tl-rxN"/>
                         </constraints>
                     </view>
@@ -109,6 +132,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="pencil.and.list.clipboard" catalog="system" width="114" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

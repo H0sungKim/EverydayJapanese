@@ -114,7 +114,7 @@ class TestViewController: UIViewController {
     private func moveOnToNext() {
         index += 1
         if (sectionEnum == .kanji && index == kanjis?.count) ||
-            (sectionEnum == .vocabulary && index == vocabularies?.count){
+            (sectionEnum == .vocabulary && index == vocabularies?.count) {
             let vc = UIViewController.getViewController(viewControllerEnum: .testresult) as! TestResultViewController
             vc.indexEnum = indexEnum
             vc.sectionEnum = sectionEnum

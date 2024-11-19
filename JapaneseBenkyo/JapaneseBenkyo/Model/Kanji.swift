@@ -7,13 +7,22 @@
 
 import Foundation
 
-struct Kanji: Codable, Equatable, Hashable {
+struct OldKanji: Codable, Equatable, Hashable {
     let kanji: String
     let hanja: String
     let eumhun: String
     let jpSound: String
     let jpMeaning: String
     let examples: [String]
+}
+
+struct Kanji: Codable, Equatable, Hashable {
+    let kanji: String
+    let hanja: String
+    let eumhun: String
+    let jpSound: String
+    let jpMeaning: String
+    let examples: [Vocabulary]
 }
 
 class KanjiForCell {

@@ -155,7 +155,9 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
             for example in kanjiForCell.kanji.examples {
                 if let expandableAreaView = Bundle.main.loadNibNamed("ExpandableAreaView", owner: nil, options: nil)?.first as? ExpandableAreaView {
                     cell.stackView.addArrangedSubview(expandableAreaView)
-                    expandableAreaView.lbTitle.text = example
+                    expandableAreaView.lbWord.text = example.word
+                    expandableAreaView.lbSound.text = example.sound
+                    expandableAreaView.lbMeaning.text = example.meaning
                 }
             }
         } else {

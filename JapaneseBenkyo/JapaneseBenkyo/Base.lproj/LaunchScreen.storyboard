@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="dug-2I-6Ki">
-                                <rect key="frame" x="32" y="32" width="329" height="788"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="dug-2I-6Ki">
+                                <rect key="frame" x="68.666666666666686" y="298" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="J4O-fI-y1K"/>
+                                    <constraint firstAttribute="height" constant="256" id="U60-js-Zm2"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dug-2I-6Ki" secondAttribute="trailing" constant="32" id="Ezf-6w-xNn"/>
                             <constraint firstItem="dug-2I-6Ki" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FMJ-jJ-VBu"/>
-                            <constraint firstItem="dug-2I-6Ki" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="32" id="KLQ-mc-Ky3"/>
-                            <constraint firstItem="dug-2I-6Ki" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="32" id="VFA-74-RIt"/>
-                            <constraint firstAttribute="bottom" secondItem="dug-2I-6Ki" secondAttribute="bottom" constant="32" id="sEk-Qd-aHc"/>
+                            <constraint firstItem="dug-2I-6Ki" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ryu-oE-EiL"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,9 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchscreen.png" width="1024" height="1024"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="launch.png" width="2048" height="2048"/>
     </resources>
 </document>

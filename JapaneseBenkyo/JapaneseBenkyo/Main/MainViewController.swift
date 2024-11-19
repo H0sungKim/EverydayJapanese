@@ -15,18 +15,6 @@ protocol Section {
 }
 
 enum SectionEnum: Section, CaseIterable {
-    var tableViewCell: UITableViewCell.Type {
-        switch self {
-        case .hiraganakatagana:
-            return UITableViewCell.self
-        case .kanji:
-            return KanjiTableViewCell.self
-        case .vocabulary:
-            return VocabularyTableViewCell.self
-        }
-    }
-    
-    
     case hiraganakatagana
     case kanji
     case vocabulary
@@ -80,6 +68,17 @@ enum SectionEnum: Section, CaseIterable {
                 .n2,
                 .n1,
             ]
+        }
+    }
+    
+    var tableViewCell: UITableViewCell.Type {
+        switch self {
+        case .hiraganakatagana:
+            return UITableViewCell.self
+        case .kanji:
+            return KanjiTableViewCell.self
+        case .vocabulary:
+            return VocabularyTableViewCell.self
         }
     }
 }
@@ -162,7 +161,6 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -211,7 +209,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1], process: process[SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue]?["전체보기"])
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

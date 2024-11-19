@@ -44,13 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
             }
         }
         
-//        print(UserDefaultManager.shared.process)
-//        print(UserDefaultManager.shared.vocabularyBookmark)
-//        print(UserDefaultManager.shared.kanjiBookmark)
-        
-        
-        
-        // Temp
+        // Temp =============================================
         let processKeyDiff: [(String, String)] = [
             ("JLPT N5", "N5"),
             ("JLPT N4", "N4"),
@@ -70,6 +64,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
             }
         }
         
+        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
+            if let oldKanjis = try? JSONDecoder().decode([OldKanji].self, from: jsonData) {
+                var result: [Kanji] = []
+                let files: [IndexEnum] = [.elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle]
+                for file in files {
+                    if let jsonData = JSONManager.shared.openJSON(path: file.getFileName()) {
+                        let kanjis: Set<Kanji> = JSONManager.shared.decodeJSONtoKanjiSet(jsonData: jsonData)
+                        for oldkanji in oldKanjis {
+                            for kanji in kanjis {
+                                if kanji.kanji == oldkanji.kanji {
+                                    result.append(kanji)
+                                }
+                            }
+                        }
+                    }
+                }
+                UserDefaultManager.shared.kanjiBookmark = JSONManager.shared.encodeKanjiJSON(kanjis: Set(result))
+            }
+        }
+        // Temp =============================================
         return true
     }
     

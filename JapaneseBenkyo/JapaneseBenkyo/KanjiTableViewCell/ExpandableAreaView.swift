@@ -9,12 +9,14 @@ import UIKit
 
 class ExpandableAreaView: UIView {
 
-    @IBOutlet weak var lbTitle: UILabel!
-
+    @IBOutlet weak var lbWord: UILabel!
+    @IBOutlet weak var lbSound: UILabel!
+    @IBOutlet weak var lbMeaning: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -24,7 +26,8 @@ class ExpandableAreaView: UIView {
     }
     
     func initializeView() {
-        lbTitle.adjustsFontSizeToFitWidth = true
-        lbTitle.clipsToBounds = true
+        lbWord.clipsToBounds = true
+        lbSound.clipsToBounds = true
+        lbMeaning.clipsToBounds = true
     }
 }

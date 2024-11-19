@@ -13,6 +13,6 @@ class HiraganaKatakanaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lbSub: UILabel!
     
     override func awakeFromNib() {
-        backGroundView.layer.cornerRadius = 25
+//        backGroundView.layer.cornerRadius = 25
     }
 }

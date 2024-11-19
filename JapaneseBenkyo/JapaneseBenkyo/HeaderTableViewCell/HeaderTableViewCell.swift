@@ -21,6 +21,11 @@ class HeaderTableViewCell: UITableViewCell {
         ivIcon.image = section.image
         lbTitle.text = section.title
     }
+    
+    func initializeView(image: UIImage?, text: String?) {
+        ivIcon.image = image
+        lbTitle.text = text
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
