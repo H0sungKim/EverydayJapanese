@@ -97,7 +97,9 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     private func initializeCell(cell: VocabularyTableViewCell, vocabularyForCell: VocabularyForCell) {
-        cell.lbWord.text = vocabularyForCell.vocabulary.word
+        let wordString = NSMutableAttributedString(string: vocabularyForCell.vocabulary.word)
+        wordString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: vocabularyForCell.vocabulary.word.count))
+        cell.lbWord.attributedText = wordString
         if vocabularyForCell.isVisible {
             cell.lbSound.text = vocabularyForCell.vocabulary.sound
             cell.lbMeaning.text = vocabularyForCell.vocabulary.meaning
