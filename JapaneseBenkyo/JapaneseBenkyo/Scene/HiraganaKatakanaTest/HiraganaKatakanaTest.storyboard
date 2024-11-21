@@ -68,11 +68,8 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="DrawingView" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-za-GMb" customClass="DrawingView" customModule="JapaneseBenkyo" customModuleProvider="target">
-                                <rect key="frame" x="32" y="208.66666666666663" width="329" height="329"/>
+                                <rect key="frame" x="32" y="208.66666666666666" width="329" height="379.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iTw-za-GMb" secondAttribute="height" multiplier="1:1" id="jcj-Yq-gRi"/>
-                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqh-ns-E6Y">
                                 <rect key="frame" x="168.33333333333334" y="148" width="56.666666666666657" height="28.666666666666657"/>
@@ -101,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-wS-tQr">
-                                <rect key="frame" x="260" y="553.66666666666663" width="50" height="35"/>
+                                <rect key="frame" x="260" y="604.33333333333337" width="50" height="35"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.uturn.backward" catalog="system"/>
@@ -110,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmQ-jv-MaL">
-                                <rect key="frame" x="314" y="553.66666666666663" width="47" height="35"/>
+                                <rect key="frame" x="314" y="604.33333333333337" width="47" height="35"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
@@ -133,6 +130,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iTw-za-GMb" secondAttribute="trailing" constant="32" id="MSU-z2-4sy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hmQ-jv-MaL" secondAttribute="trailing" constant="32" id="Okc-9U-nys"/>
                             <constraint firstItem="hmQ-jv-MaL" firstAttribute="top" secondItem="iTw-za-GMb" secondAttribute="bottom" constant="16" id="PLc-WO-8H1"/>
+                            <constraint firstItem="iTw-za-GMb" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="1:2" id="SrQ-1P-Obe"/>
                             <constraint firstItem="iTw-za-GMb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="WAo-7f-bOh"/>
                             <constraint firstItem="tC9-Gc-vGU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="Ybz-zb-NdO"/>
                             <constraint firstItem="Rqh-ns-E6Y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jGQ-dW-8nW"/>
