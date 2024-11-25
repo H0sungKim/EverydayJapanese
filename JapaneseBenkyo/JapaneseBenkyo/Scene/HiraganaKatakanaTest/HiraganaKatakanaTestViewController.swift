@@ -24,6 +24,8 @@ class HiraganaKatakanaTestViewController: UIViewController {
     @IBOutlet weak var lbIndex: UILabel!
     @IBOutlet weak var drawingView: DrawingView!
     
+    @IBOutlet weak var ivAlert: UIImageView!
+    @IBOutlet weak var lbAlert: UILabel!
     @IBOutlet weak var lbResult: UILabel!
     
     override func viewDidLoad() {
@@ -48,9 +50,13 @@ class HiraganaKatakanaTestViewController: UIViewController {
     }
     @IBAction func onClickUndo(_ sender: Any) {
         drawingView.undo()
+        lbAlert.isHidden = true
+        ivAlert.isHidden = true
     }
     @IBAction func onClickClear(_ sender: Any) {
         drawingView.clear()
+        lbAlert.isHidden = true
+        ivAlert.isHidden = true
     }
     
     @IBAction func lbSubmit(_ sender: Any) {
@@ -95,6 +101,8 @@ class HiraganaKatakanaTestViewController: UIViewController {
         lbIndex.text = "\(index+1)/\(hiraganakatakana.count)"
         lbHiraganaKatakana.text = "\(indexEnum?.rawValue ?? "") \(hiraganakatakana[index].1)"
         lbResult.text = "인식된 결과가 없습니다."
+        lbAlert.isHidden = true
+        ivAlert.isHidden = true
     }
 }
 
@@ -103,8 +111,12 @@ extension HiraganaKatakanaTestViewController: DrawingViewDelegate {
         recognizedText = text
         if let text = text {
             lbResult.text = "인식 결과 : \(text)"
+            lbAlert.isHidden = true
+            ivAlert.isHidden = true
         } else {
             lbResult.text = "인식된 결과가 없습니다."
+            lbAlert.isHidden = false
+            ivAlert.isHidden = false
         }
     }
 }
