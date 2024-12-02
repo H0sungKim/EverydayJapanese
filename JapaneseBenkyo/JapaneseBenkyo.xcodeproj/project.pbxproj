@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,7 +57,26 @@
 		96BA5B062BA2CF3700E3373C /* n1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B012BA2CF3700E3373C /* n1.json */; };
 		96BA5B072BA2CF3700E3373C /* n5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B022BA2CF3700E3373C /* n5.json */; };
 		96BA5B082BA2CF3700E3373C /* n2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B032BA2CF3700E3373C /* n2.json */; };
-		96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B092BA2CFBA00E3373C /* launchscreen.png */; };
+		96C0F2D02CFDDE9200A9DC21 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */; };
+		96C0F2D22CFDDE9200A9DC21 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */; };
+		96C0F2DF2CFDDE9400A9DC21 /* StudyWidegetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 96C0F2CD2CFDDE9200A9DC21 /* StudyWidegetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		96C0F2E72CFDE12800A9DC21 /* IndexEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */; };
+		96C0F2E82CFDE15600A9DC21 /* IndexEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */; };
+		96C0F2EA2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */; };
+		96C0F2EB2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */; };
+		96C0F2EE2CFDE2F600A9DC21 /* Section+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */; };
+		96C0F2EF2CFDE45000A9DC21 /* kanji1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D62CEA1217002E220D /* kanji1.json */; };
+		96C0F2F02CFDE45600A9DC21 /* kanji5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74DA2CEA1217002E220D /* kanji5.json */; };
+		96C0F2F12CFDE45600A9DC21 /* kanji4.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D92CEA1217002E220D /* kanji4.json */; };
+		96C0F2F22CFDE45600A9DC21 /* n2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B032BA2CF3700E3373C /* n2.json */; };
+		96C0F2F32CFDE45600A9DC21 /* kanji7.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74DC2CEA1217002E220D /* kanji7.json */; };
+		96C0F2F42CFDE45600A9DC21 /* n3.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5AFF2BA2CF3700E3373C /* n3.json */; };
+		96C0F2F52CFDE45600A9DC21 /* kanji6.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74DB2CEA1217002E220D /* kanji6.json */; };
+		96C0F2F62CFDE45600A9DC21 /* kanji3.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D82CEA1217002E220D /* kanji3.json */; };
+		96C0F2F72CFDE45600A9DC21 /* n5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B022BA2CF3700E3373C /* n5.json */; };
+		96C0F2F82CFDE45600A9DC21 /* n1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B012BA2CF3700E3373C /* n1.json */; };
+		96C0F2F92CFDE45600A9DC21 /* n4.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B002BA2CF3700E3373C /* n4.json */; };
+		96C0F2FA2CFDE45600A9DC21 /* kanji2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D72CEA1217002E220D /* kanji2.json */; };
 		96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExpandableAreaView.swift */; };
 		96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExpandableAreaView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
@@ -95,7 +114,28 @@
 			remoteGlobalIDString = 962F1B962B79DCD10051C4DA;
 			remoteInfo = JapaneseBenkyo;
 		};
+		96C0F2DD2CFDDE9400A9DC21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 962F1B8F2B79DCD10051C4DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96C0F2CC2CFDDE9200A9DC21;
+			remoteInfo = StudyWidegetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96C0F2E02CFDDE9400A9DC21 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				96C0F2DF2CFDDE9400A9DC21 /* StudyWidegetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		960C6B562B7B3FE900D91407 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
@@ -152,7 +192,12 @@
 		96BA5B012BA2CF3700E3373C /* n1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n1.json; sourceTree = "<group>"; };
 		96BA5B022BA2CF3700E3373C /* n5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n5.json; sourceTree = "<group>"; };
 		96BA5B032BA2CF3700E3373C /* n2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = n2.json; sourceTree = "<group>"; };
-		96BA5B092BA2CFBA00E3373C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
+		96C0F2CD2CFDDE9200A9DC21 /* StudyWidegetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyWidegetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexEnum.swift; sourceTree = "<group>"; };
+		96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnum.swift; sourceTree = "<group>"; };
+		96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+Ext.swift"; sourceTree = "<group>"; };
 		96C174172BB590EF006775E5 /* ExpandableAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAreaView.swift; sourceTree = "<group>"; };
 		96C174182BB590EF006775E5 /* ExpandableAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAreaView.xib; sourceTree = "<group>"; };
 		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
@@ -175,6 +220,20 @@
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		96C0F2E32CFDDE9400A9DC21 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 96C0F2CC2CFDDE9200A9DC21 /* StudyWidegetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		96C0F2D32CFDDE9200A9DC21 /* StudyWideget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (96C0F2E32CFDDE9400A9DC21 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StudyWideget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		962F1B942B79DCD10051C4DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -194,6 +253,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96C0F2CA2CFDDE9200A9DC21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C0F2D22CFDDE9200A9DC21 /* SwiftUI.framework in Frameworks */,
+				96C0F2D02CFDDE9200A9DC21 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +323,8 @@
 				962F1B992B79DCD10051C4DA /* JapaneseBenkyo */,
 				962F1BB02B79DCD30051C4DA /* JapaneseBenkyoTests */,
 				962F1BBA2B79DCD30051C4DA /* JapaneseBenkyoUITests */,
+				96C0F2D32CFDDE9200A9DC21 /* StudyWideget */,
+				96C0F2CE2CFDDE9200A9DC21 /* Frameworks */,
 				962F1B982B79DCD10051C4DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,6 +335,7 @@
 				962F1B972B79DCD10051C4DA /* JapaneseBenkyo.app */,
 				962F1BAD2B79DCD30051C4DA /* JapaneseBenkyoTests.xctest */,
 				962F1BB72B79DCD30051C4DA /* JapaneseBenkyoUITests.xctest */,
+				96C0F2CD2CFDDE9200A9DC21 /* StudyWidegetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,6 +343,7 @@
 		962F1B992B79DCD10051C4DA /* JapaneseBenkyo */ = {
 			isa = PBXGroup;
 			children = (
+				96C0F2E52CFDE11500A9DC21 /* Enum */,
 				967AD8DC2CEC9175001A3397 /* Scene */,
 				967AD8DD2CEC918F001A3397 /* Cell */,
 				965C1CF12C8C751600355DDF /* Model */,
@@ -444,7 +516,6 @@
 				96BA5AFF2BA2CF3700E3373C /* n3.json */,
 				96BA5B002BA2CF3700E3373C /* n4.json */,
 				96BA5B022BA2CF3700E3373C /* n5.json */,
-				96BA5B092BA2CFBA00E3373C /* launchscreen.png */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -456,6 +527,25 @@
 				9615367F2C82E87C00563983 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		96C0F2CE2CFDDE9200A9DC21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */,
+				96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96C0F2E52CFDE11500A9DC21 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */,
+				96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */,
+				96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */ = {
@@ -491,10 +581,12 @@
 				962F1B932B79DCD10051C4DA /* Sources */,
 				962F1B942B79DCD10051C4DA /* Frameworks */,
 				962F1B952B79DCD10051C4DA /* Resources */,
+				96C0F2E02CFDDE9400A9DC21 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				96C0F2DE2CFDDE9400A9DC21 /* PBXTargetDependency */,
 			);
 			name = JapaneseBenkyo;
 			productName = JapaneseBenkyo;
@@ -537,6 +629,28 @@
 			productReference = 962F1BB72B79DCD30051C4DA /* JapaneseBenkyoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		96C0F2CC2CFDDE9200A9DC21 /* StudyWidegetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96C0F2E42CFDDE9400A9DC21 /* Build configuration list for PBXNativeTarget "StudyWidegetExtension" */;
+			buildPhases = (
+				96C0F2C92CFDDE9200A9DC21 /* Sources */,
+				96C0F2CA2CFDDE9200A9DC21 /* Frameworks */,
+				96C0F2CB2CFDDE9200A9DC21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				96C0F2D32CFDDE9200A9DC21 /* StudyWideget */,
+			);
+			name = StudyWidegetExtension;
+			packageProductDependencies = (
+			);
+			productName = StudyWidegetExtension;
+			productReference = 96C0F2CD2CFDDE9200A9DC21 /* StudyWidegetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -544,7 +658,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					962F1B962B79DCD10051C4DA = {
@@ -557,6 +671,9 @@
 					962F1BB62B79DCD30051C4DA = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 962F1B962B79DCD10051C4DA;
+					};
+					96C0F2CC2CFDDE9200A9DC21 = {
+						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
@@ -576,6 +693,7 @@
 				962F1B962B79DCD10051C4DA /* JapaneseBenkyo */,
 				962F1BAC2B79DCD30051C4DA /* JapaneseBenkyoTests */,
 				962F1BB62B79DCD30051C4DA /* JapaneseBenkyoUITests */,
+				96C0F2CC2CFDDE9200A9DC21 /* StudyWidegetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -614,7 +732,6 @@
 				9615369D2C8AB91400563983 /* Study.storyboard in Resources */,
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
 				961536962C8AA6A200563983 /* Day.storyboard in Resources */,
-				96BA5B0A2BA2CFBA00E3373C /* launchscreen.png in Resources */,
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
 				961536932C84868200563983 /* star.png in Resources */,
 				965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */,
@@ -638,6 +755,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96C0F2CB2CFDDE9200A9DC21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C0F2F02CFDE45600A9DC21 /* kanji5.json in Resources */,
+				96C0F2F12CFDE45600A9DC21 /* kanji4.json in Resources */,
+				96C0F2F22CFDE45600A9DC21 /* n2.json in Resources */,
+				96C0F2F32CFDE45600A9DC21 /* kanji7.json in Resources */,
+				96C0F2F42CFDE45600A9DC21 /* n3.json in Resources */,
+				96C0F2F52CFDE45600A9DC21 /* kanji6.json in Resources */,
+				96C0F2F62CFDE45600A9DC21 /* kanji3.json in Resources */,
+				96C0F2F72CFDE45600A9DC21 /* n5.json in Resources */,
+				96C0F2F82CFDE45600A9DC21 /* n1.json in Resources */,
+				96C0F2F92CFDE45600A9DC21 /* n4.json in Resources */,
+				96C0F2FA2CFDE45600A9DC21 /* kanji2.json in Resources */,
+				96C0F2EF2CFDE45000A9DC21 /* kanji1.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -646,9 +782,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */,
+				96C0F2EE2CFDE2F600A9DC21 /* Section+Ext.swift in Sources */,
 				967AD8DA2CEC763C001A3397 /* TestResultTableViewCell.swift in Sources */,
 				965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */,
 				96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */,
+				96C0F2EA2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */,
 				9615369B2C8AB90A00563983 /* StudyViewController.swift in Sources */,
 				96CC76352CEB8ABE002E220D /* DrawingView.swift in Sources */,
 				965C1CFD2C8C887300355DDF /* ProcessView.swift in Sources */,
@@ -671,6 +809,7 @@
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */,
 				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
+				96C0F2E72CFDE12800A9DC21 /* IndexEnum.swift in Sources */,
 				96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */,
 				967AD8D52CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift in Sources */,
 				9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */,
@@ -697,6 +836,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96C0F2C92CFDDE9200A9DC21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C0F2EB2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */,
+				96C0F2E82CFDE15600A9DC21 /* IndexEnum.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -709,6 +857,11 @@
 			isa = PBXTargetDependency;
 			target = 962F1B962B79DCD10051C4DA /* JapaneseBenkyo */;
 			targetProxy = 962F1BB82B79DCD30051C4DA /* PBXContainerItemProxy */;
+		};
+		96C0F2DE2CFDDE9400A9DC21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96C0F2CC2CFDDE9200A9DC21 /* StudyWidegetExtension */;
+			targetProxy = 96C0F2DD2CFDDE9400A9DC21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -973,6 +1126,62 @@
 			};
 			name = Release;
 		};
+		96C0F2E12CFDDE9400A9DC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JU27F4BHH8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyWideget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyWideget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo.StudyWideget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96C0F2E22CFDDE9400A9DC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JU27F4BHH8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyWideget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyWideget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo.StudyWideget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1008,6 +1217,15 @@
 			buildConfigurations = (
 				962F1BC82B79DCD30051C4DA /* Debug */,
 				962F1BC92B79DCD30051C4DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96C0F2E42CFDDE9400A9DC21 /* Build configuration list for PBXNativeTarget "StudyWidegetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96C0F2E12CFDDE9400A9DC21 /* Debug */,
+				96C0F2E22CFDDE9400A9DC21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
