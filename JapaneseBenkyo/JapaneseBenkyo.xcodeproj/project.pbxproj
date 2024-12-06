@@ -77,6 +77,7 @@
 		96C0F2F82CFDE45600A9DC21 /* n1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B012BA2CF3700E3373C /* n1.json */; };
 		96C0F2F92CFDE45600A9DC21 /* n4.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5B002BA2CF3700E3373C /* n4.json */; };
 		96C0F2FA2CFDE45600A9DC21 /* kanji2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D72CEA1217002E220D /* kanji2.json */; };
+		96C0F3052CFF6CCC00A9DC21 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B562B7B3FE900D91407 /* JSONManager.swift */; };
 		96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExpandableAreaView.swift */; };
 		96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExpandableAreaView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
@@ -841,6 +842,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C0F2EB2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */,
+				96C0F3052CFF6CCC00A9DC21 /* JSONManager.swift in Sources */,
 				96C0F2E82CFDE15600A9DC21 /* IndexEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
