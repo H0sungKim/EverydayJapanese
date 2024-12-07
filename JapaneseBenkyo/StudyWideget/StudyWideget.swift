@@ -43,14 +43,85 @@ struct SimpleEntry: TimelineEntry {
 
 struct StudyWidegetEntryView : View {
     var entry: Provider.Entry
-
+    
+    @State private var index: Int? = Calendar.current.dateComponents([.day], from: .distantPast, to: .now).day
+    
+    @State private var kanjis: [Kanji] = []
+    @State private var vocabularies: [Vocabulary] = []
+    
     var body: some View {
+        
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+            if let index = index {
+                switch entry.configuration.studyPart {
+                case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
+                    if vocabularies.count != 0 {
+                        let vocabulary: Vocabulary = vocabularies[index % vocabularies.count]
+                        Text(vocabulary.sound)
+                            .foregroundStyle(Color(UIColor.secondaryLabel))
+                            .font(Font.system(size: 14))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                        var nsAttributedString: NSMutableAttributedString {
+                            let nsAttributedString = NSMutableAttributedString(string: vocabulary.word)
+                            nsAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: vocabulary.word.count))
+                            return nsAttributedString
+                        }
+                        Text(AttributedString(nsAttributedString))
+                            .font(Font.system(size: 32))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                        Text(vocabulary.meaning)
+                            .font(Font.system(size: 18))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                    }
+                case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
+                    if kanjis.count != 0 {
+                        let kanji: Kanji = kanjis[index % kanjis.count]
+                        Text(kanji.jpSound)
+                            .foregroundStyle(Color(UIColor.secondaryLabel))
+                            .font(Font.system(size: 14))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                        Text(kanji.jpMeaning)
+                            .foregroundStyle(Color(UIColor.secondaryLabel))
+                            .font(Font.system(size: 14))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                        var nsAttributedString: NSMutableAttributedString {
+                            let nsAttributedString = NSMutableAttributedString(string: kanji.kanji)
+                            nsAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanji.kanji.count))
+                            return nsAttributedString
+                        }
+                        Text(AttributedString(nsAttributedString))
+                            .font(Font.system(size: 64))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                            
+                        Text(kanji.eumhun)
+                            .font(Font.system(size: 18))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                    }
+                }
+            }
+            
+//            Text(entry.configuration.studyPart.rawValue)
+        }.onAppear(perform: {
+            loadData()
+        })
+    }
+    
+    private func loadData() {
+        let studyPart = entry.configuration.studyPart
+        if let jsonData = JSONManager.shared.openJSON(path: studyPart.getFileName()) {
+            switch studyPart {
+            case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
+                vocabularies = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
+            case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
+                kanjis = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData)
+            }
         }
     }
 }
@@ -67,15 +138,64 @@ struct StudyWideget: Widget {
 }
 
 extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
+    fileprivate static var kanjiElementary1: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+        intent.studyPart = .kanjiElementary1
         return intent
     }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
+    fileprivate static var kanjiElementary2: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
+        intent.studyPart = .kanjiElementary2
+        return intent
+    }
+    fileprivate static var kanjiElementary3: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .kanjiElementary3
+        return intent
+    }
+    fileprivate static var kanjiElementary4: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .kanjiElementary4
+        return intent
+    }
+    fileprivate static var kanjiElementary5: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .kanjiElementary5
+        return intent
+    }
+    fileprivate static var kanjiElementary6: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .kanjiElementary6
+        return intent
+    }
+    fileprivate static var kanjiMiddle1: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .kanjiMiddle
+        return intent
+    }
+    fileprivate static var jlptN5: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .jlptN5
+        return intent
+    }
+    fileprivate static var jlptN4: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .jlptN4
+        return intent
+    }
+    fileprivate static var jlptN3: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .jlptN3
+        return intent
+    }
+    fileprivate static var jlptN2: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .jlptN2
+        return intent
+    }
+    fileprivate static var jlptN1: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .jlptN1
         return intent
     }
 }
@@ -83,6 +203,6 @@ extension ConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     StudyWideget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(date: .now, configuration: .kanjiElementary1)
+    SimpleEntry(date: .now, configuration: .jlptN5)
 }
