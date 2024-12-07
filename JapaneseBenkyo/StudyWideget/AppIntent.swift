@@ -9,8 +9,8 @@ import WidgetKit
 import AppIntents
 
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource { "" }
-    static var description: IntentDescription { "" }
+    static var title: LocalizedStringResource { "Configuration" }
+    static var description: IntentDescription { "This is an mainichinihongo widget." }
 
     // An example configurable parameter.
     @Parameter(title: "암기할 부분", default: .kanjiElementary1)
