@@ -13,9 +13,12 @@ class VocabularyTableViewCell: UITableViewCell {
     @IBOutlet weak var lbSound: UILabel!
     @IBOutlet weak var lbMeaning: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
+    @IBOutlet weak var btnExpand: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
     var onClickBookmark: ((_ sender: UIButton) -> Void)?
     var onClickPronounce: ((_ sender: UIButton) -> Void)?
+    var onClickExpand: ((_ sender: UIButton) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +31,7 @@ class VocabularyTableViewCell: UITableViewCell {
     @IBAction func onClickPronounce(_ sender: UIButton) {
         onClickPronounce?(sender)
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    @IBAction func onClickExpand(_ sender: UIButton) {
+        onClickExpand?(sender)
     }
 }

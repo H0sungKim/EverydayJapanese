@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExpandableAreaView: UIView {
+class ExampleWordView: UIView {
 
     @IBOutlet weak var lbWord: UILabel!
     @IBOutlet weak var lbSound: UILabel!

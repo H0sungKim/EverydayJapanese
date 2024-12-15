@@ -29,6 +29,9 @@
 		962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */; };
 		962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA32B79DCD20051C4DA /* Assets.xcassets */; };
 		962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA52B79DCD20051C4DA /* LaunchScreen.storyboard */; };
+		964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964943542D0DA56D000DE5E0 /* VocabularyForCell.swift */; };
+		964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964943562D0DA574000DE5E0 /* KanjiForCell.swift */; };
+		9649435A2D0E9F6E000DE5E0 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 964943592D0E9F6E000DE5E0 /* SkeletonView */; };
 		964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */; };
 		9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */; };
 		965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */; };
@@ -75,8 +78,21 @@
 		96C0FD3C2D03317100A9DC21 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B562B7B3FE900D91407 /* JSONManager.swift */; };
 		96C0FD3D2D0331F500A9DC21 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969493512B7DDE140064312F /* Vocabulary.swift */; };
 		96C0FD3E2D0331F900A9DC21 /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
-		96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExpandableAreaView.swift */; };
-		96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExpandableAreaView.xib */; };
+		96C0FE2A2D0D490A00A9DC21 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 96C0FE292D0D490A00A9DC21 /* CombineMoya */; };
+		96C0FE2C2D0D490A00A9DC21 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 96C0FE2B2D0D490A00A9DC21 /* Moya */; };
+		96C0FE2E2D0D490A00A9DC21 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 96C0FE2D2D0D490A00A9DC21 /* ReactiveMoya */; };
+		96C0FE302D0D490A00A9DC21 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 96C0FE2F2D0D490A00A9DC21 /* RxMoya */; };
+		96C0FE332D0D492600A9DC21 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 96C0FE322D0D492600A9DC21 /* CombineMoya */; };
+		96C0FE352D0D492600A9DC21 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 96C0FE342D0D492600A9DC21 /* Moya */; };
+		96C0FEF62D0D4A7800A9DC21 /* CommonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */; };
+		96C0FEF82D0D4A8E00A9DC21 /* CommonRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */; };
+		96C0FEFA2D0D4AA200A9DC21 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */; };
+		96C0FEFC2D0D4DE500A9DC21 /* TatoebaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFB2D0D4DE500A9DC21 /* TatoebaEntity.swift */; };
+		96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */; };
+		96C0FF012D0D577200A9DC21 /* ExampleSentenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */; };
+		96C0FF022D0D577200A9DC21 /* ExampleSentenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */; };
+		96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExampleWordView.swift */; };
+		96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExampleWordView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
 		96CC74DD2CEA1217002E220D /* kanji5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74DA2CEA1217002E220D /* kanji5.json */; };
 		96CC74DE2CEA1217002E220D /* kanji2.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D72CEA1217002E220D /* kanji2.json */; };
@@ -146,6 +162,8 @@
 		962F1BA32B79DCD20051C4DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		962F1BA62B79DCD20051C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		962F1BA82B79DCD20051C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		964943542D0DA56D000DE5E0 /* VocabularyForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyForCell.swift; sourceTree = "<group>"; };
+		964943562D0DA574000DE5E0 /* KanjiForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiForCell.swift; sourceTree = "<group>"; };
 		964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewHandler.swift; sourceTree = "<group>"; };
 		965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
@@ -177,8 +195,15 @@
 		96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexEnum.swift; sourceTree = "<group>"; };
 		96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnum.swift; sourceTree = "<group>"; };
 		96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+Ext.swift"; sourceTree = "<group>"; };
-		96C174172BB590EF006775E5 /* ExpandableAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAreaView.swift; sourceTree = "<group>"; };
-		96C174182BB590EF006775E5 /* ExpandableAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAreaView.xib; sourceTree = "<group>"; };
+		96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRepository.swift; sourceTree = "<group>"; };
+		96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRestAPI.swift; sourceTree = "<group>"; };
+		96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		96C0FEFB2D0D4DE500A9DC21 /* TatoebaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatoebaEntity.swift; sourceTree = "<group>"; };
+		96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatoebaModel.swift; sourceTree = "<group>"; };
+		96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSentenceView.swift; sourceTree = "<group>"; };
+		96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleSentenceView.xib; sourceTree = "<group>"; };
+		96C174172BB590EF006775E5 /* ExampleWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleWordView.swift; sourceTree = "<group>"; };
+		96C174182BB590EF006775E5 /* ExampleWordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleWordView.xib; sourceTree = "<group>"; };
 		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		96CC74D62CEA1217002E220D /* kanji1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = kanji1.json; sourceTree = "<group>"; };
 		96CC74D72CEA1217002E220D /* kanji2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = kanji2.json; sourceTree = "<group>"; };
@@ -218,6 +243,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C0FE2C2D0D490A00A9DC21 /* Moya in Frameworks */,
+				9649435A2D0E9F6E000DE5E0 /* SkeletonView in Frameworks */,
+				96C0FE2A2D0D490A00A9DC21 /* CombineMoya in Frameworks */,
+				96C0FE352D0D492600A9DC21 /* Moya in Frameworks */,
+				96C0FE302D0D490A00A9DC21 /* RxMoya in Frameworks */,
+				96C0FE332D0D492600A9DC21 /* CombineMoya in Frameworks */,
+				96C0FE2E2D0D490A00A9DC21 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,10 +336,11 @@
 		962F1B992B79DCD10051C4DA /* JapaneseBenkyo */ = {
 			isa = PBXGroup;
 			children = (
+				96C0FE362D0D49BE00A9DC21 /* Network */,
 				96C0F2E52CFDE11500A9DC21 /* Enum */,
 				967AD8DC2CEC9175001A3397 /* Scene */,
 				967AD8DD2CEC918F001A3397 /* Cell */,
-				965C1CF12C8C751600355DDF /* Model */,
+				965C1CF12C8C751600355DDF /* Struct */,
 				964AA5F72B79E7FD007DE504 /* Extension */,
 				960C6B892B7B863C00D91407 /* Singleton */,
 				96AD6B6D2B79FCEB00F895DE /* res */,
@@ -347,13 +380,13 @@
 			path = TestResult;
 			sourceTree = "<group>";
 		};
-		965C1CF12C8C751600355DDF /* Model */ = {
+		965C1CF12C8C751600355DDF /* Struct */ = {
 			isa = PBXGroup;
 			children = (
 				969493512B7DDE140064312F /* Vocabulary.swift */,
 				96D9A8482B7CD9160042E2DA /* Kanji.swift */,
 			);
-			path = Model;
+			path = Struct;
 			sourceTree = "<group>";
 		};
 		965C1CF22C8C766D00355DDF /* HiraganaKatakana */ = {
@@ -419,6 +452,8 @@
 		967AD8DD2CEC918F001A3397 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				964943542D0DA56D000DE5E0 /* VocabularyForCell.swift */,
+				964943562D0DA574000DE5E0 /* KanjiForCell.swift */,
 				967AD8DB2CEC913F001A3397 /* HiraganaKatakanaCollectionViewCell */,
 				961536832C8355C600563983 /* HeaderTableViewCell */,
 				964AA5F22B79E78D007DE504 /* IndexTableViewCell */,
@@ -435,6 +470,8 @@
 				9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */,
 				9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */,
 				969493592B7DE78B0064312F /* VocabularyTableViewCell.xib */,
+				96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */,
+				96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */,
 			);
 			path = VocabularyTableViewCell;
 			sourceTree = "<group>";
@@ -492,6 +529,34 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		96C0FE362D0D49BE00A9DC21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				96C0FEF22D0D4A1000A9DC21 /* Entity */,
+				96C0FEF32D0D4A1700A9DC21 /* Model */,
+				96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */,
+				96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */,
+				96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		96C0FEF22D0D4A1000A9DC21 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				96C0FEFB2D0D4DE500A9DC21 /* TatoebaEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		96C0FEF32D0D4A1700A9DC21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,8 +574,8 @@
 				96A35C792BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift */,
 				96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */,
 				96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */,
-				96C174172BB590EF006775E5 /* ExpandableAreaView.swift */,
-				96C174182BB590EF006775E5 /* ExpandableAreaView.xib */,
+				96C174172BB590EF006775E5 /* ExampleWordView.swift */,
+				96C174182BB590EF006775E5 /* ExampleWordView.xib */,
 			);
 			path = KanjiTableViewCell;
 			sourceTree = "<group>";
@@ -586,6 +651,10 @@
 				Base,
 			);
 			mainGroup = 962F1B8E2B79DCD10051C4DA;
+			packageReferences = (
+				96C0FE312D0D492600A9DC21 /* XCRemoteSwiftPackageReference "Moya" */,
+				964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = 962F1B982B79DCD10051C4DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -612,6 +681,7 @@
 				961536902C8433EB00563983 /* kanji.png in Resources */,
 				96CC74DD2CEA1217002E220D /* kanji5.json in Resources */,
 				96CC74DE2CEA1217002E220D /* kanji2.json in Resources */,
+				96C0FF022D0D577200A9DC21 /* ExampleSentenceView.xib in Resources */,
 				96CC74DF2CEA1217002E220D /* kanji6.json in Resources */,
 				96CC74E02CEA1217002E220D /* kanji4.json in Resources */,
 				96CC74E12CEA1217002E220D /* kanji1.json in Resources */,
@@ -634,7 +704,7 @@
 				961536932C84868200563983 /* star.png in Resources */,
 				965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */,
 				96BA5B042BA2CF3700E3373C /* n3.json in Resources */,
-				96C1741A2BB590EF006775E5 /* ExpandableAreaView.xib in Resources */,
+				96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */,
 				967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,6 +738,7 @@
 				960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */,
 				96C0F2EE2CFDE2F600A9DC21 /* Section+Ext.swift in Sources */,
 				967AD8DA2CEC763C001A3397 /* TestResultTableViewCell.swift in Sources */,
+				96C0FF012D0D577200A9DC21 /* ExampleSentenceView.swift in Sources */,
 				965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */,
 				96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */,
 				96C0F2EA2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */,
@@ -678,7 +749,7 @@
 				962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */,
 				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
 				96CC76372CEB8AD1002E220D /* Line.swift in Sources */,
-				96C174192BB590EF006775E5 /* ExpandableAreaView.swift in Sources */,
+				96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */,
 				961536A22C8C2C7E00563983 /* TestViewController.swift in Sources */,
 				961536982C8AA6BA00563983 /* DayViewController.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
@@ -687,18 +758,25 @@
 				96CC76322CEB8AAE002E220D /* HiraganaKatakanaManager.swift in Sources */,
 				96CC76332CEB8AAE002E220D /* OCRManager.swift in Sources */,
 				960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */,
+				96C0FEFA2D0D4AA200A9DC21 /* Configuration.swift in Sources */,
 				96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */,
 				96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */,
 				9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */,
+				964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */,
 				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
 				96C0F2E72CFDE12800A9DC21 /* IndexEnum.swift in Sources */,
 				96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */,
+				96C0FEF62D0D4A7800A9DC21 /* CommonRepository.swift in Sources */,
+				96C0FEF82D0D4A8E00A9DC21 /* CommonRestAPI.swift in Sources */,
+				96C0FEFC2D0D4DE500A9DC21 /* TatoebaEntity.swift in Sources */,
 				967AD8D52CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift in Sources */,
 				9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */,
 				961536892C84315900563983 /* IndexTableViewCell.swift in Sources */,
 				961536822C82E9AC00563983 /* MainViewController.swift in Sources */,
+				96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */,
+				964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,7 +953,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.02.00;
+				MARKETING_VERSION = 2.03.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -903,7 +981,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.02.00;
+				MARKETING_VERSION = 2.03.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -999,6 +1077,71 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.31.0;
+			};
+		};
+		96C0FE282D0D490A00A9DC21 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		96C0FE312D0D492600A9DC21 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		964943592D0E9F6E000DE5E0 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		96C0FE292D0D490A00A9DC21 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96C0FE282D0D490A00A9DC21 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		96C0FE2B2D0D490A00A9DC21 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96C0FE282D0D490A00A9DC21 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		96C0FE2D2D0D490A00A9DC21 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96C0FE282D0D490A00A9DC21 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		96C0FE2F2D0D490A00A9DC21 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96C0FE282D0D490A00A9DC21 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		96C0FE322D0D492600A9DC21 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96C0FE312D0D492600A9DC21 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		96C0FE342D0D492600A9DC21 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96C0FE312D0D492600A9DC21 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 962F1B8F2B79DCD10051C4DA /* Project object */;
 }

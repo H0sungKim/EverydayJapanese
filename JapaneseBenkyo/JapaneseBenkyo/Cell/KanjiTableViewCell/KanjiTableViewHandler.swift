@@ -116,55 +116,36 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
-        if kanjiForCell.kanji.hanja == "" {
-            let kanjiString = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
-            kanjiString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
-            cell.lbKanji.attributedText = kanjiString
-            cell.scHanja.isHidden = true
-        } else {
-            cell.scHanja.isHidden = false
-            if kanjiForCell.isVisibleHanja {
-                let hanjaString = NSMutableAttributedString(string: kanjiForCell.kanji.hanja)
-                hanjaString.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
-                cell.lbKanji.attributedText = hanjaString
-                cell.scHanja.selectedSegmentIndex = 1
-            } else {
-                let kanjiString = NSMutableAttributedString(string: kanjiForCell.kanji.kanji)
-                kanjiString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjiForCell.kanji.kanji.count))
-                cell.lbKanji.attributedText = kanjiString
-                cell.scHanja.selectedSegmentIndex = 0
-            }
-        }
-        if kanjiForCell.isVisible {
-            cell.lbEumhun.text = kanjiForCell.kanji.eumhun
-            cell.lbJpSound.text = kanjiForCell.kanji.jpSound
-            cell.lbJpMeaning.text = kanjiForCell.kanji.jpMeaning
-        } else {
-            cell.lbEumhun.text = ""
-            cell.lbJpSound.text = ""
-            cell.lbJpMeaning.text = ""
-        }
-        if kanjiForCell.isBookmark {
-            cell.btnBookmark.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        } else {
-            cell.btnBookmark.setImage(UIImage(systemName: "star"), for: .normal)
-        }
+        cell.scHanja.isHidden = kanjiForCell.kanji.hanja == ""
+        let attributedString = NSMutableAttributedString(string: kanjiForCell.isVisibleHanja ? kanjiForCell.kanji.hanja : kanjiForCell.kanji.kanji)
+        attributedString.addAttribute(.languageIdentifier, value: kanjiForCell.isVisibleHanja ? "kr" : "ja", range: NSRange(location: 0, length: kanjiForCell.isVisibleHanja ? kanjiForCell.kanji.hanja.count : kanjiForCell.kanji.kanji.count))
+        cell.lbKanji.attributedText = attributedString
+        cell.scHanja.selectedSegmentIndex = kanjiForCell.isVisibleHanja ? 1 : 0
+        
+        cell.lbEumhun.text = kanjiForCell.isVisible ? kanjiForCell.kanji.eumhun : ""
+        cell.lbJpSound.text = kanjiForCell.isVisible ? kanjiForCell.kanji.jpSound : ""
+        cell.lbJpMeaning.text = kanjiForCell.isVisible ? kanjiForCell.kanji.jpMeaning : ""
+        
+        cell.btnBookmark.setImage(UIImage(systemName: kanjiForCell.isBookmark ? "star.fill" : "star"), for: .normal)
+        
+        cell.btnExpand.setImage(UIImage(systemName: kanjiForCell.isExpanded ? "chevron.up" : "chevron.down"), for: .normal)
+        cell.stackView.clearSubViews()
         if kanjiForCell.isExpanded {
-            cell.btnExpand.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-            cell.stackView.clearSubViews()
-            for example in kanjiForCell.kanji.examples {
-                if let expandableAreaView = Bundle.main.loadNibNamed("ExpandableAreaView", owner: nil, options: nil)?.first as? ExpandableAreaView {
-                    cell.stackView.addArrangedSubview(expandableAreaView)
-                    let wordString = NSMutableAttributedString(string: example.word)
-                    wordString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: example.word.count))
-                    expandableAreaView.lbWord.attributedText = wordString
-                    expandableAreaView.lbSound.text = example.sound
-                    expandableAreaView.lbMeaning.text = example.meaning
-                }
+            expandExamples(cell: cell, kanjiForCell: kanjiForCell)
+        }
+    }
+    
+    private func expandExamples(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
+        for example in kanjiForCell.kanji.examples {
+            guard let expandableAreaView = Bundle.main.loadNibNamed(String(describing: ExampleWordView.self), owner: nil, options: nil)?.first as? ExampleWordView else {
+                continue
             }
-        } else {
-            cell.btnExpand.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-            cell.stackView.clearSubViews()
+            cell.stackView.addArrangedSubview(expandableAreaView)
+            let wordString = NSMutableAttributedString(string: example.word)
+            wordString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: example.word.count))
+            expandableAreaView.lbWord.attributedText = wordString
+            expandableAreaView.lbSound.text = example.sound
+            expandableAreaView.lbMeaning.text = example.meaning
         }
     }
 }

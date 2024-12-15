@@ -58,6 +58,9 @@ class TestResultViewController: UIViewController {
                 return
             }
             vocabularyTableViewHandler = VocabularyTableViewHandler(vocabulariesForCell: vocabulariesForCell)
+            vocabularyTableViewHandler?.onReload = { [weak self] indexPath in
+                self?.onReload(indexPath: indexPath)
+            }
             tableView.delegate = vocabularyTableViewHandler
             tableView.dataSource = vocabularyTableViewHandler
             tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))

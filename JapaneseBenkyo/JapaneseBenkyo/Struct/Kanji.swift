@@ -24,15 +24,3 @@ struct Kanji: Codable, Equatable, Hashable {
     let jpMeaning: String
     let examples: [Vocabulary]
 }
-
-class KanjiForCell {
-    let kanji: Kanji
-    var isVisible: Bool = false
-    var isVisibleHanja: Bool = false
-    var isBookmark: Bool = false
-    var isExpanded: Bool = false
-    
-    init(kanji: Kanji) {
-        self.kanji = kanji
-    }
-}

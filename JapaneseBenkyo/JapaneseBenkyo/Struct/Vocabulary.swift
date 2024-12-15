@@ -12,13 +12,3 @@ struct Vocabulary: Codable, Equatable, Hashable {
     let sound: String
     let meaning: String
 }
-
-class VocabularyForCell {
-    let vocabulary: Vocabulary
-    var isVisible: Bool = false
-    var isBookmark: Bool = false
-    
-    init(vocabulary: Vocabulary) {
-        self.vocabulary = vocabulary
-    }
-}

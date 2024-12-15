@@ -11,38 +11,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="ExpandableAreaView" id="3h7-hO-kvm" customClass="ExpandableAreaView" customModule="JapaneseBenkyo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="284" height="60"/>
+        <view contentMode="scaleToFill" restorationIdentifier="ExampleWordView" id="3h7-hO-kvm" customClass="ExampleWordView" customModule="JapaneseBenkyo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvY-fk-Yil">
-                    <rect key="frame" x="0.0" y="0.0" width="284" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq1-5K-GNt">
-                            <rect key="frame" x="15.999999999999996" y="19.333333333333329" width="43.666666666666657" height="21.666666666666671"/>
+                            <rect key="frame" x="15.999999999999996" y="14.333333333333334" width="43.666666666666657" height="21.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjJ-Pc-2rw">
-                            <rect key="frame" x="0.0" y="0.0" width="284" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flg-fQ-tDu">
-                            <rect key="frame" x="15.999999999999996" y="7.3333333333333321" width="43.666666666666657" height="12"/>
+                            <rect key="frame" x="15.999999999999996" y="2.3333333333333339" width="43.666666666666657" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" systemColor="secondaryLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zi4-dy-I6J">
-                            <rect key="frame" x="232.66666666666666" y="21.666666666666668" width="35.333333333333343" height="17.000000000000004"/>
+                            <rect key="frame" x="232.66666666666666" y="16.666666666666668" width="35.333333333333343" height="17.000000000000004"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="TjJ-Pc-2rw" secondAttribute="trailing" id="2mp-1i-s2e"/>
                         <constraint firstItem="flg-fQ-tDu" firstAttribute="width" secondItem="yq1-5K-GNt" secondAttribute="width" id="3qd-bN-Zl2"/>
@@ -55,12 +55,12 @@
                         <constraint firstItem="yq1-5K-GNt" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="oCx-kO-ecO"/>
                         <constraint firstItem="yq1-5K-GNt" firstAttribute="top" secondItem="flg-fQ-tDu" secondAttribute="bottom" id="qOM-bQ-Chj"/>
                         <constraint firstAttribute="trailing" secondItem="Zi4-dy-I6J" secondAttribute="trailing" constant="16" id="ti1-s1-rq0"/>
-                        <constraint firstAttribute="height" constant="60" id="wfs-Iy-gYC"/>
+                        <constraint firstAttribute="height" constant="50" id="wfs-Iy-gYC"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Euk-TG-etj"/>
-            <color key="backgroundColor" systemColor="systemGray5Color"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="EvY-fk-Yil" secondAttribute="trailing" id="3dG-IX-nlb"/>
                 <constraint firstItem="EvY-fk-Yil" firstAttribute="height" secondItem="3h7-hO-kvm" secondAttribute="height" id="AgR-l7-QGb"/>
@@ -79,10 +79,10 @@
     </objects>
     <resources>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
