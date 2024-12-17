@@ -30,11 +30,22 @@ class ExampleSentenceView: UIView {
     func initializeView() {
         lbSentence.clipsToBounds = true
         lbSentence.skeletonTextNumberOfLines = 1
+        btnLink.isHiddenWhenSkeletonIsActive = true
+        btnLink.isUserInteractionDisabledWhenSkeletonIsActive = true
         let title = "- Tatoeba"
         let attributedString = NSMutableAttributedString(string: title)
         attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
         attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 12), range: NSRange(location: 0, length: title.count))
         btnLink.setAttributedTitle(attributedString, for: .normal)
+    }
+    
+    func showSkeleton() {
+        lbSentence.showAnimatedGradientSkeleton(transition: .crossDissolve(0))
+        btnLink.showAnimatedGradientSkeleton(transition: .crossDissolve(0))
+    }
+    func hideSkeleton() {
+        lbSentence.hideSkeleton(transition: .crossDissolve(0))
+        btnLink.hideSkeleton(transition: .crossDissolve(0))
     }
     @IBAction func onClickLink(_ sender: UIButton) {
         onClickLink?()

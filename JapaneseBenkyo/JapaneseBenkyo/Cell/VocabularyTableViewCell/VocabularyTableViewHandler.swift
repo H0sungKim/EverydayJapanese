@@ -112,6 +112,9 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         vocabularyForCell.isExpanded = !vocabularyForCell.isExpanded
         initializeCell(cell: cell, vocabularyForCell: vocabularyForCell)
         onReload?(indexPath)
+        if let _ = vocabularyForCell.exampleSentence {
+            return
+        }
         CommonRepository.shared.getSentence(word: vocabularyForCell.vocabulary.word)
             .sink(receiveCompletion: { error in
                 NSLog("\(error)")
@@ -138,9 +141,7 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         if vocabularyForCell.isExpanded, let expandableAreaView = Bundle.main.loadNibNamed(String(describing: ExampleSentenceView.self), owner: nil, options: nil)?.first as? ExampleSentenceView {
             cell.stackView.addArrangedSubview(expandableAreaView)
             guard let exampleSentence = vocabularyForCell.exampleSentence else {
-                
-                expandableAreaView.lbSentence.showAnimatedGradientSkeleton(transition: .crossDissolve(0))
-                
+                expandableAreaView.showSkeleton()
                 return
             }
             expandableAreaView.onClickLink = {
@@ -150,9 +151,8 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
                 guard let url = URL(string: "https://tatoeba.org/ko/sentences/show/\(exampleSentence.id)"), UIApplication.shared.canOpenURL(url) else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-            
             expandableAreaView.lbSentence.attributedText = getRubyAnnotationString(html: exampleSentence.html, sentence: exampleSentence.text)
-            expandableAreaView.lbSentence.hideSkeleton(transition: .crossDissolve(0))
+            expandableAreaView.hideSkeleton()
         }
     }
     
