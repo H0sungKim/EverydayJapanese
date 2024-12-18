@@ -7,63 +7,69 @@
 
 import Foundation
 
-class JSONManager: NSObject {
+class JSONManager {
     
     public static let shared = JSONManager()
     
-    private override init() {
-        super.init()
+    private init() {
+        
     }
     
     func encodeProcessJSON(process: [String: [String: Bool]]) -> String {
-        let encoded = try? JSONEncoder().encode(process)
-        return String(decoding: encoded!, as: UTF8.self)
+        guard let encoded = try? JSONEncoder().encode(process) else {
+            return ""
+        }
+        return String(decoding: encoded, as: UTF8.self)
     }
     
     func decodeProcessJSON(jsonData: Data) -> [String: [String: Bool]] {
-        if let process = try? JSONDecoder().decode([String: [String: Bool]].self, from: jsonData) {
-            return process
+        guard let process = try? JSONDecoder().decode([String: [String: Bool]].self, from: jsonData) else {
+            return [:]
         }
-        return [:]
+        return process
     }
-
+    
     func encodeVocabularyJSON(vocabularies: Set<Vocabulary>) -> String {
-        let encoded = try? JSONEncoder().encode(vocabularies)
-        return String(decoding: encoded!, as: UTF8.self)
+        guard let encoded = try? JSONEncoder().encode(vocabularies) else {
+            return ""
+        }
+        return String(decoding: encoded, as: UTF8.self)
     }
     
     func decodeJSONtoVocabularyArray(jsonData: Data) -> [Vocabulary] {
-        if let vocabularies = try? JSONDecoder().decode([Vocabulary].self, from: jsonData) {
-            return vocabularies
+        guard let vocabularies = try? JSONDecoder().decode([Vocabulary].self, from: jsonData) else {
+            return []
         }
-        return []
+        return vocabularies
     }
     
     func decodeJSONtoVocabularySet(jsonData: Data) -> Set<Vocabulary> {
-        if let vocabularies = try? JSONDecoder().decode(Set<Vocabulary>.self, from: jsonData) {
-            return vocabularies
+        guard let vocabularies = try? JSONDecoder().decode(Set<Vocabulary>.self, from: jsonData) else {
+            return []
         }
-        return []
+        return vocabularies
     }
     
     
     func encodeKanjiJSON(kanjis: Set<Kanji>) -> String {
-        let encoded = try? JSONEncoder().encode(kanjis)
-        return String(decoding: encoded!, as: UTF8.self)
+        guard let encoded = try? JSONEncoder().encode(kanjis) else {
+            return ""
+        }
+        return String(decoding: encoded, as: UTF8.self)
     }
     
     func decodeJSONtoKanjiArray(jsonData: Data) -> [Kanji] {
-        if let kanjis = try? JSONDecoder().decode([Kanji].self, from: jsonData) {
-            return kanjis
+        guard let kanjis = try? JSONDecoder().decode([Kanji].self, from: jsonData) else {
+            return []
         }
-        return []
+        return kanjis
     }
     
     func decodeJSONtoKanjiSet(jsonData: Data) -> Set<Kanji> {
-        if let kanjis = try? JSONDecoder().decode(Set<Kanji>.self, from: jsonData) {
-            return kanjis
+        guard let kanjis = try? JSONDecoder().decode(Set<Kanji>.self, from: jsonData) else {
+            return []
         }
-        return []
+        return kanjis
     }
     
     
@@ -73,11 +79,10 @@ class JSONManager: NSObject {
             return nil
         }
         let url = URL(fileURLWithPath: path)
-        if let jsonData = try? Data(contentsOf: url) {
-            return jsonData
-        } else {
+        guard let jsonData = try? Data(contentsOf: url) else {
             return nil
         }
+        return jsonData
     }
     
     func convertStringToData(jsonString: String) -> Data? {

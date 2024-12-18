@@ -74,7 +74,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
             self?.onClickExpand(cell, sender, kanjiForCell: kanjiForCell, indexPath: indexPath)
         }
         
-        initializeCell(cell: cell, kanjiForCell: kanjiForCell)
+        cell.initializeCell(kanjiForCell: kanjiForCell)
         
         return cell
     }
@@ -85,7 +85,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
             return
         }
         kanjisForCell[indexPath.row].isVisible = !kanjisForCell[indexPath.row].isVisible
-        initializeCell(cell: cell, kanjiForCell: kanjisForCell[indexPath.row])
+        cell.initializeCell(kanjiForCell: kanjisForCell[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,7 +94,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     
     private func valueChangedHanja(_ cell: KanjiTableViewCell, _ sender: UISegmentedControl, kanjiForCell: KanjiForCell) {
         kanjiForCell.isVisibleHanja = sender.selectedSegmentIndex == 1
-        initializeCell(cell: cell, kanjiForCell: kanjiForCell)
+        cell.initializeCell(kanjiForCell: kanjiForCell)
     }
     private func onClickBookmark(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
         if kanjiForCell.isBookmark {
@@ -103,7 +103,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
             bookmark.insert(kanjiForCell.kanji)
         }
         kanjiForCell.isBookmark = !kanjiForCell.isBookmark
-        initializeCell(cell: cell, kanjiForCell: kanjiForCell)
+        cell.initializeCell(kanjiForCell: kanjiForCell)
         UserDefaultManager.shared.kanjiBookmark = JSONManager.shared.encodeKanjiJSON(kanjis: bookmark)
     }
     private func onClickPronounce(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
@@ -111,41 +111,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     private func onClickExpand(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell, indexPath: IndexPath) {
         kanjiForCell.isExpanded = !kanjiForCell.isExpanded
-        initializeCell(cell: cell, kanjiForCell: kanjiForCell)
+        cell.initializeCell(kanjiForCell: kanjiForCell)
         onReload?(indexPath)
-    }
-    
-    private func initializeCell(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
-        cell.scHanja.isHidden = kanjiForCell.kanji.hanja == ""
-        let attributedString = NSMutableAttributedString(string: kanjiForCell.isVisibleHanja ? kanjiForCell.kanji.hanja : kanjiForCell.kanji.kanji)
-        attributedString.addAttribute(.languageIdentifier, value: kanjiForCell.isVisibleHanja ? "kr" : "ja", range: NSRange(location: 0, length: kanjiForCell.isVisibleHanja ? kanjiForCell.kanji.hanja.count : kanjiForCell.kanji.kanji.count))
-        cell.lbKanji.attributedText = attributedString
-        cell.scHanja.selectedSegmentIndex = kanjiForCell.isVisibleHanja ? 1 : 0
-        
-        cell.lbEumhun.text = kanjiForCell.isVisible ? kanjiForCell.kanji.eumhun : ""
-        cell.lbJpSound.text = kanjiForCell.isVisible ? kanjiForCell.kanji.jpSound : ""
-        cell.lbJpMeaning.text = kanjiForCell.isVisible ? kanjiForCell.kanji.jpMeaning : ""
-        
-        cell.btnBookmark.setImage(UIImage(systemName: kanjiForCell.isBookmark ? "star.fill" : "star"), for: .normal)
-        
-        cell.btnExpand.setImage(UIImage(systemName: kanjiForCell.isExpanded ? "chevron.up" : "chevron.down"), for: .normal)
-        cell.stackView.clearSubViews()
-        if kanjiForCell.isExpanded {
-            expandExamples(cell: cell, kanjiForCell: kanjiForCell)
-        }
-    }
-    
-    private func expandExamples(cell: KanjiTableViewCell, kanjiForCell: KanjiForCell) {
-        for example in kanjiForCell.kanji.examples {
-            guard let expandableAreaView = Bundle.main.loadNibNamed(String(describing: ExampleWordView.self), owner: nil, options: nil)?.first as? ExampleWordView else {
-                continue
-            }
-            cell.stackView.addArrangedSubview(expandableAreaView)
-            let wordString = NSMutableAttributedString(string: example.word)
-            wordString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: example.word.count))
-            expandableAreaView.lbWord.attributedText = wordString
-            expandableAreaView.lbSound.text = example.sound
-            expandableAreaView.lbMeaning.text = example.meaning
-        }
     }
 }

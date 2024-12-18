@@ -41,6 +41,7 @@
 		965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CF72C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift */; };
 		965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */; };
 		965C1CFD2C8C887300355DDF /* ProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CFC2C8C887300355DDF /* ProcessView.swift */; };
+		9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */; };
 		967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */; };
 		967AD8D52CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */; };
 		967AD8D82CEC756F001A3397 /* TestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */; };
@@ -173,6 +174,7 @@
 		965C1CF72C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaCollectionViewCell.swift; sourceTree = "<group>"; };
 		965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiraganaKatakanaCollectionViewCell.xib; sourceTree = "<group>"; };
 		965C1CFC2C8C887300355DDF /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
+		9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyAnnotationManager.swift; sourceTree = "<group>"; };
 		967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTestResult.storyboard; sourceTree = "<group>"; };
 		967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaTestResultViewController.swift; sourceTree = "<group>"; };
 		967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				9611091A2BAFE3F800AF4C45 /* TTSManager.swift */,
 				96CC76302CEB8AAE002E220D /* HiraganaKatakanaManager.swift */,
 				96CC76312CEB8AAE002E220D /* OCRManager.swift */,
+				9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */,
+				9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */,
 				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
 				96C0F2E72CFDE12800A9DC21 /* IndexEnum.swift in Sources */,
 				96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */,

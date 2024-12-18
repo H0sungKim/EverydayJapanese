@@ -8,9 +8,9 @@
 import Foundation
 
 private enum UserDefaultEnum: String {
+    case process
     case vocabularyBookmark
     case kanjiBookmark
-    case process
 }
 
 class UserDefaultManager {
@@ -18,6 +18,7 @@ class UserDefaultManager {
     public static let shared = UserDefaultManager()
     
     private init() {
+        
     }
     
     var process: String {
@@ -46,5 +47,4 @@ class UserDefaultManager {
             UserDefaults.standard.setValue(newValue, forKey: UserDefaultEnum.kanjiBookmark.rawValue)
         }
     }
-    
 }
