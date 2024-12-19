@@ -42,6 +42,8 @@
 		965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */; };
 		965C1CFD2C8C887300355DDF /* ProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CFC2C8C887300355DDF /* ProcessView.swift */; };
 		9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */; };
+		9679D27D2D14123D006FF126 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 9679D27C2D14123D006FF126 /* GoogleMobileAds */; };
+		9679D2812D14423D006FF126 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D2802D14423D006FF126 /* Bundle+Ext.swift */; };
 		967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */; };
 		967AD8D52CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */; };
 		967AD8D82CEC756F001A3397 /* TestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */; };
@@ -175,6 +177,7 @@
 		965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiraganaKatakanaCollectionViewCell.xib; sourceTree = "<group>"; };
 		965C1CFC2C8C887300355DDF /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
 		9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyAnnotationManager.swift; sourceTree = "<group>"; };
+		9679D2802D14423D006FF126 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTestResult.storyboard; sourceTree = "<group>"; };
 		967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaTestResultViewController.swift; sourceTree = "<group>"; };
 		967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -249,6 +252,7 @@
 				9649435A2D0E9F6E000DE5E0 /* SkeletonView in Frameworks */,
 				96C0FE2A2D0D490A00A9DC21 /* CombineMoya in Frameworks */,
 				96C0FE352D0D492600A9DC21 /* Moya in Frameworks */,
+				9679D27D2D14123D006FF126 /* GoogleMobileAds in Frameworks */,
 				96C0FE302D0D490A00A9DC21 /* RxMoya in Frameworks */,
 				96C0FE332D0D492600A9DC21 /* CombineMoya in Frameworks */,
 				96C0FE2E2D0D490A00A9DC21 /* ReactiveMoya in Frameworks */,
@@ -367,6 +371,7 @@
 		964AA5F72B79E7FD007DE504 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9679D2802D14423D006FF126 /* Bundle+Ext.swift */,
 				964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */,
 				96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */,
 				96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */,
@@ -657,6 +662,7 @@
 			packageReferences = (
 				96C0FE312D0D492600A9DC21 /* XCRemoteSwiftPackageReference "Moya" */,
 				964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				9679D27B2D14123C006FF126 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 962F1B982B79DCD10051C4DA /* Products */;
 			projectDirPath = "";
@@ -750,6 +756,7 @@
 				965C1CFD2C8C887300355DDF /* ProcessView.swift in Sources */,
 				965C1CF42C8C768600355DDF /* HiraganaKatakanaViewController.swift in Sources */,
 				962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */,
+				9679D2812D14423D006FF126 /* Bundle+Ext.swift in Sources */,
 				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
 				96CC76372CEB8AD1002E220D /* Line.swift in Sources */,
 				96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */,
@@ -1091,6 +1098,14 @@
 				minimumVersion = 1.31.0;
 			};
 		};
+		9679D27B2D14123C006FF126 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.13.0;
+			};
+		};
 		96C0FE282D0D490A00A9DC21 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya/";
@@ -1114,6 +1129,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		9679D27C2D14123D006FF126 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9679D27B2D14123C006FF126 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 		96C0FE292D0D490A00A9DC21 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

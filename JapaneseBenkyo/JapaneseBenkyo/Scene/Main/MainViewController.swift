@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     private var process: [String: [String: Bool]] = [:]
     
@@ -23,6 +25,15 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
+        
+#if DEBUG
+        bannerView.adUnitID = Bundle.main.adTestKey
+#else
+        bannerView.adUnitID = Bundle.main.adMyKey
+#endif
+        
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     override func viewWillAppear(_ animated: Bool) {
