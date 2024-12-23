@@ -31,7 +31,7 @@ class RubyAnnotationManager {
         guard let rubyRegex = try? NSRegularExpression(pattern: regexExtractRuby, options: []) else { return nil }
             
         let rubyMatches = rubyRegex.matches(in: html, options: [], range: NSRange(location: 0, length: html.utf16.count))
-        
+        var nsStringRange: NSRange = NSRange(location: 0, length: nsString.length)
         for rubyMatch in rubyMatches {
             guard let rubyRange = Range(rubyMatch.range, in: html) else { continue }
             let rubyText = String(html[rubyRange])
@@ -50,7 +50,9 @@ class RubyAnnotationManager {
                 kCTForegroundColorAttributeName: UIColor.secondaryLabel
             ]
             let rubyAnnotation = CTRubyAnnotationCreateWithAttributes(.auto, .auto, .before, furiganaText as CFString, rubyAttribute as CFDictionary)
-            let rubyAnnotationRange = nsString.range(of: originalText)
+            let rubyAnnotationRange = nsString.range(of: originalText, range: nsStringRange)
+            nsStringRange.length -= rubyAnnotationRange.location + 1 - nsStringRange.location
+            nsStringRange.location = rubyAnnotationRange.location + 1
             attributedString.addAttributes([kCTRubyAnnotationAttributeName as NSAttributedString.Key: rubyAnnotation], range: rubyAnnotationRange)
         }
         return attributedString
