@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq1-5K-GNt">
-                            <rect key="frame" x="15.999999999999996" y="14.333333333333334" width="43.666666666666657" height="21.666666666666664"/>
+                            <rect key="frame" x="15.999999999999996" y="18.333333333333329" width="43.666666666666657" height="21.666666666666671"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                             <buttonConfiguration key="configuration" style="plain"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flg-fQ-tDu">
-                            <rect key="frame" x="15.999999999999996" y="2.3333333333333339" width="43.666666666666657" height="12"/>
+                            <rect key="frame" x="15.999999999999996" y="6.3333333333333321" width="43.666666666666657" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" systemColor="secondaryLabelColor"/>
                             <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" id="6V9-Dd-LhO"/>
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" id="Co0-MN-LJg"/>
                         <constraint firstAttribute="bottom" secondItem="TjJ-Pc-2rw" secondAttribute="bottom" id="LdO-Gm-ECa"/>
-                        <constraint firstItem="yq1-5K-GNt" firstAttribute="centerY" secondItem="EvY-fk-Yil" secondAttribute="centerY" id="Txq-Sa-ASG"/>
+                        <constraint firstItem="yq1-5K-GNt" firstAttribute="centerY" secondItem="EvY-fk-Yil" secondAttribute="centerY" constant="4" id="Txq-Sa-ASG"/>
                         <constraint firstItem="Zi4-dy-I6J" firstAttribute="centerY" secondItem="EvY-fk-Yil" secondAttribute="centerY" id="bcG-xg-lYk"/>
                         <constraint firstItem="flg-fQ-tDu" firstAttribute="centerX" secondItem="yq1-5K-GNt" secondAttribute="centerX" id="mof-x8-HwP"/>
                         <constraint firstItem="yq1-5K-GNt" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="oCx-kO-ecO"/>
