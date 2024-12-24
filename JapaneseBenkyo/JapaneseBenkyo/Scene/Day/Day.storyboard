@@ -96,7 +96,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" restorationIdentifier="GADBannerView" translatesAutoresizingMaskIntoConstraints="NO" id="zQn-nc-TtW" customClass="GADBannerView">
-                                <rect key="frame" x="36.666666666666657" y="768" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFE-Fm-a4o">
@@ -107,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zQn-nc-TtW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3iW-yp-FlN"/>
                             <constraint firstItem="zQn-nc-TtW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ChJ-4p-KAX"/>
                             <constraint firstItem="6fO-lP-q1A" firstAttribute="top" secondItem="xFE-Fm-a4o" secondAttribute="bottom" id="JnW-pT-idx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zQn-nc-TtW" secondAttribute="bottom" id="Sid-qs-gc4"/>
@@ -115,6 +116,7 @@
                             <constraint firstItem="zQn-nc-TtW" firstAttribute="top" secondItem="kNa-2c-O4T" secondAttribute="bottom" id="WqI-TL-zfI"/>
                             <constraint firstItem="kNa-2c-O4T" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dtv-PX-dzM"/>
                             <constraint firstItem="xFE-Fm-a4o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mkN-1l-W88"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zQn-nc-TtW" secondAttribute="trailing" id="pfw-Wj-EUZ"/>
                             <constraint firstItem="kNa-2c-O4T" firstAttribute="top" secondItem="6fO-lP-q1A" secondAttribute="bottom" id="vV6-i7-wf7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kNa-2c-O4T" secondAttribute="trailing" id="vry-1g-6zd"/>
                             <constraint firstItem="xFE-Fm-a4o" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="xJs-I1-NPN"/>

@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import GoogleMobileAds
+import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
@@ -97,5 +98,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
     // Prevent the rootviewcontroller from being popped.
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return navigationController?.viewControllers.count ?? 0 > 1
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
+                
+            })
+        }
     }
 }
