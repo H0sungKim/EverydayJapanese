@@ -35,8 +35,10 @@ class IndexTableViewCell: UITableViewCell {
                 ivProcess.image = UIImage(systemName: "circle")
                 ivProcess.tintColor = .systemGray
             }
-        case .hiragana, .katakana:
-            ivProcess.image = nil
+        case .hiragana:
+            ivProcess.image = UIImage(named: "hiragana_hi.png")!
+        case .katakana:
+            ivProcess.image = UIImage(named: "katakana_ka.png")!
         }
         lbTitle.text = index.rawValue
     }

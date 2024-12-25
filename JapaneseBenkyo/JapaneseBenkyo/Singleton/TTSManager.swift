@@ -7,14 +7,13 @@
 
 import AVFoundation
 
-class TTSManager: NSObject {
+class TTSManager {
     
     public static let shared = TTSManager()
     
     private let synthesizer = AVSpeechSynthesizer()
     
-    private override init() {
-        super.init()
+    private init() {
         synthesizer.usesApplicationAudioSession = true
     }
     

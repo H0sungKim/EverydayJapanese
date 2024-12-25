@@ -115,6 +115,10 @@
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
 		96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */; };
+		96F6B86F2D1C6FBD0022EB14 /* hiragana_hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */; };
+		96F6B8702D1C6FBD0022EB14 /* katakana_ka.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */; };
+		96F6B8712D1C6FBD0022EB14 /* hiragana_hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */; };
+		96F6B8722D1C6FBD0022EB14 /* katakana_ka.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +233,8 @@
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
+		96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiragana_hi.png; sourceTree = "<group>"; };
+		96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = katakana_ka.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -490,6 +496,8 @@
 		96AD6B6D2B79FCEB00F895DE /* res */ = {
 			isa = PBXGroup;
 			children = (
+				96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */,
+				96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */,
 				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
 				96CC76252CEB6F89002E220D /* launch.png */,
 				9615368C2C8433EB00563983 /* jlpt.png */,
@@ -716,6 +724,8 @@
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
 				961536932C84868200563983 /* star.png in Resources */,
 				965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */,
+				96F6B8712D1C6FBD0022EB14 /* hiragana_hi.png in Resources */,
+				96F6B8722D1C6FBD0022EB14 /* katakana_ka.png in Resources */,
 				96BA5B042BA2CF3700E3373C /* n3.json in Resources */,
 				96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */,
 				967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */,
@@ -726,6 +736,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F6B86F2D1C6FBD0022EB14 /* hiragana_hi.png in Resources */,
+				96F6B8702D1C6FBD0022EB14 /* katakana_ka.png in Resources */,
 				96C0F2F02CFDE45600A9DC21 /* kanji5.json in Resources */,
 				96C0F2F12CFDE45600A9DC21 /* kanji4.json in Resources */,
 				96C0F2F22CFDE45600A9DC21 /* n2.json in Resources */,

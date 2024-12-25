@@ -28,15 +28,10 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     func setVisibleAll() {
-        // all kanjisForCell is visible
-        if !kanjisForCell.contains(where: { !$0.isVisible }) {
-            for kanjiForCell in kanjisForCell {
-                kanjiForCell.isVisible = false
-            }
-        } else {
-            for kanjiForCell in kanjisForCell {
-                kanjiForCell.isVisible = true
-            }
+        let hasInvisible: Bool = kanjisForCell.contains(where: { !$0.isVisible })
+        
+        for kanjiForCell in kanjisForCell {
+            kanjiForCell.isVisible = hasInvisible
         }
     }
     
@@ -81,9 +76,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let cell = tableView.cellForRow(at: indexPath) as? KanjiTableViewCell else {
-            return
-        }
+        guard let cell = tableView.cellForRow(at: indexPath) as? KanjiTableViewCell else { return }
         kanjisForCell[indexPath.row].isVisible = !kanjisForCell[indexPath.row].isVisible
         cell.initializeCell(kanjiForCell: kanjisForCell[indexPath.row])
     }

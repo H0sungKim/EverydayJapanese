@@ -18,7 +18,6 @@ class TestResultTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
     }
     
     func initializeView(hiraganaKatakana: String, sound: String, myHiraganaKatakana: String?, myHiraganaKatakanaImage: UIImage) {

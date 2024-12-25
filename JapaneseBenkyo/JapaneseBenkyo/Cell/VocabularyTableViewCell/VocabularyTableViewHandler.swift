@@ -34,15 +34,10 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func setVisibleAll() {
-        // all vocabulariesForCell is visible
-        if !vocabulariesForCell.contains(where: { !$0.isVisible }) {
-            for vocabularyForCell in vocabulariesForCell {
-                vocabularyForCell.isVisible = false
-            }
-        } else {
-            for vocabularyForCell in vocabulariesForCell {
-                vocabularyForCell.isVisible = true
-            }
+        let hasInvisible: Bool = vocabulariesForCell.contains(where: { !$0.isVisible })
+        
+        for vocabularyForCell in vocabulariesForCell {
+            vocabularyForCell.isVisible = hasInvisible
         }
     }
     
@@ -85,10 +80,9 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let cell = tableView.cellForRow(at: indexPath) as? VocabularyTableViewCell {
-            vocabulariesForCell[indexPath.row].isVisible = !vocabulariesForCell[indexPath.row].isVisible
-            cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
-        }
+        guard let cell = tableView.cellForRow(at: indexPath) as? VocabularyTableViewCell else { return }
+        vocabulariesForCell[indexPath.row].isVisible = !vocabulariesForCell[indexPath.row].isVisible
+        cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
