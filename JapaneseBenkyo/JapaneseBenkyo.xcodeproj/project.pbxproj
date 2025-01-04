@@ -66,7 +66,6 @@
 		96C0F2DF2CFDDE9400A9DC21 /* StudyWidegetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 96C0F2CD2CFDDE9200A9DC21 /* StudyWidegetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		96C0F2E72CFDE12800A9DC21 /* IndexEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */; };
 		96C0F2EA2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */; };
-		96C0F2EE2CFDE2F600A9DC21 /* Section+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */; };
 		96C0F2EF2CFDE45000A9DC21 /* kanji1.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D62CEA1217002E220D /* kanji1.json */; };
 		96C0F2F02CFDE45600A9DC21 /* kanji5.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74DA2CEA1217002E220D /* kanji5.json */; };
 		96C0F2F12CFDE45600A9DC21 /* kanji4.json in Resources */ = {isa = PBXBuildFile; fileRef = 96CC74D92CEA1217002E220D /* kanji4.json */; };
@@ -205,7 +204,6 @@
 		96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexEnum.swift; sourceTree = "<group>"; };
 		96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnum.swift; sourceTree = "<group>"; };
-		96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+Ext.swift"; sourceTree = "<group>"; };
 		96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRepository.swift; sourceTree = "<group>"; };
 		96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRestAPI.swift; sourceTree = "<group>"; };
 		96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -543,7 +541,6 @@
 			children = (
 				96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */,
 				96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */,
-				96C0F2EC2CFDE2F600A9DC21 /* Section+Ext.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -761,7 +758,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */,
-				96C0F2EE2CFDE2F600A9DC21 /* Section+Ext.swift in Sources */,
 				967AD8DA2CEC763C001A3397 /* TestResultTableViewCell.swift in Sources */,
 				96C0FF012D0D577200A9DC21 /* ExampleSentenceView.swift in Sources */,
 				965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */,
@@ -968,6 +964,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
@@ -980,7 +977,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.04.02;
+				MARKETING_VERSION = 2.04.05;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1008,7 +1005,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.04.02;
+				MARKETING_VERSION = 2.04.05;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -51,8 +51,8 @@ class RubyAnnotationManager {
             ]
             let rubyAnnotation = CTRubyAnnotationCreateWithAttributes(.auto, .auto, .before, furiganaText as CFString, rubyAttribute as CFDictionary)
             let rubyAnnotationRange = nsString.range(of: originalText, range: nsStringRange)
-            nsStringRange.length -= rubyAnnotationRange.location + 1 - nsStringRange.location
-            nsStringRange.location = rubyAnnotationRange.location + 1
+//            print("\(originalText): \(nsStringRange.location), \(nsStringRange.length)")
+            nsStringRange = NSRange(location: rubyAnnotationRange.location + 1, length: nsStringRange.length - rubyAnnotationRange.location - 1 + nsStringRange.location)
             attributedString.addAttributes([kCTRubyAnnotationAttributeName as NSAttributedString.Key: rubyAnnotation], range: rubyAnnotationRange)
         }
         return attributedString

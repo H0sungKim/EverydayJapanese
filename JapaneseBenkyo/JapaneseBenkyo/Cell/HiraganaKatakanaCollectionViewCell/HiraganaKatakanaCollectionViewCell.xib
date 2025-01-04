@@ -22,13 +22,13 @@
                         <rect key="frame" x="8" y="8" width="183" height="193"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXZ-7b-CcN">
-                                <rect key="frame" x="49.333333333333336" y="4" width="84.666666666666657" height="43"/>
+                                <rect key="frame" x="49.333333333333336" y="75" width="84.666666666666657" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn6-z2-kXJ">
-                                <rect key="frame" x="76" y="47" width="31" height="14.333333333333336"/>
+                                <rect key="frame" x="76" y="118" width="31" height="14.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,8 +37,9 @@
                         <constraints>
                             <constraint firstItem="yn6-z2-kXJ" firstAttribute="centerX" secondItem="RaZ-EY-We3" secondAttribute="centerX" id="H3p-GI-mld"/>
                             <constraint firstItem="yn6-z2-kXJ" firstAttribute="top" secondItem="WXZ-7b-CcN" secondAttribute="bottom" id="JuZ-pD-FkO"/>
-                            <constraint firstItem="WXZ-7b-CcN" firstAttribute="top" secondItem="RaZ-EY-We3" secondAttribute="top" constant="4" id="UWQ-NT-TDe"/>
+                            <constraint firstItem="WXZ-7b-CcN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RaZ-EY-We3" secondAttribute="top" constant="4" id="UWQ-NT-TDe"/>
                             <constraint firstItem="WXZ-7b-CcN" firstAttribute="centerX" secondItem="RaZ-EY-We3" secondAttribute="centerX" id="g70-k1-AEZ"/>
+                            <constraint firstItem="WXZ-7b-CcN" firstAttribute="centerY" secondItem="RaZ-EY-We3" secondAttribute="centerY" id="ukW-ju-LRe"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -60,7 +61,7 @@
     </objects>
     <resources>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
