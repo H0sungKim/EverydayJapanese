@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9600CACF2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */; };
+		9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */; };
+		9600CAD32D364801006E94BA /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CAD22D364801006E94BA /* DrawingView.swift */; };
 		960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B562B7B3FE900D91407 /* JSONManager.swift */; };
 		960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */; };
 		9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9611091A2BAFE3F800AF4C45 /* TTSManager.swift */; };
@@ -109,7 +112,7 @@
 		96CC762B2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CC762A2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard */; };
 		96CC76322CEB8AAE002E220D /* HiraganaKatakanaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76302CEB8AAE002E220D /* HiraganaKatakanaManager.swift */; };
 		96CC76332CEB8AAE002E220D /* OCRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76312CEB8AAE002E220D /* OCRManager.swift */; };
-		96CC76352CEB8ABE002E220D /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76342CEB8ABE002E220D /* DrawingView.swift */; };
+		96CC76352CEB8ABE002E220D /* OCRDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76342CEB8ABE002E220D /* OCRDrawingView.swift */; };
 		96CC76372CEB8AD1002E220D /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76362CEB8AD1002E220D /* Line.swift */; };
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
@@ -145,6 +148,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaPracticeViewController.swift; sourceTree = "<group>"; };
+		9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaPractice.storyboard; sourceTree = "<group>"; };
+		9600CAD22D364801006E94BA /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		960C6B562B7B3FE900D91407 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		9611091A2BAFE3F800AF4C45 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
@@ -226,7 +232,7 @@
 		96CC762A2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTest.storyboard; sourceTree = "<group>"; };
 		96CC76302CEB8AAE002E220D /* HiraganaKatakanaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaManager.swift; sourceTree = "<group>"; };
 		96CC76312CEB8AAE002E220D /* OCRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRManager.swift; sourceTree = "<group>"; };
-		96CC76342CEB8ABE002E220D /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		96CC76342CEB8ABE002E220D /* OCRDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRDrawingView.swift; sourceTree = "<group>"; };
 		96CC76362CEB8AD1002E220D /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
@@ -277,6 +283,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9600CACD2D36464C006E94BA /* HiraganaKatakanaPractice */ = {
+			isa = PBXGroup;
+			children = (
+				9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */,
+				9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */,
+				9600CAD22D364801006E94BA /* DrawingView.swift */,
+			);
+			path = HiraganaKatakanaPractice;
+			sourceTree = "<group>";
+		};
 		960C6B892B7B863C00D91407 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +470,7 @@
 				96AD6B6E2B79FD0400F895DE /* Main */,
 				965C1CFB2C8C885C00355DDF /* ProcessView */,
 				965C1CF22C8C766D00355DDF /* HiraganaKatakana */,
+				9600CACD2D36464C006E94BA /* HiraganaKatakanaPractice */,
 				96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */,
 				967AD8D12CEC6D61001A3397 /* HiraganaKatakanaTestResult */,
 				961536942C8AA68000563983 /* Day */,
@@ -578,7 +595,7 @@
 			children = (
 				96CC76282CEB894A002E220D /* HiraganaKatakanaTestViewController.swift */,
 				96CC762A2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard */,
-				96CC76342CEB8ABE002E220D /* DrawingView.swift */,
+				96CC76342CEB8ABE002E220D /* OCRDrawingView.swift */,
 				96CC76362CEB8AD1002E220D /* Line.swift */,
 			);
 			path = HiraganaKatakanaTest;
@@ -715,6 +732,7 @@
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
 				9679D2832D144394006FF126 /* Secret.plist in Resources */,
 				96BA5B052BA2CF3700E3373C /* n4.json in Resources */,
+				9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */,
 				9615369D2C8AB91400563983 /* Study.storyboard in Resources */,
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
 				961536962C8AA6A200563983 /* Day.storyboard in Resources */,
@@ -764,12 +782,13 @@
 				96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */,
 				96C0F2EA2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */,
 				9615369B2C8AB90A00563983 /* StudyViewController.swift in Sources */,
-				96CC76352CEB8ABE002E220D /* DrawingView.swift in Sources */,
+				96CC76352CEB8ABE002E220D /* OCRDrawingView.swift in Sources */,
 				965C1CFD2C8C887300355DDF /* ProcessView.swift in Sources */,
 				965C1CF42C8C768600355DDF /* HiraganaKatakanaViewController.swift in Sources */,
 				962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */,
 				9679D2812D14423D006FF126 /* Bundle+Ext.swift in Sources */,
 				96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */,
+				9600CAD32D364801006E94BA /* DrawingView.swift in Sources */,
 				96CC76372CEB8AD1002E220D /* Line.swift in Sources */,
 				96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */,
 				961536A22C8C2C7E00563983 /* TestViewController.swift in Sources */,
@@ -783,6 +802,7 @@
 				96C0FEFA2D0D4AA200A9DC21 /* Configuration.swift in Sources */,
 				96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */,
 				96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */,
+				9600CACF2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift in Sources */,
 				9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */,
 				964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
@@ -977,7 +997,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.04.05;
+				MARKETING_VERSION = 2.05.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1005,7 +1025,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.04.05;
+				MARKETING_VERSION = 2.05.00;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

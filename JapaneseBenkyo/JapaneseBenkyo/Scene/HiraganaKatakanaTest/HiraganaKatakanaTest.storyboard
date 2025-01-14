@@ -67,7 +67,7 @@
                                     <constraint firstItem="ot3-1G-bJz" firstAttribute="centerX" secondItem="dj1-gf-1yg" secondAttribute="centerX" id="qZG-p1-7nX"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="DrawingView" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-za-GMb" customClass="DrawingView" customModule="JapaneseBenkyo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" restorationIdentifier="OCRDrawingView" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-za-GMb" customClass="OCRDrawingView" customModule="JapaneseBenkyo" customModuleProvider="target">
                                 <rect key="frame" x="32" y="208.66666666666666" width="329" height="379.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -92,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tC9-Gc-vGU">
-                                <rect key="frame" x="32" y="148" width="39.666666666666657" height="19.333333333333343"/>
+                                <rect key="frame" x="31.999999999999996" y="148" width="39.666666666666657" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -175,7 +175,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="drawingView" destination="iTw-za-GMb" id="G4x-7a-7Bi"/>
                         <outlet property="ivAlert" destination="NGS-g5-dC3" id="vk2-Tf-GLZ"/>
                         <outlet property="ivSection" destination="Vt3-vs-jDL" id="1S8-Pf-Q0B"/>
                         <outlet property="lbAlert" destination="SwG-bh-Fxl" id="2EE-m1-lJO"/>
@@ -184,6 +183,7 @@
                         <outlet property="lbResult" destination="IvK-jq-zYR" id="t0z-ZN-YrH"/>
                         <outlet property="lbSubtitle" destination="4Mi-s3-iD3" id="6gv-Cz-kQ5"/>
                         <outlet property="lbTitle" destination="ot3-1G-bJz" id="nMF-eh-PSp"/>
+                        <outlet property="ocrDrawingView" destination="iTw-za-GMb" id="hyh-Z5-obS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -22,7 +22,7 @@ class HiraganaKatakanaTestViewController: UIViewController {
     
     @IBOutlet weak var lbHiraganaKatakana: UILabel!
     @IBOutlet weak var lbIndex: UILabel!
-    @IBOutlet weak var drawingView: DrawingView!
+    @IBOutlet weak var ocrDrawingView: OCRDrawingView!
     
     @IBOutlet weak var ivAlert: UIImageView!
     @IBOutlet weak var lbAlert: UILabel!
@@ -31,14 +31,14 @@ class HiraganaKatakanaTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawingView.delegate = self
+        ocrDrawingView.delegate = self
         
-        drawingView.layer.borderColor = UIColor.label.cgColor
-        drawingView.layer.borderWidth = 1
+        ocrDrawingView.layer.borderColor = UIColor.label.cgColor
+        ocrDrawingView.layer.borderWidth = 1
         
         ivSection.image = indexEnum?.getSection()?.image
         lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = indexEnum?.rawValue
+        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 테스트"
         
         if let hiraganakatakana = getHiraganaOrKatakana(indexEnum: indexEnum) {
             self.hiraganakatakana = hiraganakatakana.shuffled().filter { $0.0 != "" && $0.1 != "" }
@@ -49,18 +49,18 @@ class HiraganaKatakanaTestViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func onClickUndo(_ sender: Any) {
-        drawingView.undo()
+        ocrDrawingView.undo()
         lbAlert.isHidden = true
         ivAlert.isHidden = true
     }
     @IBAction func onClickClear(_ sender: Any) {
-        drawingView.clear()
+        ocrDrawingView.clear()
         lbAlert.isHidden = true
         ivAlert.isHidden = true
     }
     
     @IBAction func lbSubmit(_ sender: Any) {
-        testResult.append((recognizedText, drawingView.toImage() ?? UIImage()))
+        testResult.append((recognizedText, ocrDrawingView.toImage() ?? UIImage()))
         if index+1 == hiraganakatakana.count {
             var correct: [(String, String, UIImage)] = []
             var wrong: [(String, String, String, UIImage)] = []
@@ -97,7 +97,7 @@ class HiraganaKatakanaTestViewController: UIViewController {
     }
     
     private func updateView() {
-        drawingView.clear()
+        ocrDrawingView.clear()
         lbIndex.text = "\(index+1)/\(hiraganakatakana.count)"
         lbHiraganaKatakana.text = "\(indexEnum?.rawValue ?? "") \(hiraganakatakana[index].1)"
         lbResult.text = "인식된 결과가 없습니다."

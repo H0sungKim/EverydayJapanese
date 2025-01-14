@@ -1,13 +1,13 @@
 //
-//  HiraganaKatakanaViewController.swift
+//  HiraganaKatakanaPracticeViewController.swift
 //  JapaneseBenkyo
 //
-//  Created by 김호성 on 2024.09.07.
+//  Created by 김호성 on 2025.01.14.
 //
 
 import UIKit
 
-class HiraganaKatakanaViewController: UIViewController {
+class HiraganaKatakanaPracticeViewController: UIViewController {
     
     var indexEnum: IndexEnum?
     
@@ -24,9 +24,14 @@ class HiraganaKatakanaViewController: UIViewController {
         }
     }
     
+    private var selected: Int = 0
+    
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbSubtitle: UILabel!
     @IBOutlet weak var ivSection: UIImageView!
+    
+    @IBOutlet weak var lbHiraganaKatakana: UILabel!
+    @IBOutlet weak var drawingView: DrawingView!
     
     @IBOutlet weak var cvHiraganaKatakana: UICollectionView!
     
@@ -35,29 +40,31 @@ class HiraganaKatakanaViewController: UIViewController {
         
         ivSection.image = indexEnum?.getSection()?.image
         lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = indexEnum?.rawValue
+        lbSubtitle.text = "\(indexEnum?.rawValue ?? "" ) 연습"
+        
+        drawingView.layer.borderColor = UIColor.label.cgColor
+        drawingView.layer.borderWidth = 1
         
         cvHiraganaKatakana.delegate = self
         cvHiraganaKatakana.dataSource = self
         cvHiraganaKatakana.register(UINib(nibName: String(describing: HiraganaKatakanaCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: HiraganaKatakanaCollectionViewCell.self))
+        
+        lbHiraganaKatakana.text = collectionData?[selected].0
+        lbHiraganaKatakana.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func onClickTest(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanatest) as! HiraganaKatakanaTestViewController
-        vc.indexEnum = indexEnum
-        navigationController?.pushViewController(vc, animated: true)
+    @IBAction func onClickUndo(_ sender: Any) {
+        drawingView.undo()
     }
-    @IBAction func onClickPractice(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanapractice) as! HiraganaKatakanaPracticeViewController
-        vc.indexEnum = indexEnum
-        navigationController?.pushViewController(vc, animated: true)
+    @IBAction func onClickClear(_ sender: Any) {
+        drawingView.clear()
     }
 }
 
-extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HiraganaKatakanaPracticeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionData?.count ?? 0
     }
@@ -95,9 +102,8 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let collectionData = collectionData else {
-            return
-        }
-        TTSManager.shared.play(line: collectionData[indexPath.row].0)
+        drawingView.clear()
+        selected = indexPath.row
+        lbHiraganaKatakana.text = collectionData?[selected].0
     }
 }
