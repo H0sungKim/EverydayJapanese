@@ -22,7 +22,7 @@
                                 <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" restorationIdentifier="GADBannerView" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-Sa-bDf" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                                <rect key="frame" x="8" y="768" width="377" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXr-kk-fVo">
@@ -37,8 +37,8 @@
                             <constraint firstAttribute="trailing" secondItem="CXr-kk-fVo" secondAttribute="trailing" id="5qk-4V-CVt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOZ-HW-5Ou" secondAttribute="trailing" id="5vQ-1b-OGx"/>
                             <constraint firstItem="CXr-kk-fVo" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SUT-fy-AVP"/>
-                            <constraint firstItem="JiT-Sa-bDf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TOd-he-jiV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JiT-Sa-bDf" secondAttribute="trailing" id="Tb2-mM-Vfh"/>
+                            <constraint firstItem="JiT-Sa-bDf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="TOd-he-jiV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JiT-Sa-bDf" secondAttribute="trailing" constant="8" id="Tb2-mM-Vfh"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WO2-cL-joU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JiT-Sa-bDf" secondAttribute="bottom" id="gtb-ba-Jon"/>
                             <constraint firstItem="JiT-Sa-bDf" firstAttribute="top" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="h4Z-tI-Nyt"/>

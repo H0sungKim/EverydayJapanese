@@ -11,12 +11,41 @@ import Combine
 class OCRDrawingView: DrawingView {
     
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
+    private var ocrEvent: PassthroughSubject<Void, Never> = PassthroughSubject<Void, Never>()
     private let hiraganaKatakanaSample: UIImage = UIImage(resource: .hksamplew).withRenderingMode(.alwaysOriginal).withTintColor(.label)
     
     weak var delegate: DrawingViewDelegate?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        bindUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        bindUI()
+    }
+    
+    private func bindUI() {
+        ocrEvent
+            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] in
+                print("HI")
+                self?.requestExtractText()
+            })
+            .store(in: &cancellable)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        ocrEvent.send(())
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        ocrEvent.send(())
+    }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        requestExtractText()
+        ocrEvent.send(())
     }
     
     private func requestExtractText() {
