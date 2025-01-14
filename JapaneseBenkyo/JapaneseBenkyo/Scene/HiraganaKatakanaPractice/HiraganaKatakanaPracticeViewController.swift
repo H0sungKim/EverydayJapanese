@@ -42,9 +42,6 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
         lbTitle.text = indexEnum?.getSection()?.title
         lbSubtitle.text = "\(indexEnum?.rawValue ?? "" ) 연습"
         
-        drawingView.layer.borderColor = UIColor.label.cgColor
-        drawingView.layer.borderWidth = 1
-        
         cvHiraganaKatakana.delegate = self
         cvHiraganaKatakana.dataSource = self
         cvHiraganaKatakana.register(UINib(nibName: String(describing: HiraganaKatakanaCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: HiraganaKatakanaCollectionViewCell.self))

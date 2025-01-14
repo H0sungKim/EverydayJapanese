@@ -33,9 +33,6 @@ class HiraganaKatakanaTestViewController: UIViewController {
         
         ocrDrawingView.delegate = self
         
-        ocrDrawingView.layer.borderColor = UIColor.label.cgColor
-        ocrDrawingView.layer.borderWidth = 1
-        
         ivSection.image = indexEnum?.getSection()?.image
         lbTitle.text = indexEnum?.getSection()?.title
         lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 테스트"

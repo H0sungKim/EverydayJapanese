@@ -25,11 +25,18 @@
                                 <rect key="frame" x="0.0" y="768" width="393" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXr-kk-fVo">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CXr-kk-fVo" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="4WW-mK-Ixy"/>
+                            <constraint firstAttribute="trailing" secondItem="CXr-kk-fVo" secondAttribute="trailing" id="5qk-4V-CVt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOZ-HW-5Ou" secondAttribute="trailing" id="5vQ-1b-OGx"/>
+                            <constraint firstItem="CXr-kk-fVo" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SUT-fy-AVP"/>
                             <constraint firstItem="JiT-Sa-bDf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TOd-he-jiV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JiT-Sa-bDf" secondAttribute="trailing" id="Tb2-mM-Vfh"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WO2-cL-joU"/>
@@ -37,6 +44,7 @@
                             <constraint firstItem="JiT-Sa-bDf" firstAttribute="top" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="h4Z-tI-Nyt"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kTF-zP-5zT"/>
                             <constraint firstItem="JiT-Sa-bDf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yT4-L9-0Zm"/>
+                            <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="CXr-kk-fVo" secondAttribute="bottom" id="zXg-TO-mBr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -52,6 +60,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
