@@ -86,7 +86,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ps4-BZ-g1y">
-                                <rect key="frame" x="0.0" y="591.66666666666663" width="393" height="226.33333333333337"/>
+                                <rect key="frame" x="0.0" y="592.66666666666663" width="393" height="225.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p17-ek-BgJ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -122,29 +122,39 @@
                                     <action selector="onClickClear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TeQ-dw-WK3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-ao-WQe">
+                                <rect key="frame" x="0.0" y="591.66666666666663" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9OJ-x4-kZS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yfi-8m-ELC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="trailing" secondItem="Yfi-8m-ELC" secondAttribute="trailing" id="B7T-c5-mKo"/>
                             <constraint firstItem="kUn-xc-lOJ" firstAttribute="top" secondItem="qgt-P9-wjH" secondAttribute="bottom" constant="16" id="ESh-wz-sup"/>
+                            <constraint firstItem="ps4-BZ-g1y" firstAttribute="top" secondItem="L4a-ao-WQe" secondAttribute="bottom" id="FeT-iq-euF"/>
                             <constraint firstItem="5wZ-sZ-NuQ" firstAttribute="top" secondItem="qgt-P9-wjH" secondAttribute="bottom" constant="16" id="JOq-vK-p28"/>
                             <constraint firstItem="GlL-Q8-Eu0" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" id="OFc-tv-Rbp"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="bottom" secondItem="ps4-BZ-g1y" secondAttribute="bottom" id="TfU-s3-zzT"/>
                             <constraint firstItem="ps4-BZ-g1y" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" id="Tr2-ga-m0c"/>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="top" secondItem="GlL-Q8-Eu0" secondAttribute="bottom" id="VMe-aH-Qny"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="GlL-Q8-Eu0" secondAttribute="trailing" id="Vi0-MX-Hnc"/>
+                            <constraint firstItem="L4a-ao-WQe" firstAttribute="leading" secondItem="XOt-Nz-Fn4" secondAttribute="leading" id="W1p-Qf-qzd"/>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="top" secondItem="Yfi-8m-ELC" secondAttribute="top" id="ZCH-BE-jbd"/>
                             <constraint firstItem="qgt-P9-wjH" firstAttribute="height" secondItem="Yfi-8m-ELC" secondAttribute="height" multiplier="0.5" id="ZMJ-DM-0eM"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="ps4-BZ-g1y" secondAttribute="trailing" id="aOc-L5-Z5A"/>
                             <constraint firstItem="qgt-P9-wjH" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" constant="32" id="bHw-CX-TXG"/>
                             <constraint firstItem="kUn-xc-lOJ" firstAttribute="leading" secondItem="5wZ-sZ-NuQ" secondAttribute="trailing" constant="16" id="cVN-MR-lxt"/>
+                            <constraint firstItem="L4a-ao-WQe" firstAttribute="top" secondItem="5wZ-sZ-NuQ" secondAttribute="bottom" constant="16" id="ere-uy-SX6"/>
                             <constraint firstItem="GlL-Q8-Eu0" firstAttribute="top" secondItem="XOt-Nz-Fn4" secondAttribute="top" id="fOP-Yk-HnD"/>
+                            <constraint firstAttribute="trailing" secondItem="L4a-ao-WQe" secondAttribute="trailing" id="glu-Xs-Ntn"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="kUn-xc-lOJ" secondAttribute="trailing" constant="32" id="hkk-Vh-J3U"/>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" id="jul-Nm-0X4"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="qgt-P9-wjH" secondAttribute="trailing" constant="32" id="kjb-Of-m81"/>
                             <constraint firstItem="qgt-P9-wjH" firstAttribute="top" secondItem="SUo-UV-xYL" secondAttribute="bottom" constant="32" id="lPZ-A6-qud"/>
-                            <constraint firstItem="ps4-BZ-g1y" firstAttribute="top" secondItem="5wZ-sZ-NuQ" secondAttribute="bottom" constant="16" id="pJx-3t-oRL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -173,6 +183,9 @@
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

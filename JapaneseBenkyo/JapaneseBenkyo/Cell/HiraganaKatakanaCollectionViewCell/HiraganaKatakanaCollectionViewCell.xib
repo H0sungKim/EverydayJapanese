@@ -18,31 +18,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="199" height="209"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5En-tm-1gK">
-                        <rect key="frame" x="57.333333333333336" y="76" width="84.666666666666657" height="57.333333333333343"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geq-Xf-HQd">
+                        <rect key="frame" x="8" y="8" width="183" height="193"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXZ-7b-CcN">
-                                <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn6-z2-kXJ">
-                                <rect key="frame" x="0.0" y="43" width="84.666666666666671" height="14.333333333333336"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5En-tm-1gK">
+                                <rect key="frame" x="49.333333333333336" y="68" width="84.666666666666657" height="57.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXZ-7b-CcN">
+                                        <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn6-z2-kXJ">
+                                        <rect key="frame" x="0.0" y="43" width="84.666666666666671" height="14.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5En-tm-1gK" firstAttribute="centerY" secondItem="Geq-Xf-HQd" secondAttribute="centerY" id="CQN-kL-vVB"/>
+                            <constraint firstItem="5En-tm-1gK" firstAttribute="centerX" secondItem="Geq-Xf-HQd" secondAttribute="centerX" id="H1L-FG-Mdo"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5En-tm-1gK" firstAttribute="centerX" secondItem="uoZ-GY-5nY" secondAttribute="centerX" id="EfT-Md-I4R"/>
-                    <constraint firstItem="5En-tm-1gK" firstAttribute="centerY" secondItem="uoZ-GY-5nY" secondAttribute="centerY" id="vzq-km-fSs"/>
+                    <constraint firstItem="Geq-Xf-HQd" firstAttribute="top" secondItem="uoZ-GY-5nY" secondAttribute="top" constant="8" id="B4I-db-HHN"/>
+                    <constraint firstItem="Geq-Xf-HQd" firstAttribute="leading" secondItem="uoZ-GY-5nY" secondAttribute="leading" constant="8" id="MV7-kB-uB4"/>
+                    <constraint firstAttribute="trailing" secondItem="Geq-Xf-HQd" secondAttribute="trailing" constant="8" id="One-Jv-Amh"/>
+                    <constraint firstAttribute="bottom" secondItem="Geq-Xf-HQd" secondAttribute="bottom" constant="8" id="WfH-Vd-YRt"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="199" height="209"/>
             <connections>
+                <outlet property="borderView" destination="Geq-Xf-HQd" id="21B-lR-QP1"/>
                 <outlet property="lbMain" destination="WXZ-7b-CcN" id="Hnr-s4-GzE"/>
                 <outlet property="lbSub" destination="yn6-z2-kXJ" id="O7S-OB-49v"/>
             </connections>
@@ -51,7 +64,7 @@
     </objects>
     <resources>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

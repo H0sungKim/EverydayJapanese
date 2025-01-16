@@ -30,7 +30,6 @@ class OCRDrawingView: DrawingView {
         ocrEvent
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink(receiveValue: { [weak self] in
-                print("HI")
                 self?.requestExtractText()
             })
             .store(in: &cancellable)

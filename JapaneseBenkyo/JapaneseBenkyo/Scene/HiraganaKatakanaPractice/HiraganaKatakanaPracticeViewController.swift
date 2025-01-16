@@ -78,6 +78,7 @@ extension HiraganaKatakanaPracticeViewController: UICollectionViewDelegate, UICo
         guard let collectionData = collectionData else {
             return cell
         }
+        cell.borderView.layer.borderColor = indexPath.row == selected ? UIColor.label.cgColor : UIColor.clear.cgColor
         cell.lbMain.text = collectionData[indexPath.row].0
         cell.lbSub.text = collectionData[indexPath.row].1
         return cell
@@ -102,5 +103,6 @@ extension HiraganaKatakanaPracticeViewController: UICollectionViewDelegate, UICo
         drawingView.clear()
         selected = indexPath.row
         lbHiraganaKatakana.text = collectionData?[selected].0
+        collectionView.reloadData()
     }
 }

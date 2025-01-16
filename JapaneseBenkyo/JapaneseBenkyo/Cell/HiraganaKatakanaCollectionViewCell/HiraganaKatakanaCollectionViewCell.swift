@@ -8,11 +8,13 @@
 import UIKit
 
 class HiraganaKatakanaCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var backGroundView: UIView!
+    @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var lbMain: UILabel!
     @IBOutlet weak var lbSub: UILabel!
     
     override func awakeFromNib() {
-//        backGroundView.layer.cornerRadius = 25
+        borderView.layer.cornerRadius = 8
+        borderView.layer.borderColor = UIColor.clear.cgColor
+        borderView.layer.borderWidth = 1
     }
 }
