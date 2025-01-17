@@ -1,5 +1,5 @@
 {
-  "originHash" : "607500fb985a3101012a1d672f9c51345220b69184e1d71d8132a16345fb3f63",
+  "originHash" : "144144ce9b93ed52997214a87d41eea63b7d05fd977244fc67f629aeb25b33c2",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
         "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "elephant",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/s2mr/Elephant",
+      "state" : {
+        "revision" : "c6cb1d4e39a3cceadf44c0b95e11230e3eec0904",
+        "version" : "0.1.2"
       }
     },
     {

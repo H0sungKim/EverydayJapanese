@@ -10,6 +10,9 @@
 		9600CACF2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */; };
 		9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */; };
 		9600CAD32D364801006E94BA /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CAD22D364801006E94BA /* DrawingView.swift */; };
+		9600CFA42D3A3EB3006E94BA /* Elephant in Frameworks */ = {isa = PBXBuildFile; productRef = 9600CFA32D3A3EB3006E94BA /* Elephant */; };
+		9600CFA62D3A3F46006E94BA /* StrokeOrderAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CFA52D3A3F46006E94BA /* StrokeOrderAnimationView.swift */; };
+		9600CFAA2D3A3FA4006E94BA /* あ.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9600CFA72D3A3FA4006E94BA /* あ.svg */; };
 		960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B562B7B3FE900D91407 /* JSONManager.swift */; };
 		960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */; };
 		9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9611091A2BAFE3F800AF4C45 /* TTSManager.swift */; };
@@ -151,6 +154,8 @@
 		9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaPracticeViewController.swift; sourceTree = "<group>"; };
 		9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaPractice.storyboard; sourceTree = "<group>"; };
 		9600CAD22D364801006E94BA /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		9600CFA52D3A3F46006E94BA /* StrokeOrderAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeOrderAnimationView.swift; sourceTree = "<group>"; };
+		9600CFA72D3A3FA4006E94BA /* あ.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "あ.svg"; sourceTree = "<group>"; };
 		960C6B562B7B3FE900D91407 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		9611091A2BAFE3F800AF4C45 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
@@ -266,6 +271,7 @@
 				96C0FE352D0D492600A9DC21 /* Moya in Frameworks */,
 				9679D27D2D14123D006FF126 /* GoogleMobileAds in Frameworks */,
 				96C0FE302D0D490A00A9DC21 /* RxMoya in Frameworks */,
+				9600CFA42D3A3EB3006E94BA /* Elephant in Frameworks */,
 				96C0FE332D0D492600A9DC21 /* CombineMoya in Frameworks */,
 				96C0FE2E2D0D490A00A9DC21 /* ReactiveMoya in Frameworks */,
 			);
@@ -289,6 +295,7 @@
 				9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */,
 				9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */,
 				9600CAD22D364801006E94BA /* DrawingView.swift */,
+				9600CFA52D3A3F46006E94BA /* StrokeOrderAnimationView.swift */,
 			);
 			path = HiraganaKatakanaPractice;
 			sourceTree = "<group>";
@@ -511,6 +518,7 @@
 		96AD6B6D2B79FCEB00F895DE /* res */ = {
 			isa = PBXGroup;
 			children = (
+				9600CFA72D3A3FA4006E94BA /* あ.svg */,
 				96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */,
 				96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */,
 				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
@@ -688,6 +696,7 @@
 				96C0FE312D0D492600A9DC21 /* XCRemoteSwiftPackageReference "Moya" */,
 				964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				9679D27B2D14123C006FF126 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				9600CFA22D3A3EB3006E94BA /* XCRemoteSwiftPackageReference "Elephant" */,
 			);
 			productRefGroup = 962F1B982B79DCD10051C4DA /* Products */;
 			projectDirPath = "";
@@ -732,6 +741,7 @@
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
 				9679D2832D144394006FF126 /* Secret.plist in Resources */,
 				96BA5B052BA2CF3700E3373C /* n4.json in Resources */,
+				9600CFAA2D3A3FA4006E94BA /* あ.svg in Resources */,
 				9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */,
 				9615369D2C8AB91400563983 /* Study.storyboard in Resources */,
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
@@ -795,6 +805,7 @@
 				961536982C8AA6BA00563983 /* DayViewController.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,
+				9600CFA62D3A3F46006E94BA /* StrokeOrderAnimationView.swift in Sources */,
 				96CC76292CEB894A002E220D /* HiraganaKatakanaTestViewController.swift in Sources */,
 				96CC76322CEB8AAE002E220D /* HiraganaKatakanaManager.swift in Sources */,
 				96CC76332CEB8AAE002E220D /* OCRManager.swift in Sources */,
@@ -1125,6 +1136,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9600CFA22D3A3EB3006E94BA /* XCRemoteSwiftPackageReference "Elephant" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/s2mr/Elephant";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
 		964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Juanpe/SkeletonView";
@@ -1160,6 +1179,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9600CFA32D3A3EB3006E94BA /* Elephant */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9600CFA22D3A3EB3006E94BA /* XCRemoteSwiftPackageReference "Elephant" */;
+			productName = Elephant;
+		};
 		964943592D0E9F6E000DE5E0 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 964943582D0E9F6E000DE5E0 /* XCRemoteSwiftPackageReference "SkeletonView" */;

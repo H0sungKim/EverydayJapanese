@@ -67,23 +67,13 @@
                                     <constraint firstItem="KhC-Z2-n53" firstAttribute="centerX" secondItem="SUo-UV-xYL" secondAttribute="centerX" id="wBS-dB-lLn"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="StrokeOrderAnimationView" translatesAutoresizingMaskIntoConstraints="NO" id="T9T-Ks-ROI" customClass="StrokeOrderAnimationView" customModule="JapaneseBenkyo" customModuleProvider="target">
+                                <rect key="frame" x="32" y="148.00000000000003" width="329" height="379.66666666666674"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                            </view>
                             <view contentMode="scaleToFill" restorationIdentifier="DrawingView" translatesAutoresizingMaskIntoConstraints="NO" id="qgt-P9-wjH" customClass="DrawingView" customModule="JapaneseBenkyo" customModuleProvider="target">
                                 <rect key="frame" x="32" y="148.00000000000003" width="329" height="379.66666666666674"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-gn-f3R">
-                                        <rect key="frame" x="0.0" y="0.0" width="329" height="379.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
-                                        <color key="textColor" systemColor="quaternaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Yfn-gn-f3R" secondAttribute="bottom" id="ERi-L1-jOO"/>
-                                    <constraint firstItem="Yfn-gn-f3R" firstAttribute="leading" secondItem="qgt-P9-wjH" secondAttribute="leading" id="INA-tA-N2C"/>
-                                    <constraint firstItem="Yfn-gn-f3R" firstAttribute="top" secondItem="qgt-P9-wjH" secondAttribute="top" id="Xk7-WJ-Uqh"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yfn-gn-f3R" secondAttribute="trailing" id="i26-YT-UMN"/>
-                                </constraints>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ps4-BZ-g1y">
                                 <rect key="frame" x="0.0" y="592.66666666666663" width="393" height="225.33333333333337"/>
@@ -134,36 +124,40 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="trailing" secondItem="Yfi-8m-ELC" secondAttribute="trailing" id="B7T-c5-mKo"/>
-                            <constraint firstItem="kUn-xc-lOJ" firstAttribute="top" secondItem="qgt-P9-wjH" secondAttribute="bottom" constant="16" id="ESh-wz-sup"/>
+                            <constraint firstItem="T9T-Ks-ROI" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" constant="32" id="Bi3-5V-8xD"/>
+                            <constraint firstItem="kUn-xc-lOJ" firstAttribute="top" secondItem="T9T-Ks-ROI" secondAttribute="bottom" constant="16" id="ESh-wz-sup"/>
+                            <constraint firstItem="qgt-P9-wjH" firstAttribute="top" secondItem="T9T-Ks-ROI" secondAttribute="top" id="F2t-UO-aWR"/>
                             <constraint firstItem="ps4-BZ-g1y" firstAttribute="top" secondItem="L4a-ao-WQe" secondAttribute="bottom" id="FeT-iq-euF"/>
-                            <constraint firstItem="5wZ-sZ-NuQ" firstAttribute="top" secondItem="qgt-P9-wjH" secondAttribute="bottom" constant="16" id="JOq-vK-p28"/>
+                            <constraint firstItem="5wZ-sZ-NuQ" firstAttribute="top" secondItem="T9T-Ks-ROI" secondAttribute="bottom" constant="16" id="JOq-vK-p28"/>
                             <constraint firstItem="GlL-Q8-Eu0" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" id="OFc-tv-Rbp"/>
+                            <constraint firstItem="T9T-Ks-ROI" firstAttribute="height" secondItem="Yfi-8m-ELC" secondAttribute="height" multiplier="0.5" id="OQv-yC-KUp"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="bottom" secondItem="ps4-BZ-g1y" secondAttribute="bottom" id="TfU-s3-zzT"/>
                             <constraint firstItem="ps4-BZ-g1y" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" id="Tr2-ga-m0c"/>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="top" secondItem="GlL-Q8-Eu0" secondAttribute="bottom" id="VMe-aH-Qny"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="GlL-Q8-Eu0" secondAttribute="trailing" id="Vi0-MX-Hnc"/>
                             <constraint firstItem="L4a-ao-WQe" firstAttribute="leading" secondItem="XOt-Nz-Fn4" secondAttribute="leading" id="W1p-Qf-qzd"/>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="top" secondItem="Yfi-8m-ELC" secondAttribute="top" id="ZCH-BE-jbd"/>
-                            <constraint firstItem="qgt-P9-wjH" firstAttribute="height" secondItem="Yfi-8m-ELC" secondAttribute="height" multiplier="0.5" id="ZMJ-DM-0eM"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="ps4-BZ-g1y" secondAttribute="trailing" id="aOc-L5-Z5A"/>
-                            <constraint firstItem="qgt-P9-wjH" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" constant="32" id="bHw-CX-TXG"/>
                             <constraint firstItem="kUn-xc-lOJ" firstAttribute="leading" secondItem="5wZ-sZ-NuQ" secondAttribute="trailing" constant="16" id="cVN-MR-lxt"/>
                             <constraint firstItem="L4a-ao-WQe" firstAttribute="top" secondItem="5wZ-sZ-NuQ" secondAttribute="bottom" constant="16" id="ere-uy-SX6"/>
                             <constraint firstItem="GlL-Q8-Eu0" firstAttribute="top" secondItem="XOt-Nz-Fn4" secondAttribute="top" id="fOP-Yk-HnD"/>
+                            <constraint firstItem="T9T-Ks-ROI" firstAttribute="trailing" secondItem="qgt-P9-wjH" secondAttribute="trailing" id="gUe-cK-FXd"/>
                             <constraint firstAttribute="trailing" secondItem="L4a-ao-WQe" secondAttribute="trailing" id="glu-Xs-Ntn"/>
+                            <constraint firstItem="qgt-P9-wjH" firstAttribute="leading" secondItem="T9T-Ks-ROI" secondAttribute="leading" id="gy0-Jp-YnM"/>
                             <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="kUn-xc-lOJ" secondAttribute="trailing" constant="32" id="hkk-Vh-J3U"/>
+                            <constraint firstItem="T9T-Ks-ROI" firstAttribute="bottom" secondItem="qgt-P9-wjH" secondAttribute="bottom" id="igj-BI-Qvo"/>
                             <constraint firstItem="SUo-UV-xYL" firstAttribute="leading" secondItem="Yfi-8m-ELC" secondAttribute="leading" id="jul-Nm-0X4"/>
-                            <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="qgt-P9-wjH" secondAttribute="trailing" constant="32" id="kjb-Of-m81"/>
-                            <constraint firstItem="qgt-P9-wjH" firstAttribute="top" secondItem="SUo-UV-xYL" secondAttribute="bottom" constant="32" id="lPZ-A6-qud"/>
+                            <constraint firstItem="Yfi-8m-ELC" firstAttribute="trailing" secondItem="T9T-Ks-ROI" secondAttribute="trailing" constant="32" id="uyh-Na-xjk"/>
+                            <constraint firstItem="T9T-Ks-ROI" firstAttribute="top" secondItem="SUo-UV-xYL" secondAttribute="bottom" constant="32" id="wjy-fD-j77"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cvHiraganaKatakana" destination="ps4-BZ-g1y" id="SAZ-S7-ZEf"/>
                         <outlet property="drawingView" destination="qgt-P9-wjH" id="HTP-eK-dgV"/>
                         <outlet property="ivSection" destination="4wl-2z-lGr" id="5xl-3M-K7q"/>
-                        <outlet property="lbHiraganaKatakana" destination="Yfn-gn-f3R" id="0a2-3C-QHe"/>
                         <outlet property="lbSubtitle" destination="wc9-Wo-iYP" id="HR2-77-UWb"/>
                         <outlet property="lbTitle" destination="KhC-Z2-n53" id="bqL-U5-qWB"/>
+                        <outlet property="strokeOrderAnimationView" destination="T9T-Ks-ROI" id="k2S-G3-Stw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -177,9 +171,6 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="quaternaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.1764705882" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

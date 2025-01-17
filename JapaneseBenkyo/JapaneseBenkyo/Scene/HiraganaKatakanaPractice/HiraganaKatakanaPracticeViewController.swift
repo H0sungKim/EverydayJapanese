@@ -30,7 +30,7 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
     @IBOutlet weak var lbSubtitle: UILabel!
     @IBOutlet weak var ivSection: UIImageView!
     
-    @IBOutlet weak var lbHiraganaKatakana: UILabel!
+    @IBOutlet weak var strokeOrderAnimationView: StrokeOrderAnimationView!
     @IBOutlet weak var drawingView: DrawingView!
     
     @IBOutlet weak var cvHiraganaKatakana: UICollectionView!
@@ -46,8 +46,7 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
         cvHiraganaKatakana.dataSource = self
         cvHiraganaKatakana.register(UINib(nibName: String(describing: HiraganaKatakanaCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: HiraganaKatakanaCollectionViewCell.self))
         
-        lbHiraganaKatakana.text = collectionData?[selected].0
-        lbHiraganaKatakana.adjustsFontSizeToFitWidth = true
+        strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[selected].0)
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -102,7 +101,7 @@ extension HiraganaKatakanaPracticeViewController: UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         drawingView.clear()
         selected = indexPath.row
-        lbHiraganaKatakana.text = collectionData?[selected].0
+        // TODO: Animation
         collectionView.reloadData()
     }
 }
