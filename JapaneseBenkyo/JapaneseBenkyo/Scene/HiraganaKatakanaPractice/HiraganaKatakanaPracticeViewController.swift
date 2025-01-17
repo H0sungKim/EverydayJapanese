@@ -40,7 +40,7 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
         
         ivSection.image = indexEnum?.getSection()?.image
         lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "" ) 연습"
+        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 연습"
         
         cvHiraganaKatakana.delegate = self
         cvHiraganaKatakana.dataSource = self
@@ -101,7 +101,7 @@ extension HiraganaKatakanaPracticeViewController: UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         drawingView.clear()
         selected = indexPath.row
-        // TODO: Animation
+        strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[selected].0)
         collectionView.reloadData()
     }
 }

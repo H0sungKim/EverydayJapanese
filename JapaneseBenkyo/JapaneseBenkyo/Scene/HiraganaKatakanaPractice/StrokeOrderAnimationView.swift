@@ -26,6 +26,9 @@ class StrokeOrderAnimationView: UIView {
     }
     
     func startAnimation(hiraganaKatakana: String?) {
+        svgView?.stopAnimation()
+        svgView?.removeFromSuperview()
+        svgView = nil
         guard let hiraganaKatakana = hiraganaKatakana else { return }
         initializeView(hiraganaKatakana: hiraganaKatakana)
         svgView?.startAnimation()

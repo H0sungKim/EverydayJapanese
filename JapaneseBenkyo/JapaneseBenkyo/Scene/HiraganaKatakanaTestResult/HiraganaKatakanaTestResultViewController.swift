@@ -26,7 +26,7 @@ class HiraganaKatakanaTestResultViewController: UIViewController {
         
         ivSection.image = indexEnum?.getSection()?.image
         lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = indexEnum?.rawValue
+        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 테스트 결과"
         
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: TestResultTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TestResultTableViewCell.self))
