@@ -99,6 +99,7 @@ extension HiraganaKatakanaPracticeViewController: UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionData?[indexPath.row].0 == "" { return }
         drawingView.clear()
         selected = indexPath.row
         strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[selected].0)

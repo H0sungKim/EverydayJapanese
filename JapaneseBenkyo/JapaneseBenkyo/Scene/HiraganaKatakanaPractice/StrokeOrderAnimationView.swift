@@ -10,9 +10,10 @@ import Elephant
 
 class StrokeOrderAnimationView: UIView {
     
-    var svgView: SVGView?
+    private var svgView: SVGView?
     
     private func initializeView(hiraganaKatakana: String) {
+        if hiraganaKatakana == "" { return }
         svgView = SVGView(named: hiraganaKatakana, animationOwner: .svg)
         guard let svgView = svgView else { return }
         self.addSubview(svgView)
