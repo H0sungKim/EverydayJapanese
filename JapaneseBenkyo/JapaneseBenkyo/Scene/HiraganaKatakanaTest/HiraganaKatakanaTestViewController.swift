@@ -22,6 +22,7 @@ class HiraganaKatakanaTestViewController: UIViewController {
     
     @IBOutlet weak var lbHiraganaKatakana: UILabel!
     @IBOutlet weak var lbIndex: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var ocrDrawingView: OCRDrawingView!
     
     @IBOutlet weak var ivAlert: UIImageView!
@@ -104,7 +105,14 @@ class HiraganaKatakanaTestViewController: UIViewController {
 }
 
 extension HiraganaKatakanaTestViewController: DrawingViewDelegate {
+    func willExtractText() {
+        loadingIndicator.startAnimating()
+        lbResult.isHidden = true
+    }
+    
     func didExtractText(text: String?) {
+        loadingIndicator.stopAnimating()
+        lbResult.isHidden = false
         recognizedText = text
         if let text = text {
             lbResult.text = "인식 결과 : \(text)"

@@ -30,6 +30,7 @@ class OCRDrawingView: DrawingView {
         ocrEvent
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink(receiveValue: { [weak self] in
+                self?.delegate?.willExtractText()
                 self?.requestExtractText()
             })
             .store(in: &cancellable)
@@ -63,7 +64,7 @@ class OCRDrawingView: DrawingView {
     override func undo() {
         _ = lines.popLast()
         setNeedsDisplay()
-        requestExtractText()
+        ocrEvent.send(())
     }
     override func clear() {
         lines.removeAll()
@@ -100,5 +101,6 @@ class OCRDrawingView: DrawingView {
 }
 
 protocol DrawingViewDelegate: AnyObject {
+    func willExtractText()
     func didExtractText(text: String?)
 }

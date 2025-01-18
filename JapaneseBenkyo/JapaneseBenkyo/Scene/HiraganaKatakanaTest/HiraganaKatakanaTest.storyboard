@@ -139,11 +139,15 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PSN-E9-ZHh">
+                                <rect key="frame" x="186.66666666666666" y="715" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dj1-gf-1yg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1DW-cj-B5s"/>
+                            <constraint firstItem="PSN-E9-ZHh" firstAttribute="centerY" secondItem="IvK-jq-zYR" secondAttribute="centerY" id="20Q-T4-Frl"/>
                             <constraint firstItem="hmQ-jv-MaL" firstAttribute="leading" secondItem="rRR-wS-tQr" secondAttribute="trailing" constant="16" id="3G1-SG-aEu"/>
                             <constraint firstItem="dj1-gf-1yg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5Lx-EJ-oRt"/>
                             <constraint firstItem="DVW-g9-4bl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Acd-6a-Nqk"/>
@@ -153,6 +157,7 @@
                             <constraint firstItem="rRR-wS-tQr" firstAttribute="leading" secondItem="SwG-bh-Fxl" secondAttribute="trailing" constant="16" id="Er8-lt-dgm"/>
                             <constraint firstItem="SwG-bh-Fxl" firstAttribute="leading" secondItem="NGS-g5-dC3" secondAttribute="trailing" constant="16" id="FIP-85-nC4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DVW-g9-4bl" secondAttribute="trailing" id="J6V-uT-D5y"/>
+                            <constraint firstItem="PSN-E9-ZHh" firstAttribute="centerX" secondItem="IvK-jq-zYR" secondAttribute="centerX" id="JrL-sR-DHN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iTw-za-GMb" secondAttribute="trailing" constant="32" id="MSU-z2-4sy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hmQ-jv-MaL" secondAttribute="trailing" constant="32" id="Okc-9U-nys"/>
                             <constraint firstItem="hmQ-jv-MaL" firstAttribute="top" secondItem="iTw-za-GMb" secondAttribute="bottom" constant="16" id="PLc-WO-8H1"/>
@@ -183,6 +188,7 @@
                         <outlet property="lbResult" destination="IvK-jq-zYR" id="t0z-ZN-YrH"/>
                         <outlet property="lbSubtitle" destination="4Mi-s3-iD3" id="6gv-Cz-kQ5"/>
                         <outlet property="lbTitle" destination="ot3-1G-bJz" id="nMF-eh-PSp"/>
+                        <outlet property="loadingIndicator" destination="PSN-E9-ZHh" id="riX-VB-dtT"/>
                         <outlet property="ocrDrawingView" destination="iTw-za-GMb" id="hyh-Z5-obS"/>
                     </connections>
                 </viewController>
