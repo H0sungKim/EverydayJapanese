@@ -73,8 +73,9 @@ struct StudyWidegetEntryView : View {
                             .minimumScaleFactor(0.5)
                         Text(vocabulary.meaning)
                             .font(Font.system(size: 18))
-                            .lineLimit(1)
+                            .lineLimit(2)
                             .minimumScaleFactor(0.5)
+                            .multilineTextAlignment(.center)
                     }
                 case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
                     if kanjis.count != 0 {
