@@ -700,6 +700,79 @@
 		96AD6B6D2B79FCEB00F895DE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				96C8040F2D48AC60006905BB /* JLPT */,
+				96C8040E2D48AC45006905BB /* Kanji */,
+				96C8040D2D48AC0A006905BB /* StrokeOrder */,
+				96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */,
+				96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */,
+				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
+				96CC76252CEB6F89002E220D /* launch.png */,
+				9615368C2C8433EB00563983 /* jlpt.png */,
+				9615368D2C8433EB00563983 /* kanji.png */,
+				96BA5ABA2BA0A14F00E3373C /* appicon.png */,
+				961536922C84868200563983 /* star.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		96AD6B6E2B79FD0400F895DE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				961536812C82E9AC00563983 /* MainViewController.swift */,
+				9615367F2C82E87C00563983 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		96C0F2CE2CFDDE9200A9DC21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */,
+				96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96C0F2E52CFDE11500A9DC21 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */,
+				96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		96C0FE362D0D49BE00A9DC21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				96C0FEF22D0D4A1000A9DC21 /* Entity */,
+				96C0FEF32D0D4A1700A9DC21 /* Model */,
+				96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */,
+				96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */,
+				96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		96C0FEF22D0D4A1000A9DC21 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				96C0FEFB2D0D4DE500A9DC21 /* TatoebaEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		96C0FEF32D0D4A1700A9DC21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96C8040D2D48AC0A006905BB /* StrokeOrder */ = {
+			isa = PBXGroup;
+			children = (
 				9600D1042D3AA0DD006E94BA /* あ.svg */,
 				9600D1052D3AA0DD006E94BA /* ア.svg */,
 				9600D1062D3AA0DD006E94BA /* い.svg */,
@@ -792,14 +865,13 @@
 				9600D15D2D3AA0DD006E94BA /* ヲ.svg */,
 				9600D15E2D3AA0DD006E94BA /* ん.svg */,
 				9600D15F2D3AA0DD006E94BA /* ン.svg */,
-				96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */,
-				96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */,
-				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
-				96CC76252CEB6F89002E220D /* launch.png */,
-				9615368C2C8433EB00563983 /* jlpt.png */,
-				9615368D2C8433EB00563983 /* kanji.png */,
-				96BA5ABA2BA0A14F00E3373C /* appicon.png */,
-				961536922C84868200563983 /* star.png */,
+			);
+			path = StrokeOrder;
+			sourceTree = "<group>";
+		};
+		96C8040E2D48AC45006905BB /* Kanji */ = {
+			isa = PBXGroup;
+			children = (
 				96CC74D62CEA1217002E220D /* kanji1.json */,
 				96CC74D72CEA1217002E220D /* kanji2.json */,
 				96CC74D82CEA1217002E220D /* kanji3.json */,
@@ -807,68 +879,20 @@
 				96CC74DA2CEA1217002E220D /* kanji5.json */,
 				96CC74DB2CEA1217002E220D /* kanji6.json */,
 				96CC74DC2CEA1217002E220D /* kanji7.json */,
+			);
+			path = Kanji;
+			sourceTree = "<group>";
+		};
+		96C8040F2D48AC60006905BB /* JLPT */ = {
+			isa = PBXGroup;
+			children = (
 				96BA5B012BA2CF3700E3373C /* n1.json */,
 				96BA5B032BA2CF3700E3373C /* n2.json */,
 				96BA5AFF2BA2CF3700E3373C /* n3.json */,
 				96BA5B002BA2CF3700E3373C /* n4.json */,
 				96BA5B022BA2CF3700E3373C /* n5.json */,
 			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		96AD6B6E2B79FD0400F895DE /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				961536812C82E9AC00563983 /* MainViewController.swift */,
-				9615367F2C82E87C00563983 /* Main.storyboard */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		96C0F2CE2CFDDE9200A9DC21 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */,
-				96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		96C0F2E52CFDE11500A9DC21 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				96C0F2E62CFDE12600A9DC21 /* IndexEnum.swift */,
-				96C0F2E92CFDE2DB00A9DC21 /* SectionEnum.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
-		96C0FE362D0D49BE00A9DC21 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				96C0FEF22D0D4A1000A9DC21 /* Entity */,
-				96C0FEF32D0D4A1700A9DC21 /* Model */,
-				96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */,
-				96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */,
-				96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		96C0FEF22D0D4A1000A9DC21 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				96C0FEFB2D0D4DE500A9DC21 /* TatoebaEntity.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		96C0FEF32D0D4A1700A9DC21 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */,
-			);
-			path = Model;
+			path = JLPT;
 			sourceTree = "<group>";
 		};
 		96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */ = {
@@ -1373,7 +1397,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.05;
+				MARKETING_VERSION = 2.05.06;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1402,7 +1426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.05;
+				MARKETING_VERSION = 2.05.06;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

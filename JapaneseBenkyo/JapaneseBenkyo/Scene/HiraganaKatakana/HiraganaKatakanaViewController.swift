@@ -50,11 +50,6 @@ class HiraganaKatakanaViewController: UIViewController {
         vc.indexEnum = indexEnum
         navigationController?.pushViewController(vc, animated: true)
     }
-    @IBAction func onClickPractice(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanapractice) as! HiraganaKatakanaPracticeViewController
-        vc.indexEnum = indexEnum
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -98,6 +93,10 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
         guard let collectionData = collectionData else {
             return
         }
-        TTSManager.shared.play(line: collectionData[indexPath.row].0)
+        if collectionData[indexPath.row].0 == "" { return }
+        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanapractice) as! HiraganaKatakanaPracticeViewController
+        vc.indexEnum = indexEnum
+        vc.selected = indexPath.row
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

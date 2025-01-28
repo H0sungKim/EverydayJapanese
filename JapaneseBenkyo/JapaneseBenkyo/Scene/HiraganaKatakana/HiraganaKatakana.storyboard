@@ -67,21 +67,12 @@
                                 <rect key="frame" x="0.0" y="116" width="393" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-sE-qTi">
-                                        <rect key="frame" x="337.33333333333331" y="7.6666666666666714" width="47.666666666666686" height="35"/>
+                                        <rect key="frame" x="337.33333333333331" y="8" width="47.666666666666686" height="34.333333333333336"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="pencil.and.list.clipboard" catalog="system"/>
                                         <connections>
                                             <action selector="onClickTest:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vpz-ID-5nz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dob-f5-D7E">
-                                        <rect key="frame" x="272" y="7.6666666666666714" width="57.333333333333314" height="35"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="pencil.and.scribble" catalog="system"/>
-                                        <connections>
-                                            <action selector="onClickPractice:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aAV-rc-n9G"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,8 +81,6 @@
                                     <constraint firstAttribute="height" constant="50" id="Gmq-rK-On6"/>
                                     <constraint firstItem="bCr-sE-qTi" firstAttribute="centerY" secondItem="3eD-1m-Bnf" secondAttribute="centerY" id="SzR-qI-w3Q"/>
                                     <constraint firstAttribute="trailing" secondItem="bCr-sE-qTi" secondAttribute="trailing" constant="8" id="jdb-Kp-1rR"/>
-                                    <constraint firstItem="dob-f5-D7E" firstAttribute="centerY" secondItem="3eD-1m-Bnf" secondAttribute="centerY" id="olv-i7-vXH"/>
-                                    <constraint firstItem="bCr-sE-qTi" firstAttribute="leading" secondItem="dob-f5-D7E" secondAttribute="trailing" constant="8" id="yp6-J7-7Gf"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fvy-QD-Gsh">
@@ -144,12 +133,11 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="pencil.and.list.clipboard" catalog="system" width="114" height="128"/>
-        <image name="pencil.and.scribble" catalog="system" width="128" height="86"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
