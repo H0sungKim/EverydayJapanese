@@ -47,35 +47,35 @@
                                 <action selector="onClickLink:" destination="3h7-hO-kvm" eventType="touchUpInside" id="1EU-re-I45"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mI-Ck-7Fr">
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhu-iR-DhR">
                             <rect key="frame" x="16" y="15.999999999999986" width="252" height="255.66666666666663"/>
+                            <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
-                                    <integer key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                             </userDefinedRuntimeAttributes>
-                        </label>
+                        </textView>
                     </subviews>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="TjJ-Pc-2rw" secondAttribute="trailing" id="2mp-1i-s2e"/>
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" id="6V9-Dd-LhO"/>
-                        <constraint firstItem="2x6-j5-fSa" firstAttribute="top" secondItem="2mI-Ck-7Fr" secondAttribute="bottom" constant="4" id="A8T-op-r7y"/>
                         <constraint firstAttribute="trailing" secondItem="2x6-j5-fSa" secondAttribute="trailing" constant="16" id="Av6-ma-GDU"/>
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" id="Co0-MN-LJg"/>
+                        <constraint firstItem="2x6-j5-fSa" firstAttribute="top" secondItem="Zhu-iR-DhR" secondAttribute="bottom" constant="4" id="FBr-eg-nld"/>
+                        <constraint firstItem="Zhu-iR-DhR" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="HS9-Aa-qbj"/>
                         <constraint firstAttribute="bottom" secondItem="TjJ-Pc-2rw" secondAttribute="bottom" id="LdO-Gm-ECa"/>
-                        <constraint firstItem="2mI-Ck-7Fr" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="16" id="OCx-It-6uJ"/>
+                        <constraint firstItem="Zhu-iR-DhR" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="16" id="bNw-P0-5de"/>
                         <constraint firstAttribute="bottom" secondItem="2x6-j5-fSa" secondAttribute="bottom" constant="8" id="ddU-Ed-Qo4"/>
-                        <constraint firstAttribute="trailing" secondItem="2mI-Ck-7Fr" secondAttribute="trailing" constant="16" id="mVL-u9-2YF"/>
-                        <constraint firstItem="2mI-Ck-7Fr" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="rHe-j7-cEi"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wfs-Iy-gYC"/>
+                        <constraint firstAttribute="trailing" secondItem="Zhu-iR-DhR" secondAttribute="trailing" constant="16" id="zK7-hD-sIK"/>
                     </constraints>
                 </view>
             </subviews>
@@ -91,12 +91,15 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnLink" destination="2x6-j5-fSa" id="92S-L8-zqB"/>
-                <outlet property="lbSentence" destination="2mI-Ck-7Fr" id="AEi-n5-adY"/>
+                <outlet property="tvSentence" destination="Zhu-iR-DhR" id="xds-Si-hDa"/>
             </connections>
             <point key="canvasLocation" x="401.52671755725191" y="-397.18309859154931"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -1397,7 +1397,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.06;
+				MARKETING_VERSION = 2.05.07;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1426,7 +1426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.06;
+				MARKETING_VERSION = 2.05.07;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

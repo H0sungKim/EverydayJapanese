@@ -60,7 +60,7 @@ class VocabularyTableViewCell: UITableViewCell {
                 guard let url = URL(string: "https://tatoeba.org/ko/sentences/show/\(exampleSentence.id)"), UIApplication.shared.canOpenURL(url) else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-            expandableAreaView.lbSentence.attributedText = RubyAnnotationManager.shared.getRubyAnnotationString(html: exampleSentence.html, sentence: exampleSentence.text)
+            expandableAreaView.tvSentence.attributedText = RubyAnnotationManager.shared.getRubyAnnotationString(html: exampleSentence.html, sentence: exampleSentence.text)
             expandableAreaView.hideSkeleton()
         }
     }

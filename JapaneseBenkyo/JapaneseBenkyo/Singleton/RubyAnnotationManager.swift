@@ -21,7 +21,7 @@ class RubyAnnotationManager {
         attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 18), range: NSRange(location: 0, length: attributedString.length))
         
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineBreakMode = .byCharWrapping
+        paragraphStyle.lineBreakMode = .byWordWrapping
         paragraphStyle.lineHeightMultiple = 1.5
 
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
@@ -47,7 +47,8 @@ class RubyAnnotationManager {
             
             let rubyAttribute: [CFString: Any] =  [
                 kCTRubyAnnotationSizeFactorAttributeName: 0.5,
-                kCTForegroundColorAttributeName: UIColor.secondaryLabel
+                kCTForegroundColorAttributeName: UIColor.secondaryLabel,
+                kCTFontAttributeName: UIFont.systemFont(ofSize: 9)
             ]
             let rubyAnnotation = CTRubyAnnotationCreateWithAttributes(.auto, .auto, .before, furiganaText as CFString, rubyAttribute as CFDictionary)
             let rubyAnnotationRange = nsString.range(of: originalText, range: nsStringRange)

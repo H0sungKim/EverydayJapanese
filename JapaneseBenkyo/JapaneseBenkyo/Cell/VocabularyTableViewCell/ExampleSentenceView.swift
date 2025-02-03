@@ -12,8 +12,8 @@ class ExampleSentenceView: UIView {
     
     var onClickLink: (() -> Void)?
     
+    @IBOutlet weak var tvSentence: UITextView!
     @IBOutlet weak var btnLink: UIButton!
-    @IBOutlet weak var lbSentence: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +28,7 @@ class ExampleSentenceView: UIView {
     }
     
     func initializeView() {
-        lbSentence.clipsToBounds = true
-        lbSentence.skeletonTextNumberOfLines = 1
+        tvSentence.skeletonTextNumberOfLines = 1
         btnLink.isHiddenWhenSkeletonIsActive = true
         btnLink.isUserInteractionDisabledWhenSkeletonIsActive = true
         let title = "- Tatoeba"
@@ -40,11 +39,11 @@ class ExampleSentenceView: UIView {
     }
     
     func showSkeleton() {
-        lbSentence.showAnimatedGradientSkeleton(transition: .crossDissolve(0))
+        tvSentence.showAnimatedGradientSkeleton(transition: .crossDissolve(0))
         btnLink.showAnimatedGradientSkeleton(transition: .crossDissolve(0))
     }
     func hideSkeleton() {
-        lbSentence.hideSkeleton(transition: .crossDissolve(0))
+        tvSentence.hideSkeleton(transition: .crossDissolve(0))
         btnLink.hideSkeleton(transition: .crossDissolve(0))
     }
     @IBAction func onClickLink(_ sender: UIButton) {
