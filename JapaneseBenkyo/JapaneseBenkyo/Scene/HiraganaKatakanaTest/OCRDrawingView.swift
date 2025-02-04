@@ -64,7 +64,7 @@ class OCRDrawingView: DrawingView {
     override func undo() {
         _ = lines.popLast()
         setNeedsDisplay()
-        ocrEvent.send(())
+        self.delegate?.didExtractText(text: nil)
     }
     override func clear() {
         lines.removeAll()
