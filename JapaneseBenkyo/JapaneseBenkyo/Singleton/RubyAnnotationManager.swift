@@ -23,8 +23,11 @@ class RubyAnnotationManager {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byWordWrapping
         paragraphStyle.lineHeightMultiple = 1.5
-
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
+        
+        attributedString.addAttributes([
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: UIColor.label
+        ], range: NSRange(location: 0, length: attributedString.length))
         
         let regexExtractRuby = #"<ruby>.*?</ruby>"#
 

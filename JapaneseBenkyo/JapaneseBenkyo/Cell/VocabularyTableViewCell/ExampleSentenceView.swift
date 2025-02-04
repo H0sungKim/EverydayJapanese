@@ -29,6 +29,8 @@ class ExampleSentenceView: UIView {
     
     func initializeView() {
         tvSentence.skeletonTextNumberOfLines = 1
+        tvSentence.textColor = .label
+        tvSentence.backgroundColor = .clear
         btnLink.isHiddenWhenSkeletonIsActive = true
         btnLink.isUserInteractionDisabledWhenSkeletonIsActive = true
         let title = "- Tatoeba"
