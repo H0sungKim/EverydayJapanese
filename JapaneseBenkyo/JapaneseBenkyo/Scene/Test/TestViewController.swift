@@ -41,7 +41,7 @@ class TestViewController: UIViewController {
             kanjis?.shuffle()
         case .vocabulary:
             vocabularies?.shuffle()
-        case .hiraganakatagana, nil:
+        default:
             break
         }
         
@@ -106,7 +106,7 @@ class TestViewController: UIViewController {
                 lbLowerSub.text = ""
                 lbSub.text = ""
             }
-        case .hiraganakatagana, nil:
+        default:
             break
         }
     }
@@ -145,7 +145,7 @@ class TestViewController: UIViewController {
                     }
                 }
                 vc.vocabulariesForCell = wrongVacabularies
-            case .hiraganakatagana, nil:
+            default:
                 return
             }
             

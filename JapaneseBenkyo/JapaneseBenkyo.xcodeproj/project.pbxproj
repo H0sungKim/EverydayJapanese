@@ -191,6 +191,10 @@
 		96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */; };
 		96C0FF012D0D577200A9DC21 /* ExampleSentenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */; };
 		96C0FF022D0D577200A9DC21 /* ExampleSentenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */; };
+		96C1342E2D523E57001BA4B4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1342D2D523E57001BA4B4 /* InfoViewController.swift */; };
+		96C134302D524064001BA4B4 /* roundappicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C1342F2D524063001BA4B4 /* roundappicon.png */; };
+		96C134332D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */; };
+		96C134352D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */; };
 		96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExampleWordView.swift */; };
 		96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExampleWordView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
@@ -404,6 +408,10 @@
 		96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatoebaModel.swift; sourceTree = "<group>"; };
 		96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSentenceView.swift; sourceTree = "<group>"; };
 		96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleSentenceView.xib; sourceTree = "<group>"; };
+		96C1342D2D523E57001BA4B4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		96C1342F2D524063001BA4B4 /* roundappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundappicon.png; sourceTree = "<group>"; };
+		96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaSelect.storyboard; sourceTree = "<group>"; };
+		96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaSelectViewController.swift; sourceTree = "<group>"; };
 		96C174172BB590EF006775E5 /* ExampleWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleWordView.swift; sourceTree = "<group>"; };
 		96C174182BB590EF006775E5 /* ExampleWordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleWordView.xib; sourceTree = "<group>"; };
 		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
@@ -658,8 +666,10 @@
 			children = (
 				96AD6B6E2B79FD0400F895DE /* Main */,
 				965C1CFB2C8C885C00355DDF /* ProcessView */,
+				96C1342C2D523E36001BA4B4 /* Info */,
 				965C1CF22C8C766D00355DDF /* HiraganaKatakana */,
 				9600CACD2D36464C006E94BA /* HiraganaKatakanaPractice */,
+				96C134312D525663001BA4B4 /* HiraganaKatakanaSelect */,
 				96CC76272CEB88E8002E220D /* HiraganaKatakanaTest */,
 				967AD8D12CEC6D61001A3397 /* HiraganaKatakanaTestResult */,
 				961536942C8AA68000563983 /* Day */,
@@ -708,6 +718,7 @@
 				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
 				96CC76252CEB6F89002E220D /* launch.png */,
 				9615368C2C8433EB00563983 /* jlpt.png */,
+				96C1342F2D524063001BA4B4 /* roundappicon.png */,
 				9615368D2C8433EB00563983 /* kanji.png */,
 				96BA5ABA2BA0A14F00E3373C /* appicon.png */,
 				961536922C84868200563983 /* star.png */,
@@ -768,6 +779,23 @@
 				96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		96C1342C2D523E36001BA4B4 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				96C1342D2D523E57001BA4B4 /* InfoViewController.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		96C134312D525663001BA4B4 /* HiraganaKatakanaSelect */ = {
+			isa = PBXGroup;
+			children = (
+				96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */,
+				96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */,
+			);
+			path = HiraganaKatakanaSelect;
 			sourceTree = "<group>";
 		};
 		96C8040D2D48AC0A006905BB /* StrokeOrder */ = {
@@ -1027,6 +1055,7 @@
 				96CC74E12CEA1217002E220D /* kanji1.json in Resources */,
 				96CC74E22CEA1217002E220D /* kanji7.json in Resources */,
 				96CC74E32CEA1217002E220D /* kanji3.json in Resources */,
+				96C134302D524064001BA4B4 /* roundappicon.png in Resources */,
 				965C1CF62C8C769C00355DDF /* HiraganaKatakana.storyboard in Resources */,
 				961536A02C8C2C7400563983 /* Test.storyboard in Resources */,
 				96BA5B072BA2CF3700E3373C /* n5.json in Resources */,
@@ -1046,6 +1075,7 @@
 				9600D1622D3AA0DD006E94BA /* も.svg in Resources */,
 				9600D1632D3AA0DD006E94BA /* ヒ.svg in Resources */,
 				9600D1642D3AA0DD006E94BA /* ナ.svg in Resources */,
+				96C134332D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard in Resources */,
 				9600D1652D3AA0DD006E94BA /* ヌ.svg in Resources */,
 				9600D1662D3AA0DD006E94BA /* ア.svg in Resources */,
 				9600D1672D3AA0DD006E94BA /* オ.svg in Resources */,
@@ -1178,6 +1208,7 @@
 				96C0FF012D0D577200A9DC21 /* ExampleSentenceView.swift in Sources */,
 				965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */,
 				96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */,
+				96C134352D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift in Sources */,
 				96C0F2EA2CFDE2DB00A9DC21 /* SectionEnum.swift in Sources */,
 				9615369B2C8AB90A00563983 /* StudyViewController.swift in Sources */,
 				96CC76352CEB8ABE002E220D /* OCRDrawingView.swift in Sources */,
@@ -1219,6 +1250,7 @@
 				961536822C82E9AC00563983 /* MainViewController.swift in Sources */,
 				96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */,
 				964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */,
+				96C1342E2D523E57001BA4B4 /* InfoViewController.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

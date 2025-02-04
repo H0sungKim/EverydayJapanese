@@ -35,8 +35,10 @@ class ExampleSentenceView: UIView {
         btnLink.isUserInteractionDisabledWhenSkeletonIsActive = true
         let title = "- Tatoeba"
         let attributedString = NSMutableAttributedString(string: title)
-        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
-        attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 12), range: NSRange(location: 0, length: title.count))
+        attributedString.addAttributes([
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .font: UIFont.systemFont(ofSize: 12)
+        ], range: NSRange(location: 0, length: title.count))
         btnLink.setAttributedTitle(attributedString, for: .normal)
     }
     

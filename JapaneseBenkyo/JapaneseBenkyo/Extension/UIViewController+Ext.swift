@@ -11,6 +11,7 @@ import UIKit
 enum ViewControllerEnum: String, CaseIterable {
     case hiraganakatakana
     case hiraganakatakanapractice
+    case hiraganakatakanaselect
     case hiraganakatakanatest
     case hiraganakatakanatestresult
     case day
@@ -28,6 +29,8 @@ extension UIViewController {
             return getViewController(storyboard: "HiraganaKatakana", identifier: String(describing: HiraganaKatakanaViewController.self), modalPresentationStyle: .fullScreen)
         case .hiraganakatakanapractice:
             return getViewController(storyboard: "HiraganaKatakanaPractice", identifier: String(describing: HiraganaKatakanaPracticeViewController.self), modalPresentationStyle: .fullScreen)
+        case .hiraganakatakanaselect:
+            return getViewController(storyboard: "HiraganaKatakanaSelect", identifier: String(describing: HiraganaKatakanaSelectViewController.self), modalPresentationStyle: .fullScreen)
         case .hiraganakatakanatest:
             return getViewController(storyboard: "HiraganaKatakanaTest", identifier: String(describing: HiraganaKatakanaTestViewController.self), modalPresentationStyle: .fullScreen)
         case .hiraganakatakanatestresult:

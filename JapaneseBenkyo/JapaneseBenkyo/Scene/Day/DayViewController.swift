@@ -146,7 +146,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 vc.vocabulariesForCell = vocabulariesDayDistributed?[indexPath.row-1].map { VocabularyForCell(vocabulary: $0) }
             }
-        case .hiraganakatagana, nil:
+        default:
             break
         }
         

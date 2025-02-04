@@ -65,7 +65,7 @@ class TestResultViewController: UIViewController {
             tableView.dataSource = vocabularyTableViewHandler
             tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
             initializeScoreView(wrongCount: vocabulariesForCell.count)
-        case .hiraganakatagana, nil:
+        default:
             return
         }
         
@@ -93,7 +93,7 @@ class TestResultViewController: UIViewController {
             kanjiTableViewHandler?.addBookmarkAll()
         case .vocabulary:
             vocabularyTableViewHandler?.addBookmarkAll()
-        case .hiraganakatagana, nil:
+        default:
             return
         }
         sender.isEnabled = false
@@ -111,7 +111,7 @@ class TestResultViewController: UIViewController {
             vc.kanjis = kanjisForCell?.map { $0.kanji }
         case .vocabulary:
             vc.vocabularies = vocabulariesForCell?.map { $0.vocabulary }
-        case .hiraganakatagana, nil:
+        default:
             return
         }
         navigationController?.replaceViewController(viewController: vc, animated: true)

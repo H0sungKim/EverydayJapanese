@@ -29,8 +29,7 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
     @IBOutlet weak var lbSubtitle: UILabel!
     @IBOutlet weak var ivSection: UIImageView!
     
-    @IBOutlet weak var lbMain: UILabel!
-    @IBOutlet weak var lbSub: UILabel!
+    @IBOutlet weak var btnMain: UIButton!
     
     @IBOutlet weak var strokeOrderAnimationView: StrokeOrderAnimationView!
     @IBOutlet weak var drawingView: DrawingView!
@@ -42,10 +41,40 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
         lbTitle.text = indexEnum?.getSection()?.title
         lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 연습"
         
-        lbMain.text = collectionData?[selected].0
-        lbSub.text = collectionData?[selected].1
+        initializeView()
+    }
+    
+    private func initializeView() {
+        var configuration = UIButton.Configuration.plain()
         
+        configuration.titleAlignment = .center
+        configuration.attributedTitle = AttributedString(collectionData?[selected].0 ?? "", attributes: AttributeContainer([
+            .foregroundColor: UIColor.label,
+            .font: UIFont.systemFont(ofSize: 48, weight: .bold)
+        ]))
+        configuration.attributedSubtitle = AttributedString(collectionData?[selected].1 ?? "", attributes: AttributeContainer([
+            .foregroundColor: UIColor.secondaryLabel,
+            .font: UIFont.systemFont(ofSize: 18)
+        ]))
+        btnMain.configuration = configuration
         strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[selected ?? 0].0)
+    }
+    
+    @IBAction func onClickMain(_ sender: Any) {
+        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanaselect)
+        if let vc = vc as? HiraganaKatakanaSelectViewController {
+            vc.indexEnum = indexEnum
+            vc.selected = selected
+            vc.applySelected = { [weak self] index in
+                self?.selected = index
+                self?.initializeView()
+            }
+        }
+        vc.modalPresentationStyle = .pageSheet
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(vc, animated: true)
     }
     
     @IBAction func onClickBack(_ sender: Any) {

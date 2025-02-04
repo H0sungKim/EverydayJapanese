@@ -19,6 +19,7 @@ enum SectionEnum: CaseIterable {
     case hiraganakatagana
     case kanji
     case vocabulary
+//    case info
 }
 
 extension SectionEnum: Section {
@@ -30,6 +31,8 @@ extension SectionEnum: Section {
             return "일본 상용한자"
         case .vocabulary:
             return "JLPT 단어장"
+//        case .info:
+//            return "앱 정보"
         }
     }
     
@@ -41,6 +44,8 @@ extension SectionEnum: Section {
             return UIImage(named: "kanji.png")!
         case .vocabulary:
             return UIImage(named: "jlpt.png")!
+//        case .info:
+//            return UIImage(named: "roundappicon.png")!
         }
     }
     
@@ -71,6 +76,8 @@ extension SectionEnum: Section {
                 .n2,
                 .n1,
             ]
+//        case .info:
+//            return []
         }
     }
     
@@ -82,6 +89,8 @@ extension SectionEnum: Section {
             return KanjiTableViewCell.self
         case .vocabulary:
             return VocabularyTableViewCell.self
+//        case .info:
+//            return UITableViewCell.self
         }
     }
 }

@@ -57,6 +57,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return SectionEnum.kanji.indexs.count+1
         case .vocabulary :
             return SectionEnum.vocabulary.indexs.count+1
+//        case .info:
+//            return SectionEnum.info.indexs.count+1
         }
     }
     
@@ -95,8 +97,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             vc.sectionEnum = SectionEnum.allCases[indexPath.section]
             
             switch SectionEnum.allCases[indexPath.section] {
-            case .hiraganakatagana:
-                break
             case .kanji:
                 if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
                     vc.kanjisForCell = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData).map { KanjiForCell(kanji: $0) }
@@ -107,6 +107,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                     vc.vocabulariesForCell = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData).map { VocabularyForCell(vocabulary: $0) }
                 }
                 navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
             }
         case .hiragana:
             let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakana) as! HiraganaKatakanaViewController

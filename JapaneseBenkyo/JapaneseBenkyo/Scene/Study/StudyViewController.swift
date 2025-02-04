@@ -65,7 +65,7 @@ class StudyViewController: UIViewController {
             tableView.delegate = vocabularyTableViewHandler
             tableView.dataSource = vocabularyTableViewHandler
             tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
-        case .hiraganakatagana, nil:
+        default:
             return
         }
     }
@@ -81,7 +81,7 @@ class StudyViewController: UIViewController {
             kanjiTableViewHandler?.setVisibleAll()
         case .vocabulary:
             vocabularyTableViewHandler?.setVisibleAll()
-        case .hiraganakatagana, nil:
+        default:
             return
         }
         tableView.reloadData()
@@ -98,7 +98,7 @@ class StudyViewController: UIViewController {
             vc.kanjis = kanjisForCell?.map { $0.kanji }
         case .vocabulary:
             vc.vocabularies = vocabulariesForCell?.map { $0.vocabulary }
-        case .hiraganakatagana, nil:
+        default:
             return
         }
         navigationController?.pushViewController(vc, animated: true)
@@ -110,7 +110,7 @@ class StudyViewController: UIViewController {
             kanjiTableViewHandler?.shuffleKanjis()
         case .vocabulary:
             vocabularyTableViewHandler?.shuffleVocabularies()
-        case .hiraganakatagana, nil:
+        default:
             return
         }
         tableView.reloadData()
