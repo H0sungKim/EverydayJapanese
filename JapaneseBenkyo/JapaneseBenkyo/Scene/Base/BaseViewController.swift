@@ -13,17 +13,11 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bannerView: GADBannerView!
     
+    private var containerViewController: UINavigationController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let containerChildViewController = UINavigationController(rootViewController: UIViewController.getViewController(viewControllerEnum: .main))
-        containerChildViewController.setNavigationBarHidden(true, animated: false)
-        containerChildViewController.interactivePopGestureRecognizer?.isEnabled = true
-        containerChildViewController.interactivePopGestureRecognizer?.delegate = self
-        addChild(containerChildViewController)
-        containerChildViewController.view.frame = containerView.bounds
-        containerView.addSubview(containerChildViewController.view)
-        containerChildViewController.didMove(toParent: self)
+        setupContainerViewController()
 #if DEBUG
         bannerView.adUnitID = Bundle.main.adTestKey
 #else
@@ -32,11 +26,23 @@ class BaseViewController: UIViewController {
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
     }
+    
+    private func setupContainerViewController() {
+        containerViewController = UINavigationController(rootViewController: UIViewController.getViewController(viewControllerEnum: .main))
+        guard let containerViewController = containerViewController else { return }
+        containerViewController.setNavigationBarHidden(true, animated: false)
+        containerViewController.interactivePopGestureRecognizer?.isEnabled = true
+        containerViewController.interactivePopGestureRecognizer?.delegate = self
+        addChild(containerViewController)
+        containerViewController.view.frame = containerView.bounds
+        containerView.addSubview(containerViewController.view)
+        containerViewController.didMove(toParent: self)
+    }
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {
     // Prevent the rootviewcontroller from being popped.
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return navigationController?.viewControllers.count ?? 0 > 1
+        return containerViewController?.viewControllers.count ?? 0 > 1
     }
 }
