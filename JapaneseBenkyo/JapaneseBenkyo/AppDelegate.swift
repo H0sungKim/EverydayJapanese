@@ -11,10 +11,9 @@ import GoogleMobileAds
 import AppTrackingTransparency
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // For splash launchscreen.
@@ -27,14 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
         if let window = window {
             window.backgroundColor = UIColor.white
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+            let viewController = UIViewController.getViewController(viewControllerEnum: .base)
             
-            navigationController = UINavigationController.init(rootViewController:viewController)
-            navigationController?.setNavigationBarHidden(true, animated: false)
-            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-            navigationController?.interactivePopGestureRecognizer?.delegate = self
-            window.rootViewController = navigationController
+            window.rootViewController = viewController
             window.makeKeyAndVisible()
             
             // Without this block, the music will stop when you play TTS.
@@ -93,11 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
     // Hold the screen vertically.
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return .portrait
-    }
-    
-    // Prevent the rootviewcontroller from being popped.
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return navigationController?.viewControllers.count ?? 0 > 1
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

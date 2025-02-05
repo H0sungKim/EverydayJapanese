@@ -18,13 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-HW-5Ou">
-                                <rect key="frame" x="0.0" y="59" width="393" height="709"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" restorationIdentifier="GADBannerView" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-Sa-bDf" customClass="GADBannerView">
-                                <rect key="frame" x="8" y="768" width="377" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXr-kk-fVo">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -37,18 +33,13 @@
                             <constraint firstAttribute="trailing" secondItem="CXr-kk-fVo" secondAttribute="trailing" id="5qk-4V-CVt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOZ-HW-5Ou" secondAttribute="trailing" id="5vQ-1b-OGx"/>
                             <constraint firstItem="CXr-kk-fVo" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SUT-fy-AVP"/>
-                            <constraint firstItem="JiT-Sa-bDf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="TOd-he-jiV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JiT-Sa-bDf" secondAttribute="trailing" constant="8" id="Tb2-mM-Vfh"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WO2-cL-joU"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JiT-Sa-bDf" secondAttribute="bottom" id="gtb-ba-Jon"/>
-                            <constraint firstItem="JiT-Sa-bDf" firstAttribute="top" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="h4Z-tI-Nyt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="ZSM-Mk-rFQ"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kTF-zP-5zT"/>
-                            <constraint firstItem="JiT-Sa-bDf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yT4-L9-0Zm"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="CXr-kk-fVo" secondAttribute="bottom" id="zXg-TO-mBr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bannerView" destination="JiT-Sa-bDf" id="ZhW-EE-y2w"/>
                         <outlet property="tableView" destination="fOZ-HW-5Ou" id="0QW-9f-3dE"/>
                     </connections>
                 </viewController>

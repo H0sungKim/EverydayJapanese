@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 class DayViewController: UIViewController {
     
@@ -24,9 +23,7 @@ class DayViewController: UIViewController {
     @IBOutlet weak var processView: ProcessView!
     @IBOutlet weak var lbProcess: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var bannerView: GADBannerView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,15 +33,6 @@ class DayViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 64
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
-        
-#if DEBUG
-        bannerView.adUnitID = Bundle.main.adTestKey
-#else
-        bannerView.adUnitID = Bundle.main.adMyKey
-#endif
-        
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
     }
     
     override func viewWillAppear(_ animated: Bool) {

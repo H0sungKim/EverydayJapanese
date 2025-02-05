@@ -195,6 +195,8 @@
 		96C134302D524064001BA4B4 /* roundappicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C1342F2D524063001BA4B4 /* roundappicon.png */; };
 		96C134332D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */; };
 		96C134352D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */; };
+		96C134572D53C2D4001BA4B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C134562D53C2D4001BA4B4 /* BaseViewController.swift */; };
+		96C134592D53C2DB001BA4B4 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134582D53C2DB001BA4B4 /* Base.storyboard */; };
 		96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExampleWordView.swift */; };
 		96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExampleWordView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
@@ -412,6 +414,8 @@
 		96C1342F2D524063001BA4B4 /* roundappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundappicon.png; sourceTree = "<group>"; };
 		96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaSelect.storyboard; sourceTree = "<group>"; };
 		96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaSelectViewController.swift; sourceTree = "<group>"; };
+		96C134562D53C2D4001BA4B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		96C134582D53C2DB001BA4B4 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
 		96C174172BB590EF006775E5 /* ExampleWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleWordView.swift; sourceTree = "<group>"; };
 		96C174182BB590EF006775E5 /* ExampleWordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleWordView.xib; sourceTree = "<group>"; };
 		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
@@ -664,6 +668,7 @@
 		967AD8DC2CEC9175001A3397 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				96C134552D53C2B8001BA4B4 /* Base */,
 				96AD6B6E2B79FD0400F895DE /* Main */,
 				965C1CFB2C8C885C00355DDF /* ProcessView */,
 				96C1342C2D523E36001BA4B4 /* Info */,
@@ -796,6 +801,15 @@
 				96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */,
 			);
 			path = HiraganaKatakanaSelect;
+			sourceTree = "<group>";
+		};
+		96C134552D53C2B8001BA4B4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				96C134562D53C2D4001BA4B4 /* BaseViewController.swift */,
+				96C134582D53C2DB001BA4B4 /* Base.storyboard */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		96C8040D2D48AC0A006905BB /* StrokeOrder */ = {
@@ -1120,6 +1134,7 @@
 				9600D18E2D3AA0DD006E94BA /* に.svg in Resources */,
 				9600D18F2D3AA0DD006E94BA /* ヲ.svg in Resources */,
 				9600D1902D3AA0DD006E94BA /* さ.svg in Resources */,
+				96C134592D53C2DB001BA4B4 /* Base.storyboard in Resources */,
 				9600D1912D3AA0DD006E94BA /* ん.svg in Resources */,
 				9600D1922D3AA0DD006E94BA /* ミ.svg in Resources */,
 				9600D1932D3AA0DD006E94BA /* ト.svg in Resources */,
@@ -1248,6 +1263,7 @@
 				9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */,
 				961536892C84315900563983 /* IndexTableViewCell.swift in Sources */,
 				961536822C82E9AC00563983 /* MainViewController.swift in Sources */,
+				96C134572D53C2D4001BA4B4 /* BaseViewController.swift in Sources */,
 				96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */,
 				964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */,
 				96C1342E2D523E57001BA4B4 /* InfoViewController.swift in Sources */,
@@ -1429,7 +1445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.08;
+				MARKETING_VERSION = 2.05.09;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1458,7 +1474,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.08;
+				MARKETING_VERSION = 2.05.09;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
