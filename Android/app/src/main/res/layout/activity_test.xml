@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".scene.main.StudyActivity">
+
+        <com.constant.everydayjapanese.view.NavigationView
+            android:id="@+id/navigationview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/navigation_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_previous"
+            android:layout_width="@dimen/icon_size_xs"
+            android:layout_height="@dimen/icon_size_xs"
+            app:layout_constraintEnd_toStartOf="@id/relativelayout_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/img_left"
+            />
+
+        <RelativeLayout
+            android:id="@+id/relativelayout_card"
+            android:layout_width="200dp"
+            android:layout_height="350dp"
+            android:background="@color/bg3"
+            android:padding="@dimen/space_s"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textview_count"
+                style="@style/font_p1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/fg0" />
+
+            <TextView
+                android:id="@+id/textview_upper_sub1"
+                style="@style/font_p2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textview_upper_sub2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_x3s"
+                android:textColor="@color/fg4" />
+            <TextView
+                android:id="@+id/textview_upper_sub2"
+                style="@style/font_p2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textview_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_x3s"
+                android:textColor="@color/fg4" />
+
+            <TextView
+                android:id="@+id/textview_main"
+                style="@style/font_t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/space_x3s"
+                android:textColor="@color/fg0" />
+
+            <TextView
+                android:id="@+id/textview_lower_sub"
+                style="@style/font_p1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textview_main"
+                android:layout_marginBottom="@dimen/space_x3s"
+                android:textColor="@color/fg0" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_m"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relativelayout_card">
+
+            <ImageView
+                android:id="@+id/button_wrong"
+                android:layout_width="@dimen/icon_size_xs"
+                android:layout_height="@dimen/icon_size_xs"
+                android:layout_marginEnd="@dimen/space_x6l"
+                android:src="@drawable/img_wrong"
+                app:tint="@color/fg_red" />
+
+            <ImageView
+                android:id="@+id/button_correct"
+                android:layout_width="@dimen/icon_size_xs"
+                android:layout_height="@dimen/icon_size_xs"
+                android:src="@drawable/img_correct"
+                app:tint="@color/fg_blue" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,6 +1,7 @@
 package com.constant.everydayjapanese.scene.main
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -473,6 +474,11 @@ class StudyActivity : AppCompatActivity() {
                     }
                 },
             )
+
+            buttonTest.setOnClickListener {
+                val intent = Intent(this@StudyActivity, TestActivity::class.java)
+                startActivity(intent)
+            }
 
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
                 kanjiAdapter = KanjiAdapter(this@StudyActivity)

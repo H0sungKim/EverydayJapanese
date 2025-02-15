@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.constant.everydayjapanese" >
+    package="com.constant.everydayjapanese">
 
     <application
         android:name=".basic.EverydayJapaneseApplication"
@@ -14,12 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EverydayJapanese"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".scene.main.TestActivity"
+            android:exported="false" />
         <activity
             android:name=".scene.main.StudyActivity"
-            android:exported="false" 
-	    android:screenOrientation="portrait" 
-	    />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".scene.main.DayActivity"
             android:exported="false"
@@ -27,7 +29,7 @@
         <activity
             android:name=".scene.main.MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
