@@ -141,7 +141,6 @@
 		9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */; };
 		9679D27D2D14123D006FF126 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 9679D27C2D14123D006FF126 /* GoogleMobileAds */; };
 		9679D2812D14423D006FF126 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D2802D14423D006FF126 /* Bundle+Ext.swift */; };
-		9679D2832D144394006FF126 /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9679D2822D144394006FF126 /* Secret.plist */; };
 		967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */; };
 		967AD8D52CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */; };
 		967AD8D82CEC756F001A3397 /* TestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */; };
@@ -381,7 +380,6 @@
 		965C1CFC2C8C887300355DDF /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
 		9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyAnnotationManager.swift; sourceTree = "<group>"; };
 		9679D2802D14423D006FF126 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
-		9679D2822D144394006FF126 /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
 		967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTestResult.storyboard; sourceTree = "<group>"; };
 		967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaTestResultViewController.swift; sourceTree = "<group>"; };
 		967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -578,7 +576,6 @@
 				962F1BA32B79DCD20051C4DA /* Assets.xcassets */,
 				962F1BA52B79DCD20051C4DA /* LaunchScreen.storyboard */,
 				962F1BA82B79DCD20051C4DA /* Info.plist */,
-				9679D2822D144394006FF126 /* Secret.plist */,
 			);
 			path = JapaneseBenkyo;
 			sourceTree = "<group>";
@@ -1079,7 +1076,6 @@
 				96CC762B2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
-				9679D2832D144394006FF126 /* Secret.plist in Resources */,
 				96BA5B052BA2CF3700E3373C /* n4.json in Resources */,
 				9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */,
 				9615369D2C8AB91400563983 /* Study.storyboard in Resources */,
@@ -1445,7 +1441,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.09;
+				MARKETING_VERSION = 2.05.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1474,7 +1470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.05.09;
+				MARKETING_VERSION = 2.05.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
