@@ -7,6 +7,7 @@ import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityTestBinding
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
+import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.IndexEnum
 import com.constant.everydayjapanese.util.SectionEnum
@@ -33,6 +34,8 @@ class TestActivity : AppCompatActivity() {
     }
     // Public Constant
     // Private Constant
+    private val TAG = nonNull(this::class.simpleName)
+
     // Public Variable
     // Private Variable
     private lateinit var binding: ActivityTestBinding
@@ -96,6 +99,9 @@ class TestActivity : AppCompatActivity() {
             }
             buttonPrevious.setOnClickListener {
                 moveOnToPrevious()
+            }
+            relativelayoutCard.setOnClickListener {
+                HHLog.d(TAG, "onClick")
             }
         }
         updateTestField()
