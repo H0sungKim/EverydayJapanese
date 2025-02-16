@@ -1,5 +1,6 @@
 package com.constant.everydayjapanese.scene.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -102,7 +103,13 @@ class TestActivity : AppCompatActivity() {
             }
             relativelayoutCard.setOnClickListener {
                 HHLog.d(TAG, "onClick")
+                if (textviewUpperSub1.visibility == View.VISIBLE) {
+                    showText(false)
+                } else {
+                    showText(true)
+                }
             }
+            showText(false)
         }
         updateTestField()
     }
@@ -117,7 +124,7 @@ class TestActivity : AppCompatActivity() {
         when (param.indexEnum.getSection()) {
             SectionEnum.kanji -> {
                 param.kanjis?.let { kanjis ->
-                    binding.textviewIndex.text = "$index/${kanjis.size}"
+                    binding.textviewIndex.text = "${index+1}/${kanjis.size}"
                     val kanji = kanjis.get(index)
                     binding.textviewUpperSub1.text = kanji.jpSound
                     binding.textviewUpperSub2.text = kanji.jpMeaning
@@ -127,7 +134,7 @@ class TestActivity : AppCompatActivity() {
             }
             SectionEnum.vocabulary -> {
                 param.vocabularies?.let { vocabularies ->
-                    binding.textviewIndex.text = "$index/${vocabularies.size}"
+                    binding.textviewIndex.text = "${index+1}/${vocabularies.size}"
                     val vocabulary = vocabularies.get(index)
                     binding.textviewUpperSub1.text = ""
                     binding.textviewUpperSub2.text = vocabulary.sound
@@ -140,13 +147,17 @@ class TestActivity : AppCompatActivity() {
 
             }
         }
+        showText(false)
     }
 
     private fun moveOnToNext() {
         index += 1
         if ((param.indexEnum.getSection() == SectionEnum.kanji &&  index == kanjis?.size) ||
                 (param.indexEnum.getSection() == SectionEnum.vocabulary &&  index == vocabularies?.size)) {
-            // goto test result
+            val intent = Intent(this@TestActivity, TestResultActivity::class.java)
+            intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum)
+            intent.putExtra(TestResultActivity.EXTRA_DAY, param.day)
+            startActivity(intent)
             return
         }
         isVisible = false
@@ -161,5 +172,17 @@ class TestActivity : AppCompatActivity() {
         testResult.removeLast()
         isVisible = false
         updateTestField()
+    }
+
+    private fun showText(isShow:Boolean) {
+        if (isShow) {
+            binding.textviewUpperSub1.visibility = View.VISIBLE
+            binding.textviewUpperSub2.visibility = View.VISIBLE
+            binding.textviewLowerSub.visibility = View.VISIBLE
+        } else {
+            binding.textviewUpperSub1.visibility = View.INVISIBLE
+            binding.textviewUpperSub2.visibility = View.INVISIBLE
+            binding.textviewLowerSub.visibility = View.INVISIBLE
+        }
     }
 }

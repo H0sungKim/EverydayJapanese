@@ -14,6 +14,11 @@ import com.constant.everydayjapanese.view.NavigationView
 class TestResultActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
     // companion object
+    companion object {
+        public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
+        public val EXTRA_DAY = "EXTRA_DAY"
+    }
+
     // Public Constant
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
