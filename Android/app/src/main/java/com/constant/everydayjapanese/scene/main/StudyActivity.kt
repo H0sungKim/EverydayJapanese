@@ -477,6 +477,23 @@ class StudyActivity : AppCompatActivity() {
 
             buttonTest.setOnClickListener {
                 val intent = Intent(this@StudyActivity, TestActivity::class.java)
+                intent.putExtra(TestActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
+                intent.putExtra(TestActivity.EXTRA_DAY, param.day)
+                when(param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        param.kanjisDayDistributed?.let { kanjisDayDistributed ->
+                            intent.putExtra(TestActivity.EXTRA_KANJIS, ArrayList(kanjisDayDistributed))
+                        }
+                    }
+                    SectionEnum.vocabulary -> {
+                        param.vocabulariesDayDistributed?.let { vocabulariesDayDistributed ->
+                            intent.putExtra(TestActivity.EXTRA_VOCABULARIES, ArrayList(vocabulariesDayDistributed))
+                        }
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
                 startActivity(intent)
             }
 
