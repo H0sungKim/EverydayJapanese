@@ -4,6 +4,7 @@
 *.DS_Store
 
 Secret.plist
+google-services.json
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

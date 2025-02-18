@@ -11,7 +11,7 @@ import UIKit
 protocol Section {
     var title: String { get }
     var image: UIImage { get }
-    var indexs: [IndexEnum] { get }
+    var indexEnums: [IndexEnum] { get }
     var tableViewCell: UITableViewCell.Type { get }
 }
 
@@ -19,7 +19,6 @@ enum SectionEnum: CaseIterable {
     case hiraganakatagana
     case kanji
     case vocabulary
-//    case info
 }
 
 extension SectionEnum: Section {
@@ -31,8 +30,6 @@ extension SectionEnum: Section {
             return "일본 상용한자"
         case .vocabulary:
             return "JLPT 단어장"
-//        case .info:
-//            return "앱 정보"
         }
     }
     
@@ -44,12 +41,10 @@ extension SectionEnum: Section {
             return UIImage(named: "kanji.png")!
         case .vocabulary:
             return UIImage(named: "jlpt.png")!
-//        case .info:
-//            return UIImage(named: "roundappicon.png")!
         }
     }
     
-    var indexs: [IndexEnum] {
+    var indexEnums: [IndexEnum] {
         switch self {
         case .hiraganakatagana:
             return [
@@ -76,8 +71,28 @@ extension SectionEnum: Section {
                 .n2,
                 .n1,
             ]
-//        case .info:
-//            return []
+        }
+    }
+    
+    var bookmark: Set<String> {
+        switch self {
+        case .hiraganakatagana:
+            return []
+        case .kanji:
+            return UserDefaultManager.shared.bookmarkKanji
+        case .vocabulary:
+            return UserDefaultManager.shared.bookmarkVoca
+        }
+    }
+    
+    var pass: Set<String> {
+        switch self {
+        case .hiraganakatagana:
+            return []
+        case .kanji:
+            return UserDefaultManager.shared.passKanji
+        case .vocabulary:
+            return UserDefaultManager.shared.passVoca
         }
     }
     
@@ -89,8 +104,17 @@ extension SectionEnum: Section {
             return KanjiTableViewCell.self
         case .vocabulary:
             return VocabularyTableViewCell.self
-//        case .info:
-//            return UITableViewCell.self
+        }
+    }
+    
+    var fileName: String {
+        switch self {
+        case .hiraganakatagana:
+            return ""
+        case .kanji:
+            return "kanji"
+        case .vocabulary:
+            return "jlpt"
         }
     }
 }

@@ -9,14 +9,17 @@ import UIKit
 
 class HiraganaKatakanaSelectViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
-    var selected: Int!
+    struct Param {
+        let indexEnum: IndexEnum
+        let selected: Int
+    }
+    var param: Param!
     
     var applySelected: ((Int) -> Void)?
     
     private var collectionData: [(String, String)]? {
         get {
-            switch indexEnum {
+            switch param.indexEnum {
             case .hiragana:
                 return HiraganaKatakanaManager.shared.hiraganaTuple
             case .katakana:
@@ -60,7 +63,7 @@ extension HiraganaKatakanaSelectViewController: UICollectionViewDelegate, UIColl
         guard let collectionData = collectionData else {
             return cell
         }
-        cell.borderView.backgroundColor = indexPath.row == selected ? UIColor.tertiarySystemGroupedBackground : UIColor.clear
+        cell.borderView.backgroundColor = indexPath.row == param.selected ? UIColor.tertiarySystemGroupedBackground : UIColor.clear
         cell.lbMain.text = collectionData[indexPath.row].0
         cell.lbSub.text = collectionData[indexPath.row].1
         return cell

@@ -16,16 +16,15 @@ class CommonRepository {
         
     }
     
-    private let provider = MoyaProvider<CommonRestAPI>()
+    private let provider = MoyaProvider<CommonRestAPI>(plugins: [NetworkLoggerPlugin()])
     
-    func getSentence(word: String) -> AnyPublisher<TatoebaModel, MoyaError> {
-        return provider.requestPublisher(CommonRestAPI.getSentence(word: word))
+    func getSentence(word: String, cursor_end: String? = nil) -> AnyPublisher<TatoebaModel, MoyaError> {
+        return provider.requestPublisher(CommonRestAPI.getSentence(word: word, cursor_end: cursor_end))
             .map(TatoebaEntity.self)
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .map({ tatoebaEntity in
-                guard let responseData = tatoebaEntity.data?.first else { return TatoebaModel() }
-                return TatoebaModel(tatoebaEntity: responseData)
+                return TatoebaModel(tatoebaEntity: tatoebaEntity)
             })
             .eraseToAnyPublisher()
     }

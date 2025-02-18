@@ -9,11 +9,13 @@ import UIKit
 
 class HiraganaKatakanaTestResultViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
-    
-    var correct: [(String, String, UIImage)]?
-    var wrong: [(String, String, String, UIImage)]?
-    var recognitionFailed: [(String, String, UIImage)]?
+    struct Param {
+        var indexEnum: IndexEnum
+        var correct: [(String, String, UIImage)]
+        var wrong: [(String, String, String, UIImage)]
+        var recognitionFailed: [(String, String, UIImage)]
+    }
+    var param: Param!
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbSubtitle: UILabel!
@@ -24,9 +26,9 @@ class HiraganaKatakanaTestResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ivSection.image = indexEnum?.getSection()?.image
-        lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 테스트 결과"
+        ivSection.image = param.indexEnum.section?.image
+        lbTitle.text = param.indexEnum.section?.title
+        lbSubtitle.text = "\(param.indexEnum.rawValue) 테스트 결과"
         
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: TestResultTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TestResultTableViewCell.self))
@@ -45,14 +47,11 @@ extension HiraganaKatakanaTestResultViewController: UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            guard let count = correct?.count else { return 0 }
-            return count+1
+            return param.correct.count+1
         case 1:
-            guard let count = wrong?.count else { return 0 }
-            return count+1
+            return param.wrong.count+1
         case 2:
-            guard let count = recognitionFailed?.count else { return 0 }
-            return count+1
+            return param.recognitionFailed.count+1
         default:
             return 0
         }
@@ -88,14 +87,11 @@ extension HiraganaKatakanaTestResultViewController: UITableViewDelegate, UITable
             }
             switch indexPath.section {
             case 0:
-                guard let correct = correct else { return cell }
-                cell.initializeView(hiraganaKatakana: correct[indexPath.row-1].0, sound: correct[indexPath.row-1].1, myHiraganaKatakana: nil, myHiraganaKatakanaImage: correct[indexPath.row-1].2)
+                cell.initializeView(hiraganaKatakana: param.correct[indexPath.row-1].0, sound: param.correct[indexPath.row-1].1, myHiraganaKatakana: nil, myHiraganaKatakanaImage: param.correct[indexPath.row-1].2)
             case 1:
-                guard let wrong = wrong else { return cell }
-                cell.initializeView(hiraganaKatakana: wrong[indexPath.row-1].0, sound: wrong[indexPath.row-1].1, myHiraganaKatakana: wrong[indexPath.row-1].2, myHiraganaKatakanaImage: wrong[indexPath.row-1].3)
+                cell.initializeView(hiraganaKatakana: param.wrong[indexPath.row-1].0, sound: param.wrong[indexPath.row-1].1, myHiraganaKatakana: param.wrong[indexPath.row-1].2, myHiraganaKatakanaImage: param.wrong[indexPath.row-1].3)
             case 2:
-                guard let recognitionFailed = recognitionFailed else { return cell }
-                cell.initializeView(hiraganaKatakana: recognitionFailed[indexPath.row-1].0, sound: recognitionFailed[indexPath.row-1].1, myHiraganaKatakana: nil, myHiraganaKatakanaImage: recognitionFailed[indexPath.row-1].2)
+                cell.initializeView(hiraganaKatakana: param.recognitionFailed[indexPath.row-1].0, sound: param.recognitionFailed[indexPath.row-1].1, myHiraganaKatakana: nil, myHiraganaKatakanaImage: param.recognitionFailed[indexPath.row-1].2)
             default:
                 break
             }

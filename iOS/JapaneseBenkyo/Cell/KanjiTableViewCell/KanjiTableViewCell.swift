@@ -9,6 +9,7 @@ import UIKit
 
 class KanjiTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var ivPass: UIImageView!
     @IBOutlet weak var lbKanji: UILabel!
     @IBOutlet weak var lbEumhun: UILabel!
     @IBOutlet weak var lbJpSound: UILabel!
@@ -44,6 +45,8 @@ class KanjiTableViewCell: UITableViewCell {
     }
     
     func initializeCell(kanjiForCell: KanjiForCell) {
+        
+        
         scHanja.isHidden = kanjiForCell.kanji.hanja == ""
         let attributedString = NSMutableAttributedString(string: kanjiForCell.isVisibleHanja ? kanjiForCell.kanji.hanja : kanjiForCell.kanji.kanji)
         attributedString.addAttribute(.languageIdentifier, value: kanjiForCell.isVisibleHanja ? "kr" : "ja", range: NSRange(location: 0, length: kanjiForCell.isVisibleHanja ? kanjiForCell.kanji.hanja.count : kanjiForCell.kanji.kanji.count))

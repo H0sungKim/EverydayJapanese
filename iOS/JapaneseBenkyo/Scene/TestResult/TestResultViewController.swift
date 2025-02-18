@@ -9,13 +9,14 @@ import UIKit
 
 class TestResultViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
-    var sectionEnum: SectionEnum?
-    var day: String = ""
-    
-    var allCount: Int?
-    var vocabulariesForCell: [VocabularyForCell]?
-    var kanjisForCell: [KanjiForCell]?
+    struct Param {
+        let indexEnum: IndexEnum
+        let sectionEnum: SectionEnum?
+        let day: String
+        let allCount: Int
+        let indices: [String]
+    }
+    var param: Param!
     
     private var vocabularyTableViewHandler: VocabularyTableViewHandler?
     private var kanjiTableViewHandler: KanjiTableViewHandler?
@@ -34,86 +35,59 @@ class TestResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbTitle.text = sectionEnum?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") \(day) 테스트 결과"
-        ivSection.image = sectionEnum?.image
+        initializeView()
+    }
+    
+    private func initializeView() {
+        lbTitle.text = param.sectionEnum?.title
+        lbSubtitle.text = "\(param.indexEnum.rawValue) \(param.day) 테스트 결과"
+        ivSection.image = param.sectionEnum?.image
         
+        lbScore.text = "\(Int((param.allCount - param.indices.count) * 100 / param.allCount))점"
+        lbSubScore.text = "\(param.allCount - param.indices.count)/\(param.allCount)"
+        if param.indices.isEmpty {
+            btnBookmark.isEnabled = false
+            btnReTest.isEnabled = false
+        }
+        
+        initializeTableView()
+    }
+    
+    private func initializeTableView() {
         tableView.rowHeight = CGFloat(CommonConstant.cellSize)
-        
-        switch sectionEnum {
+        switch param.sectionEnum {
         case .kanji:
-            guard let kanjisForCell = kanjisForCell else {
-                return
-            }
-            kanjiTableViewHandler = KanjiTableViewHandler(kanjisForCell: kanjisForCell)
+            kanjiTableViewHandler = KanjiTableViewHandler(indices: param.indices)
             kanjiTableViewHandler?.onReload = { [weak self] indexPath in
                 self?.onReload(indexPath: indexPath)
             }
             tableView.delegate = kanjiTableViewHandler
             tableView.dataSource = kanjiTableViewHandler
             tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
-            initializeScoreView(wrongCount: kanjisForCell.count)
         case .vocabulary:
-            guard let vocabulariesForCell = vocabulariesForCell else {
-                return
-            }
-            vocabularyTableViewHandler = VocabularyTableViewHandler(vocabulariesForCell: vocabulariesForCell)
+            vocabularyTableViewHandler = VocabularyTableViewHandler(indices: param.indices)
             vocabularyTableViewHandler?.onReload = { [weak self] indexPath in
                 self?.onReload(indexPath: indexPath)
             }
             tableView.delegate = vocabularyTableViewHandler
             tableView.dataSource = vocabularyTableViewHandler
             tableView.register(UINib(nibName: String(describing: VocabularyTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: VocabularyTableViewCell.self))
-            initializeScoreView(wrongCount: vocabulariesForCell.count)
         default:
             return
         }
-        
     }
     
-    private func initializeScoreView(wrongCount: Int) {
-        guard let allCount = allCount else {
-            return
-        }
-        lbScore.text = "\(Int((allCount - wrongCount) * 100 / allCount))점"
-        lbSubScore.text = "\(allCount - wrongCount)/\(allCount)"
-        if wrongCount == 0 {
-            btnBookmark.isEnabled = false
-            btnReTest.isEnabled = false
-            if indexEnum == .bookmark {
-                return
-            }
-            saveProcess()
-        }
-    }
     @IBAction func onClickBookmark(_ sender: UIButton) {
         sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        switch sectionEnum {
-        case .kanji:
-            kanjiTableViewHandler?.addBookmarkAll()
-        case .vocabulary:
-            vocabularyTableViewHandler?.addBookmarkAll()
-        default:
-            return
-        }
+        kanjiTableViewHandler?.addBookmarkAll()
+        vocabularyTableViewHandler?.addBookmarkAll()
         sender.isEnabled = false
         tableView.reloadData()
     }
     
     @IBAction func onClickReTest(_ sender: Any) {
         let vc = UIViewController.getViewController(viewControllerEnum: .test) as! TestViewController
-        vc.indexEnum = indexEnum
-        vc.sectionEnum = sectionEnum
-        vc.day = day
-        
-        switch sectionEnum {
-        case .kanji:
-            vc.kanjis = kanjisForCell?.map { $0.kanji }
-        case .vocabulary:
-            vc.vocabularies = vocabulariesForCell?.map { $0.vocabulary }
-        default:
-            return
-        }
+        vc.param = TestViewController.Param(indexEnum: param.indexEnum, sectionEnum: param.sectionEnum, day: param.day, indices: param.indices)
         navigationController?.replaceViewController(viewController: vc, animated: true)
     }
     
@@ -122,22 +96,6 @@ class TestResultViewController: UIViewController {
     }
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-    }
-    
-    private func saveProcess() {
-        guard let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) else {
-            return
-        }
-        guard let indexEnum = indexEnum else {
-            return
-        }
-        var process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
-        if process[indexEnum.rawValue] == nil {
-            process[indexEnum.rawValue] = [:]
-        }
-        process[indexEnum.rawValue]?[day] = true
-        
-        UserDefaultManager.shared.process = JSONManager.shared.encodeProcessJSON(process: process)
     }
     
     private func onReload(indexPath: IndexPath) {

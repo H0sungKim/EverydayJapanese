@@ -15,61 +15,18 @@ class JSONManager {
         
     }
     
-    func encodeProcessJSON(process: [String: [String: Bool]]) -> String {
-        guard let encoded = try? JSONEncoder().encode(process) else {
+    func encode<T: Codable>(data: T) -> String {
+        guard let encoded = try? JSONEncoder().encode(data) else {
             return ""
         }
         return String(decoding: encoded, as: UTF8.self)
     }
     
-    func decodeProcessJSON(jsonData: Data) -> [String: [String: Bool]] {
-        guard let process = try? JSONDecoder().decode([String: [String: Bool]].self, from: jsonData) else {
-            return [:]
+    func decode<T: Codable>(data: Data?, type: T.Type) -> T? {
+        guard let data = data, let result = try? JSONDecoder().decode(T.self, from: data) else {
+            return nil
         }
-        return process
-    }
-    
-    func encodeVocabularyJSON(vocabularies: Set<Vocabulary>) -> String {
-        guard let encoded = try? JSONEncoder().encode(vocabularies) else {
-            return ""
-        }
-        return String(decoding: encoded, as: UTF8.self)
-    }
-    
-    func decodeJSONtoVocabularyArray(jsonData: Data) -> [Vocabulary] {
-        guard let vocabularies = try? JSONDecoder().decode([Vocabulary].self, from: jsonData) else {
-            return []
-        }
-        return vocabularies
-    }
-    
-    func decodeJSONtoVocabularySet(jsonData: Data) -> Set<Vocabulary> {
-        guard let vocabularies = try? JSONDecoder().decode(Set<Vocabulary>.self, from: jsonData) else {
-            return []
-        }
-        return vocabularies
-    }
-    
-    
-    func encodeKanjiJSON(kanjis: Set<Kanji>) -> String {
-        guard let encoded = try? JSONEncoder().encode(kanjis) else {
-            return ""
-        }
-        return String(decoding: encoded, as: UTF8.self)
-    }
-    
-    func decodeJSONtoKanjiArray(jsonData: Data) -> [Kanji] {
-        guard let kanjis = try? JSONDecoder().decode([Kanji].self, from: jsonData) else {
-            return []
-        }
-        return kanjis
-    }
-    
-    func decodeJSONtoKanjiSet(jsonData: Data) -> Set<Kanji> {
-        guard let kanjis = try? JSONDecoder().decode(Set<Kanji>.self, from: jsonData) else {
-            return []
-        }
-        return kanjis
+        return result
     }
     
     
@@ -83,9 +40,5 @@ class JSONManager {
             return nil
         }
         return jsonData
-    }
-    
-    func convertStringToData(jsonString: String) -> Data? {
-        return jsonString.data(using: .utf8)
     }
 }

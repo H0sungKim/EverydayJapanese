@@ -9,12 +9,15 @@ import UIKit
 
 class HiraganaKatakanaPracticeViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
-    var selected: Int!
+    struct Param {
+        let indexEnum: IndexEnum
+        var selected: Int
+    }
+    var param: Param!
     
     private var collectionData: [(String, String)]? {
         get {
-            switch indexEnum {
+            switch param.indexEnum {
             case .hiragana:
                 return HiraganaKatakanaManager.shared.hiraganaTuple
             case .katakana:
@@ -37,9 +40,9 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ivSection.image = indexEnum?.getSection()?.image
-        lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 연습"
+        ivSection.image = param.indexEnum.section?.image
+        lbTitle.text = param.indexEnum.section?.title
+        lbSubtitle.text = "\(param.indexEnum.rawValue) 연습"
         
         initializeView()
     }
@@ -48,25 +51,24 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
         var configuration = UIButton.Configuration.plain()
         
         configuration.titleAlignment = .center
-        configuration.attributedTitle = AttributedString(collectionData?[selected].0 ?? "", attributes: AttributeContainer([
+        configuration.attributedTitle = AttributedString(collectionData?[param.selected].0 ?? "", attributes: AttributeContainer([
             .foregroundColor: UIColor.label,
             .font: UIFont.systemFont(ofSize: 48, weight: .bold)
         ]))
-        configuration.attributedSubtitle = AttributedString(collectionData?[selected].1 ?? "", attributes: AttributeContainer([
+        configuration.attributedSubtitle = AttributedString(collectionData?[param.selected].1 ?? "", attributes: AttributeContainer([
             .foregroundColor: UIColor.secondaryLabel,
             .font: UIFont.systemFont(ofSize: 18)
         ]))
         btnMain.configuration = configuration
-        strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[selected ?? 0].0)
+        strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[param.selected].0)
     }
     
     @IBAction func onClickMain(_ sender: Any) {
         let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanaselect)
         if let vc = vc as? HiraganaKatakanaSelectViewController {
-            vc.indexEnum = indexEnum
-            vc.selected = selected
+            vc.param = HiraganaKatakanaSelectViewController.Param(indexEnum: param.indexEnum, selected: param.selected)
             vc.applySelected = { [weak self] index in
-                self?.selected = index
+                self?.param.selected = index
                 self?.drawingView.clear()
                 self?.initializeView()
             }
@@ -90,6 +92,6 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
     
     @IBAction func onClickRefresh(_ sender: Any) {
         drawingView.clear()
-        strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[selected].0)
+        strokeOrderAnimationView.startAnimation(hiraganaKatakana: collectionData?[param.selected].0)
     }
 }
