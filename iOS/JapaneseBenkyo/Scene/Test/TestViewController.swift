@@ -9,12 +9,13 @@ import UIKit
 
 class TestViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
-    var sectionEnum: SectionEnum?
-    var day: String = ""
-    
-    var kanjis: [Kanji]?
-    var vocabularies: [Vocabulary]?
+    struct Param {
+        let indexEnum: IndexEnum
+        let sectionEnum: SectionEnum?
+        let day: String
+        var indices: [String]
+    }
+    var param: Param!
     
     private var testResult: [Bool] = []
     private var index: Int = 0
@@ -36,18 +37,11 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switch sectionEnum {
-        case .kanji:
-            kanjis?.shuffle()
-        case .vocabulary:
-            vocabularies?.shuffle()
-        default:
-            break
-        }
+        param.indices.shuffle()
         
-        lbTitle.text = sectionEnum?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") \(day) 테스트"
-        ivSection.image = sectionEnum?.image
+        lbTitle.text = param.sectionEnum?.title
+        lbSubtitle.text = "\(param.indexEnum.rawValue) \(param.day) 테스트"
+        ivSection.image = param.sectionEnum?.image
         
         lbMain.adjustsFontSizeToFitWidth = true
         lbUpperSub1.adjustsFontSizeToFitWidth = true
@@ -59,53 +53,37 @@ class TestViewController: UIViewController {
     }
     
     private func updateTestField() {
-        if index == 0 {
-            btnPrevious.isEnabled = false
-            btnPrevious.isHidden = true
-        } else {
-            btnPrevious.isEnabled = true
-            btnPrevious.isHidden = false
-        }
+        btnPrevious.isEnabled = !(index == 0)
+        btnPrevious.isHidden = index == 0
+        lbIndex.text = "\(index+1)/\(param.indices.count)"
         
-        switch sectionEnum {
+        switch param.sectionEnum {
         case .kanji:
-            guard let kanjis = kanjis else {
-                break
-            }
-            lbIndex.text = "\(index+1)/\(kanjis.count)"
-            let kanjiString = NSMutableAttributedString(string: kanjis[index].kanji)
-            kanjiString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanjis[index].kanji.count))
-            lbMain.attributedText = kanjiString
+            guard let kanji = GlobalDataManager.shared.kanjis[param.indices[index]] else { return }
+            
+            let kanjiAttributedString = NSMutableAttributedString(string: kanji.kanji)
+            kanjiAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanji.kanji.count))
+            lbMain.attributedText = kanjiAttributedString
+            
+            lbUpperSub1.text = isVisible ? kanji.jpSound : ""
+            lbUpperSub2.text = isVisible ? kanji.jpMeaning : ""
+            lbSub.text = isVisible ? kanji.eumhun : ""
+            
             if isVisible {
-                lbUpperSub1.text = kanjis[index].jpSound
-                lbUpperSub2.text = kanjis[index].jpMeaning
-                let hanjaString = NSMutableAttributedString(string: kanjis[index].hanja)
-                hanjaString.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanjis[index].hanja.count))
-                lbLowerSub.attributedText = hanjaString
-                lbSub.text = kanjis[index].eumhun
+                let hanjaAttributedString = NSMutableAttributedString(string: kanji.hanja)
+                hanjaAttributedString.addAttribute(.languageIdentifier, value: "kr", range: NSRange(location: 0, length: kanji.hanja.count))
+                lbLowerSub.attributedText = hanjaAttributedString
             } else {
-                lbUpperSub1.text = ""
-                lbUpperSub2.text = ""
                 lbLowerSub.text = ""
-                lbSub.text = ""
             }
         case .vocabulary:
-            guard let vocabularies = vocabularies else {
-                break
-            }
-            lbIndex.text = "\(index+1)/\(vocabularies.count)"
-            lbMain.text = vocabularies[index].word
-            if isVisible {
-                lbUpperSub1.text = ""
-                lbUpperSub2.text = vocabularies[index].sound
-                lbLowerSub.text = ""
-                lbSub.text = vocabularies[index].meaning
-            } else {
-                lbUpperSub1.text = ""
-                lbUpperSub2.text = ""
-                lbLowerSub.text = ""
-                lbSub.text = ""
-            }
+            guard let vocabulary = GlobalDataManager.shared.vocabularies[param.indices[index]] else { return }
+            
+            lbMain.text = vocabulary.word
+            lbUpperSub1.text = ""
+            lbUpperSub2.text = isVisible ? vocabulary.sound : ""
+            lbLowerSub.text = ""
+            lbSub.text = isVisible ? vocabulary.meaning : ""
         default:
             break
         }
@@ -113,47 +91,54 @@ class TestViewController: UIViewController {
     
     private func moveOnToNext() {
         index += 1
-        if (sectionEnum == .kanji && index == kanjis?.count) ||
-            (sectionEnum == .vocabulary && index == vocabularies?.count) {
-            let vc = UIViewController.getViewController(viewControllerEnum: .testresult) as! TestResultViewController
-            vc.indexEnum = indexEnum
-            vc.sectionEnum = sectionEnum
-            vc.day = day
-            
-            switch sectionEnum {
-            case .kanji:
-                guard let kanjis = kanjis else {
-                    break
-                }
-                vc.allCount = kanjis.count
-                var wrongKanjis: [KanjiForCell] = []
-                for i in 0..<testResult.count {
-                    if !testResult[i] {
-                        wrongKanjis.append(KanjiForCell(kanji: kanjis[i]))
-                    }
-                }
-                vc.kanjisForCell = wrongKanjis
-            case .vocabulary:
-                guard let vocabularies = vocabularies else {
-                    break
-                }
-                vc.allCount = vocabularies.count
-                var wrongVacabularies: [VocabularyForCell] = []
-                for i in 0..<testResult.count {
-                    if !testResult[i] {
-                        wrongVacabularies.append(VocabularyForCell(vocabulary: vocabularies[i]))
-                    }
-                }
-                vc.vocabulariesForCell = wrongVacabularies
-            default:
-                return
-            }
-            
-            navigationController?.replaceViewController(viewController: vc, animated: true)
+        if param.indices.count == index {
+            savePass()
+            replaceToTestResultViewController()
             return
         }
         isVisible = false
         updateTestField()
+    }
+    
+    private func savePass() {
+        switch param.sectionEnum {
+        case .kanji:
+            var pass = UserDefaultManager.shared.passKanji
+            for (i, result) in testResult.enumerated() {
+                if result {
+                    pass.insert(param.indices[i])
+                } else {
+                    pass.remove(param.indices[i])
+                }
+            }
+            UserDefaultManager.shared.passKanji = pass
+        case .vocabulary:
+            var pass = UserDefaultManager.shared.passVoca
+            for (i, result) in testResult.enumerated() {
+                if result {
+                    pass.insert(param.indices[i])
+                } else {
+                    pass.remove(param.indices[i])
+                }
+            }
+            UserDefaultManager.shared.passVoca = pass
+        default:
+             return
+        }
+    }
+    
+    private func replaceToTestResultViewController() {
+        let vc = UIViewController.getViewController(viewControllerEnum: .testresult) as! TestResultViewController
+        vc.param = TestResultViewController.Param(
+            indexEnum: param.indexEnum,
+            sectionEnum: param.sectionEnum,
+            day: param.day,
+            allCount: param.indices.count,
+            indices: testResult.enumerated().compactMap({ (i, result) in
+                result ? nil : param.indices[i]
+            })
+        )
+        navigationController?.replaceViewController(viewController: vc, animated: true)
     }
     
     private func moveOnToPrevious() {

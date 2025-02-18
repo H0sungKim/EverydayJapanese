@@ -119,9 +119,9 @@ struct StudyWidegetEntryView : View {
         if let jsonData = JSONManager.shared.openJSON(path: studyPart.getFileName()) {
             switch studyPart {
             case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
-                vocabularies = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData)
+                vocabularies = JSONManager.shared.decode(data: jsonData, type: [Vocabulary].self) ?? []
             case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
-                kanjis = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData)
+                kanjis = JSONManager.shared.decode(data: jsonData, type: [Kanji].self) ?? []
             }
         }
     }

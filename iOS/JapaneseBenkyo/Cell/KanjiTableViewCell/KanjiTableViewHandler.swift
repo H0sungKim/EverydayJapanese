@@ -8,19 +8,18 @@
 import UIKit
 
 class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
-    private var kanjisForCell: [KanjiForCell]
-    private var bookmark: Set<Kanji> = []
+    private var kanjisForCell: [KanjiForCell] = []
+    private var bookmark: Set<String> = UserDefaultManager.shared.bookmarkKanji
+    private var pass: Set<String> = UserDefaultManager.shared.passKanji
     var onReload: ((_ indexPath: IndexPath)->Void)?
     
-    init(kanjisForCell: [KanjiForCell]) {
-        self.kanjisForCell = kanjisForCell
-        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
-            bookmark = JSONManager.shared.decodeJSONtoKanjiSet(jsonData: jsonData)
-        }
-        for kanjiForCell in kanjisForCell {
-            kanjiForCell.isBookmark = bookmark.contains(kanjiForCell.kanji)
-        }
+    init(indices: [String]) {
+        let kanjis = GlobalDataManager.shared.kanjis
         super.init()
+        kanjisForCell = indices.compactMap({ [weak self] index in
+            guard let self = self, let kanji = kanjis[index] else { return nil }
+            return KanjiForCell(id: index, kanji: kanji, isBookmark: bookmark.contains(index))
+        })
     }
     
     func shuffleKanjis() {
@@ -36,8 +35,8 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     func addBookmarkAll() {
-        bookmark.formUnion(Set(kanjisForCell.map { $0.kanji }))
-        UserDefaultManager.shared.kanjiBookmark = JSONManager.shared.encodeKanjiJSON(kanjis: bookmark)
+        bookmark.formUnion(Set(kanjisForCell.map { $0.id }))
+        UserDefaultManager.shared.bookmarkKanji = bookmark
         for kanjiForCell in kanjisForCell {
             kanjiForCell.isBookmark = true
         }
@@ -71,6 +70,14 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
         
         cell.initializeCell(kanjiForCell: kanjiForCell)
         
+//        if pass.contains(kanjiForCell.id) {
+//            cell.ivPass.image = UIImage(systemName: "checkmark.circle")
+//            cell.ivPass.tintColor = .systemGreen
+//        } else {
+//            cell.ivPass.image = UIImage(systemName: "circle")
+//            cell.ivPass.tintColor = .systemGray
+//        }
+        
         return cell
     }
     
@@ -91,13 +98,13 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     private func onClickBookmark(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
         if kanjiForCell.isBookmark {
-            bookmark.remove(kanjiForCell.kanji)
+            bookmark.remove(kanjiForCell.id)
         } else {
-            bookmark.insert(kanjiForCell.kanji)
+            bookmark.insert(kanjiForCell.id)
         }
         kanjiForCell.isBookmark = !kanjiForCell.isBookmark
         cell.initializeCell(kanjiForCell: kanjiForCell)
-        UserDefaultManager.shared.kanjiBookmark = JSONManager.shared.encodeKanjiJSON(kanjis: bookmark)
+        UserDefaultManager.shared.bookmarkKanji = bookmark
     }
     private func onClickPronounce(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
         TTSManager.shared.play(kanji: kanjiForCell.kanji)
@@ -106,5 +113,10 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
         kanjiForCell.isExpanded = !kanjiForCell.isExpanded
         cell.initializeCell(kanjiForCell: kanjiForCell)
         onReload?(indexPath)
+    }
+    
+    func reload() {
+        bookmark = UserDefaultManager.shared.bookmarkKanji
+        pass = UserDefaultManager.shared.passKanji
     }
 }

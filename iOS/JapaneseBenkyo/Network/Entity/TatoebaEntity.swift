@@ -8,14 +8,30 @@
 import Foundation
 
 struct TatoebaEntity: Codable {
-    var data: [ResponseData]?
     struct ResponseData: Codable {
-        var id: Int?
-        var text: String?
-        var transcriptions: [Transcription]?
         struct Transcription: Codable {
-            var text: String?
-            var html: String?
+            let text: String?
+            let html: String?
         }
+        
+        struct Translation: Codable {
+            let id: Int?
+            let text: String?
+        }
+        
+        let id: Int?
+        let text: String?
+        let transcriptions: [Transcription]?
+        let translations: [[Translation]]?
+        
+        
     }
+    
+    struct Paging: Codable {
+        let has_next: Bool?
+        let cursor_end: String?
+    }
+    
+    let data: [ResponseData]?
+    let paging: Paging?
 }

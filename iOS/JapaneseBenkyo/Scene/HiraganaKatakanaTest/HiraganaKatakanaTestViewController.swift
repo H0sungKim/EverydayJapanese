@@ -9,7 +9,10 @@ import UIKit
 
 class HiraganaKatakanaTestViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
+    struct Param {
+        let indexEnum: IndexEnum
+    }
+    var param: Param!
     
     private var testResult: [(String?, UIImage)] = []
     private var recognizedText: String?
@@ -34,11 +37,11 @@ class HiraganaKatakanaTestViewController: UIViewController {
         
         ocrDrawingView.delegate = self
         
-        ivSection.image = indexEnum?.getSection()?.image
-        lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") 테스트"
+        ivSection.image = param.indexEnum.section?.image
+        lbTitle.text = param.indexEnum.section?.title
+        lbSubtitle.text = "\(param.indexEnum.rawValue) 테스트"
         
-        if let hiraganakatakana = getHiraganaOrKatakana(indexEnum: indexEnum) {
+        if let hiraganakatakana = getHiraganaOrKatakana(indexEnum: param.indexEnum) {
             self.hiraganakatakana = hiraganakatakana.shuffled().filter { $0.0 != "" && $0.1 != "" }
         }
         updateView()
@@ -71,10 +74,12 @@ class HiraganaKatakanaTestViewController: UIViewController {
                 }
             }
             let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanatestresult) as! HiraganaKatakanaTestResultViewController
-            vc.indexEnum = indexEnum
-            vc.correct = correct
-            vc.wrong = wrong
-            vc.recognitionFailed = recognitionFailed
+            vc.param = HiraganaKatakanaTestResultViewController.Param(
+                indexEnum: param.indexEnum,
+                correct: correct,
+                wrong: wrong,
+                recognitionFailed: recognitionFailed
+            )
             navigationController?.replaceViewController(viewController: vc, animated: true)
         } else {
             recognizedText = ""
@@ -97,7 +102,7 @@ class HiraganaKatakanaTestViewController: UIViewController {
     private func updateView() {
         ocrDrawingView.clear()
         lbIndex.text = "\(index+1)/\(hiraganakatakana.count)"
-        lbHiraganaKatakana.text = "\(indexEnum?.rawValue ?? "") \(hiraganakatakana[index].1)"
+        lbHiraganaKatakana.text = "\(param.indexEnum.rawValue) \(hiraganakatakana[index].1)"
         lbResult.text = "인식된 결과가 없습니다."
         lbAlert.isHidden = true
         ivAlert.isHidden = true

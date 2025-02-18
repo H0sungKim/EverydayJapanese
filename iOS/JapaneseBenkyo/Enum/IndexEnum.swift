@@ -24,38 +24,7 @@ enum IndexEnum: String, CaseIterable {
     case n2 = "N2"
     case n1 = "N1"
     
-    func getFileName() -> String {
-        switch self {
-        case .bookmark, .hiragana, .katakana:
-            return ""
-        case .elementary1:
-            return "kanji1"
-        case .elementary2:
-            return "kanji2"
-        case .elementary3:
-            return "kanji3"
-        case .elementary4:
-            return "kanji4"
-        case .elementary5:
-            return "kanji5"
-        case .elementary6:
-            return "kanji6"
-        case .middle:
-            return "kanji7"
-        case .n5:
-            return "n5"
-        case .n4:
-            return "n4"
-        case .n3:
-            return "n3"
-        case .n2:
-            return "n2"
-        case .n1:
-            return "n1"
-        }
-    }
-    
-    func getSection() -> SectionEnum? {
+    var section: SectionEnum? {
         switch self {
         case .bookmark:
             return nil
@@ -65,6 +34,37 @@ enum IndexEnum: String, CaseIterable {
             return .kanji
         case .n5, .n4, .n3, .n2, .n1:
             return .vocabulary
+        }
+    }
+    
+    var idRange: ClosedRange<Int> {
+        switch self {
+        case .bookmark, .hiragana, .katakana:
+            return 0...0
+        case .elementary1:
+            return 0...79
+        case .elementary2:
+            return 80...239
+        case .elementary3:
+            return 240...439
+        case .elementary4:
+            return 440...641
+        case .elementary5:
+            return 642...834
+        case .elementary6:
+            return 835...1025
+        case .middle:
+            return 1026...2135
+        case .n5:
+            return 0...717
+        case .n4:
+            return 718...1385
+        case .n3:
+            return 1386...3524
+        case .n2:
+            return 3525...5269
+        case .n1:
+            return 5270...7964
         }
     }
 }

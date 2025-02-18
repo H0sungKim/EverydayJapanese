@@ -9,12 +9,13 @@ import UIKit
 
 class StudyViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
-    var sectionEnum: SectionEnum?
-    var day: String = ""
-    
-    var vocabulariesForCell: [VocabularyForCell]?
-    var kanjisForCell: [KanjiForCell]?
+    struct Param {
+        let indexEnum: IndexEnum
+        let sectionEnum: SectionEnum?
+        let day: String
+        let indices: [String]
+    }
+    var param: Param!
     
     private var vocabularyTableViewHandler: VocabularyTableViewHandler?
     private var kanjiTableViewHandler: KanjiTableViewHandler?
@@ -29,25 +30,23 @@ class StudyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbTitle.text = sectionEnum?.title
-        lbSubtitle.text = "\(indexEnum?.rawValue ?? "") \(day)"
-        ivSection.image = sectionEnum?.image
-        
-        tableView.rowHeight = CGFloat(CommonConstant.cellSize)
-        
-        if (sectionEnum == .vocabulary && vocabulariesForCell?.count == 0) ||
-            (sectionEnum == .kanji && kanjisForCell?.count == 0) {
-            btnTest.isEnabled = false
-        }
+        initializeView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        switch sectionEnum {
+    private func initializeView() {
+        lbTitle.text = param.sectionEnum?.title
+        lbSubtitle.text = "\(param.indexEnum.rawValue) \(param.day)"
+        ivSection.image = param.sectionEnum?.image
+        btnTest.isEnabled = !param.indices.isEmpty
+        
+        initializeTableView()
+    }
+    
+    private func initializeTableView() {
+        tableView.rowHeight = CGFloat(CommonConstant.cellSize)
+        switch param.sectionEnum {
         case .kanji:
-            guard let kanjisForCell = kanjisForCell else {
-                return
-            }
-            kanjiTableViewHandler = KanjiTableViewHandler(kanjisForCell: kanjisForCell)
+            kanjiTableViewHandler = KanjiTableViewHandler(indices: param.indices)
             kanjiTableViewHandler?.onReload = { [weak self] indexPath in
                 self?.onReload(indexPath: indexPath)
             }
@@ -55,10 +54,7 @@ class StudyViewController: UIViewController {
             tableView.dataSource = kanjiTableViewHandler
             tableView.register(UINib(nibName: String(describing: KanjiTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: KanjiTableViewCell.self))
         case .vocabulary:
-            guard let vocabulariesForCell = vocabulariesForCell else {
-                return
-            }
-            vocabularyTableViewHandler = VocabularyTableViewHandler(vocabulariesForCell: vocabulariesForCell)
+            vocabularyTableViewHandler = VocabularyTableViewHandler(indices: param.indices)
             vocabularyTableViewHandler?.onReload = { [weak self] indexPath in
                 self?.onReload(indexPath: indexPath)
             }
@@ -70,49 +66,32 @@ class StudyViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        kanjiTableViewHandler?.reload()
+        vocabularyTableViewHandler?.reload()
+        tableView.reloadData()
+    }
+    
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func onClickVisibleAll(_ sender: Any) {
-        switch sectionEnum {
-        case .kanji:
-            kanjiTableViewHandler?.setVisibleAll()
-        case .vocabulary:
-            vocabularyTableViewHandler?.setVisibleAll()
-        default:
-            return
-        }
+        kanjiTableViewHandler?.setVisibleAll()
+        vocabularyTableViewHandler?.setVisibleAll()
         tableView.reloadData()
     }
     
     @IBAction func onClickTest(_ sender: Any) {
         let vc = UIViewController.getViewController(viewControllerEnum: .test) as! TestViewController
-        vc.indexEnum = indexEnum
-        vc.sectionEnum = sectionEnum
-        vc.day = day
-        
-        switch sectionEnum {
-        case .kanji:
-            vc.kanjis = kanjisForCell?.map { $0.kanji }
-        case .vocabulary:
-            vc.vocabularies = vocabulariesForCell?.map { $0.vocabulary }
-        default:
-            return
-        }
+        vc.param = TestViewController.Param(indexEnum: param.indexEnum, sectionEnum: param.sectionEnum, day: param.day, indices: param.indices)
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onClickShuffle(_ sender: Any) {
-        switch sectionEnum {
-        case .kanji:
-            kanjiTableViewHandler?.shuffleKanjis()
-        case .vocabulary:
-            vocabularyTableViewHandler?.shuffleVocabularies()
-        default:
-            return
-        }
+        kanjiTableViewHandler?.shuffleKanjis()
+        vocabularyTableViewHandler?.shuffleVocabularies()
         tableView.reloadData()
     }
     

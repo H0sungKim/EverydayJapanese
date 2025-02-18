@@ -8,6 +8,12 @@
 import Foundation
 
 private enum UserDefaultEnum: String {
+    case bookmarkVoca
+    case bookmarkKanji
+    case passVoca
+    case passKanji
+    
+    // deprecated
     case process
     case vocabularyBookmark
     case kanjiBookmark
@@ -21,7 +27,41 @@ class UserDefaultManager {
         
     }
     
-    var process: String {
+    var bookmarkVoca: Set<String> {
+        get {
+            return Set(UserDefaults.standard.stringArray(forKey: UserDefaultEnum.bookmarkVoca.rawValue) ?? [])
+        }
+        set {
+            UserDefaults.standard.setValue(Array(newValue), forKey: UserDefaultEnum.bookmarkVoca.rawValue)
+        }
+    }
+    var bookmarkKanji: Set<String> {
+        get {
+            return Set(UserDefaults.standard.stringArray(forKey: UserDefaultEnum.bookmarkKanji.rawValue) ?? [])
+        }
+        set {
+            UserDefaults.standard.setValue(Array(newValue), forKey: UserDefaultEnum.bookmarkKanji.rawValue)
+        }
+    }
+    var passVoca: Set<String> {
+        get {
+            return Set(UserDefaults.standard.stringArray(forKey: UserDefaultEnum.passVoca.rawValue) ?? [])
+        }
+        set {
+            UserDefaults.standard.setValue(Array(newValue), forKey: UserDefaultEnum.passVoca.rawValue)
+        }
+    }
+    var passKanji: Set<String> {
+        get {
+            return Set(UserDefaults.standard.stringArray(forKey: UserDefaultEnum.passKanji.rawValue) ?? [])
+        }
+        set {
+            UserDefaults.standard.setValue(Array(newValue), forKey: UserDefaultEnum.passKanji.rawValue)
+        }
+    }
+    
+    // deprecated
+    var oldProcess: String {
         get {
             return UserDefaults.standard.value(forKey: UserDefaultEnum.process.rawValue) as? String ?? ""
         }
@@ -30,7 +70,7 @@ class UserDefaultManager {
         }
     }
     
-    var vocabularyBookmark: String {
+    var oldVocabularyBookmark: String {
         get {
             return UserDefaults.standard.value(forKey: UserDefaultEnum.vocabularyBookmark.rawValue) as? String ?? ""
         }
@@ -39,12 +79,18 @@ class UserDefaultManager {
         }
     }
     
-    var kanjiBookmark: String {
+    var oldKanjiBookmark: String {
         get {
             return UserDefaults.standard.value(forKey: UserDefaultEnum.kanjiBookmark.rawValue) as? String ?? ""
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: UserDefaultEnum.kanjiBookmark.rawValue)
         }
+    }
+    
+    func clearOld() {
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.process.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.vocabularyBookmark.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.kanjiBookmark.rawValue)
     }
 }

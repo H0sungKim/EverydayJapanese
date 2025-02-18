@@ -11,21 +11,17 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var process: [String: [String: Bool]] = [:]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
+        tableView.register(UINib(nibName: String(describing: PassTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PassTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.process) {
-            process = JSONManager.shared.decodeProcessJSON(jsonData: jsonData)
-        }
         tableView.reloadData()
     }
 }
@@ -38,13 +34,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch SectionEnum.allCases[section] {
         case .hiraganakatagana :
-            return SectionEnum.hiraganakatagana.indexs.count+1
+            return SectionEnum.hiraganakatagana.indexEnums.count+1
         case .kanji :
-            return SectionEnum.kanji.indexs.count+1
+            return SectionEnum.kanji.indexEnums.count+2
         case .vocabulary :
-            return SectionEnum.vocabulary.indexs.count+1
-//        case .info:
-//            return SectionEnum.info.indexs.count+1
+            return SectionEnum.vocabulary.indexEnums.count+2
         }
     }
     
@@ -59,7 +53,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.initializeView(section: SectionEnum.allCases[indexPath.section])
             return cell
-        } else {
+        }
+        switch SectionEnum.allCases[indexPath.section] {
+        case .hiraganakatagana:
             let cell: IndexTableViewCell
             if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
                 cell = reusableCell
@@ -67,53 +63,73 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
                 cell = objectArray![0] as! IndexTableViewCell
             }
-            cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1], process: process[SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1].rawValue]?["전체보기"])
+            cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-1])
+            return cell
+        case .kanji, .vocabulary:
+            if indexPath.row == 1 {
+                let cell: PassTableViewCell
+                if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: PassTableViewCell.self), for: indexPath) as? PassTableViewCell {
+                    cell = reusableCell
+                } else {
+                    let objectArray = Bundle.main.loadNibNamed(String(describing: PassTableViewCell.self), owner: nil, options: nil)
+                    cell = objectArray![0] as! PassTableViewCell
+                }
+                
+                cell.initializeView(passCount: SectionEnum.allCases[indexPath.section].pass.count, totalCount: GlobalDataManager.shared.getCount(section: SectionEnum.allCases[indexPath.section]))
+                return cell
+            }
+            let cell: IndexTableViewCell
+            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
+                cell = reusableCell
+            } else {
+                let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
+                cell = objectArray![0] as! IndexTableViewCell
+            }
+            cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-2])
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            return
-        }
-        switch SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1] {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let indexEnum: IndexEnum? = {
+            switch SectionEnum.allCases[indexPath.section] {
+            case .hiraganakatagana:
+                return indexPath.row == 0 ? nil : SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-1]
+            case .kanji, .vocabulary:
+                return indexPath.row == 0 || indexPath.row == 1 ? nil : SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-2]
+            }
+        }()
+        
+        switch indexEnum {
         case .bookmark:
             let vc = UIViewController.getViewController(viewControllerEnum: .study) as! StudyViewController
-            vc.indexEnum = .bookmark
-            vc.sectionEnum = SectionEnum.allCases[indexPath.section]
-            
-            switch SectionEnum.allCases[indexPath.section] {
-            case .kanji:
-                if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.kanjiBookmark) {
-                    vc.kanjisForCell = JSONManager.shared.decodeJSONtoKanjiArray(jsonData: jsonData).map { KanjiForCell(kanji: $0) }
-                }
-                navigationController?.pushViewController(vc, animated: true)
-            case .vocabulary:
-                if let jsonData = JSONManager.shared.convertStringToData(jsonString: UserDefaultManager.shared.vocabularyBookmark) {
-                    vc.vocabulariesForCell = JSONManager.shared.decodeJSONtoVocabularyArray(jsonData: jsonData).map { VocabularyForCell(vocabulary: $0) }
-                }
-                navigationController?.pushViewController(vc, animated: true)
-            default:
-                break
-            }
-        case .hiragana:
-            let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakana) as! HiraganaKatakanaViewController
-            vc.indexEnum = .hiragana
+            vc.param = StudyViewController.Param(indexEnum: .bookmark, sectionEnum: SectionEnum.allCases[indexPath.section], day: "", indices: Array(SectionEnum.allCases[indexPath.section].bookmark))
             navigationController?.pushViewController(vc, animated: true)
-        case .katakana:
+        case .hiragana, .katakana:
             let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakana) as! HiraganaKatakanaViewController
-            vc.indexEnum = .katakana
+            vc.param = HiraganaKatakanaViewController.Param(indexEnum: indexEnum!)
             navigationController?.pushViewController(vc, animated: true)
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle, .n5, .n4, .n3, .n2, .n1:
             let vc = UIViewController.getViewController(viewControllerEnum: .day) as! DayViewController
-            vc.indexEnum = SectionEnum.allCases[indexPath.section].indexs[indexPath.row-1]
+            vc.param = DayViewController.Param(indexEnum: indexEnum!)
             navigationController?.pushViewController(vc, animated: true)
+        case nil:
+            return
         }
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 70
+        }
+        if indexPath.row == 1 {
+            switch SectionEnum.allCases[indexPath.section] {
+            case .kanji, .vocabulary:
+                return 20
+            default:
+                break
+            }
         }
         return 50
     }

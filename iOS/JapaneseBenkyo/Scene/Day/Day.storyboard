@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fO-lP-q1A">
-                                <rect key="frame" x="0.0" y="59" width="393" height="89"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="85"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvF-Hw-Qpb">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="57"/>
@@ -65,34 +65,32 @@
                                             <constraint firstItem="0cd-xh-vwm" firstAttribute="top" secondItem="Zpx-IP-aEV" secondAttribute="bottom" id="ybg-rw-mFA"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" restorationIdentifier="ProcessView" translatesAutoresizingMaskIntoConstraints="NO" id="h2B-Mb-MKC" customClass="ProcessView" customModule="JapaneseBenkyo" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="65" width="309" height="8"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="8" id="Cv7-k9-tcM"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chx-RR-uQb">
-                                        <rect key="frame" x="341" y="60.666666666666671" width="36" height="17"/>
+                                        <rect key="frame" x="341" y="58.666666666666671" width="36" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vq6-ZE-zj1">
+                                        <rect key="frame" x="16" y="65" width="309" height="4"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="chx-RR-uQb" firstAttribute="leading" secondItem="h2B-Mb-MKC" secondAttribute="trailing" constant="16" id="38x-od-R0Y"/>
                                     <constraint firstItem="fvF-Hw-Qpb" firstAttribute="leading" secondItem="6fO-lP-q1A" secondAttribute="leading" id="974-gV-ipB"/>
-                                    <constraint firstItem="h2B-Mb-MKC" firstAttribute="leading" secondItem="6fO-lP-q1A" secondAttribute="leading" constant="16" id="DR8-ci-Awd"/>
-                                    <constraint firstItem="chx-RR-uQb" firstAttribute="centerY" secondItem="h2B-Mb-MKC" secondAttribute="centerY" id="T5Q-c9-uPe"/>
-                                    <constraint firstItem="h2B-Mb-MKC" firstAttribute="top" secondItem="fvF-Hw-Qpb" secondAttribute="bottom" constant="8" id="Tnx-Rg-7EO"/>
-                                    <constraint firstAttribute="bottom" secondItem="h2B-Mb-MKC" secondAttribute="bottom" constant="16" id="dJT-No-kSV"/>
+                                    <constraint firstItem="Vq6-ZE-zj1" firstAttribute="leading" secondItem="6fO-lP-q1A" secondAttribute="leading" constant="16" id="9Gj-Hg-X3z"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vq6-ZE-zj1" secondAttribute="bottom" constant="16" id="UD3-zU-Hm1"/>
+                                    <constraint firstItem="Vq6-ZE-zj1" firstAttribute="centerY" secondItem="chx-RR-uQb" secondAttribute="centerY" id="YwO-60-Buw"/>
                                     <constraint firstAttribute="trailing" secondItem="chx-RR-uQb" secondAttribute="trailing" constant="16" id="fMx-Fd-FMR"/>
+                                    <constraint firstItem="Vq6-ZE-zj1" firstAttribute="top" secondItem="fvF-Hw-Qpb" secondAttribute="bottom" constant="8" id="hqJ-Cl-4Ho"/>
                                     <constraint firstItem="fvF-Hw-Qpb" firstAttribute="top" secondItem="6fO-lP-q1A" secondAttribute="top" id="lX5-jm-jZD"/>
+                                    <constraint firstItem="chx-RR-uQb" firstAttribute="leading" secondItem="Vq6-ZE-zj1" secondAttribute="trailing" constant="16" id="sKe-xc-0zM"/>
                                     <constraint firstAttribute="trailing" secondItem="fvF-Hw-Qpb" secondAttribute="trailing" id="voc-Mg-0gw"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kNa-2c-O4T">
-                                <rect key="frame" x="0.0" y="148" width="393" height="670"/>
+                                <rect key="frame" x="0.0" y="144" width="393" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFE-Fm-a4o">
@@ -121,7 +119,7 @@
                         <outlet property="lbProcess" destination="chx-RR-uQb" id="Qmd-9h-f6d"/>
                         <outlet property="lbSubtitle" destination="0cd-xh-vwm" id="siq-Ac-Fcd"/>
                         <outlet property="lbTitle" destination="Zpx-IP-aEV" id="dMB-SP-Ejo"/>
-                        <outlet property="processView" destination="h2B-Mb-MKC" id="Tbk-4Y-Ua2"/>
+                        <outlet property="pvPass" destination="Vq6-ZE-zj1" id="YMD-fq-dX9"/>
                         <outlet property="tableView" destination="kNa-2c-O4T" id="pvQ-dk-PVd"/>
                     </connections>
                 </viewController>

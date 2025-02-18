@@ -9,11 +9,14 @@ import UIKit
 
 class HiraganaKatakanaViewController: UIViewController {
     
-    var indexEnum: IndexEnum?
+    struct Param {
+        let indexEnum: IndexEnum
+    }
+    var param: Param!
     
     private var collectionData: [(String, String)]? {
         get {
-            switch indexEnum {
+            switch param.indexEnum {
             case .hiragana:
                 return HiraganaKatakanaManager.shared.hiraganaTuple
             case .katakana:
@@ -33,9 +36,9 @@ class HiraganaKatakanaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ivSection.image = indexEnum?.getSection()?.image
-        lbTitle.text = indexEnum?.getSection()?.title
-        lbSubtitle.text = indexEnum?.rawValue
+        ivSection.image = param.indexEnum.section?.image
+        lbTitle.text = param.indexEnum.section?.title
+        lbSubtitle.text = param.indexEnum.rawValue
         
         cvHiraganaKatakana.delegate = self
         cvHiraganaKatakana.dataSource = self
@@ -47,7 +50,7 @@ class HiraganaKatakanaViewController: UIViewController {
     }
     @IBAction func onClickTest(_ sender: Any) {
         let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanatest) as! HiraganaKatakanaTestViewController
-        vc.indexEnum = indexEnum
+        vc.param = HiraganaKatakanaTestViewController.Param(indexEnum: param.indexEnum)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -75,18 +78,16 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width-5)/5
+        let width: Int = Int(collectionView.frame.width/5)
         return CGSize(width: width, height: width)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        // 컬랙션뷰 행 하단 여백
-        return 1
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        // 컬랙션뷰 컬럼 사이 여백
-        return 1
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -95,8 +96,7 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
         }
         if collectionData[indexPath.row].0 == "" { return }
         let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanapractice) as! HiraganaKatakanaPracticeViewController
-        vc.indexEnum = indexEnum
-        vc.selected = indexPath.row
+        vc.param = HiraganaKatakanaPracticeViewController.Param(indexEnum: param.indexEnum, selected: indexPath.row)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

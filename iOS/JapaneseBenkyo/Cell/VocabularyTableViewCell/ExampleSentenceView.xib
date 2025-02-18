@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -48,7 +49,7 @@
                             </connections>
                         </button>
                         <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhu-iR-DhR">
-                            <rect key="frame" x="16" y="15.999999999999986" width="252" height="255.66666666666663"/>
+                            <rect key="frame" x="16" y="15.999999999999986" width="252" height="230.66666666666663"/>
                             <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -62,19 +63,57 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSK-5Z-nLe">
+                            <rect key="frame" x="16" y="254.66666666666663" width="252" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faz-Vk-YZV">
+                            <rect key="frame" x="252" y="16" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="22d-My-004"/>
+                                <constraint firstAttribute="width" constant="16" id="jK8-hz-tmG"/>
+                            </constraints>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="medium"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickReload:" destination="3h7-hO-kvm" eventType="touchUpInside" id="ex5-pp-pOq"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="2x6-j5-fSa" firstAttribute="top" secondItem="dSK-5Z-nLe" secondAttribute="bottom" constant="4" id="1X3-Eb-O67"/>
+                        <constraint firstItem="dSK-5Z-nLe" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="1sF-TO-5l4"/>
                         <constraint firstAttribute="trailing" secondItem="TjJ-Pc-2rw" secondAttribute="trailing" id="2mp-1i-s2e"/>
+                        <constraint firstAttribute="trailing" secondItem="dSK-5Z-nLe" secondAttribute="trailing" constant="16" id="63G-uH-Leh"/>
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" id="6V9-Dd-LhO"/>
                         <constraint firstAttribute="trailing" secondItem="2x6-j5-fSa" secondAttribute="trailing" constant="16" id="Av6-ma-GDU"/>
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" id="Co0-MN-LJg"/>
-                        <constraint firstItem="2x6-j5-fSa" firstAttribute="top" secondItem="Zhu-iR-DhR" secondAttribute="bottom" constant="4" id="FBr-eg-nld"/>
                         <constraint firstItem="Zhu-iR-DhR" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="HS9-Aa-qbj"/>
                         <constraint firstAttribute="bottom" secondItem="TjJ-Pc-2rw" secondAttribute="bottom" id="LdO-Gm-ECa"/>
+                        <constraint firstAttribute="trailing" secondItem="faz-Vk-YZV" secondAttribute="trailing" constant="16" id="Zm9-2I-M0v"/>
                         <constraint firstItem="Zhu-iR-DhR" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="16" id="bNw-P0-5de"/>
                         <constraint firstAttribute="bottom" secondItem="2x6-j5-fSa" secondAttribute="bottom" constant="8" id="ddU-Ed-Qo4"/>
+                        <constraint firstItem="faz-Vk-YZV" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="16" id="u0m-XT-5NB"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wfs-Iy-gYC"/>
+                        <constraint firstItem="dSK-5Z-nLe" firstAttribute="top" secondItem="Zhu-iR-DhR" secondAttribute="bottom" constant="8" id="yNd-o7-Rx6"/>
                         <constraint firstAttribute="trailing" secondItem="Zhu-iR-DhR" secondAttribute="trailing" constant="16" id="zK7-hD-sIK"/>
                     </constraints>
                 </view>
@@ -91,12 +130,15 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnLink" destination="2x6-j5-fSa" id="92S-L8-zqB"/>
+                <outlet property="btnReload" destination="faz-Vk-YZV" id="r4I-eF-gAB"/>
+                <outlet property="lbKorean" destination="dSK-5Z-nLe" id="dYF-2N-7tk"/>
                 <outlet property="tvSentence" destination="Zhu-iR-DhR" id="xds-Si-hDa"/>
             </connections>
             <point key="canvasLocation" x="401.52671755725191" y="-397.18309859154931"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="110" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
