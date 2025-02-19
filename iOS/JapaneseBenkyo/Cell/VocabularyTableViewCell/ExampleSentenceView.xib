@@ -79,10 +79,10 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faz-Vk-YZV">
-                            <rect key="frame" x="252" y="16" width="16" height="16"/>
+                            <rect key="frame" x="244" y="8" width="32" height="32"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="16" id="22d-My-004"/>
-                                <constraint firstAttribute="width" constant="16" id="jK8-hz-tmG"/>
+                                <constraint firstAttribute="height" constant="32" id="22d-My-004"/>
+                                <constraint firstAttribute="width" constant="32" id="jK8-hz-tmG"/>
                             </constraints>
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" title="Button"/>
@@ -108,10 +108,10 @@
                         <constraint firstItem="TjJ-Pc-2rw" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" id="Co0-MN-LJg"/>
                         <constraint firstItem="Zhu-iR-DhR" firstAttribute="leading" secondItem="EvY-fk-Yil" secondAttribute="leading" constant="16" id="HS9-Aa-qbj"/>
                         <constraint firstAttribute="bottom" secondItem="TjJ-Pc-2rw" secondAttribute="bottom" id="LdO-Gm-ECa"/>
-                        <constraint firstAttribute="trailing" secondItem="faz-Vk-YZV" secondAttribute="trailing" constant="16" id="Zm9-2I-M0v"/>
+                        <constraint firstAttribute="trailing" secondItem="faz-Vk-YZV" secondAttribute="trailing" constant="8" id="Zm9-2I-M0v"/>
                         <constraint firstItem="Zhu-iR-DhR" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="16" id="bNw-P0-5de"/>
                         <constraint firstAttribute="bottom" secondItem="2x6-j5-fSa" secondAttribute="bottom" constant="8" id="ddU-Ed-Qo4"/>
-                        <constraint firstItem="faz-Vk-YZV" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="16" id="u0m-XT-5NB"/>
+                        <constraint firstItem="faz-Vk-YZV" firstAttribute="top" secondItem="EvY-fk-Yil" secondAttribute="top" constant="8" id="u0m-XT-5NB"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wfs-Iy-gYC"/>
                         <constraint firstItem="dSK-5Z-nLe" firstAttribute="top" secondItem="Zhu-iR-DhR" secondAttribute="bottom" constant="8" id="yNd-o7-Rx6"/>
                         <constraint firstAttribute="trailing" secondItem="Zhu-iR-DhR" secondAttribute="trailing" constant="16" id="zK7-hD-sIK"/>
