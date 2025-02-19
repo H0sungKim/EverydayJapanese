@@ -1,6 +1,15 @@
 {
-  "originHash" : "144144ce9b93ed52997214a87d41eea63b7d05fd977244fc67f629aeb25b33c2",
+  "originHash" : "6814ab21786fdafad62d64600e9179b42f1a5b82bbffc494a3c8414584f87997",
   "pins" : [
+    {
+      "identity" : "adfit-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adfit/adfit-spm",
+      "state" : {
+        "revision" : "31c7019d05140474793a8f77bbe4964dd0478c13",
+        "version" : "3.18.3"
+      }
+    },
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
@@ -53,24 +62,6 @@
       "state" : {
         "revision" : "2f5274827d310e32c09325dd3e0007120940988e",
         "version" : "1.31.0"
-      }
-    },
-    {
-      "identity" : "swift-package-manager-google-mobile-ads",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-      "state" : {
-        "revision" : "7778cc1ab037c10dbbe026959e51e616bd961be9",
-        "version" : "11.13.0"
-      }
-    },
-    {
-      "identity" : "swift-package-manager-google-user-messaging-platform",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
-      "state" : {
-        "revision" : "708a282840c2171ee63bd93b87afa49fe507d70e",
-        "version" : "2.7.0"
       }
     }
   ],

@@ -7,7 +7,6 @@
 
 import UIKit
 import AVFoundation
-import GoogleMobileAds
 import AppTrackingTransparency
 
 @main
@@ -39,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error : \(error), \(error.userInfo)")
             }
         }
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         // Temp =============================================
         
