@@ -197,6 +197,7 @@
 		96D4D3B52D65AF270029874C /* jlpt.json in Resources */ = {isa = PBXBuildFile; fileRef = 96D4CE2E2D6215EF0029874C /* jlpt.json */; };
 		96D4D3B62D65AF270029874C /* kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = 96D4CE302D6215F90029874C /* kanji.json */; };
 		96D4D3B92D65B1D20029874C /* AdFitSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 96D4D3B82D65B1D20029874C /* AdFitSDK */; };
+		96D4D3C72D6652950029874C /* TatoebaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4D3C62D6652950029874C /* TatoebaError.swift */; };
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
 		96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */; };
@@ -409,6 +410,7 @@
 		96D4CE2E2D6215EF0029874C /* jlpt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jlpt.json; sourceTree = "<group>"; };
 		96D4CE302D6215F90029874C /* kanji.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = kanji.json; sourceTree = "<group>"; };
 		96D4CF702D64A1A20029874C /* GlobalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDataManager.swift; sourceTree = "<group>"; };
+		96D4D3C62D6652950029874C /* TatoebaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatoebaError.swift; sourceTree = "<group>"; };
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
@@ -743,6 +745,7 @@
 				96C0FEF52D0D4A7800A9DC21 /* CommonRepository.swift */,
 				96C0FEF72D0D4A8E00A9DC21 /* CommonRestAPI.swift */,
 				96C0FEF92D0D4AA200A9DC21 /* Configuration.swift */,
+				96D4D3C62D6652950029874C /* TatoebaError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1193,6 +1196,7 @@
 				9600CFA62D3A3F46006E94BA /* StrokeOrderAnimationView.swift in Sources */,
 				96CC76292CEB894A002E220D /* HiraganaKatakanaTestViewController.swift in Sources */,
 				96CC76322CEB8AAE002E220D /* HiraganaKatakanaManager.swift in Sources */,
+				96D4D3C72D6652950029874C /* TatoebaError.swift in Sources */,
 				96CC76332CEB8AAE002E220D /* OCRManager.swift in Sources */,
 				960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */,
 				96C0FEFA2D0D4AA200A9DC21 /* Configuration.swift in Sources */,
@@ -1398,7 +1402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.00;
+				MARKETING_VERSION = 3.00.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1428,7 +1432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.00;
+				MARKETING_VERSION = 3.00.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

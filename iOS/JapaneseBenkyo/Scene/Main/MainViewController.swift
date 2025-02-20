@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import AdFitSDK
 
 class MainViewController: UIViewController {
+    
+    private var nativeAd: AdFitNativeAd?
+    private var nativeAdLoader: AdFitNativeAdLoader?
+    
+    private var adHeight: CGFloat = 0
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +25,10 @@ class MainViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: PassTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PassTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
+        tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
+        nativeAdLoader = AdFitNativeAdLoader(clientId: "DAN-7awp61JMS8jVYgpI")
+        nativeAdLoader?.delegate = self
+        nativeAdLoader?.loadAd()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,28 +43,55 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch SectionEnum.allCases[section] {
-        case .hiraganakatagana :
+        case .ad:
+            return 1
+        case .hiraganakatagana:
             return SectionEnum.hiraganakatagana.indexEnums.count+1
-        case .kanji :
+        case .kanji:
             return SectionEnum.kanji.indexEnums.count+2
-        case .vocabulary :
+        case .vocabulary:
             return SectionEnum.vocabulary.indexEnums.count+2
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let bizBoardCell = cell as? BizBoardCell {
+            if let nativeAd = nativeAd {
+                nativeAd.bind(bizBoardCell)
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell: HeaderTableViewCell
-            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self), for: indexPath) as? HeaderTableViewCell {
-                cell = reusableCell
-            } else {
-                let objectArray = Bundle.main.loadNibNamed(String(describing: HeaderTableViewCell.self), owner: nil, options: nil)
-                cell = objectArray![0] as! HeaderTableViewCell
+            switch SectionEnum.allCases[indexPath.section] {
+            case .ad:
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BizBoardCell.self), for: indexPath) as! BizBoardCell
+                adHeight = cell.adHeight(width: tableView.bounds.width)
+                cell.bgViewBottomMargin = 0
+                cell.bgViewTopMargin = 0
+                cell.bgViewRightMargin = 0
+                cell.bgViewleftMargin = 0
+                
+                cell.bgViewColor = .clear
+                return cell
+            case .hiraganakatagana, .kanji, .vocabulary:
+                let cell: HeaderTableViewCell
+                if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self), for: indexPath) as? HeaderTableViewCell {
+                    cell = reusableCell
+                } else {
+                    let objectArray = Bundle.main.loadNibNamed(String(describing: HeaderTableViewCell.self), owner: nil, options: nil)
+                    cell = objectArray![0] as! HeaderTableViewCell
+                }
+                cell.initializeView(section: SectionEnum.allCases[indexPath.section])
+                return cell
             }
-            cell.initializeView(section: SectionEnum.allCases[indexPath.section])
-            return cell
         }
         switch SectionEnum.allCases[indexPath.section] {
+        case .ad:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BizBoardCell.self), for: indexPath) as! BizBoardCell
+            adHeight = cell.adHeight(width: view.bounds.width)
+            return cell
         case .hiraganakatagana:
             let cell: IndexTableViewCell
             if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
@@ -95,6 +132,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let indexEnum: IndexEnum? = {
             switch SectionEnum.allCases[indexPath.section] {
+            case .ad:
+                return nil
             case .hiraganakatagana:
                 return indexPath.row == 0 ? nil : SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-1]
             case .kanji, .vocabulary:
@@ -119,9 +158,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 70
+            switch SectionEnum.allCases[indexPath.section] {
+            case .ad:
+                return adHeight
+            case .hiraganakatagana, .kanji, .vocabulary:
+                return 70
+            }
+            
         }
         if indexPath.row == 1 {
             switch SectionEnum.allCases[indexPath.section] {
@@ -132,5 +178,39 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            switch SectionEnum.allCases[indexPath.section] {
+            case .ad:
+                return adHeight
+            case .hiraganakatagana, .kanji, .vocabulary:
+                return 70
+            }
+            
+        }
+        if indexPath.row == 1 {
+            switch SectionEnum.allCases[indexPath.section] {
+            case .kanji, .vocabulary:
+                return 20
+            default:
+                break
+            }
+        }
+        return 50
+    }
+}
+
+extension MainViewController: AdFitNativeAdLoaderDelegate {
+    func nativeAdLoaderDidReceiveAd(_ nativeAd: AdFitNativeAd) {
+        self.nativeAd = nativeAd
+        tableView.reloadData()
+        print("광고 응답을 받았습니다.")
+    }
+    
+    func nativeAdLoaderDidFailToReceiveAd(_ nativeAdLoader: AdFitNativeAdLoader, error: any Error) {
+        tableView.reloadData()
+        print("광고 응답 에러: \(error) (\(error.localizedDescription))")
     }
 }
