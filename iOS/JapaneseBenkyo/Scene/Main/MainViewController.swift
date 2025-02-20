@@ -7,6 +7,7 @@
 
 import UIKit
 import AdFitSDK
+import AppTrackingTransparency
 
 class MainViewController: UIViewController {
     
@@ -28,7 +29,13 @@ class MainViewController: UIViewController {
         tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
         nativeAdLoader = AdFitNativeAdLoader(clientId: "DAN-7awp61JMS8jVYgpI")
         nativeAdLoader?.delegate = self
-        nativeAdLoader?.loadAd()
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+                self?.nativeAdLoader?.loadAd()
+            }
+        } else {
+            nativeAdLoader?.loadAd()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
