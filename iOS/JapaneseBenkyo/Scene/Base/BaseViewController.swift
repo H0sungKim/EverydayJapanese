@@ -7,32 +7,16 @@
 
 import UIKit
 import AppTrackingTransparency
-import AdFitSDK
 
 class BaseViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
-    var bannerView: AdFitBannerAdView!
     
     private var containerViewController: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupContainerViewController()
-        guard let adMyKey = Bundle.main.adMyKey else { return }
-        bannerView = AdFitBannerAdView(clientId: adMyKey, adUnitSize: "320x50")
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        NSLayoutConstraint.activate([
-            bannerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            bannerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bannerView.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        loadAd()
     }
     
     private func setupContainerViewController() {
@@ -47,30 +31,15 @@ class BaseViewController: UIViewController {
         containerViewController.didMove(toParent: self)
     }
     
-    private func loadAd() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
-                self?.bannerView.loadAd()
-            }
-        } else {
-            self.bannerView.loadAd()
-        }
-    }
-}
-
-extension BaseViewController: AdFitBannerAdViewDelegate {
-    //Mark - AdFitBannerAdViewDelegate
-    func adViewDidReceiveAd(_ bannerAdView: AdFitBannerAdView) {
-        print("didReceiveAd")
-    }
-    
-    func adViewDidFailToReceiveAd(_ bannerAdView: AdFitBannerAdView, error: Error) {
-        print("didFailToReceive - error :\(error.localizedDescription)" )
-    }
-    
-    func adViewDidClickAd(_ bannerAdView: AdFitBannerAdView) {
-        print("didClickAd")
-    }
+//    private func loadAd() {
+//        if #available(iOS 14, *) {
+//            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+//                self?.bannerView.loadAd()
+//            }
+//        } else {
+//            self.bannerView.loadAd()
+//        }
+//    }
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {

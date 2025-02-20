@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum CommonRestAPI {
-    case getSentence(word: String, cursor_end: String?)
+    case getSentence(word: String, trans: TransEnum, cursor_end: String?)
 }
 
 extension CommonRestAPI: TargetType {
@@ -19,28 +19,28 @@ extension CommonRestAPI: TargetType {
     
     var path: String {
         switch self {
-        case .getSentence(let word):
+        case .getSentence:
             return "/unstable/sentences"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getSentence(let word):
+        case .getSentence:
             return .get
         }
     }
     
     var task: Moya.Task {
         switch self {
-        case .getSentence(let word, let cursor_end):
+        case .getSentence(let word, let trans, let cursor_end):
             var params: [String: Any] = [
                 "lang": "jpn",
                 "q": word,
                 "limit": 1,
-                "trans:lang": "kor",
+                "trans:lang": trans.rawValue,
                 "sort": "relevance",
-                "showtrans": "kor",
+                "showtrans": trans.rawValue,
             ]
             if let cursor_end = cursor_end {
                 params["after"] = cursor_end

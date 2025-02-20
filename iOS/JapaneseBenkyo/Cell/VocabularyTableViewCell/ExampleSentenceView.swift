@@ -63,7 +63,9 @@ class ExampleSentenceView: UIView {
         onClickLink?()
     }
     @IBAction func onClickReload(_ sender: Any) {
-        hideSkeleton()
+        tvSentence.text = ""
+        lbKorean.text = ""
+        showSkeleton()
         onClickReload?()
     }
 }

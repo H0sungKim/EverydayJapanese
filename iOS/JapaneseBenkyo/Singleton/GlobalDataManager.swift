@@ -27,6 +27,8 @@ class GlobalDataManager {
             return kanjis.count
         case .vocabulary:
             return vocabularies.count
+        case .ad:
+            return 0
         }
     }
 }

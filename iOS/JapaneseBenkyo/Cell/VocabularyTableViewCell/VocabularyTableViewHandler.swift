@@ -62,16 +62,16 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         }
         
         cell.onClickBookmark = { [weak self] sender in
-            self?.onClickBookmark(cell, sender, vocabularyForCell: vocabularyForCell)
+            self?.onClickBookmark(cell, sender, indexPath: indexPath)
         }
         cell.onClickPronounce = { [weak self] sender in
-            self?.onClickPronounce(cell, sender, vocabularyForCell: vocabularyForCell)
+            self?.onClickPronounce(cell, sender, indexPath: indexPath)
         }
         cell.onClickExpand = { [weak self] sender in
-            self?.onClickExpand(cell, sender, vocabularyForCell: vocabularyForCell, indexPath: indexPath)
+            self?.onClickExpand(cell, sender, indexPath: indexPath)
         }
         cell.onClickReload = { [weak self] in
-            self?.onClickReload(cell, vocabularyForCell: vocabularyForCell, indexPath: indexPath)
+            self?.onClickReload(cell, indexPath: indexPath)
         }
         
         cell.initializeCell(vocabularyForCell: vocabularyForCell)
@@ -98,49 +98,65 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         return UITableView.automaticDimension
     }
     
-    private func onClickBookmark(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
-        if vocabularyForCell.isBookmark {
-            bookmark.remove(vocabularyForCell.id)
+    private func onClickBookmark(_ cell: VocabularyTableViewCell, _ sender: UIButton, indexPath: IndexPath) {
+        if vocabulariesForCell[indexPath.row].isBookmark {
+            bookmark.remove(vocabulariesForCell[indexPath.row].id)
         } else {
-            bookmark.insert(vocabularyForCell.id)
+            bookmark.insert(vocabulariesForCell[indexPath.row].id)
         }
-        vocabularyForCell.isBookmark = !vocabularyForCell.isBookmark
-        cell.initializeCell(vocabularyForCell: vocabularyForCell)
+        vocabulariesForCell[indexPath.row].isBookmark = !vocabulariesForCell[indexPath.row].isBookmark
+        cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
         UserDefaultManager.shared.bookmarkVoca = bookmark
     }
-    private func onClickPronounce(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell) {
-        TTSManager.shared.play(vocabulary: vocabularyForCell.vocabulary)
+    private func onClickPronounce(_ cell: VocabularyTableViewCell, _ sender: UIButton, indexPath: IndexPath) {
+        TTSManager.shared.play(vocabulary: vocabulariesForCell[indexPath.row].vocabulary)
     }
-    private func onClickExpand(_ cell: VocabularyTableViewCell, _ sender: UIButton, vocabularyForCell: VocabularyForCell, indexPath: IndexPath) {
-        vocabularyForCell.isExpanded = !vocabularyForCell.isExpanded
-        cell.initializeCell(vocabularyForCell: vocabularyForCell)
+    private func onClickExpand(_ cell: VocabularyTableViewCell, _ sender: UIButton, indexPath: IndexPath) {
+        vocabulariesForCell[indexPath.row].isExpanded = !vocabulariesForCell[indexPath.row].isExpanded
+        cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
         onReload?(indexPath)
-        if let _ = vocabularyForCell.exampleSentence {
+        if let _ = vocabulariesForCell[indexPath.row].exampleSentence {
             return
         }
-        CommonRepository.shared.getSentence(word: vocabularyForCell.vocabulary.word)
-            .sink(receiveCompletion: { error in
-                NSLog("\(error)")
+        CommonRepository.shared.getSentence(word: vocabulariesForCell[indexPath.row].vocabulary.word, trans: .kor)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    switch error {
+                    case .moyaError:
+                        NSLog(error.description)
+                    case .resultNil:
+                        guard let self = self else { return }
+                        fetchSentence(cell, indexPath: indexPath, trans: vocabulariesForCell[indexPath.row].exampleSentence?.transEnum ?? .eng)
+                    }
+                }
             }, receiveValue: { [weak self] tatoebaModel in
                 print(tatoebaModel)
-                vocabularyForCell.exampleSentence = tatoebaModel
-                cell.initializeCell(vocabularyForCell: vocabularyForCell)
-                self?.onReload?(indexPath)
+                guard let self = self else { return }
+                vocabulariesForCell[indexPath.row].exampleSentence = tatoebaModel
+                cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
+                onReload?(indexPath)
             })
             .store(in: &cancellable)
     }
     
-    private func onClickReload(_ cell: VocabularyTableViewCell, vocabularyForCell: VocabularyForCell, indexPath: IndexPath) {
-        guard let hasNext = vocabularyForCell.exampleSentence?.hasNext else { return }
+    private func onClickReload(_ cell: VocabularyTableViewCell, indexPath: IndexPath) {
+        guard let hasNext = vocabulariesForCell[indexPath.row].exampleSentence?.hasNext else { return }
         if !hasNext { return }
-        CommonRepository.shared.getSentence(word: vocabularyForCell.vocabulary.word, cursor_end: vocabularyForCell.exampleSentence?.cursor_end)
+        fetchSentence(cell, indexPath: indexPath, trans: vocabulariesForCell[indexPath.row].exampleSentence?.transEnum ?? .kor)
+    }
+    
+    private func fetchSentence(_ cell: VocabularyTableViewCell, indexPath: IndexPath, trans: TransEnum) {
+        CommonRepository.shared.getSentence(word: vocabulariesForCell[indexPath.row].vocabulary.word, trans: trans, cursor_end: vocabulariesForCell[indexPath.row].exampleSentence?.cursor_end)
             .sink(receiveCompletion: { error in
                 NSLog("\(error)")
             }, receiveValue: { [weak self] tatoebaModel in
                 print(tatoebaModel)
-                vocabularyForCell.exampleSentence = tatoebaModel
-                cell.initializeCell(vocabularyForCell: vocabularyForCell)
-                self?.onReload?(indexPath)
+                guard let self = self else { return }
+                vocabulariesForCell[indexPath.row].exampleSentence = tatoebaModel
+                cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
+                onReload?(indexPath)
             })
             .store(in: &cancellable)
     }
