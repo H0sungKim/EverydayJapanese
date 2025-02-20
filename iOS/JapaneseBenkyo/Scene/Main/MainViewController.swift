@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: PassTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PassTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
         tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
-        nativeAdLoader = AdFitNativeAdLoader(clientId: "DAN-7awp61JMS8jVYgpI")
+        nativeAdLoader = AdFitNativeAdLoader(clientId: Bundle.main.adMyKey!)
         nativeAdLoader?.delegate = self
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { [weak self] status in
