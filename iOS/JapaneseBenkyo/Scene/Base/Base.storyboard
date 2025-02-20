@@ -17,28 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" restorationIdentifier="GADBannerView" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-v3-LGj" customClass="GADBannerView">
-                                <rect key="frame" x="8" y="768" width="377" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsC-eK-VSO">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CsC-eK-VSO" secondAttribute="bottom" id="AHq-N9-WE1"/>
                             <constraint firstItem="CsC-eK-VSO" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="C0H-gG-5QK"/>
                             <constraint firstAttribute="trailing" secondItem="CsC-eK-VSO" secondAttribute="trailing" id="SEq-Wn-dF8"/>
                             <constraint firstItem="CsC-eK-VSO" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="a0a-0z-Wer"/>
-                            <constraint firstItem="j0r-v3-LGj" firstAttribute="top" secondItem="CsC-eK-VSO" secondAttribute="bottom" id="aXD-co-80O"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="j0r-v3-LGj" secondAttribute="trailing" constant="8" id="dDB-bF-gYA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="j0r-v3-LGj" secondAttribute="bottom" id="dv0-xQ-fYK"/>
-                            <constraint firstItem="j0r-v3-LGj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="sqe-YL-oyZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bannerView" destination="j0r-v3-LGj" id="HLl-uF-PiU"/>
                         <outlet property="containerView" destination="CsC-eK-VSO" id="by3-ut-sce"/>
                     </connections>
                 </viewController>

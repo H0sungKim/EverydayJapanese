@@ -5,6 +5,8 @@
 
 Secret.plist
 google-services.json
+build.gradle.kts
+temp_strings.xml
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

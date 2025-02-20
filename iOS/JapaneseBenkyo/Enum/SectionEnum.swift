@@ -16,6 +16,7 @@ protocol Section {
 }
 
 enum SectionEnum: CaseIterable {
+    case ad
     case hiraganakatagana
     case kanji
     case vocabulary
@@ -24,6 +25,8 @@ enum SectionEnum: CaseIterable {
 extension SectionEnum: Section {
     var title: String {
         switch self {
+        case .ad:
+            return ""
         case .hiraganakatagana:
             return "히라가나 가타카나 표"
         case .kanji:
@@ -35,6 +38,8 @@ extension SectionEnum: Section {
     
     var image: UIImage {
         switch self {
+        case .ad:
+            return UIImage()
         case .hiraganakatagana:
             return UIImage(named: "hiraganakatakana.png")!
         case .kanji:
@@ -46,6 +51,8 @@ extension SectionEnum: Section {
     
     var indexEnums: [IndexEnum] {
         switch self {
+        case .ad:
+            return []
         case .hiraganakatagana:
             return [
                 .hiragana,
@@ -76,7 +83,7 @@ extension SectionEnum: Section {
     
     var bookmark: Set<String> {
         switch self {
-        case .hiraganakatagana:
+        case .ad, .hiraganakatagana:
             return []
         case .kanji:
             return UserDefaultManager.shared.bookmarkKanji
@@ -87,7 +94,7 @@ extension SectionEnum: Section {
     
     var pass: Set<String> {
         switch self {
-        case .hiraganakatagana:
+        case .ad, .hiraganakatagana:
             return []
         case .kanji:
             return UserDefaultManager.shared.passKanji
@@ -98,7 +105,7 @@ extension SectionEnum: Section {
     
     var tableViewCell: UITableViewCell.Type {
         switch self {
-        case .hiraganakatagana:
+        case .ad, .hiraganakatagana:
             return UITableViewCell.self
         case .kanji:
             return KanjiTableViewCell.self
@@ -109,7 +116,7 @@ extension SectionEnum: Section {
     
     var fileName: String {
         switch self {
-        case .hiraganakatagana:
+        case .ad, .hiraganakatagana:
             return ""
         case .kanji:
             return "kanji"

@@ -6,25 +6,17 @@
 //
 
 import UIKit
-import GoogleMobileAds
+import AppTrackingTransparency
 
 class BaseViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     private var containerViewController: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupContainerViewController()
-#if DEBUG
-        bannerView.adUnitID = Bundle.main.adTestKey
-#else
-        bannerView.adUnitID = Bundle.main.adMyKey
-#endif
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
     }
     
     private func setupContainerViewController() {
@@ -38,6 +30,16 @@ class BaseViewController: UIViewController {
         containerView.addSubview(containerViewController.view)
         containerViewController.didMove(toParent: self)
     }
+    
+//    private func loadAd() {
+//        if #available(iOS 14, *) {
+//            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+//                self?.bannerView.loadAd()
+//            }
+//        } else {
+//            self.bannerView.loadAd()
+//        }
+//    }
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {

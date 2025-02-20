@@ -116,13 +116,13 @@ struct StudyWidegetEntryView : View {
     
     private func loadData() {
         let studyPart = entry.configuration.studyPart
-        if let jsonData = JSONManager.shared.openJSON(path: studyPart.getFileName()) {
-            switch studyPart {
-            case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
-                vocabularies = JSONManager.shared.decode(data: jsonData, type: [Vocabulary].self) ?? []
-            case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
-                kanjis = JSONManager.shared.decode(data: jsonData, type: [Kanji].self) ?? []
-            }
+        switch studyPart {
+        case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
+            let dict = JSONManager.shared.decode(data: JSONManager.shared.openJSON(path: studyPart.fileName), type: [String: Vocabulary].self) ?? [:]
+            vocabularies = dict.keys.compactMap({ dict[$0] })
+        case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
+            let dict = JSONManager.shared.decode(data: JSONManager.shared.openJSON(path: studyPart.fileName), type: [String: Kanji].self) ?? [:]
+            kanjis = dict.keys.compactMap({ dict[$0] })
         }
     }
 }

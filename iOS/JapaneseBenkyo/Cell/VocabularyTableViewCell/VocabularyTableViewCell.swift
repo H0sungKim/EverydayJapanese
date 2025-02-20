@@ -66,7 +66,7 @@ class VocabularyTableViewCell: UITableViewCell {
                 self?.onClickReload?()
             }
             expandableAreaView.tvSentence.attributedText = RubyAnnotationManager.shared.getRubyAnnotationString(html: exampleSentence.html, sentence: exampleSentence.text)
-            expandableAreaView.lbKorean.text = "  \(exampleSentence.korText)"
+            expandableAreaView.lbKorean.text = "  \(exampleSentence.transText)"
             expandableAreaView.btnReload.isHidden = !exampleSentence.hasNext
             expandableAreaView.hideSkeleton()
         }
