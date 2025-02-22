@@ -81,8 +81,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.bgViewTopMargin = 0
                 cell.bgViewRightMargin = 0
                 cell.bgViewleftMargin = 0
-//                adHeight = cell.contentView.frame.width / 2
-                adHeight = cell.adHeight(width: cell.contentView.frame.width)
+                adHeight = cell.contentView.frame.width / 2
+//                adHeight = cell.adHeight(width: cell.contentView.frame.width)
                 return cell
             case .hiraganakatagana, .kanji, .vocabulary:
                 let cell: HeaderTableViewCell
