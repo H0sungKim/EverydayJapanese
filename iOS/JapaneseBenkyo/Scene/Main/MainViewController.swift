@@ -7,6 +7,7 @@
 
 import UIKit
 import AdFitSDK
+import AppTrackingTransparency
 
 class MainViewController: UIViewController {
     
@@ -20,15 +21,23 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        nativeAdLoader = AdFitNativeAdLoader(clientId: Bundle.main.adMyKey!)
+        nativeAdLoader?.delegate = self
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+                self?.nativeAdLoader?.loadAd()
+            }
+        } else {
+            nativeAdLoader?.loadAd()
+        }
+        
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: PassTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PassTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
         tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
-        nativeAdLoader = AdFitNativeAdLoader(clientId: "DAN-7awp61JMS8jVYgpI")
-        nativeAdLoader?.delegate = self
-        nativeAdLoader?.loadAd()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,13 +76,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             switch SectionEnum.allCases[indexPath.section] {
             case .ad:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BizBoardCell.self), for: indexPath) as! BizBoardCell
-                adHeight = cell.adHeight(width: tableView.bounds.width)
+                cell.bgViewColor = .clear
                 cell.bgViewBottomMargin = 0
                 cell.bgViewTopMargin = 0
                 cell.bgViewRightMargin = 0
                 cell.bgViewleftMargin = 0
-                
-                cell.bgViewColor = .clear
+//                adHeight = cell.contentView.frame.width / 2
+                adHeight = cell.adHeight(width: cell.contentView.frame.width)
                 return cell
             case .hiraganakatagana, .kanji, .vocabulary:
                 let cell: HeaderTableViewCell
@@ -90,7 +99,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         switch SectionEnum.allCases[indexPath.section] {
         case .ad:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BizBoardCell.self), for: indexPath) as! BizBoardCell
-            adHeight = cell.adHeight(width: view.bounds.width)
             return cell
         case .hiraganakatagana:
             let cell: IndexTableViewCell
@@ -160,43 +168,45 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             switch SectionEnum.allCases[indexPath.section] {
             case .ad:
                 return adHeight
             case .hiraganakatagana, .kanji, .vocabulary:
                 return 70
             }
-            
-        }
-        if indexPath.row == 1 {
+        case 1:
             switch SectionEnum.allCases[indexPath.section] {
             case .kanji, .vocabulary:
                 return 20
             default:
                 break
             }
+        default:
+            break
         }
         return 50
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             switch SectionEnum.allCases[indexPath.section] {
             case .ad:
                 return adHeight
             case .hiraganakatagana, .kanji, .vocabulary:
                 return 70
             }
-            
-        }
-        if indexPath.row == 1 {
+        case 1:
             switch SectionEnum.allCases[indexPath.section] {
             case .kanji, .vocabulary:
                 return 20
             default:
                 break
             }
+        default:
+            break
         }
         return 50
     }

@@ -517,8 +517,8 @@
 		9615369E2C8C2C6300563983 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				961536A12C8C2C7E00563983 /* TestViewController.swift */,
 				9615369F2C8C2C7400563983 /* Test.storyboard */,
+				961536A12C8C2C7E00563983 /* TestViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1402,7 +1402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.01;
+				MARKETING_VERSION = 3.00.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1432,7 +1432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.01;
+				MARKETING_VERSION = 3.00.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
