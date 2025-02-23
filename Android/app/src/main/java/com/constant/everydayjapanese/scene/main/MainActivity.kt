@@ -20,9 +20,11 @@ import com.constant.everydayjapanese.databinding.ActivityMainBinding
 import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
+import com.constant.everydayjapanese.scene.debug.SceneActivity
 import com.constant.everydayjapanese.singleton.JSONManager
 import com.constant.everydayjapanese.singleton.Pref
 import com.constant.everydayjapanese.singleton.PrefManager
+import com.constant.everydayjapanese.util.FeatureConst
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.IndexEnum
 
@@ -432,6 +434,11 @@ class MainActivity : AppCompatActivity() {
             )
             recyclerviewVocabulary.adapter = vocabularyAdapter
 
+        }
+
+        if (FeatureConst.FEATURE_SPECIFIC_SCENE) {
+            val intent = Intent(this@MainActivity, SceneActivity::class.java)
+            startActivity(intent)
         }
     }
 }

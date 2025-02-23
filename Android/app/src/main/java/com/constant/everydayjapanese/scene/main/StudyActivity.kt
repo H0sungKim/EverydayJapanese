@@ -19,7 +19,6 @@ import com.constant.everydayjapanese.databinding.ActivityStudyBinding
 import com.constant.everydayjapanese.extension.applyGUI
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
-import com.constant.everydayjapanese.network.model.FileModel
 import com.constant.everydayjapanese.singleton.GlobalVariable
 import com.constant.everydayjapanese.singleton.JSONManager
 import com.constant.everydayjapanese.singleton.Pref

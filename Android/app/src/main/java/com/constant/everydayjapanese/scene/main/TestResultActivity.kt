@@ -59,6 +59,8 @@ class TestResultActivity : AppCompatActivity() {
                     }
                 },
             )
+            textviewScore.text = "100점"
+            textviewSubscore.text = "20/20"
 
         }
     }

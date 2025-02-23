@@ -77,7 +77,6 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
                 .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
                 .addInterceptor(createHeader(isSecured))
-                .addInterceptor(ErrorHandleInterceptor(context))
                 .addInterceptor(
                     HttpLoggingInterceptor().apply {
                         level = HttpLoggingInterceptor.Level.BODY
