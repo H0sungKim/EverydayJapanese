@@ -30,7 +30,7 @@
 	<string name="common_continue">계속</string>
 	<string name="common_goto_setting">설정하기</string>
 
-	<!-- 기타 -->
+	<!-- Core -->
 	<string name="app_name">매일 일본어</string>
 	<string name="notices">공지사항</string>
 	<string name="required_updates">필수 업데이트</string>
@@ -65,10 +65,12 @@
 	<string name="year">%d년</string>
 	<string name="hour_minute">%d시간 %02d분</string>
 	<string name="minute">%02d분</string>
+
+	<!-- 기타 -->
 	<string name="add_incorrect_word_favorites">틀린 단어 즐겨찾기 추가하기</string>
 	<string name="test_again_for_incorrect_words">틀린 단어 다시 테스트하기</string>
 	<string name="end_test">테스트 끝내기</string>
-
+	<string name="incorrect_word">틀린단어</string>
 
 
 

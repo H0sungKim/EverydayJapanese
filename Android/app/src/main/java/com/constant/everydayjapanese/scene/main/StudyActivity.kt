@@ -361,6 +361,8 @@ class StudyActivity : AppCompatActivity() {
             this.onSelectItemListener = onSelectItemListener
         }
     } // End of VocabularyAdapter
+
+
     data class Param (
         var indexEnum:IndexEnum,
         var day:Int = 0,

@@ -30,7 +30,7 @@
 	<string name="common_continue">Continue</string>
 	<string name="common_goto_setting">Go to setting</string>
 
-	<!-- 기타 -->
+	<!-- Core -->
 	<string name="app_name">Japanese Everyday</string>
 	<string name="notices">Notices</string>
 	<string name="required_updates">Required updates</string>
@@ -65,10 +65,12 @@
 	<string name="year">%d year</string>
 	<string name="hour_minute">%dh %02dm</string>
 	<string name="minute">%02dm</string>
+
+	<!-- 기타 -->
 	<string name="add_incorrect_word_favorites">Add incorrect word to favorites</string>
 	<string name="test_again_for_incorrect_words">Test again for incorrect words</string>
 	<string name="end_test">End test</string>
-
+	<string name="incorrect_word">incorrect word</string>
 
 
 
