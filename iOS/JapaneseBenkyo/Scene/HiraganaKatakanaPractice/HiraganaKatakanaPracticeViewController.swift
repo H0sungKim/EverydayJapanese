@@ -40,6 +40,8 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ivSection.layer.cornerRadius = 16
+        
         ivSection.image = param.indexEnum.section?.image
         lbTitle.text = param.indexEnum.section?.title
         lbSubtitle.text = "\(param.indexEnum.rawValue) 연습"

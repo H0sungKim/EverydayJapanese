@@ -13,8 +13,6 @@ class MainViewController: UIViewController {
     
     private var nativeAd: AdFitNativeAd?
     private var nativeAdLoader: AdFitNativeAdLoader?
-    
-    private var adHeight: CGFloat = 0
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,6 +21,7 @@ class MainViewController: UIViewController {
         
         nativeAdLoader = AdFitNativeAdLoader(clientId: Bundle.main.adMyKey!)
         nativeAdLoader?.delegate = self
+        nativeAdLoader?.infoIconPosition = .topRight
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { [weak self] status in
                 self?.nativeAdLoader?.loadAd()
@@ -34,7 +33,8 @@ class MainViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: PassTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PassTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
-        tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
+        tableView.register(UINib(nibName: String(describing: AdTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AdTableViewCell.self))
+//        tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,9 +64,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let bizBoardCell = cell as? BizBoardCell {
+        if let adTableViewCell = cell as? AdTableViewCell {
             if let nativeAd = nativeAd {
-                nativeAd.bind(bizBoardCell)
+                nativeAd.bind(adTableViewCell)
             }
         }
     }
@@ -75,14 +75,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             switch SectionEnum.allCases[indexPath.section] {
             case .ad:
-                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BizBoardCell.self), for: indexPath) as! BizBoardCell
-                cell.bgViewColor = .clear
-                cell.bgViewBottomMargin = 0
-                cell.bgViewTopMargin = 0
-                cell.bgViewRightMargin = 0
-                cell.bgViewleftMargin = 0
-                adHeight = cell.contentView.frame.width / 2
-//                adHeight = cell.adHeight(width: cell.contentView.frame.width)
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdTableViewCell.self), for: indexPath) as! AdTableViewCell
+//                cell.bgViewColor = .clear
+//                cell.bgViewBottomMargin = 0
+//                cell.bgViewTopMargin = 0
+//                cell.bgViewRightMargin = 0
+//                cell.bgViewleftMargin = 0
+//                adHeight = cell.contentView.frame.width / 2
                 return cell
             case .hiraganakatagana, .kanji, .vocabulary:
                 let cell: HeaderTableViewCell
@@ -172,29 +171,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             switch SectionEnum.allCases[indexPath.section] {
             case .ad:
-                return adHeight
-            case .hiraganakatagana, .kanji, .vocabulary:
-                return 70
-            }
-        case 1:
-            switch SectionEnum.allCases[indexPath.section] {
-            case .kanji, .vocabulary:
-                return 20
-            default:
-                break
-            }
-        default:
-            break
-        }
-        return 50
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            switch SectionEnum.allCases[indexPath.section] {
-            case .ad:
-                return adHeight
+                return UITableView.automaticDimension
             case .hiraganakatagana, .kanji, .vocabulary:
                 return 70
             }
@@ -212,7 +189,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MainViewController: AdFitNativeAdLoaderDelegate {
+extension MainViewController: AdFitNativeAdLoaderDelegate, AdFitNativeAdDelegate {
     func nativeAdLoaderDidReceiveAd(_ nativeAd: AdFitNativeAd) {
         self.nativeAd = nativeAd
         tableView.reloadData()
@@ -223,4 +200,9 @@ extension MainViewController: AdFitNativeAdLoaderDelegate {
         tableView.reloadData()
         print("광고 응답 에러: \(error) (\(error.localizedDescription))")
     }
+    
+    func nativeAdDidClickAd(_ nativeAd: AdFitNativeAd) {
+        print("광고 클릭")
+    }
+
 }
