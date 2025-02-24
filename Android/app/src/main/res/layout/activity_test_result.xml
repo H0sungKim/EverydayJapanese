@@ -12,61 +12,115 @@
             android:id="@+id/navigationview"
             android:layout_width="match_parent"
             android:layout_height="@dimen/navigation_height"
+            app:layout_constraintBottom_toTopOf="@id/linearlayout_textviews"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/linearlayout_textviews"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearlayout_textviews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/navigationview"
-            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/recyclerview"
             >
+
             <TextView
+                android:id="@+id/textview_score"
+                style="@style/font_t3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_xl"
+                android:layout_marginBottom="@dimen/space_m"
+                android:textColor="@color/fg0" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <Button
+                android:id="@+id/textview_subscore"
+                style="@style/font_p1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/space_m"
+                android:textColor="@color/fg0" />
+
             <Button
+                android:id="@+id/button_bookmark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/img_favorite_off"
+                android:drawablePadding="@dimen/space_xs"
+                android:paddingLeft="@dimen/space_xs"
+                android:paddingRight="@dimen/space_xs"
+                android:text="@string/add_incorrect_word_favorites"
+
                 />
+
+            <Button
+                android:id="@+id/button_retest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/img_reload"
+                android:drawablePadding="@dimen/space_xs"
+                android:paddingLeft="@dimen/space_xs"
+                android:paddingRight="@dimen/space_xs"
+                android:text="@string/test_again_for_incorrect_words" />
+
+            <Button
+                android:id="@+id/button_finishtest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/img_exit"
+                android:drawablePadding="@dimen/space_xs"
+                android:paddingLeft="@dimen/space_xs"
+                android:paddingRight="@dimen/space_xs"
+                android:text="@string/end_test" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                />
+                android:layout_marginBottom="@dimen/space_m"
+                android:background="@color/bg4" />
+
+            <TextView
+                android:id="@+id/textview_wrongword_label"
+                style="@style/font_p1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/incorrect_word"
+                android:textColor="@color/fg0"
+                android:layout_marginHorizontal="@dimen/space_m"
+                android:layout_marginBottom="@dimen/space_m"
+                app:layout_constraintBottom_toTopOf="@id/recyclerview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearlayout_textviews" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg2" />
         </LinearLayout>
-        <TextView
-            android:id="@+id/textview_wrongword_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearlayout_textviews"
-            app:layout_constraintBottom_toTopOf="@id/recyclerview"
-            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/bg0"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_wrongword_label"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@id/linearlayout_textviews" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

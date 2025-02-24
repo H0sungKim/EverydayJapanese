@@ -5,7 +5,6 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.constant.everydayjapanese.singleton.BootingManager
 import com.constant.everydayjapanese.singleton.DebugVariable
 import com.constant.everydayjapanese.singleton.GlobalVariable
 import com.constant.everydayjapanese.singleton.Pref
@@ -33,7 +32,6 @@ class EverydayJapaneseApplication : Application() {
                 intent.action = HHIntent.ACTION_DEBUG_WINDOW_SHOW
                 context.sendBroadcast(intent)
             }
-            BootingManager.getInstance().resume(context)
         }
 
         override fun onActivityStopped(activity: Activity) {
@@ -119,7 +117,6 @@ class EverydayJapaneseApplication : Application() {
         //ProcessLifecycleOwner.get().lifecycle.addObserver(AppLifecycleObserver(this))
         HHLog.d(TAG, "[TIME] App onCreate()Finished : ${System.currentTimeMillis() - GlobalVariable.getInstance().startTime}")
 
-        BootingManager.getInstance().start(this@EverydayJapaneseApplication)
     }
 
     // Public Method

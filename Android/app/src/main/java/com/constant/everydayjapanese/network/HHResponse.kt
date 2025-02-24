@@ -4,7 +4,6 @@ import android.content.Context
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.dialog.LoadingDialog
 import com.constant.everydayjapanese.scene.common.HHDialog
-import com.constant.everydayjapanese.singleton.AccountManager
 import com.constant.everydayjapanese.util.*
 import io.reactivex.rxjava3.core.ObservableEmitter
 import retrofit2.Call
@@ -35,7 +34,7 @@ open class HHResponse<T : Any>(
         response: Response<T>,
     ) {
         HHLog.d(TAG, "onResponse()")
-        if (style.isInclude(CommonRepository.Style.loadingSpinner)) {
+        if (style.isInclude(TatoebaRepository.Style.loadingSpinner)) {
             loadingDialog?.dismiss()
         }
         if (response.isSuccessful) {
@@ -44,20 +43,8 @@ open class HHResponse<T : Any>(
             emitter.onComplete()
         } else {
             val error = getHHError(response)
-            if (error == HHError.EXPIRED_ACCESS_TOKEN || error == HHError.EXPIRED_REFRESH_TOKEN) {
-                if (style.isInclude(CommonRepository.Style.showErrorDialog)) {
-                    HHDialog(
-                        context,
-                        null,
-                        context.getString(R.string.logged_out_because_login_period_has_expired),
-                        context.getString(R.string.common_ok),
-                        { _, _ ->
-                            AccountManager.getInstance().processLogout(context)
-                        },
-                    )
-                }
-            } else if (error == HHError.OTHERS) {
-                if (style.isInclude(CommonRepository.Style.showErrorDialog)) {
+            if (error == HHError.OTHERS) {
+                if (style.isInclude(TatoebaRepository.Style.showErrorDialog)) {
                     HHDialog(
                         context,
                         null,
@@ -77,10 +64,10 @@ open class HHResponse<T : Any>(
         throwable: Throwable,
     ) {
         HHLog.e(TAG, "failure, call = $call, t = $throwable")
-        if (style.isInclude(CommonRepository.Style.loadingSpinner)) {
+        if (style.isInclude(TatoebaRepository.Style.loadingSpinner)) {
             loadingDialog?.dismiss()
         }
-        if (style.isInclude(CommonRepository.Style.showErrorDialog)) {
+        if (style.isInclude(TatoebaRepository.Style.showErrorDialog)) {
             if (throwable is SocketTimeoutException) {
                 HHDialog(
                     context,

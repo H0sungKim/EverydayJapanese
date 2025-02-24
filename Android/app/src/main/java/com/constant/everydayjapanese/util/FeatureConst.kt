@@ -12,7 +12,7 @@ object FeatureConst {
     // Private Constant
     // Public Variable
     val FEATURE_ENTRY_SAMPLE = false
-    val FEATURE_KIHOON = false
+    val FEATURE_SPECIFIC_SCENE = true
 
     // Private Variable
     // Override Method or Basic Method

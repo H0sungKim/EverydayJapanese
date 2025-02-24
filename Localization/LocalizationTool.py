@@ -34,7 +34,7 @@ Android
 /Android/app/src/main/res/values-ko-rKR/strings.xml
 '''
 
-DiRECTORY_ANDROID = "Android/app/src/main/res/"
+DIRECTORY_ANDROID = "Android/app/src/main/res/"
 
 from openpyxl import load_workbook
 import os
@@ -52,7 +52,7 @@ directoryAry = os.getcwd().split("/")
 directory = ""
 for i in directoryAry :
     directory += i + "/"
-    if i == 'JapaneseEveryday' :
+    if i == 'EverydayJapanese' :
         break
 
 # LanguagePack.xlsx 엑셀파일 읽기

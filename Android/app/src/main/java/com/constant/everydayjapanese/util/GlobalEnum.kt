@@ -1,8 +1,6 @@
 package com.constant.everydayjapanese.util
 
-import android.content.Context
 import com.constant.everydayjapanese.R
-import com.constant.everydayjapanese.basic.EverydayJapaneseApplication
 import com.constant.everydayjapanese.extension.LATER
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -27,28 +25,6 @@ enum class ServerEnum(val shortName: String) {
 
         fun ofRaw(raw: String): ServerEnum {
             return rawToEnum[raw] ?: ServerEnum.production
-        }
-    }
-}
-
-enum class WithdrawalReason(val value: Int) {
-    notUseFrequent(1),
-    deletePersonalInfo(2),
-    inconvenience(3),
-    etc(4),
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                WithdrawalReason.notUseFrequent.value to WithdrawalReason.notUseFrequent,
-                WithdrawalReason.deletePersonalInfo.value to WithdrawalReason.deletePersonalInfo,
-                WithdrawalReason.inconvenience.value to WithdrawalReason.inconvenience,
-                WithdrawalReason.etc.value to WithdrawalReason.etc,
-            )
-
-        fun ofRaw(raw: Int): WithdrawalReason {
-            return rawToEnum[raw] ?: WithdrawalReason.notUseFrequent
         }
     }
 }
@@ -85,37 +61,6 @@ enum class MimeType(val value: String) {
     }
 }
 
-enum class ClubType(val value: String) {
-    board("BOARD"),
-    notice("NOTICE"),
-    qna("QNA"),
-    reserved("RESERVED"),
-    club("CLUB"),
-
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                ClubType.board.value to ClubType.board,
-                ClubType.notice.value to ClubType.notice,
-                ClubType.qna.value to ClubType.qna,
-            )
-
-        fun ofRaw(raw: String): ClubType {
-            return rawToEnum[raw] ?: ClubType.board
-        }
-    }
-
-    fun getId(): Int {
-        return when (this) {
-            ClubType.board -> 1
-            ClubType.notice -> 2
-            ClubType.qna -> 3
-            else -> 11
-        }
-    }
-}
 
 enum class HHFileType {
     imageFromCamera,
@@ -135,194 +80,6 @@ enum class HHFileType {
     }
 }
 
-enum class RoleEnum(val value: String) {
-    admin("ADMIN"),
-    manager("MANAGER"),
-    user("USER"),
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                RoleEnum.admin.value to RoleEnum.admin,
-                RoleEnum.manager.value to RoleEnum.manager,
-                RoleEnum.user.value to RoleEnum.user,
-            )
-
-        fun ofRaw(raw: String): RoleEnum {
-            return rawToEnum[raw] ?: RoleEnum.user
-        }
-    }
-
-    fun getName(context: Context): String {
-        return when (this) {
-            admin -> context.getString(R.string.operators)
-            manager -> context.getString(R.string.manager)
-            user -> context.getString(R.string.member)
-        }
-    }
-}
-
-enum class AccessLevelEnum(val value: String) {
-    `private`("PRIVATE"),
-    `public`("PUBLIC"),
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                AccessLevelEnum.private.value to AccessLevelEnum.private,
-                AccessLevelEnum.public.value to AccessLevelEnum.public,
-            )
-
-        fun ofRaw(raw: String): AccessLevelEnum {
-            return rawToEnum[raw] ?: AccessLevelEnum.private
-        }
-    }
-}
-
-enum class PositionEnum(val value: String) {
-    CEO("CEO"),
-    CoCeo("COCEO"),
-    member("MEMBER"),
-    notMember("NOT_MEMBER"),
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                PositionEnum.CEO.value to PositionEnum.CEO,
-                PositionEnum.CoCeo.value to PositionEnum.CoCeo,
-                PositionEnum.member.value to PositionEnum.member,
-                PositionEnum.notMember.value to PositionEnum.notMember,
-            )
-
-        fun ofRaw(raw: String): PositionEnum {
-            return rawToEnum[raw] ?: PositionEnum.notMember
-        }
-    }
-
-    fun getName(context: Context): String {
-        return when (this) {
-            CEO -> context.getString(R.string.ceo)
-            CoCeo -> context.getString(R.string.coceo)
-            member -> context.getString(R.string.member)
-            notMember -> context.getString(R.string.not_member)
-        }
-    }
-
-    fun getColor(context: Context): Int {
-        return when (this) {
-            CEO -> context.getColor(R.color.fg_brand)
-            CoCeo -> context.getColor(R.color.fg_white0)
-            member -> context.getColor(R.color.fg_white4)
-            notMember -> context.getColor(R.color.fg_black0)
-        }
-    }
-}
-
-enum class AttendanceEnum(val value: String) {
-    checkIn("CHECK_IN"),
-    checkOut("CHECK_OUT"),
-    cancel("CANCEL"),
-    manual("MANUAL"),
-    requesting("REQUESTING"),
-    reject("REJECT"),
-    ;
-
-    fun getStatus(): Pair<String, Int> {
-        when (this) {
-            AttendanceEnum.checkIn -> {
-                return Pair<String, Int>(
-                    EverydayJapaneseApplication.context.getString(R.string.checking_in),
-                    EverydayJapaneseApplication.context.getColor(R.color.fg_orange),
-                )
-            }
-            AttendanceEnum.checkOut -> {
-                return Pair<String, Int>(
-                    EverydayJapaneseApplication.context.getString(R.string.attendance_completed),
-                    EverydayJapaneseApplication.context.getColor(R.color.fg_green),
-                )
-            }
-            AttendanceEnum.cancel -> {
-                return Pair<String, Int>(
-                    EverydayJapaneseApplication.context.getString(R.string.attendance_cancellation),
-                    EverydayJapaneseApplication.context.getColor(R.color.fg_red),
-                )
-            }
-            AttendanceEnum.manual -> {
-                return Pair<String, Int>(
-                    EverydayJapaneseApplication.context.getString(R.string.manual_input),
-                    EverydayJapaneseApplication.context.getColor(R.color.fg_blue),
-                )
-            }
-            AttendanceEnum.requesting -> {
-                return Pair<String, Int>(
-                    EverydayJapaneseApplication.context.getString(R.string.waiting_approval),
-                    EverydayJapaneseApplication.context.getColor(R.color.fg_orange),
-                )
-            }
-            AttendanceEnum.reject -> {
-                return Pair<String, Int>(
-                    EverydayJapaneseApplication.context.getString(R.string.approval_rejection),
-                    EverydayJapaneseApplication.context.getColor(R.color.fg_red),
-                )
-            }
-        }
-    }
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                AttendanceEnum.checkIn.value to AttendanceEnum.checkIn,
-                AttendanceEnum.checkOut.value to AttendanceEnum.checkOut,
-                AttendanceEnum.cancel.value to AttendanceEnum.cancel,
-                AttendanceEnum.manual.value to AttendanceEnum.manual,
-                AttendanceEnum.requesting.value to AttendanceEnum.requesting,
-                AttendanceEnum.reject.value to AttendanceEnum.reject,
-            )
-
-        fun ofRaw(raw: String): AttendanceEnum? {
-            return rawToEnum[raw]
-        }
-    }
-}
-
-enum class ApprovalType(val value: String) {
-    attendance("ATTENDANCE"),
-    member("MEMBER"),
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                ApprovalType.attendance.value to ApprovalType.attendance,
-                ApprovalType.member.value to ApprovalType.member,
-            )
-
-        fun ofRaw(raw: String): ApprovalType {
-            return rawToEnum[raw] ?: ApprovalType.attendance
-        }
-    }
-}
-
-enum class StatusEnum(val value: String) {
-    valid("VALID"),
-    requesting("REQUESTING"),
-    ;
-
-    companion object {
-        val rawToEnum =
-            mapOf(
-                StatusEnum.valid.value to StatusEnum.valid,
-                StatusEnum.requesting.value to StatusEnum.requesting,
-            )
-
-        fun ofRaw(raw: String): StatusEnum {
-            return rawToEnum[raw] ?: StatusEnum.valid
-        }
-    }
-}
 enum class IndexEnum(val id:Int, val title: String) {
     bookmark(0, "즐겨찾기".LATER()),
     hiragana(1, "히라가나".LATER()),

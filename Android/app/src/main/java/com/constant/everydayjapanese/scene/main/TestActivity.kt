@@ -43,7 +43,7 @@ class TestActivity : AppCompatActivity() {
     private lateinit var param: Param
     private var index : Int = 0
     private var isVisible = false
-    private var testResult = ArrayList<Boolean>()
+    private var testResults = ArrayList<Boolean>()
     private var kanjis:ArrayList<Kanji>? = null
     private var vocabularies:ArrayList<Vocabulary>? = null
 
@@ -91,11 +91,11 @@ class TestActivity : AppCompatActivity() {
                 },
             )
             buttonCorrect.setOnClickListener{
-                testResult.add(true)
+                testResults.add(true)
                 moveOnToNext()
             }
             buttonWrong.setOnClickListener {
-                testResult.add(false)
+                testResults.add(false)
                 moveOnToNext()
             }
             buttonPrevious.setOnClickListener {
@@ -157,7 +157,33 @@ class TestActivity : AppCompatActivity() {
             val intent = Intent(this@TestActivity, TestResultActivity::class.java)
             intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum)
             intent.putExtra(TestResultActivity.EXTRA_DAY, param.day)
+            when (param.indexEnum.getSection()) {
+                SectionEnum.kanji -> {
+                    intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, kanjis!!.size)
+                    var wrongKanjis = ArrayList<Kanji>()
+                    testResults.forEachIndexed { index, testResult ->
+                        if (testResult) {
+                            wrongKanjis.add(kanjis!!.get(index))
+                        }
+                    }
+                    intent.putExtra(TestResultActivity.EXTRA_KANJIS, wrongKanjis)
+                }
+                SectionEnum.vocabulary -> {
+                    intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, vocabularies?.size)
+                    var wrongVocabularies = ArrayList<Vocabulary>()
+                    testResults.forEachIndexed { index, testResult ->
+                        if (testResult) {
+                            wrongVocabularies.add(vocabularies!!.get(index))
+                        }
+                    }
+                    intent.putExtra(TestResultActivity.EXTRA_VOCABULARIES, wrongVocabularies)
+                }
+                else -> {
+
+                }
+            }
             startActivity(intent)
+            finish()
             return
         }
         isVisible = false
@@ -169,7 +195,7 @@ class TestActivity : AppCompatActivity() {
             return
         }
         index -= 1
-        testResult.removeLast()
+        testResults.removeLast()
         isVisible = false
         updateTestField()
     }
