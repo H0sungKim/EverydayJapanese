@@ -35,6 +35,8 @@ class HiraganaKatakanaTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ivSection.layer.cornerRadius = 16
+        
         ocrDrawingView.delegate = self
         
         ivSection.image = param.indexEnum.section?.image

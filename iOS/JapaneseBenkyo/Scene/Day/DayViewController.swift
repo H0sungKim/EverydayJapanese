@@ -53,6 +53,7 @@ class DayViewController: UIViewController {
     }
     
     func initializeView() {
+        ivSection.layer.cornerRadius = 16
         ivSection.image = param.indexEnum.section?.image
         lbTitle.text = param.indexEnum.section?.title
         lbSubtitle.text = param.indexEnum.rawValue

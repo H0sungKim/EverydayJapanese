@@ -113,9 +113,6 @@
 		961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536862C83560D00563983 /* HeaderTableViewCell.swift */; };
 		961536892C84315900563983 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536882C84315900563983 /* IndexTableViewCell.swift */; };
 		9615368B2C84319F00563983 /* IndexTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9615368A2C84319F00563983 /* IndexTableViewCell.xib */; };
-		9615368F2C8433EB00563983 /* jlpt.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368C2C8433EB00563983 /* jlpt.png */; };
-		961536902C8433EB00563983 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368D2C8433EB00563983 /* kanji.png */; };
-		961536912C8433EB00563983 /* hiraganakatakana.png in Resources */ = {isa = PBXBuildFile; fileRef = 9615368E2C8433EB00563983 /* hiraganakatakana.png */; };
 		961536932C84868200563983 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 961536922C84868200563983 /* star.png */; };
 		961536962C8AA6A200563983 /* Day.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961536952C8AA6A200563983 /* Day.storyboard */; };
 		961536982C8AA6BA00563983 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536972C8AA6BA00563983 /* DayViewController.swift */; };
@@ -150,6 +147,11 @@
 		9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */; };
 		96A35C782BA5BB4F00D7B4F9 /* CommonConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A35C772BA5BB4F00D7B4F9 /* CommonConstant.swift */; };
 		96A35C7A2BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A35C792BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift */; };
+		96B143962D6CCC2D00A343C7 /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B143952D6CCC2D00A343C7 /* AdTableViewCell.xib */; };
+		96B143982D6CCC4500A343C7 /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B143972D6CCC4500A343C7 /* AdTableViewCell.swift */; };
+		96B1439C2D6CCDBA00A343C7 /* kanji.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B1439B2D6CCDBA00A343C7 /* kanji.png */; };
+		96B1439D2D6CCDBA00A343C7 /* hiraganakatakana.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B143992D6CCDBA00A343C7 /* hiraganakatakana.png */; };
+		96B1439E2D6CCDBA00A343C7 /* jlpt.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B1439A2D6CCDBA00A343C7 /* jlpt.png */; };
 		96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BA5ABA2BA0A14F00E3373C /* appicon.png */; };
 		96BA5AC22BA2BB6B00E3373C /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */; };
 		96C0F2D02CFDDE9200A9DC21 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */; };
@@ -337,9 +339,6 @@
 		961536862C83560D00563983 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		961536882C84315900563983 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
 		9615368A2C84319F00563983 /* IndexTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexTableViewCell.xib; sourceTree = "<group>"; };
-		9615368C2C8433EB00563983 /* jlpt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jlpt.png; sourceTree = "<group>"; };
-		9615368D2C8433EB00563983 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
-		9615368E2C8433EB00563983 /* hiraganakatakana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiraganakatakana.png; sourceTree = "<group>"; };
 		961536922C84868200563983 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		961536952C8AA6A200563983 /* Day.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day.storyboard; sourceTree = "<group>"; };
 		961536972C8AA6BA00563983 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
@@ -375,6 +374,11 @@
 		9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewCell.swift; sourceTree = "<group>"; };
 		96A35C772BA5BB4F00D7B4F9 /* CommonConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstant.swift; sourceTree = "<group>"; };
 		96A35C792BA5BEDF00D7B4F9 /* KanjiTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewHandler.swift; sourceTree = "<group>"; };
+		96B143952D6CCC2D00A343C7 /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
+		96B143972D6CCC4500A343C7 /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
+		96B143992D6CCDBA00A343C7 /* hiraganakatakana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiraganakatakana.png; sourceTree = "<group>"; };
+		96B1439A2D6CCDBA00A343C7 /* jlpt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jlpt.png; sourceTree = "<group>"; };
+		96B1439B2D6CCDBA00A343C7 /* kanji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanji.png; sourceTree = "<group>"; };
 		96BA5ABA2BA0A14F00E3373C /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		96C0F2CD2CFDDE9200A9DC21 /* StudyWidegetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyWidegetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -517,8 +521,8 @@
 		9615369E2C8C2C6300563983 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				9615369F2C8C2C7400563983 /* Test.storyboard */,
 				961536A12C8C2C7E00563983 /* TestViewController.swift */,
+				9615369F2C8C2C7400563983 /* Test.storyboard */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -669,6 +673,7 @@
 			children = (
 				964943542D0DA56D000DE5E0 /* VocabularyForCell.swift */,
 				964943562D0DA574000DE5E0 /* KanjiForCell.swift */,
+				96B143942D6CCBF600A343C7 /* AdTableViewCell */,
 				967AD8DB2CEC913F001A3397 /* HiraganaKatakanaCollectionViewCell */,
 				961536832C8355C600563983 /* HeaderTableViewCell */,
 				96D4CE2A2D60E9BF0029874C /* PassTableViewCell */,
@@ -699,11 +704,11 @@
 				96C8040D2D48AC0A006905BB /* StrokeOrder */,
 				96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */,
 				96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */,
-				9615368E2C8433EB00563983 /* hiraganakatakana.png */,
+				96B143992D6CCDBA00A343C7 /* hiraganakatakana.png */,
+				96B1439A2D6CCDBA00A343C7 /* jlpt.png */,
+				96B1439B2D6CCDBA00A343C7 /* kanji.png */,
 				96CC76252CEB6F89002E220D /* launch.png */,
-				9615368C2C8433EB00563983 /* jlpt.png */,
 				96C1342F2D524063001BA4B4 /* roundappicon.png */,
-				9615368D2C8433EB00563983 /* kanji.png */,
 				96BA5ABA2BA0A14F00E3373C /* appicon.png */,
 				961536922C84868200563983 /* star.png */,
 			);
@@ -717,6 +722,15 @@
 				9615367F2C82E87C00563983 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		96B143942D6CCBF600A343C7 /* AdTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				96B143972D6CCC4500A343C7 /* AdTableViewCell.swift */,
+				96B143952D6CCC2D00A343C7 /* AdTableViewCell.xib */,
+			);
+			path = AdTableViewCell;
 			sourceTree = "<group>";
 		};
 		96C0F2CE2CFDDE9200A9DC21 /* Frameworks */ = {
@@ -1027,18 +1041,18 @@
 				961536802C82E87C00563983 /* Main.storyboard in Resources */,
 				9615368B2C84319F00563983 /* IndexTableViewCell.xib in Resources */,
 				96D4CE312D6215F90029874C /* kanji.json in Resources */,
-				961536912C8433EB00563983 /* hiraganakatakana.png in Resources */,
 				96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */,
 				961536852C8355F200563983 /* HeaderTableViewCell.xib in Resources */,
 				967AD8D82CEC756F001A3397 /* TestResultTableViewCell.xib in Resources */,
 				96CC76262CEB6F89002E220D /* launch.png in Resources */,
-				961536902C8433EB00563983 /* kanji.png in Resources */,
 				96C0FF022D0D577200A9DC21 /* ExampleSentenceView.xib in Resources */,
 				96C134302D524064001BA4B4 /* roundappicon.png in Resources */,
 				965C1CF62C8C769C00355DDF /* HiraganaKatakana.storyboard in Resources */,
 				961536A02C8C2C7400563983 /* Test.storyboard in Resources */,
+				96B1439C2D6CCDBA00A343C7 /* kanji.png in Resources */,
+				96B1439D2D6CCDBA00A343C7 /* hiraganakatakana.png in Resources */,
+				96B1439E2D6CCDBA00A343C7 /* jlpt.png in Resources */,
 				96D4CE2C2D60E9BF0029874C /* PassTableViewCell.xib in Resources */,
-				9615368F2C8433EB00563983 /* jlpt.png in Resources */,
 				965C1CF02C8C6A3C00355DDF /* TestResult.storyboard in Resources */,
 				96CC762B2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
@@ -1133,6 +1147,7 @@
 				9600D1B02D3AA0DD006E94BA /* ハ.svg in Resources */,
 				9600D1B12D3AA0DD006E94BA /* モ.svg in Resources */,
 				9600D1B22D3AA0DD006E94BA /* こ.svg in Resources */,
+				96B143962D6CCC2D00A343C7 /* AdTableViewCell.xib in Resources */,
 				9600D1B32D3AA0DD006E94BA /* う.svg in Resources */,
 				9600D1B42D3AA0DD006E94BA /* す.svg in Resources */,
 				9600D1B52D3AA0DD006E94BA /* ら.svg in Resources */,
@@ -1207,6 +1222,7 @@
 				964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */,
+				96B143982D6CCC4500A343C7 /* AdTableViewCell.swift in Sources */,
 				9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */,
 				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
 				96C0F2E72CFDE12800A9DC21 /* IndexEnum.swift in Sources */,

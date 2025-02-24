@@ -15,6 +15,7 @@ class HeaderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        ivIcon.layer.cornerRadius = 12
     }
     
     func initializeView(section: SectionEnum) {
