@@ -38,6 +38,7 @@ DIRECTORY_ANDROID = "Android/app/src/main/res/"
 
 from openpyxl import load_workbook
 import os
+import sys
 
 def snakeToCamel(snakeStr):
     components = snakeStr.lstrip('_').split('_')
@@ -56,7 +57,9 @@ for i in directoryAry :
         break
 
 # LanguagePack.xlsx 엑셀파일 읽기
-workbook = load_workbook("LanguagePack.xlsx", data_only=True)
+fileName = sys.argv[1]
+
+workbook = load_workbook(fileName, data_only=True)
 excelList = []
 sheet = workbook['Sheet']
 for row in sheet.columns :
