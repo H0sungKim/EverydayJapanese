@@ -17,6 +17,7 @@ class AdTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        ivIcon.layer.cornerRadius = 16
         // Initialization code
     }
 
