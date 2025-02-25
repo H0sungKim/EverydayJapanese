@@ -35,7 +35,7 @@ class HiraganaKatakanaTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ivSection.layer.cornerRadius = 16
+        ivSection.layer.cornerRadius = 12
         
         ocrDrawingView.delegate = self
         

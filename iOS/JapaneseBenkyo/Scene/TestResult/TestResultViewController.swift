@@ -39,7 +39,7 @@ class TestResultViewController: UIViewController {
     }
     
     private func initializeView() {
-        ivSection.layer.cornerRadius = 16
+        ivSection.layer.cornerRadius = 12
         lbTitle.text = param.sectionEnum?.title
         lbSubtitle.text = "\(param.indexEnum.rawValue) \(param.day) 테스트 결과"
         ivSection.image = param.sectionEnum?.image

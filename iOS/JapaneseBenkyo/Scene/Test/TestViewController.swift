@@ -39,7 +39,7 @@ class TestViewController: UIViewController {
         
         param.indices.shuffle()
         
-        ivSection.layer.cornerRadius = 16
+        ivSection.layer.cornerRadius = 12
         lbTitle.text = param.sectionEnum?.title
         lbSubtitle.text = "\(param.indexEnum.rawValue) \(param.day) 테스트"
         ivSection.image = param.sectionEnum?.image
