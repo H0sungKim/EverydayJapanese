@@ -188,7 +188,7 @@ class TestResultActivity : AppCompatActivity() {
     private fun saveProcess() {
         val jsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name))) ?: return
         var process = JSONManager.getInstance().decodeProcessJSON(jsonData)
-        val indexKey = param.indexEnum.name
+        val indexKey = param.indexEnum.title
         if (process[indexKey] == null) {
             process.put(indexKey, HashMap<String, Boolean>())
         }

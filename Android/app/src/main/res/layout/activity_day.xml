@@ -31,17 +31,21 @@
             >
 
             <ProgressBar
-                android:id="@+id/progressBarHorizontal"
+                android:id="@+id/progressbar_process"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="4dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="@dimen/space_m"
                 android:layout_gravity="center_vertical"
                 android:max="100"
-                android:progress="50" />
+                android:progressDrawable="@drawable/day_progressbar"
+                android:progressBackgroundTint="@color/bg0"
+                android:progressTint="@color/fg0"
+                />
 
             <TextView
+                android:id="@+id/textview_process"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

@@ -157,7 +157,7 @@ class TestActivity : AppCompatActivity() {
         if ((param.indexEnum.getSection() == SectionEnum.kanji &&  index == kanjis?.size) ||
                 (param.indexEnum.getSection() == SectionEnum.vocabulary &&  index == vocabularies?.size)) {
             val intent = Intent(this@TestActivity, TestResultActivity::class.java)
-            intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum)
+            intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
             intent.putExtra(TestResultActivity.EXTRA_DAY, param.day)
             when (param.indexEnum.getSection()) {
                 SectionEnum.kanji -> {
