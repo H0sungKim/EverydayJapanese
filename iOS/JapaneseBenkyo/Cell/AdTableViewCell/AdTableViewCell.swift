@@ -17,7 +17,7 @@ class AdTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        ivIcon.layer.cornerRadius = 16
+        ivIcon.layer.cornerRadius = 12
         // Initialization code
     }
 
@@ -50,6 +50,4 @@ extension AdTableViewCell: AdFitNativeAdRenderable {
     func adMediaView() -> AdFitMediaView? {
         return mediaView
     }
-    
-    
 }

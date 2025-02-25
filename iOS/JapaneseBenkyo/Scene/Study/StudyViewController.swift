@@ -34,7 +34,7 @@ class StudyViewController: UIViewController {
     }
     
     private func initializeView() {
-        ivSection.layer.cornerRadius = 16
+        ivSection.layer.cornerRadius = 12
         lbTitle.text = param.sectionEnum?.title
         lbSubtitle.text = "\(param.indexEnum.rawValue) \(param.day)"
         ivSection.image = param.sectionEnum?.image
