@@ -184,7 +184,11 @@ class DayActivity : AppCompatActivity() {
                         HHLog.d(TAG, "onSelectItem() position = $position")
                         val intent = Intent(this@DayActivity, StudyActivity::class.java)
                         intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, indexEnum.id)
-                        intent.putExtra(StudyActivity.EXTRA_DAY, position)
+                        if (position == 0) {
+                            intent.putExtra(StudyActivity.EXTRA_DAY, "전체보기".LATER())
+                        } else {
+                            intent.putExtra(StudyActivity.EXTRA_DAY, "Day$position")
+                        }
                         if (position == 0) { // 전체보기
                             val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, indexEnum.getFileName())
                             when (indexEnum.getSection()) {

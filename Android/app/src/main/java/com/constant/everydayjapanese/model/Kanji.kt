@@ -33,4 +33,8 @@ class Kanji(
         result = 31 * result + examples.hashCode()
         return result
     }
+
+    override fun toString(): String {
+        return "Kanji(kanji='$kanji', hanja='$hanja', eumhun='$eumhun', jpSound='$jpSound', jpMeaning='$jpMeaning', examples=$examples)"
+    }
 }

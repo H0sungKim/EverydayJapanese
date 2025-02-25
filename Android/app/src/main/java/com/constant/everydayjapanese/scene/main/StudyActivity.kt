@@ -44,7 +44,7 @@ class StudyActivity : AppCompatActivity() {
 
     data class Param (
         var indexEnum:IndexEnum,
-        var day:Int = 0,
+        var day:String,
         var kanjisDayDistributed:List<Kanji>?,
         var vocabulariesDayDistributed:List<Vocabulary>?
     )
@@ -100,7 +100,7 @@ class StudyActivity : AppCompatActivity() {
     private fun initializeVariables() {
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            getIntent().getIntExtra(EXTRA_DAY, 0),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY)),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS_DAY_DISTRIBUTED),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES_DAY_DISTRIBUTED)
         )

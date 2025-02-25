@@ -22,7 +22,7 @@ class TestActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
     data class Param (
         var indexEnum: IndexEnum,
-        var day:Int = 0,
+        var day:String,
         var kanjis:ArrayList<Kanji>?,
         var vocabularies:ArrayList<Vocabulary>?
     )
@@ -62,13 +62,15 @@ class TestActivity : AppCompatActivity() {
     private fun initializeVariables() {
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            getIntent().getIntExtra(EXTRA_DAY, 0),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY)),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
         )
 
         kanjis = param.kanjis
         vocabularies = param.vocabularies
+
+        testResults.clear()
     }
 
     private fun initializeViews() {
@@ -162,17 +164,18 @@ class TestActivity : AppCompatActivity() {
                     intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, kanjis!!.size)
                     var wrongKanjis = ArrayList<Kanji>()
                     testResults.forEachIndexed { index, testResult ->
-                        if (testResult) {
+                        if (testResult == false) {
                             wrongKanjis.add(kanjis!!.get(index))
                         }
                     }
+                    HHLog.d(TAG, "wrongKanjis = $wrongKanjis")
                     intent.putExtra(TestResultActivity.EXTRA_KANJIS, wrongKanjis)
                 }
                 SectionEnum.vocabulary -> {
                     intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, vocabularies?.size)
                     var wrongVocabularies = ArrayList<Vocabulary>()
                     testResults.forEachIndexed { index, testResult ->
-                        if (testResult) {
+                        if (testResult == false) {
                             wrongVocabularies.add(vocabularies!!.get(index))
                         }
                     }
