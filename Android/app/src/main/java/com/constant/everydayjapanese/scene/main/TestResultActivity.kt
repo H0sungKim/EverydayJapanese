@@ -173,7 +173,7 @@ class TestResultActivity : AppCompatActivity() {
     }
 
     private fun initializeScoreView(wrongCount: Int) {
-        binding.textviewScore.text = String.format("%d점".LATER(), (param.allCount - wrongCount) * 100 / param.allCount)
+        binding.textviewScore.text = String.format(getString(R.string.n_points), (param.allCount - wrongCount) * 100 / param.allCount)
         binding.textviewSubscore.text = String.format("%d/%d", wrongCount, param.allCount)
         if (wrongCount == 0) {
             binding.buttonBookmark.isEnabled = false
@@ -188,7 +188,7 @@ class TestResultActivity : AppCompatActivity() {
     private fun saveProcess() {
         val jsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name))) ?: return
         var process = JSONManager.getInstance().decodeProcessJSON(jsonData)
-        val indexKey = param.indexEnum.title
+        val indexKey = param.indexEnum.name
         if (process[indexKey] == null) {
             process.put(indexKey, HashMap<String, Boolean>())
         }

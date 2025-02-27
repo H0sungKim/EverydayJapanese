@@ -56,13 +56,18 @@ class DayActivity : AppCompatActivity() {
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
             fun bind(position: Int) {
+                val title:String
                 if (position == 0) {
-                    imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                    textviewTitle.text = "전체보기".LATER()
+                    title = context.getString(R.string.totally_view)
+                } else {
+                    title = String.format(context.getString(R.string.day_number), position)
+                }
+                if (process[param.indexEnum.name]?.get(title) == true) {
+                    imageviewIcon.setImageResource(R.drawable.img_check)
                 } else {
                     imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                    textviewTitle.text = String.format("Day%d", position)
                 }
+                textviewTitle.text = title
                 imageviewDisclosure.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@DayActivity, R.color.fg5))
 
                 itemView.setOnClickListener {
@@ -197,7 +202,7 @@ class DayActivity : AppCompatActivity() {
             )
 
             val total = nonNull(kanjisDayDistributed?.size) + nonNull(vocabulariesDayDistributed?.size) + 1
-            val size = nonNull(process[param.indexEnum.title]).size
+            val size = nonNull(process[param.indexEnum.name]).size
             progressbarProcess.setProgress(size*100/total, false)
             textviewProcess.text = String.format("%d/%d", size, total)
 
@@ -209,9 +214,9 @@ class DayActivity : AppCompatActivity() {
                         val intent = Intent(this@DayActivity, StudyActivity::class.java)
                         intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
                         if (position == 0) {
-                            intent.putExtra(StudyActivity.EXTRA_DAY, "전체보기".LATER())
+                            intent.putExtra(StudyActivity.EXTRA_DAY, getString(R.string.totally_view))
                         } else {
-                            intent.putExtra(StudyActivity.EXTRA_DAY, "Day$position")
+                            intent.putExtra(StudyActivity.EXTRA_DAY, String.format(getString(R.string.day_number), position))
                         }
                         if (position == 0) { // 전체보기
                             val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, param.indexEnum.getFileName())
