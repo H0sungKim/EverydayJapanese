@@ -43,7 +43,8 @@ class TestResultActivity : AppCompatActivity() {
 
     data class Param (
         var indexEnum: IndexEnum,
-        var day:String,
+        var dayTitle:String,
+        var dayKey:String,
         var allCount:Int = 0,
         var kanjis:List<Kanji>?,
         var vocabularies:List<Vocabulary>?
@@ -53,7 +54,8 @@ class TestResultActivity : AppCompatActivity() {
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
-        public val EXTRA_DAY = "EXTRA_DAY"
+        public val EXTRA_DAY_TITLE = "EXTRA_DAY_TITLE"
+        public val EXTRA_DAY_KEY = "EXTRA_DAY_KEY"
         public val EXTRA_ALL_COUNT = "EXTRA_ALL_COUNT"
         public val EXTRA_KANJIS = "EXTRA_KANJIS"
         public val EXTRA_VOCABULARIES = "EXTRA_VOCABULARIES"
@@ -90,7 +92,8 @@ class TestResultActivity : AppCompatActivity() {
 
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
             getIntent().getIntExtra(EXTRA_ALL_COUNT, 0),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
@@ -192,7 +195,7 @@ class TestResultActivity : AppCompatActivity() {
         if (process[indexKey] == null) {
             process.put(indexKey, HashMap<String, Boolean>())
         }
-        process[indexKey]?.put(param.day, true)
+        process[indexKey]?.put(param.dayKey, true)
         PrefManager.getInstance().setValue(Pref.process.name, JSONManager.getInstance().encodeProcessJSON(process))
     }
 }

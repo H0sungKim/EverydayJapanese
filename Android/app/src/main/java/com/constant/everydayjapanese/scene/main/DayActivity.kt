@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityDayBinding
@@ -20,7 +21,8 @@ import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
 import com.constant.everydayjapanese.scene.main.StudyActivity.Companion
-import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_TITLE
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_KEY
 import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_KANJIS_DAY_DISTRIBUTED
 import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_VOCABULARIES_DAY_DISTRIBUTED
 import com.constant.everydayjapanese.scene.main.StudyActivity.Param
@@ -56,18 +58,24 @@ class DayActivity : AppCompatActivity() {
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
             fun bind(position: Int) {
-                val title:String
+                val dayTitle:String
+                val dayKey:String
                 if (position == 0) {
-                    title = context.getString(R.string.totally_view)
+                    dayTitle = context.getString(R.string.total_view)
+                    dayKey = context.getString(R.string.all_view)
                 } else {
-                    title = String.format(context.getString(R.string.day_number), position)
+                    dayTitle = String.format(context.getString(R.string.day_number), position)
+                    dayKey = String.format(context.getString(R.string.day_number), position)
                 }
-                if (process[param.indexEnum.name]?.get(title) == true) {
+                if (process[param.indexEnum.name]?.get(dayKey) == true) {
                     imageviewIcon.setImageResource(R.drawable.img_check)
+                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
+
                 } else {
                     imageviewIcon.setImageResource(R.drawable.img_uncheck)
+                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
                 }
-                textviewTitle.text = title
+                textviewTitle.text = dayTitle
                 imageviewDisclosure.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@DayActivity, R.color.fg5))
 
                 itemView.setOnClickListener {
@@ -214,9 +222,11 @@ class DayActivity : AppCompatActivity() {
                         val intent = Intent(this@DayActivity, StudyActivity::class.java)
                         intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
                         if (position == 0) {
-                            intent.putExtra(StudyActivity.EXTRA_DAY, getString(R.string.totally_view))
+                            intent.putExtra(StudyActivity.EXTRA_DAY_TITLE, getString(R.string.total_view))
+                            intent.putExtra(StudyActivity.EXTRA_DAY_KEY, getString(R.string.all_view))
                         } else {
-                            intent.putExtra(StudyActivity.EXTRA_DAY, String.format(getString(R.string.day_number), position))
+                            intent.putExtra(StudyActivity.EXTRA_DAY_TITLE, String.format(getString(R.string.day_number), position))
+                            intent.putExtra(StudyActivity.EXTRA_DAY_KEY, String.format(getString(R.string.day_number), position))
                         }
                         if (position == 0) { // 전체보기
                             val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, param.indexEnum.getFileName())

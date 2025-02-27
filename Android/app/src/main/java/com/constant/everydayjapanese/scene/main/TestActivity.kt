@@ -22,14 +22,16 @@ class TestActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
     data class Param (
         var indexEnum: IndexEnum,
-        var day:String,
+        var dayTitle:String,
+        var dayKey:String,
         var kanjis:ArrayList<Kanji>?,
         var vocabularies:ArrayList<Vocabulary>?
     )
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
-        public val EXTRA_DAY = "EXTRA_DAY"
+        public val EXTRA_DAY_TITLE = "EXTRA_DAY_TITLE"
+        public val EXTRA_DAY_KEY = "EXTRA_DAY_KEY"
         public val EXTRA_KANJIS = "EXTRA_KANJIS"
         public val EXTRA_VOCABULARIES = "EXTRA_VOCABULARIES"
     }
@@ -62,7 +64,8 @@ class TestActivity : AppCompatActivity() {
     private fun initializeVariables() {
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
         )
@@ -158,7 +161,8 @@ class TestActivity : AppCompatActivity() {
                 (param.indexEnum.getSection() == SectionEnum.vocabulary &&  index == vocabularies?.size)) {
             val intent = Intent(this@TestActivity, TestResultActivity::class.java)
             intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
-            intent.putExtra(TestResultActivity.EXTRA_DAY, param.day)
+            intent.putExtra(TestResultActivity.EXTRA_DAY_TITLE, param.dayTitle)
+            intent.putExtra(TestResultActivity.EXTRA_DAY_KEY, param.dayKey)
             when (param.indexEnum.getSection()) {
                 SectionEnum.kanji -> {
                     intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, kanjis!!.size)
