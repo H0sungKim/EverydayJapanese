@@ -71,26 +71,26 @@
 	<string name="test_again_for_incorrect_words">틀린 단어 다시 테스트하기</string>
 	<string name="end_test">테스트 끝내기</string>
 	<string name="incorrect_word">틀린단어</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<string name="total_view">전체보기</string>
+	<string name="favorites">즐겨찾기</string>
+	<string name="hiragana">히라가나</string>
+	<string name="katakana">가타카나</string>
+	<string name="_1st_grade_elementary">소학교 1학년</string>
+	<string name="_2nd_grade_elementary">소학교 2학년</string>
+	<string name="_3rd_grade_elementary">소학교 3학년</string>
+	<string name="_4th_grade_elementary">소학교 4학년</string>
+	<string name="_5th_grade_elementary">소학교 5학년</string>
+	<string name="_6th_grade_elementary">소학교 6학년</string>
+	<string name="middle_school">중학교</string>
+	<string name="n5">N5</string>
+	<string name="n4">N4</string>
+	<string name="n3">N3</string>
+	<string name="n2">N2</string>
+	<string name="n1">N1</string>
+	<string name="hiragana_katakana">히라가나 가타카나 표</string>
+	<string name="japanese_common_chinese">일본 상용한자</string>
+	<string name="jlpt_vocabulary">JLPT 단어장</string>
+	<string name="n_points">%d점</string>
 
 
 

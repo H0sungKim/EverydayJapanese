@@ -22,14 +22,16 @@ class TestActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
     data class Param (
         var indexEnum: IndexEnum,
-        var day:Int = 0,
+        var dayTitle:String,
+        var dayKey:String,
         var kanjis:ArrayList<Kanji>?,
         var vocabularies:ArrayList<Vocabulary>?
     )
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
-        public val EXTRA_DAY = "EXTRA_DAY"
+        public val EXTRA_DAY_TITLE = "EXTRA_DAY_TITLE"
+        public val EXTRA_DAY_KEY = "EXTRA_DAY_KEY"
         public val EXTRA_KANJIS = "EXTRA_KANJIS"
         public val EXTRA_VOCABULARIES = "EXTRA_VOCABULARIES"
     }
@@ -62,13 +64,16 @@ class TestActivity : AppCompatActivity() {
     private fun initializeVariables() {
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            getIntent().getIntExtra(EXTRA_DAY, 0),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
         )
 
         kanjis = param.kanjis
         vocabularies = param.vocabularies
+
+        testResults.clear()
     }
 
     private fun initializeViews() {
@@ -155,24 +160,26 @@ class TestActivity : AppCompatActivity() {
         if ((param.indexEnum.getSection() == SectionEnum.kanji &&  index == kanjis?.size) ||
                 (param.indexEnum.getSection() == SectionEnum.vocabulary &&  index == vocabularies?.size)) {
             val intent = Intent(this@TestActivity, TestResultActivity::class.java)
-            intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum)
-            intent.putExtra(TestResultActivity.EXTRA_DAY, param.day)
+            intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
+            intent.putExtra(TestResultActivity.EXTRA_DAY_TITLE, param.dayTitle)
+            intent.putExtra(TestResultActivity.EXTRA_DAY_KEY, param.dayKey)
             when (param.indexEnum.getSection()) {
                 SectionEnum.kanji -> {
                     intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, kanjis!!.size)
                     var wrongKanjis = ArrayList<Kanji>()
                     testResults.forEachIndexed { index, testResult ->
-                        if (testResult) {
+                        if (testResult == false) {
                             wrongKanjis.add(kanjis!!.get(index))
                         }
                     }
+                    HHLog.d(TAG, "wrongKanjis = $wrongKanjis")
                     intent.putExtra(TestResultActivity.EXTRA_KANJIS, wrongKanjis)
                 }
                 SectionEnum.vocabulary -> {
                     intent.putExtra(TestResultActivity.EXTRA_ALL_COUNT, vocabularies?.size)
                     var wrongVocabularies = ArrayList<Vocabulary>()
                     testResults.forEachIndexed { index, testResult ->
-                        if (testResult) {
+                        if (testResult == false) {
                             wrongVocabularies.add(vocabularies!!.get(index))
                         }
                     }

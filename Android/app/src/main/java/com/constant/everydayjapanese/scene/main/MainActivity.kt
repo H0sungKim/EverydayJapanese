@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
             fun bind() {
                 imageviewIcon.setImageResource(R.drawable.hiraganakatakana)
-                textviewTitle.text = "히라가나 가타카나 표".LATER()
+                textviewTitle.text = getString(R.string.hiragana_katakana)
             }
         }
 
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
             fun bind() {
                 imageviewIcon.setImageResource(R.drawable.kanji)
-                textviewTitle.text = "일본 상용한자".LATER()
+                textviewTitle.text = getString(R.string.japanese_common_chinese)
 
             }
         }
@@ -229,7 +229,7 @@ class MainActivity : AppCompatActivity() {
 
             fun bind() {
                 imageviewIcon.setImageResource(R.drawable.jlpt)
-                textviewTitle.text = "JLPT 단어장".LATER()
+                textviewTitle.text = getString(R.string.jlpt_vocabulary)
 
             }
         }

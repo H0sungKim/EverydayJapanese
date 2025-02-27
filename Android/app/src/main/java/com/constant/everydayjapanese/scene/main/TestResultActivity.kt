@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityTestResultBinding
+import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.extension.applyGUI
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
@@ -42,7 +43,8 @@ class TestResultActivity : AppCompatActivity() {
 
     data class Param (
         var indexEnum: IndexEnum,
-        var day:Int = 0,
+        var dayTitle:String,
+        var dayKey:String,
         var allCount:Int = 0,
         var kanjis:List<Kanji>?,
         var vocabularies:List<Vocabulary>?
@@ -52,7 +54,8 @@ class TestResultActivity : AppCompatActivity() {
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
-        public val EXTRA_DAY = "EXTRA_DAY"
+        public val EXTRA_DAY_TITLE = "EXTRA_DAY_TITLE"
+        public val EXTRA_DAY_KEY = "EXTRA_DAY_KEY"
         public val EXTRA_ALL_COUNT = "EXTRA_ALL_COUNT"
         public val EXTRA_KANJIS = "EXTRA_KANJIS"
         public val EXTRA_VOCABULARIES = "EXTRA_VOCABULARIES"
@@ -89,7 +92,8 @@ class TestResultActivity : AppCompatActivity() {
 
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            getIntent().getIntExtra(EXTRA_DAY, 0),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
             getIntent().getIntExtra(EXTRA_ALL_COUNT, 0),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
@@ -115,40 +119,52 @@ class TestResultActivity : AppCompatActivity() {
                             NavigationView.ButtonType.back.id -> {
                                 finish()
                             }
+
                             else -> {
                             }
                         }
                     }
                 },
             )
-            textviewScore.text = "100점"
-            textviewSubscore.text = "20/20"
+
 
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
                 kanjisForCell?.let { kanjisForCell ->
-                    kanjiAdapter = KanjiAdapter(this@TestResultActivity, kanjisForCell, kanjiBookmarks)
+                    kanjiAdapter =
+                        KanjiAdapter(this@TestResultActivity, kanjisForCell, kanjiBookmarks)
                     kanjiAdapter.setOnSelectItemListener(
                         object :
                             OnSelectItemListener {
                             override fun onSelectItem(position: Int) {
-                                kanjisForCell.get(position).isVisible = !kanjisForCell.get(position).isVisible
+                                kanjisForCell.get(position).isVisible =
+                                    !kanjisForCell.get(position).isVisible
                                 kanjiAdapter.notifyItemChanged(position)
                             }
                         })
                     recyclerview.adapter = kanjiAdapter
+                    initializeScoreView(nonNull(kanjisForCell.size))
                 }
-            } else if (param.indexEnum.getSection() == SectionEnum.vocabulary || 0 < nonNull(vocabulariesForCell?.size)){ // vocabulary
+            } else if (param.indexEnum.getSection() == SectionEnum.vocabulary || 0 < nonNull(
+                    vocabulariesForCell?.size
+                )
+            ) { // vocabulary
                 vocabulariesForCell?.let { vocabulariesForCell ->
-                    vocabularyAdapter = VocabularyAdapter(this@TestResultActivity, vocabulariesForCell, vocabularyBookmarks)
+                    vocabularyAdapter = VocabularyAdapter(
+                        this@TestResultActivity,
+                        vocabulariesForCell,
+                        vocabularyBookmarks
+                    )
                     vocabularyAdapter.setOnSelectItemListener(
                         object :
                             OnSelectItemListener {
                             override fun onSelectItem(position: Int) {
-                                vocabulariesForCell.get(position).isVisible = !vocabulariesForCell.get(position).isVisible
+                                vocabulariesForCell.get(position).isVisible =
+                                    !vocabulariesForCell.get(position).isVisible
                                 vocabularyAdapter.notifyItemChanged(position)
                             }
                         })
                     recyclerview.adapter = vocabularyAdapter
+                    initializeScoreView(nonNull(vocabulariesForCell.size))
                 }
             }
             recyclerview.addItemDecoration(
@@ -157,5 +173,29 @@ class TestResultActivity : AppCompatActivity() {
                 },
             )
         }
+    }
+
+    private fun initializeScoreView(wrongCount: Int) {
+        binding.textviewScore.text = String.format(getString(R.string.n_points), (param.allCount - wrongCount) * 100 / param.allCount)
+        binding.textviewSubscore.text = String.format("%d/%d", wrongCount, param.allCount)
+        if (wrongCount == 0) {
+            binding.buttonBookmark.isEnabled = false
+            binding.buttonRetest.isEnabled = false
+            if (param.indexEnum == IndexEnum.bookmark) {
+                return
+            }
+            saveProcess()
+        }
+    }
+
+    private fun saveProcess() {
+        val jsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name))) ?: return
+        var process = JSONManager.getInstance().decodeProcessJSON(jsonData)
+        val indexKey = param.indexEnum.name
+        if (process[indexKey] == null) {
+            process.put(indexKey, HashMap<String, Boolean>())
+        }
+        process[indexKey]?.put(param.dayKey, true)
+        PrefManager.getInstance().setValue(Pref.process.name, JSONManager.getInstance().encodeProcessJSON(process))
     }
 }

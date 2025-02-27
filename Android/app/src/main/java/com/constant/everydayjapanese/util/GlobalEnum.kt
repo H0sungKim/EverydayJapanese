@@ -1,6 +1,7 @@
 package com.constant.everydayjapanese.util
 
 import com.constant.everydayjapanese.R
+import com.constant.everydayjapanese.basic.EverydayJapaneseApplication
 import com.constant.everydayjapanese.extension.LATER
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -81,21 +82,21 @@ enum class HHFileType {
 }
 
 enum class IndexEnum(val id:Int, val title: String) {
-    bookmark(0, "즐겨찾기".LATER()),
-    hiragana(1, "히라가나".LATER()),
-    katakana(2, "가타카나".LATER()),
-    elementary1(3, "소학교 1학년".LATER()),
-    elementary2(4, "소학교 2학년".LATER()),
-    elementary3(5, "소학교 3학년".LATER()),
-    elementary4(6, "소학교 4학년".LATER()),
-    elementary5(7, "소학교 5학년".LATER()),
-    elementary6(8, "소학교 6학년".LATER()),
-    middle(9, "중학교".LATER()),
-    n5(10, "N5".LATER()),
-    n4(11, "N4".LATER()),
-    n3(12, "N3".LATER()),
-    n2(13, "N2".LATER()),
-    n1(14, "N1".LATER()),
+    bookmark(0, EverydayJapaneseApplication.context.getString(R.string.favorites)),
+    hiragana(1, EverydayJapaneseApplication.context.getString(R.string.hiragana)),
+    katakana(2, EverydayJapaneseApplication.context.getString(R.string.katakana)),
+    elementary1(3, EverydayJapaneseApplication.context.getString(R.string._1st_grade_elementary)),
+    elementary2(4, EverydayJapaneseApplication.context.getString(R.string._2nd_grade_elementary)),
+    elementary3(5, EverydayJapaneseApplication.context.getString(R.string._3rd_grade_elementary)),
+    elementary4(6, EverydayJapaneseApplication.context.getString(R.string._4th_grade_elementary)),
+    elementary5(7, EverydayJapaneseApplication.context.getString(R.string._5th_grade_elementary)),
+    elementary6(8, EverydayJapaneseApplication.context.getString(R.string._6th_grade_elementary)),
+    middle(9, EverydayJapaneseApplication.context.getString(R.string.middle_school)),
+    n5(10, EverydayJapaneseApplication.context.getString(R.string.n5)),
+    n4(11, EverydayJapaneseApplication.context.getString(R.string.n4)),
+    n3(12, EverydayJapaneseApplication.context.getString(R.string.n3)),
+    n2(13, EverydayJapaneseApplication.context.getString(R.string.n2)),
+    n1(14, EverydayJapaneseApplication.context.getString(R.string.n1)),
     ;
 
     companion object {
@@ -188,9 +189,9 @@ enum class IndexEnum(val id:Int, val title: String) {
 
 }
 enum class SectionEnum(val id:Int, val title: String) {
-    hiraganakatagana(0, "히라가나 가타카나 표".LATER()),
-    kanji(1, "일본 상용한자".LATER()),
-    vocabulary(2, "JLPT 단어장".LATER()),
+    hiraganakatagana(0, EverydayJapaneseApplication.context.getString(R.string.hiragana_katakana)),
+    kanji(1, EverydayJapaneseApplication.context.getString(R.string.japanese_common_chinese)),
+    vocabulary(2, EverydayJapaneseApplication.context.getString(R.string.jlpt_vocabulary)),
     ;
 
 

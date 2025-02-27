@@ -3,6 +3,7 @@ package com.constant.everydayjapanese.singleton
 import android.content.Context
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
+import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.nonNull
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -39,9 +40,6 @@ class JSONManager {
     private constructor() {
     }
     // Public Method
-    // Private Method
-
-
     // JSON 파일을 읽고 파싱하여 HashMap으로 변환
     fun parseJsonToHashMap(context: Context, fileName: String): HashMap<String, String> {
         val hashMap = HashMap<String, String>()
@@ -94,6 +92,7 @@ class JSONManager {
 
         return list
     }
+
     // assets에서 JSON 파일을 읽어 문자열로 반환
     fun loadJsonFromAsset(context: Context, fileName: String): String {
         return try {
@@ -107,6 +106,26 @@ class JSONManager {
         } catch (e: Exception) {
             e.printStackTrace()
             ""
+        }
+    }
+
+    //--------------------------------------------------------
+    fun encodeProcessJSON(process: HashMap<String, HashMap<String, Boolean>>): String {
+        val gson = Gson()
+        return try {
+            gson.toJson(process)
+        } catch (e: Exception) {
+            ""
+        }
+    }
+    fun decodeProcessJSON(jsonData: ByteArray): HashMap<String, HashMap<String, Boolean>> {
+        val gson = Gson()
+        return try {
+            val jsonString = String(jsonData) // Convert ByteArray to String
+            val type = object : TypeToken<HashMap<String, HashMap<String, Boolean>>>() {}.type
+            gson.fromJson<HashMap<String, HashMap<String, Boolean>>>(jsonString, type)
+        } catch (e: Exception) {
+            HashMap<String, HashMap<String, Boolean>>()
         }
     }
 
@@ -161,4 +180,12 @@ class JSONManager {
             HashSet()
         }
     }
+
+
+    fun convertStringToByteArray(jsonString: String): ByteArray? {
+        return jsonString.toByteArray(Charsets.UTF_8)
+    }
+
+    // Private Method
+
 }

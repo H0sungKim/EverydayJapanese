@@ -44,7 +44,8 @@ class StudyActivity : AppCompatActivity() {
 
     data class Param (
         var indexEnum:IndexEnum,
-        var day:Int = 0,
+        var dayTitle:String,
+        var dayKey:String,
         var kanjisDayDistributed:List<Kanji>?,
         var vocabulariesDayDistributed:List<Vocabulary>?
     )
@@ -66,7 +67,8 @@ class StudyActivity : AppCompatActivity() {
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
-        public val EXTRA_DAY = "EXTRA_DAY"
+        public val EXTRA_DAY_TITLE = "EXTRA_DAY_TITLE"
+        public val EXTRA_DAY_KEY = "EXTRA_DAY_KEY"
         public val EXTRA_KANJIS_DAY_DISTRIBUTED = "EXTRA_KANJIS_DAY_DISTRIBUTED"
         public val EXTRA_VOCABULARIES_DAY_DISTRIBUTED = "EXTRA_VOCABULARIES_DAY_DISTRIBUTED"
     }
@@ -100,7 +102,8 @@ class StudyActivity : AppCompatActivity() {
     private fun initializeVariables() {
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            getIntent().getIntExtra(EXTRA_DAY, 0),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS_DAY_DISTRIBUTED),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES_DAY_DISTRIBUTED)
         )
@@ -138,7 +141,7 @@ class StudyActivity : AppCompatActivity() {
         binding = ActivityStudyBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), nonNull(param.indexEnum.title), param.indexEnum.getResourceId())
+            navigationview.set(nonNull(param.indexEnum.getSection()?.title), nonNull(param.indexEnum.title) + " " + param.dayTitle, param.indexEnum.getResourceId())
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -157,7 +160,8 @@ class StudyActivity : AppCompatActivity() {
             buttonTest.setOnClickListener {
                 val intent = Intent(this@StudyActivity, TestActivity::class.java)
                 intent.putExtra(TestActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
-                intent.putExtra(TestActivity.EXTRA_DAY, param.day)
+                intent.putExtra(TestActivity.EXTRA_DAY_TITLE, param.dayTitle)
+                intent.putExtra(TestActivity.EXTRA_DAY_KEY, param.dayKey)
                 when(param.indexEnum.getSection()) {
                     SectionEnum.kanji -> {
                         param.kanjisDayDistributed?.let { kanjisDayDistributed ->

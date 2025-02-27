@@ -38,8 +38,9 @@ enum class Pref {
     // 일반
     donotDisplayNotificationPermission,
 
+    process,
     kanjiBookmark,
-    vocabularyBookmark
+    vocabularyBookmark,
 }
 
 class PrefManager {
@@ -107,6 +108,7 @@ class PrefManager {
         stringKeys.add(Pref.deviceToken.name)
         stringKeys.add(Pref.fcmToken.name)
         stringKeys.add(Pref.server.name)
+        stringKeys.add(Pref.process.name)
         stringKeys.add(Pref.kanjiBookmark.name)
         stringKeys.add(Pref.vocabularyBookmark.name)
 

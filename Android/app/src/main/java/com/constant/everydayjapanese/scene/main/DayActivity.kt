@@ -13,17 +13,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityDayBinding
 import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_TITLE
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_KEY
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_KANJIS_DAY_DISTRIBUTED
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_VOCABULARIES_DAY_DISTRIBUTED
+import com.constant.everydayjapanese.scene.main.StudyActivity.Param
 import com.constant.everydayjapanese.util.GlobalConst
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.IndexEnum
 import com.constant.everydayjapanese.singleton.JSONManager
+import com.constant.everydayjapanese.singleton.Pref
+import com.constant.everydayjapanese.singleton.PrefManager
 import com.constant.everydayjapanese.util.SectionEnum
 import com.constant.everydayjapanese.util.nonNull
 import com.constant.everydayjapanese.view.ColorDivider
@@ -37,6 +46,10 @@ class DayActivity : AppCompatActivity() {
         fun onSelectItem(position: Int)
     }
 
+    data class Param (
+        var indexEnum:IndexEnum,
+    )
+
     inner class IndexAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         // Public Inner Class, Struct, Enum, Interface
 
@@ -45,13 +58,24 @@ class DayActivity : AppCompatActivity() {
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
             fun bind(position: Int) {
+                val dayTitle:String
+                val dayKey:String
                 if (position == 0) {
-                    imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                    textviewTitle.text = "전체보기".LATER()
+                    dayTitle = context.getString(R.string.total_view)
+                    dayKey = context.getString(R.string.all_view)
+                } else {
+                    dayTitle = String.format(context.getString(R.string.day_number), position)
+                    dayKey = String.format(context.getString(R.string.day_number), position)
+                }
+                if (process[param.indexEnum.name]?.get(dayKey) == true) {
+                    imageviewIcon.setImageResource(R.drawable.img_check)
+                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
+
                 } else {
                     imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                    textviewTitle.text = String.format("Day%d", position)
+                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
                 }
+                textviewTitle.text = dayTitle
                 imageviewDisclosure.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@DayActivity, R.color.fg5))
 
                 itemView.setOnClickListener {
@@ -115,13 +139,15 @@ class DayActivity : AppCompatActivity() {
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
     private lateinit var binding: ActivityDayBinding
+    private lateinit var process: HashMap<String, HashMap<String, Boolean>>
     private var kanjisDayDistributed:List<ArrayList<Kanji>>? = null
     private var vocabulariesDayDistributed:List<ArrayList<Vocabulary>>? = null
     private lateinit var indexAdapter: IndexAdapter
 
     // Public Variable
     // Private Variable
-    private lateinit var indexEnum:IndexEnum
+    private lateinit var param: Param
+
     // Override Method or Basic Method
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,9 +160,11 @@ class DayActivity : AppCompatActivity() {
     // Private Method
 
     private fun initializeVariables() {
-        indexEnum = IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0))
-        val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, indexEnum.getFileName())
-        when (indexEnum.getSection()) {
+        param = Param(
+            IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0))
+        )
+        val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, param.indexEnum.getFileName())
+        when (param.indexEnum.getSection()) {
             SectionEnum.kanji -> {
                 val kanjis:ArrayList<Kanji> = ArrayList(JSONManager.getInstance().decodeJSONtoKanjiArray(jsonData))
                 HHLog.d(TAG, "kanjis = $kanjis")
@@ -155,13 +183,17 @@ class DayActivity : AppCompatActivity() {
 
             }
         }
+        val processJsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)))
+        processJsonData?.let { processJsonData ->
+            process = JSONManager.getInstance().decodeProcessJSON(processJsonData)
+        }
     }
 
     private fun initializeViews() {
         binding = ActivityDayBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(indexEnum.getSection()?.title), nonNull(indexEnum.title), indexEnum.getResourceId())
+            navigationview.set(nonNull(param.indexEnum.getSection()?.title), nonNull(param.indexEnum.title), param.indexEnum.getResourceId())
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -177,17 +209,28 @@ class DayActivity : AppCompatActivity() {
                 },
             )
 
+            val total = nonNull(kanjisDayDistributed?.size) + nonNull(vocabulariesDayDistributed?.size) + 1
+            val size = nonNull(process[param.indexEnum.name]).size
+            progressbarProcess.setProgress(size*100/total, false)
+            textviewProcess.text = String.format("%d/%d", size, total)
+
             indexAdapter = IndexAdapter(this@DayActivity)
             indexAdapter.setOnSelectItemListener(
                 object : OnSelectItemListener {
                     override fun onSelectItem(position: Int) {
                         HHLog.d(TAG, "onSelectItem() position = $position")
                         val intent = Intent(this@DayActivity, StudyActivity::class.java)
-                        intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, indexEnum.id)
-                        intent.putExtra(StudyActivity.EXTRA_DAY, position)
+                        intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
+                        if (position == 0) {
+                            intent.putExtra(StudyActivity.EXTRA_DAY_TITLE, getString(R.string.total_view))
+                            intent.putExtra(StudyActivity.EXTRA_DAY_KEY, getString(R.string.all_view))
+                        } else {
+                            intent.putExtra(StudyActivity.EXTRA_DAY_TITLE, String.format(getString(R.string.day_number), position))
+                            intent.putExtra(StudyActivity.EXTRA_DAY_KEY, String.format(getString(R.string.day_number), position))
+                        }
                         if (position == 0) { // 전체보기
-                            val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, indexEnum.getFileName())
-                            when (indexEnum.getSection()) {
+                            val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, param.indexEnum.getFileName())
+                            when (param.indexEnum.getSection()) {
                                 SectionEnum.kanji -> {
                                     val kanjis:ArrayList<Kanji> = ArrayList(JSONManager.getInstance().decodeJSONtoKanjiArray(jsonData))
                                     intent.putExtra(StudyActivity.EXTRA_KANJIS_DAY_DISTRIBUTED, kanjis)

@@ -1,0 +1,4 @@
+<resources>
+    <string name="all_view" translatable="false">all_view</string>
+    <string name="day_number" translatable="false">Day%d</string>
+</resources>

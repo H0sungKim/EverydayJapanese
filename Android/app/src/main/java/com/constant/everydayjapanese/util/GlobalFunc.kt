@@ -40,6 +40,11 @@ fun nonNull(a: Array<String>?): Array<String> {
 }
 
 
+fun nonNull(a: HashMap<String,Boolean>?): HashMap<String,Boolean> {
+    return a ?: HashMap<String, Boolean>()
+}
+
+
 @JvmName("callFromString")
 fun nonNull(a: ArrayList<String>?): ArrayList<String> {
     return a ?: ArrayList<String>()
