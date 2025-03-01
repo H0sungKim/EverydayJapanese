@@ -13,7 +13,8 @@ class MainViewController: UIViewController {
     
     private var nativeAd: AdFitNativeAd?
     private var nativeAdLoader: AdFitNativeAdLoader?
-
+    private var adLoaded: Bool = false
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -34,7 +35,6 @@ class MainViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: PassTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PassTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: IndexTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: IndexTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: AdTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AdTableViewCell.self))
-//        tableView.register(BizBoardCell.self, forCellReuseIdentifier: String(describing: BizBoardCell.self))
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -53,7 +53,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch SectionEnum.allCases[section] {
         case .ad:
-            return 1
+            return adLoaded ? 1 : 0
         case .hiraganakatagana:
             return SectionEnum.hiraganakatagana.indexEnums.count+1
         case .kanji:
@@ -192,12 +192,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: AdFitNativeAdLoaderDelegate, AdFitNativeAdDelegate {
     func nativeAdLoaderDidReceiveAd(_ nativeAd: AdFitNativeAd) {
         self.nativeAd = nativeAd
+        adLoaded = true
         tableView.reloadData()
         print("광고 응답을 받았습니다.")
     }
     
     func nativeAdLoaderDidFailToReceiveAd(_ nativeAdLoader: AdFitNativeAdLoader, error: any Error) {
         tableView.reloadData()
+        adLoaded = false
         print("광고 응답 에러: \(error) (\(error.localizedDescription))")
     }
     
