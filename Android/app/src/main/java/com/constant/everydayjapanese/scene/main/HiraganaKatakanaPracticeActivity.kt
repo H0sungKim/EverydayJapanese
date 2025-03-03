@@ -1,8 +1,11 @@
 package com.constant.everydayjapanese.scene.main
 
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityHiraganaKatakanaPracticeBinding
+import com.constant.everydayjapanese.util.Coordinate
 import com.constant.everydayjapanese.util.IndexEnum
 import com.constant.everydayjapanese.util.nonNull
 
@@ -45,6 +48,10 @@ class HiraganaKatakanaPracticeActivity : AppCompatActivity() {
         binding.apply {
             textviewMain.text = "가"
             textviewSub.text = "나다"
+
+            val layoutParams = framelayoutCharacter.layoutParams ?: ViewGroup.LayoutParams(0, 0)
+            layoutParams.height = Coordinate.getWidth() - 2 * resources.getDimensionPixelSize(R.dimen.space_m)
+            framelayoutCharacter.layoutParams = layoutParams
 
         }
     }

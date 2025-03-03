@@ -79,8 +79,6 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
         ): RecyclerView.ViewHolder {
             HHLog.d(TAG, "onCreateViewHolder()")
             val view = LayoutInflater.from(context).inflate(R.layout.grid_hiragana_katakana, parent, false)
-
-            // View의 크기를 화면 너비의 1/5로 설정
             val layoutParams = view.layoutParams ?: ViewGroup.LayoutParams(0, 0)
             layoutParams.width = Coordinate.getWidth() / 5
             view.layoutParams = layoutParams

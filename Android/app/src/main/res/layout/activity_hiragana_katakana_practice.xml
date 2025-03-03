@@ -36,6 +36,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_x4l"
+                    android:layout_marginBottom="@dimen/space_m"
                     style="@style/font_t2"
                     android:textColor="@color/fg0" />
                 <TextView
@@ -43,8 +45,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/space_xl"
                     style="@style/font_p1"
                     android:textColor="@color/fg4" />
+                <FrameLayout
+                    android:id="@+id/framelayout_character"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="@dimen/space_m"
+                    android:background="@color/bg3"
+                    />
             </LinearLayout>
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
