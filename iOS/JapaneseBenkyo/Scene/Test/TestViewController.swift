@@ -104,7 +104,7 @@ class TestViewController: UIViewController {
     private func savePass() {
         switch param.sectionEnum {
         case .kanji:
-            var pass = UserDefaultManager.shared.passKanji
+            var pass = GroupedUserDefaultsManager.shared.passKanji
             for (i, result) in testResult.enumerated() {
                 if result {
                     pass.insert(param.indices[i])
@@ -112,9 +112,9 @@ class TestViewController: UIViewController {
                     pass.remove(param.indices[i])
                 }
             }
-            UserDefaultManager.shared.passKanji = pass
+            GroupedUserDefaultsManager.shared.passKanji = pass
         case .vocabulary:
-            var pass = UserDefaultManager.shared.passVoca
+            var pass = GroupedUserDefaultsManager.shared.passVoca
             for (i, result) in testResult.enumerated() {
                 if result {
                     pass.insert(param.indices[i])
@@ -122,7 +122,7 @@ class TestViewController: UIViewController {
                     pass.remove(param.indices[i])
                 }
             }
-            UserDefaultManager.shared.passVoca = pass
+            GroupedUserDefaultsManager.shared.passVoca = pass
         default:
              return
         }

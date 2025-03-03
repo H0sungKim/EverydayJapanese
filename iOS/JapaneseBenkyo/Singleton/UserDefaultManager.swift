@@ -93,4 +93,11 @@ class UserDefaultManager {
         UserDefaults.standard.removeObject(forKey: UserDefaultEnum.vocabularyBookmark.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultEnum.kanjiBookmark.rawValue)
     }
+    
+    func clearAll() {
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.bookmarkVoca.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.bookmarkKanji.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.passVoca.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultEnum.passKanji.rawValue)
+    }
 }

@@ -11,8 +11,8 @@ import SkeletonView
 
 class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var vocabulariesForCell: [VocabularyForCell] = []
-    private var bookmark: Set<String> = UserDefaultManager.shared.bookmarkVoca
-    private var pass: Set<String> = UserDefaultManager.shared.passVoca
+    private var bookmark: Set<String> = GroupedUserDefaultsManager.shared.bookmarkVoca
+    private var pass: Set<String> = GroupedUserDefaultsManager.shared.passVoca
     var onReload: ((_ indexPath: IndexPath)->Void)?
     var showSkeleton: ((_ indexPath: IndexPath)->Void)?
     
@@ -41,7 +41,7 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     
     func addBookmarkAll() {
         bookmark.formUnion(Set(vocabulariesForCell.map { $0.id }))
-        UserDefaultManager.shared.bookmarkVoca = bookmark
+        GroupedUserDefaultsManager.shared.bookmarkVoca = bookmark
         for vocabularyForCell in vocabulariesForCell {
             vocabularyForCell.isBookmark = true
         }
@@ -106,7 +106,7 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         }
         vocabulariesForCell[indexPath.row].isBookmark = !vocabulariesForCell[indexPath.row].isBookmark
         cell.initializeCell(vocabularyForCell: vocabulariesForCell[indexPath.row])
-        UserDefaultManager.shared.bookmarkVoca = bookmark
+        GroupedUserDefaultsManager.shared.bookmarkVoca = bookmark
     }
     private func onClickPronounce(_ cell: VocabularyTableViewCell, _ sender: UIButton, indexPath: IndexPath) {
         TTSManager.shared.play(vocabulary: vocabulariesForCell[indexPath.row].vocabulary)
@@ -162,7 +162,7 @@ class VocabularyTableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func reload() {
-        bookmark = UserDefaultManager.shared.bookmarkVoca
-        pass = UserDefaultManager.shared.passVoca
+        bookmark = GroupedUserDefaultsManager.shared.bookmarkVoca
+        pass = GroupedUserDefaultsManager.shared.passVoca
     }
 }
