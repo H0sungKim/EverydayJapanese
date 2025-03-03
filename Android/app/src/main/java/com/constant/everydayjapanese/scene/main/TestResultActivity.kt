@@ -178,7 +178,7 @@ class TestResultActivity : AppCompatActivity() {
             if (param.indexEnum == IndexEnum.kanjiBookmark || param.indexEnum == IndexEnum.vocabularyBookmark) {
                 return
             }
-            
+
             saveProcess()
         }
     }
