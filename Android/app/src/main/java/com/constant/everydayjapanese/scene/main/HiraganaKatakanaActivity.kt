@@ -5,10 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityHiraganaKatakanaBinding
+import com.constant.everydayjapanese.singleton.HiraganaKatakanaManager
+import com.constant.everydayjapanese.util.Coordinate
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.IndexEnum
@@ -34,8 +39,12 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
         RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         // Public Inner Class, Struct, Enum, Interface
         inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val textviewMain: TextView = itemView.findViewById(R.id.textview_main)
+            val textviewSub: TextView = itemView.findViewById(R.id.textview_sub)
 
             fun bind(position: Int) {
+                textviewMain.text = items.get(position).first
+                textviewSub.text = items.get(position).second
             }
         }
 
@@ -57,7 +66,7 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
             return ItemViewHolder(view)
         }
 
-        override fun getItemCount(): Int = 0
+        override fun getItemCount(): Int = items.size
 
         override fun getItemViewType(position: Int): Int {
             return item
@@ -94,6 +103,7 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
 
     private lateinit var param: Param
     private lateinit var hiraganaKatakanaAdapter: HiraganaKatakanaAdapter
+    private lateinit var items: List<Pair<String, String>>
 
     // Override Method or Basic Method
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,6 +118,18 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
         param = Param(
             IndexEnum.ofRaw(getIntent().getIntExtra(StudyActivity.EXTRA_INDEX_ENUM, 0))
         )
+
+        when (param.indexEnum) {
+            IndexEnum.hiragana -> {
+                items = HiraganaKatakanaManager.getInstance().hiraganaTuple
+            }
+            IndexEnum.katakana -> {
+                items = HiraganaKatakanaManager.getInstance().katakanaTuple
+            }
+            else -> {
+
+            }
+        }
     }
 
     private fun initializeViews() {
@@ -129,9 +151,20 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
                     }
                 },
             )
+            val gridLayoutManager = GridLayoutManager(this@HiraganaKatakanaActivity, getSpanCount())
 
             hiraganaKatakanaAdapter = HiraganaKatakanaAdapter(this@HiraganaKatakanaActivity)
             recyclerview.adapter = hiraganaKatakanaAdapter
+            recyclerview.setLayoutManager(gridLayoutManager)
+            hiraganaKatakanaAdapter.notifyDataSetChanged()
         }
+    }
+
+    private fun getSpanCount(): Int {
+        // 화면의 가로 길이와 아이템의 최소 너비를 사용하여 spanCount 계산
+//        val shortAxis = Coordinate.getShortAxis()
+//        val albumWidth = resources.getDimension(R.dimen.album_picture_size_m).toInt()
+//        return shortAxis / albumWidth
+        return 5
     }
 }
