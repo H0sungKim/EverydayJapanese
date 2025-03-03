@@ -170,4 +170,9 @@ class VocabularyAdapter(
         isAllVisible = !isAllVisible
         notifyDataSetChanged()
     }
+
+    fun shuffle() {
+        vocabulariesForCell = vocabulariesForCell.shuffled()
+        notifyDataSetChanged()
+    }
 }

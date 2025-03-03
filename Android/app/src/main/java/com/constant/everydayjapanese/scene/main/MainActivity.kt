@@ -347,7 +347,7 @@ class MainActivity : AppCompatActivity() {
         charts.add(Item(R.drawable.hiragana_hi, IndexEnum.hiragana))
         charts.add(Item(R.drawable.katakana_ka, IndexEnum.katakana))
 
-        commonKanjis.add(Item(R.drawable.star, IndexEnum.bookmark))
+        commonKanjis.add(Item(R.drawable.star, IndexEnum.kanjiBookmark))
         commonKanjis.add(Item(R.drawable.img_uncheck, IndexEnum.elementary1))
         commonKanjis.add(Item(R.drawable.img_uncheck, IndexEnum.elementary2))
         commonKanjis.add(Item(R.drawable.img_uncheck, IndexEnum.elementary3))
@@ -356,7 +356,7 @@ class MainActivity : AppCompatActivity() {
         commonKanjis.add(Item(R.drawable.img_uncheck, IndexEnum.elementary6))
         commonKanjis.add(Item(R.drawable.img_uncheck, IndexEnum.middle))
 
-        vocabularies.add(Item(R.drawable.star, IndexEnum.bookmark))
+        vocabularies.add(Item(R.drawable.star, IndexEnum.vocabularyBookmark))
         vocabularies.add(Item(R.drawable.img_uncheck, IndexEnum.n5))
         vocabularies.add(Item(R.drawable.img_uncheck, IndexEnum.n4))
         vocabularies.add(Item(R.drawable.img_uncheck, IndexEnum.n3))
@@ -391,7 +391,7 @@ class MainActivity : AppCompatActivity() {
                                 bookmarks = JSONManager.getInstance().decodeJSONtoKanjiArray(it) as ArrayList<Kanji>
                                 intent.putExtra(StudyActivity.EXTRA_KANJIS_DAY_DISTRIBUTED, bookmarks)
                             }
-                            intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, IndexEnum.bookmark.id)
+                            intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, IndexEnum.kanjiBookmark.id)
                             startActivity(intent)
                         } else {
                             val intent = Intent(this@MainActivity, DayActivity::class.java)
@@ -419,7 +419,7 @@ class MainActivity : AppCompatActivity() {
                                 bookmarks = JSONManager.getInstance().decodeJSONtoVocabularyArray(it) as ArrayList<Vocabulary>
                                 intent.putExtra(StudyActivity.EXTRA_VOCABULARIES_DAY_DISTRIBUTED, bookmarks)
                             }
-                            intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, IndexEnum.bookmark.id)
+                            intent.putExtra(StudyActivity.EXTRA_INDEX_ENUM, IndexEnum.vocabularyBookmark.id)
                             startActivity(intent)
                         } else {
                             val intent = Intent(this@MainActivity, DayActivity::class.java)

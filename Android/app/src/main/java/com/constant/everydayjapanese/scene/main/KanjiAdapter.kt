@@ -209,4 +209,9 @@ class KanjiAdapter(
         isAllVisible = !isAllVisible
         notifyDataSetChanged()
     }
+
+    fun shuffle() {
+        kanjisForCell = kanjisForCell.shuffled()
+        notifyDataSetChanged()
+    }
 }

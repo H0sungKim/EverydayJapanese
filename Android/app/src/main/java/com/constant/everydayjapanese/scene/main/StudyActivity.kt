@@ -157,11 +157,21 @@ class StudyActivity : AppCompatActivity() {
                 },
             )
 
-            buttonSwitch.setOnClickListener {
-
+            buttonShuffle.setOnClickListener {
+                when(param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        kanjiAdapter.shuffle()
+                    }
+                    SectionEnum.vocabulary -> {
+                        vocabularyAdapter.shuffle()
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
             }
 
-            buttonView.setOnClickListener {
+            buttonAllVisible.setOnClickListener {
                 when(param.indexEnum.getSection()) {
                     SectionEnum.kanji -> {
                         kanjiAdapter.toggleAllVisible()

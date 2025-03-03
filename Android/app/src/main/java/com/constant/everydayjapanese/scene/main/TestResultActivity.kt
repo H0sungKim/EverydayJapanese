@@ -110,7 +110,7 @@ class TestResultActivity : AppCompatActivity() {
         binding = ActivityTestResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull("title"), nonNull("title2"), R.drawable.img_decorate)
+            navigationview.set(nonNull(param.indexEnum.getSection()?.title), String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, "테스트 결과".LATER()), param.indexEnum.getResourceId())
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -130,8 +130,7 @@ class TestResultActivity : AppCompatActivity() {
 
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
                 kanjisForCell?.let { kanjisForCell ->
-                    kanjiAdapter =
-                        KanjiAdapter(this@TestResultActivity, kanjisForCell, kanjiBookmarks)
+                    kanjiAdapter = KanjiAdapter(this@TestResultActivity, kanjisForCell, kanjiBookmarks)
                     kanjiAdapter.setOnSelectItemListener(
                         object :
                             OnSelectItemListener {
@@ -144,16 +143,9 @@ class TestResultActivity : AppCompatActivity() {
                     recyclerview.adapter = kanjiAdapter
                     initializeScoreView(nonNull(kanjisForCell.size))
                 }
-            } else if (param.indexEnum.getSection() == SectionEnum.vocabulary || 0 < nonNull(
-                    vocabulariesForCell?.size
-                )
-            ) { // vocabulary
+            } else if (param.indexEnum.getSection() == SectionEnum.vocabulary || 0 < nonNull(vocabulariesForCell?.size)) { // vocabulary
                 vocabulariesForCell?.let { vocabulariesForCell ->
-                    vocabularyAdapter = VocabularyAdapter(
-                        this@TestResultActivity,
-                        vocabulariesForCell,
-                        vocabularyBookmarks
-                    )
+                    vocabularyAdapter = VocabularyAdapter(this@TestResultActivity, vocabulariesForCell, vocabularyBookmarks)
                     vocabularyAdapter.setOnSelectItemListener(
                         object :
                             OnSelectItemListener {
@@ -173,17 +165,20 @@ class TestResultActivity : AppCompatActivity() {
                 },
             )
         }
+
+
     }
 
     private fun initializeScoreView(wrongCount: Int) {
         binding.textviewScore.text = String.format(getString(R.string.n_points), (param.allCount - wrongCount) * 100 / param.allCount)
-        binding.textviewSubscore.text = String.format("%d/%d", wrongCount, param.allCount)
+        binding.textviewSubscore.text = String.format("%d/%d", param.allCount - wrongCount, param.allCount)
         if (wrongCount == 0) {
             binding.buttonBookmark.isEnabled = false
             binding.buttonRetest.isEnabled = false
-            if (param.indexEnum == IndexEnum.bookmark) {
+            if (param.indexEnum == IndexEnum.kanjiBookmark || param.indexEnum == IndexEnum.vocabularyBookmark) {
                 return
             }
+            
             saveProcess()
         }
     }
