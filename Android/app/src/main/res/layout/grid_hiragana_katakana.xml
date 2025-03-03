@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/album_picture_size_m"
+    android:layout_width="wrap_content"
     android:layout_height="@dimen/album_picture_size_m"
-    android:background="@color/red"
     android:layout_margin="@dimen/space_x4s">
 
     <LinearLayout
@@ -15,13 +14,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             style="@style/font_t2"
-            android:textColor="@color/fg4" />
+            android:textColor="@color/fg0" />
         <TextView
             android:id="@+id/textview_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            style="@style/font_p0"
+            style="@style/font_p1"
             android:textColor="@color/fg4" />
     </LinearLayout>
 </FrameLayout>

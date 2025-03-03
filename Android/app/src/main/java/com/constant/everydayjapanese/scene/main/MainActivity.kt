@@ -373,6 +373,12 @@ class MainActivity : AppCompatActivity() {
                 object : OnSelectItemListener {
                     override fun onSelectItem(position: Int) {
                         HHLog.d(TAG, "onSelectItem() position = $position")
+                        val intent = Intent(this@MainActivity, HiraganaKatakanaActivity::class.java)
+                        intent.putExtra(
+                            HiraganaKatakanaActivity.EXTRA_INDEX_ENUM,
+                            charts[position].indexEnum.id
+                        )
+                        startActivity(intent)
                     }
                 },
             )

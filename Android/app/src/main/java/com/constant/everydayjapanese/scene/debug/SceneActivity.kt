@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivitySceneBinding
 import com.constant.everydayjapanese.scene.main.HiraganaKatakanaActivity
+import com.constant.everydayjapanese.scene.main.HiraganaKatakanaPracticeActivity
 import com.constant.everydayjapanese.scene.main.TestResultActivity
 import com.constant.everydayjapanese.util.FeatureConst
 import com.constant.everydayjapanese.util.GlobalConst
@@ -108,6 +109,7 @@ class SceneActivity : AppCompatActivity() {
         items = ArrayList<Item>()
         items.add(Item("TestResult", TestResultActivity::class.java))
         items.add(Item("HiraganaKatakana", HiraganaKatakanaActivity::class.java))
+        items.add(Item("HiraganaKatakanaPractice", HiraganaKatakanaPracticeActivity::class.java))
     }
 
     private fun initializeViews() {
@@ -147,7 +149,7 @@ class SceneActivity : AppCompatActivity() {
             sceneAdapter.notifyDataSetChanged()
 
             if (FeatureConst.FEATURE_SPECIFIC_SCENE) {
-                val intent = Intent(this@SceneActivity, HiraganaKatakanaActivity::class.java)
+                val intent = Intent(this@SceneActivity, HiraganaKatakanaPracticeActivity::class.java)
                 startActivity(intent)
             }
         }

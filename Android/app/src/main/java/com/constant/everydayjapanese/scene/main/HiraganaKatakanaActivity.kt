@@ -1,8 +1,10 @@
 package com.constant.everydayjapanese.scene.main
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityHiraganaKatakanaBinding
+import com.constant.everydayjapanese.scene.main.MainActivity.OnSelectItemListener
 import com.constant.everydayjapanese.singleton.HiraganaKatakanaManager
 import com.constant.everydayjapanese.util.Coordinate
 import com.constant.everydayjapanese.util.HHLog
@@ -45,6 +48,19 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
             fun bind(position: Int) {
                 textviewMain.text = items.get(position).first
                 textviewSub.text = items.get(position).second
+                itemView.setOnClickListener {
+                    onSelectItemListener?.onSelectItem(position)
+                }
+
+                itemView.setOnTouchListener { v, event ->
+                    if (event.action == MotionEvent.ACTION_DOWN) {
+                        v.setBackgroundColor(context.getColor(R.color.list_selection))
+                    }
+                    if (event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL) {
+                        v.setBackgroundColor(Color.TRANSPARENT)
+                    }
+                    false
+                }
             }
         }
 
@@ -63,6 +79,12 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
         ): RecyclerView.ViewHolder {
             HHLog.d(TAG, "onCreateViewHolder()")
             val view = LayoutInflater.from(context).inflate(R.layout.grid_hiragana_katakana, parent, false)
+
+            // View의 크기를 화면 너비의 1/5로 설정
+            val layoutParams = view.layoutParams ?: ViewGroup.LayoutParams(0, 0)
+            layoutParams.width = Coordinate.getWidth() / 5
+            view.layoutParams = layoutParams
+
             return ItemViewHolder(view)
         }
 
@@ -151,20 +173,24 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
                     }
                 },
             )
-            val gridLayoutManager = GridLayoutManager(this@HiraganaKatakanaActivity, getSpanCount())
+            val gridLayoutManager = GridLayoutManager(this@HiraganaKatakanaActivity, 5)
 
             hiraganaKatakanaAdapter = HiraganaKatakanaAdapter(this@HiraganaKatakanaActivity)
             recyclerview.adapter = hiraganaKatakanaAdapter
             recyclerview.setLayoutManager(gridLayoutManager)
+
+            hiraganaKatakanaAdapter.setOnSelectItemListener(
+                object :
+                    OnSelectItemListener {
+                    override fun onSelectItem(position: Int) {
+                        HHLog.d(TAG, "onSelectItem() position = $position")
+
+                    }
+                },
+            )
+
             hiraganaKatakanaAdapter.notifyDataSetChanged()
         }
     }
 
-    private fun getSpanCount(): Int {
-        // 화면의 가로 길이와 아이템의 최소 너비를 사용하여 spanCount 계산
-//        val shortAxis = Coordinate.getShortAxis()
-//        val albumWidth = resources.getDimension(R.dimen.album_picture_size_m).toInt()
-//        return shortAxis / albumWidth
-        return 5
-    }
 }
