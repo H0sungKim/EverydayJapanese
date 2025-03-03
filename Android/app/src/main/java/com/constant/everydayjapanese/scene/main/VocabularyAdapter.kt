@@ -98,7 +98,7 @@ class VocabularyAdapter(
                 textViewExample.text = it
             }
 
-            if (vocabularyForCell.isVisible) {
+            if (vocabularyForCell.isVisible || isAllVisible) {
                 textviewSound.visibility = View.VISIBLE
                 textviewMeaning.visibility = View.VISIBLE
             } else {
@@ -131,6 +131,7 @@ class VocabularyAdapter(
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
     private val item: Int = 0
+    private var isAllVisible: Boolean = false
 
     // Public Variable
 
@@ -163,5 +164,10 @@ class VocabularyAdapter(
     // Public Method
     fun setOnSelectItemListener(onSelectItemListener: OnSelectItemListener) {
         this.onSelectItemListener = onSelectItemListener
+    }
+
+    fun toggleAllVisible() {
+        isAllVisible = !isAllVisible
+        notifyDataSetChanged()
     }
 }
