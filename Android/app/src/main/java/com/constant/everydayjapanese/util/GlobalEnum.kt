@@ -82,9 +82,9 @@ enum class HHFileType {
 }
 
 enum class IndexEnum(val id:Int, val title: String) {
-    bookmark(0, EverydayJapaneseApplication.context.getString(R.string.favorites)),
-    hiragana(1, EverydayJapaneseApplication.context.getString(R.string.hiragana)),
-    katakana(2, EverydayJapaneseApplication.context.getString(R.string.katakana)),
+    hiragana(0, EverydayJapaneseApplication.context.getString(R.string.hiragana)),
+    katakana(1, EverydayJapaneseApplication.context.getString(R.string.katakana)),
+    kanjiBookmark(2, EverydayJapaneseApplication.context.getString(R.string.favorites)),
     elementary1(3, EverydayJapaneseApplication.context.getString(R.string._1st_grade_elementary)),
     elementary2(4, EverydayJapaneseApplication.context.getString(R.string._2nd_grade_elementary)),
     elementary3(5, EverydayJapaneseApplication.context.getString(R.string._3rd_grade_elementary)),
@@ -92,19 +92,20 @@ enum class IndexEnum(val id:Int, val title: String) {
     elementary5(7, EverydayJapaneseApplication.context.getString(R.string._5th_grade_elementary)),
     elementary6(8, EverydayJapaneseApplication.context.getString(R.string._6th_grade_elementary)),
     middle(9, EverydayJapaneseApplication.context.getString(R.string.middle_school)),
-    n5(10, EverydayJapaneseApplication.context.getString(R.string.n5)),
-    n4(11, EverydayJapaneseApplication.context.getString(R.string.n4)),
-    n3(12, EverydayJapaneseApplication.context.getString(R.string.n3)),
-    n2(13, EverydayJapaneseApplication.context.getString(R.string.n2)),
-    n1(14, EverydayJapaneseApplication.context.getString(R.string.n1)),
+    vocabularyBookmark(10, EverydayJapaneseApplication.context.getString(R.string.favorites)),
+    n5(11, EverydayJapaneseApplication.context.getString(R.string.n5)),
+    n4(12, EverydayJapaneseApplication.context.getString(R.string.n4)),
+    n3(13, EverydayJapaneseApplication.context.getString(R.string.n3)),
+    n2(14, EverydayJapaneseApplication.context.getString(R.string.n2)),
+    n1(15, EverydayJapaneseApplication.context.getString(R.string.n1)),
     ;
 
     companion object {
         val rawToEnum =
             mapOf(
-                IndexEnum.bookmark.id to IndexEnum.bookmark,
                 IndexEnum.hiragana.id to IndexEnum.hiragana,
                 IndexEnum.katakana.id to IndexEnum.katakana,
+                IndexEnum.kanjiBookmark.id to IndexEnum.kanjiBookmark,
                 IndexEnum.elementary1.id to IndexEnum.elementary1,
                 IndexEnum.elementary2.id to IndexEnum.elementary2,
                 IndexEnum.elementary3.id to IndexEnum.elementary3,
@@ -112,6 +113,7 @@ enum class IndexEnum(val id:Int, val title: String) {
                 IndexEnum.elementary5.id to IndexEnum.elementary5,
                 IndexEnum.elementary6.id to IndexEnum.elementary6,
                 IndexEnum.middle.id to IndexEnum.middle,
+                IndexEnum.vocabularyBookmark.id to IndexEnum.vocabularyBookmark,
                 IndexEnum.n5.id to IndexEnum.n5,
                 IndexEnum.n4.id to IndexEnum.n4,
                 IndexEnum.n3.id to IndexEnum.n3,
@@ -120,13 +122,13 @@ enum class IndexEnum(val id:Int, val title: String) {
             )
 
         fun ofRaw(raw: Int): IndexEnum {
-            return rawToEnum[raw] ?: IndexEnum.bookmark
+            return rawToEnum[raw] ?: IndexEnum.hiragana
         }
     }
 
     fun getFileName(): String {
         return when (this) {
-            IndexEnum.bookmark, IndexEnum.hiragana, IndexEnum.katakana -> ""
+            IndexEnum.hiragana, IndexEnum.katakana, IndexEnum.kanjiBookmark, IndexEnum.vocabularyBookmark -> ""
             IndexEnum.elementary1 -> "kanji1.json"
             IndexEnum.elementary2 -> "kanji2.json"
             IndexEnum.elementary3 -> "kanji3.json"
@@ -144,12 +146,10 @@ enum class IndexEnum(val id:Int, val title: String) {
 
     fun getSection(): SectionEnum? {
         when(this) {
-            IndexEnum.bookmark -> {
-                return null
-            }
             IndexEnum.hiragana, IndexEnum.katakana -> {
                 return SectionEnum.hiraganakatagana
             }
+            IndexEnum.kanjiBookmark,
             IndexEnum.elementary1,
             IndexEnum.elementary2,
             IndexEnum.elementary3,
@@ -159,6 +159,7 @@ enum class IndexEnum(val id:Int, val title: String) {
             IndexEnum.middle -> {
                 return SectionEnum.kanji
             }
+            IndexEnum.vocabularyBookmark,
             IndexEnum.n5,
             IndexEnum.n4,
             IndexEnum.n3,

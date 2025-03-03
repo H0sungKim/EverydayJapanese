@@ -34,6 +34,7 @@
                     android:clipToOutline="true"
                     android:orientation="vertical"
                     android:paddingVertical="@dimen/space_xs"
+                    android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
@@ -48,6 +49,7 @@
                     android:clipToOutline="true"
                     android:orientation="vertical"
                     android:paddingVertical="@dimen/space_xs"
+                    android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -61,6 +63,7 @@
                     android:clipToOutline="true"
                     android:orientation="vertical"
                     android:paddingVertical="@dimen/space_xs"
+                    android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </LinearLayout>

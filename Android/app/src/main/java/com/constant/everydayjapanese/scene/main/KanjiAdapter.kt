@@ -20,6 +20,7 @@ import com.constant.everydayjapanese.singleton.JSONManager
 import com.constant.everydayjapanese.singleton.Pref
 import com.constant.everydayjapanese.singleton.PrefManager
 import com.constant.everydayjapanese.singleton.TTSManager
+import com.constant.everydayjapanese.util.nonNull
 
 class KanjiAdapter(
     private val context: Context,
@@ -135,7 +136,7 @@ class KanjiAdapter(
                 linearLayoutH.addView(textViewMeaning)
                 linearlayoutExample.addView(linearLayoutH)
             }
-            if (kanjiForCell.isVisible) {
+            if (kanjiForCell.isVisible || isAllVisible) {
                 textviewSound.visibility = View.VISIBLE
                 textviewMeaning.visibility = View.VISIBLE
                 textviewEumhun.visibility = View.VISIBLE
@@ -167,9 +168,12 @@ class KanjiAdapter(
     }
 
     // Private Constant
+    private val TAG = nonNull(this::class.simpleName)
     private val item: Int = 0
+    private var isAllVisible: Boolean = false
 
     // Public Variable
+
 
     // Private Variable
     private var onSelectItemListener: OnSelectItemListener? = null
@@ -199,5 +203,15 @@ class KanjiAdapter(
     // Public Method
     fun setOnSelectItemListener(onSelectItemListener: OnSelectItemListener) {
         this.onSelectItemListener = onSelectItemListener
+    }
+
+    fun toggleAllVisible() {
+        isAllVisible = !isAllVisible
+        notifyDataSetChanged()
+    }
+
+    fun shuffle() {
+        kanjisForCell = kanjisForCell.shuffled()
+        notifyDataSetChanged()
     }
 }

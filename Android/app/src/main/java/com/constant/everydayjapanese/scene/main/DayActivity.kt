@@ -156,6 +156,17 @@ class DayActivity : AppCompatActivity() {
         initializeViews()
     }
 
+    override fun onResume() {
+        super.onResume()
+        HHLog.d(TAG, "onResume()")
+        val processJsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)))
+        processJsonData?.let { processJsonData ->
+            process = JSONManager.getInstance().decodeProcessJSON(processJsonData)
+        }
+        indexAdapter.notifyDataSetChanged()
+
+    }
+
     // Public Method
     // Private Method
 

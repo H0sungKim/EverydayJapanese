@@ -157,6 +157,34 @@ class StudyActivity : AppCompatActivity() {
                 },
             )
 
+            buttonShuffle.setOnClickListener {
+                when(param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        kanjiAdapter.shuffle()
+                    }
+                    SectionEnum.vocabulary -> {
+                        vocabularyAdapter.shuffle()
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
+            }
+
+            buttonAllVisible.setOnClickListener {
+                when(param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        kanjiAdapter.toggleAllVisible()
+                    }
+                    SectionEnum.vocabulary -> {
+                        vocabularyAdapter.toggleAllVisible()
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
+            }
+
             buttonTest.setOnClickListener {
                 val intent = Intent(this@StudyActivity, TestActivity::class.java)
                 intent.putExtra(TestActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
@@ -179,6 +207,8 @@ class StudyActivity : AppCompatActivity() {
                 }
                 startActivity(intent)
             }
+
+
 
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
                 kanjisForCell?.let {  kanjisForCell ->

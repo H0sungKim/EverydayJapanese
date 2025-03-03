@@ -35,7 +35,7 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/button_switch"
+                android:id="@+id/button_shuffle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/space_s"
@@ -44,7 +44,7 @@
                 app:tint="@color/fg0" />
 
             <ImageButton
-                android:id="@+id/button_view"
+                android:id="@+id/button_all_visible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/space_s"
