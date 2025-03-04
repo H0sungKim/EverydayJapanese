@@ -138,15 +138,18 @@ class DayActivity : AppCompatActivity() {
     // Public Constant
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
+
+
+
+    // Public Variable
+    // Private Variable
+    private lateinit var param: Param
+
     private lateinit var binding: ActivityDayBinding
     private lateinit var process: HashMap<String, HashMap<String, Boolean>>
     private var kanjisDayDistributed:List<ArrayList<Kanji>>? = null
     private var vocabulariesDayDistributed:List<ArrayList<Vocabulary>>? = null
     private lateinit var indexAdapter: IndexAdapter
-
-    // Public Variable
-    // Private Variable
-    private lateinit var param: Param
 
     // Override Method or Basic Method
     override fun onCreate(savedInstanceState: Bundle?) {

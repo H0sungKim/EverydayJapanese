@@ -55,7 +55,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="@dimen/space_m"
                     android:background="@color/bg3"
-                    />
+                    >
+
+                </FrameLayout>
             </LinearLayout>
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

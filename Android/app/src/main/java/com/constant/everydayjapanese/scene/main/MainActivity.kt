@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.util.nonNull
@@ -147,7 +148,18 @@ class MainActivity : AppCompatActivity() {
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
             fun bind(position: Int) {
                 val commonKanji = commonKanjis.get(position)
-                imageviewIcon.setImageResource(commonKanji.resourceId)
+                if (position == 0) {
+                    imageviewIcon.setImageResource(R.drawable.star)
+                } else {
+                    if (process[commonKanji.indexEnum.name]?.get(getString(R.string.all_view)) == true) {
+                        imageviewIcon.setImageResource(R.drawable.img_check)
+                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
+                    } else {
+                        imageviewIcon.setImageResource(R.drawable.img_uncheck)
+                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
+                    }
+                }
+
                 textviewTitle.text = commonKanji.indexEnum.title
                 imageviewDisclosure.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, R.color.fg5))
 
@@ -240,7 +252,18 @@ class MainActivity : AppCompatActivity() {
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
             fun bind(position: Int) {
                 val vocabulary = vocabularies.get(position)
-                imageviewIcon.setImageResource(vocabulary.resourceId)
+                if (position == 0) {
+                    imageviewIcon.setImageResource(R.drawable.star)
+                } else {
+                    if (process[vocabulary.indexEnum.name]?.get(getString(R.string.all_view)) == true) {
+                        imageviewIcon.setImageResource(R.drawable.img_check)
+                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
+                    } else {
+                        imageviewIcon.setImageResource(R.drawable.img_uncheck)
+                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
+                    }
+                }
+
                 textviewTitle.text = vocabulary.indexEnum.title
                 imageviewDisclosure.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, R.color.fg5))
 
@@ -322,6 +345,8 @@ class MainActivity : AppCompatActivity() {
     // Public Variable
     // Private Variable
     private lateinit var binding: ActivityMainBinding
+    private lateinit var process: HashMap<String, HashMap<String, Boolean>>
+
     private var charts = ArrayList<Item>()
     private lateinit var chartAdapter: ChartAdapter
 
@@ -338,6 +363,17 @@ class MainActivity : AppCompatActivity() {
 
         initializeVariables()
         initializeViews()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        HHLog.d(TAG, "onResume()")
+        val processJsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)))
+        processJsonData?.let { processJsonData ->
+            process = JSONManager.getInstance().decodeProcessJSON(processJsonData)
+        }
+        commonKanjiAdapter.notifyDataSetChanged()
+        vocabularyAdapter.notifyDataSetChanged()
     }
 
     // Public Method
