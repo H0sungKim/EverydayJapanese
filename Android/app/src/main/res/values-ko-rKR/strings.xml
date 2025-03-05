@@ -48,7 +48,6 @@
 	<string name="before_hour">%d시간전</string>
 	<string name="before_minute">%d분전</string>
 	<string name="about_before_minute">약%d분</string>
-
 	<string name="board_youtube_link_title">유튜브 링크 넣기</string>
 	<string name="board_youtube_link_input_hint">유튜브 링크를 입력해주세요</string>
 	<string name="board_youtube_link_error_message">올바른 주소를 입력해주세요</string>
@@ -91,8 +90,8 @@
 	<string name="japanese_common_chinese">일본 상용한자</string>
 	<string name="jlpt_vocabulary">JLPT 단어장</string>
 	<string name="n_points">%d점</string>
-
-
+	<string name="test">테스트</string>
+	<string name="test_result">테스트 결과</string>
 
 
 

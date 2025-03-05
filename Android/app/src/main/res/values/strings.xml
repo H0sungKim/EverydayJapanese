@@ -1,95 +1,249 @@
-<?xml version="1.0" encoding="utf-8"?><!--툴에 의해서 자동으로 generate 되는 파일입니다.-->
+<?xml version="1.0" encoding="utf-8"?>
+<!--툴에 의해서 자동으로 generate 되는 파일입니다.-->
 <resources>
-    <!-- 공통 문구 -->
-    <string name="common_save">저장</string>
-    <string name="common_cancel">취소</string>
-    <string name="common_retry">재시도</string>
-    <string name="common_no">아니오</string>
-    <string name="common_yes">네</string>
-    <string name="common_never_watch_again">다시보지 않기</string>
-    <string name="common_close">닫기</string>
-    <string name="common_quit_the_app">앱종료</string>
-    <string name="common_latest_version">최신 버전</string>
-    <string name="common_later">나중에</string>
-    <string name="common_ok">확인</string>
-    <string name="common_no_name">이름 없음</string>
-    <string name="common_etc">기타</string>
-    <string name="common_delete">삭제하기</string>
-    <string name="common_select">선택</string>
-    <string name="common_video_select">동영상 선택</string>
-    <string name="common_insert">삽입</string>
-    <string name="common_modify">수정</string>
-    <string name="common_simple_delete">삭제</string>
-    <string name="common_register">등록</string>
-    <string name="common_add">추가</string>
-    <string name="common_total">전체</string>
-    <string name="common_hometown">동네</string>
-    <string name="common_block">차단하기</string>
-    <string name="common_next">다음</string>
-    <string name="common_continue">계속</string>
-    <string name="common_goto_setting">설정하기</string>
+	<!-- 공통 문구 -->
+	<string name="common_save">저장</string>
+	<string name="common_cancel">취소</string>
+	<string name="common_retry">재시도</string>
+	<string name="common_no">아니오</string>
+	<string name="common_yes">네</string>
+	<string name="common_never_watch_again">다시보지 않기</string>
+	<string name="common_close">닫기</string>
+	<string name="common_quit_the_app">앱종료</string>
+	<string name="common_latest_version">최신 버전</string>
+	<string name="common_later">나중에</string>
+	<string name="common_ok">확인</string>
+	<string name="common_no_name">이름 없음</string>
+	<string name="common_etc">기타</string>
+	<string name="common_delete">삭제하기</string>
+	<string name="common_select">선택</string>
+	<string name="common_video_select">동영상 선택</string>
+	<string name="common_insert">삽입</string>
+	<string name="common_modify">수정</string>
+	<string name="common_simple_delete">삭제</string>
+	<string name="common_register">등록</string>
+	<string name="common_add">추가</string>
+	<string name="common_total">전체</string>
+	<string name="common_hometown">동네</string>
+	<string name="common_block">차단하기</string>
+	<string name="common_next">다음</string>
+	<string name="common_continue">계속</string>
+	<string name="common_goto_setting">설정하기</string>
 
-    <!-- Core -->
-    <string name="app_name">매일 일본어</string>
-    <string name="notices">공지사항</string>
-    <string name="required_updates">필수 업데이트</string>
-    <string name="update_enjoy_new">업데이트를 하고 새로워진 %s을 즐겨보세요.</string>
-    <string name="update">업데이트</string>
-    <string name="login_failed_please_try_again">로그인이 성공적으로 이루어지지 못했습니다. 다시 시도해주세요.</string>
-    <string name="no_response_from_server">서버로부터 응답이 없습니다.</string>
-    <string name="logged_out_because_login_period_has_expired">로그인 기간이 만료되어 로그아웃 되었습니다.\n다시 로그인 해주세요.</string>
-    <string name="logged_out_because_logged_in_another_device">다른 기기에서 로그인 되어 로그아웃 되었습니다.\n다시 로그인해 주세요.</string>
-    <string name="network_connection_is_poor">네트워크 연결이 원활하지 않습니다. 다시 시도해주세요.</string>
-    <string name="to_use_the_profile_editing_function_please_allow">프로필 수정 기능을 사용하려면 \&apos;사진/비디오\&apos; 접근권한을 켜주세요. 앱 설정에서 \&apos;사진/비디오\&apos; 접근 권한을 허용할 수 있습니다. 이동하시겠습니까?</string>
-    <string name="yesterday">어제</string>
-    <string name="the_day_before_yesterday">그저께</string>
-    <string name="before_day">%d일전</string>
-    <string name="before_hour">%d시간전</string>
-    <string name="before_minute">%d분전</string>
-    <string name="about_before_minute">약%d분</string>
+	<!-- Core -->
+	<string name="app_name">매일 일본어</string>
+	<string name="notices">공지사항</string>
+	<string name="required_updates">필수 업데이트</string>
+	<string name="update_enjoy_new">업데이트를 하고 새로워진 %s을 즐겨보세요.</string>
+	<string name="update">업데이트</string>
+	<string name="login_failed_please_try_again">로그인이 성공적으로 이루어지지 못했습니다. 다시 시도해주세요.</string>
+	<string name="no_response_from_server">서버로부터 응답이 없습니다.</string>
+	<string name="logged_out_because_login_period_has_expired">로그인 기간이 만료되어 로그아웃 되었습니다.\n다시 로그인 해주세요.</string>
+	<string name="logged_out_because_logged_in_another_device">다른 기기에서 로그인 되어 로그아웃 되었습니다.\n다시 로그인해 주세요.</string>
+	<string name="network_connection_is_poor">네트워크 연결이 원활하지 않습니다. 다시 시도해주세요.</string>
+	<string name="to_use_the_profile_editing_function_please_allow">프로필 수정 기능을 사용하려면 \&apos;사진/비디오\&apos; 접근권한을 켜주세요. 앱 설정에서 \&apos;사진/비디오\&apos; 접근 권한을 허용할 수 있습니다. 이동하시겠습니까?</string>
+	<string name="yesterday">어제</string>
+	<string name="the_day_before_yesterday">그저께</string>
+	<string name="before_day">%d일전</string>
+	<string name="before_hour">%d시간전</string>
+	<string name="before_minute">%d분전</string>
+	<string name="about_before_minute">약%d분</string>
+	<string name="board_youtube_link_title">유튜브 링크 넣기</string>
+	<string name="board_youtube_link_input_hint">유튜브 링크를 입력해주세요</string>
+	<string name="board_youtube_link_error_message">올바른 주소를 입력해주세요</string>
+	<string name="board_youtube_already_insert">이미 삽입한 유튜브 링크에요</string>
+	<string name="monday">월</string>
+	<string name="tuesday">화</string>
+	<string name="wednesday">수</string>
+	<string name="thursday">목</string>
+	<string name="friday">금</string>
+	<string name="saturday">토</string>
+	<string name="sunday">일</string>
+	<string name="today">오늘</string>
+	<string name="month">%d월</string>
+	<string name="year">%d년</string>
+	<string name="hour_minute">%d시간 %02d분</string>
+	<string name="minute">%02d분</string>
 
-    <string name="board_youtube_link_title">유튜브 링크 넣기</string>
-    <string name="board_youtube_link_input_hint">유튜브 링크를 입력해주세요</string>
-    <string name="board_youtube_link_error_message">올바른 주소를 입력해주세요</string>
-    <string name="board_youtube_already_insert">이미 삽입한 유튜브 링크에요</string>
-    <string name="monday">월</string>
-    <string name="tuesday">화</string>
-    <string name="wednesday">수</string>
-    <string name="thursday">목</string>
-    <string name="friday">금</string>
-    <string name="saturday">토</string>
-    <string name="sunday">일</string>
-    <string name="today">오늘</string>
-    <string name="month">%d월</string>
-    <string name="year">%d년</string>
-    <string name="hour_minute">%d시간 %02d분</string>
-    <string name="minute">%02d분</string>
+	<!-- 기타 -->
+	<string name="add_incorrect_word_favorites">틀린 단어 즐겨찾기 추가하기</string>
+	<string name="test_again_for_incorrect_words">틀린 단어 다시 테스트하기</string>
+	<string name="end_test">테스트 끝내기</string>
+	<string name="incorrect_word">틀린단어</string>
+	<string name="total_view">전체보기</string>
+	<string name="favorites">즐겨찾기</string>
+	<string name="hiragana">히라가나</string>
+	<string name="katakana">가타카나</string>
+	<string name="_1st_grade_elementary">소학교 1학년</string>
+	<string name="_2nd_grade_elementary">소학교 2학년</string>
+	<string name="_3rd_grade_elementary">소학교 3학년</string>
+	<string name="_4th_grade_elementary">소학교 4학년</string>
+	<string name="_5th_grade_elementary">소학교 5학년</string>
+	<string name="_6th_grade_elementary">소학교 6학년</string>
+	<string name="middle_school">중학교</string>
+	<string name="n5">N5</string>
+	<string name="n4">N4</string>
+	<string name="n3">N3</string>
+	<string name="n2">N2</string>
+	<string name="n1">N1</string>
+	<string name="hiragana_katakana">히라가나 가타카나 표</string>
+	<string name="japanese_common_chinese">일본 상용한자</string>
+	<string name="jlpt_vocabulary">JLPT 단어장</string>
+	<string name="n_points">%d점</string>
+	<string name="test">테스트</string>
+	<string name="test_result">테스트 결과</string>
 
-    <!-- 기타 -->
-    <string name="add_incorrect_word_favorites">틀린 단어 즐겨찾기 추가하기</string>
-    <string name="test_again_for_incorrect_words">틀린 단어 다시 테스트하기</string>
-    <string name="end_test">테스트 끝내기</string>
-    <string name="incorrect_word">틀린단어</string>
-    <string name="total_view">전체보기</string>
-    <string name="favorites">즐겨찾기</string>
-    <string name="hiragana">히라가나</string>
-    <string name="katakana">가타카나</string>
-    <string name="_1st_grade_elementary">소학교 1학년</string>
-    <string name="_2nd_grade_elementary">소학교 2학년</string>
-    <string name="_3rd_grade_elementary">소학교 3학년</string>
-    <string name="_4th_grade_elementary">소학교 4학년</string>
-    <string name="_5th_grade_elementary">소학교 5학년</string>
-    <string name="_6th_grade_elementary">소학교 6학년</string>
-    <string name="middle_school">중학교</string>
-    <string name="n5">N5</string>
-    <string name="n4">N4</string>
-    <string name="n3">N3</string>
-    <string name="n2">N2</string>
-    <string name="n1">N1</string>
-    <string name="hiragana_katakana">히라가나 가타카나 표</string>
-    <string name="japanese_common_chinese">일본 상용한자</string>
-    <string name="jlpt_vocabulary">JLPT 단어장</string>
-    <string name="n_points">%d점</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </resources>

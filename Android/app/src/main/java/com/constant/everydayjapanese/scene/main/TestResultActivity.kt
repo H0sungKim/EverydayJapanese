@@ -111,7 +111,7 @@ class TestResultActivity : AppCompatActivity() {
         binding = ActivityTestResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, "테스트 결과".LATER()), param.indexEnum.getResourceId())
+            navigationview.set(nonNull(param.indexEnum.getSection()?.title), String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, getString(R.string.test_result)), param.indexEnum.getResourceId())
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {

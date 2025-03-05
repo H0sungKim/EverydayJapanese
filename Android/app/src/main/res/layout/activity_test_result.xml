@@ -48,6 +48,7 @@
 
             <Button
                 android:id="@+id/button_bookmark"
+                style="@style/font_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -64,6 +65,7 @@
 
             <Button
                 android:id="@+id/button_retest"
+                style="@style/font_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -80,6 +82,7 @@
 
             <Button
                 android:id="@+id/button_finishtest"
+                style="@style/font_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
