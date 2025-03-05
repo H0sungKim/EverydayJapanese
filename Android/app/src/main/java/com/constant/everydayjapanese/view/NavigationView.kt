@@ -3,12 +3,10 @@ package com.constant.everydayjapanese.view
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Rect
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.TouchDelegate
 import android.view.View
-import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -116,7 +114,11 @@ class NavigationView : FrameLayout {
         reloadBackgroundType()
     }
 
-    fun set(title: String, description: String, resourceId: Int) {
+    fun set(
+        title: String,
+        description: String,
+        resourceId: Int,
+    ) {
         textviewTitle.text = title
         textviewDescription.text = description
         imageviewIcon.setImageResource(resourceId)

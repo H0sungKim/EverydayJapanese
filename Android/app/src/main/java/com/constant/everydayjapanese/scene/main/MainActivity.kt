@@ -16,9 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
-import com.constant.everydayjapanese.util.nonNull
 import com.constant.everydayjapanese.databinding.ActivityMainBinding
-import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
 import com.constant.everydayjapanese.scene.debug.SceneActivity
@@ -28,6 +26,7 @@ import com.constant.everydayjapanese.singleton.PrefManager
 import com.constant.everydayjapanese.util.FeatureConst
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.IndexEnum
+import com.constant.everydayjapanese.util.nonNull
 
 // ----------------------------------------------------
 // Public Outter Class, Struct, Enum, Interface
@@ -55,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             private val imageviewIcon: ImageView = itemView.findViewById(R.id.imageview_icon)
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
+
             fun bind(position: Int) {
                 val chart = charts.get(position)
                 imageviewIcon.setImageResource(chart.resourceId)
@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
 
         // Private Variable
         private var onSelectItemListener: OnSelectItemListener? = null
+
         // Override Method or Basic Method
         override fun onCreateViewHolder(
             parent: ViewGroup,
@@ -128,7 +129,6 @@ class MainActivity : AppCompatActivity() {
         }
     } // End of ChartAdapter
 
-
     inner class CommonKanjiAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         // Public Inner Class, Struct, Enum, Interface
         inner class TitleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -138,7 +138,6 @@ class MainActivity : AppCompatActivity() {
             fun bind() {
                 imageviewIcon.setImageResource(R.drawable.kanji)
                 textviewTitle.text = getString(R.string.japanese_common_chinese)
-
             }
         }
 
@@ -146,6 +145,7 @@ class MainActivity : AppCompatActivity() {
             private val imageviewIcon: ImageView = itemView.findViewById(R.id.imageview_icon)
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
+
             fun bind(position: Int) {
                 val commonKanji = commonKanjis.get(position)
                 if (position == 0) {
@@ -154,10 +154,16 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     if (process[commonKanji.indexEnum.name]?.get(getString(R.string.all_view)) == true) {
                         imageviewIcon.setImageResource(R.drawable.img_check)
-                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
+                        ImageViewCompat.setImageTintList(
+                            imageviewIcon,
+                            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)),
+                        )
                     } else {
                         imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
+                        ImageViewCompat.setImageTintList(
+                            imageviewIcon,
+                            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)),
+                        )
                     }
                 }
 
@@ -229,10 +235,7 @@ class MainActivity : AppCompatActivity() {
         fun setOnSelectItemListener(onSelectItemListener: OnSelectItemListener) {
             this.onSelectItemListener = onSelectItemListener
         }
-
     } // End of CommonKanjiAdapter
-
-
 
     inner class VocabularyAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         // Public Inner Class, Struct, Enum, Interface
@@ -243,7 +246,6 @@ class MainActivity : AppCompatActivity() {
             fun bind() {
                 imageviewIcon.setImageResource(R.drawable.jlpt)
                 textviewTitle.text = getString(R.string.jlpt_vocabulary)
-
             }
         }
 
@@ -251,6 +253,7 @@ class MainActivity : AppCompatActivity() {
             private val imageviewIcon: ImageView = itemView.findViewById(R.id.imageview_icon)
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
+
             fun bind(position: Int) {
                 val vocabulary = vocabularies.get(position)
                 if (position == 0) {
@@ -259,10 +262,16 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     if (process[vocabulary.indexEnum.name]?.get(getString(R.string.all_view)) == true) {
                         imageviewIcon.setImageResource(R.drawable.img_check)
-                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
+                        ImageViewCompat.setImageTintList(
+                            imageviewIcon,
+                            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)),
+                        )
                     } else {
                         imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                        ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
+                        ImageViewCompat.setImageTintList(
+                            imageviewIcon,
+                            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)),
+                        )
                     }
                 }
 
@@ -334,7 +343,6 @@ class MainActivity : AppCompatActivity() {
         fun setOnSelectItemListener(onSelectItemListener: OnSelectItemListener) {
             this.onSelectItemListener = onSelectItemListener
         }
-
     } // End of VocabularyAdapter
 
     data class Item(var resourceId: Int, var indexEnum: IndexEnum)
@@ -370,7 +378,10 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         HHLog.d(TAG, "onResume()")
-        val processJsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)))
+        val processJsonData =
+            JSONManager.getInstance().convertStringToByteArray(
+                nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)),
+            )
         processJsonData?.let { processJsonData ->
             process = JSONManager.getInstance().decodeProcessJSON(processJsonData)
         }
@@ -414,7 +425,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this@MainActivity, HiraganaKatakanaActivity::class.java)
                         intent.putExtra(
                             HiraganaKatakanaActivity.EXTRA_INDEX_ENUM,
-                            charts[position].indexEnum.id
+                            charts[position].indexEnum.id,
                         )
                         startActivity(intent)
                     }
@@ -429,9 +440,10 @@ class MainActivity : AppCompatActivity() {
                         HHLog.d(TAG, "onSelectItem() position = $position")
                         if (position == 0) { // 즐겨찾기
                             val intent = Intent(this@MainActivity, StudyActivity::class.java)
-                            var bookmarks:ArrayList<Kanji>
+                            var bookmarks: ArrayList<Kanji>
                             PrefManager.getInstance().getStringValue(
-                                Pref.kanjiBookmark.name)?.let {
+                                Pref.kanjiBookmark.name,
+                            )?.let {
                                 bookmarks = JSONManager.getInstance().decodeJSONtoKanjiArray(it) as ArrayList<Kanji>
                                 intent.putExtra(StudyActivity.EXTRA_KANJIS_DAY_DISTRIBUTED, bookmarks)
                             }
@@ -441,7 +453,7 @@ class MainActivity : AppCompatActivity() {
                             val intent = Intent(this@MainActivity, DayActivity::class.java)
                             intent.putExtra(
                                 DayActivity.EXTRA_INDEX_ENUM,
-                                commonKanjis[position].indexEnum.id
+                                commonKanjis[position].indexEnum.id,
                             )
                             startActivity(intent)
                         }
@@ -457,9 +469,10 @@ class MainActivity : AppCompatActivity() {
                         HHLog.d(TAG, "onSelectItem() position = $position")
                         if (position == 0) { // 즐겨찾기
                             val intent = Intent(this@MainActivity, StudyActivity::class.java)
-                            var bookmarks:ArrayList<Vocabulary>
+                            var bookmarks: ArrayList<Vocabulary>
                             PrefManager.getInstance().getStringValue(
-                                Pref.vocabularyBookmark.name)?.let {
+                                Pref.vocabularyBookmark.name,
+                            )?.let {
                                 bookmarks = JSONManager.getInstance().decodeJSONtoVocabularyArray(it) as ArrayList<Vocabulary>
                                 intent.putExtra(StudyActivity.EXTRA_VOCABULARIES_DAY_DISTRIBUTED, bookmarks)
                             }
@@ -469,7 +482,7 @@ class MainActivity : AppCompatActivity() {
                             val intent = Intent(this@MainActivity, DayActivity::class.java)
                             intent.putExtra(
                                 DayActivity.EXTRA_INDEX_ENUM,
-                                vocabularies[position].indexEnum.id
+                                vocabularies[position].indexEnum.id,
                             )
                             startActivity(intent)
                         }
@@ -477,7 +490,6 @@ class MainActivity : AppCompatActivity() {
                 },
             )
             recyclerviewVocabulary.adapter = vocabularyAdapter
-
         }
 
         if (FeatureConst.FEATURE_SPECIFIC_SCENE) {

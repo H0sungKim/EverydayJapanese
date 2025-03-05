@@ -8,7 +8,6 @@ package com.constant.everydayjapanese.view.furigana
 
 // Constraint optimizer class
 class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatArray) {
-
     // Calculate
     fun calculate(x: FloatArray) {
         // Check if calculation needed
@@ -25,13 +24,19 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
         }
     }
 
-    private fun newtonSolve(x: FloatArray, sigma: Float) {
+    private fun newtonSolve(
+        x: FloatArray,
+        sigma: Float,
+    ) {
         for (i in 0 until newtonRuns) {
             newtonIteration(x, sigma)
         }
     }
 
-    private fun newtonIteration(x: FloatArray, sigma: Float) {
+    private fun newtonIteration(
+        x: FloatArray,
+        sigma: Float,
+    ) {
         // Calculate gradient
         val d = FloatArray(x.size)
 
@@ -42,7 +47,6 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
         // Calculate Hessian matrix (symmetric)
         val h = Array(x.size) { FloatArray(x.size) }
         for (i in h.indices) {
-
             for (j in i until h[0].size) {
                 h[i][j] = phiD2(i, j, sigma, x)
             }
@@ -60,11 +64,13 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
         for (i in x.indices) {
             x[i] = x[i] - wolfeGamma * p[i]
         }
-
     }
 
     // Gauss-Seidel solver
-    private fun gsSolver(a: Array<FloatArray>, b: FloatArray): FloatArray {
+    private fun gsSolver(
+        a: Array<FloatArray>,
+        b: FloatArray,
+    ): FloatArray {
         // Initial guess
         val p = FloatArray(b.size)
 
@@ -73,7 +79,6 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
         }
 
         for (z in 0 until gsRuns) {
-
             for (i in p.indices) {
                 var s = 0.0f
 
@@ -92,7 +97,10 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
     }
 
     // Math
-    private fun dot(a: FloatArray, b: FloatArray): Float {
+    private fun dot(
+        a: FloatArray,
+        b: FloatArray,
+    ): Float {
         assert(a.size == b.size)
 
         var r = 0.0f
@@ -110,7 +118,10 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
     }
 
     // Cost function phi(x)
-    private fun phi(sigma: Float, x: FloatArray): Float {
+    private fun phi(
+        sigma: Float,
+        x: FloatArray,
+    ): Float {
         var r = 0.0f
 
         for (i in x.indices) {
@@ -120,7 +131,11 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
         return f(x) + sigma * r
     }
 
-    private fun phiD1(n: Int, sigma: Float, x: FloatArray): Float {
+    private fun phiD1(
+        n: Int,
+        sigma: Float,
+        x: FloatArray,
+    ): Float {
         var r = 0.0f
 
         for (i in a.indices) {
@@ -134,7 +149,12 @@ class QuadraticOptimizer(private var a: Array<FloatArray>, private var b: FloatA
         return 2.0f * x[n] + sigma * r
     }
 
-    private fun phiD2(n: Int, m: Int, sigma: Float, x: FloatArray): Float {
+    private fun phiD2(
+        n: Int,
+        m: Int,
+        sigma: Float,
+        x: FloatArray,
+    ): Float {
         var r = 0.0f
 
         for (i in a.indices) {

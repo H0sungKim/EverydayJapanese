@@ -21,5 +21,4 @@ class SentenceModel {
     override fun toString(): String {
         return "SentenceModel(id=$id, text='$text', rubyText='$rubyText', html='$html', trans='$trans')"
     }
-
 }

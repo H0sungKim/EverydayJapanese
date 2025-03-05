@@ -37,8 +37,8 @@ object AttendanceDB {
             String.format(
                 "%s_%d",
                 com.constant.everydayjapanese.db.AttendanceDB.COLUMN_NAME_ANNOUNCE,
-                id
-            )
+                id,
+            ),
         )
     }
 
@@ -54,16 +54,19 @@ object AttendanceDB {
             String.format(
                 "%s_%d",
                 com.constant.everydayjapanese.db.AttendanceDB.COLUMN_NAME_ANNOUNCE,
-                id
+                id,
             ),
-            value
+            value,
         )
     }
     // Private Method
 
     object Global : BaseColumns {
         const val TABLE_NAME = "global"
-        val CONTENT_URI: Uri = Uri.parse("content://" + com.constant.everydayjapanese.db.AttendanceDB.AUTHORITY + "/" + com.constant.everydayjapanese.db.AttendanceDB.Global.TABLE_NAME)
+        val CONTENT_URI: Uri =
+            Uri.parse(
+                "content://" + com.constant.everydayjapanese.db.AttendanceDB.AUTHORITY + "/" + com.constant.everydayjapanese.db.AttendanceDB.Global.TABLE_NAME,
+            )
         const val COLUMN_MEMBER_ID = "member_id"
         const val COLUMN_NAME = "name"
         const val COLUMN_VALUE = "value"
@@ -119,9 +122,13 @@ object AttendanceDB {
                     )
                 if (c != null && c.moveToNext()) {
                     values.put(com.constant.everydayjapanese.db.AttendanceDB.Global.COLUMN_VALUE, value)
-                    val i = cr.update(
-                        com.constant.everydayjapanese.db.AttendanceDB.Global.CONTENT_URI, values,
-                        com.constant.everydayjapanese.db.AttendanceDB.Global.DATA_SELECTION, arrayOf(memberId.toString(), name))
+                    val i =
+                        cr.update(
+                            com.constant.everydayjapanese.db.AttendanceDB.Global.CONTENT_URI,
+                            values,
+                            com.constant.everydayjapanese.db.AttendanceDB.Global.DATA_SELECTION,
+                            arrayOf(memberId.toString(), name),
+                        )
                     require(i != -1)
                     true
                 } else {
@@ -163,7 +170,7 @@ object AttendanceDB {
                 cr,
                 memberId,
                 name,
-                Integer.toString(value)
+                Integer.toString(value),
             )
         }
 
@@ -188,7 +195,7 @@ object AttendanceDB {
                 cr,
                 memberId,
                 name,
-                java.lang.Boolean.toString(value)
+                java.lang.Boolean.toString(value),
             )
         }
     }

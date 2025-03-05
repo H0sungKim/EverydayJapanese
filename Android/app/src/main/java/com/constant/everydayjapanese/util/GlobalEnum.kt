@@ -2,7 +2,6 @@ package com.constant.everydayjapanese.util
 
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.basic.EverydayJapaneseApplication
-import com.constant.everydayjapanese.extension.LATER
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 
@@ -62,7 +61,6 @@ enum class MimeType(val value: String) {
     }
 }
 
-
 enum class HHFileType {
     imageFromCamera,
     imageFromGallery,
@@ -81,7 +79,7 @@ enum class HHFileType {
     }
 }
 
-enum class IndexEnum(val id:Int, val title: String) {
+enum class IndexEnum(val id: Int, val title: String) {
     hiragana(0, EverydayJapaneseApplication.context.getString(R.string.hiragana)),
     katakana(1, EverydayJapaneseApplication.context.getString(R.string.katakana)),
     kanjiBookmark(2, EverydayJapaneseApplication.context.getString(R.string.favorites)),
@@ -145,7 +143,7 @@ enum class IndexEnum(val id:Int, val title: String) {
     }
 
     fun getSection(): SectionEnum? {
-        when(this) {
+        when (this) {
             IndexEnum.hiragana, IndexEnum.katakana -> {
                 return SectionEnum.hiraganakatagana
             }
@@ -156,7 +154,8 @@ enum class IndexEnum(val id:Int, val title: String) {
             IndexEnum.elementary4,
             IndexEnum.elementary5,
             IndexEnum.elementary6,
-            IndexEnum.middle -> {
+            IndexEnum.middle,
+            -> {
                 return SectionEnum.kanji
             }
             IndexEnum.vocabularyBookmark,
@@ -164,13 +163,14 @@ enum class IndexEnum(val id:Int, val title: String) {
             IndexEnum.n4,
             IndexEnum.n3,
             IndexEnum.n2,
-            IndexEnum.n1 -> {
+            IndexEnum.n1,
+            -> {
                 return SectionEnum.vocabulary
             }
         }
     }
 
-    fun getResourceId() : Int {
+    fun getResourceId(): Int {
         val section = getSection()
         when (section) {
             SectionEnum.hiraganakatagana -> {
@@ -187,14 +187,13 @@ enum class IndexEnum(val id:Int, val title: String) {
             }
         }
     }
-
 }
-enum class SectionEnum(val id:Int, val title: String) {
+
+enum class SectionEnum(val id: Int, val title: String) {
     hiraganakatagana(0, EverydayJapaneseApplication.context.getString(R.string.hiragana_katakana)),
     kanji(1, EverydayJapaneseApplication.context.getString(R.string.japanese_common_chinese)),
     vocabulary(2, EverydayJapaneseApplication.context.getString(R.string.jlpt_vocabulary)),
     ;
-
 
     companion object {
         val rawToEnum =
@@ -202,7 +201,6 @@ enum class SectionEnum(val id:Int, val title: String) {
                 SectionEnum.hiraganakatagana.id to SectionEnum.hiraganakatagana,
                 SectionEnum.kanji.id to SectionEnum.kanji,
                 SectionEnum.vocabulary.id to SectionEnum.vocabulary,
-
             )
 
         fun ofRaw(raw: Int): SectionEnum {

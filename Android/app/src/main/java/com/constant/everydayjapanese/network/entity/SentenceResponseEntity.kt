@@ -25,7 +25,6 @@ class SentenceResponseEntity {
         val html: String? = null
     }
 
-
     inner class TranslationEntity {
         @SerializedName("id")
         val id: Int? = null

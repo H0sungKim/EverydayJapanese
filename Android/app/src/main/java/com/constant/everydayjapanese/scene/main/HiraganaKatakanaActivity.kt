@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -23,14 +22,12 @@ import com.constant.everydayjapanese.util.IndexEnum
 import com.constant.everydayjapanese.util.nonNull
 import com.constant.everydayjapanese.view.NavigationView
 
-
 // ----------------------------------------------------
 // Public Outter Class, Struct, Enum, Interface
 
-
 class HiraganaKatakanaActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
-    data class Param (
+    data class Param(
         var indexEnum: IndexEnum,
     )
 
@@ -63,7 +60,6 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
                 }
             }
         }
-
 
         // Private Constant
         private val item: Int = 0
@@ -108,11 +104,11 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
         // Public Method
     } // end of AlphabetAdapter
 
-
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
     }
+
     // Public Constant
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
@@ -135,9 +131,10 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
     // Public Method
     // Private Method
     private fun initializeVariables() {
-        param = Param(
-            IndexEnum.ofRaw(getIntent().getIntExtra(StudyActivity.EXTRA_INDEX_ENUM, 0))
-        )
+        param =
+            Param(
+                IndexEnum.ofRaw(getIntent().getIntExtra(StudyActivity.EXTRA_INDEX_ENUM, 0)),
+            )
 
         when (param.indexEnum) {
             IndexEnum.hiragana -> {
@@ -147,7 +144,6 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
                 items = HiraganaKatakanaManager.getInstance().katakanaTuple
             }
             else -> {
-
             }
         }
     }
@@ -156,7 +152,11 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
         binding = ActivityHiraganaKatakanaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), nonNull(param.indexEnum.title), param.indexEnum.getResourceId())
+            navigationview.set(
+                nonNull(param.indexEnum.getSection()?.title),
+                nonNull(param.indexEnum.title),
+                param.indexEnum.getResourceId(),
+            )
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -182,7 +182,6 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
                     OnSelectItemListener {
                     override fun onSelectItem(position: Int) {
                         HHLog.d(TAG, "onSelectItem() position = $position")
-
                     }
                 },
             )
@@ -190,5 +189,4 @@ class HiraganaKatakanaActivity : AppCompatActivity() {
             hiraganaKatakanaAdapter.notifyDataSetChanged()
         }
     }
-
 }

@@ -16,7 +16,6 @@ import org.json.JSONObject
 // ----------------------------------------------------
 // Public Outter Class, Struct, Enum, Interface
 class JSONManager {
-
     // Public Inner Class, Struct, Enum, Interface
     // companion object
     companion object {
@@ -44,9 +43,13 @@ class JSONManager {
     // Override Method or Basic Method
     private constructor() {
     }
+
     // Public Method
     // JSON 파일을 읽고 파싱하여 HashMap으로 변환
-    fun parseJsonToHashMap(context: Context, fileName: String): HashMap<String, String> {
+    fun parseJsonToHashMap(
+        context: Context,
+        fileName: String,
+    ): HashMap<String, String> {
         val hashMap = HashMap<String, String>()
 
         try {
@@ -68,7 +71,11 @@ class JSONManager {
 
         return hashMap
     }
-    fun parseJsonArrayToList(context: Context, fileName: String): List<HashMap<String, String>> {
+
+    fun parseJsonArrayToList(
+        context: Context,
+        fileName: String,
+    ): List<HashMap<String, String>> {
         val list = mutableListOf<HashMap<String, String>>()
 
         try {
@@ -93,14 +100,17 @@ class JSONManager {
             }
         } catch (e: Exception) {
             HHLog.e(TAG, "parseJsonArrayToList() Error : ${e.message}")
-            //e.printStackTrace()
+            // e.printStackTrace()
         }
 
         return list
     }
 
     // assets에서 JSON 파일을 읽어 문자열로 반환
-    fun loadJsonFromAsset(context: Context, fileName: String): String {
+    fun loadJsonFromAsset(
+        context: Context,
+        fileName: String,
+    ): String {
         return try {
             val inputStream = context.assets.open(fileName)
             val size = inputStream.available()
@@ -115,7 +125,7 @@ class JSONManager {
         }
     }
 
-    //--------------------------------------------------------
+    // --------------------------------------------------------
     fun encodeProcessJSON(process: HashMap<String, HashMap<String, Boolean>>): String {
         return try {
             gson.toJson(process)
@@ -124,6 +134,7 @@ class JSONManager {
             ""
         }
     }
+
     fun decodeProcessJSON(jsonData: ByteArray): HashMap<String, HashMap<String, Boolean>> {
         return try {
             val jsonString = String(jsonData)
@@ -195,11 +206,9 @@ class JSONManager {
         }
     }
 
-
     fun convertStringToByteArray(jsonString: String): ByteArray? {
         return jsonString.toByteArray(Charsets.UTF_8)
     }
 
     // Private Method
-
 }

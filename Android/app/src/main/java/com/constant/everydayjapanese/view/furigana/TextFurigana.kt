@@ -4,7 +4,6 @@ import android.graphics.Canvas
 import android.graphics.Paint
 
 class TextFurigana(private val text: String, private val paintF: Paint) {
-
     // Coordinates
     private var offset = 0.0f
     private var width = 0.0f
@@ -25,7 +24,11 @@ class TextFurigana(private val text: String, private val paintF: Paint) {
         return width
     }
 
-    fun draw(canvas: Canvas, x: Float, y: Float) {
+    fun draw(
+        canvas: Canvas,
+        x: Float,
+        y: Float,
+    ) {
         var mutableX = x
         mutableX -= width / 2.0f
         canvas.drawText(text, 0, text.length, mutableX, y, paintF)

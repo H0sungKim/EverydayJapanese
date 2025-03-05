@@ -14,7 +14,7 @@ import com.constant.everydayjapanese.util.nonNull
 
 class HiraganaKatakanaPracticeActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
-    data class Param (
+    data class Param(
         var indexEnum: IndexEnum,
     )
 
@@ -33,8 +33,6 @@ class HiraganaKatakanaPracticeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         initializeVariables()
         initializeViews()
-
-
     }
 
     // Public Method
@@ -52,8 +50,6 @@ class HiraganaKatakanaPracticeActivity : AppCompatActivity() {
             val layoutParams = framelayoutCharacter.layoutParams ?: ViewGroup.LayoutParams(0, 0)
             layoutParams.height = Coordinate.getWidth() - 2 * resources.getDimensionPixelSize(R.dimen.space_m)
             framelayoutCharacter.layoutParams = layoutParams
-
         }
     }
-
 }

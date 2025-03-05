@@ -11,7 +11,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
-import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
 import com.constant.everydayjapanese.scene.main.StudyActivity.OnSelectItemListener
 import com.constant.everydayjapanese.scene.main.StudyActivity.VocabularyForCell
@@ -39,6 +38,7 @@ class VocabularyAdapter(
         private val linearlayoutExample: LinearLayout = itemView.findViewById(R.id.linearlayout_example)
         private val textViewExample: TextView = itemView.findViewById(R.id.textview_example)
         private val textViewTrans: TextView = itemView.findViewById(R.id.textview_trans)
+
         fun bind(position: Int) {
             val vocabularyForCell = vocabulariesForCell.get(position)
             textviewSound.text = vocabularyForCell.vocabulary.sound
@@ -58,7 +58,10 @@ class VocabularyAdapter(
                 }
                 vocabularyForCell.isBookmark = !vocabularyForCell.isBookmark
                 notifyItemChanged(position)
-                PrefManager.getInstance().setValue(Pref.vocabularyBookmark.name, JSONManager.getInstance().encodeVocabularyJSON(vocabularyBookmarks))
+                PrefManager.getInstance().setValue(
+                    Pref.vocabularyBookmark.name,
+                    JSONManager.getInstance().encodeVocabularyJSON(vocabularyBookmarks),
+                )
             }
             buttonSound.setOnClickListener {
                 TTSManager.getInstance().speak(vocabularyForCell.vocabulary.word)
@@ -81,13 +84,12 @@ class VocabularyAdapter(
                         GlobalVariable.getInstance().tatoebaRepository.getSentence(context, vocabularyForCell.vocabulary.word)
                             .subscribe({ sentenceModel ->
                                 HHLog.d(TAG, "sentenceModel.html = ${sentenceModel.html}")
-                                //vocabularyForCell.exampleText = sentenceModel.html.replace("<rp>（</rp>", "").replace("<rp>）</rp>", "")
+                                // vocabularyForCell.exampleText = sentenceModel.html.replace("<rp>（</rp>", "").replace("<rp>）</rp>", "")
                                 vocabularyForCell.exampleText = sentenceModel.text
                                 vocabularyForCell.transText = sentenceModel.trans
                                 vocabularyForCell.isExpanded = !vocabularyForCell.isExpanded
                                 notifyItemChanged(position)
                             }, {
-
                             }).let { compositeDisposable.add(it) }
                     } else {
                         vocabularyForCell.isExpanded = !vocabularyForCell.isExpanded
@@ -96,7 +98,7 @@ class VocabularyAdapter(
                 }
             }
             vocabularyForCell.exampleText?.let {
-                //textViewExample.setFuriganaText(it, true)
+                // textViewExample.setFuriganaText(it, true)
                 textViewExample.text = it
             }
             vocabularyForCell.transText?.let {
@@ -115,7 +117,6 @@ class VocabularyAdapter(
             } else {
                 linearlayoutExample.visibility = View.GONE
             }
-
 
             itemView.setOnClickListener {
                 onSelectItemListener?.onSelectItem(position)
@@ -143,6 +144,7 @@ class VocabularyAdapter(
     // Private Variable
     private val compositeDisposable = CompositeDisposable()
     private var onSelectItemListener: OnSelectItemListener? = null
+
     // Override Method or Basic Method
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -189,6 +191,9 @@ class VocabularyAdapter(
             }
         }
         notifyDataSetChanged()
-        PrefManager.getInstance().setValue(Pref.vocabularyBookmark.name, JSONManager.getInstance().encodeVocabularyJSON(vocabularyBookmarks))
+        PrefManager.getInstance().setValue(
+            Pref.vocabularyBookmark.name,
+            JSONManager.getInstance().encodeVocabularyJSON(vocabularyBookmarks),
+        )
     }
 }

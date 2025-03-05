@@ -15,7 +15,6 @@ import com.constant.everydayjapanese.scene.main.HiraganaKatakanaActivity
 import com.constant.everydayjapanese.scene.main.HiraganaKatakanaPracticeActivity
 import com.constant.everydayjapanese.scene.main.TestResultActivity
 import com.constant.everydayjapanese.util.FeatureConst
-import com.constant.everydayjapanese.util.GlobalConst
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.nonNull
@@ -26,10 +25,11 @@ import com.constant.everydayjapanese.view.NavigationView
 
 class SceneActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
-    data class Item (
+    data class Item(
         var name: String,
-        var cls: Class<*>
+        var cls: Class<*>,
     )
+
     interface OnSelectItemListener {
         fun onSelectItem(position: Int)
     }
@@ -37,6 +37,7 @@ class SceneActivity : AppCompatActivity() {
     inner class SceneAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
+
             fun bind(position: Int) {
                 items?.get(position)?.let { item ->
                     textviewTitle.text = item.name
@@ -54,6 +55,7 @@ class SceneActivity : AppCompatActivity() {
 
         // Private Variable
         private var onSelectItemListener: OnSelectItemListener? = null
+
         // Override Method or Basic Method
         override fun onCreateViewHolder(
             parent: ViewGroup,
@@ -103,6 +105,7 @@ class SceneActivity : AppCompatActivity() {
         initializeVariables()
         initializeViews()
     }
+
     // Public Method
     // Private Method
     private fun initializeVariables() {
@@ -139,12 +142,13 @@ class SceneActivity : AppCompatActivity() {
                     override fun onSelectItem(position: Int) {
                         items?.get(position)?.let { item ->
                             HHLog.d(TAG, "name = ${item.name}")
-                            //sceneAdapter.notifyItemChanged(position)
+                            // sceneAdapter.notifyItemChanged(position)
                             val intent = Intent(this@SceneActivity, item.cls)
                             startActivity(intent)
                         }
                     }
-                })
+                },
+            )
             recyclerview.adapter = sceneAdapter
             sceneAdapter.notifyDataSetChanged()
 

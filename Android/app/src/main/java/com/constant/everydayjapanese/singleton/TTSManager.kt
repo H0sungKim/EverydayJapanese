@@ -5,12 +5,10 @@ import com.constant.everydayjapanese.basic.EverydayJapaneseApplication
 import com.constant.everydayjapanese.util.nonNull
 import java.util.Locale
 
-
 // ----------------------------------------------------
 // Public Outter Class, Struct, Enum, Interface
 
-class TTSManager: TextToSpeech.OnInitListener {
-
+class TTSManager : TextToSpeech.OnInitListener {
     // Public Inner Class, Struct, Enum, Interface
 
     // ----------------------------------------------------
@@ -37,6 +35,7 @@ class TTSManager: TextToSpeech.OnInitListener {
     // Private Variable
     private lateinit var tts: TextToSpeech
     private var isInitialized = false
+
     // Override Method or Basic Method
     constructor() {
         tts = TextToSpeech(EverydayJapaneseApplication.context, this)
@@ -45,8 +44,8 @@ class TTSManager: TextToSpeech.OnInitListener {
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             tts?.language = Locale.JAPANESE
-            tts?.setSpeechRate(1.0f)  // 속도 조절 (기본값: 1.0)
-            tts?.setPitch(1.0f)  // 톤 조절 (기본값: 1.0)
+            tts?.setSpeechRate(1.0f) // 속도 조절 (기본값: 1.0)
+            tts?.setPitch(1.0f) // 톤 조절 (기본값: 1.0)
             isInitialized = true
         }
     }

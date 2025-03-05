@@ -6,7 +6,6 @@ import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.nonNull
 import io.reactivex.rxjava3.core.Observable
 
-
 // ----------------------------------------------------
 // Public Outter Class, Struct, Enum, Interface
 
@@ -41,7 +40,10 @@ class TatoebaRepository {
     // Public Method
     // ----- 기본 -------
 
-    fun getSentence(context: Context, q: String): Observable<SentenceModel> {
+    fun getSentence(
+        context: Context,
+        q: String,
+    ): Observable<SentenceModel> {
         val lang = "jpn"
         val limit = 1
         return TatoebaRestAPI(context, style).getSentence(lang, q, limit, "kor", "relevance", "kor")

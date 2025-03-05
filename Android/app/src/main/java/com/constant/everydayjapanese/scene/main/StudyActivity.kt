@@ -1,25 +1,12 @@
 package com.constant.everydayjapanese.scene.main
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityStudyBinding
-import com.constant.everydayjapanese.extension.applyGUI
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
-import com.constant.everydayjapanese.singleton.GlobalVariable
 import com.constant.everydayjapanese.singleton.JSONManager
 import com.constant.everydayjapanese.singleton.Pref
 import com.constant.everydayjapanese.singleton.PrefManager
@@ -31,7 +18,6 @@ import com.constant.everydayjapanese.util.SectionEnum
 import com.constant.everydayjapanese.util.nonNull
 import com.constant.everydayjapanese.view.ColorDivider
 import com.constant.everydayjapanese.view.NavigationView
-import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 // ----------------------------------------------------
 // Public Outter Class, Struct, Enum, Interface
@@ -42,12 +28,12 @@ class StudyActivity : AppCompatActivity() {
         fun onSelectItem(position: Int)
     }
 
-    data class Param (
-        var indexEnum:IndexEnum,
-        var dayTitle:String,
-        var dayKey:String,
-        var kanjis:List<Kanji>?,
-        var vocabularies:List<Vocabulary>?
+    data class Param(
+        var indexEnum: IndexEnum,
+        var dayTitle: String,
+        var dayKey: String,
+        var kanjis: List<Kanji>?,
+        var vocabularies: List<Vocabulary>?,
     )
 
     data class KanjiForCell(
@@ -55,16 +41,18 @@ class StudyActivity : AppCompatActivity() {
         var isVisible: Boolean = false,
         var isVisibleHanja: Boolean = false,
         var isBookmark: Boolean = false,
-        var isExpanded: Boolean = false
+        var isExpanded: Boolean = false,
     )
+
     data class VocabularyForCell(
         var vocabulary: Vocabulary,
         var isVisible: Boolean = false,
         var isBookmark: Boolean = false,
         var isExpanded: Boolean = false,
         var exampleText: String? = null,
-        var transText: String? = null
+        var transText: String? = null,
     )
+
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
@@ -73,6 +61,7 @@ class StudyActivity : AppCompatActivity() {
         public val EXTRA_KANJIS_DAY_DISTRIBUTED = "EXTRA_KANJIS_DAY_DISTRIBUTED"
         public val EXTRA_VOCABULARIES_DAY_DISTRIBUTED = "EXTRA_VOCABULARIES_DAY_DISTRIBUTED"
     }
+
     // Public Constant
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
@@ -101,19 +90,22 @@ class StudyActivity : AppCompatActivity() {
     // Private Method
 
     private fun initializeVariables() {
-        param = Param(
-            IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
-            getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS_DAY_DISTRIBUTED),
-            getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES_DAY_DISTRIBUTED)
-        )
-        kanjisForCell = param.kanjis?.map { kanjis ->
-            return@map KanjiForCell(kanjis)
-        }
+        param =
+            Param(
+                IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
+                nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+                nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
+                getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS_DAY_DISTRIBUTED),
+                getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES_DAY_DISTRIBUTED),
+            )
+        kanjisForCell =
+            param.kanjis?.map { kanjis ->
+                return@map KanjiForCell(kanjis)
+            }
 
         PrefManager.getInstance().getStringValue(
-            Pref.kanjiBookmark.name)?.let {
+            Pref.kanjiBookmark.name,
+        )?.let {
             kanjiBookmarks = JSONManager.getInstance().decodeJSONtoKanjiSet(it)
         }
 
@@ -121,12 +113,14 @@ class StudyActivity : AppCompatActivity() {
             kanjiForCell.isBookmark = kanjiBookmarks.contains(kanjiForCell.kanji)
         }
 
-        vocabulariesForCell = param.vocabularies?.map { vocabularies ->
-            return@map VocabularyForCell(vocabularies)
-        }
+        vocabulariesForCell =
+            param.vocabularies?.map { vocabularies ->
+                return@map VocabularyForCell(vocabularies)
+            }
 
         PrefManager.getInstance().getStringValue(
-            Pref.vocabularyBookmark.name)?.let {
+            Pref.vocabularyBookmark.name,
+        )?.let {
             vocabularyBookmarks = JSONManager.getInstance().decodeJSONtoVocabularySet(it)
         }
 
@@ -142,7 +136,11 @@ class StudyActivity : AppCompatActivity() {
         binding = ActivityStudyBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), nonNull(param.indexEnum.title) + " " + param.dayTitle, param.indexEnum.getResourceId())
+            navigationview.set(
+                nonNull(param.indexEnum.getSection()?.title),
+                nonNull(param.indexEnum.title) + " " + param.dayTitle,
+                param.indexEnum.getResourceId(),
+            )
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -159,7 +157,7 @@ class StudyActivity : AppCompatActivity() {
             )
 
             buttonShuffle.setOnClickListener {
-                when(param.indexEnum.getSection()) {
+                when (param.indexEnum.getSection()) {
                     SectionEnum.kanji -> {
                         kanjiAdapter.shuffle()
                     }
@@ -173,7 +171,7 @@ class StudyActivity : AppCompatActivity() {
             }
 
             buttonAllVisible.setOnClickListener {
-                when(param.indexEnum.getSection()) {
+                when (param.indexEnum.getSection()) {
                     SectionEnum.kanji -> {
                         kanjiAdapter.toggleAllVisible()
                     }
@@ -191,7 +189,7 @@ class StudyActivity : AppCompatActivity() {
                 intent.putExtra(TestActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
                 intent.putExtra(TestActivity.EXTRA_DAY_TITLE, param.dayTitle)
                 intent.putExtra(TestActivity.EXTRA_DAY_KEY, param.dayKey)
-                when(param.indexEnum.getSection()) {
+                when (param.indexEnum.getSection()) {
                     SectionEnum.kanji -> {
                         param.kanjis?.let { kanjis ->
                             intent.putExtra(TestActivity.EXTRA_KANJIS, ArrayList(kanjis))
@@ -209,10 +207,8 @@ class StudyActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-
-
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
-                kanjisForCell?.let {  kanjisForCell ->
+                kanjisForCell?.let { kanjisForCell ->
                     kanjiAdapter = KanjiAdapter(this@StudyActivity, kanjisForCell, kanjiBookmarks)
                     kanjiAdapter.setOnSelectItemListener(
                         object : OnSelectItemListener {
@@ -220,22 +216,25 @@ class StudyActivity : AppCompatActivity() {
                                 kanjisForCell.get(position).isVisible = !kanjisForCell.get(position).isVisible
                                 kanjiAdapter.notifyItemChanged(position)
                             }
-                        })
+                        },
+                    )
                     recyclerview.adapter = kanjiAdapter
                 }
-            } else if (param.indexEnum.getSection() == SectionEnum.vocabulary || 0 < nonNull(vocabulariesForCell?.size)){ // vocabulary
-                vocabulariesForCell?.let { vocabulariesForCell ->
-                    vocabularyAdapter = VocabularyAdapter(this@StudyActivity, vocabulariesForCell, vocabularyBookmarks)
-                    vocabularyAdapter.setOnSelectItemListener(
-                        object : OnSelectItemListener {
-                            override fun onSelectItem(position: Int) {
-                                vocabulariesForCell.get(position)?.isVisible = !vocabulariesForCell.get(position).isVisible
-                                vocabularyAdapter.notifyItemChanged(position)
-                            }
-                        })
-                    recyclerview.adapter = vocabularyAdapter
+            } else if (param.indexEnum.getSection() == SectionEnum.vocabulary || 0 < nonNull(vocabulariesForCell?.size))
+                { // vocabulary
+                    vocabulariesForCell?.let { vocabulariesForCell ->
+                        vocabularyAdapter = VocabularyAdapter(this@StudyActivity, vocabulariesForCell, vocabularyBookmarks)
+                        vocabularyAdapter.setOnSelectItemListener(
+                            object : OnSelectItemListener {
+                                override fun onSelectItem(position: Int) {
+                                    vocabulariesForCell.get(position)?.isVisible = !vocabulariesForCell.get(position).isVisible
+                                    vocabularyAdapter.notifyItemChanged(position)
+                                }
+                            },
+                        )
+                        recyclerview.adapter = vocabularyAdapter
+                    }
                 }
-            }
             recyclerview.addItemDecoration(
                 ColorDivider(1f, 10f, this@StudyActivity.getColor(R.color.bg4)) {
                     true

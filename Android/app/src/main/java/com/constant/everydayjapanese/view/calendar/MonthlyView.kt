@@ -94,9 +94,10 @@ class MonthlyView : FrameLayout {
                     ViewCompat.setBackgroundTintList(viewStatus, ColorStateList.valueOf(tintColor))
                     if (6 * hour < workSeconds) {
                         textviewDay.setTextColor(context.getColor(R.color.fg0))
-                    } else if (1 < workSeconds && workSeconds <= 6 * hour){
-                        textviewDay.setTextColor(context.getColor(R.color.bg0))
-                    }
+                    } else if (1 < workSeconds && workSeconds <= 6 * hour)
+                        {
+                            textviewDay.setTextColor(context.getColor(R.color.bg0))
+                        }
                 } else {
                     HHLog.d(TAG, "no img_circle date = $date")
                     viewStatus.visibility = View.GONE

@@ -72,7 +72,10 @@ class LineFurigana(private val lineMax: Float, private val paint: Paint) {
     }
 
     // Draw
-    fun draw(canvas: Canvas, y: Float) {
+    fun draw(
+        canvas: Canvas,
+        y: Float,
+    ) {
         var mutableY = y
         mutableY -= paint.descent()
 

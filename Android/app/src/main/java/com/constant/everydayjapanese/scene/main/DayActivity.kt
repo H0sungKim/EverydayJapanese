@@ -17,22 +17,20 @@ import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityDayBinding
-import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
-import com.constant.everydayjapanese.scene.main.StudyActivity.Companion
-import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_TITLE
 import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_KEY
+import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_DAY_TITLE
 import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_KANJIS_DAY_DISTRIBUTED
 import com.constant.everydayjapanese.scene.main.StudyActivity.Companion.EXTRA_VOCABULARIES_DAY_DISTRIBUTED
 import com.constant.everydayjapanese.scene.main.StudyActivity.Param
+import com.constant.everydayjapanese.singleton.JSONManager
+import com.constant.everydayjapanese.singleton.Pref
+import com.constant.everydayjapanese.singleton.PrefManager
 import com.constant.everydayjapanese.util.GlobalConst
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.IndexEnum
-import com.constant.everydayjapanese.singleton.JSONManager
-import com.constant.everydayjapanese.singleton.Pref
-import com.constant.everydayjapanese.singleton.PrefManager
 import com.constant.everydayjapanese.util.SectionEnum
 import com.constant.everydayjapanese.util.nonNull
 import com.constant.everydayjapanese.view.ColorDivider
@@ -46,8 +44,8 @@ class DayActivity : AppCompatActivity() {
         fun onSelectItem(position: Int)
     }
 
-    data class Param (
-        var indexEnum:IndexEnum,
+    data class Param(
+        var indexEnum: IndexEnum,
     )
 
     inner class IndexAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -57,9 +55,10 @@ class DayActivity : AppCompatActivity() {
             private val imageviewIcon: ImageView = itemView.findViewById(R.id.imageview_icon)
             private val textviewTitle: TextView = itemView.findViewById(R.id.textview_title)
             private val imageviewDisclosure: ImageView = itemView.findViewById(R.id.imageview_disclosure)
+
             fun bind(position: Int) {
-                val dayTitle:String
-                val dayKey:String
+                val dayTitle: String
+                val dayKey: String
                 if (position == 0) {
                     dayTitle = context.getString(R.string.total_view)
                     dayKey = context.getString(R.string.all_view)
@@ -69,11 +68,13 @@ class DayActivity : AppCompatActivity() {
                 }
                 if (process[param.indexEnum.name]?.get(dayKey) == true) {
                     imageviewIcon.setImageResource(R.drawable.img_check)
-                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)));
-
+                    ImageViewCompat.setImageTintList(
+                        imageviewIcon,
+                        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg_green)),
+                    )
                 } else {
                     imageviewIcon.setImageResource(R.drawable.img_uncheck)
-                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)));
+                    ImageViewCompat.setImageTintList(imageviewIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fg0)))
                 }
                 textviewTitle.text = dayTitle
                 imageviewDisclosure.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@DayActivity, R.color.fg5))
@@ -101,6 +102,7 @@ class DayActivity : AppCompatActivity() {
 
         // Private Variable
         private var onSelectItemListener: OnSelectItemListener? = null
+
         // Override Method or Basic Method
         override fun onCreateViewHolder(
             parent: ViewGroup,
@@ -130,16 +132,14 @@ class DayActivity : AppCompatActivity() {
         }
     } // End of IndexAdapter
 
-
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
     }
+
     // Public Constant
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
-
-
 
     // Public Variable
     // Private Variable
@@ -147,8 +147,8 @@ class DayActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDayBinding
     private lateinit var process: HashMap<String, HashMap<String, Boolean>>
-    private var kanjisDayDistributed:List<ArrayList<Kanji>>? = null
-    private var vocabulariesDayDistributed:List<ArrayList<Vocabulary>>? = null
+    private var kanjisDayDistributed: List<ArrayList<Kanji>>? = null
+    private var vocabulariesDayDistributed: List<ArrayList<Vocabulary>>? = null
     private lateinit var indexAdapter: IndexAdapter
 
     // Override Method or Basic Method
@@ -162,42 +162,49 @@ class DayActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         HHLog.d(TAG, "onResume()")
-        val processJsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)))
+        val processJsonData =
+            JSONManager.getInstance().convertStringToByteArray(
+                nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)),
+            )
         processJsonData?.let { processJsonData ->
             process = JSONManager.getInstance().decodeProcessJSON(processJsonData)
         }
         indexAdapter.notifyDataSetChanged()
-
     }
 
     // Public Method
     // Private Method
 
     private fun initializeVariables() {
-        param = Param(
-            IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0))
-        )
+        param =
+            Param(
+                IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
+            )
         val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, param.indexEnum.getFileName())
         when (param.indexEnum.getSection()) {
             SectionEnum.kanji -> {
-                val kanjis:ArrayList<Kanji> = ArrayList(JSONManager.getInstance().decodeJSONtoKanjiArray(jsonData))
+                val kanjis: ArrayList<Kanji> = ArrayList(JSONManager.getInstance().decodeJSONtoKanjiArray(jsonData))
                 HHLog.d(TAG, "kanjis = $kanjis")
-                kanjisDayDistributed = (0 until kanjis.size step GlobalConst.daySize).map {
-                    kanjis.subList(it, minOf(it + GlobalConst.daySize, kanjis.size)).toCollection(ArrayList())
-                }
+                kanjisDayDistributed =
+                    (0 until kanjis.size step GlobalConst.daySize).map {
+                        kanjis.subList(it, minOf(it + GlobalConst.daySize, kanjis.size)).toCollection(ArrayList())
+                    }
             }
             SectionEnum.vocabulary -> {
-                val vocabularies:ArrayList<Vocabulary> = ArrayList(JSONManager.getInstance().decodeJSONtoVocabularyArray(jsonData))
+                val vocabularies: ArrayList<Vocabulary> = ArrayList(JSONManager.getInstance().decodeJSONtoVocabularyArray(jsonData))
                 HHLog.d(TAG, "vocabularies = $vocabularies")
-                vocabulariesDayDistributed = (0 until vocabularies.size step GlobalConst.daySize).map {
-                    vocabularies.subList(it, minOf(it + GlobalConst.daySize, vocabularies.size)).toCollection(ArrayList())
-                }
+                vocabulariesDayDistributed =
+                    (0 until vocabularies.size step GlobalConst.daySize).map {
+                        vocabularies.subList(it, minOf(it + GlobalConst.daySize, vocabularies.size)).toCollection(ArrayList())
+                    }
             }
             else -> {
-
             }
         }
-        val processJsonData = JSONManager.getInstance().convertStringToByteArray(nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)))
+        val processJsonData =
+            JSONManager.getInstance().convertStringToByteArray(
+                nonNull(PrefManager.getInstance().getStringValue(Pref.process.name)),
+            )
         processJsonData?.let { processJsonData ->
             process = JSONManager.getInstance().decodeProcessJSON(processJsonData)
         }
@@ -207,7 +214,11 @@ class DayActivity : AppCompatActivity() {
         binding = ActivityDayBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), nonNull(param.indexEnum.title), param.indexEnum.getResourceId())
+            navigationview.set(
+                nonNull(param.indexEnum.getSection()?.title),
+                nonNull(param.indexEnum.title),
+                param.indexEnum.getResourceId(),
+            )
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -225,7 +236,7 @@ class DayActivity : AppCompatActivity() {
 
             val total = nonNull(kanjisDayDistributed?.size) + nonNull(vocabulariesDayDistributed?.size) + 1
             val size = nonNull(process[param.indexEnum.name]).size
-            progressbarProcess.setProgress(size*100/total, false)
+            progressbarProcess.setProgress(size * 100 / total, false)
             textviewProcess.text = String.format("%d/%d", size, total)
 
             indexAdapter = IndexAdapter(this@DayActivity)
@@ -246,26 +257,26 @@ class DayActivity : AppCompatActivity() {
                             val jsonData = JSONManager.getInstance().loadJsonFromAsset(this@DayActivity, param.indexEnum.getFileName())
                             when (param.indexEnum.getSection()) {
                                 SectionEnum.kanji -> {
-                                    val kanjis:ArrayList<Kanji> = ArrayList(JSONManager.getInstance().decodeJSONtoKanjiArray(jsonData))
+                                    val kanjis: ArrayList<Kanji> = ArrayList(JSONManager.getInstance().decodeJSONtoKanjiArray(jsonData))
                                     intent.putExtra(StudyActivity.EXTRA_KANJIS_DAY_DISTRIBUTED, kanjis)
                                 }
                                 SectionEnum.vocabulary -> {
-                                    val vocabularies:ArrayList<Vocabulary> = ArrayList(JSONManager.getInstance().decodeJSONtoVocabularyArray(jsonData))
+                                    val vocabularies: ArrayList<Vocabulary> =
+                                        ArrayList(JSONManager.getInstance().decodeJSONtoVocabularyArray(jsonData))
                                     intent.putExtra(StudyActivity.EXTRA_VOCABULARIES_DAY_DISTRIBUTED, vocabularies)
                                 }
                                 else -> {
-
                                 }
                             }
-                        } else {    // Day
+                        } else { // Day
                             kanjisDayDistributed?.let {
                                 if (0 < it.size) {
-                                    intent.putExtra(StudyActivity.EXTRA_KANJIS_DAY_DISTRIBUTED, it.get(position-1))
+                                    intent.putExtra(StudyActivity.EXTRA_KANJIS_DAY_DISTRIBUTED, it.get(position - 1))
                                 }
                             }
                             vocabulariesDayDistributed?.let {
                                 if (0 < it.size) {
-                                    intent.putExtra(StudyActivity.EXTRA_VOCABULARIES_DAY_DISTRIBUTED, it.get(position-1))
+                                    intent.putExtra(StudyActivity.EXTRA_VOCABULARIES_DAY_DISTRIBUTED, it.get(position - 1))
                                 }
                             }
                         }

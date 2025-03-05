@@ -1,6 +1,5 @@
 package com.constant.everydayjapanese.extension
 
-import android.content.res.ColorStateList
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan

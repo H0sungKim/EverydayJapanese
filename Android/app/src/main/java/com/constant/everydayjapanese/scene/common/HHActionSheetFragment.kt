@@ -14,7 +14,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.BottomsheetHhActionSheetBinding
-import com.constant.everydayjapanese.util.ColorUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 // ----------------------------------------------------
@@ -23,7 +22,8 @@ data class HHActionSheetAction(var title: String, var image: Drawable? = null, v
 
 class HHActionSheetAdapter : RecyclerView.Adapter<HHActionSheetAdapter.Holder>() {
     private var actions: MutableList<HHActionSheetAction> = ArrayList()
-    private lateinit var context:Context
+    private lateinit var context: Context
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,

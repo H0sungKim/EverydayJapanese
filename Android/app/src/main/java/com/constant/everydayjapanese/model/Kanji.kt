@@ -11,18 +11,19 @@ class Kanji(
     val eumhun: String,
     val jpSound: String,
     val jpMeaning: String,
-    val examples: List<Vocabulary> = emptyList()
+    val examples: List<Vocabulary> = emptyList(),
 ) : Parcelable {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other !is Kanji) return false
-        return (this.kanji == other.kanji &&
+        return (
+            this.kanji == other.kanji &&
                 this.hanja == other.hanja &&
                 this.eumhun == other.eumhun &&
                 this.jpSound == other.jpSound &&
                 this.jpMeaning == other.jpMeaning &&
                 this.examples == other.examples
-                )
+        )
     }
 
     override fun hashCode(): Int {
@@ -40,4 +41,4 @@ class Kanji(
     }
 }
 
-class KanjiListType : TypeToken<List<Kanji>>() {}
+class KanjiListType : TypeToken<List<Kanji>>()
