@@ -62,7 +62,8 @@ class StudyActivity : AppCompatActivity() {
         var isVisible: Boolean = false,
         var isBookmark: Boolean = false,
         var isExpanded: Boolean = false,
-        var exampleText: String? = null
+        var exampleText: String? = null,
+        var transText: String? = null
     )
     // companion object
     companion object {

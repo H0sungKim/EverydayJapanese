@@ -44,7 +44,7 @@ class TatoebaRepository {
     fun getSentence(context: Context, q: String): Observable<SentenceModel> {
         val lang = "jpn"
         val limit = 1
-        return TatoebaRestAPI(context, style).getSentence(lang, q, limit)
+        return TatoebaRestAPI(context, style).getSentence(lang, q, limit, "kor", "relevance", "kor")
             .map { SentenceModel(it) }
     }
 

@@ -38,6 +38,7 @@ class VocabularyAdapter(
         private val buttonExpand: ImageButton = itemView.findViewById(R.id.button_expand)
         private val linearlayoutExample: LinearLayout = itemView.findViewById(R.id.linearlayout_example)
         private val textViewExample: TextView = itemView.findViewById(R.id.textview_example)
+        private val textViewTrans: TextView = itemView.findViewById(R.id.textview_trans)
         fun bind(position: Int) {
             val vocabularyForCell = vocabulariesForCell.get(position)
             textviewSound.text = vocabularyForCell.vocabulary.sound
@@ -82,6 +83,7 @@ class VocabularyAdapter(
                                 HHLog.d(TAG, "sentenceModel.html = ${sentenceModel.html}")
                                 //vocabularyForCell.exampleText = sentenceModel.html.replace("<rp>（</rp>", "").replace("<rp>）</rp>", "")
                                 vocabularyForCell.exampleText = sentenceModel.text
+                                vocabularyForCell.transText = sentenceModel.trans
                                 vocabularyForCell.isExpanded = !vocabularyForCell.isExpanded
                                 notifyItemChanged(position)
                             }, {
@@ -96,6 +98,9 @@ class VocabularyAdapter(
             vocabularyForCell.exampleText?.let {
                 //textViewExample.setFuriganaText(it, true)
                 textViewExample.text = it
+            }
+            vocabularyForCell.transText?.let {
+                textViewTrans.text = it
             }
 
             if (vocabularyForCell.isVisible || isAllVisible) {

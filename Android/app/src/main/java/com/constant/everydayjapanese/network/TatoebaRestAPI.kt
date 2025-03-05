@@ -27,6 +27,9 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
             @Query("lang")lang: String,
             @Query("q")q: String,
             @Query("limit")limit: Int,
+            @Query("trans:lang")trans: String,
+            @Query("sort")sort: String,
+            @Query("showtrans")showtrans: String
         ): Call<SentenceResponseEntity>
 
 
@@ -56,6 +59,9 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
         @Query("lang")lang: String,
         @Query("q")q: String,
         @Query("limit")limit: Int,
+        @Query("trans:lang")trans: String,
+        @Query("sort")sort: String,
+        @Query("showtrans")showtrans: String
     ): Observable<SentenceResponseEntity> {
         var loadingDialog: LoadingDialog? = null
         if (style.isInclude(TatoebaRepository.Style.loadingSpinner)) {
@@ -64,7 +70,7 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
         }
 
         return Observable.create { emitter ->
-            createRetrofit(false).getSentence(lang, q, limit).enqueue(HHResponse<SentenceResponseEntity>(context, style, loadingDialog, emitter))
+            createRetrofit(false).getSentence(lang, q, limit, trans, sort, showtrans).enqueue(HHResponse<SentenceResponseEntity>(context, style, loadingDialog, emitter))
         }
     }
 
