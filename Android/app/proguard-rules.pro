@@ -52,7 +52,6 @@
 
 # 카카오 로그인
 -keep class com.kakao.sdk.**.model.* { <fields>; }
--keep class * extends com.google.gson.TypeAdapter
 
 # 구글 로그인
 -keep class com.google.googlesignin.** { *; }
@@ -135,9 +134,6 @@
 -dontwarn com.google.api.client.http.javanet.NetHttpTransport
 -dontwarn org.joda.time.Instant
 
--keepclassmembers,allowobfuscation class * {
-  @com.google.gson.annotations.SerializedName <fields>;
-}
 
 # retrofit
 -keep class retrofit2.** { *; }
@@ -160,6 +156,7 @@
 # Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
 # EnclosingMethod is required to use InnerClasses.
 -keepattributes Signature, InnerClasses, EnclosingMethod
+-keepattributes *Annotation*
 
 # Retrofit does reflection on method and parameter annotations.
 -keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
@@ -201,7 +198,29 @@
 -keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
 
 # ==============================================================================================
-
-
 # JSON 모델
--keep class com.constant.everydayjapanese.model.**
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class com.google.gson.** { *; }
+-keep class * extends com.google.gson.TypeAdapter { *; }
+-keepclassmembers class ** {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+
+# Model
+-keep class com.constant.everydayjapanese.model.** { *; }
+-keep class com.constant.everydayjapanese.model.Kanji { *; }
+-keep class com.constant.everydayjapanese.model.Vocabulary { *; }
+-keepclassmembers,allowobfuscation class com.constant.everydayjapanese.model.Kanji {
+    <fields>;
+    <methods>;
+}
+
+-keepclassmembers,allowobfuscation class com.constant.everydayjapanese.model.Vocabulary {
+    <fields>;
+    <methods>;
+}
+
+# Parcelable을 사용하는 클래스도 난독화되지 않도록 설정
+-keepclassmembers class * implements android.os.Parcelable { 
+    public static final android.os.Parcelable$Creator *;
+}

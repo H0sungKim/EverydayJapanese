@@ -1,6 +1,7 @@
 package com.constant.everydayjapanese.model
 
 import android.os.Parcelable
+import com.google.gson.reflect.TypeToken
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -24,3 +25,5 @@ class Vocabulary(
         return result
     }
 }
+
+class VocabularyListType : TypeToken<List<Vocabulary>>() {}

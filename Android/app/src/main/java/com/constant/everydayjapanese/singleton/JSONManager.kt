@@ -2,7 +2,9 @@ package com.constant.everydayjapanese.singleton
 
 import android.content.Context
 import com.constant.everydayjapanese.model.Kanji
+import com.constant.everydayjapanese.model.KanjiListType
 import com.constant.everydayjapanese.model.Vocabulary
+import com.constant.everydayjapanese.model.VocabularyListType
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.nonNull
 import com.google.gson.Gson
@@ -139,8 +141,9 @@ class JSONManager {
 
     fun decodeJSONtoVocabularyArray(jsonData: String): List<Vocabulary> {
         return try {
-            val type = object : TypeToken<List<Vocabulary>>() {}.type
-            Gson().fromJson(jsonData, type)
+            val gson = Gson()
+            val type = VocabularyListType().type
+            gson.fromJson(jsonData, type)
         } catch (e: Exception) {
             emptyList()
         }
@@ -165,9 +168,11 @@ class JSONManager {
 
     fun decodeJSONtoKanjiArray(jsonData: String): List<Kanji> {
         return try {
-            val type = object : TypeToken<List<Kanji>>() {}.type
-            Gson().fromJson(jsonData, type)
+            val gson = Gson()
+            val type = KanjiListType().type
+            gson.fromJson<List<Kanji>>(jsonData, type)
         } catch (e: Exception) {
+            HHLog.e(TAG, "Error decoding JSON: ${e.message}")
             emptyList()
         }
     }
