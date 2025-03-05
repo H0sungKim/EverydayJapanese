@@ -201,3 +201,7 @@
 -keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
 
 # ==============================================================================================
+
+
+# JSON 모델
+-keep class com.constant.everydayjapanese.model.**
