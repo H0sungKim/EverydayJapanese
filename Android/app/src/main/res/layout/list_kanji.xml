@@ -70,7 +70,7 @@
                 android:layout_marginBottom="@dimen/space_m"
                 android:background="@color/transparent"
                 android:src="@drawable/img_favorite_off"
-                app:tint="@color/fg0"
+                app:tint="@color/selector_normal_fg0_press_fg5"
 
                 />
 
@@ -81,7 +81,7 @@
                 android:layout_marginBottom="@dimen/space_m"
                 android:background="@color/transparent"
                 android:src="@drawable/img_sound"
-                app:tint="@color/fg0"
+                app:tint="@color/selector_normal_fg0_press_fg5"
 
                 />
 
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:src="@drawable/img_down"
-                app:tint="@color/fg0"
+                app:tint="@color/selector_normal_fg0_press_fg5"
 
                 />
         </LinearLayout>

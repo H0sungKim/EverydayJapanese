@@ -106,7 +106,7 @@
                 android:layout_width="@dimen/icon_size_xs"
                 android:layout_height="@dimen/icon_size_xs"
                 android:src="@drawable/img_wrong"
-                app:tint="@color/fg_red" />
+                app:tint="@color/selector_normal_fgred_press_fgredlight" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -118,7 +118,7 @@
                 android:layout_width="@dimen/icon_size_xs"
                 android:layout_height="@dimen/icon_size_xs"
                 android:src="@drawable/img_correct"
-                app:tint="@color/fg_blue" />
+                app:tint="@color/selector_normal_fgblue_press_fgbluelight" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
