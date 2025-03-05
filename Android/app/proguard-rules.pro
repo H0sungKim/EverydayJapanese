@@ -210,6 +210,7 @@
 -keep class com.constant.everydayjapanese.model.** { *; }
 -keep class com.constant.everydayjapanese.model.Kanji { *; }
 -keep class com.constant.everydayjapanese.model.Vocabulary { *; }
+-keep class com.constant.everydayjapanese.model.ProcessHashMapType { *; }
 -keepclassmembers,allowobfuscation class com.constant.everydayjapanese.model.Kanji {
     <fields>;
     <methods>;

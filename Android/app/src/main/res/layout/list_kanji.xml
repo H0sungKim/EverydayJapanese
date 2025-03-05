@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:textColor="@color/fg5" />
+                android:textColor="@color/fg4" />
 
             <TextView
                 android:id="@+id/textview_meaning"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:textColor="@color/fg5" />
+                android:textColor="@color/fg4" />
 
             <TextView
                 android:id="@+id/textview_kanji"

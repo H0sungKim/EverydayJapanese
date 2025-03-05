@@ -3,6 +3,7 @@ package com.constant.everydayjapanese.singleton
 import android.content.Context
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.KanjiListType
+import com.constant.everydayjapanese.model.ProcessHashMapType
 import com.constant.everydayjapanese.model.Vocabulary
 import com.constant.everydayjapanese.model.VocabularyListType
 import com.constant.everydayjapanese.util.HHLog
@@ -38,6 +39,8 @@ class JSONManager {
 
     // Public Variable
     // Private Variable
+    private val gson = Gson()
+
     // Override Method or Basic Method
     private constructor() {
     }
@@ -60,7 +63,7 @@ class JSONManager {
                 hashMap[key] = value
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            HHLog.e(TAG, "parseJsonToHashMap() Error : ${e.message}")
         }
 
         return hashMap
@@ -89,7 +92,8 @@ class JSONManager {
                 }
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            HHLog.e(TAG, "parseJsonArrayToList() Error : ${e.message}")
+            //e.printStackTrace()
         }
 
         return list
@@ -106,45 +110,48 @@ class JSONManager {
 
             String(buffer, Charsets.UTF_8)
         } catch (e: Exception) {
-            e.printStackTrace()
+            HHLog.e(TAG, "loadJsonFromAsset() Error : ${e.message}")
             ""
         }
     }
 
     //--------------------------------------------------------
     fun encodeProcessJSON(process: HashMap<String, HashMap<String, Boolean>>): String {
-        val gson = Gson()
         return try {
             gson.toJson(process)
         } catch (e: Exception) {
+            HHLog.e(TAG, "encodeProcessJSON() Error : ${e.message}")
             ""
         }
     }
     fun decodeProcessJSON(jsonData: ByteArray): HashMap<String, HashMap<String, Boolean>> {
-        val gson = Gson()
         return try {
-            val jsonString = String(jsonData) // Convert ByteArray to String
-            val type = object : TypeToken<HashMap<String, HashMap<String, Boolean>>>() {}.type
+            val jsonString = String(jsonData)
+            HHLog.d(TAG, "1")
+            val type = ProcessHashMapType().type
+            HHLog.d(TAG, "2")
             gson.fromJson<HashMap<String, HashMap<String, Boolean>>>(jsonString, type)
         } catch (e: Exception) {
+            HHLog.e(TAG, "decodeProcessJSON() Error : ${e.message}")
             HashMap<String, HashMap<String, Boolean>>()
         }
     }
 
     fun encodeVocabularyJSON(vocabularies: Set<Vocabulary>): String {
         return try {
-            Gson().toJson(vocabularies)
+            gson.toJson(vocabularies)
         } catch (e: Exception) {
+            HHLog.e(TAG, "encodeVocabularyJSON() Error : ${e.message}")
             ""
         }
     }
 
     fun decodeJSONtoVocabularyArray(jsonData: String): List<Vocabulary> {
         return try {
-            val gson = Gson()
             val type = VocabularyListType().type
             gson.fromJson(jsonData, type)
         } catch (e: Exception) {
+            HHLog.e(TAG, "decodeJSONtoVocabularyArray() Error : ${e.message}")
             emptyList()
         }
     }
@@ -152,27 +159,28 @@ class JSONManager {
     fun decodeJSONtoVocabularySet(jsonData: String): HashSet<Vocabulary> {
         return try {
             val type = object : TypeToken<HashSet<Vocabulary>>() {}.type
-            Gson().fromJson(jsonData, type) ?: HashSet()
+            gson.fromJson(jsonData, type) ?: HashSet()
         } catch (e: Exception) {
+            HHLog.e(TAG, "decodeJSONtoVocabularySet() Error : ${e.message}")
             HashSet()
         }
     }
 
     fun encodeKanjiJSON(kanjis: Set<Kanji>): String {
         return try {
-            Gson().toJson(kanjis)
+            gson.toJson(kanjis)
         } catch (e: Exception) {
+            HHLog.e(TAG, "encodeKanjiJSON() Error : ${e.message}")
             ""
         }
     }
 
     fun decodeJSONtoKanjiArray(jsonData: String): List<Kanji> {
         return try {
-            val gson = Gson()
             val type = KanjiListType().type
             gson.fromJson<List<Kanji>>(jsonData, type)
         } catch (e: Exception) {
-            HHLog.e(TAG, "Error decoding JSON: ${e.message}")
+            HHLog.e(TAG, "decodeJSONtoKanjiArray() Error : ${e.message}")
             emptyList()
         }
     }
@@ -180,8 +188,9 @@ class JSONManager {
     fun decodeJSONtoKanjiSet(jsonData: String): HashSet<Kanji> {
         return try {
             val type = object : TypeToken<HashSet<Kanji>>() {}.type
-            Gson().fromJson(jsonData, type) ?: HashSet()
+            gson.fromJson(jsonData, type) ?: HashSet()
         } catch (e: Exception) {
+            HHLog.e(TAG, "decodeJSONtoKanjiSet() Error : ${e.message}")
             HashSet()
         }
     }
