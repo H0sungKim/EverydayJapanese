@@ -75,7 +75,8 @@ class TestActivity : AppCompatActivity() {
 
         kanjis = param.kanjis
         vocabularies = param.vocabularies
-
+        kanjis?.shuffle()
+        vocabularies?.shuffle()
         testResults.clear()
     }
 

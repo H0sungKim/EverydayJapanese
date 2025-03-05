@@ -214,4 +214,15 @@ class KanjiAdapter(
         kanjisForCell = kanjisForCell.shuffled()
         notifyDataSetChanged()
     }
+
+    fun addBookmarkAll() {
+        kanjisForCell.forEach { kanjiForCell ->
+            if (!kanjiForCell.isBookmark) {
+                kanjiBookmarks.add(kanjiForCell.kanji)
+                kanjiForCell.isBookmark = true
+            }
+        }
+        notifyDataSetChanged()
+        PrefManager.getInstance().setValue(Pref.kanjiBookmark.name, JSONManager.getInstance().encodeKanjiJSON(kanjiBookmarks))
+    }
 }

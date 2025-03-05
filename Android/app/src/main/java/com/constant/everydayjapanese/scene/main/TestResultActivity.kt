@@ -1,6 +1,7 @@
 package com.constant.everydayjapanese.scene.main
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -127,6 +128,47 @@ class TestResultActivity : AppCompatActivity() {
                 },
             )
 
+            buttonBookmark.setOnClickListener {
+                when(param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        kanjiAdapter.addBookmarkAll()
+                    }
+                    SectionEnum.vocabulary -> {
+                        vocabularyAdapter.addBookmarkAll()
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
+            }
+
+            buttonRetest.setOnClickListener {
+                finish()
+                val intent = Intent(this@TestResultActivity, TestActivity::class.java)
+                intent.putExtra(TestActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
+                intent.putExtra(TestActivity.EXTRA_DAY_TITLE, param.dayTitle)
+                intent.putExtra(TestActivity.EXTRA_DAY_KEY, param.dayKey)
+                when(param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        param.kanjis?.let { kanjis ->
+                            intent.putExtra(TestActivity.EXTRA_KANJIS, ArrayList(kanjis))
+                        }
+                    }
+                    SectionEnum.vocabulary -> {
+                        param.vocabularies?.let { vocabularies ->
+                            intent.putExtra(TestActivity.EXTRA_VOCABULARIES, ArrayList(vocabularies))
+                        }
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
+                startActivity(intent)
+            }
+
+            buttonFinishtest.setOnClickListener {
+                finish()
+            }
 
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
                 kanjisForCell?.let { kanjisForCell ->

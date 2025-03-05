@@ -150,6 +150,7 @@ class MainActivity : AppCompatActivity() {
                 val commonKanji = commonKanjis.get(position)
                 if (position == 0) {
                     imageviewIcon.setImageResource(R.drawable.star)
+                    ImageViewCompat.setImageTintList(imageviewIcon, null)
                 } else {
                     if (process[commonKanji.indexEnum.name]?.get(getString(R.string.all_view)) == true) {
                         imageviewIcon.setImageResource(R.drawable.img_check)
@@ -254,6 +255,7 @@ class MainActivity : AppCompatActivity() {
                 val vocabulary = vocabularies.get(position)
                 if (position == 0) {
                     imageviewIcon.setImageResource(R.drawable.star)
+                    ImageViewCompat.setImageTintList(imageviewIcon, null)
                 } else {
                     if (process[vocabulary.indexEnum.name]?.get(getString(R.string.all_view)) == true) {
                         imageviewIcon.setImageResource(R.drawable.img_check)

@@ -46,8 +46,8 @@ class StudyActivity : AppCompatActivity() {
         var indexEnum:IndexEnum,
         var dayTitle:String,
         var dayKey:String,
-        var kanjisDayDistributed:List<Kanji>?,
-        var vocabulariesDayDistributed:List<Vocabulary>?
+        var kanjis:List<Kanji>?,
+        var vocabularies:List<Vocabulary>?
     )
 
     data class KanjiForCell(
@@ -107,8 +107,8 @@ class StudyActivity : AppCompatActivity() {
             getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS_DAY_DISTRIBUTED),
             getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES_DAY_DISTRIBUTED)
         )
-        kanjisForCell = param.kanjisDayDistributed?.map {
-            return@map KanjiForCell(it)
+        kanjisForCell = param.kanjis?.map { kanjis ->
+            return@map KanjiForCell(kanjis)
         }
 
         PrefManager.getInstance().getStringValue(
@@ -120,8 +120,8 @@ class StudyActivity : AppCompatActivity() {
             kanjiForCell.isBookmark = kanjiBookmarks.contains(kanjiForCell.kanji)
         }
 
-        vocabulariesForCell = param.vocabulariesDayDistributed?.map {
-            return@map VocabularyForCell(it)
+        vocabulariesForCell = param.vocabularies?.map { vocabularies ->
+            return@map VocabularyForCell(vocabularies)
         }
 
         PrefManager.getInstance().getStringValue(
@@ -192,13 +192,13 @@ class StudyActivity : AppCompatActivity() {
                 intent.putExtra(TestActivity.EXTRA_DAY_KEY, param.dayKey)
                 when(param.indexEnum.getSection()) {
                     SectionEnum.kanji -> {
-                        param.kanjisDayDistributed?.let { kanjisDayDistributed ->
-                            intent.putExtra(TestActivity.EXTRA_KANJIS, ArrayList(kanjisDayDistributed))
+                        param.kanjis?.let { kanjis ->
+                            intent.putExtra(TestActivity.EXTRA_KANJIS, ArrayList(kanjis))
                         }
                     }
                     SectionEnum.vocabulary -> {
-                        param.vocabulariesDayDistributed?.let { vocabulariesDayDistributed ->
-                            intent.putExtra(TestActivity.EXTRA_VOCABULARIES, ArrayList(vocabulariesDayDistributed))
+                        param.vocabularies?.let { vocabularies ->
+                            intent.putExtra(TestActivity.EXTRA_VOCABULARIES, ArrayList(vocabularies))
                         }
                     }
                     else -> {

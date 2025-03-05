@@ -175,4 +175,15 @@ class VocabularyAdapter(
         vocabulariesForCell = vocabulariesForCell.shuffled()
         notifyDataSetChanged()
     }
+
+    fun addBookmarkAll() {
+        vocabulariesForCell.forEach { vocabularyForCell ->
+            if (!vocabularyForCell.isBookmark) {
+                vocabularyBookmarks.add(vocabularyForCell.vocabulary)
+                vocabularyForCell.isBookmark = true
+            }
+        }
+        notifyDataSetChanged()
+        PrefManager.getInstance().setValue(Pref.vocabularyBookmark.name, JSONManager.getInstance().encodeVocabularyJSON(vocabularyBookmarks))
+    }
 }
