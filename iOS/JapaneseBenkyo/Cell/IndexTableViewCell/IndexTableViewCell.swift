@@ -28,11 +28,11 @@ class IndexTableViewCell: UITableViewCell {
         case .bookmark:
             ivProcess.image = UIImage(named: "star.png")!
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle:
-            let allPass = Set(index.idRange.map({ String($0) })).isSubset(of: UserDefaultManager.shared.passKanji)
+            let allPass = Set(index.idRange.map({ String($0) })).isSubset(of: GroupedUserDefaultsManager.shared.passKanji)
             ivProcess.image = allPass ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
             ivProcess.tintColor = allPass ? .systemGreen : .systemGray
         case .n5, .n4, .n3, .n2, .n1:
-            let allPass = Set(index.idRange.map({ String($0) })).isSubset(of: UserDefaultManager.shared.passVoca)
+            let allPass = Set(index.idRange.map({ String($0) })).isSubset(of: GroupedUserDefaultsManager.shared.passVoca)
             ivProcess.image = allPass ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
             ivProcess.tintColor = allPass ? .systemGreen : .systemGray
         case .hiragana:

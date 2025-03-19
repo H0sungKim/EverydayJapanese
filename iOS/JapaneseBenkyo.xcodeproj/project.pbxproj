@@ -203,6 +203,11 @@
 		96D9A8472B7C85530042E2DA /* KanjiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */; };
 		96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9A8482B7CD9160042E2DA /* Kanji.swift */; };
 		96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */; };
+		96E4B2E52D75792100619FE8 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */; };
+		96E4B2E82D757FD100619FE8 /* GroupedUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4B2E72D757FD100619FE8 /* GroupedUserDefaultsManager.swift */; };
+		96E4B2EA2D75804000619FE8 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4B2E92D75804000619FE8 /* UserDefaults+Ext.swift */; };
+		96E4B2EB2D7581B200619FE8 /* GroupedUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4B2E72D757FD100619FE8 /* GroupedUserDefaultsManager.swift */; };
+		96E4B2EC2D7581F200619FE8 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4B2E92D75804000619FE8 /* UserDefaults+Ext.swift */; };
 		96F6B86F2D1C6FBD0022EB14 /* hiragana_hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */; };
 		96F6B8702D1C6FBD0022EB14 /* katakana_ka.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */; };
 		96F6B8712D1C6FBD0022EB14 /* hiragana_hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */; };
@@ -418,6 +423,10 @@
 		96D9A8462B7C85530042E2DA /* KanjiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTableViewCell.swift; sourceTree = "<group>"; };
 		96D9A8482B7CD9160042E2DA /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
 		96D9A8512B7CDB440042E2DA /* KanjiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiTableViewCell.xib; sourceTree = "<group>"; };
+		96E4B2E62D757D9400619FE8 /* JapaneseBenkyo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JapaneseBenkyo.entitlements; sourceTree = "<group>"; };
+		96E4B2E72D757FD100619FE8 /* GroupedUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedUserDefaultsManager.swift; sourceTree = "<group>"; };
+		96E4B2E92D75804000619FE8 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
+		96E4B2ED2D75871500619FE8 /* StudyWidegetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudyWidegetExtension.entitlements; sourceTree = "<group>"; };
 		96F6B86D2D1C6FBD0022EB14 /* hiragana_hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiragana_hi.png; sourceTree = "<group>"; };
 		96F6B86E2D1C6FBD0022EB14 /* katakana_ka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = katakana_ka.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,6 +496,7 @@
 				96CC76312CEB8AAE002E220D /* OCRManager.swift */,
 				9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */,
 				96D4CF702D64A1A20029874C /* GlobalDataManager.swift */,
+				96E4B2E72D757FD100619FE8 /* GroupedUserDefaultsManager.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -530,6 +540,7 @@
 		962F1B8E2B79DCD10051C4DA = {
 			isa = PBXGroup;
 			children = (
+				96E4B2ED2D75871500619FE8 /* StudyWidegetExtension.entitlements */,
 				962F1B992B79DCD10051C4DA /* JapaneseBenkyo */,
 				96C0F2D32CFDDE9200A9DC21 /* StudyWideget */,
 				96C0F2CE2CFDDE9200A9DC21 /* Frameworks */,
@@ -549,6 +560,7 @@
 		962F1B992B79DCD10051C4DA /* JapaneseBenkyo */ = {
 			isa = PBXGroup;
 			children = (
+				96E4B2E62D757D9400619FE8 /* JapaneseBenkyo.entitlements */,
 				96C0FE362D0D49BE00A9DC21 /* Network */,
 				96C0F2E52CFDE11500A9DC21 /* Enum */,
 				967AD8DC2CEC9175001A3397 /* Scene */,
@@ -582,6 +594,7 @@
 				964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */,
 				96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */,
 				96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */,
+				96E4B2E92D75804000619FE8 /* UserDefaults+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1206,6 +1219,7 @@
 				96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */,
 				961536A22C8C2C7E00563983 /* TestViewController.swift in Sources */,
 				961536982C8AA6BA00563983 /* DayViewController.swift in Sources */,
+				96E4B2EA2D75804000619FE8 /* UserDefaults+Ext.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,
 				9600CFA62D3A3F46006E94BA /* StrokeOrderAnimationView.swift in Sources */,
@@ -1222,6 +1236,7 @@
 				964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */,
 				9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */,
 				965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */,
+				96E4B2E82D757FD100619FE8 /* GroupedUserDefaultsManager.swift in Sources */,
 				96B143982D6CCC4500A343C7 /* AdTableViewCell.swift in Sources */,
 				9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */,
 				961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */,
@@ -1250,6 +1265,9 @@
 				96C0FD3C2D03317100A9DC21 /* JSONManager.swift in Sources */,
 				96C0FD3D2D0331F500A9DC21 /* Vocabulary.swift in Sources */,
 				96C0FD3E2D0331F900A9DC21 /* Kanji.swift in Sources */,
+				96E4B2EC2D7581F200619FE8 /* UserDefaults+Ext.swift in Sources */,
+				96E4B2EB2D7581B200619FE8 /* GroupedUserDefaultsManager.swift in Sources */,
+				96E4B2E52D75792100619FE8 /* UserDefaultManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1401,6 +1419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JapaneseBenkyo/JapaneseBenkyo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1418,7 +1437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.07;
+				MARKETING_VERSION = 3.00.09;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1432,6 +1451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JapaneseBenkyo/JapaneseBenkyo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
@@ -1448,7 +1468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.07;
+				MARKETING_VERSION = 3.00.09;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1462,8 +1482,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = StudyWidegetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyWideget/Info.plist;
@@ -1490,8 +1511,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = StudyWidegetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyWideget/Info.plist;

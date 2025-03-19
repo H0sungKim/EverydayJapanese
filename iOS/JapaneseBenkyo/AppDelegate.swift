@@ -49,85 +49,97 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // process
         let process = JSONManager.shared.decode(data: UserDefaultManager.shared.oldProcess.data(using: .utf8) ?? Data(), type: [String: [String: Bool]].self) ?? [:]
         print(process)
-        if kanjiBookmark.isEmpty && vocabularyBookmark.isEmpty && process.isEmpty {
-            return true
-        }
-        print("***************************")
-        let kanjiEnums: [IndexEnum] = [
-            .elementary1,
-            .elementary2,
-            .elementary3,
-            .elementary4,
-            .elementary5,
-            .elementary6,
-            .middle,
-        ]
-        let kanjis = GlobalDataManager.shared.kanjis
-        
-        var newKanjiBookmark: Set<String> = UserDefaultManager.shared.bookmarkKanji
-        for key in kanjis.keys {
-            guard let kanji = kanjis[key] else { continue }
-            if kanjiBookmark.contains(kanji) {
-                newKanjiBookmark.insert(key)
-            }
-        }
-        print(newKanjiBookmark)
-        UserDefaultManager.shared.bookmarkKanji = newKanjiBookmark
-        
-        for kanjiEnum in kanjiEnums {
-            var processId: Set<String> = UserDefaultManager.shared.passKanji
-            let levelProcess: [String: Bool] = process[kanjiEnum.rawValue] ?? [:]
-            for key in levelProcess.keys {
-                switch key {
-                case "전체보기":
-                    processId.formUnion(kanjiEnum.idRange.map({ String($0) }))
-                default:
-                    guard key.hasPrefix("Day"), let day = Int(key.dropFirst(3)) else { break }
-                    processId.formUnion(((kanjiEnum.idRange.lowerBound + (day - 1) * 20)..<(min(kanjiEnum.idRange.lowerBound + day * 20, kanjiEnum.idRange.upperBound))).map({ String($0) }))
+        if !(kanjiBookmark.isEmpty && vocabularyBookmark.isEmpty && process.isEmpty) {
+            print("***************************")
+            let kanjiEnums: [IndexEnum] = [
+                .elementary1,
+                .elementary2,
+                .elementary3,
+                .elementary4,
+                .elementary5,
+                .elementary6,
+                .middle,
+            ]
+            let kanjis = GlobalDataManager.shared.kanjis
+            
+            var newKanjiBookmark: Set<String> = UserDefaultManager.shared.bookmarkKanji
+            for key in kanjis.keys {
+                guard let kanji = kanjis[key] else { continue }
+                if kanjiBookmark.contains(kanji) {
+                    newKanjiBookmark.insert(key)
                 }
             }
-            print(processId)
-            UserDefaultManager.shared.passKanji = processId
-        }
-        
-        let vocabularyEnums: [IndexEnum] = [
-            .n5,
-            .n4,
-            .n3,
-            .n2,
-            .n1,
-        ]
-        let vocabularies: [String: Vocabulary] = {
-            guard let jsonData = JSONManager.shared.openJSON(path: SectionEnum.vocabulary.fileName) else { return [:] }
-            return JSONManager.shared.decode(data: jsonData, type: [String: Vocabulary].self) ?? [:]
-        }()
-        var newVocaBookmark: Set<String> = UserDefaultManager.shared.bookmarkVoca
-        for key in vocabularies.keys {
-            guard let voca = vocabularies[key] else { continue }
-            if vocabularyBookmark.contains(voca) {
-                newVocaBookmark.insert(key)
+            print(newKanjiBookmark)
+            UserDefaultManager.shared.bookmarkKanji = newKanjiBookmark
+            
+            for kanjiEnum in kanjiEnums {
+                var processId: Set<String> = UserDefaultManager.shared.passKanji
+                let levelProcess: [String: Bool] = process[kanjiEnum.rawValue] ?? [:]
+                for key in levelProcess.keys {
+                    switch key {
+                    case "전체보기":
+                        processId.formUnion(kanjiEnum.idRange.map({ String($0) }))
+                    default:
+                        guard key.hasPrefix("Day"), let day = Int(key.dropFirst(3)) else { break }
+                        processId.formUnion(((kanjiEnum.idRange.lowerBound + (day - 1) * 20)..<(min(kanjiEnum.idRange.lowerBound + day * 20, kanjiEnum.idRange.upperBound))).map({ String($0) }))
+                    }
+                }
+                print(processId)
+                UserDefaultManager.shared.passKanji = processId
             }
-        }
-        print(newVocaBookmark)
-        UserDefaultManager.shared.bookmarkVoca = newVocaBookmark
-        
-        for vocabularyEnum in vocabularyEnums {
-            var processId: Set<String> = UserDefaultManager.shared.passVoca
-            let levelProcess: [String: Bool] = process[vocabularyEnum.rawValue] ?? [:]
-            for key in levelProcess.keys {
-                switch key {
-                case "전체보기":
-                    processId.formUnion(vocabularyEnum.idRange.map({ String($0) }))
-                default:
-                    guard key.hasPrefix("Day"), let day = Int(key.dropFirst(3)) else { break }
-                    processId.formUnion(((vocabularyEnum.idRange.lowerBound + (day - 1) * 20)..<(min(vocabularyEnum.idRange.lowerBound + day * 20, vocabularyEnum.idRange.upperBound))).map({ String($0) }))
+            
+            let vocabularyEnums: [IndexEnum] = [
+                .n5,
+                .n4,
+                .n3,
+                .n2,
+                .n1,
+            ]
+            let vocabularies: [String: Vocabulary] = {
+                guard let jsonData = JSONManager.shared.openJSON(path: SectionEnum.vocabulary.fileName) else { return [:] }
+                return JSONManager.shared.decode(data: jsonData, type: [String: Vocabulary].self) ?? [:]
+            }()
+            var newVocaBookmark: Set<String> = UserDefaultManager.shared.bookmarkVoca
+            for key in vocabularies.keys {
+                guard let voca = vocabularies[key] else { continue }
+                if vocabularyBookmark.contains(voca) {
+                    newVocaBookmark.insert(key)
                 }
             }
-            UserDefaultManager.shared.passVoca = processId
-            print(processId)
+            print(newVocaBookmark)
+            UserDefaultManager.shared.bookmarkVoca = newVocaBookmark
+            
+            for vocabularyEnum in vocabularyEnums {
+                var processId: Set<String> = UserDefaultManager.shared.passVoca
+                let levelProcess: [String: Bool] = process[vocabularyEnum.rawValue] ?? [:]
+                for key in levelProcess.keys {
+                    switch key {
+                    case "전체보기":
+                        processId.formUnion(vocabularyEnum.idRange.map({ String($0) }))
+                    default:
+                        guard key.hasPrefix("Day"), let day = Int(key.dropFirst(3)) else { break }
+                        processId.formUnion(((vocabularyEnum.idRange.lowerBound + (day - 1) * 20)..<(min(vocabularyEnum.idRange.lowerBound + day * 20, vocabularyEnum.idRange.upperBound))).map({ String($0) }))
+                    }
+                }
+                UserDefaultManager.shared.passVoca = processId
+                print(processId)
+            }
+            
+            UserDefaultManager.shared.clearOld()
+        }
+        print(UserDefaultManager.shared.bookmarkVoca)
+        print(UserDefaultManager.shared.bookmarkKanji)
+        print(UserDefaultManager.shared.passVoca)
+        print(UserDefaultManager.shared.passKanji)
+        if !(UserDefaultManager.shared.bookmarkVoca.isEmpty && UserDefaultManager.shared.bookmarkKanji.isEmpty && UserDefaultManager.shared.passVoca.isEmpty && UserDefaultManager.shared.passKanji.isEmpty) {
+            GroupedUserDefaultsManager.shared.bookmarkVoca = UserDefaultManager.shared.bookmarkVoca
+            GroupedUserDefaultsManager.shared.bookmarkKanji = UserDefaultManager.shared.bookmarkKanji
+            GroupedUserDefaultsManager.shared.passVoca = UserDefaultManager.shared.passVoca
+            GroupedUserDefaultsManager.shared.passKanji = UserDefaultManager.shared.passKanji
+            
+            UserDefaultManager.shared.clearAll()
         }
         
-        UserDefaultManager.shared.clearOld()
         // Temp =============================================
         return true
     }

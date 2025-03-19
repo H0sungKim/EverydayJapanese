@@ -86,9 +86,9 @@ extension SectionEnum: Section {
         case .ad, .hiraganakatagana:
             return []
         case .kanji:
-            return UserDefaultManager.shared.bookmarkKanji
+            return GroupedUserDefaultsManager.shared.bookmarkKanji
         case .vocabulary:
-            return UserDefaultManager.shared.bookmarkVoca
+            return GroupedUserDefaultsManager.shared.bookmarkVoca
         }
     }
     
@@ -97,9 +97,9 @@ extension SectionEnum: Section {
         case .ad, .hiraganakatagana:
             return []
         case .kanji:
-            return UserDefaultManager.shared.passKanji
+            return GroupedUserDefaultsManager.shared.passKanji
         case .vocabulary:
-            return UserDefaultManager.shared.passVoca
+            return GroupedUserDefaultsManager.shared.passVoca
         }
     }
     

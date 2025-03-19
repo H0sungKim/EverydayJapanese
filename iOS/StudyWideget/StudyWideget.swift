@@ -54,7 +54,7 @@ struct StudyWidegetEntryView : View {
         VStack {
             if let index = index {
                 switch entry.configuration.studyPart {
-                case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
+                case .jlptBookmark, .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
                     if vocabularies.count != 0 {
                         let vocabulary: Vocabulary = vocabularies[index % vocabularies.count]
                         Text(vocabulary.sound)
@@ -77,7 +77,7 @@ struct StudyWidegetEntryView : View {
                             .minimumScaleFactor(0.5)
                             .multilineTextAlignment(.center)
                     }
-                case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
+                case .kanjiBookmark, .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
                     if kanjis.count != 0 {
                         let kanji: Kanji = kanjis[index % kanjis.count]
                         Text(kanji.jpSound)
@@ -117,12 +117,12 @@ struct StudyWidegetEntryView : View {
     private func loadData() {
         let studyPart = entry.configuration.studyPart
         switch studyPart {
-        case .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
+        case .jlptBookmark, .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
             let dict = JSONManager.shared.decode(data: JSONManager.shared.openJSON(path: studyPart.fileName), type: [String: Vocabulary].self) ?? [:]
-            vocabularies = dict.keys.compactMap({ dict[$0] })
-        case .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
+            vocabularies = studyPart.idRange.compactMap({ dict[$0] })
+        case .kanjiBookmark, .kanjiElementary1, .kanjiElementary2, .kanjiElementary3, .kanjiElementary4, .kanjiElementary5, .kanjiElementary6, .kanjiMiddle:
             let dict = JSONManager.shared.decode(data: JSONManager.shared.openJSON(path: studyPart.fileName), type: [String: Kanji].self) ?? [:]
-            kanjis = dict.keys.compactMap({ dict[$0] })
+            kanjis = studyPart.idRange.compactMap({ dict[$0] })
         }
     }
 }
@@ -139,6 +139,11 @@ struct StudyWideget: Widget {
 }
 
 extension ConfigurationAppIntent {
+    fileprivate static var kanjiBookmark: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .kanjiBookmark
+        return intent
+    }
     fileprivate static var kanjiElementary1: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
         intent.studyPart = .kanjiElementary1
@@ -172,6 +177,11 @@ extension ConfigurationAppIntent {
     fileprivate static var kanjiMiddle1: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
         intent.studyPart = .kanjiMiddle
+        return intent
+    }
+    fileprivate static var jlptBookmark: ConfigurationAppIntent {
+        let intent = ConfigurationAppIntent()
+        intent.studyPart = .jlptBookmark
         return intent
     }
     fileprivate static var jlptN5: ConfigurationAppIntent {

@@ -9,8 +9,8 @@ import UIKit
 
 class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var kanjisForCell: [KanjiForCell] = []
-    private var bookmark: Set<String> = UserDefaultManager.shared.bookmarkKanji
-    private var pass: Set<String> = UserDefaultManager.shared.passKanji
+    private var bookmark: Set<String> = GroupedUserDefaultsManager.shared.bookmarkKanji
+    private var pass: Set<String> = GroupedUserDefaultsManager.shared.passKanji
     var onReload: ((_ indexPath: IndexPath)->Void)?
     
     init(indices: [String]) {
@@ -36,7 +36,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func addBookmarkAll() {
         bookmark.formUnion(Set(kanjisForCell.map { $0.id }))
-        UserDefaultManager.shared.bookmarkKanji = bookmark
+        GroupedUserDefaultsManager.shared.bookmarkKanji = bookmark
         for kanjiForCell in kanjisForCell {
             kanjiForCell.isBookmark = true
         }
@@ -104,7 +104,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
         }
         kanjiForCell.isBookmark = !kanjiForCell.isBookmark
         cell.initializeCell(kanjiForCell: kanjiForCell)
-        UserDefaultManager.shared.bookmarkKanji = bookmark
+        GroupedUserDefaultsManager.shared.bookmarkKanji = bookmark
     }
     private func onClickPronounce(_ cell: KanjiTableViewCell, _ sender: UIButton, kanjiForCell: KanjiForCell) {
         TTSManager.shared.play(kanji: kanjiForCell.kanji)
@@ -116,7 +116,7 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     func reload() {
-        bookmark = UserDefaultManager.shared.bookmarkKanji
-        pass = UserDefaultManager.shared.passKanji
+        bookmark = GroupedUserDefaultsManager.shared.bookmarkKanji
+        pass = GroupedUserDefaultsManager.shared.passKanji
     }
 }
