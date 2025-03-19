@@ -131,12 +131,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(UserDefaultManager.shared.bookmarkKanji)
         print(UserDefaultManager.shared.passVoca)
         print(UserDefaultManager.shared.passKanji)
-        GroupedUserDefaultsManager.shared.bookmarkVoca = UserDefaultManager.shared.bookmarkVoca
-        GroupedUserDefaultsManager.shared.bookmarkKanji = UserDefaultManager.shared.bookmarkKanji
-        GroupedUserDefaultsManager.shared.passVoca = UserDefaultManager.shared.passVoca
-        GroupedUserDefaultsManager.shared.passKanji = UserDefaultManager.shared.passKanji
+        if !(UserDefaultManager.shared.bookmarkVoca.isEmpty && UserDefaultManager.shared.bookmarkKanji.isEmpty && UserDefaultManager.shared.passVoca.isEmpty && UserDefaultManager.shared.passKanji.isEmpty) {
+            GroupedUserDefaultsManager.shared.bookmarkVoca = UserDefaultManager.shared.bookmarkVoca
+            GroupedUserDefaultsManager.shared.bookmarkKanji = UserDefaultManager.shared.bookmarkKanji
+            GroupedUserDefaultsManager.shared.passVoca = UserDefaultManager.shared.passVoca
+            GroupedUserDefaultsManager.shared.passKanji = UserDefaultManager.shared.passKanji
             
-//        UserDefaultManager.shared.clearAll()
+            UserDefaultManager.shared.clearAll()
+        }
+        
         // Temp =============================================
         return true
     }
