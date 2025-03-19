@@ -43,7 +43,6 @@ class GlobalVariable {
         startTime = 0
         pingTime = 0
         tatoebaRepository = TatoebaRepository(HHStyle(TatoebaRepository.Style.loadingSpinner or TatoebaRepository.Style.showErrorDialog))
-
     }
     // Public Method
     // Private Method

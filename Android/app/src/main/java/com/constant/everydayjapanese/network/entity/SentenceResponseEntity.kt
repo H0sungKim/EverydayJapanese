@@ -12,6 +12,9 @@ class SentenceResponseEntity {
 
         @SerializedName("transcriptions")
         val transcriptions: Array<TranscriptionEntity>? = null
+
+        @SerializedName("translations")
+        val translations: Array<Array<TranslationEntity>>? = null
     }
 
     inner class TranscriptionEntity {
@@ -20,6 +23,14 @@ class SentenceResponseEntity {
 
         @SerializedName("html")
         val html: String? = null
+    }
+
+    inner class TranslationEntity {
+        @SerializedName("id")
+        val id: Int? = null
+
+        @SerializedName("text")
+        val text: String? = null
     }
 
     @SerializedName("data")

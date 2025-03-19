@@ -114,9 +114,8 @@ class EverydayJapaneseApplication : Application() {
             AppLifecycleTracker(this)
         registerActivityLifecycleCallbacks(appLifecycleTracker)
 
-        //ProcessLifecycleOwner.get().lifecycle.addObserver(AppLifecycleObserver(this))
+        // ProcessLifecycleOwner.get().lifecycle.addObserver(AppLifecycleObserver(this))
         HHLog.d(TAG, "[TIME] App onCreate()Finished : ${System.currentTimeMillis() - GlobalVariable.getInstance().startTime}")
-
     }
 
     // Public Method

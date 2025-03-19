@@ -25,7 +25,6 @@ class FcmService : FirebaseMessagingService() {
             HHLog.d(TAG, "handleIntent() remoteMessage = $remoteMessage")
 
             // 앱이 실행중이라면
-
         }
     }
 

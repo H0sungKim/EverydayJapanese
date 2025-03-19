@@ -1,6 +1,5 @@
 package com.constant.everydayjapanese.util
 
-
 // ----------------------------------------------------
 // Public Method
 fun nonNull(text: String?): String {
@@ -39,14 +38,11 @@ fun nonNull(a: Array<String>?): Array<String> {
     return a ?: arrayOf()
 }
 
-
-fun nonNull(a: HashMap<String,Boolean>?): HashMap<String,Boolean> {
+fun nonNull(a: HashMap<String, Boolean>?): HashMap<String, Boolean> {
     return a ?: HashMap<String, Boolean>()
 }
-
 
 @JvmName("callFromString")
 fun nonNull(a: ArrayList<String>?): ArrayList<String> {
     return a ?: ArrayList<String>()
 }
-

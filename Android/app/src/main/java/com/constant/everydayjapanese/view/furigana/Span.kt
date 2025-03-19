@@ -44,7 +44,6 @@ internal class Span {
             if (mutableMarkE < textK.length) {
                 normal.add(TextNormal(textK.substring(mutableMarkE), paint))
             }
-
         } else {
             // Non marked
             normal.add(TextNormal(textK, paint))
@@ -110,7 +109,11 @@ internal class Span {
     }
 
     // Split
-    fun split(offset: Int, normalA: Vector<TextNormal>, normalB: Vector<TextNormal>) {
+    fun split(
+        offset: Int,
+        normalA: Vector<TextNormal>,
+        normalB: Vector<TextNormal>,
+    ) {
         var mutableOffset = offset
 
         // Check if no furigana

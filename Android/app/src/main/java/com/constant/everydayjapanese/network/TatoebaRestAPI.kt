@@ -21,15 +21,15 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
     // ----------------------------------------------------
     // Public Inner Class, Struct, Enum, Interface
     interface RestAPI {
-
         @GET("/unstable/sentences")
         fun getSentence(
             @Query("lang")lang: String,
             @Query("q")q: String,
             @Query("limit")limit: Int,
+            @Query("trans:lang")trans: String,
+            @Query("sort")sort: String,
+            @Query("showtrans")showtrans: String,
         ): Call<SentenceResponseEntity>
-
-
     }
 
     // companion object
@@ -56,6 +56,9 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
         @Query("lang")lang: String,
         @Query("q")q: String,
         @Query("limit")limit: Int,
+        @Query("trans:lang")trans: String,
+        @Query("sort")sort: String,
+        @Query("showtrans")showtrans: String,
     ): Observable<SentenceResponseEntity> {
         var loadingDialog: LoadingDialog? = null
         if (style.isInclude(TatoebaRepository.Style.loadingSpinner)) {
@@ -64,10 +67,18 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
         }
 
         return Observable.create { emitter ->
-            createRetrofit(false).getSentence(lang, q, limit).enqueue(HHResponse<SentenceResponseEntity>(context, style, loadingDialog, emitter))
+            createRetrofit(
+                false,
+            ).getSentence(
+                lang,
+                q,
+                limit,
+                trans,
+                sort,
+                showtrans,
+            ).enqueue(HHResponse<SentenceResponseEntity>(context, style, loadingDialog, emitter))
         }
     }
-
 
     // Private Method
     private fun createRetrofit(isSecured: Boolean): RestAPI {
@@ -95,7 +106,6 @@ class TatoebaRestAPI(private val context: Context, private val style: HHStyle) {
     }
 
     private fun createHeader(isSecured: Boolean): Interceptor {
-
         return Interceptor {
             val requestBuilder = it.request().newBuilder()
 

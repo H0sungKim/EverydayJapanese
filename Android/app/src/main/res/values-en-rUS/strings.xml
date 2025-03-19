@@ -48,7 +48,6 @@
 	<string name="before_hour">%d hours ago</string>
 	<string name="before_minute">%d minutes ago</string>
 	<string name="about_before_minute">about %d minutes ago</string>
-
 	<string name="board_youtube_link_title">Insert YouTube link</string>
 	<string name="board_youtube_link_input_hint">Please enter YouTube address</string>
 	<string name="board_youtube_link_error_message">Please enter a valid address</string>
@@ -91,8 +90,8 @@
 	<string name="japanese_common_chinese">Japanese commonly used Chinese characters</string>
 	<string name="jlpt_vocabulary">JLPT Vocabulary Book</string>
 	<string name="n_points">%d points</string>
-
-
+	<string name="test">Test</string>
+	<string name="test_result">Test result</string>
 
 
 

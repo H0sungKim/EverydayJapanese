@@ -16,7 +16,6 @@ import com.constant.everydayjapanese.R
 import java.util.*
 
 class FuriganaTextView : TextView {
-
     // Paints
     private var textPaintFurigana = TextPaint()
     private var textPaintNormal = TextPaint()
@@ -32,7 +31,7 @@ class FuriganaTextView : TextView {
     private val normalLines = Vector<LineNormal>()
     private val furiganaLines = Vector<LineFurigana>()
 
-    //attributes
+    // attributes
     private var hasRuby: Boolean = false
     private var furiganaTextColor: Int = 0
 
@@ -84,7 +83,10 @@ class FuriganaTextView : TextView {
         setFuriganaText(text, hasRuby = false)
     }
 
-    fun setFuriganaText(text: String, hasRuby: Boolean) {
+    fun setFuriganaText(
+        text: String,
+        hasRuby: Boolean,
+    ) {
         super.setText(text)
 
         var textToDisplay = text
@@ -95,7 +97,12 @@ class FuriganaTextView : TextView {
         setText(paint, textToDisplay, 0, 0)
     }
 
-    private fun setText(tp: TextPaint, text: String, markS: Int, markE: Int) {
+    private fun setText(
+        tp: TextPaint,
+        text: String,
+        markS: Int,
+        markE: Int,
+    ) {
         var mutableText = text
         var mutableMarkS = markS
         var mutableMarkE = markE
@@ -144,13 +151,14 @@ class FuriganaTextView : TextView {
 
                 // Spans
                 val split = mutableText.substring(1, idx).split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                spans.add(Span(if (split.size > 1) split[1] else "", split[0], mutableMarkS, mutableMarkE, textPaintNormal, textPaintFurigana))
+                spans.add(
+                    Span(if (split.size > 1) split[1] else "", split[0], mutableMarkS, mutableMarkE, textPaintNormal, textPaintFurigana),
+                )
 
                 // Remove text
                 mutableText = mutableText.substring(idx + 1)
                 mutableMarkS -= split[0].length
                 mutableMarkE -= split[0].length
-
             } else {
                 // Single span
                 spans.add(Span("", mutableText, mutableMarkS, mutableMarkE, textPaintNormal, textPaintFurigana))
@@ -164,7 +172,10 @@ class FuriganaTextView : TextView {
     }
 
     // Size calculation
-    override fun onMeasure(width_ms: Int, height_ms: Int) {
+    override fun onMeasure(
+        width_ms: Int,
+        height_ms: Int,
+    ) {
         // Modes
         val wmode = View.MeasureSpec.getMode(width_ms)
         val hmode = View.MeasureSpec.getMode(height_ms)
@@ -187,10 +198,12 @@ class FuriganaTextView : TextView {
         // New height
         var hnew = Math.round(Math.ceil((lineSize * normalLines.size.toFloat()).toDouble())).toInt()
         var wnew = wold
-        if (wmode != View.MeasureSpec.EXACTLY && normalLines.size <= 1)
+        if (wmode != View.MeasureSpec.EXACTLY && normalLines.size <= 1) {
             wnew = Math.round(Math.ceil(lineMax.toDouble())).toInt()
-        if (hmode != View.MeasureSpec.UNSPECIFIED && hnew > hold)
+        }
+        if (hmode != View.MeasureSpec.UNSPECIFIED && hnew > hold) {
             hnew = hnew or View.MEASURED_STATE_TOO_SMALL
+        }
 
         // Set result
         setMeasuredDimension(wnew, hnew)
@@ -206,7 +219,6 @@ class FuriganaTextView : TextView {
 
         // Check if no limits on width
         if (lineMax < 0.0) {
-
             // Create single normal and furigana line
             val lineN = LineNormal(textPaintNormal)
             val lineF = LineFurigana(this.lineMax, textPaintFurigana)
@@ -225,9 +237,7 @@ class FuriganaTextView : TextView {
             // Commit both lines
             normalLines.add(lineN)
             furiganaLines.add(lineF)
-
         } else {
-
             // Lines
             var lineX = 0.0f
             var lineN = LineNormal(textPaintNormal)
@@ -256,7 +266,6 @@ class FuriganaTextView : TextView {
 
                 // Add span to line
                 if (i >= 0 && i < widths.size) {
-
                     // Span does not fit entirely
                     if (i > 0) {
                         // Split half that fits
@@ -282,13 +291,10 @@ class FuriganaTextView : TextView {
                         // Next span
                         continue
                     }
-
                 } else {
-
                     // Span fits entirely
                     lineN.add(span.normal())
                     lineF.add(span.furigana(lineS))
-
                 }
 
                 // Next span
@@ -317,7 +323,6 @@ class FuriganaTextView : TextView {
 
     // Drawing
     public override fun onDraw(canvas: Canvas) {
-
         textPaintNormal.color = currentTextColor
 
         if (furiganaTextColor != 0) {

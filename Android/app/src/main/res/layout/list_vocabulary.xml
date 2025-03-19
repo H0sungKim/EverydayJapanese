@@ -61,7 +61,7 @@
                 android:layout_marginBottom="@dimen/space_m"
                 android:background="@color/transparent"
                 android:src="@drawable/img_favorite_off"
-                app:tint="@color/fg0" />
+                app:tint="@color/selector_normal_fg0_press_fg5" />
 
             <ImageButton
                 android:id="@+id/button_sound"
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="@dimen/space_m"
                 android:background="@color/transparent"
                 android:src="@drawable/img_sound"
-                app:tint="@color/fg0" />
+                app:tint="@color/selector_normal_fg0_press_fg5" />
 
             <ImageButton
                 android:id="@+id/button_expand"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:src="@drawable/img_down"
-                app:tint="@color/fg0"
+                app:tint="@color/selector_normal_fg0_press_fg5"
 
                 />
         </LinearLayout>
@@ -94,7 +94,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_m"
-            android:layout_marginVertical="@dimen/space_x3s"
+            android:layout_marginTop="@dimen/space_x3s"
+            android:layout_marginBottom="@dimen/space_x3s"
+            style="@style/font_p1"
+            android:textColor="@color/fg0"
+            />
+        <TextView
+            android:id="@+id/textview_trans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_m"
+            android:layout_marginBottom="@dimen/space_x3s"
+            style="@style/font_p2"
+            android:textColor="@color/fg4"
             />
     </LinearLayout>
 </LinearLayout>

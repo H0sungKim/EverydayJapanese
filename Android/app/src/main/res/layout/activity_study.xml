@@ -41,7 +41,7 @@
                 android:padding="@dimen/space_s"
                 android:background="@color/transparent"
                 android:src="@drawable/img_switch"
-                app:tint="@color/fg0" />
+                app:tint="@color/selector_normal_fg0_press_fg5" />
 
             <ImageButton
                 android:id="@+id/button_all_visible"
@@ -50,7 +50,7 @@
                 android:padding="@dimen/space_s"
                 android:background="@color/transparent"
                 android:src="@drawable/img_eye"
-                app:tint="@color/fg0" />
+                app:tint="@color/selector_normal_fg0_press_fg5" />
 
             <ImageButton
                 android:id="@+id/button_test"
@@ -59,7 +59,7 @@
                 android:padding="@dimen/space_s"
                 android:background="@color/transparent"
                 android:src="@drawable/img_edit"
-                app:tint="@color/fg0" />
+                app:tint="@color/selector_normal_fg0_press_fg5" />
 
         </LinearLayout>
 

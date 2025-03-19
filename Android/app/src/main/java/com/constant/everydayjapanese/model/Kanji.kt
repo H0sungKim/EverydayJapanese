@@ -1,6 +1,7 @@
 package com.constant.everydayjapanese.model
 
 import android.os.Parcelable
+import com.google.gson.reflect.TypeToken
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -10,18 +11,19 @@ class Kanji(
     val eumhun: String,
     val jpSound: String,
     val jpMeaning: String,
-    val examples: List<Vocabulary>
+    val examples: List<Vocabulary> = emptyList(),
 ) : Parcelable {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other !is Kanji) return false
-        return (this.kanji == other.kanji &&
+        return (
+            this.kanji == other.kanji &&
                 this.hanja == other.hanja &&
                 this.eumhun == other.eumhun &&
                 this.jpSound == other.jpSound &&
                 this.jpMeaning == other.jpMeaning &&
                 this.examples == other.examples
-                )
+        )
     }
 
     override fun hashCode(): Int {
@@ -38,3 +40,5 @@ class Kanji(
         return "Kanji(kanji='$kanji', hanja='$hanja', eumhun='$eumhun', jpSound='$jpSound', jpMeaning='$jpMeaning', examples=$examples)"
     }
 }
+
+class KanjiListType : TypeToken<List<Kanji>>()

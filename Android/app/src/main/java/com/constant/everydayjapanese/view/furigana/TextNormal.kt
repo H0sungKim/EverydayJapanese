@@ -4,7 +4,6 @@ import android.graphics.Canvas
 import android.graphics.Paint
 
 class TextNormal(private val text: String, private val paint: Paint) {
-
     private var totalWidth: Float = 0.toFloat()
     private val charsWidth: FloatArray = FloatArray(text.length)
 
@@ -33,7 +32,11 @@ class TextNormal(private val text: String, private val paint: Paint) {
     }
 
     // Draw
-    fun draw(canvas: Canvas, x: Float, y: Float): Float {
+    fun draw(
+        canvas: Canvas,
+        x: Float,
+        y: Float,
+    ): Float {
         canvas.drawText(text, 0, text.length, x, y, paint)
         return totalWidth
     }

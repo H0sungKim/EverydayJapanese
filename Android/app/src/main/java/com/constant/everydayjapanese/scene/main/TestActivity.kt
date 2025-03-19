@@ -6,7 +6,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityTestBinding
-import com.constant.everydayjapanese.extension.LATER
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
 import com.constant.everydayjapanese.util.HHLog
@@ -21,13 +20,14 @@ import com.constant.everydayjapanese.view.NavigationView
 
 class TestActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
-    data class Param (
+    data class Param(
         var indexEnum: IndexEnum,
-        var dayTitle:String,
-        var dayKey:String,
-        var kanjis:ArrayList<Kanji>?,
-        var vocabularies:ArrayList<Vocabulary>?
+        var dayTitle: String,
+        var dayKey: String,
+        var kanjis: ArrayList<Kanji>?,
+        var vocabularies: ArrayList<Vocabulary>?,
     )
+
     // companion object
     companion object {
         public val EXTRA_INDEX_ENUM = "EXTRA_INDEX_ENUM"
@@ -36,6 +36,7 @@ class TestActivity : AppCompatActivity() {
         public val EXTRA_KANJIS = "EXTRA_KANJIS"
         public val EXTRA_VOCABULARIES = "EXTRA_VOCABULARIES"
     }
+
     // Public Constant
     // Private Constant
     private val TAG = nonNull(this::class.simpleName)
@@ -44,38 +45,37 @@ class TestActivity : AppCompatActivity() {
     // Private Variable
     private lateinit var binding: ActivityTestBinding
     private lateinit var param: Param
-    private var index : Int = 0
+    private var index: Int = 0
     private var isVisible = false
     private var testResults = ArrayList<Boolean>()
-    private var kanjis:ArrayList<Kanji>? = null
-    private var vocabularies:ArrayList<Vocabulary>? = null
+    private var kanjis: ArrayList<Kanji>? = null
+    private var vocabularies: ArrayList<Vocabulary>? = null
 
     // Override Method or Basic Method
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         initializeVariables()
         initializeViews()
     }
-
-
 
     // Public Method
     // Private Method
 
     private fun initializeVariables() {
-        param = Param(
-            IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
-            getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
-            getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
-        )
+        param =
+            Param(
+                IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
+                nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+                nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
+                getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
+                getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES),
+            )
 
         kanjis = param.kanjis
         vocabularies = param.vocabularies
-
+        kanjis?.shuffle()
+        vocabularies?.shuffle()
         testResults.clear()
     }
 
@@ -83,7 +83,11 @@ class TestActivity : AppCompatActivity() {
         binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, "테스트".LATER()), param.indexEnum.getResourceId())
+            navigationview.set(
+                nonNull(param.indexEnum.getSection()?.title),
+                String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, getString(R.string.test)),
+                param.indexEnum.getResourceId(),
+            )
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -98,7 +102,7 @@ class TestActivity : AppCompatActivity() {
                     }
                 },
             )
-            buttonCorrect.setOnClickListener{
+            buttonCorrect.setOnClickListener {
                 testResults.add(true)
                 moveOnToNext()
             }
@@ -132,7 +136,7 @@ class TestActivity : AppCompatActivity() {
         when (param.indexEnum.getSection()) {
             SectionEnum.kanji -> {
                 param.kanjis?.let { kanjis ->
-                    binding.textviewIndex.text = "${index+1}/${kanjis.size}"
+                    binding.textviewIndex.text = "${index + 1}/${kanjis.size}"
                     val kanji = kanjis.get(index)
                     binding.textviewUpperSub1.text = kanji.jpSound
                     binding.textviewUpperSub2.text = kanji.jpMeaning
@@ -142,7 +146,7 @@ class TestActivity : AppCompatActivity() {
             }
             SectionEnum.vocabulary -> {
                 param.vocabularies?.let { vocabularies ->
-                    binding.textviewIndex.text = "${index+1}/${vocabularies.size}"
+                    binding.textviewIndex.text = "${index + 1}/${vocabularies.size}"
                     val vocabulary = vocabularies.get(index)
                     binding.textviewUpperSub1.text = ""
                     binding.textviewUpperSub2.text = vocabulary.sound
@@ -151,8 +155,6 @@ class TestActivity : AppCompatActivity() {
                 }
             }
             else -> {
-
-
             }
         }
         showText(false)
@@ -160,8 +162,9 @@ class TestActivity : AppCompatActivity() {
 
     private fun moveOnToNext() {
         index += 1
-        if ((param.indexEnum.getSection() == SectionEnum.kanji &&  index == kanjis?.size) ||
-                (param.indexEnum.getSection() == SectionEnum.vocabulary &&  index == vocabularies?.size)) {
+        if ((param.indexEnum.getSection() == SectionEnum.kanji && index == kanjis?.size) ||
+            (param.indexEnum.getSection() == SectionEnum.vocabulary && index == vocabularies?.size)
+        ) {
             val intent = Intent(this@TestActivity, TestResultActivity::class.java)
             intent.putExtra(TestResultActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
             intent.putExtra(TestResultActivity.EXTRA_DAY_TITLE, param.dayTitle)
@@ -189,7 +192,6 @@ class TestActivity : AppCompatActivity() {
                     intent.putExtra(TestResultActivity.EXTRA_VOCABULARIES, wrongVocabularies)
                 }
                 else -> {
-
                 }
             }
             startActivity(intent)
@@ -210,7 +212,7 @@ class TestActivity : AppCompatActivity() {
         updateTestField()
     }
 
-    private fun showText(isShow:Boolean) {
+    private fun showText(isShow: Boolean) {
         if (isShow) {
             binding.textviewUpperSub1.visibility = View.VISIBLE
             binding.textviewUpperSub2.visibility = View.VISIBLE

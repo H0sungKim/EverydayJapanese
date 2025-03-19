@@ -1,31 +1,17 @@
 package com.constant.everydayjapanese.scene.main
 
-import android.content.Context
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.constant.everydayjapanese.R
 import com.constant.everydayjapanese.databinding.ActivityTestResultBinding
-import com.constant.everydayjapanese.extension.LATER
-import com.constant.everydayjapanese.extension.applyGUI
 import com.constant.everydayjapanese.model.Kanji
 import com.constant.everydayjapanese.model.Vocabulary
 import com.constant.everydayjapanese.scene.main.StudyActivity.KanjiForCell
 import com.constant.everydayjapanese.scene.main.StudyActivity.OnSelectItemListener
-import com.constant.everydayjapanese.singleton.GlobalVariable
 import com.constant.everydayjapanese.singleton.JSONManager
 import com.constant.everydayjapanese.singleton.Pref
 import com.constant.everydayjapanese.singleton.PrefManager
-import com.constant.everydayjapanese.singleton.TTSManager
 import com.constant.everydayjapanese.util.HHLog
 import com.constant.everydayjapanese.util.HHStyle
 import com.constant.everydayjapanese.util.IndexEnum
@@ -41,15 +27,14 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 class TestResultActivity : AppCompatActivity() {
     // Public Inner Class, Struct, Enum, Interface
 
-    data class Param (
+    data class Param(
         var indexEnum: IndexEnum,
-        var dayTitle:String,
-        var dayKey:String,
-        var allCount:Int = 0,
-        var kanjis:List<Kanji>?,
-        var vocabularies:List<Vocabulary>?
+        var dayTitle: String,
+        var dayKey: String,
+        var allCount: Int = 0,
+        var kanjis: List<Kanji>?,
+        var vocabularies: List<Vocabulary>?,
     )
-
 
     // companion object
     companion object {
@@ -89,28 +74,34 @@ class TestResultActivity : AppCompatActivity() {
     // Public Method
     // Private Method
     private fun initializeVariables() {
-
-        param = Param(
-            IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
-            nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
-            getIntent().getIntExtra(EXTRA_ALL_COUNT, 0),
-            getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
-            getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES)
-        )
-        kanjisForCell = param.kanjis?.map {
-            return@map StudyActivity.KanjiForCell(it)
-        }
-        vocabulariesForCell = param.vocabularies?.map {
-            return@map StudyActivity.VocabularyForCell(it)
-        }
+        param =
+            Param(
+                IndexEnum.ofRaw(getIntent().getIntExtra(EXTRA_INDEX_ENUM, 0)),
+                nonNull(getIntent().getStringExtra(EXTRA_DAY_TITLE)),
+                nonNull(getIntent().getStringExtra(EXTRA_DAY_KEY)),
+                getIntent().getIntExtra(EXTRA_ALL_COUNT, 0),
+                getIntent().getParcelableArrayListExtra<Kanji>(EXTRA_KANJIS),
+                getIntent().getParcelableArrayListExtra<Vocabulary>(EXTRA_VOCABULARIES),
+            )
+        kanjisForCell =
+            param.kanjis?.map {
+                return@map StudyActivity.KanjiForCell(it)
+            }
+        vocabulariesForCell =
+            param.vocabularies?.map {
+                return@map StudyActivity.VocabularyForCell(it)
+            }
     }
 
     private fun initializeViews() {
         binding = ActivityTestResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            navigationview.set(nonNull(param.indexEnum.getSection()?.title), String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, "테스트 결과".LATER()), param.indexEnum.getResourceId())
+            navigationview.set(
+                nonNull(param.indexEnum.getSection()?.title),
+                String.format("%s %s %s", nonNull(param.indexEnum.title), param.dayTitle, getString(R.string.test_result)),
+                param.indexEnum.getResourceId(),
+            )
             navigationview.setButtonStyle(HHStyle(NavigationView.ButtonId.leftBack))
             navigationview.setOnButtonClickListener(
                 object : NavigationView.OnButtonClickListener {
@@ -127,6 +118,47 @@ class TestResultActivity : AppCompatActivity() {
                 },
             )
 
+            buttonBookmark.setOnClickListener {
+                when (param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        kanjiAdapter.addBookmarkAll()
+                    }
+                    SectionEnum.vocabulary -> {
+                        vocabularyAdapter.addBookmarkAll()
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
+            }
+
+            buttonRetest.setOnClickListener {
+                finish()
+                val intent = Intent(this@TestResultActivity, TestActivity::class.java)
+                intent.putExtra(TestActivity.EXTRA_INDEX_ENUM, param.indexEnum.id)
+                intent.putExtra(TestActivity.EXTRA_DAY_TITLE, param.dayTitle)
+                intent.putExtra(TestActivity.EXTRA_DAY_KEY, param.dayKey)
+                when (param.indexEnum.getSection()) {
+                    SectionEnum.kanji -> {
+                        param.kanjis?.let { kanjis ->
+                            intent.putExtra(TestActivity.EXTRA_KANJIS, ArrayList(kanjis))
+                        }
+                    }
+                    SectionEnum.vocabulary -> {
+                        param.vocabularies?.let { vocabularies ->
+                            intent.putExtra(TestActivity.EXTRA_VOCABULARIES, ArrayList(vocabularies))
+                        }
+                    }
+                    else -> {
+                        HHLog.d(TAG, "do nothing!")
+                    }
+                }
+                startActivity(intent)
+            }
+
+            buttonFinishtest.setOnClickListener {
+                finish()
+            }
 
             if (param.indexEnum.getSection() == SectionEnum.kanji || 0 < nonNull(kanjisForCell?.size)) {
                 kanjisForCell?.let { kanjisForCell ->
@@ -139,7 +171,8 @@ class TestResultActivity : AppCompatActivity() {
                                     !kanjisForCell.get(position).isVisible
                                 kanjiAdapter.notifyItemChanged(position)
                             }
-                        })
+                        },
+                    )
                     recyclerview.adapter = kanjiAdapter
                     initializeScoreView(nonNull(kanjisForCell.size))
                 }
@@ -154,7 +187,8 @@ class TestResultActivity : AppCompatActivity() {
                                     !vocabulariesForCell.get(position).isVisible
                                 vocabularyAdapter.notifyItemChanged(position)
                             }
-                        })
+                        },
+                    )
                     recyclerview.adapter = vocabularyAdapter
                     initializeScoreView(nonNull(vocabulariesForCell.size))
                 }
@@ -165,8 +199,6 @@ class TestResultActivity : AppCompatActivity() {
                 },
             )
         }
-
-
     }
 
     private fun initializeScoreView(wrongCount: Int) {
@@ -178,7 +210,7 @@ class TestResultActivity : AppCompatActivity() {
             if (param.indexEnum == IndexEnum.kanjiBookmark || param.indexEnum == IndexEnum.vocabularyBookmark) {
                 return
             }
-            
+
             saveProcess()
         }
     }
