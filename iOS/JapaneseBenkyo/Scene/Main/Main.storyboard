@@ -17,26 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-HW-5Ou">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-HW-5Ou">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="6n7-HN-FQe"/>
+                                </constraints>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXr-kk-fVo">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CXr-kk-fVo" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="4WW-mK-Ixy"/>
-                            <constraint firstAttribute="trailing" secondItem="CXr-kk-fVo" secondAttribute="trailing" id="5qk-4V-CVt"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOZ-HW-5Ou" secondAttribute="trailing" id="5vQ-1b-OGx"/>
-                            <constraint firstItem="CXr-kk-fVo" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SUT-fy-AVP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOZ-HW-5Ou" secondAttribute="trailing" priority="900" id="5vQ-1b-OGx"/>
+                            <constraint firstItem="fOZ-HW-5Ou" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8Su-KJ-PZk"/>
                             <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WO2-cL-joU"/>
                             <constraint firstAttribute="bottom" secondItem="fOZ-HW-5Ou" secondAttribute="bottom" id="ZSM-Mk-rFQ"/>
-                            <constraint firstItem="fOZ-HW-5Ou" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kTF-zP-5zT"/>
-                            <constraint firstItem="fOZ-HW-5Ou" firstAttribute="top" secondItem="CXr-kk-fVo" secondAttribute="bottom" id="zXg-TO-mBr"/>
+                            <constraint firstItem="fOZ-HW-5Ou" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" priority="900" id="kTF-zP-5zT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -49,9 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
