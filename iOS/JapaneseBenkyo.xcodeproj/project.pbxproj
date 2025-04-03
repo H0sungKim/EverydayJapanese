@@ -1421,7 +1421,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JapaneseBenkyo/JapaneseBenkyo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1437,7 +1437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.10;
+				MARKETING_VERSION = 3.00.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1453,7 +1453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JapaneseBenkyo/JapaneseBenkyo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
@@ -1468,7 +1468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.00.10;
+				MARKETING_VERSION = 3.00.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

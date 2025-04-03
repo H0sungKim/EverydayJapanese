@@ -44,14 +44,19 @@ struct SimpleEntry: TimelineEntry {
 struct StudyWidegetEntryView : View {
     var entry: Provider.Entry
     
-    @State private var index: Int? = Calendar.current.dateComponents([.day], from: .distantPast, to: .now).day
-    
     @State private var kanjis: [Kanji] = []
     @State private var vocabularies: [Vocabulary] = []
     
     var body: some View {
-        
         VStack {
+            var index: Int? {
+                switch entry.configuration.updateInterval {
+                case .day:
+                    return Calendar.current.dateComponents([.day], from: .distantPast, to: entry.date).day
+                case .hour:
+                    return  Calendar.current.dateComponents([.hour], from: .distantPast, to: entry.date).hour
+                }
+            }
             if let index = index {
                 switch entry.configuration.studyPart {
                 case .jlptBookmark, .jlptN5, .jlptN4, .jlptN3, .jlptN2, .jlptN1:
@@ -107,8 +112,6 @@ struct StudyWidegetEntryView : View {
                     }
                 }
             }
-            
-//            Text(entry.configuration.studyPart.rawValue)
         }.onAppear(perform: {
             loadData()
         })

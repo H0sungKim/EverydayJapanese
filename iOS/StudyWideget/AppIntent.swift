@@ -15,6 +15,10 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     // An example configurable parameter.
     @Parameter(title: "암기할 부분", default: .kanjiElementary1)
     var studyPart: StudyPartEnum
+    
+    @Parameter(title: "단어 변경 주기", default: .day)
+    var updateInterval: UpdateIntervalEnum
+    
 }
 
 enum StudyPartEnum: String, AppEnum {
@@ -94,6 +98,27 @@ enum StudyPartEnum: String, AppEnum {
             return (3525...5269).map({ String($0) })
         case .jlptN1:
             return (5270...7964).map({ String($0) })
+        }
+    }
+}
+
+enum UpdateIntervalEnum: String, AppEnum {
+    case day = "하루마다"
+    case hour = "한시간마다"
+    
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "단어 변경 주기"
+    
+    static var caseDisplayRepresentations: [UpdateIntervalEnum : DisplayRepresentation] = [
+        .day: "하루마다",
+        .hour: "한시간마다",
+    ]
+    
+    var calendarEnum: Calendar.Component {
+        switch self {
+        case .day:
+            return .day
+        case .hour:
+            return .hour
         }
     }
 }
