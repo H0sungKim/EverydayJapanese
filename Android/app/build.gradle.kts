@@ -22,8 +22,8 @@ android {
         applicationId = "com.constant.everydayjapanese"
         minSdk = 28
         targetSdk = 34
-        versionCode = 9
-        versionName = "1.00.09"
+        versionCode = 10
+        versionName = "1.00.10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
