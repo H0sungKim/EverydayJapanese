@@ -16,14 +16,14 @@ plugins {
 
 android {
     namespace = "com.constant.everydayjapanese"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.constant.everydayjapanese"
         minSdk = 28
-        targetSdk = 34
-        versionCode = 10
-        versionName = "1.00.10"
+        targetSdk = 35
+        versionCode = 11
+        versionName = "1.00.11"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -191,7 +191,8 @@ dependencies {
 }
 
 fun getApiKey(propertyKey: String): String {
-    return gradleLocalProperties(rootDir).getProperty(propertyKey)
+    val properties = gradleLocalProperties(rootDir, providers)
+    return properties.getProperty(propertyKey)
 }
 
 // 코드 이뿌게

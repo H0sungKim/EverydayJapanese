@@ -23,7 +23,7 @@ object AppInfoUtil {
         try {
             val pm: PackageManager = context.getPackageManager()
             val i: PackageInfo = pm.getPackageInfo(context.getPackageName(), 0)
-            appId = i.applicationInfo.loadDescription(pm).toString() + ""
+            appId = i.applicationInfo?.loadDescription(pm).toString() + ""
         } catch (e: PackageManager.NameNotFoundException) {
         }
         return appId
@@ -35,7 +35,7 @@ object AppInfoUtil {
         try {
             val pm: PackageManager = context.getPackageManager()
             val i: PackageInfo = pm.getPackageInfo(context.getPackageName(), 0)
-            appName = i.applicationInfo.loadLabel(pm).toString() + ""
+            appName = i.applicationInfo?.loadLabel(pm).toString() + ""
         } catch (e: PackageManager.NameNotFoundException) {
         }
         return appName
