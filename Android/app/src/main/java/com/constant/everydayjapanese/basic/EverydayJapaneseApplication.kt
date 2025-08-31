@@ -127,6 +127,7 @@ class EverydayJapaneseApplication : Application() {
     private fun initializePreference() {
         PrefManager.getInstance().registerPreference(context)
         DebugVariable.getInstance().isLogEnable = PrefManager.getInstance().getBooleanValue(Pref.logEnable.name)
+        //DebugVariable.getInstance().isLogEnable = true
         DebugVariable.getInstance().isShowDebugText = PrefManager.getInstance().getBooleanValue(Pref.showDebugText.name)
         PrefManager.getInstance().printPreference()
     }
