@@ -205,6 +205,9 @@
 -keepclassmembers class ** {
     @com.google.gson.annotations.SerializedName <fields>;
 }
+-keep class * extends com.google.gson.reflect.TypeToken
+# Gson이 사용하는 리플렉션 방지
+-keep class com.google.gson.stream.** { *; }
 
 # Model
 -keep class com.constant.everydayjapanese.model.** { *; }
