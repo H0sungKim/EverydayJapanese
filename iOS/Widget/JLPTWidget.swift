@@ -58,20 +58,25 @@ struct JLPTWidgetEntryView : View {
     }
     
     var body: some View {
+        switch widgetFamily {
+        case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+            systemWidget
+        case .accessoryRectangular:
+            accessoryWidget
+        default:
+            EmptyView()
+        }
+    }
+    
+    var systemWidget: some View {
         VStack {
-            if vocabularies.count != 0 {
-                let vocabulary: Vocabulary = vocabularies[(index ?? 0) % vocabularies.count]
+            if let vocabulary = displayVocabulary {
                 Text(vocabulary.sound)
                     .foregroundStyle(Color(UIColor.secondaryLabel))
                     .font(Font.system(size: 14))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
-                var nsAttributedString: NSMutableAttributedString {
-                    let nsAttributedString = NSMutableAttributedString(string: vocabulary.word)
-                    nsAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: vocabulary.word.count))
-                    return nsAttributedString
-                }
-                Text(AttributedString(nsAttributedString))
+                Text(AttributedString(getAttrributedString(from: vocabulary.word)))
                     .font(Font.system(size: 32))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
@@ -84,6 +89,42 @@ struct JLPTWidgetEntryView : View {
         }.onAppear(perform: {
             loadData()
         })
+    }
+    
+    var accessoryWidget: some View {
+        HStack {
+            if let vocabulary = displayVocabulary {
+                VStack {
+                    Text(vocabulary.sound)
+                        .foregroundStyle(Color(UIColor.secondaryLabel))
+                        .font(Font.system(size: 14))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                    Text(AttributedString(getAttrributedString(from: vocabulary.word)))
+                        .font(Font.system(size: 32))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                }
+                Text(vocabulary.meaning)
+                    .font(Font.system(size: 18))
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
+            }
+        }.onAppear(perform: {
+            loadData()
+        })
+    }
+    
+    private var displayVocabulary: Vocabulary? {
+        guard !vocabularies.isEmpty else { return nil }
+        return vocabularies[(index ?? 0) % vocabularies.count]
+    }
+    
+    private func getAttrributedString(from text: String) -> NSMutableAttributedString {
+        let nsAttributedString = NSMutableAttributedString(string: text)
+        nsAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: text.count))
+        return nsAttributedString
     }
     
     private func loadData() {
@@ -103,7 +144,7 @@ struct JLPTWidget: Widget {
         }
         .configurationDisplayName("JLPT 단어")
         .description("JLPT 단어 7965개를 표시합니다.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge, .accessoryRectangular])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular])
     }
 }
 
