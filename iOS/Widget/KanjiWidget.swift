@@ -58,9 +58,19 @@ struct KanjiWidgetEntryView : View {
     }
     
     var body: some View {
+        switch widgetFamily {
+        case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+            systemWidget
+        case .accessoryRectangular:
+            accessoryWidget
+        default:
+            EmptyView()
+        }
+    }
+    
+    private var systemWidget: some View {
         VStack {
-            if kanjis.count != 0 {
-                let kanji: Kanji = kanjis[(index ?? 0) % kanjis.count]
+            if let kanji = displayKanji {
                 Text(kanji.jpSound)
                     .foregroundStyle(Color(UIColor.secondaryLabel))
                     .font(Font.system(size: 14))
@@ -71,16 +81,10 @@ struct KanjiWidgetEntryView : View {
                     .font(Font.system(size: 14))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
-                var nsAttributedString: NSMutableAttributedString {
-                    let nsAttributedString = NSMutableAttributedString(string: kanji.kanji)
-                    nsAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: kanji.kanji.count))
-                    return nsAttributedString
-                }
-                Text(AttributedString(nsAttributedString))
+                Text(AttributedString(getAttrributedString(from: kanji.kanji)))
                     .font(Font.system(size: 64))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
-                    
                 Text(kanji.eumhun)
                     .font(Font.system(size: 18))
                     .lineLimit(1)
@@ -89,6 +93,46 @@ struct KanjiWidgetEntryView : View {
         }.onAppear(perform: {
             loadData()
         })
+    }
+    
+    private var accessoryWidget: some View {
+        HStack {
+            if let kanji = displayKanji {
+                Text(AttributedString(getAttrributedString(from: kanji.kanji)))
+                    .font(Font.system(size: 64))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                VStack {
+                    Text(kanji.jpSound)
+                        .foregroundStyle(Color(UIColor.secondaryLabel))
+                        .font(Font.system(size: 14))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                    Text(kanji.jpMeaning)
+                        .foregroundStyle(Color(UIColor.secondaryLabel))
+                        .font(Font.system(size: 14))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                    Text(kanji.eumhun)
+                        .font(Font.system(size: 18))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                }
+            }
+        }.onAppear(perform: {
+            loadData()
+        })
+    }
+    
+    private var displayKanji: Kanji? {
+        guard !kanjis.isEmpty else { return nil }
+        return kanjis[(index ?? 0) % kanjis.count]
+    }
+    
+    private func getAttrributedString(from text: String) -> NSMutableAttributedString {
+        let nsAttributedString = NSMutableAttributedString(string: text)
+        nsAttributedString.addAttribute(.languageIdentifier, value: "ja", range: NSRange(location: 0, length: text.count))
+        return nsAttributedString
     }
     
     private func loadData() {
@@ -108,7 +152,7 @@ struct KanjiWidget: Widget {
         }
         .configurationDisplayName("상용한자")
         .description("일본 상용한자 2136자를 표시합니다.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge, .accessoryRectangular])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular])
     }
 }
 
