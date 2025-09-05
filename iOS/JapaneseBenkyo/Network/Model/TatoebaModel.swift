@@ -30,9 +30,7 @@ struct TatoebaModel {
         self.rubyText = tatoebaEntity.data?.first?.transcriptions?.first?.text ?? "예문이 없습니다."
         self.html = tatoebaEntity.data?.first?.transcriptions?.first?.html ?? "예문이 없습니다."
         self.transEnum = trans
-        self.transText = tatoebaEntity.data?.first?.translations?.compactMap({
-            $0.isEmpty ? nil : $0
-        }).first?.first?.text ?? ""
+        self.transText = tatoebaEntity.data?.first?.translations?.first?.text ?? ""
         self.hasNext = tatoebaEntity.paging?.has_next ?? false
         self.cursor_end = tatoebaEntity.paging?.cursor_end ?? ""
     }

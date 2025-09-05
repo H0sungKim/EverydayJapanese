@@ -105,16 +105,16 @@ struct KanjiWidgetEntryView : View {
                 VStack {
                     Text(kanji.jpSound)
                         .foregroundStyle(Color(UIColor.secondaryLabel))
-                        .font(Font.system(size: 14))
+                        .font(Font.system(size: 12))
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
                     Text(kanji.jpMeaning)
                         .foregroundStyle(Color(UIColor.secondaryLabel))
-                        .font(Font.system(size: 14))
+                        .font(Font.system(size: 12))
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
                     Text(kanji.eumhun)
-                        .font(Font.system(size: 18))
+                        .font(Font.system(size: 14))
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
                 }
@@ -199,8 +199,8 @@ extension KanjiConfigurationAppIntent {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .accessoryRectangular) {
     KanjiWidget()
 } timeline: {
-    KanjiSimpleEntry(date: .now, configuration: .kanjiElementary1)
+    KanjiSimpleEntry(date: .now, configuration: .kanjiElementary6)
 }

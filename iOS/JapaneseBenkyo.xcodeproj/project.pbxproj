@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9600CACF2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */; };
-		9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */; };
+		9600CAD12D36468D006E94BA /* HiraganaKatakanaPracticeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9600CAD02D36468D006E94BA /* HiraganaKatakanaPracticeViewController.storyboard */; };
 		9600CAD32D364801006E94BA /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CAD22D364801006E94BA /* DrawingView.swift */; };
 		9600CFA42D3A3EB3006E94BA /* Elephant in Frameworks */ = {isa = PBXBuildFile; productRef = 9600CFA32D3A3EB3006E94BA /* Elephant */; };
 		9600CFA62D3A3F46006E94BA /* StrokeOrderAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600CFA52D3A3F46006E94BA /* StrokeOrderAnimationView.swift */; };
@@ -107,18 +107,18 @@
 		960C6B572B7B3FE900D91407 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B562B7B3FE900D91407 /* JSONManager.swift */; };
 		960C6B8B2B7B865700D91407 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */; };
 		9611091B2BAFE3F800AF4C45 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9611091A2BAFE3F800AF4C45 /* TTSManager.swift */; };
-		961536802C82E87C00563983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615367F2C82E87C00563983 /* Main.storyboard */; };
+		961536802C82E87C00563983 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615367F2C82E87C00563983 /* MainViewController.storyboard */; };
 		961536822C82E9AC00563983 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536812C82E9AC00563983 /* MainViewController.swift */; };
 		961536852C8355F200563983 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961536842C8355F200563983 /* HeaderTableViewCell.xib */; };
 		961536872C83560D00563983 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536862C83560D00563983 /* HeaderTableViewCell.swift */; };
 		961536892C84315900563983 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536882C84315900563983 /* IndexTableViewCell.swift */; };
 		9615368B2C84319F00563983 /* IndexTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9615368A2C84319F00563983 /* IndexTableViewCell.xib */; };
 		961536932C84868200563983 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 961536922C84868200563983 /* star.png */; };
-		961536962C8AA6A200563983 /* Day.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961536952C8AA6A200563983 /* Day.storyboard */; };
+		961536962C8AA6A200563983 /* DayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961536952C8AA6A200563983 /* DayViewController.storyboard */; };
 		961536982C8AA6BA00563983 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536972C8AA6BA00563983 /* DayViewController.swift */; };
 		9615369B2C8AB90A00563983 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615369A2C8AB90A00563983 /* StudyViewController.swift */; };
-		9615369D2C8AB91400563983 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615369C2C8AB91400563983 /* Study.storyboard */; };
-		961536A02C8C2C7400563983 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615369F2C8C2C7400563983 /* Test.storyboard */; };
+		9615369D2C8AB91400563983 /* StudyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615369C2C8AB91400563983 /* StudyViewController.storyboard */; };
+		961536A02C8C2C7400563983 /* TestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615369F2C8C2C7400563983 /* TestViewController.storyboard */; };
 		961536A22C8C2C7E00563983 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961536A12C8C2C7E00563983 /* TestViewController.swift */; };
 		962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */; };
 		962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA32B79DCD20051C4DA /* Assets.xcassets */; };
@@ -129,16 +129,16 @@
 		964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */; };
 		9658D1FD2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */; };
 		965C1CEE2C8C69DD00355DDF /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */; };
-		965C1CF02C8C6A3C00355DDF /* TestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CEF2C8C6A3C00355DDF /* TestResult.storyboard */; };
+		965C1CF02C8C6A3C00355DDF /* TestResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CEF2C8C6A3C00355DDF /* TestResultViewController.storyboard */; };
 		965C1CF42C8C768600355DDF /* HiraganaKatakanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CF32C8C768600355DDF /* HiraganaKatakanaViewController.swift */; };
-		965C1CF62C8C769C00355DDF /* HiraganaKatakana.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CF52C8C769C00355DDF /* HiraganaKatakana.storyboard */; };
+		965C1CF62C8C769C00355DDF /* HiraganaKatakanaViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CF52C8C769C00355DDF /* HiraganaKatakanaViewController.storyboard */; };
 		965C1CF82C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CF72C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift */; };
 		965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */; };
 		965C1CFD2C8C887300355DDF /* ProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C1CFC2C8C887300355DDF /* ProcessView.swift */; };
 		9679D2702D12BDB4006FF126 /* RubyAnnotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */; };
 		9679D2812D14423D006FF126 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679D2802D14423D006FF126 /* Bundle+Ext.swift */; };
 		9679D2832D144394006FF126 /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9679D2822D144394006FF126 /* Secret.plist */; };
-		967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */; };
+		967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResultViewController.storyboard */; };
 		967AD8D52CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */; };
 		967AD8D82CEC756F001A3397 /* TestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */; };
 		967AD8DA2CEC763C001A3397 /* TestResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AD8D92CEC763C001A3397 /* TestResultTableViewCell.swift */; };
@@ -155,6 +155,8 @@
 		967AEBC12E6823580080C1F4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C0F2CF2CFDDE9200A9DC21 /* WidgetKit.framework */; };
 		967AEBC22E6823580080C1F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C0F2D12CFDDE9200A9DC21 /* SwiftUI.framework */; };
 		967AEBCF2E6823590080C1F4 /* StudyWidegetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 967AEBC02E6823580080C1F4 /* StudyWidegetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		967AEC292E6958CE0080C1F4 /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AEC282E6958CE0080C1F4 /* UITableViewCell+Ext.swift */; };
+		967AEC2B2E696FBA0080C1F4 /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AEC2A2E696FBA0080C1F4 /* UICollectionViewCell+Ext.swift */; };
 		969493522B7DDE140064312F /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969493512B7DDE140064312F /* Vocabulary.swift */; };
 		9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969493592B7DE78B0064312F /* VocabularyTableViewCell.xib */; };
 		9694935C2B7DE78B0064312F /* VocabularyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */; };
@@ -183,18 +185,17 @@
 		96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */; };
 		96C0FF012D0D577200A9DC21 /* ExampleSentenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */; };
 		96C0FF022D0D577200A9DC21 /* ExampleSentenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */; };
-		96C1342E2D523E57001BA4B4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1342D2D523E57001BA4B4 /* InfoViewController.swift */; };
 		96C134302D524064001BA4B4 /* roundappicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C1342F2D524063001BA4B4 /* roundappicon.png */; };
-		96C134332D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */; };
+		96C134332D52567C001BA4B4 /* HiraganaKatakanaSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134322D52567C001BA4B4 /* HiraganaKatakanaSelectViewController.storyboard */; };
 		96C134352D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */; };
 		96C134572D53C2D4001BA4B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C134562D53C2D4001BA4B4 /* BaseViewController.swift */; };
-		96C134592D53C2DB001BA4B4 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134582D53C2DB001BA4B4 /* Base.storyboard */; };
+		96C134592D53C2DB001BA4B4 /* BaseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C134582D53C2DB001BA4B4 /* BaseViewController.storyboard */; };
 		96C174192BB590EF006775E5 /* ExampleWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C174172BB590EF006775E5 /* ExampleWordView.swift */; };
 		96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C174182BB590EF006775E5 /* ExampleWordView.xib */; };
 		96C1741C2BB5AF13006775E5 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */; };
 		96CC76262CEB6F89002E220D /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 96CC76252CEB6F89002E220D /* launch.png */; };
 		96CC76292CEB894A002E220D /* HiraganaKatakanaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76282CEB894A002E220D /* HiraganaKatakanaTestViewController.swift */; };
-		96CC762B2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CC762A2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard */; };
+		96CC762B2CEB89A6002E220D /* HiraganaKatakanaTestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CC762A2CEB89A6002E220D /* HiraganaKatakanaTestViewController.storyboard */; };
 		96CC76322CEB8AAE002E220D /* HiraganaKatakanaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76302CEB8AAE002E220D /* HiraganaKatakanaManager.swift */; };
 		96CC76332CEB8AAE002E220D /* OCRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76312CEB8AAE002E220D /* OCRManager.swift */; };
 		96CC76352CEB8ABE002E220D /* OCRDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC76342CEB8ABE002E220D /* OCRDrawingView.swift */; };
@@ -249,7 +250,7 @@
 
 /* Begin PBXFileReference section */
 		9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaPracticeViewController.swift; sourceTree = "<group>"; };
-		9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaPractice.storyboard; sourceTree = "<group>"; };
+		9600CAD02D36468D006E94BA /* HiraganaKatakanaPracticeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaPracticeViewController.storyboard; sourceTree = "<group>"; };
 		9600CAD22D364801006E94BA /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		9600CFA52D3A3F46006E94BA /* StrokeOrderAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeOrderAnimationView.swift; sourceTree = "<group>"; };
 		9600D1042D3AA0DD006E94BA /* あ.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "あ.svg"; sourceTree = "<group>"; };
@@ -347,18 +348,18 @@
 		960C6B562B7B3FE900D91407 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		960C6B8A2B7B865700D91407 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		9611091A2BAFE3F800AF4C45 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
-		9615367F2C82E87C00563983 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9615367F2C82E87C00563983 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		961536812C82E9AC00563983 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		961536842C8355F200563983 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		961536862C83560D00563983 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		961536882C84315900563983 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
 		9615368A2C84319F00563983 /* IndexTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexTableViewCell.xib; sourceTree = "<group>"; };
 		961536922C84868200563983 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		961536952C8AA6A200563983 /* Day.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day.storyboard; sourceTree = "<group>"; };
+		961536952C8AA6A200563983 /* DayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DayViewController.storyboard; sourceTree = "<group>"; };
 		961536972C8AA6BA00563983 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		9615369A2C8AB90A00563983 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
-		9615369C2C8AB91400563983 /* Study.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Study.storyboard; sourceTree = "<group>"; };
-		9615369F2C8C2C7400563983 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		9615369C2C8AB91400563983 /* StudyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudyViewController.storyboard; sourceTree = "<group>"; };
+		9615369F2C8C2C7400563983 /* TestViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestViewController.storyboard; sourceTree = "<group>"; };
 		961536A12C8C2C7E00563983 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		962F1B972B79DCD10051C4DA /* JapaneseBenkyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JapaneseBenkyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -370,22 +371,24 @@
 		964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		9658D1FC2B9EABEA001A6A7E /* VocabularyTableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewHandler.swift; sourceTree = "<group>"; };
 		965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
-		965C1CEF2C8C6A3C00355DDF /* TestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestResult.storyboard; sourceTree = "<group>"; };
+		965C1CEF2C8C6A3C00355DDF /* TestResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestResultViewController.storyboard; sourceTree = "<group>"; };
 		965C1CF32C8C768600355DDF /* HiraganaKatakanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaViewController.swift; sourceTree = "<group>"; };
-		965C1CF52C8C769C00355DDF /* HiraganaKatakana.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakana.storyboard; sourceTree = "<group>"; };
+		965C1CF52C8C769C00355DDF /* HiraganaKatakanaViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaViewController.storyboard; sourceTree = "<group>"; };
 		965C1CF72C8C77B400355DDF /* HiraganaKatakanaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaCollectionViewCell.swift; sourceTree = "<group>"; };
 		965C1CF92C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiraganaKatakanaCollectionViewCell.xib; sourceTree = "<group>"; };
 		965C1CFC2C8C887300355DDF /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
 		9679D26F2D12BDB4006FF126 /* RubyAnnotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyAnnotationManager.swift; sourceTree = "<group>"; };
 		9679D2802D14423D006FF126 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		9679D2822D144394006FF126 /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
-		967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTestResult.storyboard; sourceTree = "<group>"; };
+		967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTestResultViewController.storyboard; sourceTree = "<group>"; };
 		967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaTestResultViewController.swift; sourceTree = "<group>"; };
 		967AD8D72CEC756F001A3397 /* TestResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestResultTableViewCell.xib; sourceTree = "<group>"; };
 		967AD8D92CEC763C001A3397 /* TestResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultTableViewCell.swift; sourceTree = "<group>"; };
 		967AEB882E6572370080C1F4 /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		967AEB9C2E6572E40080C1F4 /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
 		967AEBC02E6823580080C1F4 /* StudyWidegetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyWidegetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		967AEC282E6958CE0080C1F4 /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
+		967AEC2A2E696FBA0080C1F4 /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 		969493512B7DDE140064312F /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		969493592B7DE78B0064312F /* VocabularyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VocabularyTableViewCell.xib; sourceTree = "<group>"; };
 		9694935A2B7DE78B0064312F /* VocabularyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyTableViewCell.swift; sourceTree = "<group>"; };
@@ -410,18 +413,17 @@
 		96C0FEFD2D0D4EFC00A9DC21 /* TatoebaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatoebaModel.swift; sourceTree = "<group>"; };
 		96C0FEFF2D0D577200A9DC21 /* ExampleSentenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSentenceView.swift; sourceTree = "<group>"; };
 		96C0FF002D0D577200A9DC21 /* ExampleSentenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleSentenceView.xib; sourceTree = "<group>"; };
-		96C1342D2D523E57001BA4B4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		96C1342F2D524063001BA4B4 /* roundappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundappicon.png; sourceTree = "<group>"; };
-		96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaSelect.storyboard; sourceTree = "<group>"; };
+		96C134322D52567C001BA4B4 /* HiraganaKatakanaSelectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaSelectViewController.storyboard; sourceTree = "<group>"; };
 		96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaSelectViewController.swift; sourceTree = "<group>"; };
 		96C134562D53C2D4001BA4B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		96C134582D53C2DB001BA4B4 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
+		96C134582D53C2DB001BA4B4 /* BaseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseViewController.storyboard; sourceTree = "<group>"; };
 		96C174172BB590EF006775E5 /* ExampleWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleWordView.swift; sourceTree = "<group>"; };
 		96C174182BB590EF006775E5 /* ExampleWordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleWordView.xib; sourceTree = "<group>"; };
 		96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		96CC76252CEB6F89002E220D /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		96CC76282CEB894A002E220D /* HiraganaKatakanaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaTestViewController.swift; sourceTree = "<group>"; };
-		96CC762A2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTest.storyboard; sourceTree = "<group>"; };
+		96CC762A2CEB89A6002E220D /* HiraganaKatakanaTestViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiraganaKatakanaTestViewController.storyboard; sourceTree = "<group>"; };
 		96CC76302CEB8AAE002E220D /* HiraganaKatakanaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaKatakanaManager.swift; sourceTree = "<group>"; };
 		96CC76312CEB8AAE002E220D /* OCRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRManager.swift; sourceTree = "<group>"; };
 		96CC76342CEB8ABE002E220D /* OCRDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRDrawingView.swift; sourceTree = "<group>"; };
@@ -506,7 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				9600CACE2D364678006E94BA /* HiraganaKatakanaPracticeViewController.swift */,
-				9600CAD02D36468D006E94BA /* HiraganaKatakanaPractice.storyboard */,
+				9600CAD02D36468D006E94BA /* HiraganaKatakanaPracticeViewController.storyboard */,
 				9600CAD22D364801006E94BA /* DrawingView.swift */,
 				9600CFA52D3A3F46006E94BA /* StrokeOrderAnimationView.swift */,
 			);
@@ -542,7 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				961536972C8AA6BA00563983 /* DayViewController.swift */,
-				961536952C8AA6A200563983 /* Day.storyboard */,
+				961536952C8AA6A200563983 /* DayViewController.storyboard */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -551,7 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				9615369A2C8AB90A00563983 /* StudyViewController.swift */,
-				9615369C2C8AB91400563983 /* Study.storyboard */,
+				9615369C2C8AB91400563983 /* StudyViewController.storyboard */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -560,7 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				961536A12C8C2C7E00563983 /* TestViewController.swift */,
-				9615369F2C8C2C7400563983 /* Test.storyboard */,
+				9615369F2C8C2C7400563983 /* TestViewController.storyboard */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -621,6 +623,8 @@
 		964AA5F72B79E7FD007DE504 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				967AEC282E6958CE0080C1F4 /* UITableViewCell+Ext.swift */,
+				967AEC2A2E696FBA0080C1F4 /* UICollectionViewCell+Ext.swift */,
 				9679D2802D14423D006FF126 /* Bundle+Ext.swift */,
 				964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */,
 				96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */,
@@ -634,7 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				965C1CED2C8C69DD00355DDF /* TestResultViewController.swift */,
-				965C1CEF2C8C6A3C00355DDF /* TestResult.storyboard */,
+				965C1CEF2C8C6A3C00355DDF /* TestResultViewController.storyboard */,
 			);
 			path = TestResult;
 			sourceTree = "<group>";
@@ -652,7 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				965C1CF32C8C768600355DDF /* HiraganaKatakanaViewController.swift */,
-				965C1CF52C8C769C00355DDF /* HiraganaKatakana.storyboard */,
+				965C1CF52C8C769C00355DDF /* HiraganaKatakanaViewController.storyboard */,
 			);
 			path = HiraganaKatakana;
 			sourceTree = "<group>";
@@ -669,7 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				967AD8D42CEC6D95001A3397 /* HiraganaKatakanaTestResultViewController.swift */,
-				967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard */,
+				967AD8D22CEC6D81001A3397 /* HiraganaKatakanaTestResultViewController.storyboard */,
 			);
 			path = HiraganaKatakanaTestResult;
 			sourceTree = "<group>";
@@ -698,7 +702,6 @@
 				96C134552D53C2B8001BA4B4 /* Base */,
 				96AD6B6E2B79FD0400F895DE /* Main */,
 				965C1CFB2C8C885C00355DDF /* ProcessView */,
-				96C1342C2D523E36001BA4B4 /* Info */,
 				965C1CF22C8C766D00355DDF /* HiraganaKatakana */,
 				9600CACD2D36464C006E94BA /* HiraganaKatakanaPractice */,
 				96C134312D525663001BA4B4 /* HiraganaKatakanaSelect */,
@@ -763,7 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				961536812C82E9AC00563983 /* MainViewController.swift */,
-				9615367F2C82E87C00563983 /* Main.storyboard */,
+				9615367F2C82E87C00563983 /* MainViewController.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -824,19 +827,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		96C1342C2D523E36001BA4B4 /* Info */ = {
-			isa = PBXGroup;
-			children = (
-				96C1342D2D523E57001BA4B4 /* InfoViewController.swift */,
-			);
-			path = Info;
-			sourceTree = "<group>";
-		};
 		96C134312D525663001BA4B4 /* HiraganaKatakanaSelect */ = {
 			isa = PBXGroup;
 			children = (
 				96C134342D525691001BA4B4 /* HiraganaKatakanaSelectViewController.swift */,
-				96C134322D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard */,
+				96C134322D52567C001BA4B4 /* HiraganaKatakanaSelectViewController.storyboard */,
 			);
 			path = HiraganaKatakanaSelect;
 			sourceTree = "<group>";
@@ -845,7 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				96C134562D53C2D4001BA4B4 /* BaseViewController.swift */,
-				96C134582D53C2DB001BA4B4 /* Base.storyboard */,
+				96C134582D53C2DB001BA4B4 /* BaseViewController.storyboard */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -953,7 +948,7 @@
 			isa = PBXGroup;
 			children = (
 				96CC76282CEB894A002E220D /* HiraganaKatakanaTestViewController.swift */,
-				96CC762A2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard */,
+				96CC762A2CEB89A6002E220D /* HiraganaKatakanaTestViewController.storyboard */,
 				96CC76342CEB8ABE002E220D /* OCRDrawingView.swift */,
 				96CC76362CEB8AD1002E220D /* Line.swift */,
 			);
@@ -1109,7 +1104,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				961536802C82E87C00563983 /* Main.storyboard in Resources */,
+				961536802C82E87C00563983 /* MainViewController.storyboard in Resources */,
 				9615368B2C84319F00563983 /* IndexTableViewCell.xib in Resources */,
 				96D4CE312D6215F90029874C /* kanji.json in Resources */,
 				96BA5ABB2BA0A14F00E3373C /* appicon.png in Resources */,
@@ -1119,26 +1114,26 @@
 				96C0FF022D0D577200A9DC21 /* ExampleSentenceView.xib in Resources */,
 				96C134302D524064001BA4B4 /* roundappicon.png in Resources */,
 				96B95F4B2E216F740080692F /* AppIcon.icon in Resources */,
-				965C1CF62C8C769C00355DDF /* HiraganaKatakana.storyboard in Resources */,
-				961536A02C8C2C7400563983 /* Test.storyboard in Resources */,
+				965C1CF62C8C769C00355DDF /* HiraganaKatakanaViewController.storyboard in Resources */,
+				961536A02C8C2C7400563983 /* TestViewController.storyboard in Resources */,
 				96B1439C2D6CCDBA00A343C7 /* kanji.png in Resources */,
 				96B1439D2D6CCDBA00A343C7 /* hiraganakatakana.png in Resources */,
 				96B1439E2D6CCDBA00A343C7 /* jlpt.png in Resources */,
 				96D4CE2C2D60E9BF0029874C /* PassTableViewCell.xib in Resources */,
-				965C1CF02C8C6A3C00355DDF /* TestResult.storyboard in Resources */,
-				96CC762B2CEB89A6002E220D /* HiraganaKatakanaTest.storyboard in Resources */,
+				965C1CF02C8C6A3C00355DDF /* TestResultViewController.storyboard in Resources */,
+				96CC762B2CEB89A6002E220D /* HiraganaKatakanaTestViewController.storyboard in Resources */,
 				962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */,
 				962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */,
 				9679D2832D144394006FF126 /* Secret.plist in Resources */,
-				9600CAD12D36468D006E94BA /* HiraganaKatakanaPractice.storyboard in Resources */,
-				9615369D2C8AB91400563983 /* Study.storyboard in Resources */,
+				9600CAD12D36468D006E94BA /* HiraganaKatakanaPracticeViewController.storyboard in Resources */,
+				9615369D2C8AB91400563983 /* StudyViewController.storyboard in Resources */,
 				96D9A8522B7CDB440042E2DA /* KanjiTableViewCell.xib in Resources */,
 				9600D1602D3AA0DD006E94BA /* ヤ.svg in Resources */,
 				9600D1612D3AA0DD006E94BA /* タ.svg in Resources */,
 				9600D1622D3AA0DD006E94BA /* も.svg in Resources */,
 				9600D1632D3AA0DD006E94BA /* ヒ.svg in Resources */,
 				9600D1642D3AA0DD006E94BA /* ナ.svg in Resources */,
-				96C134332D52567C001BA4B4 /* HiraganaKatakanaSelect.storyboard in Resources */,
+				96C134332D52567C001BA4B4 /* HiraganaKatakanaSelectViewController.storyboard in Resources */,
 				9600D1652D3AA0DD006E94BA /* ヌ.svg in Resources */,
 				9600D1662D3AA0DD006E94BA /* ア.svg in Resources */,
 				9600D1672D3AA0DD006E94BA /* オ.svg in Resources */,
@@ -1184,7 +1179,7 @@
 				9600D18E2D3AA0DD006E94BA /* に.svg in Resources */,
 				9600D18F2D3AA0DD006E94BA /* ヲ.svg in Resources */,
 				9600D1902D3AA0DD006E94BA /* さ.svg in Resources */,
-				96C134592D53C2DB001BA4B4 /* Base.storyboard in Resources */,
+				96C134592D53C2DB001BA4B4 /* BaseViewController.storyboard in Resources */,
 				9600D1912D3AA0DD006E94BA /* ん.svg in Resources */,
 				9600D1922D3AA0DD006E94BA /* ミ.svg in Resources */,
 				9600D1932D3AA0DD006E94BA /* ト.svg in Resources */,
@@ -1229,14 +1224,14 @@
 				9600D1B92D3AA0DD006E94BA /* つ.svg in Resources */,
 				9600D1BA2D3AA0DD006E94BA /* テ.svg in Resources */,
 				9600D1BB2D3AA0DD006E94BA /* ワ.svg in Resources */,
-				961536962C8AA6A200563983 /* Day.storyboard in Resources */,
+				961536962C8AA6A200563983 /* DayViewController.storyboard in Resources */,
 				9694935B2B7DE78B0064312F /* VocabularyTableViewCell.xib in Resources */,
 				961536932C84868200563983 /* star.png in Resources */,
 				965C1CFA2C8C77C500355DDF /* HiraganaKatakanaCollectionViewCell.xib in Resources */,
 				96F6B8712D1C6FBD0022EB14 /* hiragana_hi.png in Resources */,
 				96F6B8722D1C6FBD0022EB14 /* katakana_ka.png in Resources */,
 				96C1741A2BB590EF006775E5 /* ExampleWordView.xib in Resources */,
-				967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResult.storyboard in Resources */,
+				967AD8D32CEC6D81001A3397 /* HiraganaKatakanaTestResultViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,9 +1280,11 @@
 				961536982C8AA6BA00563983 /* DayViewController.swift in Sources */,
 				96E4B2EA2D75804000619FE8 /* UserDefaults+Ext.swift in Sources */,
 				964AA5F92B79E80B007DE504 /* UIViewController+Ext.swift in Sources */,
+				967AEC292E6958CE0080C1F4 /* UITableViewCell+Ext.swift in Sources */,
 				96D9A8492B7CD9160042E2DA /* Kanji.swift in Sources */,
 				9600CFA62D3A3F46006E94BA /* StrokeOrderAnimationView.swift in Sources */,
 				96CC76292CEB894A002E220D /* HiraganaKatakanaTestViewController.swift in Sources */,
+				967AEC2B2E696FBA0080C1F4 /* UICollectionViewCell+Ext.swift in Sources */,
 				96CC76322CEB8AAE002E220D /* HiraganaKatakanaManager.swift in Sources */,
 				96D4D3C72D6652950029874C /* TatoebaError.swift in Sources */,
 				96CC76332CEB8AAE002E220D /* OCRManager.swift in Sources */,
@@ -1317,7 +1314,6 @@
 				96C134572D53C2D4001BA4B4 /* BaseViewController.swift in Sources */,
 				96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */,
 				964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */,
-				96C1342E2D523E57001BA4B4 /* InfoViewController.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1512,7 +1508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.01.00;
+				MARKETING_VERSION = 3.01.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1543,7 +1539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.01.00;
+				MARKETING_VERSION = 3.01.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

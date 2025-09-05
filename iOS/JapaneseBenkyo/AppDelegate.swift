@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let window = window {
             window.backgroundColor = UIColor.white
             
-            let viewController = UIViewController.getViewController(viewControllerEnum: .base)
+            let viewController: BaseViewController = BaseViewController.create()
             
             window.rootViewController = viewController
             window.makeKeyAndVisible()

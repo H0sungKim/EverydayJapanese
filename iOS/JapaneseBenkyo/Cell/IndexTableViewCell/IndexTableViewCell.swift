@@ -7,6 +7,32 @@
 
 import UIKit
 
+enum StudyProgress {
+    case notStarted
+    case doing
+    case done
+    
+    var image: UIImage? {
+        switch self {
+        case .notStarted:
+            return UIImage(systemName: "circle")
+        case .doing, .done:
+            return UIImage(systemName: "checkmark.circle")
+        }
+    }
+    
+    var tintColor: UIColor {
+        switch self {
+        case .notStarted:
+            return .systemGray
+        case .doing:
+            return .systemYellow
+        case .done:
+            return .systemGreen
+        }
+    }
+}
+
 class IndexTableViewCell: UITableViewCell {
     
     @IBOutlet weak var ivProcess: UIImageView!
@@ -27,30 +53,60 @@ class IndexTableViewCell: UITableViewCell {
         switch index {
         case .bookmark:
             ivProcess.image = UIImage(named: "star.png")!
+            lbSubtitle.text = ""
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle:
-            let allPass = Set(index.idRange.map({ String($0) })).isSubset(of: GroupedUserDefaultsManager.shared.passKanji)
-            ivProcess.image = allPass ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
-            ivProcess.tintColor = allPass ? .systemGreen : .systemGray
+            let progress: StudyProgress
+            let studiedIndices = Set(index.idRange.map({ String($0) })).intersection(GroupedUserDefaultsManager.shared.passKanji)
+            if studiedIndices.count == 0 {
+                progress = .notStarted
+            } else if studiedIndices.count < index.idRange.count {
+                progress = .doing
+            } else {
+                progress = .done
+            }
+            ivProcess.image = progress.image
+            ivProcess.tintColor = progress.tintColor
+            
+            lbSubtitle.text = "\(studiedIndices.count)/\(index.idRange.count)"
         case .n5, .n4, .n3, .n2, .n1:
-            let allPass = Set(index.idRange.map({ String($0) })).isSubset(of: GroupedUserDefaultsManager.shared.passVoca)
-            ivProcess.image = allPass ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
-            ivProcess.tintColor = allPass ? .systemGreen : .systemGray
+            let progress: StudyProgress
+            let studiedIndices = Set(index.idRange.map({ String($0) })).intersection(GroupedUserDefaultsManager.shared.passVoca)
+            if studiedIndices.count == 0 {
+                progress = .notStarted
+            } else if studiedIndices.count < index.idRange.count {
+                progress = .doing
+            } else {
+                progress = .done
+            }
+            ivProcess.image = progress.image
+            ivProcess.tintColor = progress.tintColor
+            
+            lbSubtitle.text = "\(studiedIndices.count)/\(index.idRange.count)"
         case .hiragana:
             ivProcess.image = UIImage(named: "hiragana_hi.png")!
+            lbSubtitle.text = ""
         case .katakana:
             ivProcess.image = UIImage(named: "katakana_ka.png")!
+            lbSubtitle.text = ""
         }
         lbTitle.text = index.rawValue
     }
     
-    func initializeView(title: String, process: Bool?) {
-        if let process = process, process {
-            ivProcess.image = UIImage(systemName: "checkmark.circle")
-            ivProcess.tintColor = .systemGreen
+    func initializeView(title: String, completed: Int, total: Int) {
+        let progress: StudyProgress
+        if completed == 0 {
+            progress = .notStarted
+        } else if completed < total {
+            progress = .doing
         } else {
-            ivProcess.image = UIImage(systemName: "circle")
-            ivProcess.tintColor = .systemGray
+            progress = .done
         }
+        
+        ivProcess.image = progress.image
+        ivProcess.tintColor = progress.tintColor
+        
         lbTitle.text = title
+        
+        lbSubtitle.text = "\(completed)/\(total)"
     }
 }

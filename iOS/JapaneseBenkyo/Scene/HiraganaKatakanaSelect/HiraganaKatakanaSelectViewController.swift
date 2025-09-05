@@ -52,13 +52,7 @@ extension HiraganaKatakanaSelectViewController: UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: HiraganaKatakanaCollectionViewCell
-        if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HiraganaKatakanaCollectionViewCell.self), for: indexPath) as? HiraganaKatakanaCollectionViewCell {
-            cell = reusableCell
-        } else {
-            let objectArray = Bundle.main.loadNibNamed(String(describing: HiraganaKatakanaCollectionViewCell.self), owner: nil, options: nil)
-            cell = objectArray![0] as! HiraganaKatakanaCollectionViewCell
-        }
+        let cell: HiraganaKatakanaCollectionViewCell = HiraganaKatakanaCollectionViewCell.create(collectionView: collectionView, indexPath: indexPath)
         
         guard let collectionData = collectionData else {
             return cell

@@ -75,7 +75,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             switch SectionEnum.allCases[indexPath.section] {
             case .ad:
-                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdTableViewCell.self), for: indexPath) as! AdTableViewCell
+                let cell: AdTableViewCell = AdTableViewCell.create(tableView: tableView, indexPath: indexPath)
 //                cell.bgViewColor = .clear
 //                cell.bgViewBottomMargin = 0
 //                cell.bgViewTopMargin = 0
@@ -84,51 +84,26 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 //                adHeight = cell.contentView.frame.width / 2
                 return cell
             case .hiraganakatagana, .kanji, .vocabulary:
-                let cell: HeaderTableViewCell
-                if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self), for: indexPath) as? HeaderTableViewCell {
-                    cell = reusableCell
-                } else {
-                    let objectArray = Bundle.main.loadNibNamed(String(describing: HeaderTableViewCell.self), owner: nil, options: nil)
-                    cell = objectArray![0] as! HeaderTableViewCell
-                }
+                let cell: HeaderTableViewCell = HeaderTableViewCell.create(tableView: tableView, indexPath: indexPath)
                 cell.initializeView(section: SectionEnum.allCases[indexPath.section])
                 return cell
             }
         }
         switch SectionEnum.allCases[indexPath.section] {
         case .ad:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BizBoardCell.self), for: indexPath) as! BizBoardCell
+            let cell: BizBoardCell = BizBoardCell.create(tableView: tableView, indexPath: indexPath)
             return cell
         case .hiraganakatagana:
-            let cell: IndexTableViewCell
-            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
-                cell = reusableCell
-            } else {
-                let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
-                cell = objectArray![0] as! IndexTableViewCell
-            }
+            let cell: IndexTableViewCell = IndexTableViewCell.create(tableView: tableView, indexPath: indexPath)
             cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-1])
             return cell
         case .kanji, .vocabulary:
             if indexPath.row == 1 {
-                let cell: PassTableViewCell
-                if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: PassTableViewCell.self), for: indexPath) as? PassTableViewCell {
-                    cell = reusableCell
-                } else {
-                    let objectArray = Bundle.main.loadNibNamed(String(describing: PassTableViewCell.self), owner: nil, options: nil)
-                    cell = objectArray![0] as! PassTableViewCell
-                }
-                
+                let cell: PassTableViewCell = PassTableViewCell.create(tableView: tableView, indexPath: indexPath)
                 cell.initializeView(passCount: SectionEnum.allCases[indexPath.section].pass.count, totalCount: GlobalDataManager.shared.getCount(section: SectionEnum.allCases[indexPath.section]))
                 return cell
             }
-            let cell: IndexTableViewCell
-            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
-                cell = reusableCell
-            } else {
-                let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
-                cell = objectArray![0] as! IndexTableViewCell
-            }
+            let cell: IndexTableViewCell = IndexTableViewCell.create(tableView: tableView, indexPath: indexPath)
             cell.initializeView(index: SectionEnum.allCases[indexPath.section].indexEnums[indexPath.row-2])
             return cell
         }
@@ -150,15 +125,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexEnum {
         case .bookmark:
-            let vc = UIViewController.getViewController(viewControllerEnum: .study) as! StudyViewController
+            let vc: StudyViewController = StudyViewController.create()
             vc.param = StudyViewController.Param(indexEnum: .bookmark, sectionEnum: SectionEnum.allCases[indexPath.section], day: "", indices: Array(SectionEnum.allCases[indexPath.section].bookmark))
             navigationController?.pushViewController(vc, animated: true)
         case .hiragana, .katakana:
-            let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakana) as! HiraganaKatakanaViewController
+            let vc: HiraganaKatakanaViewController = HiraganaKatakanaViewController.create()
             vc.param = HiraganaKatakanaViewController.Param(indexEnum: indexEnum!)
             navigationController?.pushViewController(vc, animated: true)
         case .elementary1, .elementary2, .elementary3, .elementary4, .elementary5, .elementary6, .middle, .n5, .n4, .n3, .n2, .n1:
-            let vc = UIViewController.getViewController(viewControllerEnum: .day) as! DayViewController
+            let vc: DayViewController = DayViewController.create()
             vc.param = DayViewController.Param(indexEnum: indexEnum!)
             navigationController?.pushViewController(vc, animated: true)
         case nil:

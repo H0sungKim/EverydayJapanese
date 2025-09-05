@@ -87,7 +87,7 @@ class TestResultViewController: UIViewController {
     }
     
     @IBAction func onClickReTest(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .test) as! TestViewController
+        let vc: TestViewController = TestViewController.create()
         vc.param = TestViewController.Param(indexEnum: param.indexEnum, sectionEnum: param.sectionEnum, day: param.day, indices: param.indices)
         navigationController?.replaceViewController(viewController: vc, animated: true)
     }

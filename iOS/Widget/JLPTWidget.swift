@@ -97,7 +97,7 @@ struct JLPTWidgetEntryView : View {
                 VStack {
                     Text(vocabulary.sound)
                         .foregroundStyle(Color(UIColor.secondaryLabel))
-                        .font(Font.system(size: 14))
+                        .font(Font.system(size: 12))
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
                     Text(AttributedString(getAttrributedString(from: vocabulary.word)))
@@ -106,8 +106,8 @@ struct JLPTWidgetEntryView : View {
                         .minimumScaleFactor(0.5)
                 }
                 Text(vocabulary.meaning)
-                    .font(Font.system(size: 18))
-                    .lineLimit(2)
+                    .font(Font.system(size: 14))
+                    .lineLimit(3)
                     .minimumScaleFactor(0.5)
                     .multilineTextAlignment(.center)
             }
@@ -181,8 +181,8 @@ extension JLPTConfigurationAppIntent {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .accessoryRectangular) {
     JLPTWidget()
 } timeline: {
-    JLPTSimpleEntry(date: .now, configuration: .jlptN5)
+    JLPTSimpleEntry(date: .now, configuration: .jlptN2)
 }

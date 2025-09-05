@@ -129,7 +129,7 @@ class TestViewController: UIViewController {
     }
     
     private func replaceToTestResultViewController() {
-        let vc = UIViewController.getViewController(viewControllerEnum: .testresult) as! TestResultViewController
+        let vc: TestResultViewController = TestResultViewController.create()
         vc.param = TestResultViewController.Param(
             indexEnum: param.indexEnum,
             sectionEnum: param.sectionEnum,
