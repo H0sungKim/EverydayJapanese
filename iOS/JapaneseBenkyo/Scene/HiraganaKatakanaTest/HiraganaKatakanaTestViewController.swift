@@ -75,7 +75,7 @@ class HiraganaKatakanaTestViewController: UIViewController {
                     recognitionFailed.append((hiraganakatakana[i].0, hiraganakatakana[i].1, testResult[i].1))
                 }
             }
-            let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanatestresult) as! HiraganaKatakanaTestResultViewController
+            let vc: HiraganaKatakanaTestResultViewController = HiraganaKatakanaTestResultViewController.create()
             vc.param = HiraganaKatakanaTestResultViewController.Param(
                 indexEnum: param.indexEnum,
                 correct: correct,

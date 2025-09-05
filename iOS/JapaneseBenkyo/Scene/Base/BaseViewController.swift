@@ -20,7 +20,8 @@ class BaseViewController: UIViewController {
     }
     
     private func setupContainerViewController() {
-        containerViewController = UINavigationController(rootViewController: UIViewController.getViewController(viewControllerEnum: .main))
+        let vc: MainViewController = MainViewController.create()
+        containerViewController = UINavigationController(rootViewController: vc)
         guard let containerViewController = containerViewController else { return }
         containerViewController.setNavigationBarHidden(true, animated: false)
         containerViewController.interactivePopGestureRecognizer?.isEnabled = true

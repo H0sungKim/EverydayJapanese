@@ -40,7 +40,7 @@ extension CommonRestAPI: TargetType {
                 "limit": 1,
                 "trans:lang": trans.rawValue,
                 "sort": "relevance",
-                "showtrans": trans.rawValue,
+                "showtrans:lang": trans.rawValue,
             ]
             if let cursor_end = cursor_end {
                 params["after"] = cursor_end

@@ -61,13 +61,8 @@ extension HiraganaKatakanaTestResultViewController: UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell: HeaderTableViewCell
-            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self), for: indexPath) as? HeaderTableViewCell {
-                cell = reusableCell
-            } else {
-                let objectArray = Bundle.main.loadNibNamed(String(describing: HeaderTableViewCell.self), owner: nil, options: nil)
-                cell = objectArray![0] as! HeaderTableViewCell
-            }
+            let cell: HeaderTableViewCell = HeaderTableViewCell.create(tableView: tableView, indexPath: indexPath)
+            
             switch indexPath.section {
             case 0:
                 cell.initializeView(image: UIImage(systemName: "checkmark")?.withTintColor(UIColor.systemBlue, renderingMode: .alwaysOriginal), text: "정답")
@@ -80,13 +75,8 @@ extension HiraganaKatakanaTestResultViewController: UITableViewDelegate, UITable
             }
             return cell
         } else {
-            let cell: TestResultTableViewCell
-            if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: TestResultTableViewCell.self), for: indexPath) as? TestResultTableViewCell {
-                cell = reusableCell
-            } else {
-                let objectArray = Bundle.main.loadNibNamed(String(describing: TestResultTableViewCell.self), owner: nil, options: nil)
-                cell = objectArray![0] as! TestResultTableViewCell
-            }
+            let cell: TestResultTableViewCell = TestResultTableViewCell.create(tableView: tableView, indexPath: indexPath)
+            
             switch indexPath.section {
             case 0:
                 cell.initializeView(hiraganaKatakana: param.correct[indexPath.row-1].0, sound: param.correct[indexPath.row-1].1, myHiraganaKatakana: nil, myHiraganaKatakanaImage: param.correct[indexPath.row-1].2)

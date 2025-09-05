@@ -22,7 +22,7 @@ struct TatoebaEntity: Codable {
         let id: Int?
         let text: String?
         let transcriptions: [Transcription]?
-        let translations: [[Translation]]?
+        let translations: [Translation]?
     }
     
     struct Paging: Codable {

@@ -66,14 +66,12 @@ class HiraganaKatakanaPracticeViewController: UIViewController {
     }
     
     @IBAction func onClickMain(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanaselect)
-        if let vc = vc as? HiraganaKatakanaSelectViewController {
-            vc.param = HiraganaKatakanaSelectViewController.Param(indexEnum: param.indexEnum, selected: param.selected)
-            vc.applySelected = { [weak self] index in
-                self?.param.selected = index
-                self?.drawingView.clear()
-                self?.initializeView()
-            }
+        let vc: HiraganaKatakanaSelectViewController = HiraganaKatakanaSelectViewController.create()
+        vc.param = HiraganaKatakanaSelectViewController.Param(indexEnum: param.indexEnum, selected: param.selected)
+        vc.applySelected = { [weak self] index in
+            self?.param.selected = index
+            self?.drawingView.clear()
+            self?.initializeView()
         }
         vc.modalPresentationStyle = .pageSheet
         if let sheet = vc.sheetPresentationController {

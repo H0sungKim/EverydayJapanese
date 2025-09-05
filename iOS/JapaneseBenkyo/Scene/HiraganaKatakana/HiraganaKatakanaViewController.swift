@@ -51,7 +51,7 @@ class HiraganaKatakanaViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func onClickTest(_ sender: Any) {
-        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanatest) as! HiraganaKatakanaTestViewController
+        let vc: HiraganaKatakanaTestViewController = HiraganaKatakanaTestViewController.create()
         vc.param = HiraganaKatakanaTestViewController.Param(indexEnum: param.indexEnum)
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -63,13 +63,7 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: HiraganaKatakanaCollectionViewCell
-        if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HiraganaKatakanaCollectionViewCell.self), for: indexPath) as? HiraganaKatakanaCollectionViewCell {
-            cell = reusableCell
-        } else {
-            let objectArray = Bundle.main.loadNibNamed(String(describing: HiraganaKatakanaCollectionViewCell.self), owner: nil, options: nil)
-            cell = objectArray![0] as! HiraganaKatakanaCollectionViewCell
-        }
+        let cell: HiraganaKatakanaCollectionViewCell = HiraganaKatakanaCollectionViewCell.create(collectionView: collectionView, indexPath: indexPath)
         
         guard let collectionData = collectionData else {
             return cell
@@ -97,7 +91,7 @@ extension HiraganaKatakanaViewController: UICollectionViewDelegate, UICollection
             return
         }
         if collectionData[indexPath.row].0 == "" { return }
-        let vc = UIViewController.getViewController(viewControllerEnum: .hiraganakatakanapractice) as! HiraganaKatakanaPracticeViewController
+        let vc: HiraganaKatakanaPracticeViewController = HiraganaKatakanaPracticeViewController.create()
         vc.param = HiraganaKatakanaPracticeViewController.Param(indexEnum: param.indexEnum, selected: indexPath.row)
         navigationController?.pushViewController(vc, animated: true)
     }

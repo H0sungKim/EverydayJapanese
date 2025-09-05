@@ -70,13 +70,12 @@ class KanjiTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegat
         
         cell.initializeCell(kanjiForCell: kanjiForCell)
         
-//        if pass.contains(kanjiForCell.id) {
-//            cell.ivPass.image = UIImage(systemName: "checkmark.circle")
-//            cell.ivPass.tintColor = .systemGreen
-//        } else {
-//            cell.ivPass.image = UIImage(systemName: "circle")
-//            cell.ivPass.tintColor = .systemGray
-//        }
+        cell.ivPass.tintColor = .systemGreen
+        if pass.contains(kanjiForCell.id) {
+            cell.ivPass.image = UIImage(systemName: "checkmark.circle")
+        } else {
+            cell.ivPass.image = nil
+        }
         
         return cell
     }

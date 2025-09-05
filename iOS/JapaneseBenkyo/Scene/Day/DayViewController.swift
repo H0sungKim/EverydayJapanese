@@ -70,24 +70,18 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: IndexTableViewCell
-
-        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IndexTableViewCell.self), for: indexPath) as? IndexTableViewCell {
-            cell = reusableCell
+        let cell: IndexTableViewCell = IndexTableViewCell.create(tableView: tableView, indexPath: indexPath)
+        let isAll = indexPath.row == 0
+        if isAll {
+            cell.initializeView(title: "전체보기", completed: pass.reduce(0, +), total: indices.map(\.count).reduce(0, +))
         } else {
-            let objectArray = Bundle.main.loadNibNamed(String(describing: IndexTableViewCell.self), owner: nil, options: nil)
-            cell = objectArray![0] as! IndexTableViewCell
+            cell.initializeView(title: "Day\(indexPath.row)", completed: pass[indexPath.row-1], total: indices[indexPath.row-1].count)
         }
-        
-        cell.initializeView(
-            title: indexPath.row == 0 ? "전체보기" : "Day\(indexPath.row)",
-            process: indexPath.row == 0 ? pass.reduce(0, +) == indices.map(\.count).reduce(0, +) : pass[indexPath.row-1] == indices[indexPath.row-1].count
-        )
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UIViewController.getViewController(viewControllerEnum: .study) as! StudyViewController
+        let vc: StudyViewController = StudyViewController.create()
         vc.param = StudyViewController.Param(
             indexEnum: param.indexEnum,
             sectionEnum: param.indexEnum.section,
