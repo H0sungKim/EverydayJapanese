@@ -16,7 +16,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96C0F2CC2CFDDE9200A9DC21"
+               BlueprintIdentifier = "967AEBBF2E6823580080C1F4"
                BuildableName = "StudyWidegetExtension.appex"
                BlueprintName = "StudyWidegetExtension"
                ReferencedContainer = "container:JapaneseBenkyo.xcodeproj">
@@ -62,7 +62,7 @@
          BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96C0F2CC2CFDDE9200A9DC21"
+            BlueprintIdentifier = "967AEBBF2E6823580080C1F4"
             BuildableName = "StudyWidegetExtension.appex"
             BlueprintName = "StudyWidegetExtension"
             ReferencedContainer = "container:JapaneseBenkyo.xcodeproj">
