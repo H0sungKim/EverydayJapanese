@@ -45,8 +45,8 @@ class RubyAnnotationManager {
             let originalRange = Range(match.range(at: 1), in: rubyText)!
             let furiganaRange = Range(match.range(at: 2), in: rubyText)!
             
-            let originalText = String(rubyText[originalRange])
-            let furiganaText = String(rubyText[furiganaRange])
+            let originalText = String(rubyText[safe: originalRange] ?? "")
+            let furiganaText = String(rubyText[safe: furiganaRange] ?? "")
             
             let rubyAttribute: [CFString: Any] =  [
                 kCTRubyAnnotationSizeFactorAttributeName: 0.5,
