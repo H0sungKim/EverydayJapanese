@@ -115,8 +115,9 @@ struct KanjiWidgetEntryView : View {
                         .minimumScaleFactor(0.5)
                     Text(kanji.eumhun)
                         .font(Font.system(size: 14))
-                        .lineLimit(1)
+                        .lineLimit(2)
                         .minimumScaleFactor(0.5)
+                        .multilineTextAlignment(.center)
                 }
             }
         }.onAppear(perform: {

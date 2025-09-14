@@ -181,5 +181,4 @@ extension MainViewController: AdFitNativeAdLoaderDelegate, AdFitNativeAdDelegate
     func nativeAdDidClickAd(_ nativeAd: AdFitNativeAd) {
         print("광고 클릭")
     }
-
 }

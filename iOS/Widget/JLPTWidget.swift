@@ -102,8 +102,9 @@ struct JLPTWidgetEntryView : View {
                         .minimumScaleFactor(0.5)
                     Text(AttributedString(getAttrributedString(from: vocabulary.word)))
                         .font(Font.system(size: 32))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.5)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.2)
+                        .multilineTextAlignment(.center)
                 }
                 Text(vocabulary.meaning)
                     .font(Font.system(size: 14))

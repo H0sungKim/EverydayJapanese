@@ -123,6 +123,8 @@
 		962F1B9B2B79DCD10051C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F1B9A2B79DCD10051C4DA /* AppDelegate.swift */; };
 		962F1BA42B79DCD20051C4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA32B79DCD20051C4DA /* Assets.xcassets */; };
 		962F1BA72B79DCD20051C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962F1BA52B79DCD20051C4DA /* LaunchScreen.storyboard */; };
+		9638EB3F2E769CAC005210EC /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638EB3E2E769CAC005210EC /* Collection+Ext.swift */; };
+		9638EB412E769EC4005210EC /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638EB402E769EC4005210EC /* String+Ext.swift */; };
 		964943552D0DA56D000DE5E0 /* VocabularyForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964943542D0DA56D000DE5E0 /* VocabularyForCell.swift */; };
 		964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964943562D0DA574000DE5E0 /* KanjiForCell.swift */; };
 		9649435A2D0E9F6E000DE5E0 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 964943592D0E9F6E000DE5E0 /* SkeletonView */; };
@@ -366,6 +368,8 @@
 		962F1BA32B79DCD20051C4DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		962F1BA62B79DCD20051C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		962F1BA82B79DCD20051C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9638EB3E2E769CAC005210EC /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
+		9638EB402E769EC4005210EC /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		964943542D0DA56D000DE5E0 /* VocabularyForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyForCell.swift; sourceTree = "<group>"; };
 		964943562D0DA574000DE5E0 /* KanjiForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiForCell.swift; sourceTree = "<group>"; };
 		964AA5F82B79E80B007DE504 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -630,6 +634,8 @@
 				96BA5AC12BA2BB6B00E3373C /* UINavigationController+Ext.swift */,
 				96C1741B2BB5AF13006775E5 /* UIStackView+Ext.swift */,
 				96E4B2E92D75804000619FE8 /* UserDefaults+Ext.swift */,
+				9638EB3E2E769CAC005210EC /* Collection+Ext.swift */,
+				9638EB402E769EC4005210EC /* String+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1313,6 +1319,8 @@
 				961536822C82E9AC00563983 /* MainViewController.swift in Sources */,
 				96C134572D53C2D4001BA4B4 /* BaseViewController.swift in Sources */,
 				96C0FEFE2D0D4EFC00A9DC21 /* TatoebaModel.swift in Sources */,
+				9638EB3F2E769CAC005210EC /* Collection+Ext.swift in Sources */,
+				9638EB412E769EC4005210EC /* String+Ext.swift in Sources */,
 				964943572D0DA574000DE5E0 /* KanjiForCell.swift in Sources */,
 				969493522B7DDE140064312F /* Vocabulary.swift in Sources */,
 			);
@@ -1492,7 +1500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JapaneseBenkyo/JapaneseBenkyo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1508,7 +1516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.01.01;
+				MARKETING_VERSION = 3.01.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1524,7 +1532,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JapaneseBenkyo/JapaneseBenkyo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JU27F4BHH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JapaneseBenkyo/Info.plist;
@@ -1539,7 +1547,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.01.01;
+				MARKETING_VERSION = 3.01.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.constant.mainichinihongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
